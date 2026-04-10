@@ -1,0 +1,6 @@
+[submodule "GTBench"]
+	path = GTBench
+	url = https://github.com/jinhaoduan/GTBench.git
+[submodule "forecastbench-src"]
+	path = forecastbench-src
+	url = https://github.com/forecastingresearch/forecastbench.git
