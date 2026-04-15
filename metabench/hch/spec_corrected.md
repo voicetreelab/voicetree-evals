@@ -106,6 +106,7 @@ Designed in conversation between user (manummasson8@gmail.com) and Bob (suborche
 
 ## Related
 
-- `spec.md` — original v0.1 spec (still authoritative for the four-axis framing; v0.2 corrects only the prompt body and field names)
 - `scripts/hch_in_context.py` — reference implementation; needs minor patches to match v0.2 field names if rerun
 - `kaggle/pilots/hch-hle12-2026-04-15.md` — first pilot using v0.2 (12 HLE Qs, two-arm: HCH v2 + vanilla)
+
+(v0.1 `spec.md` removed — this file is now the sole spec.)
