@@ -1,0 +1,6 @@
+kaggle>=2.0.1
+kaggle-benchmarks>=0.3.0
+requests
+websocket-client
+python-dotenv
+nbformat
