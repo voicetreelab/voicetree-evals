@@ -1,0 +1,963 @@
+{
+  "baseline_objective": 157.0,
+  "class": "cjs",
+  "components": null,
+  "difficulty": "medium",
+  "gold_objective": 77.0,
+  "id": "cjs_medium_seed8",
+  "instance": {
+    "answer_contract": "Object with \"factory_a\", \"factory_b\", and \"makespan\". Each factory maps machine names to lists of [\"J<id>\", start, end] triples.",
+    "baseline_gap_pct": 103.8961038961039,
+    "baseline_objective": 157,
+    "baseline_submission": {
+      "factory_a": {
+        "MA1": [
+          [
+            "J1",
+            17,
+            25
+          ],
+          [
+            "J2",
+            55,
+            63
+          ],
+          [
+            "J3",
+            82,
+            91
+          ],
+          [
+            "J4",
+            91,
+            98
+          ],
+          [
+            "J5",
+            98,
+            105
+          ]
+        ],
+        "MA2": [
+          [
+            "J1",
+            0,
+            1
+          ],
+          [
+            "J2",
+            49,
+            53
+          ],
+          [
+            "J3",
+            53,
+            62
+          ],
+          [
+            "J4",
+            98,
+            103
+          ],
+          [
+            "J5",
+            117,
+            122
+          ]
+        ],
+        "MA3": [
+          [
+            "J1",
+            1,
+            9
+          ],
+          [
+            "J2",
+            42,
+            43
+          ],
+          [
+            "J3",
+            68,
+            74
+          ],
+          [
+            "J4",
+            113,
+            120
+          ],
+          [
+            "J5",
+            124,
+            125
+          ]
+        ],
+        "MA4": [
+          [
+            "J1",
+            9,
+            17
+          ],
+          [
+            "J2",
+            43,
+            49
+          ],
+          [
+            "J3",
+            49,
+            51
+          ],
+          [
+            "J4",
+            103,
+            110
+          ],
+          [
+            "J5",
+            115,
+            117
+          ]
+        ],
+        "MA5": [
+          [
+            "J1",
+            25,
+            32
+          ],
+          [
+            "J2",
+            53,
+            55
+          ],
+          [
+            "J3",
+            62,
+            68
+          ],
+          [
+            "J4",
+            68,
+            73
+          ],
+          [
+            "J5",
+            122,
+            124
+          ]
+        ],
+        "MA6": [
+          [
+            "J1",
+            32,
+            40
+          ],
+          [
+            "J2",
+            40,
+            42
+          ],
+          [
+            "J3",
+            74,
+            82
+          ],
+          [
+            "J4",
+            110,
+            113
+          ],
+          [
+            "J5",
+            113,
+            115
+          ]
+        ]
+      },
+      "factory_b": {
+        "MB1": [
+          [
+            "J1",
+            40,
+            44
+          ],
+          [
+            "J2",
+            78,
+            81
+          ],
+          [
+            "J3",
+            109,
+            118
+          ],
+          [
+            "J4",
+            130,
+            133
+          ],
+          [
+            "J5",
+            154,
+            157
+          ]
+        ],
+        "MB2": [
+          [
+            "J1",
+            44,
+            51
+          ],
+          [
+            "J2",
+            83,
+            92
+          ],
+          [
+            "J3",
+            103,
+            109
+          ],
+          [
+            "J4",
+            125,
+            126
+          ],
+          [
+            "J5",
+            126,
+            128
+          ]
+        ],
+        "MB3": [
+          [
+            "J1",
+            53,
+            61
+          ],
+          [
+            "J2",
+            74,
+            78
+          ],
+          [
+            "J3",
+            91,
+            95
+          ],
+          [
+            "J4",
+            120,
+            122
+          ],
+          [
+            "J5",
+            139,
+            148
+          ]
+        ],
+        "MB4": [
+          [
+            "J1",
+            65,
+            66
+          ],
+          [
+            "J2",
+            81,
+            83
+          ],
+          [
+            "J3",
+            118,
+            123
+          ],
+          [
+            "J4",
+            126,
+            130
+          ],
+          [
+            "J5",
+            130,
+            139
+          ]
+        ],
+        "MB5": [
+          [
+            "J1",
+            51,
+            53
+          ],
+          [
+            "J2",
+            92,
+            93
+          ],
+          [
+            "J3",
+            95,
+            100
+          ],
+          [
+            "J4",
+            133,
+            138
+          ],
+          [
+            "J5",
+            148,
+            154
+          ]
+        ],
+        "MB6": [
+          [
+            "J1",
+            61,
+            65
+          ],
+          [
+            "J2",
+            65,
+            74
+          ],
+          [
+            "J3",
+            100,
+            103
+          ],
+          [
+            "J4",
+            122,
+            125
+          ],
+          [
+            "J5",
+            128,
+            130
+          ]
+        ]
+      },
+      "makespan": 157
+    },
+    "class": "cjs",
+    "difficulty": "medium",
+    "gold_objective": 77,
+    "gold_submission": {
+      "factory_a": {
+        "MA1": [
+          [
+            "J5",
+            0,
+            7
+          ],
+          [
+            "J4",
+            7,
+            14
+          ],
+          [
+            "J1",
+            19,
+            27
+          ],
+          [
+            "J2",
+            27,
+            35
+          ],
+          [
+            "J3",
+            35,
+            44
+          ]
+        ],
+        "MA2": [
+          [
+            "J1",
+            0,
+            1
+          ],
+          [
+            "J3",
+            2,
+            11
+          ],
+          [
+            "J5",
+            11,
+            16
+          ],
+          [
+            "J4",
+            16,
+            21
+          ],
+          [
+            "J2",
+            21,
+            25
+          ]
+        ],
+        "MA3": [
+          [
+            "J2",
+            2,
+            3
+          ],
+          [
+            "J1",
+            3,
+            11
+          ],
+          [
+            "J3",
+            17,
+            23
+          ],
+          [
+            "J5",
+            23,
+            24
+          ],
+          [
+            "J4",
+            34,
+            41
+          ]
+        ],
+        "MA4": [
+          [
+            "J3",
+            0,
+            2
+          ],
+          [
+            "J2",
+            3,
+            9
+          ],
+          [
+            "J5",
+            9,
+            11
+          ],
+          [
+            "J1",
+            11,
+            19
+          ],
+          [
+            "J4",
+            21,
+            28
+          ]
+        ],
+        "MA5": [
+          [
+            "J4",
+            0,
+            5
+          ],
+          [
+            "J3",
+            11,
+            17
+          ],
+          [
+            "J5",
+            17,
+            19
+          ],
+          [
+            "J2",
+            25,
+            27
+          ],
+          [
+            "J1",
+            27,
+            34
+          ]
+        ],
+        "MA6": [
+          [
+            "J2",
+            0,
+            2
+          ],
+          [
+            "J5",
+            7,
+            9
+          ],
+          [
+            "J3",
+            23,
+            31
+          ],
+          [
+            "J4",
+            31,
+            34
+          ],
+          [
+            "J1",
+            34,
+            42
+          ]
+        ]
+      },
+      "factory_b": {
+        "MB1": [
+          [
+            "J1",
+            42,
+            46
+          ],
+          [
+            "J2",
+            52,
+            55
+          ],
+          [
+            "J4",
+            55,
+            58
+          ],
+          [
+            "J3",
+            62,
+            71
+          ],
+          [
+            "J5",
+            71,
+            74
+          ]
+        ],
+        "MB2": [
+          [
+            "J5",
+            24,
+            26
+          ],
+          [
+            "J4",
+            47,
+            48
+          ],
+          [
+            "J1",
+            48,
+            55
+          ],
+          [
+            "J3",
+            56,
+            62
+          ],
+          [
+            "J2",
+            62,
+            71
+          ]
+        ],
+        "MB3": [
+          [
+            "J4",
+            41,
+            43
+          ],
+          [
+            "J3",
+            44,
+            48
+          ],
+          [
+            "J2",
+            48,
+            52
+          ],
+          [
+            "J5",
+            52,
+            61
+          ],
+          [
+            "J1",
+            61,
+            69
+          ]
+        ],
+        "MB4": [
+          [
+            "J5",
+            28,
+            37
+          ],
+          [
+            "J4",
+            48,
+            52
+          ],
+          [
+            "J2",
+            55,
+            57
+          ],
+          [
+            "J3",
+            71,
+            76
+          ],
+          [
+            "J1",
+            76,
+            77
+          ]
+        ],
+        "MB5": [
+          [
+            "J3",
+            48,
+            53
+          ],
+          [
+            "J1",
+            55,
+            57
+          ],
+          [
+            "J5",
+            61,
+            67
+          ],
+          [
+            "J2",
+            71,
+            72
+          ],
+          [
+            "J4",
+            72,
+            77
+          ]
+        ],
+        "MB6": [
+          [
+            "J5",
+            26,
+            28
+          ],
+          [
+            "J2",
+            35,
+            44
+          ],
+          [
+            "J4",
+            44,
+            47
+          ],
+          [
+            "J3",
+            53,
+            56
+          ],
+          [
+            "J1",
+            69,
+            73
+          ]
+        ]
+      },
+      "makespan": 77
+    },
+    "jobs": [
+      {
+        "factory_a": [
+          {
+            "duration": 1,
+            "machine_name": "MA2"
+          },
+          {
+            "duration": 8,
+            "machine_name": "MA3"
+          },
+          {
+            "duration": 8,
+            "machine_name": "MA4"
+          },
+          {
+            "duration": 8,
+            "machine_name": "MA1"
+          },
+          {
+            "duration": 7,
+            "machine_name": "MA5"
+          },
+          {
+            "duration": 8,
+            "machine_name": "MA6"
+          }
+        ],
+        "factory_b": [
+          {
+            "duration": 4,
+            "machine_name": "MB1"
+          },
+          {
+            "duration": 7,
+            "machine_name": "MB2"
+          },
+          {
+            "duration": 2,
+            "machine_name": "MB5"
+          },
+          {
+            "duration": 8,
+            "machine_name": "MB3"
+          },
+          {
+            "duration": 4,
+            "machine_name": "MB6"
+          },
+          {
+            "duration": 1,
+            "machine_name": "MB4"
+          }
+        ],
+        "job_id": 1
+      },
+      {
+        "factory_a": [
+          {
+            "duration": 2,
+            "machine_name": "MA6"
+          },
+          {
+            "duration": 1,
+            "machine_name": "MA3"
+          },
+          {
+            "duration": 6,
+            "machine_name": "MA4"
+          },
+          {
+            "duration": 4,
+            "machine_name": "MA2"
+          },
+          {
+            "duration": 2,
+            "machine_name": "MA5"
+          },
+          {
+            "duration": 8,
+            "machine_name": "MA1"
+          }
+        ],
+        "factory_b": [
+          {
+            "duration": 9,
+            "machine_name": "MB6"
+          },
+          {
+            "duration": 4,
+            "machine_name": "MB3"
+          },
+          {
+            "duration": 3,
+            "machine_name": "MB1"
+          },
+          {
+            "duration": 2,
+            "machine_name": "MB4"
+          },
+          {
+            "duration": 9,
+            "machine_name": "MB2"
+          },
+          {
+            "duration": 1,
+            "machine_name": "MB5"
+          }
+        ],
+        "job_id": 2
+      },
+      {
+        "factory_a": [
+          {
+            "duration": 2,
+            "machine_name": "MA4"
+          },
+          {
+            "duration": 9,
+            "machine_name": "MA2"
+          },
+          {
+            "duration": 6,
+            "machine_name": "MA5"
+          },
+          {
+            "duration": 6,
+            "machine_name": "MA3"
+          },
+          {
+            "duration": 8,
+            "machine_name": "MA6"
+          },
+          {
+            "duration": 9,
+            "machine_name": "MA1"
+          }
+        ],
+        "factory_b": [
+          {
+            "duration": 4,
+            "machine_name": "MB3"
+          },
+          {
+            "duration": 5,
+            "machine_name": "MB5"
+          },
+          {
+            "duration": 3,
+            "machine_name": "MB6"
+          },
+          {
+            "duration": 6,
+            "machine_name": "MB2"
+          },
+          {
+            "duration": 9,
+            "machine_name": "MB1"
+          },
+          {
+            "duration": 5,
+            "machine_name": "MB4"
+          }
+        ],
+        "job_id": 3
+      },
+      {
+        "factory_a": [
+          {
+            "duration": 5,
+            "machine_name": "MA5"
+          },
+          {
+            "duration": 7,
+            "machine_name": "MA1"
+          },
+          {
+            "duration": 5,
+            "machine_name": "MA2"
+          },
+          {
+            "duration": 7,
+            "machine_name": "MA4"
+          },
+          {
+            "duration": 3,
+            "machine_name": "MA6"
+          },
+          {
+            "duration": 7,
+            "machine_name": "MA3"
+          }
+        ],
+        "factory_b": [
+          {
+            "duration": 2,
+            "machine_name": "MB3"
+          },
+          {
+            "duration": 3,
+            "machine_name": "MB6"
+          },
+          {
+            "duration": 1,
+            "machine_name": "MB2"
+          },
+          {
+            "duration": 4,
+            "machine_name": "MB4"
+          },
+          {
+            "duration": 3,
+            "machine_name": "MB1"
+          },
+          {
+            "duration": 5,
+            "machine_name": "MB5"
+          }
+        ],
+        "job_id": 4
+      },
+      {
+        "factory_a": [
+          {
+            "duration": 7,
+            "machine_name": "MA1"
+          },
+          {
+            "duration": 2,
+            "machine_name": "MA6"
+          },
+          {
+            "duration": 2,
+            "machine_name": "MA4"
+          },
+          {
+            "duration": 5,
+            "machine_name": "MA2"
+          },
+          {
+            "duration": 2,
+            "machine_name": "MA5"
+          },
+          {
+            "duration": 1,
+            "machine_name": "MA3"
+          }
+        ],
+        "factory_b": [
+          {
+            "duration": 2,
+            "machine_name": "MB2"
+          },
+          {
+            "duration": 2,
+            "machine_name": "MB6"
+          },
+          {
+            "duration": 9,
+            "machine_name": "MB4"
+          },
+          {
+            "duration": 9,
+            "machine_name": "MB3"
+          },
+          {
+            "duration": 6,
+            "machine_name": "MB5"
+          },
+          {
+            "duration": 3,
+            "machine_name": "MB1"
+          }
+        ],
+        "job_id": 5
+      }
+    ],
+    "metric_name": "makespan",
+    "n_jobs": 5,
+    "n_machines": 6,
+    "problem_statement": "You run a two-factory manufacturing pipeline. Factory A makes components, then Factory B finishes the same jobs.\nEach factory is its own job shop with one-job-per-machine exclusivity and no preemption.\nEvery job must finish all of its Factory A operations before that same job may start any Factory B operation.\nYour objective is to minimize the coupled makespan: the time when the final Factory B operation finishes.\n\nInstance size: 5 jobs, 6 machines in each factory.\nJobs and ordered operations:\n- Job 1: Factory A MA2 (1) -> MA3 (8) -> MA4 (8) -> MA1 (8) -> MA5 (7) -> MA6 (8); Factory B MB1 (4) -> MB2 (7) -> MB5 (2) -> MB3 (8) -> MB6 (4) -> MB4 (1)\n- Job 2: Factory A MA6 (2) -> MA3 (1) -> MA4 (6) -> MA2 (4) -> MA5 (2) -> MA1 (8); Factory B MB6 (9) -> MB3 (4) -> MB1 (3) -> MB4 (2) -> MB2 (9) -> MB5 (1)\n- Job 3: Factory A MA4 (2) -> MA2 (9) -> MA5 (6) -> MA3 (6) -> MA6 (8) -> MA1 (9); Factory B MB3 (4) -> MB5 (5) -> MB6 (3) -> MB2 (6) -> MB1 (9) -> MB4 (5)\n- Job 4: Factory A MA5 (5) -> MA1 (7) -> MA2 (5) -> MA4 (7) -> MA6 (3) -> MA3 (7); Factory B MB3 (2) -> MB6 (3) -> MB2 (1) -> MB4 (4) -> MB1 (3) -> MB5 (5)\n- Job 5: Factory A MA1 (7) -> MA6 (2) -> MA4 (2) -> MA2 (5) -> MA5 (2) -> MA3 (1); Factory B MB2 (2) -> MB6 (2) -> MB4 (9) -> MB3 (9) -> MB5 (6) -> MB1 (3)\n\nConstraints:\n- A machine handles at most one job at a time.\n- Each job must respect its listed operation order inside each factory.\n- Factory B job Jx cannot start until Factory A job Jx has fully completed.\n- When you emit a schedule, every required operation must appear exactly once.\n\nA deterministic feasible baseline schedule is provided below. If you stop immediately or fail to produce a valid schedule, this baseline is what gets scored.\nBaseline makespan: 157\nBaseline schedule summary:\nFactory A: MA1: J1[17-25],J2[55-63],J3[82-91],J4[91-98],J5[98-105]; MA2: J1[0-1],J2[49-53],J3[53-62],J4[98-103],J5[117-122]; MA3: J1[1-9],J2[42-43],J3[68-74],J4[113-120],J5[124-125]; MA4: J1[9-17],J2[43-49],J3[49-51],J4[103-110],J5[115-117]; MA5: J1[25-32],J2[53-55],J3[62-68],J4[68-73],J5[122-124]; MA6: J1[32-40],J2[40-42],J3[74-82],J4[110-113],J5[113-115]\nFactory B: MB1: J1[40-44],J2[78-81],J3[109-118],J4[130-133],J5[154-157]; MB2: J1[44-51],J2[83-92],J3[103-109],J4[125-126],J5[126-128]; MB3: J1[53-61],J2[74-78],J3[91-95],J4[120-122],J5[139-148]; MB4: J1[65-66],J2[81-83],J3[118-123],J4[126-130],J5[130-139]; MB5: J1[51-53],J2[92-93],J3[95-100],J4[133-138],J5[148-154]; MB6: J1[61-65],J2[65-74],J3[100-103],J4[122-125],J5[128-130]\nMakespan: 157\n",
+    "seed": 8
+  },
+  "seed": 8,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}

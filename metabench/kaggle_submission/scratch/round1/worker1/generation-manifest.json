@@ -1,0 +1,101 @@
+{
+  "cells": [
+    {
+      "class": "cjs",
+      "difficulty": "medium",
+      "generated_ids": [
+        "cjs_medium_seed2",
+        "cjs_medium_seed3",
+        "cjs_medium_seed4"
+      ],
+      "notes": [],
+      "requested_seeds": [
+        2,
+        3,
+        4
+      ],
+      "requested_to_actual_seed": {
+        "2": 2,
+        "3": 3,
+        "4": 4
+      },
+      "runner_question_id": "cjs_medium_seed2",
+      "skipped": false
+    },
+    {
+      "class": "cjs",
+      "difficulty": "medium",
+      "generated_ids": [
+        "cjs_medium_seed5",
+        "cjs_medium_seed6",
+        "cjs_medium_seed7"
+      ],
+      "notes": [],
+      "requested_seeds": [
+        5,
+        6,
+        7
+      ],
+      "requested_to_actual_seed": {
+        "5": 5,
+        "6": 6,
+        "7": 7
+      },
+      "runner_question_id": "cjs_medium_seed5",
+      "skipped": false
+    },
+    {
+      "class": "cjs",
+      "difficulty": "medium",
+      "generated_ids": [
+        "cjs_medium_seed8",
+        "cjs_medium_seed9",
+        "cjs_medium_seed10"
+      ],
+      "notes": [],
+      "requested_seeds": [
+        8,
+        9,
+        10
+      ],
+      "requested_to_actual_seed": {
+        "10": 10,
+        "8": 8,
+        "9": 9
+      },
+      "runner_question_id": "cjs_medium_seed8",
+      "skipped": false
+    },
+    {
+      "class": "steiner",
+      "difficulty": "medium",
+      "generated_ids": [
+        "steiner_medium_seed2",
+        "steiner_medium_seed3",
+        "steiner_medium_seed4"
+      ],
+      "notes": [],
+      "requested_seeds": [
+        2,
+        3,
+        4
+      ],
+      "requested_to_actual_seed": {
+        "2": 2,
+        "3": 3,
+        "4": 4
+      },
+      "runner_question_id": "steiner_medium_seed2",
+      "skipped": false
+    }
+  ],
+  "partial_path": "/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/scratch/round1/worker1/questions.partial.jsonl",
+  "runner_question_ids": [
+    "cjs_medium_seed2",
+    "cjs_medium_seed5",
+    "cjs_medium_seed8",
+    "steiner_medium_seed2"
+  ],
+  "total_rows": 12,
+  "worker": 1
+}

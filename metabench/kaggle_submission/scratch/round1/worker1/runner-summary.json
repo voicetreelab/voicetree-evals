@@ -1,0 +1,189 @@
+{
+  "models": {
+    "claude-sonnet-4.6": {
+      "attempted": 4,
+      "baseline_only": 0,
+      "completed": 4,
+      "errors": [
+        {
+          "error": "exec turn 2 parse failed",
+          "question_id": "cjs_medium_seed5",
+          "stop_reason": "error"
+        },
+        {
+          "error": "exec turn 2 parse failed",
+          "question_id": "cjs_medium_seed8",
+          "stop_reason": "error"
+        }
+      ],
+      "feasible": 2,
+      "judge_rescue": 0,
+      "partial_rescue": 0,
+      "skipped": 0,
+      "strict_like": 2,
+      "strict_parse_failed": 2
+    },
+    "gemini-flash-latest": {
+      "attempted": 3,
+      "baseline_only": 1,
+      "completed": 4,
+      "errors": [
+        {
+          "error": "plan turn parse failed",
+          "question_id": "steiner_medium_seed2",
+          "stop_reason": "error"
+        }
+      ],
+      "feasible": 4,
+      "judge_rescue": 0,
+      "partial_rescue": 0,
+      "skipped": 0,
+      "strict_like": 3,
+      "strict_parse_failed": 0
+    },
+    "gpt-5.4-mini": {
+      "attempted": 3,
+      "baseline_only": 0,
+      "completed": 4,
+      "errors": [],
+      "feasible": 4,
+      "judge_rescue": 0,
+      "partial_rescue": 0,
+      "skipped": 0,
+      "strict_like": 4,
+      "strict_parse_failed": 0
+    }
+  },
+  "question_ids": [
+    "cjs_medium_seed2",
+    "cjs_medium_seed5",
+    "cjs_medium_seed8",
+    "steiner_medium_seed2"
+  ],
+  "questions": {
+    "cjs_medium_seed2": {
+      "models": {
+        "claude-sonnet-4.6": {
+          "error": null,
+          "feasible": false,
+          "gap_pct": 100.0,
+          "parse_path": "strict_protocol_cf",
+          "score": 0.0,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        },
+        "gemini-flash-latest": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 11.11111111111111,
+          "parse_path": "strict_protocol_cf",
+          "score": 84.79265793681041,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        },
+        "gpt-5.4-mini": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 113.33333333333333,
+          "parse_path": "strict_protocol_cf",
+          "score": -0.16445127666927875,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        }
+      }
+    },
+    "cjs_medium_seed5": {
+      "models": {
+        "claude-sonnet-4.6": {
+          "error": "exec turn 2 parse failed",
+          "feasible": false,
+          "gap_pct": 100.0,
+          "parse_path": "strict_parse_failed",
+          "score": -4.91037721416913,
+          "skipped": false,
+          "stop_reason": "error"
+        },
+        "gemini-flash-latest": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 34.21052631578947,
+          "parse_path": "strict_protocol_cf",
+          "score": 60.51323536129129,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        },
+        "gpt-5.4-mini": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 115.78947368421052,
+          "parse_path": "strict_protocol_cf",
+          "score": -0.18526573959039525,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        }
+      }
+    },
+    "cjs_medium_seed8": {
+      "models": {
+        "claude-sonnet-4.6": {
+          "error": "exec turn 2 parse failed",
+          "feasible": true,
+          "gap_pct": 103.8961038961039,
+          "parse_path": "strict_parse_failed",
+          "score": -4.250471058329567,
+          "skipped": false,
+          "stop_reason": "error"
+        },
+        "gemini-flash-latest": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 61.03896103896104,
+          "parse_path": "strict_protocol_cf",
+          "score": 34.82253847311813,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        },
+        "gpt-5.4-mini": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 103.8961038961039,
+          "parse_path": "strict_protocol_cf",
+          "score": -0.16254369916860015,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        }
+      }
+    },
+    "steiner_medium_seed2": {
+      "models": {
+        "claude-sonnet-4.6": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 0.0,
+          "parse_path": "strict_protocol_cf",
+          "score": 99.23596933583961,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        },
+        "gemini-flash-latest": {
+          "error": "plan turn parse failed",
+          "feasible": true,
+          "gap_pct": 18.309859154929576,
+          "parse_path": "baseline_only",
+          "score": 80.05797386007181,
+          "skipped": false,
+          "stop_reason": "error"
+        },
+        "gpt-5.4-mini": {
+          "error": null,
+          "feasible": true,
+          "gap_pct": 18.309859154929576,
+          "parse_path": "strict_protocol_cf",
+          "score": 81.57513638007019,
+          "skipped": false,
+          "stop_reason": "decision_stop"
+        }
+      }
+    }
+  }
+}
