@@ -276,6 +276,57 @@ Reporting all three separately penalizes flat-pessimism strategies: a model that
 
 ## Results, Insights, and Conclusions
 
+### Results from the Overnight Pilot Run (2026-04-17, 3 models × 64 probe rows)
+
+Before the full Phase-1 sweep above, we ran a smaller pilot — 8 parallel question-generation workers × 2 rounds, producing a 206-row benchmark and ~192 LLM probe runs across `gemini-flash-latest`, `claude-sonnet-4.6`, and `gpt-5.4-mini`. The pilot validates the protocol end-to-end and surfaces three load-bearing findings before the full sweep.
+
+**Per-model strict-parse rate (R1 + R2 combined, 64 probe rows × 3 models)**
+
+| Model | Strict | Rescue | Failed / Skipped | Strict + Rescue % |
+|---|---:|---:|---:|---:|
+| `gemini-flash-latest` | 43 | 11 | 10 | 84.4 % |
+| `claude-sonnet-4.6` | 47 | 1 | 16 | 75.0 % |
+| `gpt-5.4-mini` | 58 | 6 | 0 | 100 % |
+
+GPT parsed every probe; Sonnet's failure tail concentrates in MWIS-hard and VE-hard where it produces `stop=error` mid-turn-2. Gemini's partial-rescue rate doubled R1 → R2, indicating the post-hoc Gemini-Flash extractor is recovering otherwise-lost runs.
+
+**Per-class feasibility (G / S / GPT, R1 + R2 combined)**
+
+| Class | Difficulty | Probes | Gemini | Sonnet | GPT | Notes |
+|---|---|---:|---:|---:|---:|---|
+| CJS | medium | 3 | 3/3 | 1/3 | 3/3 | Sonnet parse-fails on seeds 5+8 |
+| CJS | hard | 2 | 1/2 | 0/2 | 2/2 | + 1 GPT-only R1 row |
+| Steiner | medium | 3 | 3/3 | 3/3 | 2/3 | Strongest medium |
+| Steiner | hard | 2 | 2/2 | 2/2 | 2/2 | All gap = 0 |
+| Graphcol | medium | 3 | 3/3 | 3/3 | 3/3 | Clean |
+| Graphcol | hard | 3 | 3/3 | 3/3 | 3/3 | GPT score weak |
+| TSP | medium | 3 | 3/3 | 2/3 | 3/3 | Strong |
+| TSP | hard | 3 | 3/3 | 3/3 | 3/3 | Strongest hard |
+| MWIS | medium | 3 | 3/3 | 0/3 | 1/3 | Sonnet timeout-then-skip |
+| MWIS | hard | 3 | 3/3 | 0/3 | 3/3 | Sonnet stop=error every probe |
+| VE | medium | 2 | 2/2 | 0/2 | 2/2 | Sonnet parse-fail + skip |
+| VE | hard | 3 | 3/3 | 1/3 | 3/3 | Sonnet stop=error seeds 4+7 |
+| **Portfolio** | medium | 12 | 0/12 | 0/12 | 0/12 | 0/36 feasible |
+| **Portfolio** | hard | 12 | 0/12 | 1/12 | 0/12 | 1/36 feasible (poor gaps) |
+
+**Three load-bearing pilot findings**
+
+1. **Portfolio joint-feasibility is currently a model-quality failure, not a harness bug.** 1 / 72 portfolio model-runs returned a jointly-feasible answer. Parse rates on portfolio rows are ~90 %, so the harness sees a structured artifact every time — the artifact just doesn't simultaneously satisfy all three sub-components. This means portfolio rows currently provide a uniform near-zero score floor across the leaderboard. Top suggested fix before the full sweep: tighten the per-sub-component CONTRACT block in the portfolio prompt with explicit per-class JSON templates (W6 generation notes flag TSP sub-component output-format violations as the dominant failure mode). The portfolio result floor is *not* informative leaderboard signal in its current form.
+
+2. **Sonnet has a class-specific protocol-emission failure on MWIS-hard and VE-hard.** Sonnet returned `strict_parse_failed` with `stop=error` on every MWIS-hard probe (0/6 across both rounds) and on VE-hard seeds 4 + 7. Identical probe IDs ran cleanly on Gemini and GPT. This rules out instance difficulty and points at a Sonnet-specific failure mode emitting long iterative DP traces — most likely max-token truncation mid-exec-turn-2 even after our earlier max-tokens fix. Diagnostic next step before the full sweep: read the raw transcripts at `results/full/mwis_hard_seed{5,9,13}/claude-sonnet-4.6.json`.
+
+3. **Parser reliability and solution quality are decoupled.** GPT-5.4-mini parses 100 % of probes and is fastest (often 10–20 s vs. Gemini's 200–500 s), but on graphcol-hard and steiner-hard its solutions score near 0 or negative (e.g., `graphcol_hard_seed7`: Sonnet 99.19 / gap 0 vs. GPT 84.86 / gap 15; on other graphcol-hard seeds GPT scored −0.12 to −0.42). A leaderboard ranked by parse rate will mislead. The pilot validates that capability and reliability dissociate at the row-level — the same dissociation we expect to drive M5 and M6 scores in the full sweep.
+
+**Pipeline issues surfaced (logged for the full run, none blocking)**
+
+- W5 budget guardrail left 3 hard rows GPT-only after observed-row-1-time × N extrapolation skipped Gemini + Sonnet on `cjs_hard_seed4`, `steiner_hard_seed4`, `ve_medium_seed8`. Switching to a per-row budget instead of rolling extrapolation fixes this.
+- W6 portfolio-hard generated only 4 / 12 rows because the MWIS-hard bridge-check pre-flight is deterministically infeasible at 8 of the requested seeds. Patch the generator or exclude MWIS from the portfolio-hard class pool.
+- W7 → W8 cross-worker seed drift consumed 2 IDs across partitions; the reviewer's dedup caught it. Add fallback-window bounds per worker before scaling fan-out.
+
+The pilot ran in ~1 h 49 min of wall time (8 workers × 2 rounds in parallel) and committed all artifacts under `kaggle_submission/results/full/` and `kaggle_submission/questions.jsonl`. Both rounds were independently reviewed and issued PROCEED verdicts.
+
+---
+
 ### Benchmark-level capability baselines (Phase 1, n=10 seeds per cell, medium difficulty)
 
 | class | Gemini 3 Pro | Sonnet 4.6 | Haiku 4.5 | GPT-5.4 | GPT-5.4 Nano |
