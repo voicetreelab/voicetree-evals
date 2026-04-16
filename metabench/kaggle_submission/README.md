@@ -1,0 +1,1 @@
+v2 `kaggle_submission/` smoke scaffold for the S0-S4 pipeline. This tree currently contains the shared harness surface, per-class generators/verifiers, and minimal packaging metadata; downstream run instructions, dataset assembly, and Kaggle task packaging land in later steps.

@@ -1,0 +1,262 @@
+{
+  "expected_gap_pct": 0.0,
+  "gold_submission": {
+    "edges": [
+      [
+        "Bay",
+        "Mill"
+      ],
+      [
+        "Dune",
+        "Port"
+      ],
+      [
+        "Mill",
+        "Port"
+      ]
+    ],
+    "frequencies": {
+      "Bay": 2,
+      "Dune": 2,
+      "Mill": 1,
+      "Port": 1
+    }
+  },
+  "instance": {
+    "answer_contract": "Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.",
+    "baseline_cost": 72,
+    "baseline_gap_pct": 22.033898305084747,
+    "baseline_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Pine"
+        ],
+        [
+          "Pine",
+          "Port"
+        ],
+        [
+          "Dune",
+          "Port"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 1,
+        "Dune": 3,
+        "Pine": 2,
+        "Port": 1
+      }
+    },
+    "cable_only_cost": 72,
+    "cable_only_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Pine"
+        ],
+        [
+          "Pine",
+          "Port"
+        ],
+        [
+          "Dune",
+          "Port"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 1,
+        "Dune": 3,
+        "Pine": 2,
+        "Port": 1
+      }
+    },
+    "class": "steiner",
+    "difficulty": "medium",
+    "edges": [
+      {
+        "cost": 8,
+        "u": "Bay",
+        "v": "Cliff"
+      },
+      {
+        "cost": 8,
+        "u": "Bay",
+        "v": "Pine"
+      },
+      {
+        "cost": 20,
+        "u": "Bay",
+        "v": "Rock"
+      },
+      {
+        "cost": 4,
+        "u": "Bay",
+        "v": "Mill"
+      },
+      {
+        "cost": 9,
+        "u": "Bay",
+        "v": "Cape"
+      },
+      {
+        "cost": 10,
+        "u": "Cliff",
+        "v": "Pine"
+      },
+      {
+        "cost": 12,
+        "u": "Cliff",
+        "v": "Rock"
+      },
+      {
+        "cost": 23,
+        "u": "Cliff",
+        "v": "Dune"
+      },
+      {
+        "cost": 12,
+        "u": "Cliff",
+        "v": "Mill"
+      },
+      {
+        "cost": 12,
+        "u": "Pine",
+        "v": "Port"
+      },
+      {
+        "cost": 18,
+        "u": "Pine",
+        "v": "Rock"
+      },
+      {
+        "cost": 7,
+        "u": "Dune",
+        "v": "Port"
+      },
+      {
+        "cost": 16,
+        "u": "Dune",
+        "v": "Pine"
+      },
+      {
+        "cost": 18,
+        "u": "Mill",
+        "v": "Port"
+      },
+      {
+        "cost": 8,
+        "u": "Mill",
+        "v": "Pine"
+      },
+      {
+        "cost": 19,
+        "u": "Cape",
+        "v": "Port"
+      },
+      {
+        "cost": 2,
+        "u": "Cape",
+        "v": "Cliff"
+      },
+      {
+        "cost": 9,
+        "u": "Cape",
+        "v": "Pine"
+      },
+      {
+        "cost": 11,
+        "u": "Cape",
+        "v": "Rock"
+      },
+      {
+        "cost": 21,
+        "u": "Cape",
+        "v": "Dune"
+      },
+      {
+        "cost": 12,
+        "u": "Cape",
+        "v": "Mill"
+      }
+    ],
+    "freq_penalty": 15,
+    "gold_cost": 59,
+    "gold_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Mill"
+        ],
+        [
+          "Dune",
+          "Port"
+        ],
+        [
+          "Mill",
+          "Port"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 2,
+        "Dune": 2,
+        "Mill": 1,
+        "Port": 1
+      }
+    },
+    "interference_pairs": [
+      [
+        "Bay",
+        "Cliff"
+      ],
+      [
+        "Bay",
+        "Mill"
+      ],
+      [
+        "Cliff",
+        "Rock"
+      ],
+      [
+        "Cliff",
+        "Dune"
+      ],
+      [
+        "Cliff",
+        "Mill"
+      ],
+      [
+        "Pine",
+        "Port"
+      ],
+      [
+        "Dune",
+        "Port"
+      ],
+      [
+        "Dune",
+        "Pine"
+      ]
+    ],
+    "k": 4,
+    "n": 8,
+    "n_terminals": 3,
+    "problem_statement": "Coastal Emergency scenario:\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\n\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\nIf an interference pair is active on both ends, those two villages must use different frequencies.\n\nObjective:\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\n\nVillages:\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape\n\nRequired terminals:\n- Port, Bay, Dune\n\nAvailable cable links:\n- Bay-Cliff: cost 8\n- Bay-Pine: cost 8\n- Bay-Rock: cost 20\n- Bay-Mill: cost 4\n- Bay-Cape: cost 9\n- Cliff-Pine: cost 10\n- Cliff-Rock: cost 12\n- Cliff-Dune: cost 23\n- Cliff-Mill: cost 12\n- Pine-Port: cost 12\n- Pine-Rock: cost 18\n- Dune-Port: cost 7\n- Dune-Pine: cost 16\n- Mill-Port: cost 18\n- Mill-Pine: cost 8\n- Cape-Port: cost 19\n- Cape-Cliff: cost 2\n- Cape-Pine: cost 9\n- Cape-Rock: cost 11\n- Cape-Dune: cost 21\n- Cape-Mill: cost 12\n\nInterference pairs:\n- Bay / Cliff\n- Bay / Mill\n- Cliff / Rock\n- Cliff / Dune\n- Cliff / Mill\n- Pine / Port\n- Dune / Port\n- Dune / Pine\n\nRules:\n- Your cable choice must be a tree, not a cyclic network.\n- All required terminals must lie in one connected component.\n- Frequencies matter only for active villages in the chosen network.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline total cost: 72\nBaseline answer summary:\nEdges: Bay-Pine(8), Pine-Port(12), Dune-Port(7)\nActive villages: Port, Bay, Pine, Dune\nFrequencies: Port=1, Bay=1, Pine=2, Dune=3\nEdge cost: 27\nFrequencies used: 3\nTotal cost: 72\n\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\n",
+    "seed": 1,
+    "terminals": [
+      "Port",
+      "Bay",
+      "Dune"
+    ],
+    "villages": [
+      "Port",
+      "Bay",
+      "Cliff",
+      "Pine",
+      "Rock",
+      "Dune",
+      "Mill",
+      "Cape"
+    ]
+  }
+}
