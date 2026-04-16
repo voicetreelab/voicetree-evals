@@ -162,6 +162,24 @@ def _compare_answer(got, gold, qnum):
     return got.strip().lower() == gold.strip().lower()
 
 
+def _judge_answer(llm, gold, full_response):
+    # LLM-as-judge: determine if the model's full response correctly states the gold answer.
+    # Returns (judge_pass: bool, judge_raw: str).
+    # Uses the same llm object as the task (same proxy, same model).
+    judge_prompt = (
+        f'Gold answer: "{gold}"\n'
+        f'Model response: "{full_response}"\n'
+        'Did the model correctly state the gold answer? Reply YES or NO only.'
+    )
+    try:
+        judge_raw = llm.prompt(judge_prompt, max_output_tokens=16)
+        judge_pass = judge_raw.strip().upper().startswith("YES")
+    except Exception as _e:
+        judge_raw = f"JUDGE_ERROR: {_e}"
+        judge_pass = False
+    return judge_pass, judge_raw
+
+
 @kbench.task(
     name='hch_hle12_q52_vanilla',
     description=(
@@ -170,16 +188,17 @@ def _compare_answer(got, gold, qnum):
     ),
 )
 def hch_hle12_q52_vanilla(llm) -> bool:
-    raw = llm.prompt(PROMPT)
+    raw = llm.prompt(PROMPT, max_output_tokens=32768)
     result = _parse_vanilla(raw)
-    correct = _compare_answer(result["answer"], GOLD_ANSWER, QNUM)
+    official_pass = _compare_answer(result["answer"], GOLD_ANSWER, QNUM)
+    judge_pass, judge_raw = _judge_answer(llm, GOLD_ANSWER, raw)
+    correct = judge_pass  # primary correctness signal is the judge
     kbench.assertions.assert_true(
         correct,
         expectation=(
-            f"Vanilla Q52: answer={result['answer']!r}, "
-            f"p_correct={result['p_correct']}, "
-            f"correct={correct}, gold='A', "
-            f"word_count={result['word_count']}"
+            f"Vanilla Q52: official={official_pass}, judge={judge_pass}, "
+            f"answer={result['answer']!r}, p_correct={result['p_correct']}, "
+            f"gold='A', word_count={result['word_count']}"
         ),
     )
     return correct
