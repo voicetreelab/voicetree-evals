@@ -1,0 +1,47 @@
+{
+  "child_runner_status": "stalled_then_stopped_without_outputs",
+  "model_stats": {
+    "claude-sonnet-4.6": {
+      "api_errors": 0,
+      "completed": 4,
+      "errors": 0,
+      "failed_or_baseline": 0,
+      "feasible": 4,
+      "rescue": 0,
+      "skipped": 0,
+      "strict": 4
+    },
+    "gemini-flash-latest": {
+      "api_errors": 0,
+      "completed": 4,
+      "errors": 0,
+      "failed_or_baseline": 0,
+      "feasible": 4,
+      "rescue": 0,
+      "skipped": 0,
+      "strict": 4
+    },
+    "gpt-5.4-mini": {
+      "api_errors": 0,
+      "completed": 4,
+      "errors": 0,
+      "failed_or_baseline": 0,
+      "feasible": 3,
+      "rescue": 0,
+      "skipped": 0,
+      "strict": 4
+    }
+  },
+  "models": [
+    "gemini-flash-latest",
+    "claude-sonnet-4.6",
+    "gpt-5.4-mini"
+  ],
+  "question_ids": [
+    "steiner_medium_seed5",
+    "steiner_medium_seed8",
+    "graphcol_medium_seed2",
+    "graphcol_medium_seed5"
+  ],
+  "recovered_locally": true
+}

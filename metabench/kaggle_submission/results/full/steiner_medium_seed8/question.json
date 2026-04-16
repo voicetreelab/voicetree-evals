@@ -1,0 +1,228 @@
+{
+  "baseline_objective": 64.0,
+  "class": "steiner",
+  "components": null,
+  "difficulty": "medium",
+  "gold_objective": 53.0,
+  "id": "steiner_medium_seed8",
+  "instance": {
+    "answer_contract": "Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.",
+    "baseline_cost": 64,
+    "baseline_gap_pct": 20.754716981132077,
+    "baseline_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Port"
+        ],
+        [
+          "Bay",
+          "Cape"
+        ],
+        [
+          "Pine",
+          "Port"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 1,
+        "Cape": 1,
+        "Pine": 2,
+        "Port": 1
+      }
+    },
+    "cable_only_cost": 63,
+    "cable_only_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Cape"
+        ],
+        [
+          "Pine",
+          "Rock"
+        ],
+        [
+          "Cape",
+          "Rock"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 1,
+        "Cape": 1,
+        "Pine": 1,
+        "Rock": 2
+      }
+    },
+    "class": "steiner",
+    "difficulty": "medium",
+    "edges": [
+      {
+        "cost": 11,
+        "u": "Port",
+        "v": "Rock"
+      },
+      {
+        "cost": 16,
+        "u": "Bay",
+        "v": "Port"
+      },
+      {
+        "cost": 16,
+        "u": "Bay",
+        "v": "Cliff"
+      },
+      {
+        "cost": 2,
+        "u": "Bay",
+        "v": "Dune"
+      },
+      {
+        "cost": 13,
+        "u": "Bay",
+        "v": "Cape"
+      },
+      {
+        "cost": 8,
+        "u": "Cliff",
+        "v": "Port"
+      },
+      {
+        "cost": 11,
+        "u": "Cliff",
+        "v": "Pine"
+      },
+      {
+        "cost": 18,
+        "u": "Cliff",
+        "v": "Dune"
+      },
+      {
+        "cost": 5,
+        "u": "Pine",
+        "v": "Port"
+      },
+      {
+        "cost": 11,
+        "u": "Pine",
+        "v": "Rock"
+      },
+      {
+        "cost": 19,
+        "u": "Dune",
+        "v": "Port"
+      },
+      {
+        "cost": 16,
+        "u": "Mill",
+        "v": "Port"
+      },
+      {
+        "cost": 16,
+        "u": "Mill",
+        "v": "Pine"
+      },
+      {
+        "cost": 5,
+        "u": "Mill",
+        "v": "Rock"
+      },
+      {
+        "cost": 9,
+        "u": "Cape",
+        "v": "Rock"
+      },
+      {
+        "cost": 14,
+        "u": "Cape",
+        "v": "Dune"
+      },
+      {
+        "cost": 9,
+        "u": "Cape",
+        "v": "Mill"
+      }
+    ],
+    "freq_penalty": 15,
+    "gold_cost": 53,
+    "gold_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Cape"
+        ],
+        [
+          "Mill",
+          "Pine"
+        ],
+        [
+          "Cape",
+          "Mill"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 1,
+        "Cape": 1,
+        "Mill": 1,
+        "Pine": 1
+      }
+    },
+    "interference_pairs": [
+      [
+        "Bay",
+        "Cliff"
+      ],
+      [
+        "Cliff",
+        "Port"
+      ],
+      [
+        "Cliff",
+        "Pine"
+      ],
+      [
+        "Pine",
+        "Port"
+      ],
+      [
+        "Pine",
+        "Rock"
+      ],
+      [
+        "Dune",
+        "Rock"
+      ],
+      [
+        "Mill",
+        "Rock"
+      ],
+      [
+        "Cape",
+        "Dune"
+      ]
+    ],
+    "k": 4,
+    "n": 8,
+    "n_terminals": 3,
+    "problem_statement": "Coastal Emergency scenario:\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\n\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\nIf an interference pair is active on both ends, those two villages must use different frequencies.\n\nObjective:\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\n\nVillages:\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape\n\nRequired terminals:\n- Bay, Pine, Cape\n\nAvailable cable links:\n- Port-Rock: cost 11\n- Bay-Port: cost 16\n- Bay-Cliff: cost 16\n- Bay-Dune: cost 2\n- Bay-Cape: cost 13\n- Cliff-Port: cost 8\n- Cliff-Pine: cost 11\n- Cliff-Dune: cost 18\n- Pine-Port: cost 5\n- Pine-Rock: cost 11\n- Dune-Port: cost 19\n- Mill-Port: cost 16\n- Mill-Pine: cost 16\n- Mill-Rock: cost 5\n- Cape-Rock: cost 9\n- Cape-Dune: cost 14\n- Cape-Mill: cost 9\n\nInterference pairs:\n- Bay / Cliff\n- Cliff / Port\n- Cliff / Pine\n- Pine / Port\n- Pine / Rock\n- Dune / Rock\n- Mill / Rock\n- Cape / Dune\n\nRules:\n- Your cable choice must be a tree, not a cyclic network.\n- All required terminals must lie in one connected component.\n- Frequencies matter only for active villages in the chosen network.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline total cost: 64\nBaseline answer summary:\nEdges: Bay-Port(16), Bay-Cape(13), Pine-Port(5)\nActive villages: Port, Bay, Pine, Cape\nFrequencies: Port=1, Bay=1, Pine=2, Cape=1\nEdge cost: 34\nFrequencies used: 2\nTotal cost: 64\n\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\n",
+    "seed": 8,
+    "terminals": [
+      "Bay",
+      "Pine",
+      "Cape"
+    ],
+    "villages": [
+      "Port",
+      "Bay",
+      "Cliff",
+      "Pine",
+      "Rock",
+      "Dune",
+      "Mill",
+      "Cape"
+    ]
+  },
+  "seed": 8,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}
