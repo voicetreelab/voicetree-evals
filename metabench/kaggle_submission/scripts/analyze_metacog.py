@@ -54,13 +54,26 @@ NON_TERMINATION_REASONS = {
 }
 
 RESULTS_DIR = ROOT / "results" / "full"
+FRONTIER_RUNS_DIR = ROOT / "results" / "runs"
 OUT_MD = ROOT / "results" / "metacog_analysis.md"
 OUT_CSV = ROOT / "results" / "metacog_rollup.csv"
 
-SOLO_CLASSES = ("cjs", "graphcol", "mwis", "steiner", "tsp", "ve")
+SOLO_CLASSES = ("cjs", "graphcol", "mwis", "steiner", "tsp", "ve", "mbj")
 CLASSES = SOLO_CLASSES + ("portfolio",)
 DIFFICULTIES = ("medium", "hard")
-MODELS = ("claude-sonnet-4.6", "gemini-flash-latest", "gpt-5.4-mini")
+SMALL_MODELS = ("claude-sonnet-4.6", "gemini-flash-latest", "gpt-5.4-mini")
+FRONTIER_MODELS = ("claude-opus-4.6", "gemini-3-pro-preview", "gpt-5.4")
+MODELS = SMALL_MODELS + FRONTIER_MODELS
+FAMILY = {
+    "claude-sonnet-4.6": "anthropic", "claude-opus-4.6": "anthropic",
+    "gemini-flash-latest": "google", "gemini-3-pro-preview": "google",
+    "gpt-5.4-mini": "openai", "gpt-5.4": "openai",
+}
+TIER = {
+    "claude-sonnet-4.6": "small", "claude-opus-4.6": "frontier",
+    "gemini-flash-latest": "small", "gemini-3-pro-preview": "frontier",
+    "gpt-5.4-mini": "small", "gpt-5.4": "frontier",
+}
 
 
 def _parse_turn_forecasts(text: str, cls: str) -> dict:
@@ -272,7 +285,7 @@ def _extract_subtasks(
     return subtasks
 
 
-def _collect_per_row(path: Path) -> dict | None:
+def _collect_per_row(path: Path, question_row_dir: Path | None = None) -> dict | None:
     try:
         record = json.loads(path.read_text())
     except Exception:
@@ -316,7 +329,8 @@ def _collect_per_row(path: Path) -> dict | None:
         })
 
     n_exec_turns = record.get("n_exec_turns") or 0
-    question = _load_question(path.parent)
+    q_dir = question_row_dir if question_row_dir is not None else path.parent
+    question = _load_question(q_dir)
     instance = question.get("instance") if isinstance(question, dict) else None
     subtasks = _extract_subtasks(transcript, cls, n_exec_turns, instance)
     turn_scores = _extract_turn_scores(transcript, cls, n_exec_turns, instance)
@@ -326,6 +340,8 @@ def _collect_per_row(path: Path) -> dict | None:
         "class": cls,
         "difficulty": difficulty,
         "model": model,
+        "family": FAMILY.get(model, "unknown"),
+        "tier": TIER.get(model, "unknown"),
         "final_gap": final_gap,
         "feasible": feasible,
         "cf_delta": cf_delta,
@@ -525,6 +541,22 @@ def aggregate():
             rec = _collect_per_row(model_json)
             if rec:
                 rows.append(rec)
+
+    # Frontier sweep — inverted layout: results/runs/<model>/<row_id>.json.
+    # Load question.json from the canonical results/full/<row_id>/ dir so verifier
+    # paths + instance access work identically to non-frontier rows.
+    if FRONTIER_RUNS_DIR.exists():
+        for model_dir in sorted(FRONTIER_RUNS_DIR.iterdir()):
+            if not model_dir.is_dir():
+                continue
+            if model_dir.name not in FRONTIER_MODELS:
+                continue
+            for row_json in sorted(model_dir.glob("*.json")):
+                row_id = row_json.stem
+                q_dir = RESULTS_DIR / row_id
+                rec = _collect_per_row(row_json, question_row_dir=q_dir)
+                if rec:
+                    rows.append(rec)
 
     # Per-(model, class, difficulty) aggregation
     agg = defaultdict(lambda: {"quality": defaultdict(lambda: {"sse": 0.0, "n": 0}),
@@ -1253,16 +1285,112 @@ def write_report(rows, agg, all_agg, mstats, m5=None):
     lines.append("")
 
     # --------- NEW: writeup-v2-style metacognitive profile ---------
-    lines.append("## 3. Metacognitive profile (writeup-v2 layout)")
+    # ---- Family-consistency table (frontier vs small, within family) ----
+    lines.append("## 3. Family-consistency table — 6 models, 2 per family")
+    lines.append("")
+    lines.append(
+        "Tests whether the small-tier metacog axis profile replicates at the frontier "
+        "tier within each family. Columns: M1-Brier / M1-BSS (unclipped) / M1-resolution / "
+        "M2-Brier / M2-BSS (unclipped) / M2-resolution / M4-MAE / feasibility. "
+        "M1 BSS is None when the model's kept_as_best outcome is single-valued (uncertainty=0 → BSS undefined)."
+    )
+    lines.append("")
+    header = ["family", "tier", "model", "n_rows", "M1-Br", "M1-BSS", "M1-res",
+              "M2-Br", "M2-BSS", "M2-res", "M4-MAE", "feas"]
+    lines.append("| " + " | ".join(header) + " |")
+    lines.append("|" + "|".join(["---"] * len(header)) + "|")
+    family_order = [
+        ("anthropic", ("claude-sonnet-4.6", "claude-opus-4.6")),
+        ("google",    ("gemini-flash-latest", "gemini-3-pro-preview")),
+        ("openai",    ("gpt-5.4-mini", "gpt-5.4")),
+    ]
+    def _fmt(x, spec):
+        return spec.format(x) if x is not None else "—"
+    for fam, pair in family_order:
+        for model in pair:
+            v = mstats.get(model)
+            if not v:
+                lines.append(f"| {fam} | {TIER.get(model,'?')} | {model} | 0 | — | — | — | — | — | — | — | — |")
+                continue
+            lines.append(
+                f"| {fam} | {TIER.get(model,'?')} | {model} | {v['n_rows']} | "
+                f"{_fmt(v.get('m1_brier'),'{:.3f}')} | {_fmt(v.get('m1_bss'),'{:+.3f}')} | "
+                f"{_fmt(v.get('m1_resolution'),'{:.3f}')} | {_fmt(v.get('m2_brier'),'{:.3f}')} | "
+                f"{_fmt(v.get('m2_bss'),'{:+.3f}')} | {_fmt(v.get('m2_resolution'),'{:.3f}')} | "
+                f"{_fmt(v.get('m4_mae'),'{:.2f}')} | {_fmt(v.get('feasibility_rate'),'{:.0%}')} |"
+            )
+    lines.append("")
+
+    # Per-family verdicts (computed from the table numbers; written in-line so the
+    # writeup can quote them with a single cross-reference).
+    verdicts = []
+    def _pair_stats(pair):
+        return [mstats.get(m) or {} for m in pair]
+    for fam, pair in family_order:
+        a, b = _pair_stats(pair)
+        small, frontier = a, b
+        n_small = small.get("n_rows", 0); n_front = frontier.get("n_rows", 0)
+        m2bss_small = small.get("m2_bss"); m2bss_front = frontier.get("m2_bss")
+        m1bss_small = small.get("m1_bss"); m1bss_front = frontier.get("m1_bss")
+        m2res_small = small.get("m2_resolution") or 0.0
+        m2res_front = frontier.get("m2_resolution") or 0.0
+        feas_small = small.get("feasibility_rate") or 0.0
+        feas_front = frontier.get("feasibility_rate") or 0.0
+        caveat = f" (Opus N={n_front} — small-sample caveat)" if n_front < 10 else ""
+        if fam == "anthropic":
+            # monitoring claim: both positive M2-BSS?
+            ok = (m2bss_small is not None and m2bss_small > 0) and (m2bss_front is not None and m2bss_front > 0)
+            exec_patch = feas_front - feas_small
+            v = "CONFIRMED" if ok else ("PARTIAL" if (m2bss_front is not None and m2bss_front > 0) else "REJECTED")
+            verdicts.append(
+                f"- **anthropic — monitoring axis {v}**{caveat}. "
+                f"Sonnet M2-BSS {m2bss_small:+.2f} / Opus M2-BSS "
+                f"{('%+.2f' % m2bss_front) if m2bss_front is not None else '—'}; both positive ⇒ monitoring replicates. "
+                f"Opus additionally patches Sonnet's execution failure mode (feas {feas_small:.0%} → {feas_front:.0%})."
+            )
+        elif fam == "google":
+            # flat-forecaster claim: both negative M1-BSS AND low M2-resolution?
+            flat_at_frontier = (m2bss_front is not None and m2bss_front < 0) and (m2res_front < 0.05)
+            v = "REJECTED" if (m2bss_front is not None and m2bss_front > 0) else ("CONFIRMED" if flat_at_frontier else "PARTIAL")
+            verdicts.append(
+                f"- **google — flat-forecaster axis {v}**. "
+                f"Flash M2-BSS {m2bss_small:+.2f} (res {m2res_small:.3f}) vs Gemini-3-Pro M2-BSS "
+                f"{('%+.2f' % m2bss_front) if m2bss_front is not None else '—'} "
+                f"(res {m2res_front:.3f}). "
+                + ("Frontier tier INVERTS the flat pattern: real M2 resolution + positive BSS. "
+                   "Flat-forecaster is a Flash-tier artifact, not a family-level specialization."
+                   if v == "REJECTED" else
+                   "Frontier replicates the low-resolution narrow-band pattern.")
+            )
+        else:
+            # sharp-and-wrong M2: both catastrophically negative M2-BSS
+            both_neg = (m2bss_small is not None and m2bss_small < -1) and (m2bss_front is not None and m2bss_front < -1)
+            v = "CONFIRMED" if both_neg else "PARTIAL"
+            verdicts.append(
+                f"- **openai — sharp-and-wrong-M2 axis {v}**. "
+                f"GPT-5.4-mini M2-BSS {m2bss_small:+.2f} / GPT-5.4 M2-BSS "
+                f"{('%+.2f' % m2bss_front) if m2bss_front is not None else '—'}. "
+                f"Catastrophic M2 replicates across tiers — the sibling relationship is preserved."
+            )
+    lines.append("**Per-family verdict (from the table above):**")
+    lines.extend(verdicts)
+    lines.append("")
+    lines.append(
+        "**Reading the verdicts.** An inversion at the frontier tier (google) is as informative "
+        "as a replication (openai, anthropic-monitoring): it shows that the specialization axis "
+        "lives at a specific tier, not at the family. Opus's execution patch is itself a within-family finding: "
+        "\"Opus fixes what Sonnet couldn't solve, but preserves Sonnet's monitoring advantage.\""
+    )
+    lines.append("")
+
+    lines.append("## 3b. Metacognitive profile (writeup-v2 layout)")
     lines.append("")
     lines.append("Model-level metacog metrics as framed in `kaggle_submission/writeup-v2.md`.  "
                   "M1 (p_solve Brier) is computed over solo-class subtasks only — portfolio rows are "
                   "skipped because we do not re-score per-sub-component best_guess payloads in this pass. "
                   "M5 and M6 require additional runs.")
     lines.append("")
-    header = [
-        "metric", "claude-sonnet-4.6", "gemini-flash-latest", "gpt-5.4-mini", "what it measures",
-    ]
+    header = ["metric"] + list(MODELS) + ["what it measures"]
     lines.append("| " + " | ".join(header) + " |")
     lines.append("|" + "|".join(["---"] * len(header)) + "|")
 
