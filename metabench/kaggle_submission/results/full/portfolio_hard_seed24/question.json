@@ -1,0 +1,1061 @@
+{
+  "baseline_objective": 0.0,
+  "class": "portfolio",
+  "components": [
+    {
+      "class": "ve",
+      "problem_id": "ve_hard_seed24",
+      "sub_instance": {
+        "attempt_index": 13,
+        "baseline_ordering": [
+          "A1",
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "B2",
+          "B3",
+          "B4",
+          "B6",
+          "B7",
+          "B8",
+          "BR01",
+          "BR12",
+          "C1",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "D0"
+        ],
+        "baseline_peak_factor_size": 13,
+        "bridge_variables": [
+          "BR01",
+          "BR12"
+        ],
+        "decoy_variable": "D0",
+        "difficulty": "hard",
+        "eliminable_variables": [
+          "A1",
+          "A2",
+          "A3",
+          "B2",
+          "B3",
+          "B4",
+          "C1",
+          "C3",
+          "D0",
+          "BR01",
+          "BR12",
+          "A4",
+          "A5",
+          "A6",
+          "B6",
+          "B7",
+          "B8",
+          "C4",
+          "C5",
+          "C6"
+        ],
+        "evidence": {
+          "A7": 0,
+          "B1": 0,
+          "B5": 1,
+          "C2": 0,
+          "C7": 0
+        },
+        "exact_posterior": 0.4455649274965772,
+        "gold_ordering": [
+          "A1",
+          "B8",
+          "B7",
+          "BR01",
+          "B6",
+          "C1",
+          "C6",
+          "A5",
+          "A4",
+          "C5",
+          "B2",
+          "C4",
+          "B3",
+          "C3",
+          "B4",
+          "A3",
+          "A2",
+          "A6",
+          "BR12",
+          "D0"
+        ],
+        "gold_peak_factor_size": 7,
+        "gold_source": "min_fill",
+        "heuristic_results": [
+          {
+            "name": "min_neighbors",
+            "ordering": [
+              "C1",
+              "A1",
+              "B8",
+              "B7",
+              "BR01",
+              "B6",
+              "C6",
+              "A5",
+              "A4",
+              "A2",
+              "C5",
+              "A3",
+              "B2",
+              "C4",
+              "B3",
+              "C3",
+              "B4",
+              "A6",
+              "BR12",
+              "D0"
+            ],
+            "peak_factor_size": 7
+          },
+          {
+            "name": "min_weight",
+            "ordering": [
+              "C1",
+              "A1",
+              "B8",
+              "B7",
+              "BR01",
+              "B6",
+              "C6",
+              "A2",
+              "A6",
+              "C5",
+              "B2",
+              "A5",
+              "A4",
+              "A3",
+              "C4",
+              "B3",
+              "C3",
+              "D0",
+              "B4",
+              "BR12"
+            ],
+            "peak_factor_size": 7
+          },
+          {
+            "name": "min_fill",
+            "ordering": [
+              "A1",
+              "B8",
+              "B7",
+              "BR01",
+              "B6",
+              "C1",
+              "C6",
+              "A5",
+              "A4",
+              "C5",
+              "B2",
+              "C4",
+              "B3",
+              "C3",
+              "B4",
+              "A3",
+              "A2",
+              "A6",
+              "BR12",
+              "D0"
+            ],
+            "peak_factor_size": 7
+          }
+        ],
+        "hidden_clusters": {
+          "A": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ],
+          "B": [
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B9"
+          ],
+          "C": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7"
+          ]
+        },
+        "min_fill_peak_factor_size": 7,
+        "problem_statement": "You are doing exact inference in a Bayesian network with binary variables in {0, 1}.\nTask: report P(B9=1 | A7=0, B1=0, B5=1, C7=0, C2=0).\nAll CPT rows below give P(variable=1 | parents); P(variable=0 | parents) = 1 minus that value.\nWhen you report ordering_used, list every eliminable variable exactly once and do not include the query variable or any evidence variable.\nInterpret peak_factor_size as the largest intermediate factor scope size, counted as the number of variables in that factor before summing out the eliminated variable.\n\nVariables: A1, A2, A3, B1, B2, B3, B4, C1, C2, C3, D0, BR01, BR12, A4, A5, A6, A7, B5, B6, B7, B8, B9, C4, C5, C6, C7\nQuery variable: B9\nEvidence: A7=0, B1=0, B5=1, C7=0, C2=0\nEliminable variables (20): A1, A2, A3, B2, B3, B4, C1, C3, D0, BR01, BR12, A4, A5, A6, B6, B7, B8, C4, C5, C6\n\nBayesian network (topological order):\n- A1: parents = [none]\n  P(A1=1) = 0.557\n- A2: parents = [A1]\n  if A1=0 -> P(A2=1) = 0.870\n  if A1=1 -> P(A2=1) = 0.412\n- A3: parents = [A2, A1]\n  if A2=0, A1=0 -> P(A3=1) = 0.753\n  if A2=0, A1=1 -> P(A3=1) = 0.486\n  if A2=1, A1=0 -> P(A3=1) = 0.390\n  if A2=1, A1=1 -> P(A3=1) = 0.165\n- B1: parents = [A2]\n  if A2=0 -> P(B1=1) = 0.116\n  if A2=1 -> P(B1=1) = 0.562\n- B2: parents = [B1]\n  if B1=0 -> P(B2=1) = 0.186\n  if B1=1 -> P(B2=1) = 0.432\n- B3: parents = [B2, B1]\n  if B2=0, B1=0 -> P(B3=1) = 0.574\n  if B2=0, B1=1 -> P(B3=1) = 0.307\n  if B2=1, B1=0 -> P(B3=1) = 0.819\n  if B2=1, B1=1 -> P(B3=1) = 0.598\n- B4: parents = [B3, B2]\n  if B3=0, B2=0 -> P(B4=1) = 0.610\n  if B3=0, B2=1 -> P(B4=1) = 0.874\n  if B3=1, B2=0 -> P(B4=1) = 0.271\n  if B3=1, B2=1 -> P(B4=1) = 0.623\n- C1: parents = [B2]\n  if B2=0 -> P(C1=1) = 0.249\n  if B2=1 -> P(C1=1) = 0.754\n- C2: parents = [C1]\n  if C1=0 -> P(C2=1) = 0.522\n  if C1=1 -> P(C2=1) = 0.834\n- C3: parents = [C2, C1]\n  if C2=0, C1=0 -> P(C3=1) = 0.413\n  if C2=0, C1=1 -> P(C3=1) = 0.886\n  if C2=1, C1=0 -> P(C3=1) = 0.183\n  if C2=1, C1=1 -> P(C3=1) = 0.712\n- D0: parents = [A3, B4, C3]\n  if A3=0, B4=0, C3=0 -> P(D0=1) = 0.050\n  if A3=0, B4=0, C3=1 -> P(D0=1) = 0.272\n  if A3=0, B4=1, C3=0 -> P(D0=1) = 0.420\n  if A3=0, B4=1, C3=1 -> P(D0=1) = 0.841\n  if A3=1, B4=0, C3=0 -> P(D0=1) = 0.364\n  if A3=1, B4=0, C3=1 -> P(D0=1) = 0.807\n  if A3=1, B4=1, C3=0 -> P(D0=1) = 0.890\n  if A3=1, B4=1, C3=1 -> P(D0=1) = 0.950\n- BR01: parents = [A2, B3]\n  if A2=0, B3=0 -> P(BR01=1) = 0.387\n  if A2=0, B3=1 -> P(BR01=1) = 0.050\n  if A2=1, B3=0 -> P(BR01=1) = 0.808\n  if A2=1, B3=1 -> P(BR01=1) = 0.259\n- BR12: parents = [B4, C2]\n  if B4=0, C2=0 -> P(BR12=1) = 0.582\n  if B4=0, C2=1 -> P(BR12=1) = 0.925\n  if B4=1, C2=0 -> P(BR12=1) = 0.175\n  if B4=1, C2=1 -> P(BR12=1) = 0.652\n- A4: parents = [A2, A3, D0]\n  if A2=0, A3=0, D0=0 -> P(A4=1) = 0.359\n  if A2=0, A3=0, D0=1 -> P(A4=1) = 0.071\n  if A2=0, A3=1, D0=0 -> P(A4=1) = 0.721\n  if A2=0, A3=1, D0=1 -> P(A4=1) = 0.261\n  if A2=1, A3=0, D0=0 -> P(A4=1) = 0.878\n  if A2=1, A3=0, D0=1 -> P(A4=1) = 0.496\n  if A2=1, A3=1, D0=0 -> P(A4=1) = 0.950\n  if A2=1, A3=1, D0=1 -> P(A4=1) = 0.820\n- A5: parents = [A3, A4]\n  if A3=0, A4=0 -> P(A5=1) = 0.544\n  if A3=0, A4=1 -> P(A5=1) = 0.107\n  if A3=1, A4=0 -> P(A5=1) = 0.931\n  if A3=1, A4=1 -> P(A5=1) = 0.576\n- A6: parents = [A4, A5]\n  if A4=0, A5=0 -> P(A6=1) = 0.556\n  if A4=0, A5=1 -> P(A6=1) = 0.167\n  if A4=1, A5=0 -> P(A6=1) = 0.815\n  if A4=1, A5=1 -> P(A6=1) = 0.413\n- A7: parents = [A5, A6, D0]\n  if A5=0, A6=0, D0=0 -> P(A7=1) = 0.790\n  if A5=0, A6=0, D0=1 -> P(A7=1) = 0.440\n  if A5=0, A6=1, D0=0 -> P(A7=1) = 0.950\n  if A5=0, A6=1, D0=1 -> P(A7=1) = 0.910\n  if A5=1, A6=0, D0=0 -> P(A7=1) = 0.207\n  if A5=1, A6=0, D0=1 -> P(A7=1) = 0.052\n  if A5=1, A6=1, D0=0 -> P(A7=1) = 0.772\n  if A5=1, A6=1, D0=1 -> P(A7=1) = 0.414\n- B5: parents = [B4, BR01, A2]\n  if B4=0, BR01=0, A2=0 -> P(B5=1) = 0.245\n  if B4=0, BR01=0, A2=1 -> P(B5=1) = 0.050\n  if B4=0, BR01=1, A2=0 -> P(B5=1) = 0.792\n  if B4=0, BR01=1, A2=1 -> P(B5=1) = 0.379\n  if B4=1, BR01=0, A2=0 -> P(B5=1) = 0.697\n  if B4=1, BR01=0, A2=1 -> P(B5=1) = 0.269\n  if B4=1, BR01=1, A2=0 -> P(B5=1) = 0.950\n  if B4=1, BR01=1, A2=1 -> P(B5=1) = 0.812\n- B6: parents = [B5, D0, A3]\n  if B5=0, D0=0, A3=0 -> P(B6=1) = 0.050\n  if B5=0, D0=0, A3=1 -> P(B6=1) = 0.281\n  if B5=0, D0=1, A3=0 -> P(B6=1) = 0.249\n  if B5=0, D0=1, A3=1 -> P(B6=1) = 0.826\n  if B5=1, D0=0, A3=0 -> P(B6=1) = 0.205\n  if B5=1, D0=0, A3=1 -> P(B6=1) = 0.787\n  if B5=1, D0=1, A3=0 -> P(B6=1) = 0.758\n  if B5=1, D0=1, A3=1 -> P(B6=1) = 0.950\n- B7: parents = [B5, B6, A4]\n  if B5=0, B6=0, A4=0 -> P(B7=1) = 0.205\n  if B5=0, B6=0, A4=1 -> P(B7=1) = 0.057\n  if B5=0, B6=1, A4=0 -> P(B7=1) = 0.602\n  if B5=0, B6=1, A4=1 -> P(B7=1) = 0.263\n  if B5=1, B6=0, A4=0 -> P(B7=1) = 0.778\n  if B5=1, B6=0, A4=1 -> P(B7=1) = 0.452\n  if B5=1, B6=1, A4=0 -> P(B7=1) = 0.950\n  if B5=1, B6=1, A4=1 -> P(B7=1) = 0.828\n- B8: parents = [B6, B7, A5]\n  if B6=0, B7=0, A5=0 -> P(B8=1) = 0.409\n  if B6=0, B7=0, A5=1 -> P(B8=1) = 0.883\n  if B6=0, B7=1, A5=0 -> P(B8=1) = 0.067\n  if B6=0, B7=1, A5=1 -> P(B8=1) = 0.437\n  if B6=1, B7=0, A5=0 -> P(B8=1) = 0.849\n  if B6=1, B7=0, A5=1 -> P(B8=1) = 0.950\n  if B6=1, B7=1, A5=0 -> P(B8=1) = 0.367\n  if B6=1, B7=1, A5=1 -> P(B8=1) = 0.863\n- B9: parents = [D0, BR12, A6]\n  if D0=0, BR12=0, A6=0 -> P(B9=1) = 0.156\n  if D0=0, BR12=0, A6=1 -> P(B9=1) = 0.510\n  if D0=0, BR12=1, A6=0 -> P(B9=1) = 0.050\n  if D0=0, BR12=1, A6=1 -> P(B9=1) = 0.101\n  if D0=1, BR12=0, A6=0 -> P(B9=1) = 0.650\n  if D0=1, BR12=0, A6=1 -> P(B9=1) = 0.913\n  if D0=1, BR12=1, A6=0 -> P(B9=1) = 0.167\n  if D0=1, BR12=1, A6=1 -> P(B9=1) = 0.531\n- C4: parents = [BR12, D0, B2]\n  if BR12=0, D0=0, B2=0 -> P(C4=1) = 0.737\n  if BR12=0, D0=0, B2=1 -> P(C4=1) = 0.470\n  if BR12=0, D0=1, B2=0 -> P(C4=1) = 0.950\n  if BR12=0, D0=1, B2=1 -> P(C4=1) = 0.868\n  if BR12=1, D0=0, B2=0 -> P(C4=1) = 0.125\n  if BR12=1, D0=0, B2=1 -> P(C4=1) = 0.050\n  if BR12=1, D0=1, B2=0 -> P(C4=1) = 0.514\n  if BR12=1, D0=1, B2=1 -> P(C4=1) = 0.250\n- C5: parents = [C3, C4, B3]\n  if C3=0, C4=0, B3=0 -> P(C5=1) = 0.950\n  if C3=0, C4=0, B3=1 -> P(C5=1) = 0.629\n  if C3=0, C4=1, B3=0 -> P(C5=1) = 0.837\n  if C3=0, C4=1, B3=1 -> P(C5=1) = 0.277\n  if C3=1, C4=0, B3=0 -> P(C5=1) = 0.841\n  if C3=1, C4=0, B3=1 -> P(C5=1) = 0.283\n  if C3=1, C4=1, B3=0 -> P(C5=1) = 0.546\n  if C3=1, C4=1, B3=1 -> P(C5=1) = 0.082\n- C6: parents = [C4, C5, B4]\n  if C4=0, C5=0, B4=0 -> P(C6=1) = 0.584\n  if C4=0, C5=0, B4=1 -> P(C6=1) = 0.818\n  if C4=0, C5=1, B4=0 -> P(C6=1) = 0.853\n  if C4=0, C5=1, B4=1 -> P(C6=1) = 0.949\n  if C4=1, C5=0, B4=0 -> P(C6=1) = 0.173\n  if C4=1, C5=0, B4=1 -> P(C6=1) = 0.402\n  if C4=1, C5=1, B4=0 -> P(C6=1) = 0.464\n  if C4=1, C5=1, B4=1 -> P(C6=1) = 0.735\n- C7: parents = [C6, D0, B5]\n  if C6=0, D0=0, B5=0 -> P(C7=1) = 0.334\n  if C6=0, D0=0, B5=1 -> P(C7=1) = 0.071\n  if C6=0, D0=1, B5=0 -> P(C7=1) = 0.736\n  if C6=0, D0=1, B5=1 -> P(C7=1) = 0.297\n  if C6=1, D0=0, B5=0 -> P(C7=1) = 0.707\n  if C6=1, D0=0, B5=1 -> P(C7=1) = 0.268\n  if C6=1, D0=1, B5=0 -> P(C7=1) = 0.930\n  if C6=1, D0=1, B5=1 -> P(C7=1) = 0.669",
+        "query_variable": "B9",
+        "random_search_best": {
+          "name": "random_best_of_1000",
+          "ordering": [
+            "A1",
+            "BR01",
+            "B7",
+            "A5",
+            "A4",
+            "A2",
+            "C5",
+            "A3",
+            "B8",
+            "C1",
+            "B2",
+            "C4",
+            "B4",
+            "C3",
+            "B3",
+            "BR12",
+            "D0",
+            "B6",
+            "A6",
+            "C6"
+          ],
+          "peak_factor_size": 8
+        },
+        "requested_total_variables": 26,
+        "scale_note": null,
+        "seed": 24,
+        "size_escalated": false,
+        "total_variables": 26,
+        "variables": [
+          {
+            "cpt_true_probs": [
+              0.557
+            ],
+            "name": "A1",
+            "parents": []
+          },
+          {
+            "cpt_true_probs": [
+              0.87,
+              0.412
+            ],
+            "name": "A2",
+            "parents": [
+              "A1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.753,
+              0.486,
+              0.39,
+              0.165
+            ],
+            "name": "A3",
+            "parents": [
+              "A2",
+              "A1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.116,
+              0.562
+            ],
+            "name": "B1",
+            "parents": [
+              "A2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.186,
+              0.432
+            ],
+            "name": "B2",
+            "parents": [
+              "B1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.574,
+              0.307,
+              0.819,
+              0.598
+            ],
+            "name": "B3",
+            "parents": [
+              "B2",
+              "B1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.61,
+              0.874,
+              0.271,
+              0.623
+            ],
+            "name": "B4",
+            "parents": [
+              "B3",
+              "B2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.249,
+              0.754
+            ],
+            "name": "C1",
+            "parents": [
+              "B2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.522,
+              0.834
+            ],
+            "name": "C2",
+            "parents": [
+              "C1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.413,
+              0.886,
+              0.183,
+              0.712
+            ],
+            "name": "C3",
+            "parents": [
+              "C2",
+              "C1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.05,
+              0.272,
+              0.42,
+              0.841,
+              0.364,
+              0.807,
+              0.89,
+              0.95
+            ],
+            "name": "D0",
+            "parents": [
+              "A3",
+              "B4",
+              "C3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.387,
+              0.05,
+              0.808,
+              0.259
+            ],
+            "name": "BR01",
+            "parents": [
+              "A2",
+              "B3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.582,
+              0.925,
+              0.175,
+              0.652
+            ],
+            "name": "BR12",
+            "parents": [
+              "B4",
+              "C2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.359,
+              0.071,
+              0.721,
+              0.261,
+              0.878,
+              0.496,
+              0.95,
+              0.82
+            ],
+            "name": "A4",
+            "parents": [
+              "A2",
+              "A3",
+              "D0"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.544,
+              0.107,
+              0.931,
+              0.576
+            ],
+            "name": "A5",
+            "parents": [
+              "A3",
+              "A4"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.556,
+              0.167,
+              0.815,
+              0.413
+            ],
+            "name": "A6",
+            "parents": [
+              "A4",
+              "A5"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.79,
+              0.44,
+              0.95,
+              0.91,
+              0.207,
+              0.052,
+              0.772,
+              0.414
+            ],
+            "name": "A7",
+            "parents": [
+              "A5",
+              "A6",
+              "D0"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.245,
+              0.05,
+              0.792,
+              0.379,
+              0.697,
+              0.269,
+              0.95,
+              0.812
+            ],
+            "name": "B5",
+            "parents": [
+              "B4",
+              "BR01",
+              "A2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.05,
+              0.281,
+              0.249,
+              0.826,
+              0.205,
+              0.787,
+              0.758,
+              0.95
+            ],
+            "name": "B6",
+            "parents": [
+              "B5",
+              "D0",
+              "A3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.205,
+              0.057,
+              0.602,
+              0.263,
+              0.778,
+              0.452,
+              0.95,
+              0.828
+            ],
+            "name": "B7",
+            "parents": [
+              "B5",
+              "B6",
+              "A4"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.409,
+              0.883,
+              0.067,
+              0.437,
+              0.849,
+              0.95,
+              0.367,
+              0.863
+            ],
+            "name": "B8",
+            "parents": [
+              "B6",
+              "B7",
+              "A5"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.156,
+              0.51,
+              0.05,
+              0.101,
+              0.65,
+              0.913,
+              0.167,
+              0.531
+            ],
+            "name": "B9",
+            "parents": [
+              "D0",
+              "BR12",
+              "A6"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.737,
+              0.47,
+              0.95,
+              0.868,
+              0.125,
+              0.05,
+              0.514,
+              0.25
+            ],
+            "name": "C4",
+            "parents": [
+              "BR12",
+              "D0",
+              "B2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.95,
+              0.629,
+              0.837,
+              0.277,
+              0.841,
+              0.283,
+              0.546,
+              0.082
+            ],
+            "name": "C5",
+            "parents": [
+              "C3",
+              "C4",
+              "B3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.584,
+              0.818,
+              0.853,
+              0.949,
+              0.173,
+              0.402,
+              0.464,
+              0.735
+            ],
+            "name": "C6",
+            "parents": [
+              "C4",
+              "C5",
+              "B4"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.334,
+              0.071,
+              0.736,
+              0.297,
+              0.707,
+              0.268,
+              0.93,
+              0.669
+            ],
+            "name": "C7",
+            "parents": [
+              "C6",
+              "D0",
+              "B5"
+            ]
+          }
+        ]
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "tsp",
+      "problem_id": "tsp_hard_seed24",
+      "sub_instance": {
+        "baseline_length": 553.6062519746832,
+        "baseline_tour": [
+          0,
+          3,
+          2,
+          9,
+          1,
+          19,
+          8,
+          18,
+          6,
+          10,
+          11,
+          15,
+          14,
+          4,
+          7,
+          12,
+          13,
+          17,
+          16,
+          5
+        ],
+        "coords": [
+          [
+            32,
+            42
+          ],
+          [
+            55,
+            6
+          ],
+          [
+            34,
+            20
+          ],
+          [
+            29,
+            34
+          ],
+          [
+            82,
+            27
+          ],
+          [
+            99,
+            97
+          ],
+          [
+            44,
+            42
+          ],
+          [
+            87,
+            9
+          ],
+          [
+            67,
+            26
+          ],
+          [
+            44,
+            3
+          ],
+          [
+            47,
+            56
+          ],
+          [
+            71,
+            65
+          ],
+          [
+            48,
+            87
+          ],
+          [
+            41,
+            88
+          ],
+          [
+            96,
+            34
+          ],
+          [
+            96,
+            47
+          ],
+          [
+            0,
+            75
+          ],
+          [
+            1,
+            79
+          ],
+          [
+            59,
+            33
+          ],
+          [
+            57,
+            19
+          ]
+        ],
+        "difficulty": "hard",
+        "optimal_length": 419.3909613685864,
+        "problem_statement": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (32, 42)\n- 1: (55, 6)\n- 2: (34, 20)\n- 3: (29, 34)\n- 4: (82, 27)\n- 5: (99, 97)\n- 6: (44, 42)\n- 7: (87, 9)\n- 8: (67, 26)\n- 9: (44, 3)\n- 10: (47, 56)\n- 11: (71, 65)\n- 12: (48, 87)\n- 13: (41, 88)\n- 14: (96, 34)\n- 15: (96, 47)\n- 16: (0, 75)\n- 17: (1, 79)\n- 18: (59, 33)\n- 19: (57, 19)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 553.606\nBaseline tour: [0, 3, 2, 9, 1, 19, 8, 18, 6, 10, 11, 15, 14, 4, 7, 12, 13, 17, 16, 5]\n",
+        "seed": 24
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "steiner",
+      "problem_id": "steiner_hard_seed24",
+      "sub_instance": {
+        "answer_contract": "Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.",
+        "baseline_cost": 76,
+        "baseline_gap_pct": 40.74074074074074,
+        "baseline_submission": {
+          "edges": [
+            [
+              "Bay",
+              "Harbor"
+            ],
+            [
+              "Bay",
+              "Ridge"
+            ],
+            [
+              "Grove",
+              "Rock"
+            ],
+            [
+              "Grove",
+              "Harbor"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Grove": 1,
+            "Harbor": 1,
+            "Ridge": 2,
+            "Rock": 1
+          }
+        },
+        "cable_only_cost": 68,
+        "cable_only_submission": {
+          "edges": [
+            [
+              "Bay",
+              "Ridge"
+            ],
+            [
+              "Harbor",
+              "Ridge"
+            ],
+            [
+              "Grove",
+              "Rock"
+            ],
+            [
+              "Grove",
+              "Harbor"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Grove": 1,
+            "Harbor": 1,
+            "Ridge": 2,
+            "Rock": 1
+          }
+        },
+        "class": "steiner",
+        "difficulty": "hard",
+        "edges": [
+          {
+            "cost": 6,
+            "u": "Port",
+            "v": "Ridge"
+          },
+          {
+            "cost": 14,
+            "u": "Bay",
+            "v": "Port"
+          },
+          {
+            "cost": 12,
+            "u": "Bay",
+            "v": "Pine"
+          },
+          {
+            "cost": 14,
+            "u": "Bay",
+            "v": "Harbor"
+          },
+          {
+            "cost": 9,
+            "u": "Bay",
+            "v": "Ridge"
+          },
+          {
+            "cost": 4,
+            "u": "Cliff",
+            "v": "Port"
+          },
+          {
+            "cost": 9,
+            "u": "Cliff",
+            "v": "Pine"
+          },
+          {
+            "cost": 22,
+            "u": "Cliff",
+            "v": "Mill"
+          },
+          {
+            "cost": 3,
+            "u": "Cliff",
+            "v": "Harbor"
+          },
+          {
+            "cost": 10,
+            "u": "Cliff",
+            "v": "Grove"
+          },
+          {
+            "cost": 9,
+            "u": "Cliff",
+            "v": "Ridge"
+          },
+          {
+            "cost": 5,
+            "u": "Cliff",
+            "v": "Cove"
+          },
+          {
+            "cost": 6,
+            "u": "Pine",
+            "v": "Port"
+          },
+          {
+            "cost": 14,
+            "u": "Dune",
+            "v": "Rock"
+          },
+          {
+            "cost": 22,
+            "u": "Dune",
+            "v": "Grove"
+          },
+          {
+            "cost": 21,
+            "u": "Dune",
+            "v": "Ridge"
+          },
+          {
+            "cost": 10,
+            "u": "Mill",
+            "v": "Rock"
+          },
+          {
+            "cost": 12,
+            "u": "Cape",
+            "v": "Rock"
+          },
+          {
+            "cost": 3,
+            "u": "Cape",
+            "v": "Dune"
+          },
+          {
+            "cost": 22,
+            "u": "Cape",
+            "v": "Mill"
+          },
+          {
+            "cost": 19,
+            "u": "Cape",
+            "v": "Grove"
+          },
+          {
+            "cost": 19,
+            "u": "Cape",
+            "v": "Ridge"
+          },
+          {
+            "cost": 2,
+            "u": "Harbor",
+            "v": "Port"
+          },
+          {
+            "cost": 8,
+            "u": "Harbor",
+            "v": "Pine"
+          },
+          {
+            "cost": 6,
+            "u": "Harbor",
+            "v": "Ridge"
+          },
+          {
+            "cost": 11,
+            "u": "Grove",
+            "v": "Rock"
+          },
+          {
+            "cost": 13,
+            "u": "Grove",
+            "v": "Mill"
+          },
+          {
+            "cost": 12,
+            "u": "Grove",
+            "v": "Harbor"
+          },
+          {
+            "cost": 6,
+            "u": "Cove",
+            "v": "Port"
+          },
+          {
+            "cost": 7,
+            "u": "Cove",
+            "v": "Pine"
+          },
+          {
+            "cost": 7,
+            "u": "Cove",
+            "v": "Harbor"
+          }
+        ],
+        "freq_penalty": 15,
+        "gold_cost": 54,
+        "gold_submission": {
+          "edges": [
+            [
+              "Bay",
+              "Ridge"
+            ],
+            [
+              "Cliff",
+              "Grove"
+            ],
+            [
+              "Cliff",
+              "Ridge"
+            ],
+            [
+              "Grove",
+              "Rock"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Cliff": 1,
+            "Grove": 1,
+            "Ridge": 1,
+            "Rock": 1
+          }
+        },
+        "interference_pairs": [
+          [
+            "Port",
+            "Ridge"
+          ],
+          [
+            "Bay",
+            "Pine"
+          ],
+          [
+            "Cliff",
+            "Port"
+          ],
+          [
+            "Cliff",
+            "Harbor"
+          ],
+          [
+            "Dune",
+            "Pine"
+          ],
+          [
+            "Harbor",
+            "Port"
+          ],
+          [
+            "Harbor",
+            "Ridge"
+          ],
+          [
+            "Cove",
+            "Mill"
+          ]
+        ],
+        "k": 4,
+        "n": 12,
+        "n_terminals": 3,
+        "problem_statement": "Coastal Emergency scenario:\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\n\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\nIf an interference pair is active on both ends, those two villages must use different frequencies.\n\nObjective:\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\n\nVillages:\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape, Harbor, Grove, Ridge, Cove\n\nRequired terminals:\n- Bay, Rock, Ridge\n\nAvailable cable links:\n- Port-Ridge: cost 6\n- Bay-Port: cost 14\n- Bay-Pine: cost 12\n- Bay-Harbor: cost 14\n- Bay-Ridge: cost 9\n- Cliff-Port: cost 4\n- Cliff-Pine: cost 9\n- Cliff-Mill: cost 22\n- Cliff-Harbor: cost 3\n- Cliff-Grove: cost 10\n- Cliff-Ridge: cost 9\n- Cliff-Cove: cost 5\n- Pine-Port: cost 6\n- Dune-Rock: cost 14\n- Dune-Grove: cost 22\n- Dune-Ridge: cost 21\n- Mill-Rock: cost 10\n- Cape-Rock: cost 12\n- Cape-Dune: cost 3\n- Cape-Mill: cost 22\n- Cape-Grove: cost 19\n- Cape-Ridge: cost 19\n- Harbor-Port: cost 2\n- Harbor-Pine: cost 8\n- Harbor-Ridge: cost 6\n- Grove-Rock: cost 11\n- Grove-Mill: cost 13\n- Grove-Harbor: cost 12\n- Cove-Port: cost 6\n- Cove-Pine: cost 7\n- Cove-Harbor: cost 7\n\nInterference pairs:\n- Port / Ridge\n- Bay / Pine\n- Cliff / Port\n- Cliff / Harbor\n- Dune / Pine\n- Harbor / Port\n- Harbor / Ridge\n- Cove / Mill\n\nRules:\n- Your cable choice must be a tree, not a cyclic network.\n- All required terminals must lie in one connected component.\n- Frequencies matter only for active villages in the chosen network.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline total cost: 76\nBaseline answer summary:\nEdges: Bay-Harbor(14), Bay-Ridge(9), Grove-Rock(11), Grove-Harbor(12)\nActive villages: Bay, Rock, Harbor, Grove, Ridge\nFrequencies: Bay=1, Rock=1, Harbor=1, Grove=1, Ridge=2\nEdge cost: 46\nFrequencies used: 2\nTotal cost: 76\n\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\n",
+        "seed": 24,
+        "terminals": [
+          "Bay",
+          "Rock",
+          "Ridge"
+        ],
+        "villages": [
+          "Port",
+          "Bay",
+          "Cliff",
+          "Pine",
+          "Rock",
+          "Dune",
+          "Mill",
+          "Cape",
+          "Harbor",
+          "Grove",
+          "Ridge",
+          "Cove"
+        ]
+      },
+      "value_cap": 34.0
+    }
+  ],
+  "difficulty": "hard",
+  "gold_objective": 100.0,
+  "id": "portfolio_hard_seed24",
+  "instance": {
+    "class": "portfolio",
+    "difficulty": "hard",
+    "n_components": 3,
+    "problem_statement": "You are allocating effort across a three-problem optimization portfolio.\nObjective: maximize total captured headroom across the listed components.\nEach component contributes at most its value_cap when solved to its gold level.\nIf you fail to improve a component, it stays at its baseline contribution.\n\nPortfolio components:\n- ve_hard_seed24 | class=ve | value_cap=33.0\n- tsp_hard_seed24 | class=tsp | value_cap=33.0\n- steiner_hard_seed24 | class=steiner | value_cap=34.0\n\nReturn answers for the listed sub-problems using the component-specific answer contracts.",
+    "seed": 24
+  },
+  "seed": 24,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}

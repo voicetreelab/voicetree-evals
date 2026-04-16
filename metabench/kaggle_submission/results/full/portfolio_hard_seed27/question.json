@@ -1,0 +1,1428 @@
+{
+  "baseline_objective": 0.0,
+  "class": "portfolio",
+  "components": [
+    {
+      "class": "ve",
+      "problem_id": "ve_hard_seed27",
+      "sub_instance": {
+        "attempt_index": 11,
+        "baseline_ordering": [
+          "A1",
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "B2",
+          "B3",
+          "B4",
+          "B6",
+          "B7",
+          "B8",
+          "BR01",
+          "BR12",
+          "C1",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "D0"
+        ],
+        "baseline_peak_factor_size": 13,
+        "bridge_variables": [
+          "BR01",
+          "BR12"
+        ],
+        "decoy_variable": "D0",
+        "difficulty": "hard",
+        "eliminable_variables": [
+          "A1",
+          "A2",
+          "A3",
+          "B2",
+          "B3",
+          "B4",
+          "C1",
+          "C3",
+          "D0",
+          "BR01",
+          "BR12",
+          "A4",
+          "A5",
+          "A6",
+          "B6",
+          "B7",
+          "B8",
+          "C4",
+          "C5",
+          "C6"
+        ],
+        "evidence": {
+          "A7": 1,
+          "B1": 1,
+          "B5": 0,
+          "C2": 1,
+          "C7": 0
+        },
+        "exact_posterior": 0.5006318892930985,
+        "gold_ordering": [
+          "A1",
+          "B8",
+          "B7",
+          "BR01",
+          "B6",
+          "C1",
+          "C6",
+          "A5",
+          "A4",
+          "C5",
+          "B2",
+          "C4",
+          "B3",
+          "C3",
+          "B4",
+          "A3",
+          "A2",
+          "A6",
+          "BR12",
+          "D0"
+        ],
+        "gold_peak_factor_size": 7,
+        "gold_source": "min_fill",
+        "heuristic_results": [
+          {
+            "name": "min_neighbors",
+            "ordering": [
+              "C1",
+              "A1",
+              "B8",
+              "B7",
+              "BR01",
+              "B6",
+              "C6",
+              "A5",
+              "A4",
+              "A2",
+              "C5",
+              "A3",
+              "B2",
+              "C4",
+              "B3",
+              "C3",
+              "B4",
+              "A6",
+              "BR12",
+              "D0"
+            ],
+            "peak_factor_size": 7
+          },
+          {
+            "name": "min_weight",
+            "ordering": [
+              "C1",
+              "A1",
+              "B8",
+              "B7",
+              "BR01",
+              "B6",
+              "C6",
+              "A2",
+              "A6",
+              "C5",
+              "B2",
+              "A5",
+              "A4",
+              "A3",
+              "C4",
+              "B3",
+              "C3",
+              "D0",
+              "B4",
+              "BR12"
+            ],
+            "peak_factor_size": 7
+          },
+          {
+            "name": "min_fill",
+            "ordering": [
+              "A1",
+              "B8",
+              "B7",
+              "BR01",
+              "B6",
+              "C1",
+              "C6",
+              "A5",
+              "A4",
+              "C5",
+              "B2",
+              "C4",
+              "B3",
+              "C3",
+              "B4",
+              "A3",
+              "A2",
+              "A6",
+              "BR12",
+              "D0"
+            ],
+            "peak_factor_size": 7
+          }
+        ],
+        "hidden_clusters": {
+          "A": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ],
+          "B": [
+            "B1",
+            "B2",
+            "B3",
+            "B4",
+            "B5",
+            "B6",
+            "B7",
+            "B8",
+            "B9"
+          ],
+          "C": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5",
+            "C6",
+            "C7"
+          ]
+        },
+        "min_fill_peak_factor_size": 7,
+        "problem_statement": "You are doing exact inference in a Bayesian network with binary variables in {0, 1}.\nTask: report P(B9=1 | A7=1, B1=1, B5=0, C7=0, C2=1).\nAll CPT rows below give P(variable=1 | parents); P(variable=0 | parents) = 1 minus that value.\nWhen you report ordering_used, list every eliminable variable exactly once and do not include the query variable or any evidence variable.\nInterpret peak_factor_size as the largest intermediate factor scope size, counted as the number of variables in that factor before summing out the eliminated variable.\n\nVariables: A1, A2, A3, B1, B2, B3, B4, C1, C2, C3, D0, BR01, BR12, A4, A5, A6, A7, B5, B6, B7, B8, B9, C4, C5, C6, C7\nQuery variable: B9\nEvidence: A7=1, B1=1, B5=0, C7=0, C2=1\nEliminable variables (20): A1, A2, A3, B2, B3, B4, C1, C3, D0, BR01, BR12, A4, A5, A6, B6, B7, B8, C4, C5, C6\n\nBayesian network (topological order):\n- A1: parents = [none]\n  P(A1=1) = 0.478\n- A2: parents = [A1]\n  if A1=0 -> P(A2=1) = 0.230\n  if A1=1 -> P(A2=1) = 0.606\n- A3: parents = [A2, A1]\n  if A2=0, A1=0 -> P(A3=1) = 0.905\n  if A2=0, A1=1 -> P(A3=1) = 0.687\n  if A2=1, A1=0 -> P(A3=1) = 0.653\n  if A2=1, A1=1 -> P(A3=1) = 0.302\n- B1: parents = [A2]\n  if A2=0 -> P(B1=1) = 0.298\n  if A2=1 -> P(B1=1) = 0.833\n- B2: parents = [B1]\n  if B1=0 -> P(B2=1) = 0.520\n  if B1=1 -> P(B2=1) = 0.226\n- B3: parents = [B2, B1]\n  if B2=0, B1=0 -> P(B3=1) = 0.688\n  if B2=0, B1=1 -> P(B3=1) = 0.933\n  if B2=1, B1=0 -> P(B3=1) = 0.289\n  if B2=1, B1=1 -> P(B3=1) = 0.718\n- B4: parents = [B3, B2]\n  if B3=0, B2=0 -> P(B4=1) = 0.632\n  if B3=0, B2=1 -> P(B4=1) = 0.115\n  if B3=1, B2=0 -> P(B4=1) = 0.932\n  if B3=1, B2=1 -> P(B4=1) = 0.509\n- C1: parents = [B2]\n  if B2=0 -> P(C1=1) = 0.564\n  if B2=1 -> P(C1=1) = 0.208\n- C2: parents = [C1]\n  if C1=0 -> P(C2=1) = 0.438\n  if C1=1 -> P(C2=1) = 0.884\n- C3: parents = [C2, C1]\n  if C2=0, C1=0 -> P(C3=1) = 0.924\n  if C2=0, C1=1 -> P(C3=1) = 0.526\n  if C2=1, C1=0 -> P(C3=1) = 0.674\n  if C2=1, C1=1 -> P(C3=1) = 0.159\n- D0: parents = [A3, B4, C3]\n  if A3=0, B4=0, C3=0 -> P(D0=1) = 0.299\n  if A3=0, B4=0, C3=1 -> P(D0=1) = 0.747\n  if A3=0, B4=1, C3=0 -> P(D0=1) = 0.819\n  if A3=0, B4=1, C3=1 -> P(D0=1) = 0.950\n  if A3=1, B4=0, C3=0 -> P(D0=1) = 0.050\n  if A3=1, B4=0, C3=1 -> P(D0=1) = 0.199\n  if A3=1, B4=1, C3=0 -> P(D0=1) = 0.275\n  if A3=1, B4=1, C3=1 -> P(D0=1) = 0.724\n- BR01: parents = [A2, B3]\n  if A2=0, B3=0 -> P(BR01=1) = 0.759\n  if A2=0, B3=1 -> P(BR01=1) = 0.219\n  if A2=1, B3=0 -> P(BR01=1) = 0.413\n  if A2=1, B3=1 -> P(BR01=1) = 0.059\n- BR12: parents = [B4, C2]\n  if B4=0, C2=0 -> P(BR12=1) = 0.690\n  if B4=0, C2=1 -> P(BR12=1) = 0.907\n  if B4=1, C2=0 -> P(BR12=1) = 0.106\n  if B4=1, C2=1 -> P(BR12=1) = 0.344\n- A4: parents = [A2, A3, D0]\n  if A2=0, A3=0, D0=0 -> P(A4=1) = 0.050\n  if A2=0, A3=0, D0=1 -> P(A4=1) = 0.216\n  if A2=0, A3=1, D0=0 -> P(A4=1) = 0.212\n  if A2=0, A3=1, D0=1 -> P(A4=1) = 0.609\n  if A2=1, A3=0, D0=0 -> P(A4=1) = 0.284\n  if A2=1, A3=0, D0=1 -> P(A4=1) = 0.697\n  if A2=1, A3=1, D0=0 -> P(A4=1) = 0.691\n  if A2=1, A3=1, D0=1 -> P(A4=1) = 0.928\n- A5: parents = [A3, A4]\n  if A3=0, A4=0 -> P(A5=1) = 0.561\n  if A3=0, A4=1 -> P(A5=1) = 0.272\n  if A3=1, A4=0 -> P(A5=1) = 0.938\n  if A3=1, A4=1 -> P(A5=1) = 0.817\n- A6: parents = [A4, A5]\n  if A4=0, A5=0 -> P(A6=1) = 0.645\n  if A4=0, A5=1 -> P(A6=1) = 0.261\n  if A4=1, A5=0 -> P(A6=1) = 0.368\n  if A4=1, A5=1 -> P(A6=1) = 0.102\n- A7: parents = [A5, A6, D0]\n  if A5=0, A6=0, D0=0 -> P(A7=1) = 0.345\n  if A5=0, A6=0, D0=1 -> P(A7=1) = 0.791\n  if A5=0, A6=1, D0=0 -> P(A7=1) = 0.085\n  if A5=0, A6=1, D0=1 -> P(A7=1) = 0.399\n  if A5=1, A6=0, D0=0 -> P(A7=1) = 0.885\n  if A5=1, A6=0, D0=1 -> P(A7=1) = 0.950\n  if A5=1, A6=1, D0=0 -> P(A7=1) = 0.574\n  if A5=1, A6=1, D0=1 -> P(A7=1) = 0.906\n- B5: parents = [B4, BR01, A2]\n  if B4=0, BR01=0, A2=0 -> P(B5=1) = 0.927\n  if B4=0, BR01=0, A2=1 -> P(B5=1) = 0.612\n  if B4=0, BR01=1, A2=0 -> P(B5=1) = 0.754\n  if B4=0, BR01=1, A2=1 -> P(B5=1) = 0.276\n  if B4=1, BR01=0, A2=0 -> P(B5=1) = 0.515\n  if B4=1, BR01=0, A2=1 -> P(B5=1) = 0.117\n  if B4=1, BR01=1, A2=0 -> P(B5=1) = 0.204\n  if B4=1, BR01=1, A2=1 -> P(B5=1) = 0.050\n- B6: parents = [B5, D0, A3]\n  if B5=0, D0=0, A3=0 -> P(B6=1) = 0.812\n  if B5=0, D0=0, A3=1 -> P(B6=1) = 0.948\n  if B5=0, D0=1, A3=0 -> P(B6=1) = 0.285\n  if B5=0, D0=1, A3=1 -> P(B6=1) = 0.626\n  if B5=1, D0=0, A3=0 -> P(B6=1) = 0.248\n  if B5=1, D0=0, A3=1 -> P(B6=1) = 0.580\n  if B5=1, D0=1, A3=0 -> P(B6=1) = 0.050\n  if B5=1, D0=1, A3=1 -> P(B6=1) = 0.113\n- B7: parents = [B5, B6, A4]\n  if B5=0, B6=0, A4=0 -> P(B7=1) = 0.491\n  if B5=0, B6=0, A4=1 -> P(B7=1) = 0.135\n  if B5=0, B6=1, A4=0 -> P(B7=1) = 0.116\n  if B5=0, B6=1, A4=1 -> P(B7=1) = 0.050\n  if B5=1, B6=0, A4=0 -> P(B7=1) = 0.930\n  if B5=1, B6=0, A4=1 -> P(B7=1) = 0.683\n  if B5=1, B6=1, A4=0 -> P(B7=1) = 0.645\n  if B5=1, B6=1, A4=1 -> P(B7=1) = 0.227\n- B8: parents = [B6, B7, A5]\n  if B6=0, B7=0, A5=0 -> P(B8=1) = 0.868\n  if B6=0, B7=0, A5=1 -> P(B8=1) = 0.397\n  if B6=0, B7=1, A5=0 -> P(B8=1) = 0.950\n  if B6=0, B7=1, A5=1 -> P(B8=1) = 0.824\n  if B6=1, B7=0, A5=0 -> P(B8=1) = 0.382\n  if B6=1, B7=0, A5=1 -> P(B8=1) = 0.058\n  if B6=1, B7=1, A5=0 -> P(B8=1) = 0.815\n  if B6=1, B7=1, A5=1 -> P(B8=1) = 0.307\n- B9: parents = [D0, BR12, A6]\n  if D0=0, BR12=0, A6=0 -> P(B9=1) = 0.792\n  if D0=0, BR12=0, A6=1 -> P(B9=1) = 0.950\n  if D0=0, BR12=1, A6=0 -> P(B9=1) = 0.194\n  if D0=0, BR12=1, A6=1 -> P(B9=1) = 0.676\n  if D0=1, BR12=0, A6=0 -> P(B9=1) = 0.470\n  if D0=1, BR12=0, A6=1 -> P(B9=1) = 0.885\n  if D0=1, BR12=1, A6=0 -> P(B9=1) = 0.053\n  if D0=1, BR12=1, A6=1 -> P(B9=1) = 0.327\n- C4: parents = [BR12, D0, B2]\n  if BR12=0, D0=0, B2=0 -> P(C4=1) = 0.897\n  if BR12=0, D0=0, B2=1 -> P(C4=1) = 0.613\n  if BR12=0, D0=1, B2=0 -> P(C4=1) = 0.446\n  if BR12=0, D0=1, B2=1 -> P(C4=1) = 0.127\n  if BR12=1, D0=0, B2=0 -> P(C4=1) = 0.564\n  if BR12=1, D0=0, B2=1 -> P(C4=1) = 0.190\n  if BR12=1, D0=1, B2=0 -> P(C4=1) = 0.106\n  if BR12=1, D0=1, B2=1 -> P(C4=1) = 0.050\n- C5: parents = [C3, C4, B3]\n  if C3=0, C4=0, B3=0 -> P(C5=1) = 0.340\n  if C3=0, C4=0, B3=1 -> P(C5=1) = 0.838\n  if C3=0, C4=1, B3=0 -> P(C5=1) = 0.050\n  if C3=0, C4=1, B3=1 -> P(C5=1) = 0.308\n  if C3=1, C4=0, B3=0 -> P(C5=1) = 0.758\n  if C3=1, C4=0, B3=1 -> P(C5=1) = 0.950\n  if C3=1, C4=1, B3=0 -> P(C5=1) = 0.212\n  if C3=1, C4=1, B3=1 -> P(C5=1) = 0.730\n- C6: parents = [C4, C5, B4]\n  if C4=0, C5=0, B4=0 -> P(C6=1) = 0.363\n  if C4=0, C5=0, B4=1 -> P(C6=1) = 0.816\n  if C4=0, C5=1, B4=0 -> P(C6=1) = 0.148\n  if C4=0, C5=1, B4=1 -> P(C6=1) = 0.574\n  if C4=1, C5=0, B4=0 -> P(C6=1) = 0.645\n  if C4=1, C5=0, B4=1 -> P(C6=1) = 0.934\n  if C4=1, C5=1, B4=0 -> P(C6=1) = 0.355\n  if C4=1, C5=1, B4=1 -> P(C6=1) = 0.811\n- C7: parents = [C6, D0, B5]\n  if C6=0, D0=0, B5=0 -> P(C7=1) = 0.146\n  if C6=0, D0=0, B5=1 -> P(C7=1) = 0.050\n  if C6=0, D0=1, B5=0 -> P(C7=1) = 0.693\n  if C6=0, D0=1, B5=1 -> P(C7=1) = 0.266\n  if C6=1, D0=0, B5=0 -> P(C7=1) = 0.500\n  if C6=1, D0=0, B5=1 -> P(C7=1) = 0.139\n  if C6=1, D0=1, B5=0 -> P(C7=1) = 0.929\n  if C6=1, D0=1, B5=1 -> P(C7=1) = 0.680",
+        "query_variable": "B9",
+        "random_search_best": {
+          "name": "random_best_of_1000",
+          "ordering": [
+            "B8",
+            "A4",
+            "B2",
+            "C5",
+            "C1",
+            "C6",
+            "A5",
+            "BR01",
+            "B6",
+            "B4",
+            "A1",
+            "B7",
+            "C3",
+            "A6",
+            "D0",
+            "BR12",
+            "C4",
+            "B3",
+            "A2",
+            "A3"
+          ],
+          "peak_factor_size": 8
+        },
+        "requested_total_variables": 26,
+        "scale_note": null,
+        "seed": 27,
+        "size_escalated": false,
+        "total_variables": 26,
+        "variables": [
+          {
+            "cpt_true_probs": [
+              0.478
+            ],
+            "name": "A1",
+            "parents": []
+          },
+          {
+            "cpt_true_probs": [
+              0.23,
+              0.606
+            ],
+            "name": "A2",
+            "parents": [
+              "A1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.905,
+              0.687,
+              0.653,
+              0.302
+            ],
+            "name": "A3",
+            "parents": [
+              "A2",
+              "A1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.298,
+              0.833
+            ],
+            "name": "B1",
+            "parents": [
+              "A2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.52,
+              0.226
+            ],
+            "name": "B2",
+            "parents": [
+              "B1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.688,
+              0.933,
+              0.289,
+              0.718
+            ],
+            "name": "B3",
+            "parents": [
+              "B2",
+              "B1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.632,
+              0.115,
+              0.932,
+              0.509
+            ],
+            "name": "B4",
+            "parents": [
+              "B3",
+              "B2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.564,
+              0.208
+            ],
+            "name": "C1",
+            "parents": [
+              "B2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.438,
+              0.884
+            ],
+            "name": "C2",
+            "parents": [
+              "C1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.924,
+              0.526,
+              0.674,
+              0.159
+            ],
+            "name": "C3",
+            "parents": [
+              "C2",
+              "C1"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.299,
+              0.747,
+              0.819,
+              0.95,
+              0.05,
+              0.199,
+              0.275,
+              0.724
+            ],
+            "name": "D0",
+            "parents": [
+              "A3",
+              "B4",
+              "C3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.759,
+              0.219,
+              0.413,
+              0.059
+            ],
+            "name": "BR01",
+            "parents": [
+              "A2",
+              "B3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.69,
+              0.907,
+              0.106,
+              0.344
+            ],
+            "name": "BR12",
+            "parents": [
+              "B4",
+              "C2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.05,
+              0.216,
+              0.212,
+              0.609,
+              0.284,
+              0.697,
+              0.691,
+              0.928
+            ],
+            "name": "A4",
+            "parents": [
+              "A2",
+              "A3",
+              "D0"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.561,
+              0.272,
+              0.938,
+              0.817
+            ],
+            "name": "A5",
+            "parents": [
+              "A3",
+              "A4"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.645,
+              0.261,
+              0.368,
+              0.102
+            ],
+            "name": "A6",
+            "parents": [
+              "A4",
+              "A5"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.345,
+              0.791,
+              0.085,
+              0.399,
+              0.885,
+              0.95,
+              0.574,
+              0.906
+            ],
+            "name": "A7",
+            "parents": [
+              "A5",
+              "A6",
+              "D0"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.927,
+              0.612,
+              0.754,
+              0.276,
+              0.515,
+              0.117,
+              0.204,
+              0.05
+            ],
+            "name": "B5",
+            "parents": [
+              "B4",
+              "BR01",
+              "A2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.812,
+              0.948,
+              0.285,
+              0.626,
+              0.248,
+              0.58,
+              0.05,
+              0.113
+            ],
+            "name": "B6",
+            "parents": [
+              "B5",
+              "D0",
+              "A3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.491,
+              0.135,
+              0.116,
+              0.05,
+              0.93,
+              0.683,
+              0.645,
+              0.227
+            ],
+            "name": "B7",
+            "parents": [
+              "B5",
+              "B6",
+              "A4"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.868,
+              0.397,
+              0.95,
+              0.824,
+              0.382,
+              0.058,
+              0.815,
+              0.307
+            ],
+            "name": "B8",
+            "parents": [
+              "B6",
+              "B7",
+              "A5"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.792,
+              0.95,
+              0.194,
+              0.676,
+              0.47,
+              0.885,
+              0.053,
+              0.327
+            ],
+            "name": "B9",
+            "parents": [
+              "D0",
+              "BR12",
+              "A6"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.897,
+              0.613,
+              0.446,
+              0.127,
+              0.564,
+              0.19,
+              0.106,
+              0.05
+            ],
+            "name": "C4",
+            "parents": [
+              "BR12",
+              "D0",
+              "B2"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.34,
+              0.838,
+              0.05,
+              0.308,
+              0.758,
+              0.95,
+              0.212,
+              0.73
+            ],
+            "name": "C5",
+            "parents": [
+              "C3",
+              "C4",
+              "B3"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.363,
+              0.816,
+              0.148,
+              0.574,
+              0.645,
+              0.934,
+              0.355,
+              0.811
+            ],
+            "name": "C6",
+            "parents": [
+              "C4",
+              "C5",
+              "B4"
+            ]
+          },
+          {
+            "cpt_true_probs": [
+              0.146,
+              0.05,
+              0.693,
+              0.266,
+              0.5,
+              0.139,
+              0.929,
+              0.68
+            ],
+            "name": "C7",
+            "parents": [
+              "C6",
+              "D0",
+              "B5"
+            ]
+          }
+        ]
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "tsp",
+      "problem_id": "tsp_hard_seed27",
+      "sub_instance": {
+        "baseline_length": 492.5303373355927,
+        "baseline_tour": [
+          0,
+          14,
+          8,
+          1,
+          2,
+          6,
+          9,
+          16,
+          4,
+          5,
+          7,
+          19,
+          3,
+          17,
+          12,
+          11,
+          10,
+          18,
+          13,
+          15
+        ],
+        "coords": [
+          [
+            28,
+            90
+          ],
+          [
+            18,
+            73
+          ],
+          [
+            16,
+            67
+          ],
+          [
+            44,
+            43
+          ],
+          [
+            22,
+            25
+          ],
+          [
+            15,
+            9
+          ],
+          [
+            12,
+            58
+          ],
+          [
+            23,
+            4
+          ],
+          [
+            26,
+            78
+          ],
+          [
+            12,
+            43
+          ],
+          [
+            89,
+            39
+          ],
+          [
+            60,
+            94
+          ],
+          [
+            16,
+            98
+          ],
+          [
+            86,
+            15
+          ],
+          [
+            39,
+            89
+          ],
+          [
+            81,
+            1
+          ],
+          [
+            2,
+            45
+          ],
+          [
+            32,
+            66
+          ],
+          [
+            85,
+            31
+          ],
+          [
+            41,
+            21
+          ]
+        ],
+        "difficulty": "hard",
+        "optimal_length": 389.1508302341726,
+        "problem_statement": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (28, 90)\n- 1: (18, 73)\n- 2: (16, 67)\n- 3: (44, 43)\n- 4: (22, 25)\n- 5: (15, 9)\n- 6: (12, 58)\n- 7: (23, 4)\n- 8: (26, 78)\n- 9: (12, 43)\n- 10: (89, 39)\n- 11: (60, 94)\n- 12: (16, 98)\n- 13: (86, 15)\n- 14: (39, 89)\n- 15: (81, 1)\n- 16: (2, 45)\n- 17: (32, 66)\n- 18: (85, 31)\n- 19: (41, 21)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 492.530\nBaseline tour: [0, 14, 8, 1, 2, 6, 9, 16, 4, 5, 7, 19, 3, 17, 12, 11, 10, 18, 13, 15]\n",
+        "seed": 27
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "graphcol",
+      "problem_id": "graphcol_hard_seed27",
+      "sub_instance": {
+        "answer_contract_hint": "Object with \"assignment\": {\"N01\": 1, ..., \"N30\": 4}.",
+        "baseline_answer": {
+          "assignment": {
+            "N01": 1,
+            "N02": 2,
+            "N03": 3,
+            "N04": 4,
+            "N05": 2,
+            "N06": 1,
+            "N07": 4,
+            "N08": 3,
+            "N09": 2,
+            "N10": 1,
+            "N11": 3,
+            "N12": 4,
+            "N13": 3,
+            "N14": 2,
+            "N15": 2,
+            "N16": 4,
+            "N17": 1,
+            "N18": 3,
+            "N19": 3,
+            "N20": 4,
+            "N21": 2,
+            "N22": 4,
+            "N23": 1,
+            "N24": 4,
+            "N25": 3,
+            "N26": 1,
+            "N27": 2,
+            "N28": 1,
+            "N29": 1,
+            "N30": 3
+          }
+        },
+        "baseline_conflicts": 14,
+        "baseline_scored_cost": 18,
+        "class": "graphcol",
+        "difficulty": "hard",
+        "edges": [
+          [
+            "N01",
+            "N03"
+          ],
+          [
+            "N01",
+            "N04"
+          ],
+          [
+            "N01",
+            "N05"
+          ],
+          [
+            "N01",
+            "N14"
+          ],
+          [
+            "N01",
+            "N19"
+          ],
+          [
+            "N01",
+            "N20"
+          ],
+          [
+            "N01",
+            "N21"
+          ],
+          [
+            "N01",
+            "N22"
+          ],
+          [
+            "N01",
+            "N24"
+          ],
+          [
+            "N01",
+            "N25"
+          ],
+          [
+            "N01",
+            "N27"
+          ],
+          [
+            "N02",
+            "N08"
+          ],
+          [
+            "N02",
+            "N10"
+          ],
+          [
+            "N02",
+            "N15"
+          ],
+          [
+            "N02",
+            "N16"
+          ],
+          [
+            "N02",
+            "N18"
+          ],
+          [
+            "N02",
+            "N19"
+          ],
+          [
+            "N02",
+            "N22"
+          ],
+          [
+            "N02",
+            "N24"
+          ],
+          [
+            "N02",
+            "N26"
+          ],
+          [
+            "N02",
+            "N28"
+          ],
+          [
+            "N03",
+            "N04"
+          ],
+          [
+            "N03",
+            "N05"
+          ],
+          [
+            "N03",
+            "N07"
+          ],
+          [
+            "N03",
+            "N14"
+          ],
+          [
+            "N03",
+            "N16"
+          ],
+          [
+            "N03",
+            "N22"
+          ],
+          [
+            "N03",
+            "N26"
+          ],
+          [
+            "N03",
+            "N28"
+          ],
+          [
+            "N03",
+            "N30"
+          ],
+          [
+            "N04",
+            "N05"
+          ],
+          [
+            "N04",
+            "N08"
+          ],
+          [
+            "N04",
+            "N13"
+          ],
+          [
+            "N04",
+            "N15"
+          ],
+          [
+            "N04",
+            "N18"
+          ],
+          [
+            "N04",
+            "N23"
+          ],
+          [
+            "N04",
+            "N26"
+          ],
+          [
+            "N04",
+            "N28"
+          ],
+          [
+            "N05",
+            "N06"
+          ],
+          [
+            "N05",
+            "N07"
+          ],
+          [
+            "N05",
+            "N08"
+          ],
+          [
+            "N05",
+            "N13"
+          ],
+          [
+            "N05",
+            "N17"
+          ],
+          [
+            "N05",
+            "N18"
+          ],
+          [
+            "N05",
+            "N19"
+          ],
+          [
+            "N05",
+            "N20"
+          ],
+          [
+            "N05",
+            "N22"
+          ],
+          [
+            "N05",
+            "N23"
+          ],
+          [
+            "N05",
+            "N24"
+          ],
+          [
+            "N05",
+            "N28"
+          ],
+          [
+            "N05",
+            "N29"
+          ],
+          [
+            "N06",
+            "N09"
+          ],
+          [
+            "N06",
+            "N12"
+          ],
+          [
+            "N06",
+            "N13"
+          ],
+          [
+            "N06",
+            "N15"
+          ],
+          [
+            "N06",
+            "N17"
+          ],
+          [
+            "N06",
+            "N18"
+          ],
+          [
+            "N06",
+            "N20"
+          ],
+          [
+            "N06",
+            "N22"
+          ],
+          [
+            "N06",
+            "N30"
+          ],
+          [
+            "N07",
+            "N10"
+          ],
+          [
+            "N07",
+            "N17"
+          ],
+          [
+            "N07",
+            "N19"
+          ],
+          [
+            "N07",
+            "N25"
+          ],
+          [
+            "N07",
+            "N29"
+          ],
+          [
+            "N08",
+            "N14"
+          ],
+          [
+            "N08",
+            "N15"
+          ],
+          [
+            "N08",
+            "N19"
+          ],
+          [
+            "N08",
+            "N20"
+          ],
+          [
+            "N08",
+            "N23"
+          ],
+          [
+            "N08",
+            "N26"
+          ],
+          [
+            "N09",
+            "N11"
+          ],
+          [
+            "N09",
+            "N12"
+          ],
+          [
+            "N09",
+            "N16"
+          ],
+          [
+            "N09",
+            "N21"
+          ],
+          [
+            "N09",
+            "N25"
+          ],
+          [
+            "N09",
+            "N26"
+          ],
+          [
+            "N09",
+            "N27"
+          ],
+          [
+            "N09",
+            "N30"
+          ],
+          [
+            "N10",
+            "N18"
+          ],
+          [
+            "N10",
+            "N19"
+          ],
+          [
+            "N10",
+            "N20"
+          ],
+          [
+            "N10",
+            "N25"
+          ],
+          [
+            "N10",
+            "N28"
+          ],
+          [
+            "N11",
+            "N15"
+          ],
+          [
+            "N11",
+            "N16"
+          ],
+          [
+            "N11",
+            "N20"
+          ],
+          [
+            "N11",
+            "N21"
+          ],
+          [
+            "N11",
+            "N24"
+          ],
+          [
+            "N11",
+            "N27"
+          ],
+          [
+            "N12",
+            "N13"
+          ],
+          [
+            "N12",
+            "N19"
+          ],
+          [
+            "N12",
+            "N20"
+          ],
+          [
+            "N12",
+            "N25"
+          ],
+          [
+            "N12",
+            "N28"
+          ],
+          [
+            "N13",
+            "N14"
+          ],
+          [
+            "N13",
+            "N17"
+          ],
+          [
+            "N13",
+            "N23"
+          ],
+          [
+            "N13",
+            "N29"
+          ],
+          [
+            "N14",
+            "N17"
+          ],
+          [
+            "N14",
+            "N18"
+          ],
+          [
+            "N14",
+            "N19"
+          ],
+          [
+            "N14",
+            "N22"
+          ],
+          [
+            "N14",
+            "N23"
+          ],
+          [
+            "N14",
+            "N29"
+          ],
+          [
+            "N14",
+            "N30"
+          ],
+          [
+            "N15",
+            "N17"
+          ],
+          [
+            "N15",
+            "N25"
+          ],
+          [
+            "N16",
+            "N19"
+          ],
+          [
+            "N16",
+            "N21"
+          ],
+          [
+            "N16",
+            "N22"
+          ],
+          [
+            "N16",
+            "N29"
+          ],
+          [
+            "N17",
+            "N18"
+          ],
+          [
+            "N17",
+            "N21"
+          ],
+          [
+            "N17",
+            "N23"
+          ],
+          [
+            "N17",
+            "N27"
+          ],
+          [
+            "N17",
+            "N29"
+          ],
+          [
+            "N18",
+            "N20"
+          ],
+          [
+            "N18",
+            "N22"
+          ],
+          [
+            "N19",
+            "N25"
+          ],
+          [
+            "N19",
+            "N27"
+          ],
+          [
+            "N19",
+            "N28"
+          ],
+          [
+            "N19",
+            "N29"
+          ],
+          [
+            "N20",
+            "N21"
+          ],
+          [
+            "N20",
+            "N26"
+          ],
+          [
+            "N21",
+            "N23"
+          ],
+          [
+            "N22",
+            "N23"
+          ],
+          [
+            "N24",
+            "N27"
+          ],
+          [
+            "N24",
+            "N28"
+          ],
+          [
+            "N24",
+            "N29"
+          ],
+          [
+            "N24",
+            "N30"
+          ],
+          [
+            "N25",
+            "N26"
+          ],
+          [
+            "N25",
+            "N27"
+          ],
+          [
+            "N25",
+            "N28"
+          ],
+          [
+            "N26",
+            "N28"
+          ],
+          [
+            "N27",
+            "N28"
+          ],
+          [
+            "N27",
+            "N30"
+          ],
+          [
+            "N28",
+            "N29"
+          ],
+          [
+            "N29",
+            "N30"
+          ]
+        ],
+        "gold_answer": {
+          "assignment": {
+            "N01": 2,
+            "N02": 1,
+            "N03": 1,
+            "N04": 3,
+            "N05": 4,
+            "N06": 1,
+            "N07": 2,
+            "N08": 2,
+            "N09": 3,
+            "N10": 4,
+            "N11": 1,
+            "N12": 4,
+            "N13": 2,
+            "N14": 4,
+            "N15": 4,
+            "N16": 2,
+            "N17": 3,
+            "N18": 2,
+            "N19": 3,
+            "N20": 3,
+            "N21": 4,
+            "N22": 3,
+            "N23": 1,
+            "N24": 3,
+            "N25": 1,
+            "N26": 4,
+            "N27": 4,
+            "N28": 2,
+            "N29": 1,
+            "N30": 2
+          }
+        },
+        "gold_conflicts": 0,
+        "gold_scored_cost": 4,
+        "label": "Slack graph coloring 30 nodes",
+        "metric_name": "scored_cost",
+        "n_nodes": 30,
+        "nodes": [
+          "N01",
+          "N02",
+          "N03",
+          "N04",
+          "N05",
+          "N06",
+          "N07",
+          "N08",
+          "N09",
+          "N10",
+          "N11",
+          "N12",
+          "N13",
+          "N14",
+          "N15",
+          "N16",
+          "N17",
+          "N18",
+          "N19",
+          "N20",
+          "N21",
+          "N22",
+          "N23",
+          "N24",
+          "N25",
+          "N26",
+          "N27",
+          "N28",
+          "N29",
+          "N30"
+        ],
+        "num_colors": 4,
+        "problem_statement": "Slack graph coloring:\nAssign each node a color in {1, 2, 3, 4}.\n\nObjective:\nscored_cost = 4 + number_of_conflicting_edges\nwhere a conflicting edge has the same color on both endpoints.\n\nNodes:\n- N01, N02, N03, N04, N05, N06, N07, N08, N09, N10, N11, N12, N13, N14, N15, N16, N17, N18, N19, N20, N21, N22, N23, N24, N25, N26, N27, N28, N29, N30\n\nEdges:\n- N01-N03\n- N01-N04\n- N01-N05\n- N01-N14\n- N01-N19\n- N01-N20\n- N01-N21\n- N01-N22\n- N01-N24\n- N01-N25\n- N01-N27\n- N02-N08\n- N02-N10\n- N02-N15\n- N02-N16\n- N02-N18\n- N02-N19\n- N02-N22\n- N02-N24\n- N02-N26\n- N02-N28\n- N03-N04\n- N03-N05\n- N03-N07\n- N03-N14\n- N03-N16\n- N03-N22\n- N03-N26\n- N03-N28\n- N03-N30\n- N04-N05\n- N04-N08\n- N04-N13\n- N04-N15\n- N04-N18\n- N04-N23\n- N04-N26\n- N04-N28\n- N05-N06\n- N05-N07\n- N05-N08\n- N05-N13\n- N05-N17\n- N05-N18\n- N05-N19\n- N05-N20\n- N05-N22\n- N05-N23\n- N05-N24\n- N05-N28\n- N05-N29\n- N06-N09\n- N06-N12\n- N06-N13\n- N06-N15\n- N06-N17\n- N06-N18\n- N06-N20\n- N06-N22\n- N06-N30\n- N07-N10\n- N07-N17\n- N07-N19\n- N07-N25\n- N07-N29\n- N08-N14\n- N08-N15\n- N08-N19\n- N08-N20\n- N08-N23\n- N08-N26\n- N09-N11\n- N09-N12\n- N09-N16\n- N09-N21\n- N09-N25\n- N09-N26\n- N09-N27\n- N09-N30\n- N10-N18\n- N10-N19\n- N10-N20\n- N10-N25\n- N10-N28\n- N11-N15\n- N11-N16\n- N11-N20\n- N11-N21\n- N11-N24\n- N11-N27\n- N12-N13\n- N12-N19\n- N12-N20\n- N12-N25\n- N12-N28\n- N13-N14\n- N13-N17\n- N13-N23\n- N13-N29\n- N14-N17\n- N14-N18\n- N14-N19\n- N14-N22\n- N14-N23\n- N14-N29\n- N14-N30\n- N15-N17\n- N15-N25\n- N16-N19\n- N16-N21\n- N16-N22\n- N16-N29\n- N17-N18\n- N17-N21\n- N17-N23\n- N17-N27\n- N17-N29\n- N18-N20\n- N18-N22\n- N19-N25\n- N19-N27\n- N19-N28\n- N19-N29\n- N20-N21\n- N20-N26\n- N21-N23\n- N22-N23\n- N24-N27\n- N24-N28\n- N24-N29\n- N24-N30\n- N25-N26\n- N25-N27\n- N25-N28\n- N26-N28\n- N27-N28\n- N27-N30\n- N28-N29\n- N29-N30\n\nRules:\n- Every node must receive one integer color in {1, 2, 3, 4}.\n- Lower scored_cost is better.\n- This graph is 4-colorable, but there are multiple valid 4-colorings.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline summary:\nConflicts: 14\nScored cost: 18\nConflicting edges: N02-N15, N03-N30, N06-N17, N08-N19, N09-N21, N09-N27, N10-N28, N12-N20, N16-N22, N17-N23, N17-N29, N19-N25, ...\nAssignment: N01=1, N02=2, N03=3, N04=4, N05=2, N06=1, N07=4, N08=3, N09=2, N10=1, N11=3, N12=4, N13=3, N14=2, N15=2, N16=4, N17=1, N18=3, N19=3, N20=4, N21=2, N22=4, N23=1, N24=4, N25=3, N26=1, N27=2, N28=1, N29=1, N30=3\n",
+        "seed": 27
+      },
+      "value_cap": 34.0
+    }
+  ],
+  "difficulty": "hard",
+  "gold_objective": 100.0,
+  "id": "portfolio_hard_seed27",
+  "instance": {
+    "class": "portfolio",
+    "difficulty": "hard",
+    "n_components": 3,
+    "problem_statement": "You are allocating effort across a three-problem optimization portfolio.\nObjective: maximize total captured headroom across the listed components.\nEach component contributes at most its value_cap when solved to its gold level.\nIf you fail to improve a component, it stays at its baseline contribution.\n\nPortfolio components:\n- ve_hard_seed27 | class=ve | value_cap=33.0\n- tsp_hard_seed27 | class=tsp | value_cap=33.0\n- graphcol_hard_seed27 | class=graphcol | value_cap=34.0\n\nReturn answers for the listed sub-problems using the component-specific answer contracts.",
+    "seed": 27
+  },
+  "seed": 27,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}
