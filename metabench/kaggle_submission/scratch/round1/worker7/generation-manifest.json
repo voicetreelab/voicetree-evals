@@ -1,0 +1,349 @@
+{
+  "difficulty": "hard",
+  "records": [
+    {
+      "chunk_label": "portfolio hard seeds 1,3,4",
+      "rows": [
+        {
+          "actual_seed": 1,
+          "attempts": [],
+          "classes": [
+            "steiner",
+            "mwis",
+            "cjs"
+          ],
+          "component_ids": [
+            "steiner_hard_seed1",
+            "mwis_hard_seed1",
+            "cjs_hard_seed1"
+          ],
+          "component_overrides": [],
+          "id": "portfolio_hard_seed1",
+          "requested_seed": 1
+        },
+        {
+          "actual_seed": 3,
+          "attempts": [],
+          "classes": [
+            "steiner",
+            "mwis",
+            "ve"
+          ],
+          "component_ids": [
+            "steiner_hard_seed3",
+            "mwis_hard_seed3",
+            "ve_hard_seed3"
+          ],
+          "component_overrides": [
+            "mwis: mwis n_nodes=120 override"
+          ],
+          "id": "portfolio_hard_seed3",
+          "requested_seed": 3
+        },
+        {
+          "actual_seed": 4,
+          "attempts": [],
+          "classes": [
+            "steiner",
+            "graphcol",
+            "cjs"
+          ],
+          "component_ids": [
+            "steiner_hard_seed4",
+            "graphcol_hard_seed4",
+            "cjs_hard_seed4"
+          ],
+          "component_overrides": [],
+          "id": "portfolio_hard_seed4",
+          "requested_seed": 4
+        }
+      ]
+    },
+    {
+      "chunk_label": "portfolio hard seeds 5-7",
+      "rows": [
+        {
+          "actual_seed": 5,
+          "attempts": [],
+          "classes": [
+            "mwis",
+            "graphcol",
+            "ve"
+          ],
+          "component_ids": [
+            "mwis_hard_seed5",
+            "graphcol_hard_seed5",
+            "ve_hard_seed5"
+          ],
+          "component_overrides": [
+            "mwis: mwis n_nodes=120 override"
+          ],
+          "id": "portfolio_hard_seed5",
+          "requested_seed": 5
+        },
+        {
+          "actual_seed": 7,
+          "attempts": [
+            {
+              "actual_seed": 6,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            }
+          ],
+          "classes": [
+            "graphcol",
+            "steiner",
+            "tsp"
+          ],
+          "component_ids": [
+            "graphcol_hard_seed7",
+            "steiner_hard_seed7",
+            "tsp_hard_seed7"
+          ],
+          "component_overrides": [],
+          "id": "portfolio_hard_seed7",
+          "requested_seed": 6
+        },
+        {
+          "actual_seed": 8,
+          "attempts": [
+            {
+              "actual_seed": 7,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            }
+          ],
+          "classes": [
+            "steiner",
+            "graphcol",
+            "tsp"
+          ],
+          "component_ids": [
+            "steiner_hard_seed8",
+            "graphcol_hard_seed8",
+            "tsp_hard_seed8"
+          ],
+          "component_overrides": [],
+          "id": "portfolio_hard_seed8",
+          "requested_seed": 7
+        }
+      ]
+    },
+    {
+      "chunk_label": "portfolio hard seeds 8-10",
+      "rows": [
+        {
+          "actual_seed": 9,
+          "attempts": [
+            {
+              "actual_seed": 8,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            }
+          ],
+          "classes": [
+            "tsp",
+            "mwis",
+            "graphcol"
+          ],
+          "component_ids": [
+            "tsp_hard_seed9",
+            "mwis_hard_seed9",
+            "graphcol_hard_seed9"
+          ],
+          "component_overrides": [
+            "mwis: mwis n_nodes=120 override"
+          ],
+          "id": "portfolio_hard_seed9",
+          "requested_seed": 8
+        },
+        {
+          "actual_seed": 10,
+          "attempts": [
+            {
+              "actual_seed": 9,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            }
+          ],
+          "classes": [
+            "mwis",
+            "cjs",
+            "tsp"
+          ],
+          "component_ids": [
+            "mwis_hard_seed10",
+            "cjs_hard_seed10",
+            "tsp_hard_seed10"
+          ],
+          "component_overrides": [
+            "mwis: mwis n_nodes=120 override"
+          ],
+          "id": "portfolio_hard_seed10",
+          "requested_seed": 9
+        },
+        {
+          "actual_seed": 12,
+          "attempts": [
+            {
+              "actual_seed": 10,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            },
+            {
+              "actual_seed": 11,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            }
+          ],
+          "classes": [
+            "tsp",
+            "graphcol",
+            "mwis"
+          ],
+          "component_ids": [
+            "tsp_hard_seed12",
+            "graphcol_hard_seed12",
+            "mwis_hard_seed12"
+          ],
+          "component_overrides": [
+            "mwis: mwis n_nodes=120 override"
+          ],
+          "id": "portfolio_hard_seed12",
+          "requested_seed": 10
+        }
+      ]
+    },
+    {
+      "chunk_label": "portfolio hard seeds 11-13",
+      "rows": [
+        {
+          "actual_seed": 13,
+          "attempts": [
+            {
+              "actual_seed": 11,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            },
+            {
+              "actual_seed": 12,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            }
+          ],
+          "classes": [
+            "graphcol",
+            "ve",
+            "steiner"
+          ],
+          "component_ids": [
+            "graphcol_hard_seed13",
+            "ve_hard_seed13",
+            "steiner_hard_seed13"
+          ],
+          "component_overrides": [],
+          "id": "portfolio_hard_seed13",
+          "requested_seed": 11
+        },
+        {
+          "actual_seed": null,
+          "attempts": [
+            {
+              "actual_seed": 12,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            },
+            {
+              "actual_seed": 13,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            },
+            {
+              "actual_seed": 14,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            },
+            {
+              "actual_seed": 15,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            },
+            {
+              "actual_seed": 16,
+              "reason": "skipped because actual seed already exists in another hard portfolio row",
+              "status": "reserved_elsewhere"
+            }
+          ],
+          "classes": null,
+          "component_ids": [],
+          "component_overrides": [],
+          "id": null,
+          "requested_seed": 12
+        },
+        {
+          "actual_seed": null,
+          "attempts": [
+            {
+              "actual_seed": 13,
+              "reason": "skipped because actual seed already used earlier in this difficulty",
+              "status": "used_local"
+            },
+            {
+              "actual_seed": 14,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            },
+            {
+              "actual_seed": 15,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            },
+            {
+              "actual_seed": 16,
+              "reason": "skipped because actual seed already exists in another hard portfolio row",
+              "status": "reserved_elsewhere"
+            },
+            {
+              "actual_seed": 17,
+              "reason": "default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+              "status": "failed"
+            }
+          ],
+          "classes": null,
+          "component_ids": [],
+          "component_overrides": [],
+          "id": null,
+          "requested_seed": 13
+        }
+      ]
+    }
+  ],
+  "reserved_actual_seeds": [
+    2,
+    16,
+    18,
+    19,
+    20,
+    22,
+    23
+  ],
+  "runner_question_ids": [
+    "portfolio_hard_seed1",
+    "portfolio_hard_seed5",
+    "portfolio_hard_seed9",
+    "portfolio_hard_seed13"
+  ],
+  "used_actual_seeds": [
+    1,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13
+  ],
+  "worker": 7
+}

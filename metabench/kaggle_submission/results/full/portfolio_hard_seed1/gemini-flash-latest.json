@@ -1,0 +1,33 @@
+{
+  "baseline_objective": 0.0,
+  "cf_delta": null,
+  "cf_parsed": null,
+  "class": "portfolio",
+  "difficulty": "hard",
+  "error": "aborted by parent after gemini-flash-latest exceeded the >500s/row guardrail during portfolio_hard_seed1 before a row payload could be written",
+  "feasible": false,
+  "final_evaluation": {
+    "components": [],
+    "details": {
+      "failure_reason": "guardrail-aborted before completed gemini payload was captured"
+    },
+    "mode": "portfolio",
+    "score": 0.0
+  },
+  "final_submission_source": "baseline",
+  "gold_objective": 100.0,
+  "id": "portfolio_hard_seed1",
+  "model": "gemini-flash-latest",
+  "n_exec_turns": 4,
+  "parse_events": [],
+  "parse_path": "aborted_guardrail",
+  "parsed": null,
+  "score": 0.0,
+  "score_after_cf": 0.0,
+  "score_at_stop": 0.0,
+  "seed": 1,
+  "stop_reason": "wall_budget",
+  "transcript": [],
+  "value_cap": 100.0,
+  "wall_s": 541.0
+}

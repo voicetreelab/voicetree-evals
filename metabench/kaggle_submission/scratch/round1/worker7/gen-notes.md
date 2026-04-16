@@ -1,0 +1,32 @@
+# Worker 7 generation notes
+
+## portfolio hard seeds 1,3,4
+- generated `portfolio_hard_seed1` for requested seed 1; fallback attempts: none; final classes steiner, mwis, cjs; components=['steiner_hard_seed1', 'mwis_hard_seed1', 'cjs_hard_seed1']
+- generated `portfolio_hard_seed3` for requested seed 3; fallback attempts: none; final classes steiner, mwis, ve; components=['steiner_hard_seed3', 'mwis_hard_seed3', 've_hard_seed3']; component overrides=['mwis: mwis n_nodes=120 override']
+- generated `portfolio_hard_seed4` for requested seed 4; fallback attempts: none; final classes steiner, graphcol, cjs; components=['steiner_hard_seed4', 'graphcol_hard_seed4', 'cjs_hard_seed4']
+
+## portfolio hard seeds 5-7
+- generated `portfolio_hard_seed5` for requested seed 5; fallback attempts: none; final classes mwis, graphcol, ve; components=['mwis_hard_seed5', 'graphcol_hard_seed5', 've_hard_seed5']; component overrides=['mwis: mwis n_nodes=120 override']
+- generated `portfolio_hard_seed7` for requested seed 6; fallback attempts: seed=6: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed; final classes graphcol, steiner, tsp; components=['graphcol_hard_seed7', 'steiner_hard_seed7', 'tsp_hard_seed7']
+- generated `portfolio_hard_seed8` for requested seed 7; fallback attempts: seed=7: skipped because actual seed already used earlier in this difficulty; final classes steiner, graphcol, tsp; components=['steiner_hard_seed8', 'graphcol_hard_seed8', 'tsp_hard_seed8']
+
+## portfolio hard seeds 8-10
+- generated `portfolio_hard_seed9` for requested seed 8; fallback attempts: seed=8: skipped because actual seed already used earlier in this difficulty; final classes tsp, mwis, graphcol; components=['tsp_hard_seed9', 'mwis_hard_seed9', 'graphcol_hard_seed9']; component overrides=['mwis: mwis n_nodes=120 override']
+- generated `portfolio_hard_seed10` for requested seed 9; fallback attempts: seed=9: skipped because actual seed already used earlier in this difficulty; final classes mwis, cjs, tsp; components=['mwis_hard_seed10', 'cjs_hard_seed10', 'tsp_hard_seed10']; component overrides=['mwis: mwis n_nodes=120 override']
+- generated `portfolio_hard_seed12` for requested seed 10; fallback attempts: seed=10: skipped because actual seed already used earlier in this difficulty; seed=11: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed; final classes tsp, graphcol, mwis; components=['tsp_hard_seed12', 'graphcol_hard_seed12', 'mwis_hard_seed12']; component overrides=['mwis: mwis n_nodes=120 override']
+
+## portfolio hard seeds 11-13
+- generated `portfolio_hard_seed13` for requested seed 11; fallback attempts: seed=11: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed; seed=12: skipped because actual seed already used earlier in this difficulty; final classes graphcol, ve, steiner; components=['graphcol_hard_seed13', 've_hard_seed13', 'steiner_hard_seed13']
+- skipped requested `hard` seed 12 after fallback attempts: seed=12: skipped because actual seed already used earlier in this difficulty; seed=13: skipped because actual seed already used earlier in this difficulty; seed=14: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed; seed=15: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed; seed=16: skipped because actual seed already exists in another hard portfolio row
+- skipped requested `hard` seed 13 after fallback attempts: seed=13: skipped because actual seed already used earlier in this difficulty; seed=14: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed; seed=15: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed; seed=16: skipped because actual seed already exists in another hard portfolio row; seed=17: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed
+
+## Runner ids
+- `portfolio_hard_seed1`
+- `portfolio_hard_seed5`
+- `portfolio_hard_seed9`
+- `portfolio_hard_seed13`
+
+## Summary
+- rows_written: 10
+- reserved_actual_seeds: [2, 16, 18, 19, 20, 22, 23]
+- used_actual_seeds: [1, 3, 4, 5, 7, 8, 9, 10, 12, 13]
