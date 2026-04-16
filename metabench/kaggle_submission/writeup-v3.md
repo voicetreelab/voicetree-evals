@@ -5,7 +5,7 @@
 
 ## Problem Statement
 
-Existing metacognition benchmarks conflate self-knowledge with capability. Ackerman et al. (2025) and Kirichenko et al. (2025) recently confirmed that current self-knowledge evaluations remain dominated by capability rather than genuine monitoring — extending Kadavath et al.'s (2022) foundational P(True) finding, which correlates with accuracy and is therefore uninterpretable in isolation.
+Existing metacognition benchmarks conflate self-knowledge with capability. Recent work (Ackerman 2025; Kirichenko 2025) confirms self-knowledge evaluations remain dominated by capability — Kadavath (2022)'s P(True) correlates with accuracy, making raw confidence uninterpretable in isolation.
 
 We build a benchmark that **isolates metacognition from capability by construction**, and reveal something stronger than "more vs. less metacog": model families develop **qualitatively different metacognitive specializations**. Metacog is not scalar; it decomposes into orthogonal axes (monitoring vs. control; Nelson & Narens 1990) on which different frontier families win.
 
@@ -62,7 +62,7 @@ Small-tier · frontier-tier separated by `·`; bold = positive-axis replication 
 
 ### Intervention evidence: metacog skill is coachable (HLE pilot, n=100)
 
-A prior causal-intervention pilot on Humanity's Last Exam (Li, Hendrycks et al. 2025) applied a 3-level recursive-reflection coaching prompt vs. vanilla: accuracy **18% → 24%** (+6 pts), Brier **0.305 → 0.271** (−0.034). Same instances, same model, single intervention. Causal improvement in both accuracy and calibration — evidence that the metacog axis our benchmark measures is *coachable and actionable*, not merely descriptive. The Brier improvement is the metacog-relevant signal: coaching makes stated confidence align with realized accuracy.
+Prior causal-intervention pilot (HLE, n=100; Li et al. 2025): 3-level recursive-reflection coaching vs. vanilla lifted accuracy **18% → 24%** and dropped Brier **0.305 → 0.271** on the same instances, same model. The Brier gain is the metacog signal — evidence that the axis our benchmark measures is *coachable*, not just descriptive.
 
 ### Pre-registered predictions (frozen before overnight pilot)
 
