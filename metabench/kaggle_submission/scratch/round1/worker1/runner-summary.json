@@ -2,7 +2,7 @@
   "models": {
     "claude-sonnet-4.6": {
       "attempted": 4,
-      "baseline_only": 0,
+      "baseline_only": 1,
       "completed": 4,
       "errors": [
         {
@@ -11,9 +11,9 @@
           "stop_reason": "error"
         },
         {
-          "error": "exec turn 2 parse failed",
+          "error": "exec turn 2 timed out after 400s",
           "question_id": "cjs_medium_seed8",
-          "stop_reason": "error"
+          "stop_reason": "wall_budget"
         }
       ],
       "feasible": 2,
@@ -21,28 +21,22 @@
       "partial_rescue": 0,
       "skipped": 0,
       "strict_like": 2,
-      "strict_parse_failed": 2
+      "strict_parse_failed": 1
     },
     "gemini-flash-latest": {
-      "attempted": 3,
-      "baseline_only": 1,
+      "attempted": 4,
+      "baseline_only": 0,
       "completed": 4,
-      "errors": [
-        {
-          "error": "plan turn parse failed",
-          "question_id": "steiner_medium_seed2",
-          "stop_reason": "error"
-        }
-      ],
+      "errors": [],
       "feasible": 4,
       "judge_rescue": 0,
       "partial_rescue": 0,
       "skipped": 0,
-      "strict_like": 3,
+      "strict_like": 4,
       "strict_parse_failed": 0
     },
     "gpt-5.4-mini": {
-      "attempted": 3,
+      "attempted": 4,
       "baseline_only": 0,
       "completed": 4,
       "errors": [],
@@ -126,20 +120,20 @@
     "cjs_medium_seed8": {
       "models": {
         "claude-sonnet-4.6": {
-          "error": "exec turn 2 parse failed",
+          "error": "exec turn 2 timed out after 400s",
           "feasible": true,
           "gap_pct": 103.8961038961039,
-          "parse_path": "strict_parse_failed",
-          "score": -4.250471058329567,
+          "parse_path": "baseline_only",
+          "score": -4.234810700840317,
           "skipped": false,
-          "stop_reason": "error"
+          "stop_reason": "wall_budget"
         },
         "gemini-flash-latest": {
           "error": null,
           "feasible": true,
-          "gap_pct": 61.03896103896104,
+          "gap_pct": 3.896103896103896,
           "parse_path": "strict_protocol_cf",
-          "score": 34.82253847311813,
+          "score": 90.11950204806766,
           "skipped": false,
           "stop_reason": "decision_stop"
         },
@@ -166,13 +160,13 @@
           "stop_reason": "decision_stop"
         },
         "gemini-flash-latest": {
-          "error": "plan turn parse failed",
+          "error": null,
           "feasible": true,
-          "gap_pct": 18.309859154929576,
-          "parse_path": "baseline_only",
-          "score": 80.05797386007181,
+          "gap_pct": 0.0,
+          "parse_path": "strict_protocol_cf",
+          "score": 96.19338500750018,
           "skipped": false,
-          "stop_reason": "error"
+          "stop_reason": "decision_stop"
         },
         "gpt-5.4-mini": {
           "error": null,
