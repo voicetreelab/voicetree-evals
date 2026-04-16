@@ -288,3 +288,57 @@ def parse_exec_turn(
         "decision": decision,
         "next_sub": next_sub,
     }
+
+
+def parse_exec_turn_partial(
+    text: str,
+    *,
+    cls: str | None = None,
+    expected_subtask_id: int | None = None,
+    require_decision: bool = True,
+) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+
+    subtask = parse_subtask_block(text, expected_subtask_id=expected_subtask_id)
+    if subtask is not None:
+        subtask_id, subtask_body = subtask
+        result["subtask_id"] = subtask_id
+        result["subtask_body"] = subtask_body
+
+    best_guess = parse_best_guess(text)
+    if best_guess is not None:
+        result["best_guess"] = best_guess
+
+    updated_plan_state = parse_updated_plan_state(text)
+    if updated_plan_state is not None:
+        result["updated_plan_state"] = updated_plan_state
+
+    quality_forecast = parse_quality_forecast(text, cls=cls)
+    if quality_forecast is not None:
+        result["quality_forecast"] = quality_forecast
+
+    continue_forecast = parse_continue_forecast(text)
+    if continue_forecast is not None:
+        result["continue_forecast"] = continue_forecast
+
+    decision = parse_decision(text)
+    if decision is not None:
+        result["decision"] = decision
+
+    next_sub = parse_next_sub(text)
+    if next_sub is not None:
+        result["next_sub"] = next_sub
+
+    missing_or_invalid: list[str] = []
+    if "subtask_id" not in result or "subtask_body" not in result:
+        missing_or_invalid.append("subtask")
+    for field in ("best_guess", "updated_plan_state", "quality_forecast", "continue_forecast"):
+        if field not in result:
+            missing_or_invalid.append(field)
+    if require_decision and "decision" not in result:
+        missing_or_invalid.append("decision")
+    if decision == "continue" and "next_sub" not in result:
+        missing_or_invalid.append("next_sub")
+
+    result["missing_or_invalid"] = missing_or_invalid
+    return result

@@ -5,7 +5,7 @@ import inspect
 import re
 from typing import Any, Callable
 
-KNOWN_CLASSES = ("cjs", "graphcol", "mwis", "steiner", "tsp", "ve")
+KNOWN_CLASSES = ("cjs", "graphcol", "mbj", "mwis", "steiner", "tsp", "ve")
 _SCHEMA_RE = re.compile(r"BEST_GUESS(?: JSON)? schema:\s*(.*)", re.IGNORECASE | re.DOTALL)
 
 CLASS_TO_VERIFIER: dict[str, Callable[[dict[str, Any], dict[str, Any] | None], tuple[float, bool, dict[str, Any]]]] = {}

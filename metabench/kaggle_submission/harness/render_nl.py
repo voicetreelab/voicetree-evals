@@ -4,16 +4,65 @@ import json
 from typing import Any
 
 
-def render_nl(instance: dict[str, Any], cls: str) -> str:
+def render_nl(
+    instance: dict[str, Any],
+    cls: str,
+    components: list[Any] | None = None,
+) -> str:
     if not isinstance(instance, dict):
         raise TypeError("instance must be a dict")
 
     problem_statement = instance.get("problem_statement")
+    base_nl: str
     if isinstance(problem_statement, str) and problem_statement.strip():
-        return problem_statement
+        base_nl = problem_statement
+    else:
+        renderer = _FALLBACK_RENDERERS.get(cls, _render_generic)
+        base_nl = renderer(instance)
 
-    renderer = _FALLBACK_RENDERERS.get(cls, _render_generic)
-    return renderer(instance)
+    if cls == "portfolio" and components:
+        return _render_portfolio(base_nl, components)
+    return base_nl
+
+
+def _render_portfolio(base_nl: str, components: list[Any]) -> str:
+    try:
+        from verifiers import CLASS_TO_BEST_GUESS_SCHEMA
+    except Exception:
+        CLASS_TO_BEST_GUESS_SCHEMA = {}
+
+    parts: list[str] = [base_nl.rstrip(), ""]
+    for comp in components:
+        if not isinstance(comp, dict):
+            continue
+        sub_cls = comp.get("class")
+        sub_inst = comp.get("sub_instance", {}) or {}
+        pid = comp.get("problem_id")
+        value_cap = comp.get("value_cap")
+        parts.append(f"=== {pid} (class={sub_cls}, value_cap={value_cap}) ===")
+
+        sub_ps = sub_inst.get("problem_statement")
+        if isinstance(sub_ps, str) and sub_ps.strip():
+            parts.append(sub_ps.rstrip())
+        else:
+            renderer = _FALLBACK_RENDERERS.get(sub_cls, _render_generic)
+            parts.append(renderer(sub_inst))
+
+        contract = sub_inst.get("answer_contract")
+        if isinstance(contract, str) and contract.strip():
+            parts.append(f"Answer contract for {pid}: {contract}")
+
+        schema = CLASS_TO_BEST_GUESS_SCHEMA.get(sub_cls) if isinstance(sub_cls, str) else None
+        if schema:
+            parts.append(f"ANSWER SCHEMA for {pid} (class={sub_cls}):\n{schema}")
+        parts.append("")
+
+    parts.append(
+        "Return a single BEST_GUESS JSON object whose top-level keys are the component "
+        "problem_ids above, each mapped to an object obeying that component's ANSWER SCHEMA. "
+        "Do not wrap the answers under an `answers` key."
+    )
+    return "\n".join(parts)
 
 
 def _render_generic(instance: dict[str, Any]) -> str:
@@ -51,6 +100,15 @@ def _render_cjs(instance: dict[str, Any]) -> str:
     return f"Coupled job-shop instance with {len(jobs) if isinstance(jobs, list) else '?'} jobs and {len(machines) if isinstance(machines, list) else '?'} machines."
 
 
+def _render_mbj(instance: dict[str, Any]) -> str:
+    jobs = instance.get("jobs")
+    n_machines = instance.get("n_machines", "?")
+    return (
+        f"Masked block job-shop instance with "
+        f"{len(jobs) if isinstance(jobs, list) else '?'} jobs and {n_machines} machines."
+    )
+
+
 def _render_steiner(instance: dict[str, Any]) -> str:
     nodes = instance.get("nodes", [])
     terminals = instance.get("terminals", [])
@@ -78,6 +136,7 @@ def _render_ve(instance: dict[str, Any]) -> str:
 _FALLBACK_RENDERERS = {
     "cjs": _render_cjs,
     "graphcol": _render_graphcol,
+    "mbj": _render_mbj,
     "mwis": _render_mwis,
     "steiner": _render_steiner,
     "tsp": _render_tsp,

@@ -8,6 +8,7 @@ from harness.protocol import CF_RESERVE_S, PLAN_TURN_BUDGET_S, SUBTASK_BUDGET_S,
 CLASS_DISPLAY_NAMES = {
     "cjs": "Coupled Job-Shop",
     "graphcol": "Graph Coloring",
+    "mbj": "Masked Block Job-Shop",
     "mwis": "Maximum Weighted Independent Set",
     "steiner": "Steiner x Coloring",
     "tsp": "Traveling Salesperson",
@@ -113,7 +114,7 @@ def build_exec_prompt(
         f"{timing_block}\n\n"
         f"{current_best_block}\n\n"
         f"Exec turn {turn_index}. Emit, in order:\n"
-        f"- `SUB_{turn_index - 1}`: key findings for this subtask (≤ 30 lines)\n"
+        f"- `SUB_{turn_index - 1}`: key findings for this subtask — HARD LIMIT 30 lines. Stop writing SUB_{turn_index - 1} after 30 lines even if incomplete. BEST_GUESS and the remaining fields MUST follow.\n"
         f"- `BEST_GUESS`: class-specific JSON for `{cls}`\n"
         f"{schema_block}\n"
         "- `UPDATED_PLAN_STATE`: revised plan, or keep the prior plan verbatim\n"
@@ -204,6 +205,13 @@ def _timing_block(
 
 
 def _best_guess_schema_block(cls: str) -> str:
+    if cls == "portfolio":
+        return (
+            "- BEST_GUESS for `portfolio`: a single JSON object whose top-level keys are the "
+            "component problem_ids listed above, each mapped to an object obeying that "
+            "component's ANSWER SCHEMA block. Do not nest under an `answers` key."
+        )
+
     try:
         from verifiers import CLASS_TO_BEST_GUESS_SCHEMA
     except Exception:
