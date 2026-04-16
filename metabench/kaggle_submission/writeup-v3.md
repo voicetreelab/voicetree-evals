@@ -26,7 +26,7 @@ Models emit raw text; a post-hoc Gemini-Flash extractor parses structured fields
 
 Brier is decomposed via Murphy (1973) into reliability/resolution/uncertainty and reported alongside Brier Skill Score (BSS) — negative BSS indicates forecasts worse than quoting the class base rate.
 
-**Structural advantage no current benchmark has.** Because our signal is stop/decompose/forecast *behavior*, not solve-rate, the benchmark stays informative even when every model scores 0% on the underlying optimization. Difficulty can be raised arbitrarily. Wall-time is capped, so eval cost does not grow superlinearly with difficulty. Swap `wall_seconds` for `total_tokens` when reasoning tokens are exposed and the signal is also **token-minimization non-hackable** — you cannot cheat by thinking longer.
+**Structural advantage no current benchmark has.** Because our signal is stop/decompose/forecast *behavior*, not solve-rate, the benchmark stays informative even when every model scores 0% on the underlying optimization. Difficulty can be raised arbitrarily. Wall-time is capped, so eval cost does not grow superlinearly with difficulty. Swap `wall_seconds` for `total_tokens` when reasoning tokens are exposed and the signal is also **token-minimization non-hackable** — you cannot cheat by thinking longer. This forecloses the test-time-compute exploitation path (o1-style reasoning scaling) that saturates most QA benchmarks.
 
 ## Dataset
 
@@ -44,21 +44,21 @@ Brier is decomposed via Murphy (1973) into reliability/resolution/uncertainty an
 
 | metric | Anthropic: Sonnet · **Opus** | Google: Flash · **G-3-Pro** | OpenAI: mini · **GPT-5.4** |
 |---|---:|---:|---:|
-| M1 BSS ↑ | +0.19 · −0.06 | −0.79 · — | −0.35 · +0.14 |
-| M2 BSS ↑ | **+0.53** · **+0.05** | −0.44 · **+0.50** | −2.14 · −3.17 |
-| M2 resolution ↑ | 0.12 · 0.05 | 0.03 · **0.11** | 0.00 · 0.01 |
-| M4 MAE ↓ | **1.85** · **1.20** | 5.94 · **0.35** | 2.08 · 7.99 |
-| Feasibility ↑ | 33% · **93%** | 49% · **100%** | 54% · **86%** |
+| M1 BSS ↑ | +0.19 · −0.01 | −0.79 · — | −0.35 · +0.14 |
+| M2 BSS ↑ | **+0.53** · **+0.18** | −0.44 · **+0.50** | −2.14 · −3.17 |
+| M2 resolution ↑ | 0.12 · 0.07 | 0.03 · **0.11** | 0.00 · 0.01 |
+| M4 MAE ↓ | **1.85** · **1.82** | 5.94 · **0.35** | 2.08 · 7.99 |
+| Feasibility ↑ | 33% · **82%** | 49% · **100%** | 54% · **86%** |
 
-**M1 BSS:** a normalized Brier of subtask-solvability forecasts (`p_solve`) — measures whether the model knows which subtasks it will solve. **M2 BSS:** a normalized Brier of output-quality forecasts (`p_gap_le_X`) — measures whether the model knows how close-to-optimal its answer is. Negative BSS = the model's confidence is strictly worse than ignoring it and quoting the class base rate.
+**M1 BSS:** a normalized Brier of subtask-solvability forecasts (`p_solve`) — measures whether the model knows which subtasks it will solve. **M2 BSS:** a normalized Brier of output-quality forecasts (`p_gap_le_X`) — measures whether the model knows how close-to-optimal its answer is. Negative BSS = the model's confidence is strictly worse than ignoring it and quoting the class base rate (e.g., Gemini Flash's M1 BSS of −0.79 means the model is actively deceiving itself compared to just guessing the average).
 
 Small-tier · frontier-tier separated by `·`; bold = positive-axis replication or frontier patching the small-tier failure. Total N > 320 model-rows scored across 6 models; full per-model counts, per-class decomposition, and raw transcripts in the public repo. See **Figure 1** (Media Gallery): Pareto chart of feasibility × metacog composite.
 
 ### Family-consistency verdict (closes the "one-model-per-family" critique)
 
-**Anthropic — monitoring axis CONFIRMED.** Both Sonnet and Opus post positive M2 BSS (+0.53 / +0.05) and low M4 MAE (~1.2–1.9); Opus *patches* Sonnet's execution collapse (33% → 93% feasibility) while preserving its monitoring advantage. "Knows what it will break — and fixes it at the frontier." **OpenAI — sharp-and-wrong-M2 CONFIRMED.** Both GPT-5.4-mini and GPT-5.4 sit at catastrophic M2 BSS (−2.14 / −3.17) with near-zero resolution; the sibling profile replicates across a full capability generation, and worsens at the frontier (M4 MAE 2.08 → 7.99). **Google — flat-forecaster REJECTED at the frontier.** Gemini 3 Pro (56/56 complete, 100% feasibility) inverts Flash's profile (M2 BSS +0.50, resolution 0.11, M4 MAE 0.35). Flat-forecasting is a Flash-tier artifact, not a Google-family specialization.
+**Anthropic — monitoring axis CONFIRMED.** Both Sonnet and Opus post positive M2 BSS (+0.53 / +0.18) and low M4 MAE (~1.8); Opus *patches* Sonnet's execution collapse (33% → 82% feasibility) while preserving its monitoring advantage. "Knows what it will break — and fixes it at the frontier." **OpenAI — sharp-and-wrong-M2 CONFIRMED.** Both GPT-5.4-mini and GPT-5.4 sit at catastrophic M2 BSS (−2.14 / −3.17) with near-zero resolution; the sibling profile replicates across a full capability generation, and worsens at the frontier (M4 MAE 2.08 → 7.99) — a *metacog scaling regression*, unique to this family. **Google — flat-forecaster REJECTED at the frontier.** Gemini 3 Pro (56/56 complete, 100% feasibility) inverts Flash's profile (M2 BSS +0.50, resolution 0.11, M4 MAE 0.35). Flat-forecasting is a Flash-tier artifact, not a Google-family specialization.
 
-**Why this matters.** Six models span three families × two tiers on one Pareto front, not a line. Family-level specialization is real for anthropic-monitoring and openai-sharp-and-wrong-M2, but the google flat-forecaster axis is tier-specific — within-family scaling *closes* that gap. Pricing bias also splits by mechanism: Flash-tier Gemini was flat (+2.56 / +2.43 across low/high emission bins), GPT-tier scales with magnitude (+1.04 → +3.25). An agent metacognitively-aware on the invariant axes (anthropic M2, openai M2) converts compute into accuracy — the precondition for scalable delegation (Christiano et al. 2018).
+**Why this matters.** Six models span three families × two tiers on one Pareto front, not a line — and at the frontier tier the front *collapses to a single dominator* (Gemini 3 Pro) rather than preserving the small-tier's 2-model Pareto trade-off. Family-level specialization is real for anthropic-monitoring and openai-sharp-and-wrong-M2, but the google flat-forecaster axis is tier-specific — within-family scaling *closes* that gap. Pricing bias also splits by mechanism: Flash-tier Gemini was flat (+2.56 / +2.43 across low/high emission bins), GPT-tier scales with magnitude (+1.04 → +3.25). An agent metacognitively-aware on the invariant axes (anthropic M2, openai M2) converts compute into accuracy — the precondition for scalable delegation (Christiano et al. 2018).
 
 ### Intervention evidence: metacog skill is coachable (HLE pilot, n=100)
 
