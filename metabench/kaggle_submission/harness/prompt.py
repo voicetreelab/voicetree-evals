@@ -14,6 +14,27 @@ CLASS_DISPLAY_NAMES = {
     "ve": "Bayesian Variable Elimination",
 }
 
+NO_MARKDOWN_WRAP_RULE = (
+    "Do NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, "
+    "`QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets "
+    "(`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` "
+    "followed by the value."
+)
+
+TURN1_ANTI_EXAMPLES = (
+    "CORRECT: PLAN_STATE: Start from the baseline...\n"
+    "WRONG:   ## PLAN_STATE\n"
+    "Start from the baseline...  (markdown header — will not parse)\n"
+    "WRONG:   - PLAN_STATE: Start from the baseline...   (bullet prefix — will not parse)"
+)
+
+EXEC_ANTI_EXAMPLES = (
+    "CORRECT: UPDATED_PLAN_STATE: Keep a valid structured answer at every turn.\n"
+    "WRONG:   ## UPDATED_PLAN_STATE\n"
+    "Keep a valid structured answer at every turn.  (markdown header — will not parse)\n"
+    'WRONG:   - BEST_GUESS: {"assignment": {"N01": 1, "N02": 2}}   (bullet prefix — will not parse)'
+)
+
 
 def build_system_prompt() -> str:
     return (
@@ -28,6 +49,10 @@ def build_system_prompt() -> str:
         "Protocol. You may decompose the problem into subtasks, revise your plan each turn, "
         "and stop when you judge no more work is worth its time cost. The harness extracts "
         "structured fields from your raw text, so when a field expects JSON, emit valid JSON.\n\n"
+        "Output budget. Your response is token-limited. Keep SUB_N sections under 30 lines — "
+        "key moves and result only. You MUST reach all structured fields "
+        "(BEST_GUESS, UPDATED_PLAN_STATE, QUALITY_FORECAST, CONTINUE_FORECAST, DECISION) "
+        "in every exec turn.\n\n"
         "Do not call tools. Do not write code, pseudocode, or solver sketches. Work only from "
         "the prompt, the running transcript, the current best artifact, and your own reasoning."
     )
@@ -39,10 +64,20 @@ def build_turn1_prompt(instance_nl: str, *, cls: str) -> str:
         f"Turn 1 for {CLASS_DISPLAY_NAMES.get(cls, cls)} is planning only. Do not emit "
         "BEST_GUESS yet.\n\n"
         "Emit, in order:\n"
-        "- `PLAN_STATE`: free-form plan. We will quote this back to you verbatim on every later turn.\n"
+        "- `PLAN_STATE`: plan (≤ 15 lines). We will quote this back to you verbatim on every later turn.\n"
         "- `NEXT_SUB`: `{id: 1, desc, p_solve, time_budget_s}`. `p_solve` is your probability "
         "that the final answer lands within the target gap after this subtask. `time_budget_s` "
         f"must be <= {SUBTASK_BUDGET_S}.\n\n"
+        "Example shape:\n"
+        "PLAN_STATE: Start from the baseline, identify the main bottleneck, then spend one subtask "
+        "trying to produce a cleaner feasible answer.\n"
+        'NEXT_SUB: {"id": 1, "desc": "Construct one improved feasible candidate", '
+        '"p_solve": 0.35, "time_budget_s": 180}\n\n'
+        f"{NO_MARKDOWN_WRAP_RULE}\n"
+        f"{TURN1_ANTI_EXAMPLES}\n\n"
+        "Emit both labelled fields exactly once, in the listed order. Failing to emit either "
+        "required field causes strict-parse failure, and no score is recorded for the turn. "
+        "Do not emit BEST_GUESS yet.\n\n"
         f"Planning budget: {PLAN_TURN_BUDGET_S}s."
     )
 
@@ -78,7 +113,7 @@ def build_exec_prompt(
         f"{timing_block}\n\n"
         f"{current_best_block}\n\n"
         f"Exec turn {turn_index}. Emit, in order:\n"
-        f"- `SUB_{turn_index - 1}`: reasoning/work for this subtask\n"
+        f"- `SUB_{turn_index - 1}`: key findings for this subtask (≤ 30 lines)\n"
         f"- `BEST_GUESS`: class-specific JSON for `{cls}`\n"
         f"{schema_block}\n"
         "- `UPDATED_PLAN_STATE`: revised plan, or keep the prior plan verbatim\n"
@@ -88,6 +123,24 @@ def build_exec_prompt(
         "`expected_gap_reduction`\n"
         "- `DECISION`: `continue` or `stop`\n"
         f"- `NEXT_SUB`: `{{id: {turn_index}, desc, p_solve, time_budget_s}}` only if you continue\n"
+        "\n"
+        "Example shape:\n"
+        f"SUB_{turn_index - 1}: I checked one concrete local move and kept the best valid candidate found.\n"
+        'BEST_GUESS: {"assignment": {"N01": 1, "N02": 2, "N03": 3}}\n'
+        "UPDATED_PLAN_STATE: Keep a valid structured answer at every turn, then spend one more "
+        "subtask on the highest-value local improvement.\n"
+        'QUALITY_FORECAST: {"p_gap_le_2": 0.05, "p_gap_le_5": 0.2, "p_gap_le_10": 0.55}\n'
+        'CONTINUE_FORECAST: {"p_improve": 0.35, "expected_delta_score": 1.8, "expected_gap_reduction": 4.0}\n'
+        "DECISION: continue\n"
+        f'NEXT_SUB: {{"id": {turn_index}, "desc": "Try one more improvement move", "p_solve": 0.3, "time_budget_s": 120}}\n\n'
+        f"{NO_MARKDOWN_WRAP_RULE}\n"
+        f"{EXEC_ANTI_EXAMPLES}\n\n"
+        "All labelled fields must be emitted in the listed order. The `BEST_GUESS:` line must contain "
+        "valid JSON, with no code fences and no extra text inside that field. Failing to emit any "
+        "of `BEST_GUESS`, `UPDATED_PLAN_STATE`, `QUALITY_FORECAST`, `CONTINUE_FORECAST`, "
+        "`DECISION`, or, when you continue, `NEXT_SUB` causes strict-parse failure, and no "
+        "score is recorded for the turn. Keep each field concise enough that you still emit the "
+        "full labelled output."
     )
 
 
