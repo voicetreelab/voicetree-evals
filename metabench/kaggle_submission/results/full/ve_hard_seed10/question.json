@@ -1,0 +1,621 @@
+{
+  "baseline_objective": 0.5,
+  "class": "ve",
+  "components": null,
+  "difficulty": "hard",
+  "gold_objective": 0.4969414410021404,
+  "id": "ve_hard_seed10",
+  "instance": {
+    "attempt_index": 0,
+    "baseline_ordering": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "B2",
+      "B3",
+      "B4",
+      "B6",
+      "B7",
+      "B8",
+      "BR01",
+      "BR12",
+      "C1",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "D0"
+    ],
+    "baseline_peak_factor_size": 13,
+    "bridge_variables": [
+      "BR01",
+      "BR12"
+    ],
+    "decoy_variable": "D0",
+    "difficulty": "hard",
+    "eliminable_variables": [
+      "A1",
+      "A2",
+      "A3",
+      "B2",
+      "B3",
+      "B4",
+      "C1",
+      "C3",
+      "D0",
+      "BR01",
+      "BR12",
+      "A4",
+      "A5",
+      "A6",
+      "B6",
+      "B7",
+      "B8",
+      "C4",
+      "C5",
+      "C6"
+    ],
+    "evidence": {
+      "A7": 1,
+      "B1": 0,
+      "B5": 1,
+      "C2": 0,
+      "C7": 1
+    },
+    "exact_posterior": 0.4969414410021404,
+    "gold_ordering": [
+      "A1",
+      "B8",
+      "B7",
+      "BR01",
+      "B6",
+      "C1",
+      "C6",
+      "A5",
+      "A4",
+      "C5",
+      "B2",
+      "C4",
+      "B3",
+      "C3",
+      "B4",
+      "A3",
+      "A2",
+      "A6",
+      "BR12",
+      "D0"
+    ],
+    "gold_peak_factor_size": 7,
+    "gold_source": "min_fill",
+    "heuristic_results": [
+      {
+        "name": "min_neighbors",
+        "ordering": [
+          "C1",
+          "A1",
+          "B8",
+          "B7",
+          "BR01",
+          "B6",
+          "C6",
+          "A5",
+          "A4",
+          "A2",
+          "C5",
+          "A3",
+          "B2",
+          "C4",
+          "B3",
+          "C3",
+          "B4",
+          "A6",
+          "BR12",
+          "D0"
+        ],
+        "peak_factor_size": 7
+      },
+      {
+        "name": "min_weight",
+        "ordering": [
+          "C1",
+          "A1",
+          "B8",
+          "B7",
+          "BR01",
+          "B6",
+          "C6",
+          "A2",
+          "A6",
+          "C5",
+          "B2",
+          "A5",
+          "A4",
+          "A3",
+          "C4",
+          "B3",
+          "C3",
+          "D0",
+          "B4",
+          "BR12"
+        ],
+        "peak_factor_size": 7
+      },
+      {
+        "name": "min_fill",
+        "ordering": [
+          "A1",
+          "B8",
+          "B7",
+          "BR01",
+          "B6",
+          "C1",
+          "C6",
+          "A5",
+          "A4",
+          "C5",
+          "B2",
+          "C4",
+          "B3",
+          "C3",
+          "B4",
+          "A3",
+          "A2",
+          "A6",
+          "BR12",
+          "D0"
+        ],
+        "peak_factor_size": 7
+      }
+    ],
+    "hidden_clusters": {
+      "A": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7"
+      ],
+      "B": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7",
+        "B8",
+        "B9"
+      ],
+      "C": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7"
+      ]
+    },
+    "min_fill_peak_factor_size": 7,
+    "problem_statement": "You are doing exact inference in a Bayesian network with binary variables in {0, 1}.\nTask: report P(B9=1 | A7=1, B1=0, B5=1, C7=1, C2=0).\nAll CPT rows below give P(variable=1 | parents); P(variable=0 | parents) = 1 minus that value.\nWhen you report ordering_used, list every eliminable variable exactly once and do not include the query variable or any evidence variable.\nInterpret peak_factor_size as the largest intermediate factor scope size, counted as the number of variables in that factor before summing out the eliminated variable.\n\nVariables: A1, A2, A3, B1, B2, B3, B4, C1, C2, C3, D0, BR01, BR12, A4, A5, A6, A7, B5, B6, B7, B8, B9, C4, C5, C6, C7\nQuery variable: B9\nEvidence: A7=1, B1=0, B5=1, C7=1, C2=0\nEliminable variables (20): A1, A2, A3, B2, B3, B4, C1, C3, D0, BR01, BR12, A4, A5, A6, B6, B7, B8, C4, C5, C6\n\nBayesian network (topological order):\n- A1: parents = [none]\n  P(A1=1) = 0.521\n- A2: parents = [A1]\n  if A1=0 -> P(A2=1) = 0.708\n  if A1=1 -> P(A2=1) = 0.242\n- A3: parents = [A2, A1]\n  if A2=0, A1=0 -> P(A3=1) = 0.210\n  if A2=0, A1=1 -> P(A3=1) = 0.508\n  if A2=1, A1=0 -> P(A3=1) = 0.749\n  if A2=1, A1=1 -> P(A3=1) = 0.921\n- B1: parents = [A2]\n  if A2=0 -> P(B1=1) = 0.257\n  if A2=1 -> P(B1=1) = 0.608\n- B2: parents = [B1]\n  if B1=0 -> P(B2=1) = 0.576\n  if B1=1 -> P(B2=1) = 0.814\n- B3: parents = [B2, B1]\n  if B2=0, B1=0 -> P(B3=1) = 0.488\n  if B2=0, B1=1 -> P(B3=1) = 0.894\n  if B2=1, B1=0 -> P(B3=1) = 0.147\n  if B2=1, B1=1 -> P(B3=1) = 0.604\n- B4: parents = [B3, B2]\n  if B3=0, B2=0 -> P(B4=1) = 0.562\n  if B3=0, B2=1 -> P(B4=1) = 0.929\n  if B3=1, B2=0 -> P(B4=1) = 0.129\n  if B3=1, B2=1 -> P(B4=1) = 0.603\n- C1: parents = [B2]\n  if B2=0 -> P(C1=1) = 0.868\n  if B2=1 -> P(C1=1) = 0.451\n- C2: parents = [C1]\n  if C1=0 -> P(C2=1) = 0.175\n  if C1=1 -> P(C2=1) = 0.441\n- C3: parents = [C2, C1]\n  if C2=0, C1=0 -> P(C3=1) = 0.119\n  if C2=0, C1=1 -> P(C3=1) = 0.402\n  if C2=1, C1=0 -> P(C3=1) = 0.422\n  if C2=1, C1=1 -> P(C3=1) = 0.784\n- D0: parents = [A3, B4, C3]\n  if A3=0, B4=0, C3=0 -> P(D0=1) = 0.800\n  if A3=0, B4=0, C3=1 -> P(D0=1) = 0.408\n  if A3=0, B4=1, C3=0 -> P(D0=1) = 0.204\n  if A3=0, B4=1, C3=1 -> P(D0=1) = 0.050\n  if A3=1, B4=0, C3=0 -> P(D0=1) = 0.947\n  if A3=1, B4=0, C3=1 -> P(D0=1) = 0.756\n  if A3=1, B4=1, C3=0 -> P(D0=1) = 0.535\n  if A3=1, B4=1, C3=1 -> P(D0=1) = 0.166\n- BR01: parents = [A2, B3]\n  if A2=0, B3=0 -> P(BR01=1) = 0.050\n  if A2=0, B3=1 -> P(BR01=1) = 0.331\n  if A2=1, B3=0 -> P(BR01=1) = 0.276\n  if A2=1, B3=1 -> P(BR01=1) = 0.816\n- BR12: parents = [B4, C2]\n  if B4=0, C2=0 -> P(BR12=1) = 0.235\n  if B4=0, C2=1 -> P(BR12=1) = 0.694\n  if B4=1, C2=0 -> P(BR12=1) = 0.613\n  if B4=1, C2=1 -> P(BR12=1) = 0.921\n- A4: parents = [A2, A3, D0]\n  if A2=0, A3=0, D0=0 -> P(A4=1) = 0.777\n  if A2=0, A3=0, D0=1 -> P(A4=1) = 0.159\n  if A2=0, A3=1, D0=0 -> P(A4=1) = 0.932\n  if A2=0, A3=1, D0=1 -> P(A4=1) = 0.425\n  if A2=1, A3=0, D0=0 -> P(A4=1) = 0.251\n  if A2=1, A3=0, D0=1 -> P(A4=1) = 0.050\n  if A2=1, A3=1, D0=0 -> P(A4=1) = 0.568\n  if A2=1, A3=1, D0=1 -> P(A4=1) = 0.066\n- A5: parents = [A3, A4]\n  if A3=0, A4=0 -> P(A5=1) = 0.837\n  if A3=0, A4=1 -> P(A5=1) = 0.389\n  if A3=1, A4=0 -> P(A5=1) = 0.536\n  if A3=1, A4=1 -> P(A5=1) = 0.125\n- A6: parents = [A4, A5]\n  if A4=0, A5=0 -> P(A6=1) = 0.302\n  if A4=0, A5=1 -> P(A6=1) = 0.786\n  if A4=1, A5=0 -> P(A6=1) = 0.065\n  if A4=1, A5=1 -> P(A6=1) = 0.370\n- A7: parents = [A5, A6, D0]\n  if A5=0, A6=0, D0=0 -> P(A7=1) = 0.950\n  if A5=0, A6=0, D0=1 -> P(A7=1) = 0.743\n  if A5=0, A6=1, D0=0 -> P(A7=1) = 0.859\n  if A5=0, A6=1, D0=1 -> P(A7=1) = 0.324\n  if A5=1, A6=0, D0=0 -> P(A7=1) = 0.850\n  if A5=1, A6=0, D0=1 -> P(A7=1) = 0.309\n  if A5=1, A6=1, D0=0 -> P(A7=1) = 0.484\n  if A5=1, A6=1, D0=1 -> P(A7=1) = 0.069\n- B5: parents = [B4, BR01, A2]\n  if B4=0, BR01=0, A2=0 -> P(B5=1) = 0.552\n  if B4=0, BR01=0, A2=1 -> P(B5=1) = 0.937\n  if B4=0, BR01=1, A2=0 -> P(B5=1) = 0.107\n  if B4=0, BR01=1, A2=1 -> P(B5=1) = 0.591\n  if B4=1, BR01=0, A2=0 -> P(B5=1) = 0.265\n  if B4=1, BR01=0, A2=1 -> P(B5=1) = 0.814\n  if B4=1, BR01=1, A2=0 -> P(B5=1) = 0.050\n  if B4=1, BR01=1, A2=1 -> P(B5=1) = 0.297\n- B6: parents = [B5, D0, A3]\n  if B5=0, D0=0, A3=0 -> P(B6=1) = 0.050\n  if B5=0, D0=0, A3=1 -> P(B6=1) = 0.124\n  if B5=0, D0=1, A3=0 -> P(B6=1) = 0.285\n  if B5=0, D0=1, A3=1 -> P(B6=1) = 0.570\n  if B5=1, D0=0, A3=0 -> P(B6=1) = 0.229\n  if B5=1, D0=0, A3=1 -> P(B6=1) = 0.497\n  if B5=1, D0=1, A3=0 -> P(B6=1) = 0.735\n  if B5=1, D0=1, A3=1 -> P(B6=1) = 0.902\n- B7: parents = [B5, B6, A4]\n  if B5=0, B6=0, A4=0 -> P(B7=1) = 0.674\n  if B5=0, B6=0, A4=1 -> P(B7=1) = 0.239\n  if B5=0, B6=1, A4=0 -> P(B7=1) = 0.941\n  if B5=0, B6=1, A4=1 -> P(B7=1) = 0.706\n  if B5=1, B6=0, A4=0 -> P(B7=1) = 0.266\n  if B5=1, B6=0, A4=1 -> P(B7=1) = 0.052\n  if B5=1, B6=1, A4=0 -> P(B7=1) = 0.735\n  if B5=1, B6=1, A4=1 -> P(B7=1) = 0.296\n- B8: parents = [B6, B7, A5]\n  if B6=0, B7=0, A5=0 -> P(B8=1) = 0.941\n  if B6=0, B7=0, A5=1 -> P(B8=1) = 0.694\n  if B6=0, B7=1, A5=0 -> P(B8=1) = 0.835\n  if B6=0, B7=1, A5=1 -> P(B8=1) = 0.416\n  if B6=1, B7=0, A5=0 -> P(B8=1) = 0.531\n  if B6=1, B7=0, A5=1 -> P(B8=1) = 0.138\n  if B6=1, B7=1, A5=0 -> P(B8=1) = 0.263\n  if B6=1, B7=1, A5=1 -> P(B8=1) = 0.050\n- B9: parents = [D0, BR12, A6]\n  if D0=0, BR12=0, A6=0 -> P(B9=1) = 0.109\n  if D0=0, BR12=0, A6=1 -> P(B9=1) = 0.050\n  if D0=0, BR12=1, A6=0 -> P(B9=1) = 0.709\n  if D0=0, BR12=1, A6=1 -> P(B9=1) = 0.280\n  if D0=1, BR12=0, A6=0 -> P(B9=1) = 0.372\n  if D0=1, BR12=0, A6=1 -> P(B9=1) = 0.087\n  if D0=1, BR12=1, A6=0 -> P(B9=1) = 0.922\n  if D0=1, BR12=1, A6=1 -> P(B9=1) = 0.653\n- C4: parents = [BR12, D0, B2]\n  if BR12=0, D0=0, B2=0 -> P(C4=1) = 0.050\n  if BR12=0, D0=0, B2=1 -> P(C4=1) = 0.170\n  if BR12=0, D0=1, B2=0 -> P(C4=1) = 0.371\n  if BR12=0, D0=1, B2=1 -> P(C4=1) = 0.778\n  if BR12=1, D0=0, B2=0 -> P(C4=1) = 0.223\n  if BR12=1, D0=0, B2=1 -> P(C4=1) = 0.629\n  if BR12=1, D0=1, B2=0 -> P(C4=1) = 0.831\n  if BR12=1, D0=1, B2=1 -> P(C4=1) = 0.950\n- C5: parents = [C3, C4, B3]\n  if C3=0, C4=0, B3=0 -> P(C5=1) = 0.332\n  if C3=0, C4=0, B3=1 -> P(C5=1) = 0.807\n  if C3=0, C4=1, B3=0 -> P(C5=1) = 0.801\n  if C3=0, C4=1, B3=1 -> P(C5=1) = 0.950\n  if C3=1, C4=0, B3=0 -> P(C5=1) = 0.115\n  if C3=1, C4=0, B3=1 -> P(C5=1) = 0.521\n  if C3=1, C4=1, B3=0 -> P(C5=1) = 0.511\n  if C3=1, C4=1, B3=1 -> P(C5=1) = 0.898\n- C6: parents = [C4, C5, B4]\n  if C4=0, C5=0, B4=0 -> P(C6=1) = 0.436\n  if C4=0, C5=0, B4=1 -> P(C6=1) = 0.902\n  if C4=0, C5=1, B4=0 -> P(C6=1) = 0.052\n  if C4=0, C5=1, B4=1 -> P(C6=1) = 0.396\n  if C4=1, C5=0, B4=0 -> P(C6=1) = 0.833\n  if C4=1, C5=0, B4=1 -> P(C6=1) = 0.950\n  if C4=1, C5=1, B4=0 -> P(C6=1) = 0.263\n  if C4=1, C5=1, B4=1 -> P(C6=1) = 0.809\n- C7: parents = [C6, D0, B5]\n  if C6=0, D0=0, B5=0 -> P(C7=1) = 0.534\n  if C6=0, D0=0, B5=1 -> P(C7=1) = 0.073\n  if C6=0, D0=1, B5=0 -> P(C7=1) = 0.941\n  if C6=0, D0=1, B5=1 -> P(C7=1) = 0.523\n  if C6=1, D0=0, B5=0 -> P(C7=1) = 0.787\n  if C6=1, D0=0, B5=1 -> P(C7=1) = 0.204\n  if C6=1, D0=1, B5=0 -> P(C7=1) = 0.950\n  if C6=1, D0=1, B5=1 -> P(C7=1) = 0.780",
+    "query_variable": "B9",
+    "random_search_best": {
+      "name": "random_best_of_1000",
+      "ordering": [
+        "B2",
+        "C1",
+        "B7",
+        "C5",
+        "C6",
+        "A5",
+        "BR01",
+        "A4",
+        "B3",
+        "B8",
+        "B4",
+        "C3",
+        "BR12",
+        "A2",
+        "A6",
+        "D0",
+        "A3",
+        "C4",
+        "B6",
+        "A1"
+      ],
+      "peak_factor_size": 8
+    },
+    "requested_total_variables": 26,
+    "scale_note": null,
+    "seed": 10,
+    "size_escalated": false,
+    "total_variables": 26,
+    "variables": [
+      {
+        "cpt_true_probs": [
+          0.521
+        ],
+        "name": "A1",
+        "parents": []
+      },
+      {
+        "cpt_true_probs": [
+          0.708,
+          0.242
+        ],
+        "name": "A2",
+        "parents": [
+          "A1"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.21,
+          0.508,
+          0.749,
+          0.921
+        ],
+        "name": "A3",
+        "parents": [
+          "A2",
+          "A1"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.257,
+          0.608
+        ],
+        "name": "B1",
+        "parents": [
+          "A2"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.576,
+          0.814
+        ],
+        "name": "B2",
+        "parents": [
+          "B1"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.488,
+          0.894,
+          0.147,
+          0.604
+        ],
+        "name": "B3",
+        "parents": [
+          "B2",
+          "B1"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.562,
+          0.929,
+          0.129,
+          0.603
+        ],
+        "name": "B4",
+        "parents": [
+          "B3",
+          "B2"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.868,
+          0.451
+        ],
+        "name": "C1",
+        "parents": [
+          "B2"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.175,
+          0.441
+        ],
+        "name": "C2",
+        "parents": [
+          "C1"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.119,
+          0.402,
+          0.422,
+          0.784
+        ],
+        "name": "C3",
+        "parents": [
+          "C2",
+          "C1"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.8,
+          0.408,
+          0.204,
+          0.05,
+          0.947,
+          0.756,
+          0.535,
+          0.166
+        ],
+        "name": "D0",
+        "parents": [
+          "A3",
+          "B4",
+          "C3"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.05,
+          0.331,
+          0.276,
+          0.816
+        ],
+        "name": "BR01",
+        "parents": [
+          "A2",
+          "B3"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.235,
+          0.694,
+          0.613,
+          0.921
+        ],
+        "name": "BR12",
+        "parents": [
+          "B4",
+          "C2"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.777,
+          0.159,
+          0.932,
+          0.425,
+          0.251,
+          0.05,
+          0.568,
+          0.066
+        ],
+        "name": "A4",
+        "parents": [
+          "A2",
+          "A3",
+          "D0"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.837,
+          0.389,
+          0.536,
+          0.125
+        ],
+        "name": "A5",
+        "parents": [
+          "A3",
+          "A4"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.302,
+          0.786,
+          0.065,
+          0.37
+        ],
+        "name": "A6",
+        "parents": [
+          "A4",
+          "A5"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.95,
+          0.743,
+          0.859,
+          0.324,
+          0.85,
+          0.309,
+          0.484,
+          0.069
+        ],
+        "name": "A7",
+        "parents": [
+          "A5",
+          "A6",
+          "D0"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.552,
+          0.937,
+          0.107,
+          0.591,
+          0.265,
+          0.814,
+          0.05,
+          0.297
+        ],
+        "name": "B5",
+        "parents": [
+          "B4",
+          "BR01",
+          "A2"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.05,
+          0.124,
+          0.285,
+          0.57,
+          0.229,
+          0.497,
+          0.735,
+          0.902
+        ],
+        "name": "B6",
+        "parents": [
+          "B5",
+          "D0",
+          "A3"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.674,
+          0.239,
+          0.941,
+          0.706,
+          0.266,
+          0.052,
+          0.735,
+          0.296
+        ],
+        "name": "B7",
+        "parents": [
+          "B5",
+          "B6",
+          "A4"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.941,
+          0.694,
+          0.835,
+          0.416,
+          0.531,
+          0.138,
+          0.263,
+          0.05
+        ],
+        "name": "B8",
+        "parents": [
+          "B6",
+          "B7",
+          "A5"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.109,
+          0.05,
+          0.709,
+          0.28,
+          0.372,
+          0.087,
+          0.922,
+          0.653
+        ],
+        "name": "B9",
+        "parents": [
+          "D0",
+          "BR12",
+          "A6"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.05,
+          0.17,
+          0.371,
+          0.778,
+          0.223,
+          0.629,
+          0.831,
+          0.95
+        ],
+        "name": "C4",
+        "parents": [
+          "BR12",
+          "D0",
+          "B2"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.332,
+          0.807,
+          0.801,
+          0.95,
+          0.115,
+          0.521,
+          0.511,
+          0.898
+        ],
+        "name": "C5",
+        "parents": [
+          "C3",
+          "C4",
+          "B3"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.436,
+          0.902,
+          0.052,
+          0.396,
+          0.833,
+          0.95,
+          0.263,
+          0.809
+        ],
+        "name": "C6",
+        "parents": [
+          "C4",
+          "C5",
+          "B4"
+        ]
+      },
+      {
+        "cpt_true_probs": [
+          0.534,
+          0.073,
+          0.941,
+          0.523,
+          0.787,
+          0.204,
+          0.95,
+          0.78
+        ],
+        "name": "C7",
+        "parents": [
+          "C6",
+          "D0",
+          "B5"
+        ]
+      }
+    ]
+  },
+  "seed": 10,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}

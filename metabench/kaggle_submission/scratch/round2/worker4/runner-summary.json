@@ -1,0 +1,120 @@
+{
+  "models": {
+    "claude-sonnet-4.6": {
+      "avg_score": 20.199363656641335,
+      "completed": 4,
+      "feasible": 1,
+      "parse_paths": {
+        "partial_rescue": 1,
+        "strict_parse_failed": 2,
+        "strict_protocol_cf": 1
+      }
+    },
+    "gemini-flash-latest": {
+      "avg_score": 81.51045432604384,
+      "completed": 4,
+      "feasible": 4,
+      "parse_paths": {
+        "partial_rescue": 1,
+        "strict_protocol_cf": 3
+      }
+    },
+    "gpt-5.4-mini": {
+      "avg_score": 81.82357441157883,
+      "completed": 4,
+      "feasible": 4,
+      "parse_paths": {
+        "partial_rescue": 1,
+        "strict_protocol_cf": 3
+      }
+    }
+  },
+  "question_ids": [
+    "ve_hard_seed10",
+    "mwis_hard_seed5",
+    "mwis_hard_seed9",
+    "mwis_hard_seed13"
+  ],
+  "questions": {
+    "mwis_hard_seed13": {
+      "claude-sonnet-4.6": {
+        "feasible": false,
+        "parse_path": "strict_parse_failed",
+        "score": 0.0,
+        "stop_reason": "error"
+      },
+      "gemini-flash-latest": {
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": 77.27114843218217,
+        "stop_reason": "decision_stop"
+      },
+      "gpt-5.4-mini": {
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": 80.70784901812401,
+        "stop_reason": "decision_stop"
+      }
+    },
+    "mwis_hard_seed5": {
+      "claude-sonnet-4.6": {
+        "feasible": false,
+        "parse_path": "strict_parse_failed",
+        "score": 0.0,
+        "stop_reason": "error"
+      },
+      "gemini-flash-latest": {
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": 75.7555665649173,
+        "stop_reason": "decision_stop"
+      },
+      "gpt-5.4-mini": {
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": 71.4678545085959,
+        "stop_reason": "decision_stop"
+      }
+    },
+    "mwis_hard_seed9": {
+      "claude-sonnet-4.6": {
+        "feasible": false,
+        "parse_path": "strict_protocol_cf",
+        "score": 0.0,
+        "stop_reason": "decision_stop"
+      },
+      "gemini-flash-latest": {
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": 85.40096624581348,
+        "stop_reason": "decision_stop"
+      },
+      "gpt-5.4-mini": {
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": 85.6934778992731,
+        "stop_reason": "decision_stop"
+      }
+    },
+    "ve_hard_seed10": {
+      "claude-sonnet-4.6": {
+        "feasible": true,
+        "parse_path": "partial_rescue",
+        "score": 80.79745462656534,
+        "stop_reason": "error"
+      },
+      "gemini-flash-latest": {
+        "feasible": true,
+        "parse_path": "partial_rescue",
+        "score": 87.6141360612624,
+        "stop_reason": "decision_stop"
+      },
+      "gpt-5.4-mini": {
+        "feasible": true,
+        "parse_path": "partial_rescue",
+        "score": 89.42511622032232,
+        "stop_reason": "decision_stop"
+      }
+    }
+  }
+}

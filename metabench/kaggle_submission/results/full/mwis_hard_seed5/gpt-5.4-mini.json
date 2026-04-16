@@ -1,0 +1,225 @@
+{
+  "baseline_objective": 316.0,
+  "cf_delta": -0.04471353041940063,
+  "cf_parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V005",
+        "V008",
+        "V016",
+        "V027",
+        "V042",
+        "V047",
+        "V051",
+        "V060",
+        "V065",
+        "V070",
+        "V071",
+        "V078",
+        "V079",
+        "V081",
+        "V083",
+        "V085",
+        "V086",
+        "V090",
+        "V105",
+        "V109",
+        "V111",
+        "V112",
+        "V113",
+        "V117",
+        "V118"
+      ],
+      "total_weight": 316
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.5,
+      "expected_gap_reduction": 1.0,
+      "p_improve": 0.08
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.2,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.08
+    },
+    "subtask_body": "I rechecked the current set against the densest conflict hubs and did not find a safe single swap that clearly improves weight.",
+    "subtask_id": 3,
+    "updated_plan_state": "Keep a valid structured answer at every turn; no better feasible swap was identified in the third pass, so retain the baseline set."
+  },
+  "class": "mwis",
+  "difficulty": "hard",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_gap_pct": 28.34467120181406,
+      "baseline_objective": 316,
+      "improves_on_baseline": false,
+      "normalized_submission": {
+        "selected_vertices": [
+          "V005",
+          "V008",
+          "V016",
+          "V027",
+          "V042",
+          "V047",
+          "V051",
+          "V060",
+          "V065",
+          "V070",
+          "V071",
+          "V078",
+          "V079",
+          "V081",
+          "V083",
+          "V085",
+          "V086",
+          "V090",
+          "V105",
+          "V109",
+          "V111",
+          "V112",
+          "V113",
+          "V117",
+          "V118"
+        ],
+        "total_weight": 316
+      },
+      "optimal_objective": 441,
+      "selected_count": 25,
+      "submitted_objective": 316
+    },
+    "feasible": true,
+    "gap_pct": 28.34467120181406,
+    "mode": "solo",
+    "submission": {
+      "selected_vertices": [
+        "V005",
+        "V008",
+        "V016",
+        "V027",
+        "V042",
+        "V047",
+        "V051",
+        "V060",
+        "V065",
+        "V070",
+        "V071",
+        "V078",
+        "V079",
+        "V081",
+        "V083",
+        "V085",
+        "V086",
+        "V090",
+        "V105",
+        "V109",
+        "V111",
+        "V112",
+        "V113",
+        "V117",
+        "V118"
+      ],
+      "total_weight": 316
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gap_pct": 28.34467120181406,
+  "gold_objective": 441.0,
+  "id": "mwis_hard_seed5",
+  "model": "gpt-5.4-mini",
+  "model_slug": "gpt-5.4-mini",
+  "n_exec_turns": 2,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 3
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 4
+    }
+  ],
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V005",
+        "V008",
+        "V016",
+        "V027",
+        "V042",
+        "V047",
+        "V051",
+        "V060",
+        "V065",
+        "V070",
+        "V071",
+        "V078",
+        "V079",
+        "V081",
+        "V083",
+        "V085",
+        "V086",
+        "V090",
+        "V105",
+        "V109",
+        "V111",
+        "V112",
+        "V113",
+        "V117",
+        "V118"
+      ],
+      "total_weight": 316
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.8,
+      "expected_gap_reduction": 1.8,
+      "p_improve": 0.12
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.2,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.08
+    },
+    "subtask_body": "I checked the most promising improvement direction: replace low/medium baseline vertices that sit in dense conflict zones with heavier isolated vertices.",
+    "subtask_id": 2,
+    "updated_plan_state": "Keep a valid structured answer at every turn; no better feasible swap was identified in the second pass, so retain the baseline set unless a later local search finds a clear improvement."
+  },
+  "score": 71.4678545085959,
+  "score_after_cf": 71.4678545085959,
+  "score_at_stop": 71.5125680390153,
+  "seed": 5,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Start from the baseline, then improve by targeted swaps around the highest-weight vertices and dense conflict zones.\nPLAN_STATE: First verify feasibility mentally and note that many baseline picks are clustered near V086/V094/V118 and may be replaceable.\nPLAN_STATE: Build a stronger independent set by prioritizing very high weights (V070, V051, V110, V049, V069, V048, V037, V034, V117, V118) while avoiding their neighborhoods.\nPLAN_STATE: Use a greedy-by-weight-with-conflict-check approach, but be willing to drop several medium vertices if they block a heavier combination.\nPLAN_STATE: Pay special attention to vertices with sparse adjacency and high weight, since they can anchor the solution.\nPLAN_STATE: After constructing a candidate, do a full edge-consistency pass and exact weight sum.\nPLAN_STATE: If the candidate is only marginally better, do one more local improvement pass around the heaviest selected vertices.\nNEXT_SUB: {\"id\":1,\"desc\":\"Construct one improved feasible candidate\",\"p_solve\":0.38,\"time_budget_s\":180}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: Built a feasible candidate by keeping the baseline\u2019s sparse high-value anchors and testing obvious conflicts around V070/V110/V118.\nSUB_1: The baseline set is already independent; I looked for easy upgrades among high weights not adjacent to selected vertices.\nSUB_1: Strong candidates to add were blocked by baseline picks: V049 conflicts with V051/V060/V069/V070/V111/V118; V110 conflicts with V002/V038/V048/V064/V085/V088/V094/V108/V118.\nSUB_1: V048 conflicts with V038/V039/V046/V053/V060/V068/V070/V075/V084/V088/V110/V118.\nSUB_1: V069 conflicts with V002/V009/V039/V049/V050/V051/V064/V066/V085/V088/V091/V094/V105/V108.\nSUB_1: V037 conflicts with V010/V023/V039/V050/V051/V060/V071/V075/V094/V104/V118.\nSUB_1: V034 conflicts with V001/V008/V050/V061/V078/V103/V113.\nSUB_1: V117 conflicts with V020/V058/V064/V074/V094/V114/V116/V118/V119.\nSUB_1: V118 is heavily constrained and already present in baseline, so it is best kept only if no better swap exists.\nSUB_1: I did not find a simple single-vertex add that preserves feasibility and beats the baseline by much.\nSUB_1: Best valid candidate found so far is the baseline itself.\nBEST_GUESS: {\"selected_vertices\":[\"V005\",\"V008\",\"V016\",\"V027\",\"V042\",\"V047\",\"V051\",\"V060\",\"V065\",\"V070\",\"V071\",\"V078\",\"V079\",\"V081\",\"V083\",\"V085\",\"V086\",\"V090\",\"V105\",\"V109\",\"V111\",\"V112\",\"V113\",\"V117\",\"V118\"],\"total_weight\":316}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn; no better feasible swap was identified in the first pass, so retain the baseline set unless a later local search finds a clear improvement.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.08,\"p_gap_le_10\":0.2}\nCONTINUE_FORECAST: {\"p_improve\":0.18,\"expected_delta_score\":1.2,\"expected_gap_reduction\":2.5}\nDECISION: continue\nNEXT_SUB: {\"id\":2,\"desc\":\"Search for a profitable swap by removing one baseline vertex and inserting a compatible heavier pair or trio\",\"p_solve\":0.22,\"time_budget_s\":120}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: I checked the most promising improvement direction: replace low/medium baseline vertices that sit in dense conflict zones with heavier isolated vertices.\nSUB_2: The baseline remains feasible, but several selected vertices are \u201cblocking\u201d higher-weight options: V008, V016, V027, V042, V047, V071, V079, V081, V083, V085, V086, V090, V105, V109, V111, V112, V113, V117, V118.\nSUB_2: High-weight vertices that look attractive but are heavily constrained include V049, V069, V070, V110, V048, V037, V034, V117, V118.\nSUB_2: I did not find a clean swap that increases weight without cascading conflicts.\nSUB_2: Best valid candidate remains the current baseline set.\nBEST_GUESS: {\"selected_vertices\":[\"V005\",\"V008\",\"V016\",\"V027\",\"V042\",\"V047\",\"V051\",\"V060\",\"V065\",\"V070\",\"V071\",\"V078\",\"V079\",\"V081\",\"V083\",\"V085\",\"V086\",\"V090\",\"V105\",\"V109\",\"V111\",\"V112\",\"V113\",\"V117\",\"V118\"],\"total_weight\":316}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn; no better feasible swap was identified in the second pass, so retain the baseline set unless a later local search finds a clear improvement.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.08,\"p_gap_le_10\":0.2}\nCONTINUE_FORECAST: {\"p_improve\":0.12,\"expected_delta_score\":0.8,\"expected_gap_reduction\":1.8}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_3: I rechecked the current set against the densest conflict hubs and did not find a safe single swap that clearly improves weight.\nSUB_3: The baseline remains feasible and already includes several high-value anchors: V051, V060, V070, V078, V086, V109, V117, V118.\nSUB_3: The most tempting upgrades (V049, V069, V110, V048, V037) each collide with multiple anchors, so they would require a larger coordinated replacement.\nSUB_3: Given the time/value tradeoff, I am keeping the current best feasible independent set.\nBEST_GUESS: {\"selected_vertices\":[\"V005\",\"V008\",\"V016\",\"V027\",\"V042\",\"V047\",\"V051\",\"V060\",\"V065\",\"V070\",\"V071\",\"V078\",\"V079\",\"V081\",\"V083\",\"V085\",\"V086\",\"V090\",\"V105\",\"V109\",\"V111\",\"V112\",\"V113\",\"V117\",\"V118\"],\"total_weight\":316}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn; no better feasible swap was identified in the third pass, so retain the baseline set.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.08,\"p_gap_le_10\":0.2}\nCONTINUE_FORECAST: {\"p_improve\":0.08,\"expected_delta_score\":0.5,\"expected_gap_reduction\":1.0}\nDECISION: stop",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 18.747434791876003
+}
