@@ -1,0 +1,167 @@
+{
+  "models": [
+    "gemini-flash-latest",
+    "claude-sonnet-4.6",
+    "gpt-5.4-mini"
+  ],
+  "per_model": {
+    "claude-sonnet-4.6": {
+      "avg_score": 46.64595382209448,
+      "avg_wall_s": 230.34571421850706,
+      "error_rows": [
+        "ve_hard_seed4",
+        "ve_hard_seed7"
+      ],
+      "feasible_rows": 2,
+      "parse_paths": {
+        "strict_parse_failed": 2,
+        "strict_protocol_cf": 2
+      },
+      "rows_with_artifacts": 4,
+      "stop_reasons": {
+        "decision_stop": 2,
+        "error": 2
+      }
+    },
+    "gemini-flash-latest": {
+      "avg_score": 92.8989119267937,
+      "avg_wall_s": 420.25392537529115,
+      "error_rows": [],
+      "feasible_rows": 4,
+      "parse_paths": {
+        "partial_rescue": 2,
+        "strict_protocol_cf": 2
+      },
+      "rows_with_artifacts": 4,
+      "stop_reasons": {
+        "decision_stop": 4
+      }
+    },
+    "gpt-5.4-mini": {
+      "avg_score": 88.84345734726882,
+      "avg_wall_s": 12.392150687519461,
+      "error_rows": [],
+      "feasible_rows": 4,
+      "parse_paths": {
+        "partial_rescue": 2,
+        "strict_protocol_cf": 2
+      },
+      "rows_with_artifacts": 4,
+      "stop_reasons": {
+        "decision_stop": 4
+      }
+    }
+  },
+  "per_question": {
+    "tsp_hard_seed10": {
+      "class": "tsp",
+      "difficulty": "hard",
+      "feasible": {
+        "claude-sonnet-4.6": true,
+        "gemini-flash-latest": true,
+        "gpt-5.4-mini": true
+      },
+      "parse_paths": {
+        "claude-sonnet-4.6": "strict_protocol_cf",
+        "gemini-flash-latest": "strict_protocol_cf",
+        "gpt-5.4-mini": "strict_protocol_cf"
+      },
+      "scores": {
+        "claude-sonnet-4.6": 92.68110324388824,
+        "gemini-flash-latest": 94.56897356708069,
+        "gpt-5.4-mini": 77.83562975324863
+      },
+      "seed": 10,
+      "stop_reasons": {
+        "claude-sonnet-4.6": "decision_stop",
+        "gemini-flash-latest": "decision_stop",
+        "gpt-5.4-mini": "decision_stop"
+      }
+    },
+    "tsp_hard_seed7": {
+      "class": "tsp",
+      "difficulty": "hard",
+      "feasible": {
+        "claude-sonnet-4.6": true,
+        "gemini-flash-latest": true,
+        "gpt-5.4-mini": true
+      },
+      "parse_paths": {
+        "claude-sonnet-4.6": "strict_protocol_cf",
+        "gemini-flash-latest": "strict_protocol_cf",
+        "gpt-5.4-mini": "strict_protocol_cf"
+      },
+      "scores": {
+        "claude-sonnet-4.6": 93.90271204448966,
+        "gemini-flash-latest": 93.37565893281331,
+        "gpt-5.4-mini": 95.02305042063614
+      },
+      "seed": 7,
+      "stop_reasons": {
+        "claude-sonnet-4.6": "decision_stop",
+        "gemini-flash-latest": "decision_stop",
+        "gpt-5.4-mini": "decision_stop"
+      }
+    },
+    "ve_hard_seed4": {
+      "class": "ve",
+      "difficulty": "hard",
+      "feasible": {
+        "claude-sonnet-4.6": false,
+        "gemini-flash-latest": true,
+        "gpt-5.4-mini": true
+      },
+      "parse_paths": {
+        "claude-sonnet-4.6": "strict_parse_failed",
+        "gemini-flash-latest": "partial_rescue",
+        "gpt-5.4-mini": "partial_rescue"
+      },
+      "scores": {
+        "claude-sonnet-4.6": 0.0,
+        "gemini-flash-latest": 93.68978167936383,
+        "gpt-5.4-mini": 91.41674167160224
+      },
+      "seed": 4,
+      "stop_reasons": {
+        "claude-sonnet-4.6": "error",
+        "gemini-flash-latest": "decision_stop",
+        "gpt-5.4-mini": "decision_stop"
+      }
+    },
+    "ve_hard_seed7": {
+      "class": "ve",
+      "difficulty": "hard",
+      "feasible": {
+        "claude-sonnet-4.6": false,
+        "gemini-flash-latest": true,
+        "gpt-5.4-mini": true
+      },
+      "parse_paths": {
+        "claude-sonnet-4.6": "strict_parse_failed",
+        "gemini-flash-latest": "partial_rescue",
+        "gpt-5.4-mini": "partial_rescue"
+      },
+      "scores": {
+        "claude-sonnet-4.6": 0.0,
+        "gemini-flash-latest": 89.96123352791696,
+        "gpt-5.4-mini": 91.09840754358828
+      },
+      "seed": 7,
+      "stop_reasons": {
+        "claude-sonnet-4.6": "error",
+        "gemini-flash-latest": "decision_stop",
+        "gpt-5.4-mini": "decision_stop"
+      }
+    }
+  },
+  "question_ids": [
+    "tsp_hard_seed7",
+    "tsp_hard_seed10",
+    "ve_hard_seed4",
+    "ve_hard_seed7"
+  ],
+  "question_source": "/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/scratch/round2/worker3/questions.partial.jsonl",
+  "results_root": "/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/results/full",
+  "round": 2,
+  "worker": 3
+}

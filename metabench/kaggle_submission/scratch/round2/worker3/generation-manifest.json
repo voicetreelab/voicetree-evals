@@ -1,0 +1,74 @@
+{
+  "child_ids": [
+    "tsp_hard_seed7",
+    "tsp_hard_seed10",
+    "ve_hard_seed4",
+    "ve_hard_seed7"
+  ],
+  "generated_cells": [
+    {
+      "attempt_lines": [],
+      "class": "tsp",
+      "difficulty": "hard",
+      "requested_seeds": [
+        7,
+        8,
+        9
+      ],
+      "row_ids": [
+        "tsp_hard_seed7",
+        "tsp_hard_seed8",
+        "tsp_hard_seed9"
+      ]
+    },
+    {
+      "attempt_lines": [],
+      "class": "tsp",
+      "difficulty": "hard",
+      "requested_seeds": [
+        10,
+        11,
+        12
+      ],
+      "row_ids": [
+        "tsp_hard_seed10",
+        "tsp_hard_seed11",
+        "tsp_hard_seed12"
+      ]
+    },
+    {
+      "attempt_lines": [],
+      "class": "ve",
+      "difficulty": "hard",
+      "requested_seeds": [
+        4,
+        5,
+        6
+      ],
+      "row_ids": [
+        "ve_hard_seed4",
+        "ve_hard_seed5",
+        "ve_hard_seed6"
+      ]
+    },
+    {
+      "attempt_lines": [],
+      "class": "ve",
+      "difficulty": "hard",
+      "requested_seeds": [
+        7,
+        8,
+        9
+      ],
+      "row_ids": [
+        "ve_hard_seed7",
+        "ve_hard_seed8",
+        "ve_hard_seed9"
+      ]
+    }
+  ],
+  "generated_rows": 12,
+  "round": 2,
+  "skipped_cells": [],
+  "worker": 3
+}

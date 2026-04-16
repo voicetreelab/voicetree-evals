@@ -1,0 +1,205 @@
+{
+  "baseline_objective": 495.54467916828713,
+  "cf_delta": -0.14046080084051482,
+  "cf_parsed": {
+    "best_guess": {
+      "tour": [
+        16,
+        2,
+        10,
+        9,
+        11,
+        13,
+        4,
+        15,
+        17,
+        7,
+        5,
+        18,
+        12,
+        6,
+        8,
+        1,
+        19,
+        0,
+        3,
+        14
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.8,
+      "expected_gap_reduction": 1.5,
+      "p_improve": 0.2
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.4,
+      "p_gap_le_2": 0.05,
+      "p_gap_le_5": 0.15
+    },
+    "subtask_body": "Final 2-opt pass on current best tour [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14].\n\nLet me try a few more specific swaps:\n\nTry moving city 6(52,51) between 11(31,67) and 13(25,58):\nTour: 16,2,10,9,11,6,13,4,15,17,7,5,18,12,8,1,19,0,3,14\u219216\n- 11\u21926: sqrt(21\u00b2+16\u00b2)=26.4, 6\u219213: sqrt(27\u00b2+7\u00b2)=27.9, 12\u21928: 12, 14\u219216: 59\nvs 11\u219213: 9, 13\u21926(later removed), 12\u21926: 20, 6\u21928: 22\nChange: +26.4+27.9+12+59 vs +9+20+22+59 = 125.3 vs 110. Worse.\n\nTry: 16,2,10,9,11,13,4,15,17,7,5,18,12,8,6,1,19,0,3,14\u219216\n- 12\u21928: 12, 8\u21926: 22, 6\u21921: sqrt(25\u00b2+6\u00b2)=25.7 vs 12\u21926: 20, 6\u21928: 22, 8\u21921: 7. Cost: 59.7 vs 49. Worse.\n\nTry: place 6 between 19 and 0: ...1,19,6,0,3,14...\n- 19\u21926: sqrt(39\u00b2+0\u00b2)=39, 6\u21920: sqrt(24\u00b2+20\u00b2)=31.2, vs 19\u21920: 16. Net: +54.2. Worse.\n\nTry 2-opt reversing [11,13,4,15,17,7,5,18,12,6,8,1,19,0,3]:\nSwap edges (9,11) and (3,14): connect 9\u21923 and 11\u219214.\n9\u21923: sqrt(66\u00b2+9\u00b2)=66.6, 11\u219214: 35 vs 9\u219211: 18, 3\u219214: 20. Cost: 101.6 vs 38. Much worse.\n\nTry swap edges (0,3) and (14,16): connect 0\u219214 and 3\u219216.\n0\u219214: sqrt(15\u00b2+14\u00b2)=20.5, 3\u219216: sqrt(78\u00b2+11\u00b2)=78.8 vs 0\u21923: 6, 14\u219216: 59. Cost: 99.3 vs 65. Worse.\n\nCurrent best remains [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14] \u2248383.",
+    "subtask_id": 4,
+    "updated_plan_state": "Final answer is tour [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14] with estimated length ~383, approximately 22.5% below baseline 495.5. No further improvements found via 2-opt or or-opt."
+  },
+  "class": "tsp",
+  "difficulty": "hard",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_length": 495.54467916828713,
+      "computed_length": 393.2906090558055,
+      "normalized_tour": [
+        0,
+        3,
+        14,
+        16,
+        2,
+        10,
+        9,
+        11,
+        13,
+        4,
+        15,
+        17,
+        7,
+        5,
+        18,
+        12,
+        6,
+        8,
+        1,
+        19
+      ],
+      "optimal_length": 373.5454706811403
+    },
+    "feasible": true,
+    "gap_pct": 5.285872785088518,
+    "mode": "solo",
+    "submission": {
+      "tour": [
+        16,
+        2,
+        10,
+        9,
+        11,
+        13,
+        4,
+        15,
+        17,
+        7,
+        5,
+        18,
+        12,
+        6,
+        8,
+        1,
+        19,
+        0,
+        3,
+        14
+      ]
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gap_pct": 5.285872785088518,
+  "gold_objective": 373.5454706811403,
+  "id": "tsp_hard_seed7",
+  "model": "claude-sonnet-4.6",
+  "model_slug": "claude-sonnet-4.6",
+  "n_exec_turns": 3,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 3
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 4
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 5
+    }
+  ],
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "tour": [
+        16,
+        2,
+        10,
+        9,
+        11,
+        13,
+        4,
+        15,
+        17,
+        7,
+        5,
+        18,
+        12,
+        6,
+        8,
+        1,
+        19,
+        0,
+        3,
+        14
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 1.5,
+      "expected_gap_reduction": 2.5,
+      "p_improve": 0.35
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.4,
+      "p_gap_le_2": 0.05,
+      "p_gap_le_5": 0.15
+    },
+    "subtask_body": "Or-opt analysis: try relocating city 7 to different positions.\n\nCurrent tour: [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14] \u2248383\nCity 7(5,8) currently between 17(5,49) and 5(67,20): costs 41+63=104, saves 17\u21925=68. Net penalty=36.\n\nTry inserting 7 between 5(67,20) and 18(58,29): 5\u21927=63, 7\u219218=sqrt(53\u00b2+21\u00b2)=57. vs 5\u219218=14. Net: 63+57-14=106 worse.\nTry inserting 7 between 15(22,45) and 4(21,54): 15\u21927=40.8, 7\u21924=sqrt(16\u00b2+46\u00b2)=49. vs 15\u21924=9. Net: 80.8 worse.\nTry inserting 7 at end of tour near 17: already there.\n\nCity 7 is best placed between 17 and 5 (or near that area). The 63-unit edge is unavoidable.\n\nTry 2-opt: swap edges (17,7) and (5,18) \u2192 connect 17\u21925 and 7\u219218: reverse segment [7,5] \u2192 [5,7].\nNew tour: ...15,17,5,7,18,12... 17\u21925=68, 7\u219218=57 vs 17\u21927=41, 5\u219218=14. Cost: 125 vs 55. Worse.\n\nTry 2-opt: swap (7,5) and (12,6): reverse [5,18,12] \u2192 [12,18,5].\n...17,7,12,18,5,6,8... 7\u219212=sqrt(55\u00b2+28\u00b2)=62, 5\u21926=sqrt(15\u00b2+31\u00b2)=34 vs 7\u21925=63, 12\u21926=20. Cost: 62+34=96 vs 63+20=83. Worse.\n\nTry tour: 16,2,10,9,11,13,4,15,17,7,5,18,12,8,1,19,0,3,14,6\u219216\n- 12\u21928: sqrt(11\u00b2+5\u00b2)=12, 14\u21926: sqrt(9\u00b2+34\u00b2)=35, 6\u219216: 57. vs 12\u21926=20, 6\u21928=22, 14\u219216=59. \n- Change: 12+35+57=104 vs 20+22+59=101. Slightly worse.\n\nTry: ...6,12,18,5,7,17,15,4,13... with 13 connecting back differently.\nTour: 16,2,10,9,11,14,3,0,19,1,8,6,12,18,5,7,17,15,4,13\u219216\n13\u219216: sqrt(23\u00b2+29\u00b2)=37. Total \u2248 3+22+8+18+35+20+6+16+15+7+22+20+8+14+63+41+17+9+5+37=386. Worse.\n\nKeeping current best \u2248383.",
+    "subtask_id": 3,
+    "updated_plan_state": "Current best \u2248383 (~22.5% below baseline 495.5). City 7's isolation makes further improvement difficult. The 14\u219216 edge (\u224859) and 7\u21925 edge (\u224863) dominate. One more attempt to find a better routing for these."
+  },
+  "score": 93.90271204448966,
+  "score_after_cf": 93.90271204448966,
+  "score_at_stop": 94.04317284533018,
+  "seed": 7,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Use nearest-neighbor heuristic to build an initial tour, then apply 2-opt improvements manually. Start from baseline tour [0,3,14,11,13,4,15,17,9,10,16,2,6,12,18,5,8,1,19,7] and try to find better orderings by examining obvious crossing edges and fixing them. Target: get tour length below ~430 (>13% improvement).\n\nKey observations from coordinates:\n- Cities cluster: NE cluster (0,3,14,19,1,8), W cluster (2,16,9,10,4,13,15,17,7), middle (6,11,12,18,5)\n- Baseline has city 7 (5,8) awkwardly placed at end, far from neighbors\n- Need to route through geographic clusters efficiently\n\nStrategy: Build tour by geographic sweep, then apply 2-opt swaps mentally to remove crossings.\n\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct improved tour using geographic clustering and 2-opt refinement\", \"p_solve\": 0.75, \"time_budget_s\": 300}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: Let me construct a tour by geographic clustering and manual 2-opt.\n\nClusters:\n- NE: 0(76,71), 3(80,76), 14(61,85), 19(91,51), 1(77,45), 8(71,41)\n- Middle: 6(52,51), 12(60,36), 18(58,29), 5(67,20), 11(31,67)\n- W: 2(0,84), 16(2,87), 9(14,67), 10(21,74), 4(21,54), 13(25,58), 15(22,45), 17(5,49), 7(5,8)\n\nGeographic tour attempt (clockwise from top-left):\n16(2,87) \u2192 2(0,84) \u2192 10(21,74) \u2192 9(14,67) \u2192 11(31,67) \u2192 14(61,85) \u2192 3(80,76) \u2192 0(76,71) \u2192 19(91,51) \u2192 1(77,45) \u2192 8(71,41) \u2192 12(60,36) \u2192 18(58,29) \u2192 5(67,20) \u2192 7(5,8) \u2192 15(22,45) \u2192 17(5,49) \u2192 4(21,54) \u2192 13(25,58) \u2192 6(52,51) \u2192 back to 16\n\nWait, let me recalculate more carefully. City 7 is at (5,8) - very bottom left. Let me route: ... \u2192 5(67,20) \u2192 7(5,8) \u2192 17(5,49) \u2192 ...\n\nTour: 16,2,10,9,11,14,3,0,19,1,8,12,18,5,7,17,15,4,13,6 \u2192 back to 16\n\nComputing approximate distances for key segments:\n- 16\u21922: ~3, 2\u219210: ~22, 10\u21929: ~8, 9\u219211: ~18, 11\u219214: ~37, 14\u21923: ~20, 3\u21920: ~6, 0\u219219: ~16, 19\u21921: ~15, 1\u21928: ~7, 8\u219212: ~13, 12\u219218: ~8, 18\u21925: ~14, 5\u21927: ~63, 7\u219217: ~41, 17\u219215: ~17, 15\u21924: ~9, 4\u219213: ~5, 13\u21926: ~28, 6\u219216: ~57\n\nTotal \u2248 407. Let me try moving 7 differently.\n\nAlternative: route 7 between 17 and 5 differently. Try: ...5\u219218\u219212\u21928\u21921\u219219\u21920\u21923\u219214\u219211\u219213\u21924\u219215\u219217\u21927\u2192...\n\nBetter tour: 16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14 \u2192 16\n- 16\u21922:3, 2\u219210:22, 10\u21929:8, 9\u219211:18, 11\u219213:9, 13\u21924:5, 4\u219215:9, 15\u219217:17, 17\u21927:41, 7\u21925:63, 5\u219218:14, 18\u219212:8, 12\u21926:20, 6\u21928:22, 8\u21921:7, 1\u219219:15, 19\u21920:16, 0\u21923:6, 3\u219214:20, 14\u219216:60\nTotal \u2248 383\n\nTry: 16,2,10,9,11,14,3,0,19,1,8,6,12,18,5,7,17,15,4,13 \u2192 16\n- 13\u219216: ~57 too far. \n\nTry: 7,17,15,4,13,9,10,16,2,11,6,14,3,0,19,1,8,12,18,5 \u2192 7\n- 5\u21927: 63, 2\u219211: ~32... \n\nBest so far: 16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14\n\nBEST_GUESS: {\"tour\": [16, 2, 10, 9, 11, 13, 4, 15, 17, 7, 5, 18, 12, 6, 8, 1, 19, 0, 3, 14]}\n\nUPDATED_PLAN_STATE: Have a tour estimated ~383. Try one more 2-opt pass to improve, especially the 7\u21925 segment (distance 63) and 14\u219216 segment (distance 60).\n\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.15, \"p_gap_le_10\": 0.45}\n\nCONTINUE_FORECAST: {\"p_improve\": 0.6, \"expected_delta_score\": 3.0, \"expected_gap_reduction\": 5.0}\n\nDECISION: continue\n\nNEXT_SUB: {\"id\": 2, \"desc\": \"Apply 2-opt improvements focusing on long edges: 7-5 (63), 14-16 (60), and other crossings\", \"p_solve\": 0.65, \"time_budget_s\": 200}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: Applying 2-opt improvements to current tour [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14].\n\nLong edges to fix: 7\u21925 (dist\u224863), 14\u219216 (dist\u224860), 17\u21927 (dist\u224841).\n\nKey distances computed:\n- 7(5,8): far from most cities. Neighbors: 5(67,20)=63, 17(5,49)=41, 15(22,45)=40\n- 14(61,85)\u219216(2,87): dist=59. Better: 14\u21923 already in tour.\n\nTry inserting 7 between 15 and 17 instead: ...4,15,7,17,5,18... \n- 15\u21927: sqrt(17\u00b2+37\u00b2)=40.8, 7\u219217: 41, 17\u21925: sqrt(62\u00b2+29\u00b2)=68. Worse.\n\nTry: route 7 near bottom with 5 and 18: ...17,15,4,13,11,9,10,2,16,14,3,0,19,1,8,6,12,18,5,7\u219217\n- 7\u219217: 41, 5\u21927: 63. Still need 7 connected to something close.\n\nBest option for 7: between 17(5,49) and 15(22,45): 17\u21927\u219215 costs 41+40=81 vs 17\u219215=17. Bad.\n\nTry 2-opt on 14\u219216 edge: reverse segment between them.\nCurrent: ...3,14 | 16,2... Try connecting 3\u219216 and 14\u21922: 3\u219216=sqrt(78\u00b2+11\u00b2)=78.8, 14\u21922=sqrt(61\u00b2+1\u00b2)=61. vs 3\u219214=20, 16\u21922=3. Not better.\n\nTry: move 6 closer to 11/13 area. Current: ...12,6,8... Try ...12,8,6,1,19,0,3,14,11,13,4,15,17,7,5,18,12... circular.\n\nBetter tour attempt: 16,2,10,9,11,14,3,0,19,1,8,6,12,18,5,7,17,15,4,13\u219216\n- 13\u219216: sqrt(23\u00b2+29\u00b2)=37. 11\u219214: sqrt(30\u00b2+18\u00b2)=35. \n- Total: 3+22+8+18+35+20+6+16+15+7+22+20+8+14+63+41+17+9+5+37=386. Slightly worse.\n\nTry: 2,16,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14\u21922\n- 14\u21922: 61, 2\u219216: 3. Same as before just shifted.\n\nCurrent best tour length \u2248383. Try: swap 6 and 11.\nTour: 16,2,10,9,6,13,4,15,17,7,5,18,12,11,8,1,19,0,3,14\n- 9\u21926: sqrt(38\u00b2+16\u00b2)=41, 12\u219211: sqrt(29\u00b2+31\u00b2)=42, 11\u21928: sqrt(40\u00b2+26\u00b2)=48. Worse.\n\nKeep current best: [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14] \u2248383.\n\nBEST_GUESS: {\"tour\": [16, 2, 10, 9, 11, 13, 4, 15, 17, 7, 5, 18, 12, 6, 8, 1, 19, 0, 3, 14]}\nUPDATED_PLAN_STATE: Current best tour \u2248383 (vs baseline 495.5, ~22.5% improvement). The long edges 7-5(63) and 14-16(60) are hard to eliminate given city 7's isolated position. Consider one more pass trying or-opt moves (relocating single cities).\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.15, \"p_gap_le_10\": 0.40}\nCONTINUE_FORECAST: {\"p_improve\": 0.45, \"expected_delta_score\": 2.0, \"expected_gap_reduction\": 3.0}\nDECISION: continue\nNEXT_SUB: {\"id\": 3, \"desc\": \"Try or-opt: relocate city 7 and city 6 to better positions, and try 3-opt on long edges\", \"p_solve\": 0.5, \"time_budget_s\": 150}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_3: Or-opt analysis: try relocating city 7 to different positions.\n\nCurrent tour: [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14] \u2248383\nCity 7(5,8) currently between 17(5,49) and 5(67,20): costs 41+63=104, saves 17\u21925=68. Net penalty=36.\n\nTry inserting 7 between 5(67,20) and 18(58,29): 5\u21927=63, 7\u219218=sqrt(53\u00b2+21\u00b2)=57. vs 5\u219218=14. Net: 63+57-14=106 worse.\nTry inserting 7 between 15(22,45) and 4(21,54): 15\u21927=40.8, 7\u21924=sqrt(16\u00b2+46\u00b2)=49. vs 15\u21924=9. Net: 80.8 worse.\nTry inserting 7 at end of tour near 17: already there.\n\nCity 7 is best placed between 17 and 5 (or near that area). The 63-unit edge is unavoidable.\n\nTry 2-opt: swap edges (17,7) and (5,18) \u2192 connect 17\u21925 and 7\u219218: reverse segment [7,5] \u2192 [5,7].\nNew tour: ...15,17,5,7,18,12... 17\u21925=68, 7\u219218=57 vs 17\u21927=41, 5\u219218=14. Cost: 125 vs 55. Worse.\n\nTry 2-opt: swap (7,5) and (12,6): reverse [5,18,12] \u2192 [12,18,5].\n...17,7,12,18,5,6,8... 7\u219212=sqrt(55\u00b2+28\u00b2)=62, 5\u21926=sqrt(15\u00b2+31\u00b2)=34 vs 7\u21925=63, 12\u21926=20. Cost: 62+34=96 vs 63+20=83. Worse.\n\nTry tour: 16,2,10,9,11,13,4,15,17,7,5,18,12,8,1,19,0,3,14,6\u219216\n- 12\u21928: sqrt(11\u00b2+5\u00b2)=12, 14\u21926: sqrt(9\u00b2+34\u00b2)=35, 6\u219216: 57. vs 12\u21926=20, 6\u21928=22, 14\u219216=59. \n- Change: 12+35+57=104 vs 20+22+59=101. Slightly worse.\n\nTry: ...6,12,18,5,7,17,15,4,13... with 13 connecting back differently.\nTour: 16,2,10,9,11,14,3,0,19,1,8,6,12,18,5,7,17,15,4,13\u219216\n13\u219216: sqrt(23\u00b2+29\u00b2)=37. Total \u2248 3+22+8+18+35+20+6+16+15+7+22+20+8+14+63+41+17+9+5+37=386. Worse.\n\nKeeping current best \u2248383.\n\nBEST_GUESS: {\"tour\": [16, 2, 10, 9, 11, 13, 4, 15, 17, 7, 5, 18, 12, 6, 8, 1, 19, 0, 3, 14]}\nUPDATED_PLAN_STATE: Current best \u2248383 (~22.5% below baseline 495.5). City 7's isolation makes further improvement difficult. The 14\u219216 edge (\u224859) and 7\u21925 edge (\u224863) dominate. One more attempt to find a better routing for these.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.15, \"p_gap_le_10\": 0.40}\nCONTINUE_FORECAST: {\"p_improve\": 0.35, \"expected_delta_score\": 1.5, \"expected_gap_reduction\": 2.5}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_4: Final 2-opt pass on current best tour [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14].\n\nLet me try a few more specific swaps:\n\nTry moving city 6(52,51) between 11(31,67) and 13(25,58):\nTour: 16,2,10,9,11,6,13,4,15,17,7,5,18,12,8,1,19,0,3,14\u219216\n- 11\u21926: sqrt(21\u00b2+16\u00b2)=26.4, 6\u219213: sqrt(27\u00b2+7\u00b2)=27.9, 12\u21928: 12, 14\u219216: 59\nvs 11\u219213: 9, 13\u21926(later removed), 12\u21926: 20, 6\u21928: 22\nChange: +26.4+27.9+12+59 vs +9+20+22+59 = 125.3 vs 110. Worse.\n\nTry: 16,2,10,9,11,13,4,15,17,7,5,18,12,8,6,1,19,0,3,14\u219216\n- 12\u21928: 12, 8\u21926: 22, 6\u21921: sqrt(25\u00b2+6\u00b2)=25.7 vs 12\u21926: 20, 6\u21928: 22, 8\u21921: 7. Cost: 59.7 vs 49. Worse.\n\nTry: place 6 between 19 and 0: ...1,19,6,0,3,14...\n- 19\u21926: sqrt(39\u00b2+0\u00b2)=39, 6\u21920: sqrt(24\u00b2+20\u00b2)=31.2, vs 19\u21920: 16. Net: +54.2. Worse.\n\nTry 2-opt reversing [11,13,4,15,17,7,5,18,12,6,8,1,19,0,3]:\nSwap edges (9,11) and (3,14): connect 9\u21923 and 11\u219214.\n9\u21923: sqrt(66\u00b2+9\u00b2)=66.6, 11\u219214: 35 vs 9\u219211: 18, 3\u219214: 20. Cost: 101.6 vs 38. Much worse.\n\nTry swap edges (0,3) and (14,16): connect 0\u219214 and 3\u219216.\n0\u219214: sqrt(15\u00b2+14\u00b2)=20.5, 3\u219216: sqrt(78\u00b2+11\u00b2)=78.8 vs 0\u21923: 6, 14\u219216: 59. Cost: 99.3 vs 65. Worse.\n\nCurrent best remains [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14] \u2248383.\n\nBEST_GUESS: {\"tour\": [16, 2, 10, 9, 11, 13, 4, 15, 17, 7, 5, 18, 12, 6, 8, 1, 19, 0, 3, 14]}\nUPDATED_PLAN_STATE: Final answer is tour [16,2,10,9,11,13,4,15,17,7,5,18,12,6,8,1,19,0,3,14] with estimated length ~383, approximately 22.5% below baseline 495.5. No further improvements found via 2-opt or or-opt.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.15, \"p_gap_le_10\": 0.40}\nCONTINUE_FORECAST: {\"p_improve\": 0.20, \"expected_delta_score\": 0.8, \"expected_gap_reduction\": 1.5}\nDECISION: stop",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 81.14152016700245
+}

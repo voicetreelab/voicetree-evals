@@ -1,0 +1,187 @@
+{
+  "baseline_objective": 589.6582259632314,
+  "cf_delta": -0.04214327458058165,
+  "cf_parsed": {
+    "best_guess": {
+      "tour": [
+        0,
+        4,
+        6,
+        12,
+        3,
+        7,
+        15,
+        18,
+        16,
+        8,
+        19,
+        14,
+        10,
+        13,
+        2,
+        5,
+        17,
+        11,
+        1,
+        9
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.6,
+      "expected_gap_reduction": 1.5,
+      "p_improve": 0.12
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.68,
+      "p_gap_le_2": 0.1,
+      "p_gap_le_5": 0.32
+    },
+    "subtask_body": "I checked the current candidate for obvious crossings and long edges.",
+    "subtask_id": 2,
+    "updated_plan_state": "Keep the current valid tour; no further local improvement looks clearly worth the time cost."
+  },
+  "class": "tsp",
+  "difficulty": "hard",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_length": 589.6582259632314,
+      "computed_length": 540.507206186131,
+      "normalized_tour": [
+        0,
+        4,
+        6,
+        12,
+        3,
+        7,
+        15,
+        18,
+        16,
+        8,
+        19,
+        14,
+        10,
+        13,
+        2,
+        5,
+        17,
+        11,
+        1,
+        9
+      ],
+      "optimal_length": 442.8740545630947
+    },
+    "feasible": true,
+    "gap_pct": 22.045353665920583,
+    "mode": "solo",
+    "submission": {
+      "tour": [
+        0,
+        4,
+        6,
+        12,
+        3,
+        7,
+        15,
+        18,
+        16,
+        8,
+        19,
+        14,
+        10,
+        13,
+        2,
+        5,
+        17,
+        11,
+        1,
+        9
+      ]
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gap_pct": 22.045353665920583,
+  "gold_objective": 442.8740545630947,
+  "id": "tsp_hard_seed10",
+  "model": "gpt-5.4-mini",
+  "model_slug": "gpt-5.4-mini",
+  "n_exec_turns": 1,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 3
+    }
+  ],
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "tour": [
+        0,
+        4,
+        6,
+        12,
+        3,
+        7,
+        15,
+        18,
+        16,
+        8,
+        19,
+        14,
+        10,
+        13,
+        2,
+        5,
+        17,
+        11,
+        1,
+        9
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 1.4,
+      "expected_gap_reduction": 3.5,
+      "p_improve": 0.22
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.62,
+      "p_gap_le_2": 0.08,
+      "p_gap_le_5": 0.28
+    },
+    "subtask_body": "I looked for a cleaner Hamiltonian ordering by grouping nearby cities and reducing obvious long jumps.",
+    "subtask_id": 1,
+    "updated_plan_state": "Keep a valid full tour and prefer one more local-improvement pass only if it can remove a clearly long edge without creating crossings."
+  },
+  "score": 77.83562975324863,
+  "score_after_cf": 77.83562975324863,
+  "score_at_stop": 77.8777730278292,
+  "seed": 10,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Start from the baseline tour and look for obvious crossings or long edges to remove.\nPLAN_STATE: Focus on the dense middle cluster {8,10,13,14,19,2,16,18,15,7,3,12,6,4,0} and the right-side pair {1,9,17,11,5}.\nPLAN_STATE: Try a few 2-opt style reorderings mentally to reduce long jumps between clusters.\nPLAN_STATE: Preserve feasibility first; only accept changes that keep a single Hamiltonian cycle.\nPLAN_STATE: If a cleaner ordering emerges, compare its likely perimeter against the baseline.\nPLAN_STATE: Otherwise keep the baseline structure and only make local improvements.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct one improved feasible candidate tour by reordering the baseline to reduce crossings and long inter-cluster edges\", \"p_solve\": 0.34, \"time_budget_s\": 180}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: I looked for a cleaner Hamiltonian ordering by grouping nearby cities and reducing obvious long jumps.\nSUB_1: A promising structure is to run the left/top cluster into the center, then the right cluster, then the far-right pair, and close back through the lower-left side.\nSUB_1: Candidate tour avoids the baseline\u2019s awkward 6\u21929 and 17\u21920 style long closures by threading through 3,7,15,18,16,8,19,14,10,13,4,0.\nSUB_1: The right-side cities 1,11,17,5,2 fit naturally as a compact chain with 17 near 11 and 5 near 2.\nSUB_1: I kept all cities exactly once and preserved a single cycle.\nSUB_1: This candidate should be shorter than baseline due to fewer cross-cluster edges and a smoother perimeter.\n\nBEST_GUESS: {\"tour\":[0,4,6,12,3,7,15,18,16,8,19,14,10,13,2,5,17,11,1,9]}\nUPDATED_PLAN_STATE: Keep a valid full tour and prefer one more local-improvement pass only if it can remove a clearly long edge without creating crossings.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.08,\"p_gap_le_5\":0.28,\"p_gap_le_10\":0.62}\nCONTINUE_FORECAST: {\"p_improve\":0.22,\"expected_delta_score\":1.4,\"expected_gap_reduction\":3.5}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: I checked the current candidate for obvious crossings and long edges.\nSUB_2: The tour is feasible and already much cleaner than the baseline.\nSUB_2: Main remaining risk is the tail 2\u21925\u219217\u219211\u21921\u21929, which is a reasonable right-side sweep.\nSUB_2: The left/middle chain 0\u21924\u21926\u219212\u21923\u21927\u219215\u219218\u219216\u21928\u219219\u219214\u219210\u219213\u21922 is compact and likely near the convex hull order.\nSUB_2: I do not see a clearly superior single swap or reversal that would obviously shorten the route without introducing a worse jump.\nSUB_2: Best current answer remains the same candidate tour.\n\nBEST_GUESS: {\"tour\":[0,4,6,12,3,7,15,18,16,8,19,14,10,13,2,5,17,11,1,9]}\nUPDATED_PLAN_STATE: Keep the current valid tour; no further local improvement looks clearly worth the time cost.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.1,\"p_gap_le_5\":0.32,\"p_gap_le_10\":0.68}\nCONTINUE_FORECAST: {\"p_improve\":0.12,\"expected_delta_score\":0.6,\"expected_gap_reduction\":1.5}\nDECISION: stop",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 11.90166087495163
+}
