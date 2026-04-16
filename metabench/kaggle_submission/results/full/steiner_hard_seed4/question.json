@@ -1,0 +1,317 @@
+{
+  "baseline_objective": 73.0,
+  "class": "steiner",
+  "components": null,
+  "difficulty": "hard",
+  "gold_objective": 59.0,
+  "id": "steiner_hard_seed4",
+  "instance": {
+    "answer_contract": "Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.",
+    "baseline_cost": 73,
+    "baseline_gap_pct": 23.728813559322035,
+    "baseline_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Mill"
+        ],
+        [
+          "Bay",
+          "Ridge"
+        ],
+        [
+          "Mill",
+          "Port"
+        ],
+        [
+          "Cove",
+          "Port"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 1,
+        "Cove": 2,
+        "Mill": 1,
+        "Port": 1,
+        "Ridge": 1
+      }
+    },
+    "cable_only_cost": 69,
+    "cable_only_submission": {
+      "edges": [
+        [
+          "Bay",
+          "Mill"
+        ],
+        [
+          "Bay",
+          "Ridge"
+        ],
+        [
+          "Bay",
+          "Cove"
+        ],
+        [
+          "Mill",
+          "Port"
+        ]
+      ],
+      "frequencies": {
+        "Bay": 1,
+        "Cove": 2,
+        "Mill": 1,
+        "Port": 1,
+        "Ridge": 1
+      }
+    },
+    "class": "steiner",
+    "difficulty": "hard",
+    "edges": [
+      {
+        "cost": 2,
+        "u": "Port",
+        "v": "Rock"
+      },
+      {
+        "cost": 20,
+        "u": "Bay",
+        "v": "Cliff"
+      },
+      {
+        "cost": 10,
+        "u": "Bay",
+        "v": "Pine"
+      },
+      {
+        "cost": 23,
+        "u": "Bay",
+        "v": "Dune"
+      },
+      {
+        "cost": 8,
+        "u": "Bay",
+        "v": "Mill"
+      },
+      {
+        "cost": 17,
+        "u": "Bay",
+        "v": "Cape"
+      },
+      {
+        "cost": 9,
+        "u": "Bay",
+        "v": "Grove"
+      },
+      {
+        "cost": 9,
+        "u": "Bay",
+        "v": "Ridge"
+      },
+      {
+        "cost": 18,
+        "u": "Bay",
+        "v": "Cove"
+      },
+      {
+        "cost": 15,
+        "u": "Cliff",
+        "v": "Pine"
+      },
+      {
+        "cost": 19,
+        "u": "Cliff",
+        "v": "Grove"
+      },
+      {
+        "cost": 13,
+        "u": "Cliff",
+        "v": "Ridge"
+      },
+      {
+        "cost": 2,
+        "u": "Pine",
+        "v": "Ridge"
+      },
+      {
+        "cost": 17,
+        "u": "Dune",
+        "v": "Pine"
+      },
+      {
+        "cost": 19,
+        "u": "Dune",
+        "v": "Ridge"
+      },
+      {
+        "cost": 4,
+        "u": "Mill",
+        "v": "Port"
+      },
+      {
+        "cost": 6,
+        "u": "Mill",
+        "v": "Rock"
+      },
+      {
+        "cost": 21,
+        "u": "Cape",
+        "v": "Port"
+      },
+      {
+        "cost": 23,
+        "u": "Cape",
+        "v": "Dune"
+      },
+      {
+        "cost": 17,
+        "u": "Cape",
+        "v": "Mill"
+      },
+      {
+        "cost": 2,
+        "u": "Cape",
+        "v": "Cove"
+      },
+      {
+        "cost": 3,
+        "u": "Harbor",
+        "v": "Port"
+      },
+      {
+        "cost": 2,
+        "u": "Harbor",
+        "v": "Rock"
+      },
+      {
+        "cost": 7,
+        "u": "Harbor",
+        "v": "Mill"
+      },
+      {
+        "cost": 8,
+        "u": "Grove",
+        "v": "Port"
+      },
+      {
+        "cost": 16,
+        "u": "Grove",
+        "v": "Pine"
+      },
+      {
+        "cost": 8,
+        "u": "Grove",
+        "v": "Rock"
+      },
+      {
+        "cost": 7,
+        "u": "Grove",
+        "v": "Harbor"
+      },
+      {
+        "cost": 14,
+        "u": "Grove",
+        "v": "Ridge"
+      },
+      {
+        "cost": 22,
+        "u": "Cove",
+        "v": "Port"
+      },
+      {
+        "cost": 18,
+        "u": "Cove",
+        "v": "Mill"
+      }
+    ],
+    "freq_penalty": 15,
+    "gold_cost": 59,
+    "gold_submission": {
+      "edges": [
+        [
+          "Mill",
+          "Port"
+        ],
+        [
+          "Grove",
+          "Port"
+        ],
+        [
+          "Grove",
+          "Ridge"
+        ],
+        [
+          "Cove",
+          "Mill"
+        ]
+      ],
+      "frequencies": {
+        "Cove": 1,
+        "Grove": 1,
+        "Mill": 1,
+        "Port": 1,
+        "Ridge": 1
+      }
+    },
+    "interference_pairs": [
+      [
+        "Port",
+        "Rock"
+      ],
+      [
+        "Bay",
+        "Cape"
+      ],
+      [
+        "Bay",
+        "Cove"
+      ],
+      [
+        "Pine",
+        "Ridge"
+      ],
+      [
+        "Mill",
+        "Pine"
+      ],
+      [
+        "Cape",
+        "Cove"
+      ],
+      [
+        "Harbor",
+        "Port"
+      ],
+      [
+        "Harbor",
+        "Rock"
+      ]
+    ],
+    "k": 4,
+    "n": 12,
+    "n_terminals": 3,
+    "problem_statement": "Coastal Emergency scenario:\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\n\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\nIf an interference pair is active on both ends, those two villages must use different frequencies.\n\nObjective:\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\n\nVillages:\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape, Harbor, Grove, Ridge, Cove\n\nRequired terminals:\n- Port, Ridge, Cove\n\nAvailable cable links:\n- Port-Rock: cost 2\n- Bay-Cliff: cost 20\n- Bay-Pine: cost 10\n- Bay-Dune: cost 23\n- Bay-Mill: cost 8\n- Bay-Cape: cost 17\n- Bay-Grove: cost 9\n- Bay-Ridge: cost 9\n- Bay-Cove: cost 18\n- Cliff-Pine: cost 15\n- Cliff-Grove: cost 19\n- Cliff-Ridge: cost 13\n- Pine-Ridge: cost 2\n- Dune-Pine: cost 17\n- Dune-Ridge: cost 19\n- Mill-Port: cost 4\n- Mill-Rock: cost 6\n- Cape-Port: cost 21\n- Cape-Dune: cost 23\n- Cape-Mill: cost 17\n- Cape-Cove: cost 2\n- Harbor-Port: cost 3\n- Harbor-Rock: cost 2\n- Harbor-Mill: cost 7\n- Grove-Port: cost 8\n- Grove-Pine: cost 16\n- Grove-Rock: cost 8\n- Grove-Harbor: cost 7\n- Grove-Ridge: cost 14\n- Cove-Port: cost 22\n- Cove-Mill: cost 18\n\nInterference pairs:\n- Port / Rock\n- Bay / Cape\n- Bay / Cove\n- Pine / Ridge\n- Mill / Pine\n- Cape / Cove\n- Harbor / Port\n- Harbor / Rock\n\nRules:\n- Your cable choice must be a tree, not a cyclic network.\n- All required terminals must lie in one connected component.\n- Frequencies matter only for active villages in the chosen network.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline total cost: 73\nBaseline answer summary:\nEdges: Bay-Mill(8), Bay-Ridge(9), Mill-Port(4), Cove-Port(22)\nActive villages: Port, Bay, Mill, Ridge, Cove\nFrequencies: Port=1, Bay=1, Mill=1, Ridge=1, Cove=2\nEdge cost: 43\nFrequencies used: 2\nTotal cost: 73\n\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\n",
+    "seed": 4,
+    "terminals": [
+      "Port",
+      "Ridge",
+      "Cove"
+    ],
+    "villages": [
+      "Port",
+      "Bay",
+      "Cliff",
+      "Pine",
+      "Rock",
+      "Dune",
+      "Mill",
+      "Cape",
+      "Harbor",
+      "Grove",
+      "Ridge",
+      "Cove"
+    ]
+  },
+  "seed": 4,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}

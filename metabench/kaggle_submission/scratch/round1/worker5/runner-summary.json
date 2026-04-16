@@ -1,0 +1,134 @@
+{
+  "models": [
+    "gemini-flash-latest",
+    "claude-sonnet-4.6",
+    "gpt-5.4-mini"
+  ],
+  "per_model": {
+    "claude-sonnet-4.6": {
+      "avg_score": 0.0,
+      "error_rows": 4,
+      "feasible_rows": 0,
+      "parse_paths": {
+        "not_run": 3,
+        "strict_parse_failed": 1
+      },
+      "rows_seen": 4,
+      "timeout_rows": 0
+    },
+    "gemini-flash-latest": {
+      "avg_score": 89.97943125146502,
+      "error_rows": 3,
+      "feasible_rows": 1,
+      "parse_paths": {
+        "not_run": 3,
+        "partial_rescue": 1
+      },
+      "rows_seen": 4,
+      "timeout_rows": 0
+    },
+    "gpt-5.4-mini": {
+      "avg_score": 65.22021449787685,
+      "error_rows": 0,
+      "feasible_rows": 4,
+      "parse_paths": {
+        "partial_rescue": 2,
+        "strict_protocol_cf": 2
+      },
+      "rows_seen": 4,
+      "timeout_rows": 0
+    }
+  },
+  "per_question": {
+    "cjs_hard_seed4": {
+      "claude-sonnet-4.6": {
+        "error": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (367.2s) across the remaining rows would blow past the worker's 15-20 minute budget",
+        "feasible": false,
+        "parse_path": "not_run",
+        "score": null
+      },
+      "gemini-flash-latest": {
+        "error": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (417.9s) across the remaining rows would blow past the worker's 15-20 minute budget",
+        "feasible": false,
+        "parse_path": "not_run",
+        "score": null
+      },
+      "gpt-5.4-mini": {
+        "error": null,
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": -0.17793080624891444
+      }
+    },
+    "steiner_hard_seed4": {
+      "claude-sonnet-4.6": {
+        "error": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (367.2s) across the remaining rows would blow past the worker's 15-20 minute budget",
+        "feasible": false,
+        "parse_path": "not_run",
+        "score": null
+      },
+      "gemini-flash-latest": {
+        "error": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (417.9s) across the remaining rows would blow past the worker's 15-20 minute budget",
+        "feasible": false,
+        "parse_path": "not_run",
+        "score": null
+      },
+      "gpt-5.4-mini": {
+        "error": null,
+        "feasible": true,
+        "parse_path": "strict_protocol_cf",
+        "score": 76.14925486400968
+      }
+    },
+    "ve_medium_seed5": {
+      "claude-sonnet-4.6": {
+        "error": "exec turn 2 parse failed",
+        "feasible": false,
+        "parse_path": "strict_parse_failed",
+        "score": 0.0
+      },
+      "gemini-flash-latest": {
+        "error": null,
+        "feasible": true,
+        "parse_path": "partial_rescue",
+        "score": 89.97943125146502
+      },
+      "gpt-5.4-mini": {
+        "error": null,
+        "feasible": true,
+        "parse_path": "partial_rescue",
+        "score": 88.67837434167494
+      }
+    },
+    "ve_medium_seed8": {
+      "claude-sonnet-4.6": {
+        "error": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (367.2s) across the remaining rows would blow past the worker's 15-20 minute budget",
+        "feasible": false,
+        "parse_path": "not_run",
+        "score": null
+      },
+      "gemini-flash-latest": {
+        "error": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (417.9s) across the remaining rows would blow past the worker's 15-20 minute budget",
+        "feasible": false,
+        "parse_path": "not_run",
+        "score": null
+      },
+      "gpt-5.4-mini": {
+        "error": null,
+        "feasible": true,
+        "parse_path": "partial_rescue",
+        "score": 96.23115959207173
+      }
+    }
+  },
+  "question_ids": [
+    "ve_medium_seed5",
+    "ve_medium_seed8",
+    "cjs_hard_seed4",
+    "steiner_hard_seed4"
+  ],
+  "skip_reasons": {
+    "claude-sonnet-4.6": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (367.2s) across the remaining rows would blow past the worker's 15-20 minute budget",
+    "gemini-flash-latest": "skipped after ve_medium_seed5 because repeating this model's observed row-1 wall time (417.9s) across the remaining rows would blow past the worker's 15-20 minute budget"
+  }
+}
