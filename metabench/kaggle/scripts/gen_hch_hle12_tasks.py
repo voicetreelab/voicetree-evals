@@ -55,8 +55,10 @@ HCH_PROMPT_BODY = (
     "  <your work>\n"
     "  === SUB <id> END === {\"correctly_solved\": true|false, \"confidence\": <float>}\n\n"
     "STEP 3 \u2014 INTEGRATE. Produce the final answer.\n"
-    "  ANSWER: <answer>\n"
-    "  P_CORRECT: <float>"
+    "The FINAL line of your response MUST be exactly:\n"
+    "  ANSWER: <your answer>\n"
+    "  P_CORRECT: <float between 0 and 1>\n"
+    "Do NOT use LaTeX, \\boxed{}, or markdown for these two lines \u2014 plain text only."
 )
 
 VANILLA_PROMPT_BODY = (
@@ -217,6 +219,24 @@ def _compare_answer(got, gold, qnum):
         return True
     # Default: case-insensitive strip
     return got.strip().lower() == gold.strip().lower()
+
+
+def _judge_answer(llm, gold, full_response):
+    # LLM-as-judge: determine if the model's full response correctly states the gold answer.
+    # Returns (judge_pass: bool, judge_raw: str).
+    # Uses the same llm object as the task (same proxy, same model).
+    judge_prompt = (
+        f'Gold answer: "{gold}"\n'
+        f'Model response: "{full_response}"\n'
+        'Did the model correctly state the gold answer? Reply YES or NO only.'
+    )
+    try:
+        judge_raw = llm.prompt(judge_prompt, max_output_tokens=16)
+        judge_pass = judge_raw.strip().upper().startswith("YES")
+    except Exception as _e:
+        judge_raw = f"JUDGE_ERROR: {_e}"
+        judge_pass = False
+    return judge_pass, judge_raw
 """
 
 
@@ -243,6 +263,9 @@ def make_hch_task(qnum, gold, answer_type, raw_subject, question):
     )
     full_prompt = prompt_header + HCH_PROMPT_BODY
 
+    # Escape curly braces in gold repr so it embeds safely into generated f-strings.
+    gold_esc = repr(gold).replace('{', '{{').replace('}', '}}')
+
     src = (
         f'"""HCH HLE-12 spike \u2014 Q{qnum} \u2014 HCH v2 arm.\n\n'
         f'Subject: {raw_subject}\n'
@@ -263,9 +286,20 @@ def make_hch_task(qnum, gold, answer_type, raw_subject, question):
         f'    ),\n'
         f')\n'
         f'def {fn_name}(llm) -> bool:\n'
-        f'    raw = llm.prompt(PROMPT)\n'
+        f'    raw = llm.prompt(PROMPT, max_output_tokens=32768)\n'
         f'    traj = _parse_hch_trajectory(raw)\n'
-        f'    correct = _compare_answer(traj["answer"], GOLD_ANSWER, QNUM)\n'
+        f'    official_pass = _compare_answer(traj["answer"], GOLD_ANSWER, QNUM)\n'
+        f'    judge_pass, judge_raw = _judge_answer(llm, GOLD_ANSWER, raw)\n'
+        f'    correct = judge_pass  # primary correctness signal is the judge\n'
+        f'\n'
+        f'    # Judge vs regex diagnostic\n'
+        f'    kbench.assertions.assert_true(\n'
+        f'        True,\n'
+        f'        expectation=(\n'
+        f'            f"JUDGE Q{qnum} HCH: official={{official_pass}}, judge={{judge_pass}}, "\n'
+        f'            f"judge_raw={{judge_raw!r}}"\n'
+        f'        ),\n'
+        f'    )\n'
         f'\n'
         f'    # Axis A0: atomic baseline metadata\n'
         f'    kbench.assertions.assert_true(\n'
@@ -306,7 +340,7 @@ def make_hch_task(qnum, gold, answer_type, raw_subject, question):
         f'        expectation=(\n'
         f'            f"Axis D Q{qnum} HCH: answer={{traj[\'answer\']!r}}, "\n'
         f'            f"p_correct={{traj[\'p_correct\']}}, "\n'
-        f'            f"correct={{correct}}, gold={gold!r}"\n'
+        f'            f"correct={{correct}}, gold={gold_esc}"\n'
         f'        ),\n'
         f'    )\n'
         f'    return correct\n'
@@ -324,6 +358,9 @@ def make_vanilla_task(qnum, gold, answer_type, raw_subject, question):
         f"QUESTION:\n{question}\n\n"
     )
     full_prompt = prompt_header + VANILLA_PROMPT_BODY
+
+    # Escape curly braces in gold repr so it embeds safely into generated f-strings.
+    gold_esc = repr(gold).replace('{', '{{').replace('}', '}}')
 
     src = (
         f'"""HCH HLE-12 spike \u2014 Q{qnum} \u2014 Vanilla one-shot arm.\n\n'
@@ -344,16 +381,17 @@ def make_vanilla_task(qnum, gold, answer_type, raw_subject, question):
         f'    ),\n'
         f')\n'
         f'def {fn_name}(llm) -> bool:\n'
-        f'    raw = llm.prompt(PROMPT)\n'
+        f'    raw = llm.prompt(PROMPT, max_output_tokens=32768)\n'
         f'    result = _parse_vanilla(raw)\n'
-        f'    correct = _compare_answer(result["answer"], GOLD_ANSWER, QNUM)\n'
+        f'    official_pass = _compare_answer(result["answer"], GOLD_ANSWER, QNUM)\n'
+        f'    judge_pass, judge_raw = _judge_answer(llm, GOLD_ANSWER, raw)\n'
+        f'    correct = judge_pass  # primary correctness signal is the judge\n'
         f'    kbench.assertions.assert_true(\n'
         f'        correct,\n'
         f'        expectation=(\n'
-        f'            f"Vanilla Q{qnum}: answer={{result[\'answer\']!r}}, "\n'
-        f'            f"p_correct={{result[\'p_correct\']}}, "\n'
-        f'            f"correct={{correct}}, gold={gold!r}, "\n'
-        f'            f"word_count={{result[\'word_count\']}}"\n'
+        f'            f"Vanilla Q{qnum}: official={{official_pass}}, judge={{judge_pass}}, "\n'
+        f'            f"answer={{result[\'answer\']!r}}, p_correct={{result[\'p_correct\']}}, "\n'
+        f'            f"gold={gold_esc}, word_count={{result[\'word_count\']}}"\n'
         f'        ),\n'
         f'    )\n'
         f'    return correct\n'

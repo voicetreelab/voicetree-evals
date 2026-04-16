@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
-"""Run all 24 HCH HLE-12 task files via the Option A live-kernel bridge.
+"""Run all 24 HCH HLE-12 task files with an explicit model override.
 
 Usage (from kaggle/ directory, with venv active):
-  python scripts/run_hch_hle12.py [--dry-run] [--start-from Q41_HCH]
+  python scripts/run_hch_hle12_with_model.py --model google/gemini-3.1-pro-preview
+  python scripts/run_hch_hle12_with_model.py --model google/gemini-3.1-pro-preview --start-from q44_hch.py
 
-Runs all tasks sequentially with >=20s idle wait between calls.
-Results saved to results/hch_hle12_run_YYYYMMDD_HHMMSS.jsonl
+Adds a minimal model override before kbench import in the remote execution code.
+Results saved to results/hch_hle12_v2_<model_tag>_<timestamp>.jsonl
+
+DO NOT CHECK IN — temporary script, revert/delete after use.
 """
 
 import argparse
 import ast
 import base64
 import json
+import re
 import sys
 import time
 from datetime import datetime
@@ -41,12 +45,32 @@ for qnum in [41, 43, 44, 48, 49, 52, 53, 55, 57, 65, 68, 99]:
     TASK_ORDER.append(f"q{qnum}_vanilla.py")
 
 
-def _build_remote_code(task_path: Path, source: str) -> str:
-    """Build the remote execution code (same pattern as submit_task.py)."""
+def _build_remote_code(task_path: Path, source: str, model_id: str) -> str:
+    """Build remote execution code with model override injected before kbench import."""
+    # Strip max_output_tokens kwarg — LLMChat.prompt() on this kernel does not support it.
+    # Discovered at runtime: TypeError: LLMChat.prompt() got an unexpected keyword argument 'max_output_tokens'
+    source = re.sub(r',\s*max_output_tokens=\d+', '', source)
+    source = re.sub(r'max_output_tokens=\d+,?\s*', '', source)
+
     encoded = base64.b64encode(source.encode("utf-8")).decode("ascii")
     remote_task_path = task_path.as_posix()
 
+    # Model override block — injected BEFORE kbench import so that
+    # kaggle_benchmarks initializes with the correct LLM_DEFAULT.
+    # We also evict any cached kbench modules to force fresh init.
+    model_override = f"""
+import os as _os_override, sys as _sys_override
+_os_override.environ['LLM_DEFAULT'] = {model_id!r}
+# Evict cached kaggle_benchmarks modules so they reinitialise with new LLM_DEFAULT
+for _k in list(_sys_override.modules.keys()):
+    if _k.startswith('kaggle_benchmarks'):
+        del _sys_override.modules[_k]
+del _os_override, _sys_override
+""".strip()
+
     return f"""
+{model_override}
+
 import base64
 import inspect
 import json
@@ -165,10 +189,10 @@ def extract_payload(stdout: str) -> dict:
     return json.loads(body)
 
 
-def run_one_task(bridge: JupyterKernelBridge, task_file: Path, timeout_s: float = 2400.0) -> dict:  # Default 2400s — HLE questions can take up to 40 min on strong models
+def run_one_task(bridge: JupyterKernelBridge, task_file: Path, model_id: str, timeout_s: float = 2400.0) -> dict:  # Default 2400s — HLE questions can take up to 40 min on strong models
     """Submit one task file and return result dict."""
     source = task_file.read_text(encoding="utf-8")
-    remote_code = _build_remote_code(task_file, source)
+    remote_code = _build_remote_code(task_file, source, model_id)
 
     t0 = time.time()
     try:
@@ -181,6 +205,9 @@ def run_one_task(bridge: JupyterKernelBridge, task_file: Path, timeout_s: float 
         return {"error": "EXECUTION_TIMEOUT", "message": str(exc), "task_file": task_file.name}
     except KernelBridgeError as exc:
         return {"error": "BRIDGE_ERROR", "message": str(exc), "task_file": task_file.name}
+    except Exception as exc:
+        # Catch unhandled network errors (e.g. ReadTimeout from wait_for_idle under kernel load)
+        return {"error": "NETWORK_ERROR", "message": str(exc), "task_file": task_file.name}
 
     elapsed = time.time() - t0
 
@@ -199,11 +226,13 @@ def run_one_task(bridge: JupyterKernelBridge, task_file: Path, timeout_s: float 
 
     payload["task_file"] = task_file.name
     payload["elapsed_s"] = round(elapsed, 2)
+    payload["model_id"] = model_id
     return payload
 
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--model", required=True, help="Model ID to use, e.g. google/gemini-3.1-pro-preview")
     ap.add_argument("--dry-run", action="store_true", help="List tasks without running")
     ap.add_argument("--start-from", default=None,
                     help="Skip tasks before this filename, e.g. q44_hch.py")
@@ -217,7 +246,9 @@ def main():
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     run_ts = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-    results_path = RESULTS_DIR / f"hch_hle12_run_{run_ts}.jsonl"
+    # Sanitize model ID for filename
+    model_tag = re.sub(r'[^a-zA-Z0-9_-]', '_', args.model)
+    results_path = RESULTS_DIR / f"hch_hle12_v2_{model_tag}_{run_ts}.jsonl"
 
     # Build task list
     tasks = [EXAMPLES_DIR / fname for fname in TASK_ORDER]
@@ -228,6 +259,7 @@ def main():
             return 2
         tasks = tasks[idx:]
 
+    print(f"[run] model={args.model}", file=sys.stderr)
     print(f"[run] {len(tasks)} tasks to run → {results_path}", file=sys.stderr)
     for t in tasks:
         print(f"  {t.name}", file=sys.stderr)
@@ -236,22 +268,19 @@ def main():
         print("[run] dry-run mode — exiting without running", file=sys.stderr)
         return 0
 
-    # Create bridge once (idle_wait_seconds >= 20s as Dan's gotcha requires)
-    bridge = JupyterKernelBridge(idle_wait_seconds=args.idle_wait)
+    bridge = JupyterKernelBridge(idle_wait_seconds=args.idle_wait, request_timeout_seconds=30.0)
 
     results = []
     for i, task_file in enumerate(tasks):
         print(f"\n[run] [{i+1}/{len(tasks)}] {task_file.name} ...", file=sys.stderr)
 
-        result = run_one_task(bridge, task_file, timeout_s=args.task_timeout)
+        result = run_one_task(bridge, task_file, args.model, timeout_s=args.task_timeout)
         results.append(result)
 
-        # Print summary
         if "error" in result:
             print(f"  ERROR: {result['error']} — {result.get('message', '')}", file=sys.stderr)
             if result["error"] == "TOKEN_REJECTED":
                 print("[run] STOPPING — Jupyter token rejected. Refresh it from the Kaggle UI.", file=sys.stderr)
-                # Save partial results before stopping
                 with open(results_path, "a") as fh:
                     for r in results:
                         fh.write(json.dumps(r, ensure_ascii=False) + "\n")
@@ -266,18 +295,15 @@ def main():
             for note in notes:
                 print(f"    note: {note}", file=sys.stderr)
 
-        # Append result immediately
         with open(results_path, "a") as fh:
             fh.write(json.dumps(result, ensure_ascii=False) + "\n")
 
-        # Sleep between tasks (not after the last one)
         if i < len(tasks) - 1:
             print(f"  sleeping {args.sleep_between}s ...", file=sys.stderr)
             time.sleep(args.sleep_between)
 
     print(f"\n[run] done — {len(results)} tasks — results at {results_path}", file=sys.stderr)
 
-    # Summary
     passed_count = sum(1 for r in results if r.get("passed") is True)
     failed_count = sum(1 for r in results if r.get("passed") is False)
     error_count = sum(1 for r in results if "error" in r)

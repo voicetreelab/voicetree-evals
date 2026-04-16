@@ -204,7 +204,7 @@ class JupyterKernelBridge:
         try:
             ws = websocket.create_connection(
                 self._ws_url(target.kernel_id, client_session_id),
-                timeout=1.0,
+                timeout=10.0,  # increased from 1.0 — new JWT-in-path URL needs more time
                 header=[f"Authorization: token {self.token}"],
             )
         except websocket.WebSocketBadStatusException as exc:

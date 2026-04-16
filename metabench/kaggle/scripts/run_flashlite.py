@@ -1,17 +1,23 @@
 #!/usr/bin/env python3
-"""Run all 24 HCH HLE-12 task files via the Option A live-kernel bridge.
+"""Run HCH HLE-12 tasks with Gemini Flash-Lite on a fresh dedicated kernel.
 
-Usage (from kaggle/ directory, with venv active):
-  python scripts/run_hch_hle12.py [--dry-run] [--start-from Q41_HCH]
+Unlike run_hch_hle12_with_model.py, this script ALSO injects MODEL_PROXY_URL and
+MODEL_PROXY_API_KEY into the remote code, because the dedicated kernel doesn't have
+those env vars pre-set (unlike the original shared notebook which had them from the
+notebook environment).
 
-Runs all tasks sequentially with >=20s idle wait between calls.
-Results saved to results/hch_hle12_run_YYYYMMDD_HHMMSS.jsonl
+Usage (from kaggle/ directory):
+  python scripts/run_flashlite.py
+
+DO NOT CHECK IN — temporary script.
 """
 
 import argparse
 import ast
 import base64
 import json
+import os
+import re
 import sys
 import time
 from datetime import datetime
@@ -25,7 +31,6 @@ from kernel_bridge import (
     KernelBridgeError,
     KernelBusyError,
     TokenRejectedError,
-    run_on_kaggle,
 )
 
 RESULT_START = "__VOICETREE_SUBMIT_RESULT_START__"
@@ -34,7 +39,10 @@ RESULT_END = "__VOICETREE_SUBMIT_RESULT_END__"
 EXAMPLES_DIR = Path(__file__).resolve().parents[1] / "examples" / "hch_hle12"
 RESULTS_DIR = Path(__file__).resolve().parents[1] / "results"
 
-# Ordered task list: HCH + vanilla for each Q
+MODEL_ID = "google/gemini-2.5-flash-lite"
+MODEL_PROXY_URL = "https://mp-staging.kaggle.net/models/openapi"
+MODEL_PROXY_API_KEY = "kaggle-benchmarks:CiUAv1LKoWHO8dE8NwJJvQf5kBtZ1CKi+jckb8ZBGb5A8oEIOprGEpgBAKysbH73Otzu2rzbIwMyIbOICz4tZmBH8aOkQE0SGlie0mC2guWDAYxSMQeoE2mII/zwp7v7hKZ0L5q/c1V3gK5DxoWCMWkVZsVu4VSlSuIswzTT1VlR+VQximZP/+ETZ8NK+jCwBFLZ41ph+jeTYAUucXVAj9/GAhLJ/x2FYmaBLKUx2J07HkR/NnrDzWnHdNVdmnx7XJE="
+
 TASK_ORDER = []
 for qnum in [41, 43, 44, 48, 49, 52, 53, 55, 57, 65, 68, 99]:
     TASK_ORDER.append(f"q{qnum}_hch.py")
@@ -42,11 +50,28 @@ for qnum in [41, 43, 44, 48, 49, 52, 53, 55, 57, 65, 68, 99]:
 
 
 def _build_remote_code(task_path: Path, source: str) -> str:
-    """Build the remote execution code (same pattern as submit_task.py)."""
+    """Build remote execution code with model override + proxy credentials injected."""
+    # Strip max_output_tokens kwarg — LLMChat.prompt() on this kernel does not support it.
+    source = re.sub(r',\s*max_output_tokens=\d+', '', source)
+    source = re.sub(r'max_output_tokens=\d+,?\s*', '', source)
+
     encoded = base64.b64encode(source.encode("utf-8")).decode("ascii")
     remote_task_path = task_path.as_posix()
 
+    # Swap model in-place on the existing kbench.llm — do NOT evict modules or reset env.
+    # Evicting kaggle_benchmarks forces re-init with the static MODEL_PROXY_API_KEY which
+    # is IP-locked. The notebook's session-based credentials work but only on the pre-init llm.
+    # kbench.llm.model is a plain attribute — reassigning is safe and takes effect immediately.
+    model_swap = f"""
+import kaggle_benchmarks as _kbench_swap
+_kbench_swap.llm.model = {MODEL_ID!r}
+_kbench_swap.llm.name = {MODEL_ID!r}
+del _kbench_swap
+""".strip()
+
     return f"""
+{model_swap}
+
 import base64
 import inspect
 import json
@@ -166,7 +191,6 @@ def extract_payload(stdout: str) -> dict:
 
 
 def run_one_task(bridge: JupyterKernelBridge, task_file: Path, timeout_s: float = 2400.0) -> dict:  # Default 2400s — HLE questions can take up to 40 min on strong models
-    """Submit one task file and return result dict."""
     source = task_file.read_text(encoding="utf-8")
     remote_code = _build_remote_code(task_file, source)
 
@@ -181,6 +205,8 @@ def run_one_task(bridge: JupyterKernelBridge, task_file: Path, timeout_s: float 
         return {"error": "EXECUTION_TIMEOUT", "message": str(exc), "task_file": task_file.name}
     except KernelBridgeError as exc:
         return {"error": "BRIDGE_ERROR", "message": str(exc), "task_file": task_file.name}
+    except Exception as exc:
+        return {"error": "NETWORK_ERROR", "message": str(exc), "task_file": task_file.name}
 
     elapsed = time.time() - t0
 
@@ -199,45 +225,41 @@ def run_one_task(bridge: JupyterKernelBridge, task_file: Path, timeout_s: float 
 
     payload["task_file"] = task_file.name
     payload["elapsed_s"] = round(elapsed, 2)
+    payload["model_id"] = MODEL_ID
     return payload
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dry-run", action="store_true", help="List tasks without running")
-    ap.add_argument("--start-from", default=None,
-                    help="Skip tasks before this filename, e.g. q44_hch.py")
-    ap.add_argument("--idle-wait", type=float, default=60.0,
-                    help="Seconds to wait for kernel idle (default 60)")
-    ap.add_argument("--task-timeout", type=float, default=2400.0,
-                    help="Seconds timeout per task (default 2400)")  # Default 2400s — HLE questions can take up to 40 min on strong models
-    ap.add_argument("--sleep-between", type=float, default=15.0,
-                    help="Seconds to sleep between tasks (default 15)")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--start-from", default=None)
+    ap.add_argument("--idle-wait", type=float, default=60.0)
+    ap.add_argument("--task-timeout", type=float, default=2400.0)  # Default 2400s — HLE questions can take up to 40 min on strong models
+    ap.add_argument("--sleep-between", type=float, default=15.0)
     args = ap.parse_args()
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     run_ts = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-    results_path = RESULTS_DIR / f"hch_hle12_run_{run_ts}.jsonl"
+    results_path = RESULTS_DIR / f"hch_hle12_v2_flashlite_{run_ts}.jsonl"
 
-    # Build task list
     tasks = [EXAMPLES_DIR / fname for fname in TASK_ORDER]
     if args.start_from:
         idx = next((i for i, t in enumerate(tasks) if t.name == args.start_from), None)
         if idx is None:
-            print(f"[run] --start-from {args.start_from!r} not found in task list", file=sys.stderr)
+            print(f"[run] --start-from {args.start_from!r} not found", file=sys.stderr)
             return 2
         tasks = tasks[idx:]
 
-    print(f"[run] {len(tasks)} tasks to run → {results_path}", file=sys.stderr)
+    print(f"[run] model={MODEL_ID}", file=sys.stderr)
+    print(f"[run] {len(tasks)} tasks → {results_path}", file=sys.stderr)
     for t in tasks:
         print(f"  {t.name}", file=sys.stderr)
 
     if args.dry_run:
-        print("[run] dry-run mode — exiting without running", file=sys.stderr)
+        print("[run] dry-run — exiting", file=sys.stderr)
         return 0
 
-    # Create bridge once (idle_wait_seconds >= 20s as Dan's gotcha requires)
-    bridge = JupyterKernelBridge(idle_wait_seconds=args.idle_wait)
+    bridge = JupyterKernelBridge(idle_wait_seconds=args.idle_wait, request_timeout_seconds=30.0)
 
     results = []
     for i, task_file in enumerate(tasks):
@@ -246,12 +268,10 @@ def main():
         result = run_one_task(bridge, task_file, timeout_s=args.task_timeout)
         results.append(result)
 
-        # Print summary
         if "error" in result:
             print(f"  ERROR: {result['error']} — {result.get('message', '')}", file=sys.stderr)
             if result["error"] == "TOKEN_REJECTED":
-                print("[run] STOPPING — Jupyter token rejected. Refresh it from the Kaggle UI.", file=sys.stderr)
-                # Save partial results before stopping
+                print("[run] STOPPING — token rejected.", file=sys.stderr)
                 with open(results_path, "a") as fh:
                     for r in results:
                         fh.write(json.dumps(r, ensure_ascii=False) + "\n")
@@ -266,18 +286,15 @@ def main():
             for note in notes:
                 print(f"    note: {note}", file=sys.stderr)
 
-        # Append result immediately
         with open(results_path, "a") as fh:
             fh.write(json.dumps(result, ensure_ascii=False) + "\n")
 
-        # Sleep between tasks (not after the last one)
         if i < len(tasks) - 1:
             print(f"  sleeping {args.sleep_between}s ...", file=sys.stderr)
             time.sleep(args.sleep_between)
 
     print(f"\n[run] done — {len(results)} tasks — results at {results_path}", file=sys.stderr)
 
-    # Summary
     passed_count = sum(1 for r in results if r.get("passed") is True)
     failed_count = sum(1 for r in results if r.get("passed") is False)
     error_count = sum(1 for r in results if "error" in r)
