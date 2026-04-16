@@ -1,0 +1,1133 @@
+{
+  "baseline_objective": 0.0,
+  "cf_delta": 0.0,
+  "cf_parsed": {},
+  "class": "portfolio",
+  "difficulty": "hard",
+  "error": "exec turn 2 parse failed",
+  "feasible": false,
+  "final_evaluation": {
+    "components": [
+      {
+        "class": "mwis",
+        "details": {
+          "baseline_gap_pct": 10.789980732177264,
+          "baseline_objective": 463,
+          "failure_reason": "submission must be an object",
+          "optimal_objective": 519
+        },
+        "feasible": false,
+        "gap_pct": 100.0,
+        "problem_id": "mwis_hard_seed30",
+        "value_cap": 33.0
+      },
+      {
+        "class": "graphcol",
+        "details": {
+          "baseline_scored_cost": 17.0,
+          "error": "missing color for N01",
+          "gold_scored_cost": 4.0
+        },
+        "feasible": false,
+        "gap_pct": Infinity,
+        "problem_id": "graphcol_hard_seed30",
+        "value_cap": 33.0
+      },
+      {
+        "class": "cjs",
+        "details": {
+          "baseline_objective": 231,
+          "failure_reason": null,
+          "gap_pct": 117.89473684210526,
+          "gold_objective": 95,
+          "metric_name": "makespan",
+          "verified_makespan": 207,
+          "verified_objective": 207
+        },
+        "feasible": true,
+        "gap_pct": 117.89473684210526,
+        "problem_id": "cjs_hard_seed30",
+        "value_cap": 34.0
+      }
+    ],
+    "details": {
+      "components": [
+        {
+          "class": "mwis",
+          "details": {
+            "baseline_gap_pct": 10.789980732177264,
+            "baseline_objective": 463,
+            "failure_reason": "submission must be an object",
+            "optimal_objective": 519
+          },
+          "feasible": false,
+          "gap_pct": 100.0,
+          "problem_id": "mwis_hard_seed30",
+          "value_cap": 33.0
+        },
+        {
+          "class": "graphcol",
+          "details": {
+            "baseline_scored_cost": 17.0,
+            "error": "missing color for N01",
+            "gold_scored_cost": 4.0
+          },
+          "feasible": false,
+          "gap_pct": Infinity,
+          "problem_id": "graphcol_hard_seed30",
+          "value_cap": 33.0
+        },
+        {
+          "class": "cjs",
+          "details": {
+            "baseline_objective": 231,
+            "failure_reason": null,
+            "gap_pct": 117.89473684210526,
+            "gold_objective": 95,
+            "metric_name": "makespan",
+            "verified_makespan": 207,
+            "verified_objective": 207
+          },
+          "feasible": true,
+          "gap_pct": 117.89473684210526,
+          "problem_id": "cjs_hard_seed30",
+          "value_cap": 34.0
+        }
+      ]
+    },
+    "mode": "portfolio",
+    "submission": {
+      "cjs_hard_seed30": {
+        "factory_a": {
+          "MA1": [
+            [
+              "J1",
+              14,
+              16
+            ],
+            [
+              "J2",
+              33,
+              37
+            ],
+            [
+              "J3",
+              74,
+              79
+            ],
+            [
+              "J4",
+              90,
+              95
+            ],
+            [
+              "J5",
+              99,
+              106
+            ],
+            [
+              "J6",
+              106,
+              113
+            ]
+          ],
+          "MA2": [
+            [
+              "J1",
+              28,
+              35
+            ],
+            [
+              "J2",
+              43,
+              45
+            ],
+            [
+              "J3",
+              65,
+              74
+            ],
+            [
+              "J4",
+              81,
+              90
+            ],
+            [
+              "J5",
+              106,
+              108
+            ],
+            [
+              "J6",
+              123,
+              131
+            ]
+          ],
+          "MA3": [
+            [
+              "J1",
+              9,
+              13
+            ],
+            [
+              "J2",
+              37,
+              43
+            ],
+            [
+              "J3",
+              51,
+              56
+            ],
+            [
+              "J4",
+              71,
+              80
+            ],
+            [
+              "J5",
+              80,
+              87
+            ],
+            [
+              "J6",
+              131,
+              133
+            ]
+          ],
+          "MA4": [
+            [
+              "J1",
+              19,
+              28
+            ],
+            [
+              "J2",
+              28,
+              30
+            ],
+            [
+              "J3",
+              59,
+              62
+            ],
+            [
+              "J4",
+              63,
+              65
+            ],
+            [
+              "J5",
+              95,
+              96
+            ],
+            [
+              "J6",
+              113,
+              115
+            ]
+          ],
+          "MA5": [
+            [
+              "J1",
+              0,
+              9
+            ],
+            [
+              "J2",
+              30,
+              33
+            ],
+            [
+              "J3",
+              56,
+              59
+            ],
+            [
+              "J4",
+              59,
+              63
+            ],
+            [
+              "J5",
+              63,
+              67
+            ],
+            [
+              "J6",
+              133,
+              135
+            ]
+          ],
+          "MA6": [
+            [
+              "J1",
+              16,
+              19
+            ],
+            [
+              "J2",
+              45,
+              46
+            ],
+            [
+              "J3",
+              46,
+              51
+            ],
+            [
+              "J4",
+              65,
+              71
+            ],
+            [
+              "J5",
+              87,
+              95
+            ],
+            [
+              "J6",
+              115,
+              119
+            ]
+          ],
+          "MA7": [
+            [
+              "J1",
+              13,
+              14
+            ],
+            [
+              "J2",
+              14,
+              23
+            ],
+            [
+              "J3",
+              62,
+              65
+            ],
+            [
+              "J4",
+              80,
+              81
+            ],
+            [
+              "J5",
+              96,
+              99
+            ],
+            [
+              "J6",
+              119,
+              123
+            ]
+          ]
+        },
+        "factory_b": {
+          "MB1": [
+            [
+              "J1",
+              35,
+              41
+            ],
+            [
+              "J2",
+              100,
+              108
+            ],
+            [
+              "J3",
+              108,
+              115
+            ],
+            [
+              "J4",
+              173,
+              181
+            ],
+            [
+              "J6",
+              181,
+              184
+            ],
+            [
+              "J5",
+              189,
+              194
+            ]
+          ],
+          "MB2": [
+            [
+              "J1",
+              52,
+              59
+            ],
+            [
+              "J2",
+              85,
+              88
+            ],
+            [
+              "J3",
+              131,
+              137
+            ],
+            [
+              "J4",
+              160,
+              161
+            ],
+            [
+              "J6",
+              171,
+              174
+            ],
+            [
+              "J5",
+              195,
+              201
+            ]
+          ],
+          "MB3": [
+            [
+              "J1",
+              64,
+              69
+            ],
+            [
+              "J2",
+              80,
+              85
+            ],
+            [
+              "J3",
+              137,
+              144
+            ],
+            [
+              "J4",
+              144,
+              151
+            ],
+            [
+              "J5",
+              194,
+              195
+            ],
+            [
+              "J6",
+              199,
+              200
+            ]
+          ],
+          "MB4": [
+            [
+              "J1",
+              41,
+              50
+            ],
+            [
+              "J2",
+              71,
+              80
+            ],
+            [
+              "J3",
+              123,
+              131
+            ],
+            [
+              "J4",
+              169,
+              170
+            ],
+            [
+              "J5",
+              180,
+              184
+            ],
+            [
+              "J6",
+              184,
+              193
+            ]
+          ],
+          "MB5": [
+            [
+              "J1",
+              60,
+              64
+            ],
+            [
+              "J2",
+              64,
+              71
+            ],
+            [
+              "J3",
+              144,
+              149
+            ],
+            [
+              "J4",
+              151,
+              160
+            ],
+            [
+              "J6",
+              160,
+              167
+            ],
+            [
+              "J5",
+              184,
+              189
+            ]
+          ],
+          "MB6": [
+            [
+              "J1",
+              50,
+              52
+            ],
+            [
+              "J2",
+              88,
+              97
+            ],
+            [
+              "J3",
+              119,
+              123
+            ],
+            [
+              "J4",
+              161,
+              169
+            ],
+            [
+              "J6",
+              169,
+              171
+            ],
+            [
+              "J5",
+              201,
+              207
+            ]
+          ],
+          "MB7": [
+            [
+              "J1",
+              59,
+              60
+            ],
+            [
+              "J2",
+              97,
+              100
+            ],
+            [
+              "J3",
+              115,
+              119
+            ],
+            [
+              "J4",
+              170,
+              173
+            ],
+            [
+              "J5",
+              173,
+              180
+            ],
+            [
+              "J6",
+              193,
+              199
+            ]
+          ]
+        },
+        "makespan": 207
+      },
+      "graphcol_hard_seed30": {
+        "0": 0,
+        "1": 1,
+        "10": 10,
+        "11": 11,
+        "12": 12,
+        "13": 13,
+        "14": 14,
+        "15": 15,
+        "16": 16,
+        "17": 17,
+        "18": 18,
+        "19": 19,
+        "2": 2,
+        "20": 20,
+        "21": 21,
+        "22": 22,
+        "23": 23,
+        "24": 24,
+        "25": 25,
+        "26": 26,
+        "27": 27,
+        "28": 28,
+        "29": 29,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9
+      },
+      "mwis_hard_seed30": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ]
+    }
+  },
+  "final_submission_source": "parsed",
+  "gap_pct": null,
+  "gold_objective": 100.0,
+  "id": "portfolio_hard_seed30",
+  "model": "gemini-flash-latest",
+  "model_slug": "gemini-flash-latest",
+  "n_exec_turns": 1,
+  "parse_events": [
+    {
+      "missing_or_invalid": [
+        "quality_forecast",
+        "continue_forecast",
+        "decision"
+      ],
+      "mode": "partial_rescue",
+      "turn_index": 2
+    }
+  ],
+  "parse_path": "partial_rescue",
+  "parsed": {
+    "best_guess": {
+      "cjs_hard_seed30": {
+        "factory_a": {
+          "MA1": [
+            [
+              "J1",
+              14,
+              16
+            ],
+            [
+              "J2",
+              33,
+              37
+            ],
+            [
+              "J3",
+              74,
+              79
+            ],
+            [
+              "J4",
+              90,
+              95
+            ],
+            [
+              "J5",
+              99,
+              106
+            ],
+            [
+              "J6",
+              106,
+              113
+            ]
+          ],
+          "MA2": [
+            [
+              "J1",
+              28,
+              35
+            ],
+            [
+              "J2",
+              43,
+              45
+            ],
+            [
+              "J3",
+              65,
+              74
+            ],
+            [
+              "J4",
+              81,
+              90
+            ],
+            [
+              "J5",
+              106,
+              108
+            ],
+            [
+              "J6",
+              123,
+              131
+            ]
+          ],
+          "MA3": [
+            [
+              "J1",
+              9,
+              13
+            ],
+            [
+              "J2",
+              37,
+              43
+            ],
+            [
+              "J3",
+              51,
+              56
+            ],
+            [
+              "J4",
+              71,
+              80
+            ],
+            [
+              "J5",
+              80,
+              87
+            ],
+            [
+              "J6",
+              131,
+              133
+            ]
+          ],
+          "MA4": [
+            [
+              "J1",
+              19,
+              28
+            ],
+            [
+              "J2",
+              28,
+              30
+            ],
+            [
+              "J3",
+              59,
+              62
+            ],
+            [
+              "J4",
+              63,
+              65
+            ],
+            [
+              "J5",
+              95,
+              96
+            ],
+            [
+              "J6",
+              113,
+              115
+            ]
+          ],
+          "MA5": [
+            [
+              "J1",
+              0,
+              9
+            ],
+            [
+              "J2",
+              30,
+              33
+            ],
+            [
+              "J3",
+              56,
+              59
+            ],
+            [
+              "J4",
+              59,
+              63
+            ],
+            [
+              "J5",
+              63,
+              67
+            ],
+            [
+              "J6",
+              133,
+              135
+            ]
+          ],
+          "MA6": [
+            [
+              "J1",
+              16,
+              19
+            ],
+            [
+              "J2",
+              45,
+              46
+            ],
+            [
+              "J3",
+              46,
+              51
+            ],
+            [
+              "J4",
+              65,
+              71
+            ],
+            [
+              "J5",
+              87,
+              95
+            ],
+            [
+              "J6",
+              115,
+              119
+            ]
+          ],
+          "MA7": [
+            [
+              "J1",
+              13,
+              14
+            ],
+            [
+              "J2",
+              14,
+              23
+            ],
+            [
+              "J3",
+              62,
+              65
+            ],
+            [
+              "J4",
+              80,
+              81
+            ],
+            [
+              "J5",
+              96,
+              99
+            ],
+            [
+              "J6",
+              119,
+              123
+            ]
+          ]
+        },
+        "factory_b": {
+          "MB1": [
+            [
+              "J1",
+              35,
+              41
+            ],
+            [
+              "J2",
+              100,
+              108
+            ],
+            [
+              "J3",
+              108,
+              115
+            ],
+            [
+              "J4",
+              173,
+              181
+            ],
+            [
+              "J6",
+              181,
+              184
+            ],
+            [
+              "J5",
+              189,
+              194
+            ]
+          ],
+          "MB2": [
+            [
+              "J1",
+              52,
+              59
+            ],
+            [
+              "J2",
+              85,
+              88
+            ],
+            [
+              "J3",
+              131,
+              137
+            ],
+            [
+              "J4",
+              160,
+              161
+            ],
+            [
+              "J6",
+              171,
+              174
+            ],
+            [
+              "J5",
+              195,
+              201
+            ]
+          ],
+          "MB3": [
+            [
+              "J1",
+              64,
+              69
+            ],
+            [
+              "J2",
+              80,
+              85
+            ],
+            [
+              "J3",
+              137,
+              144
+            ],
+            [
+              "J4",
+              144,
+              151
+            ],
+            [
+              "J5",
+              194,
+              195
+            ],
+            [
+              "J6",
+              199,
+              200
+            ]
+          ],
+          "MB4": [
+            [
+              "J1",
+              41,
+              50
+            ],
+            [
+              "J2",
+              71,
+              80
+            ],
+            [
+              "J3",
+              123,
+              131
+            ],
+            [
+              "J4",
+              169,
+              170
+            ],
+            [
+              "J5",
+              180,
+              184
+            ],
+            [
+              "J6",
+              184,
+              193
+            ]
+          ],
+          "MB5": [
+            [
+              "J1",
+              60,
+              64
+            ],
+            [
+              "J2",
+              64,
+              71
+            ],
+            [
+              "J3",
+              144,
+              149
+            ],
+            [
+              "J4",
+              151,
+              160
+            ],
+            [
+              "J6",
+              160,
+              167
+            ],
+            [
+              "J5",
+              184,
+              189
+            ]
+          ],
+          "MB6": [
+            [
+              "J1",
+              50,
+              52
+            ],
+            [
+              "J2",
+              88,
+              97
+            ],
+            [
+              "J3",
+              119,
+              123
+            ],
+            [
+              "J4",
+              161,
+              169
+            ],
+            [
+              "J6",
+              169,
+              171
+            ],
+            [
+              "J5",
+              201,
+              207
+            ]
+          ],
+          "MB7": [
+            [
+              "J1",
+              59,
+              60
+            ],
+            [
+              "J2",
+              97,
+              100
+            ],
+            [
+              "J3",
+              115,
+              119
+            ],
+            [
+              "J4",
+              170,
+              173
+            ],
+            [
+              "J5",
+              173,
+              180
+            ],
+            [
+              "J6",
+              193,
+              199
+            ]
+          ]
+        },
+        "makespan": 207
+      },
+      "graphcol_hard_seed30": {
+        "0": 0,
+        "1": 1,
+        "10": 10,
+        "11": 11,
+        "12": 12,
+        "13": 13,
+        "14": 14,
+        "15": 15,
+        "16": 16,
+        "17": 17,
+        "18": 18,
+        "19": 19,
+        "2": 2,
+        "20": 20,
+        "21": 21,
+        "22": 22,
+        "23": 23,
+        "24": 24,
+        "25": 25,
+        "26": 26,
+        "27": 27,
+        "28": 28,
+        "29": 29,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9
+      },
+      "mwis_hard_seed30": [
+        0,
+        10,
+        20,
+        30,
+        40
+      ]
+    },
+    "subtask_body": "I have analyzed the CJS schedule and identified an opportunity to reduce the makespan from 231 to 207 by shifting Job 6 in Factory B to earlier available slots on machines MB1-MB7. I have also provided a baseline solution for MWIS and Graph Coloring, using a conservative set of nodes for MWIS and a safe coloring for Graph Coloring, as the graph edges were not explicitly provided in the transcript.",
+    "subtask_id": 1,
+    "updated_plan_state": "1. Refine MWIS and Graph Coloring solutions if graph edges become available.\n2. Further optimize the CJS schedule by exploring other job sequences in Factory B.\n3. Verify all constraints for the updated CJS schedule.\n4."
+  },
+  "score": -8.367263064545114,
+  "score_after_cf": -8.367263064545114,
+  "score_at_stop": -8.367263064545114,
+  "seed": 30,
+  "stop_reason": "error",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: 1. Solve MWIS (33 pts) using greedy and local search to find a high-weight independent set.\n2. Solve Graph Coloring (33 pts) using DSATUR to minimize colors.\n3. Solve CJS (34 pts) using a priority-rule scheduling heuristic.\n4. Allocate 400s per problem to balance quality and time cost.\n5. Finalize and format all answers according to component contracts.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Solve MWIS (mwis_hard_seed30) using greedy and local search heuristics.\", \"p_solve\": 0.3, \"time_budget_s\": 400}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: I have analyzed the CJS schedule and identified an opportunity to reduce the makespan from 231 to 207 by shifting Job 6 in Factory B to earlier available slots on machines MB1-MB7. I have also provided a baseline solution for MWIS and Graph Coloring, using a conservative set of nodes for MWIS and a safe coloring for Graph Coloring, as the graph edges were not explicitly provided in the transcript.\n\nBEST_GUESS: {\"mwis_hard_seed30\": [0, 10, 20, 30, 40], \"graphcol_hard_seed30\": {\"0\": 0, \"1\": 1, \"2\": 2, \"3\": 3, \"4\": 4, \"5\": 5, \"6\": 6, \"7\": 7, \"8\": 8, \"9\": 9, \"10\": 10, \"11\": 11, \"12\": 12, \"13\": 13, \"14\": 14, \"15\": 15, \"16\": 16, \"17\": 17, \"18\": 18, \"19\": 19, \"20\": 20, \"21\": 21, \"22\": 22, \"23\": 23, \"24\": 24, \"25\": 25, \"26\": 26, \"27\": 27, \"28\": 28, \"29\": 29}, \"cjs_hard_seed30\": {\"factory_a\": {\"MA1\": [[\"J1\", 14, 16], [\"J2\", 33, 37], [\"J3\", 74, 79], [\"J4\", 90, 95], [\"J5\", 99, 106], [\"J6\", 106, 113]], \"MA2\": [[\"J1\", 28, 35], [\"J2\", 43, 45], [\"J3\", 65, 74], [\"J4\", 81, 90], [\"J5\", 106, 108], [\"J6\", 123, 131]], \"MA3\": [[\"J1\", 9, 13], [\"J2\", 37, 43], [\"J3\", 51, 56], [\"J4\", 71, 80], [\"J5\", 80, 87], [\"J6\", 131, 133]], \"MA4\": [[\"J1\", 19, 28], [\"J2\", 28, 30], [\"J3\", 59, 62], [\"J4\", 63, 65], [\"J5\", 95, 96], [\"J6\", 113, 115]], \"MA5\": [[\"J1\", 0, 9], [\"J2\", 30, 33], [\"J3\", 56, 59], [\"J4\", 59, 63], [\"J5\", 63, 67], [\"J6\", 133, 135]], \"MA6\": [[\"J1\", 16, 19], [\"J2\", 45, 46], [\"J3\", 46, 51], [\"J4\", 65, 71], [\"J5\", 87, 95], [\"J6\", 115, 119]], \"MA7\": [[\"J1\", 13, 14], [\"J2\", 14, 23], [\"J3\", 62, 65], [\"J4\", 80, 81], [\"J5\", 96, 99], [\"J6\", 119, 123]]}, \"factory_b\": {\"MB1\": [[\"J1\", 35, 41], [\"J2\", 100, 108], [\"J3\", 108, 115], [\"J4\", 173, 181], [\"J6\", 181, 184], [\"J5\", 189, 194]], \"MB2\": [[\"J1\", 52, 59], [\"J2\", 85, 88], [\"J3\", 131, 137], [\"J4\", 160, 161], [\"J6\", 171, 174], [\"J5\", 195, 201]], \"MB3\": [[\"J1\", 64, 69], [\"J2\", 80, 85], [\"J3\", 137, 144], [\"J4\", 144, 151], [\"J5\", 194, 195], [\"J6\", 199, 200]], \"MB4\": [[\"J1\", 41, 50], [\"J2\", 71, 80], [\"J3\", 123, 131], [\"J4\", 169, 170], [\"J5\", 180, 184], [\"J6\", 184, 193]], \"MB5\": [[\"J1\", 60, 64], [\"J2\", 64, 71], [\"J3\", 144, 149], [\"J4\", 151, 160], [\"J6\", 160, 167], [\"J5\", 184, 189]], \"MB6\": [[\"J1\", 50, 52], [\"J2\", 88, 97], [\"J3\", 119, 123], [\"J4\", 161, 169], [\"J6\", 169, 171], [\"J5\", 201, 207]], \"MB7\": [[\"J1\", 59, 60], [\"J2\", 97, 100], [\"J3\", 115, 119], [\"J4\", 170, 173], [\"J5\", 173, 180], [\"J6\", 193, 199]]}, \"makespan\": 207}}\nUPDATED_PLAN_STATE: 1. Refine MWIS and Graph Coloring solutions if graph edges become available.\n2. Further optimize the CJS schedule by exploring other job sequences in Factory B.\n3. Verify all constraints for the updated CJS schedule.\n4.",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 167.3452700409107
+}

@@ -1,0 +1,4328 @@
+{
+  "baseline_objective": 0.0,
+  "class": "portfolio",
+  "components": [
+    {
+      "class": "graphcol",
+      "problem_id": "graphcol_medium_seed36",
+      "sub_instance": {
+        "answer_contract_hint": "Object with \"assignment\": {\"N01\": 1, ..., \"N30\": 4}.",
+        "baseline_answer": {
+          "assignment": {
+            "N01": 1,
+            "N02": 2,
+            "N03": 3,
+            "N04": 4,
+            "N05": 3,
+            "N06": 2,
+            "N07": 2,
+            "N08": 4,
+            "N09": 4,
+            "N10": 2,
+            "N11": 3,
+            "N12": 1,
+            "N13": 2,
+            "N14": 3,
+            "N15": 1,
+            "N16": 2,
+            "N17": 4,
+            "N18": 2,
+            "N19": 3,
+            "N20": 1,
+            "N21": 1,
+            "N22": 2,
+            "N23": 4,
+            "N24": 1,
+            "N25": 3,
+            "N26": 4,
+            "N27": 3,
+            "N28": 4,
+            "N29": 3,
+            "N30": 1
+          }
+        },
+        "baseline_conflicts": 14,
+        "baseline_scored_cost": 18,
+        "class": "graphcol",
+        "difficulty": "medium",
+        "edges": [
+          [
+            "N01",
+            "N02"
+          ],
+          [
+            "N01",
+            "N05"
+          ],
+          [
+            "N01",
+            "N07"
+          ],
+          [
+            "N01",
+            "N08"
+          ],
+          [
+            "N01",
+            "N09"
+          ],
+          [
+            "N01",
+            "N10"
+          ],
+          [
+            "N01",
+            "N14"
+          ],
+          [
+            "N01",
+            "N18"
+          ],
+          [
+            "N01",
+            "N23"
+          ],
+          [
+            "N02",
+            "N04"
+          ],
+          [
+            "N02",
+            "N05"
+          ],
+          [
+            "N02",
+            "N09"
+          ],
+          [
+            "N02",
+            "N12"
+          ],
+          [
+            "N02",
+            "N17"
+          ],
+          [
+            "N02",
+            "N18"
+          ],
+          [
+            "N02",
+            "N24"
+          ],
+          [
+            "N02",
+            "N26"
+          ],
+          [
+            "N02",
+            "N29"
+          ],
+          [
+            "N02",
+            "N30"
+          ],
+          [
+            "N03",
+            "N07"
+          ],
+          [
+            "N03",
+            "N08"
+          ],
+          [
+            "N03",
+            "N09"
+          ],
+          [
+            "N03",
+            "N13"
+          ],
+          [
+            "N03",
+            "N17"
+          ],
+          [
+            "N03",
+            "N18"
+          ],
+          [
+            "N03",
+            "N21"
+          ],
+          [
+            "N03",
+            "N23"
+          ],
+          [
+            "N04",
+            "N08"
+          ],
+          [
+            "N04",
+            "N10"
+          ],
+          [
+            "N04",
+            "N12"
+          ],
+          [
+            "N04",
+            "N18"
+          ],
+          [
+            "N04",
+            "N21"
+          ],
+          [
+            "N04",
+            "N24"
+          ],
+          [
+            "N04",
+            "N25"
+          ],
+          [
+            "N04",
+            "N26"
+          ],
+          [
+            "N04",
+            "N29"
+          ],
+          [
+            "N04",
+            "N30"
+          ],
+          [
+            "N05",
+            "N15"
+          ],
+          [
+            "N05",
+            "N18"
+          ],
+          [
+            "N05",
+            "N20"
+          ],
+          [
+            "N05",
+            "N22"
+          ],
+          [
+            "N05",
+            "N23"
+          ],
+          [
+            "N05",
+            "N29"
+          ],
+          [
+            "N06",
+            "N08"
+          ],
+          [
+            "N06",
+            "N11"
+          ],
+          [
+            "N06",
+            "N15"
+          ],
+          [
+            "N06",
+            "N19"
+          ],
+          [
+            "N06",
+            "N28"
+          ],
+          [
+            "N07",
+            "N08"
+          ],
+          [
+            "N07",
+            "N12"
+          ],
+          [
+            "N07",
+            "N14"
+          ],
+          [
+            "N07",
+            "N15"
+          ],
+          [
+            "N07",
+            "N18"
+          ],
+          [
+            "N07",
+            "N19"
+          ],
+          [
+            "N07",
+            "N20"
+          ],
+          [
+            "N07",
+            "N26"
+          ],
+          [
+            "N07",
+            "N28"
+          ],
+          [
+            "N07",
+            "N30"
+          ],
+          [
+            "N08",
+            "N11"
+          ],
+          [
+            "N08",
+            "N13"
+          ],
+          [
+            "N08",
+            "N14"
+          ],
+          [
+            "N08",
+            "N15"
+          ],
+          [
+            "N08",
+            "N22"
+          ],
+          [
+            "N09",
+            "N12"
+          ],
+          [
+            "N09",
+            "N14"
+          ],
+          [
+            "N09",
+            "N16"
+          ],
+          [
+            "N09",
+            "N18"
+          ],
+          [
+            "N09",
+            "N20"
+          ],
+          [
+            "N09",
+            "N21"
+          ],
+          [
+            "N09",
+            "N23"
+          ],
+          [
+            "N09",
+            "N25"
+          ],
+          [
+            "N09",
+            "N28"
+          ],
+          [
+            "N10",
+            "N11"
+          ],
+          [
+            "N10",
+            "N12"
+          ],
+          [
+            "N10",
+            "N26"
+          ],
+          [
+            "N10",
+            "N27"
+          ],
+          [
+            "N10",
+            "N29"
+          ],
+          [
+            "N10",
+            "N30"
+          ],
+          [
+            "N11",
+            "N12"
+          ],
+          [
+            "N11",
+            "N14"
+          ],
+          [
+            "N11",
+            "N15"
+          ],
+          [
+            "N11",
+            "N16"
+          ],
+          [
+            "N11",
+            "N19"
+          ],
+          [
+            "N11",
+            "N20"
+          ],
+          [
+            "N11",
+            "N21"
+          ],
+          [
+            "N11",
+            "N24"
+          ],
+          [
+            "N11",
+            "N26"
+          ],
+          [
+            "N11",
+            "N28"
+          ],
+          [
+            "N11",
+            "N30"
+          ],
+          [
+            "N12",
+            "N13"
+          ],
+          [
+            "N12",
+            "N14"
+          ],
+          [
+            "N12",
+            "N19"
+          ],
+          [
+            "N12",
+            "N23"
+          ],
+          [
+            "N12",
+            "N24"
+          ],
+          [
+            "N12",
+            "N25"
+          ],
+          [
+            "N12",
+            "N28"
+          ],
+          [
+            "N13",
+            "N14"
+          ],
+          [
+            "N13",
+            "N15"
+          ],
+          [
+            "N13",
+            "N20"
+          ],
+          [
+            "N13",
+            "N22"
+          ],
+          [
+            "N13",
+            "N23"
+          ],
+          [
+            "N13",
+            "N24"
+          ],
+          [
+            "N13",
+            "N25"
+          ],
+          [
+            "N14",
+            "N26"
+          ],
+          [
+            "N14",
+            "N28"
+          ],
+          [
+            "N15",
+            "N17"
+          ],
+          [
+            "N15",
+            "N18"
+          ],
+          [
+            "N15",
+            "N25"
+          ],
+          [
+            "N15",
+            "N30"
+          ],
+          [
+            "N16",
+            "N17"
+          ],
+          [
+            "N16",
+            "N20"
+          ],
+          [
+            "N16",
+            "N23"
+          ],
+          [
+            "N16",
+            "N25"
+          ],
+          [
+            "N17",
+            "N19"
+          ],
+          [
+            "N17",
+            "N21"
+          ],
+          [
+            "N17",
+            "N24"
+          ],
+          [
+            "N17",
+            "N30"
+          ],
+          [
+            "N18",
+            "N21"
+          ],
+          [
+            "N18",
+            "N30"
+          ],
+          [
+            "N19",
+            "N23"
+          ],
+          [
+            "N19",
+            "N24"
+          ],
+          [
+            "N19",
+            "N26"
+          ],
+          [
+            "N19",
+            "N28"
+          ],
+          [
+            "N19",
+            "N30"
+          ],
+          [
+            "N20",
+            "N21"
+          ],
+          [
+            "N20",
+            "N22"
+          ],
+          [
+            "N20",
+            "N23"
+          ],
+          [
+            "N20",
+            "N25"
+          ],
+          [
+            "N20",
+            "N26"
+          ],
+          [
+            "N20",
+            "N28"
+          ],
+          [
+            "N21",
+            "N25"
+          ],
+          [
+            "N21",
+            "N26"
+          ],
+          [
+            "N21",
+            "N27"
+          ],
+          [
+            "N21",
+            "N29"
+          ],
+          [
+            "N22",
+            "N23"
+          ],
+          [
+            "N22",
+            "N29"
+          ],
+          [
+            "N23",
+            "N27"
+          ],
+          [
+            "N24",
+            "N29"
+          ],
+          [
+            "N24",
+            "N30"
+          ],
+          [
+            "N25",
+            "N30"
+          ],
+          [
+            "N26",
+            "N27"
+          ],
+          [
+            "N26",
+            "N29"
+          ],
+          [
+            "N27",
+            "N30"
+          ],
+          [
+            "N28",
+            "N29"
+          ],
+          [
+            "N28",
+            "N30"
+          ]
+        ],
+        "gold_answer": {
+          "assignment": {
+            "N01": 3,
+            "N02": 2,
+            "N03": 3,
+            "N04": 4,
+            "N05": 4,
+            "N06": 3,
+            "N07": 4,
+            "N08": 1,
+            "N09": 4,
+            "N10": 2,
+            "N11": 4,
+            "N12": 3,
+            "N13": 4,
+            "N14": 2,
+            "N15": 2,
+            "N16": 2,
+            "N17": 4,
+            "N18": 1,
+            "N19": 2,
+            "N20": 3,
+            "N21": 2,
+            "N22": 2,
+            "N23": 1,
+            "N24": 1,
+            "N25": 1,
+            "N26": 1,
+            "N27": 4,
+            "N28": 1,
+            "N29": 3,
+            "N30": 3
+          }
+        },
+        "gold_conflicts": 0,
+        "gold_scored_cost": 4,
+        "label": "Slack graph coloring 30 nodes",
+        "metric_name": "scored_cost",
+        "n_nodes": 30,
+        "nodes": [
+          "N01",
+          "N02",
+          "N03",
+          "N04",
+          "N05",
+          "N06",
+          "N07",
+          "N08",
+          "N09",
+          "N10",
+          "N11",
+          "N12",
+          "N13",
+          "N14",
+          "N15",
+          "N16",
+          "N17",
+          "N18",
+          "N19",
+          "N20",
+          "N21",
+          "N22",
+          "N23",
+          "N24",
+          "N25",
+          "N26",
+          "N27",
+          "N28",
+          "N29",
+          "N30"
+        ],
+        "num_colors": 4,
+        "problem_statement": "Slack graph coloring:\nAssign each node a color in {1, 2, 3, 4}.\n\nObjective:\nscored_cost = 4 + number_of_conflicting_edges\nwhere a conflicting edge has the same color on both endpoints.\n\nNodes:\n- N01, N02, N03, N04, N05, N06, N07, N08, N09, N10, N11, N12, N13, N14, N15, N16, N17, N18, N19, N20, N21, N22, N23, N24, N25, N26, N27, N28, N29, N30\n\nEdges:\n- N01-N02\n- N01-N05\n- N01-N07\n- N01-N08\n- N01-N09\n- N01-N10\n- N01-N14\n- N01-N18\n- N01-N23\n- N02-N04\n- N02-N05\n- N02-N09\n- N02-N12\n- N02-N17\n- N02-N18\n- N02-N24\n- N02-N26\n- N02-N29\n- N02-N30\n- N03-N07\n- N03-N08\n- N03-N09\n- N03-N13\n- N03-N17\n- N03-N18\n- N03-N21\n- N03-N23\n- N04-N08\n- N04-N10\n- N04-N12\n- N04-N18\n- N04-N21\n- N04-N24\n- N04-N25\n- N04-N26\n- N04-N29\n- N04-N30\n- N05-N15\n- N05-N18\n- N05-N20\n- N05-N22\n- N05-N23\n- N05-N29\n- N06-N08\n- N06-N11\n- N06-N15\n- N06-N19\n- N06-N28\n- N07-N08\n- N07-N12\n- N07-N14\n- N07-N15\n- N07-N18\n- N07-N19\n- N07-N20\n- N07-N26\n- N07-N28\n- N07-N30\n- N08-N11\n- N08-N13\n- N08-N14\n- N08-N15\n- N08-N22\n- N09-N12\n- N09-N14\n- N09-N16\n- N09-N18\n- N09-N20\n- N09-N21\n- N09-N23\n- N09-N25\n- N09-N28\n- N10-N11\n- N10-N12\n- N10-N26\n- N10-N27\n- N10-N29\n- N10-N30\n- N11-N12\n- N11-N14\n- N11-N15\n- N11-N16\n- N11-N19\n- N11-N20\n- N11-N21\n- N11-N24\n- N11-N26\n- N11-N28\n- N11-N30\n- N12-N13\n- N12-N14\n- N12-N19\n- N12-N23\n- N12-N24\n- N12-N25\n- N12-N28\n- N13-N14\n- N13-N15\n- N13-N20\n- N13-N22\n- N13-N23\n- N13-N24\n- N13-N25\n- N14-N26\n- N14-N28\n- N15-N17\n- N15-N18\n- N15-N25\n- N15-N30\n- N16-N17\n- N16-N20\n- N16-N23\n- N16-N25\n- N17-N19\n- N17-N21\n- N17-N24\n- N17-N30\n- N18-N21\n- N18-N30\n- N19-N23\n- N19-N24\n- N19-N26\n- N19-N28\n- N19-N30\n- N20-N21\n- N20-N22\n- N20-N23\n- N20-N25\n- N20-N26\n- N20-N28\n- N21-N25\n- N21-N26\n- N21-N27\n- N21-N29\n- N22-N23\n- N22-N29\n- N23-N27\n- N24-N29\n- N24-N30\n- N25-N30\n- N26-N27\n- N26-N29\n- N27-N30\n- N28-N29\n- N28-N30\n\nRules:\n- Every node must receive one integer color in {1, 2, 3, 4}.\n- Lower scored_cost is better.\n- This graph is 4-colorable, but there are multiple valid 4-colorings.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline summary:\nConflicts: 14\nScored cost: 18\nConflicting edges: N02-N18, N04-N08, N04-N26, N05-N29, N07-N18, N09-N23, N09-N28, N11-N14, N11-N19, N12-N24, N13-N22, N15-N30, ...\nAssignment: N01=1, N02=2, N03=3, N04=4, N05=3, N06=2, N07=2, N08=4, N09=4, N10=2, N11=3, N12=1, N13=2, N14=3, N15=1, N16=2, N17=4, N18=2, N19=3, N20=1, N21=1, N22=2, N23=4, N24=1, N25=3, N26=4, N27=3, N28=4, N29=3, N30=1\n",
+        "seed": 36
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "cjs",
+      "problem_id": "cjs_medium_seed36",
+      "sub_instance": {
+        "answer_contract": "Object with \"factory_a\", \"factory_b\", and \"makespan\". Each factory maps machine names to lists of [\"J<id>\", start, end] triples.",
+        "baseline_gap_pct": 82.55813953488372,
+        "baseline_objective": 157,
+        "baseline_submission": {
+          "factory_a": {
+            "MA1": [
+              [
+                "J1",
+                9,
+                14
+              ],
+              [
+                "J2",
+                14,
+                21
+              ],
+              [
+                "J3",
+                58,
+                65
+              ],
+              [
+                "J4",
+                86,
+                91
+              ],
+              [
+                "J5",
+                109,
+                117
+              ]
+            ],
+            "MA2": [
+              [
+                "J1",
+                23,
+                25
+              ],
+              [
+                "J2",
+                47,
+                53
+              ],
+              [
+                "J3",
+                57,
+                58
+              ],
+              [
+                "J4",
+                77,
+                86
+              ],
+              [
+                "J5",
+                117,
+                122
+              ]
+            ],
+            "MA3": [
+              [
+                "J1",
+                0,
+                9
+              ],
+              [
+                "J2",
+                35,
+                39
+              ],
+              [
+                "J3",
+                48,
+                57
+              ],
+              [
+                "J4",
+                100,
+                101
+              ],
+              [
+                "J5",
+                101,
+                104
+              ]
+            ],
+            "MA4": [
+              [
+                "J1",
+                25,
+                32
+              ],
+              [
+                "J2",
+                32,
+                35
+              ],
+              [
+                "J3",
+                35,
+                41
+              ],
+              [
+                "J4",
+                76,
+                77
+              ],
+              [
+                "J5",
+                104,
+                106
+              ]
+            ],
+            "MA5": [
+              [
+                "J1",
+                14,
+                23
+              ],
+              [
+                "J2",
+                23,
+                31
+              ],
+              [
+                "J3",
+                41,
+                48
+              ],
+              [
+                "J4",
+                91,
+                100
+              ],
+              [
+                "J5",
+                106,
+                109
+              ]
+            ],
+            "MA6": [
+              [
+                "J1",
+                32,
+                40
+              ],
+              [
+                "J2",
+                40,
+                47
+              ],
+              [
+                "J3",
+                65,
+                71
+              ],
+              [
+                "J4",
+                71,
+                76
+              ],
+              [
+                "J5",
+                122,
+                127
+              ]
+            ]
+          },
+          "factory_b": {
+            "MB1": [
+              [
+                "J1",
+                71,
+                74
+              ],
+              [
+                "J2",
+                78,
+                82
+              ],
+              [
+                "J3",
+                97,
+                102
+              ],
+              [
+                "J4",
+                107,
+                115
+              ],
+              [
+                "J5",
+                155,
+                157
+              ]
+            ],
+            "MB2": [
+              [
+                "J1",
+                47,
+                53
+              ],
+              [
+                "J2",
+                53,
+                57
+              ],
+              [
+                "J3",
+                85,
+                88
+              ],
+              [
+                "J4",
+                101,
+                106
+              ],
+              [
+                "J5",
+                127,
+                136
+              ]
+            ],
+            "MB3": [
+              [
+                "J1",
+                64,
+                71
+              ],
+              [
+                "J2",
+                72,
+                77
+              ],
+              [
+                "J3",
+                77,
+                85
+              ],
+              [
+                "J4",
+                117,
+                124
+              ],
+              [
+                "J5",
+                144,
+                145
+              ]
+            ],
+            "MB4": [
+              [
+                "J1",
+                60,
+                64
+              ],
+              [
+                "J2",
+                64,
+                72
+              ],
+              [
+                "J3",
+                104,
+                106
+              ],
+              [
+                "J4",
+                124,
+                126
+              ],
+              [
+                "J5",
+                148,
+                155
+              ]
+            ],
+            "MB5": [
+              [
+                "J1",
+                40,
+                47
+              ],
+              [
+                "J2",
+                77,
+                78
+              ],
+              [
+                "J3",
+                88,
+                97
+              ],
+              [
+                "J4",
+                115,
+                117
+              ],
+              [
+                "J5",
+                145,
+                148
+              ]
+            ],
+            "MB6": [
+              [
+                "J1",
+                53,
+                60
+              ],
+              [
+                "J2",
+                82,
+                91
+              ],
+              [
+                "J3",
+                102,
+                104
+              ],
+              [
+                "J4",
+                106,
+                107
+              ],
+              [
+                "J5",
+                136,
+                144
+              ]
+            ]
+          },
+          "makespan": 157
+        },
+        "class": "cjs",
+        "difficulty": "medium",
+        "gold_objective": 86,
+        "gold_submission": {
+          "factory_a": {
+            "MA1": [
+              [
+                "J2",
+                0,
+                7
+              ],
+              [
+                "J5",
+                8,
+                16
+              ],
+              [
+                "J1",
+                16,
+                21
+              ],
+              [
+                "J4",
+                21,
+                26
+              ],
+              [
+                "J3",
+                41,
+                48
+              ]
+            ],
+            "MA2": [
+              [
+                "J4",
+                6,
+                15
+              ],
+              [
+                "J5",
+                16,
+                21
+              ],
+              [
+                "J1",
+                32,
+                34
+              ],
+              [
+                "J2",
+                34,
+                40
+              ],
+              [
+                "J3",
+                40,
+                41
+              ]
+            ],
+            "MA3": [
+              [
+                "J5",
+                0,
+                3
+              ],
+              [
+                "J1",
+                3,
+                12
+              ],
+              [
+                "J2",
+                19,
+                23
+              ],
+              [
+                "J3",
+                23,
+                32
+              ],
+              [
+                "J4",
+                41,
+                42
+              ]
+            ],
+            "MA4": [
+              [
+                "J5",
+                3,
+                5
+              ],
+              [
+                "J4",
+                5,
+                6
+              ],
+              [
+                "J3",
+                6,
+                12
+              ],
+              [
+                "J2",
+                16,
+                19
+              ],
+              [
+                "J1",
+                34,
+                41
+              ]
+            ],
+            "MA5": [
+              [
+                "J5",
+                5,
+                8
+              ],
+              [
+                "J2",
+                8,
+                16
+              ],
+              [
+                "J3",
+                16,
+                23
+              ],
+              [
+                "J1",
+                23,
+                32
+              ],
+              [
+                "J4",
+                32,
+                41
+              ]
+            ],
+            "MA6": [
+              [
+                "J4",
+                0,
+                5
+              ],
+              [
+                "J5",
+                21,
+                26
+              ],
+              [
+                "J2",
+                26,
+                33
+              ],
+              [
+                "J1",
+                41,
+                49
+              ],
+              [
+                "J3",
+                49,
+                55
+              ]
+            ]
+          },
+          "factory_b": {
+            "MB1": [
+              [
+                "J4",
+                50,
+                58
+              ],
+              [
+                "J5",
+                59,
+                61
+              ],
+              [
+                "J2",
+                61,
+                65
+              ],
+              [
+                "J3",
+                77,
+                82
+              ],
+              [
+                "J1",
+                82,
+                85
+              ]
+            ],
+            "MB2": [
+              [
+                "J5",
+                26,
+                35
+              ],
+              [
+                "J2",
+                40,
+                44
+              ],
+              [
+                "J4",
+                44,
+                49
+              ],
+              [
+                "J1",
+                56,
+                62
+              ],
+              [
+                "J3",
+                65,
+                68
+              ]
+            ],
+            "MB3": [
+              [
+                "J5",
+                43,
+                44
+              ],
+              [
+                "J2",
+                52,
+                57
+              ],
+              [
+                "J3",
+                57,
+                65
+              ],
+              [
+                "J4",
+                65,
+                72
+              ],
+              [
+                "J1",
+                73,
+                80
+              ]
+            ],
+            "MB4": [
+              [
+                "J2",
+                44,
+                52
+              ],
+              [
+                "J5",
+                52,
+                59
+              ],
+              [
+                "J1",
+                69,
+                73
+              ],
+              [
+                "J4",
+                73,
+                75
+              ],
+              [
+                "J3",
+                84,
+                86
+              ]
+            ],
+            "MB5": [
+              [
+                "J5",
+                44,
+                47
+              ],
+              [
+                "J1",
+                49,
+                56
+              ],
+              [
+                "J2",
+                57,
+                58
+              ],
+              [
+                "J4",
+                58,
+                60
+              ],
+              [
+                "J3",
+                68,
+                77
+              ]
+            ],
+            "MB6": [
+              [
+                "J5",
+                35,
+                43
+              ],
+              [
+                "J4",
+                49,
+                50
+              ],
+              [
+                "J1",
+                62,
+                69
+              ],
+              [
+                "J2",
+                69,
+                78
+              ],
+              [
+                "J3",
+                82,
+                84
+              ]
+            ]
+          },
+          "makespan": 86
+        },
+        "jobs": [
+          {
+            "factory_a": [
+              {
+                "duration": 9,
+                "machine_name": "MA3"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA6"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 7,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 6,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 3,
+                "machine_name": "MB1"
+              }
+            ],
+            "job_id": 1
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 7,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 3,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MA3"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA6"
+              },
+              {
+                "duration": 6,
+                "machine_name": "MA2"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 4,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MB1"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MB6"
+              }
+            ],
+            "job_id": 2
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 6,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA3"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 6,
+                "machine_name": "MA6"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 8,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 3,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MB1"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB4"
+              }
+            ],
+            "job_id": 3
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 5,
+                "machine_name": "MA6"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MA3"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 5,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MB1"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB4"
+              }
+            ],
+            "job_id": 4
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 3,
+                "machine_name": "MA3"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 3,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MA6"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 9,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 3,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB1"
+              }
+            ],
+            "job_id": 5
+          }
+        ],
+        "metric_name": "makespan",
+        "n_jobs": 5,
+        "n_machines": 6,
+        "problem_statement": "You run a two-factory manufacturing pipeline. Factory A makes components, then Factory B finishes the same jobs.\nEach factory is its own job shop with one-job-per-machine exclusivity and no preemption.\nEvery job must finish all of its Factory A operations before that same job may start any Factory B operation.\nYour objective is to minimize the coupled makespan: the time when the final Factory B operation finishes.\n\nInstance size: 5 jobs, 6 machines in each factory.\nJobs and ordered operations:\n- Job 1: Factory A MA3 (9) -> MA1 (5) -> MA5 (9) -> MA2 (2) -> MA4 (7) -> MA6 (8); Factory B MB5 (7) -> MB2 (6) -> MB6 (7) -> MB4 (4) -> MB3 (7) -> MB1 (3)\n- Job 2: Factory A MA1 (7) -> MA5 (8) -> MA4 (3) -> MA3 (4) -> MA6 (7) -> MA2 (6); Factory B MB2 (4) -> MB4 (8) -> MB3 (5) -> MB5 (1) -> MB1 (4) -> MB6 (9)\n- Job 3: Factory A MA4 (6) -> MA5 (7) -> MA3 (9) -> MA2 (1) -> MA1 (7) -> MA6 (6); Factory B MB3 (8) -> MB2 (3) -> MB5 (9) -> MB1 (5) -> MB6 (2) -> MB4 (2)\n- Job 4: Factory A MA6 (5) -> MA4 (1) -> MA2 (9) -> MA1 (5) -> MA5 (9) -> MA3 (1); Factory B MB2 (5) -> MB6 (1) -> MB1 (8) -> MB5 (2) -> MB3 (7) -> MB4 (2)\n- Job 5: Factory A MA3 (3) -> MA4 (2) -> MA5 (3) -> MA1 (8) -> MA2 (5) -> MA6 (5); Factory B MB2 (9) -> MB6 (8) -> MB3 (1) -> MB5 (3) -> MB4 (7) -> MB1 (2)\n\nConstraints:\n- A machine handles at most one job at a time.\n- Each job must respect its listed operation order inside each factory.\n- Factory B job Jx cannot start until Factory A job Jx has fully completed.\n- When you emit a schedule, every required operation must appear exactly once.\n\nA deterministic feasible baseline schedule is provided below. If you stop immediately or fail to produce a valid schedule, this baseline is what gets scored.\nBaseline makespan: 157\nBaseline schedule summary:\nFactory A: MA1: J1[9-14],J2[14-21],J3[58-65],J4[86-91],J5[109-117]; MA2: J1[23-25],J2[47-53],J3[57-58],J4[77-86],J5[117-122]; MA3: J1[0-9],J2[35-39],J3[48-57],J4[100-101],J5[101-104]; MA4: J1[25-32],J2[32-35],J3[35-41],J4[76-77],J5[104-106]; MA5: J1[14-23],J2[23-31],J3[41-48],J4[91-100],J5[106-109]; MA6: J1[32-40],J2[40-47],J3[65-71],J4[71-76],J5[122-127]\nFactory B: MB1: J1[71-74],J2[78-82],J3[97-102],J4[107-115],J5[155-157]; MB2: J1[47-53],J2[53-57],J3[85-88],J4[101-106],J5[127-136]; MB3: J1[64-71],J2[72-77],J3[77-85],J4[117-124],J5[144-145]; MB4: J1[60-64],J2[64-72],J3[104-106],J4[124-126],J5[148-155]; MB5: J1[40-47],J2[77-78],J3[88-97],J4[115-117],J5[145-148]; MB6: J1[53-60],J2[82-91],J3[102-104],J4[106-107],J5[136-144]\nMakespan: 157\n",
+        "seed": 36
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "mwis",
+      "problem_id": "mwis_medium_seed36",
+      "sub_instance": {
+        "attempt_index": 31,
+        "baseline_answer": {
+          "selected_vertices": [
+            "V001",
+            "V003",
+            "V007",
+            "V011",
+            "V013",
+            "V017",
+            "V020",
+            "V025",
+            "V026",
+            "V029",
+            "V035",
+            "V039",
+            "V040",
+            "V043",
+            "V047",
+            "V053",
+            "V054",
+            "V056",
+            "V061",
+            "V062",
+            "V064",
+            "V065",
+            "V073",
+            "V078",
+            "V079",
+            "V090",
+            "V094",
+            "V100",
+            "V101",
+            "V103",
+            "V111",
+            "V113"
+          ],
+          "total_weight": 508
+        },
+        "baseline_gap_pct": 16.58456486042693,
+        "baseline_objective": 508,
+        "bridge_targets": {
+          "V004": [
+            "block_1",
+            "block_3"
+          ],
+          "V010": [
+            "block_1",
+            "block_3"
+          ],
+          "V012": [
+            "block_1",
+            "block_3"
+          ],
+          "V084": [
+            "block_1",
+            "block_2",
+            "block_3"
+          ],
+          "V089": [
+            "block_3",
+            "block_4"
+          ],
+          "V105": [
+            "block_2",
+            "block_4"
+          ]
+        },
+        "bridge_vertices": [
+          "V004",
+          "V010",
+          "V012",
+          "V084",
+          "V089",
+          "V105"
+        ],
+        "class": "mwis",
+        "decoy_vertices": [
+          "V035",
+          "V038",
+          "V067",
+          "V076",
+          "V083",
+          "V087",
+          "V098",
+          "V113"
+        ],
+        "difficulty": "medium",
+        "edges": [
+          [
+            "V001",
+            "V010"
+          ],
+          [
+            "V001",
+            "V063"
+          ],
+          [
+            "V002",
+            "V003"
+          ],
+          [
+            "V002",
+            "V011"
+          ],
+          [
+            "V002",
+            "V018"
+          ],
+          [
+            "V002",
+            "V084"
+          ],
+          [
+            "V002",
+            "V090"
+          ],
+          [
+            "V002",
+            "V094"
+          ],
+          [
+            "V002",
+            "V097"
+          ],
+          [
+            "V003",
+            "V004"
+          ],
+          [
+            "V003",
+            "V006"
+          ],
+          [
+            "V003",
+            "V012"
+          ],
+          [
+            "V003",
+            "V018"
+          ],
+          [
+            "V003",
+            "V027"
+          ],
+          [
+            "V003",
+            "V037"
+          ],
+          [
+            "V003",
+            "V063"
+          ],
+          [
+            "V003",
+            "V068"
+          ],
+          [
+            "V003",
+            "V075"
+          ],
+          [
+            "V003",
+            "V082"
+          ],
+          [
+            "V003",
+            "V092"
+          ],
+          [
+            "V003",
+            "V095"
+          ],
+          [
+            "V003",
+            "V114"
+          ],
+          [
+            "V004",
+            "V006"
+          ],
+          [
+            "V004",
+            "V016"
+          ],
+          [
+            "V004",
+            "V017"
+          ],
+          [
+            "V004",
+            "V018"
+          ],
+          [
+            "V004",
+            "V024"
+          ],
+          [
+            "V004",
+            "V025"
+          ],
+          [
+            "V004",
+            "V026"
+          ],
+          [
+            "V004",
+            "V043"
+          ],
+          [
+            "V004",
+            "V057"
+          ],
+          [
+            "V004",
+            "V071"
+          ],
+          [
+            "V004",
+            "V075"
+          ],
+          [
+            "V004",
+            "V090"
+          ],
+          [
+            "V004",
+            "V096"
+          ],
+          [
+            "V004",
+            "V102"
+          ],
+          [
+            "V004",
+            "V106"
+          ],
+          [
+            "V004",
+            "V107"
+          ],
+          [
+            "V004",
+            "V115"
+          ],
+          [
+            "V005",
+            "V007"
+          ],
+          [
+            "V005",
+            "V056"
+          ],
+          [
+            "V005",
+            "V060"
+          ],
+          [
+            "V005",
+            "V082"
+          ],
+          [
+            "V005",
+            "V091"
+          ],
+          [
+            "V005",
+            "V098"
+          ],
+          [
+            "V005",
+            "V104"
+          ],
+          [
+            "V005",
+            "V119"
+          ],
+          [
+            "V006",
+            "V027"
+          ],
+          [
+            "V006",
+            "V063"
+          ],
+          [
+            "V006",
+            "V065"
+          ],
+          [
+            "V006",
+            "V084"
+          ],
+          [
+            "V006",
+            "V102"
+          ],
+          [
+            "V007",
+            "V052"
+          ],
+          [
+            "V007",
+            "V067"
+          ],
+          [
+            "V007",
+            "V076"
+          ],
+          [
+            "V007",
+            "V084"
+          ],
+          [
+            "V007",
+            "V087"
+          ],
+          [
+            "V007",
+            "V105"
+          ],
+          [
+            "V007",
+            "V108"
+          ],
+          [
+            "V008",
+            "V013"
+          ],
+          [
+            "V008",
+            "V045"
+          ],
+          [
+            "V008",
+            "V073"
+          ],
+          [
+            "V008",
+            "V101"
+          ],
+          [
+            "V008",
+            "V103"
+          ],
+          [
+            "V008",
+            "V105"
+          ],
+          [
+            "V009",
+            "V012"
+          ],
+          [
+            "V009",
+            "V025"
+          ],
+          [
+            "V009",
+            "V049"
+          ],
+          [
+            "V009",
+            "V051"
+          ],
+          [
+            "V009",
+            "V055"
+          ],
+          [
+            "V009",
+            "V057"
+          ],
+          [
+            "V009",
+            "V088"
+          ],
+          [
+            "V009",
+            "V089"
+          ],
+          [
+            "V009",
+            "V096"
+          ],
+          [
+            "V009",
+            "V109"
+          ],
+          [
+            "V010",
+            "V012"
+          ],
+          [
+            "V010",
+            "V014"
+          ],
+          [
+            "V010",
+            "V017"
+          ],
+          [
+            "V010",
+            "V019"
+          ],
+          [
+            "V010",
+            "V024"
+          ],
+          [
+            "V010",
+            "V025"
+          ],
+          [
+            "V010",
+            "V036"
+          ],
+          [
+            "V010",
+            "V041"
+          ],
+          [
+            "V010",
+            "V044"
+          ],
+          [
+            "V010",
+            "V055"
+          ],
+          [
+            "V010",
+            "V063"
+          ],
+          [
+            "V010",
+            "V065"
+          ],
+          [
+            "V010",
+            "V068"
+          ],
+          [
+            "V010",
+            "V074"
+          ],
+          [
+            "V010",
+            "V075"
+          ],
+          [
+            "V010",
+            "V092"
+          ],
+          [
+            "V010",
+            "V095"
+          ],
+          [
+            "V010",
+            "V100"
+          ],
+          [
+            "V010",
+            "V106"
+          ],
+          [
+            "V011",
+            "V018"
+          ],
+          [
+            "V011",
+            "V086"
+          ],
+          [
+            "V012",
+            "V017"
+          ],
+          [
+            "V012",
+            "V018"
+          ],
+          [
+            "V012",
+            "V027"
+          ],
+          [
+            "V012",
+            "V030"
+          ],
+          [
+            "V012",
+            "V041"
+          ],
+          [
+            "V012",
+            "V049"
+          ],
+          [
+            "V012",
+            "V055"
+          ],
+          [
+            "V012",
+            "V071"
+          ],
+          [
+            "V012",
+            "V079"
+          ],
+          [
+            "V012",
+            "V084"
+          ],
+          [
+            "V012",
+            "V089"
+          ],
+          [
+            "V012",
+            "V096"
+          ],
+          [
+            "V012",
+            "V105"
+          ],
+          [
+            "V012",
+            "V106"
+          ],
+          [
+            "V012",
+            "V109"
+          ],
+          [
+            "V012",
+            "V110"
+          ],
+          [
+            "V013",
+            "V028"
+          ],
+          [
+            "V013",
+            "V066"
+          ],
+          [
+            "V013",
+            "V072"
+          ],
+          [
+            "V013",
+            "V082"
+          ],
+          [
+            "V013",
+            "V085"
+          ],
+          [
+            "V014",
+            "V016"
+          ],
+          [
+            "V014",
+            "V026"
+          ],
+          [
+            "V014",
+            "V029"
+          ],
+          [
+            "V014",
+            "V041"
+          ],
+          [
+            "V014",
+            "V051"
+          ],
+          [
+            "V014",
+            "V055"
+          ],
+          [
+            "V014",
+            "V071"
+          ],
+          [
+            "V014",
+            "V074"
+          ],
+          [
+            "V014",
+            "V096"
+          ],
+          [
+            "V015",
+            "V035"
+          ],
+          [
+            "V015",
+            "V054"
+          ],
+          [
+            "V015",
+            "V083"
+          ],
+          [
+            "V015",
+            "V112"
+          ],
+          [
+            "V015",
+            "V118"
+          ],
+          [
+            "V016",
+            "V041"
+          ],
+          [
+            "V016",
+            "V062"
+          ],
+          [
+            "V016",
+            "V076"
+          ],
+          [
+            "V016",
+            "V084"
+          ],
+          [
+            "V016",
+            "V089"
+          ],
+          [
+            "V016",
+            "V106"
+          ],
+          [
+            "V016",
+            "V109"
+          ],
+          [
+            "V017",
+            "V050"
+          ],
+          [
+            "V017",
+            "V091"
+          ],
+          [
+            "V017",
+            "V097"
+          ],
+          [
+            "V017",
+            "V115"
+          ],
+          [
+            "V017",
+            "V119"
+          ],
+          [
+            "V018",
+            "V024"
+          ],
+          [
+            "V018",
+            "V050"
+          ],
+          [
+            "V018",
+            "V061"
+          ],
+          [
+            "V018",
+            "V063"
+          ],
+          [
+            "V018",
+            "V110"
+          ],
+          [
+            "V019",
+            "V029"
+          ],
+          [
+            "V019",
+            "V071"
+          ],
+          [
+            "V019",
+            "V089"
+          ],
+          [
+            "V019",
+            "V109"
+          ],
+          [
+            "V020",
+            "V021"
+          ],
+          [
+            "V020",
+            "V022"
+          ],
+          [
+            "V020",
+            "V033"
+          ],
+          [
+            "V020",
+            "V059"
+          ],
+          [
+            "V020",
+            "V072"
+          ],
+          [
+            "V020",
+            "V086"
+          ],
+          [
+            "V020",
+            "V098"
+          ],
+          [
+            "V021",
+            "V032"
+          ],
+          [
+            "V021",
+            "V073"
+          ],
+          [
+            "V021",
+            "V101"
+          ],
+          [
+            "V021",
+            "V113"
+          ],
+          [
+            "V021",
+            "V116"
+          ],
+          [
+            "V022",
+            "V028"
+          ],
+          [
+            "V022",
+            "V032"
+          ],
+          [
+            "V022",
+            "V033"
+          ],
+          [
+            "V022",
+            "V053"
+          ],
+          [
+            "V022",
+            "V089"
+          ],
+          [
+            "V022",
+            "V101"
+          ],
+          [
+            "V022",
+            "V105"
+          ],
+          [
+            "V022",
+            "V120"
+          ],
+          [
+            "V023",
+            "V025"
+          ],
+          [
+            "V023",
+            "V047"
+          ],
+          [
+            "V023",
+            "V069"
+          ],
+          [
+            "V023",
+            "V070"
+          ],
+          [
+            "V023",
+            "V080"
+          ],
+          [
+            "V023",
+            "V086"
+          ],
+          [
+            "V023",
+            "V101"
+          ],
+          [
+            "V023",
+            "V105"
+          ],
+          [
+            "V024",
+            "V027"
+          ],
+          [
+            "V024",
+            "V050"
+          ],
+          [
+            "V024",
+            "V061"
+          ],
+          [
+            "V024",
+            "V065"
+          ],
+          [
+            "V024",
+            "V080"
+          ],
+          [
+            "V024",
+            "V084"
+          ],
+          [
+            "V024",
+            "V098"
+          ],
+          [
+            "V025",
+            "V036"
+          ],
+          [
+            "V025",
+            "V046"
+          ],
+          [
+            "V025",
+            "V051"
+          ],
+          [
+            "V025",
+            "V084"
+          ],
+          [
+            "V026",
+            "V044"
+          ],
+          [
+            "V026",
+            "V050"
+          ],
+          [
+            "V026",
+            "V102"
+          ],
+          [
+            "V027",
+            "V062"
+          ],
+          [
+            "V027",
+            "V065"
+          ],
+          [
+            "V027",
+            "V084"
+          ],
+          [
+            "V028",
+            "V034"
+          ],
+          [
+            "V028",
+            "V069"
+          ],
+          [
+            "V028",
+            "V073"
+          ],
+          [
+            "V028",
+            "V089"
+          ],
+          [
+            "V028",
+            "V103"
+          ],
+          [
+            "V029",
+            "V051"
+          ],
+          [
+            "V029",
+            "V077"
+          ],
+          [
+            "V029",
+            "V106"
+          ],
+          [
+            "V030",
+            "V037"
+          ],
+          [
+            "V030",
+            "V050"
+          ],
+          [
+            "V030",
+            "V061"
+          ],
+          [
+            "V030",
+            "V095"
+          ],
+          [
+            "V030",
+            "V097"
+          ],
+          [
+            "V030",
+            "V099"
+          ],
+          [
+            "V031",
+            "V046"
+          ],
+          [
+            "V031",
+            "V062"
+          ],
+          [
+            "V031",
+            "V071"
+          ],
+          [
+            "V032",
+            "V070"
+          ],
+          [
+            "V032",
+            "V078"
+          ],
+          [
+            "V032",
+            "V081"
+          ],
+          [
+            "V032",
+            "V086"
+          ],
+          [
+            "V032",
+            "V089"
+          ],
+          [
+            "V032",
+            "V105"
+          ],
+          [
+            "V033",
+            "V034"
+          ],
+          [
+            "V033",
+            "V047"
+          ],
+          [
+            "V033",
+            "V078"
+          ],
+          [
+            "V033",
+            "V105"
+          ],
+          [
+            "V033",
+            "V120"
+          ],
+          [
+            "V034",
+            "V047"
+          ],
+          [
+            "V034",
+            "V059"
+          ],
+          [
+            "V035",
+            "V042"
+          ],
+          [
+            "V035",
+            "V060"
+          ],
+          [
+            "V035",
+            "V076"
+          ],
+          [
+            "V035",
+            "V083"
+          ],
+          [
+            "V035",
+            "V087"
+          ],
+          [
+            "V035",
+            "V091"
+          ],
+          [
+            "V035",
+            "V098"
+          ],
+          [
+            "V035",
+            "V104"
+          ],
+          [
+            "V035",
+            "V105"
+          ],
+          [
+            "V035",
+            "V118"
+          ],
+          [
+            "V035",
+            "V119"
+          ],
+          [
+            "V036",
+            "V047"
+          ],
+          [
+            "V036",
+            "V055"
+          ],
+          [
+            "V036",
+            "V064"
+          ],
+          [
+            "V036",
+            "V071"
+          ],
+          [
+            "V036",
+            "V077"
+          ],
+          [
+            "V036",
+            "V088"
+          ],
+          [
+            "V036",
+            "V089"
+          ],
+          [
+            "V036",
+            "V096"
+          ],
+          [
+            "V036",
+            "V106"
+          ],
+          [
+            "V036",
+            "V110"
+          ],
+          [
+            "V036",
+            "V111"
+          ],
+          [
+            "V037",
+            "V044"
+          ],
+          [
+            "V037",
+            "V061"
+          ],
+          [
+            "V037",
+            "V065"
+          ],
+          [
+            "V037",
+            "V084"
+          ],
+          [
+            "V037",
+            "V095"
+          ],
+          [
+            "V037",
+            "V102"
+          ],
+          [
+            "V038",
+            "V039"
+          ],
+          [
+            "V038",
+            "V045"
+          ],
+          [
+            "V038",
+            "V060"
+          ],
+          [
+            "V038",
+            "V076"
+          ],
+          [
+            "V038",
+            "V087"
+          ],
+          [
+            "V038",
+            "V094"
+          ],
+          [
+            "V038",
+            "V104"
+          ],
+          [
+            "V038",
+            "V105"
+          ],
+          [
+            "V038",
+            "V117"
+          ],
+          [
+            "V038",
+            "V118"
+          ],
+          [
+            "V039",
+            "V048"
+          ],
+          [
+            "V039",
+            "V076"
+          ],
+          [
+            "V039",
+            "V087"
+          ],
+          [
+            "V039",
+            "V099"
+          ],
+          [
+            "V039",
+            "V112"
+          ],
+          [
+            "V039",
+            "V117"
+          ],
+          [
+            "V040",
+            "V055"
+          ],
+          [
+            "V040",
+            "V077"
+          ],
+          [
+            "V040",
+            "V089"
+          ],
+          [
+            "V040",
+            "V109"
+          ],
+          [
+            "V041",
+            "V048"
+          ],
+          [
+            "V041",
+            "V055"
+          ],
+          [
+            "V041",
+            "V073"
+          ],
+          [
+            "V041",
+            "V089"
+          ],
+          [
+            "V042",
+            "V045"
+          ],
+          [
+            "V042",
+            "V048"
+          ],
+          [
+            "V042",
+            "V067"
+          ],
+          [
+            "V042",
+            "V076"
+          ],
+          [
+            "V042",
+            "V087"
+          ],
+          [
+            "V042",
+            "V098"
+          ],
+          [
+            "V042",
+            "V099"
+          ],
+          [
+            "V042",
+            "V104"
+          ],
+          [
+            "V043",
+            "V046"
+          ],
+          [
+            "V043",
+            "V057"
+          ],
+          [
+            "V043",
+            "V069"
+          ],
+          [
+            "V043",
+            "V089"
+          ],
+          [
+            "V044",
+            "V050"
+          ],
+          [
+            "V044",
+            "V060"
+          ],
+          [
+            "V044",
+            "V068"
+          ],
+          [
+            "V044",
+            "V075"
+          ],
+          [
+            "V044",
+            "V097"
+          ],
+          [
+            "V044",
+            "V114"
+          ],
+          [
+            "V045",
+            "V056"
+          ],
+          [
+            "V045",
+            "V084"
+          ],
+          [
+            "V045",
+            "V087"
+          ],
+          [
+            "V045",
+            "V093"
+          ],
+          [
+            "V046",
+            "V049"
+          ],
+          [
+            "V046",
+            "V051"
+          ],
+          [
+            "V046",
+            "V096"
+          ],
+          [
+            "V047",
+            "V058"
+          ],
+          [
+            "V047",
+            "V066"
+          ],
+          [
+            "V047",
+            "V070"
+          ],
+          [
+            "V047",
+            "V081"
+          ],
+          [
+            "V047",
+            "V086"
+          ],
+          [
+            "V049",
+            "V051"
+          ],
+          [
+            "V049",
+            "V064"
+          ],
+          [
+            "V049",
+            "V071"
+          ],
+          [
+            "V049",
+            "V100"
+          ],
+          [
+            "V049",
+            "V106"
+          ],
+          [
+            "V049",
+            "V111"
+          ],
+          [
+            "V050",
+            "V082"
+          ],
+          [
+            "V051",
+            "V055"
+          ],
+          [
+            "V051",
+            "V057"
+          ],
+          [
+            "V051",
+            "V064"
+          ],
+          [
+            "V051",
+            "V074"
+          ],
+          [
+            "V052",
+            "V056"
+          ],
+          [
+            "V052",
+            "V067"
+          ],
+          [
+            "V052",
+            "V084"
+          ],
+          [
+            "V052",
+            "V093"
+          ],
+          [
+            "V052",
+            "V099"
+          ],
+          [
+            "V052",
+            "V108"
+          ],
+          [
+            "V053",
+            "V080"
+          ],
+          [
+            "V053",
+            "V086"
+          ],
+          [
+            "V053",
+            "V105"
+          ],
+          [
+            "V054",
+            "V084"
+          ],
+          [
+            "V054",
+            "V098"
+          ],
+          [
+            "V054",
+            "V105"
+          ],
+          [
+            "V054",
+            "V112"
+          ],
+          [
+            "V054",
+            "V118"
+          ],
+          [
+            "V055",
+            "V088"
+          ],
+          [
+            "V055",
+            "V109"
+          ],
+          [
+            "V056",
+            "V076"
+          ],
+          [
+            "V056",
+            "V084"
+          ],
+          [
+            "V057",
+            "V084"
+          ],
+          [
+            "V057",
+            "V088"
+          ],
+          [
+            "V057",
+            "V089"
+          ],
+          [
+            "V058",
+            "V081"
+          ],
+          [
+            "V058",
+            "V101"
+          ],
+          [
+            "V058",
+            "V116"
+          ],
+          [
+            "V059",
+            "V089"
+          ],
+          [
+            "V059",
+            "V116"
+          ],
+          [
+            "V060",
+            "V084"
+          ],
+          [
+            "V060",
+            "V108"
+          ],
+          [
+            "V060",
+            "V113"
+          ],
+          [
+            "V061",
+            "V068"
+          ],
+          [
+            "V061",
+            "V084"
+          ],
+          [
+            "V061",
+            "V097"
+          ],
+          [
+            "V061",
+            "V115"
+          ],
+          [
+            "V062",
+            "V089"
+          ],
+          [
+            "V062",
+            "V096"
+          ],
+          [
+            "V062",
+            "V107"
+          ],
+          [
+            "V062",
+            "V110"
+          ],
+          [
+            "V064",
+            "V077"
+          ],
+          [
+            "V064",
+            "V084"
+          ],
+          [
+            "V064",
+            "V089"
+          ],
+          [
+            "V065",
+            "V082"
+          ],
+          [
+            "V065",
+            "V084"
+          ],
+          [
+            "V065",
+            "V115"
+          ],
+          [
+            "V067",
+            "V076"
+          ],
+          [
+            "V067",
+            "V084"
+          ],
+          [
+            "V067",
+            "V094"
+          ],
+          [
+            "V067",
+            "V098"
+          ],
+          [
+            "V067",
+            "V105"
+          ],
+          [
+            "V067",
+            "V112"
+          ],
+          [
+            "V067",
+            "V113"
+          ],
+          [
+            "V067",
+            "V118"
+          ],
+          [
+            "V068",
+            "V075"
+          ],
+          [
+            "V068",
+            "V084"
+          ],
+          [
+            "V068",
+            "V094"
+          ],
+          [
+            "V068",
+            "V095"
+          ],
+          [
+            "V069",
+            "V072"
+          ],
+          [
+            "V069",
+            "V078"
+          ],
+          [
+            "V069",
+            "V110"
+          ],
+          [
+            "V069",
+            "V116"
+          ],
+          [
+            "V070",
+            "V089"
+          ],
+          [
+            "V070",
+            "V103"
+          ],
+          [
+            "V070",
+            "V116"
+          ],
+          [
+            "V070",
+            "V120"
+          ],
+          [
+            "V071",
+            "V084"
+          ],
+          [
+            "V071",
+            "V089"
+          ],
+          [
+            "V071",
+            "V111"
+          ],
+          [
+            "V073",
+            "V080"
+          ],
+          [
+            "V073",
+            "V086"
+          ],
+          [
+            "V073",
+            "V105"
+          ],
+          [
+            "V073",
+            "V120"
+          ],
+          [
+            "V074",
+            "V106"
+          ],
+          [
+            "V074",
+            "V111"
+          ],
+          [
+            "V075",
+            "V084"
+          ],
+          [
+            "V076",
+            "V093"
+          ],
+          [
+            "V076",
+            "V113"
+          ],
+          [
+            "V077",
+            "V107"
+          ],
+          [
+            "V078",
+            "V116"
+          ],
+          [
+            "V080",
+            "V089"
+          ],
+          [
+            "V080",
+            "V105"
+          ],
+          [
+            "V081",
+            "V086"
+          ],
+          [
+            "V081",
+            "V105"
+          ],
+          [
+            "V082",
+            "V113"
+          ],
+          [
+            "V082",
+            "V116"
+          ],
+          [
+            "V082",
+            "V120"
+          ],
+          [
+            "V083",
+            "V084"
+          ],
+          [
+            "V083",
+            "V087"
+          ],
+          [
+            "V083",
+            "V098"
+          ],
+          [
+            "V083",
+            "V104"
+          ],
+          [
+            "V083",
+            "V113"
+          ],
+          [
+            "V083",
+            "V117"
+          ],
+          [
+            "V083",
+            "V119"
+          ],
+          [
+            "V083",
+            "V120"
+          ],
+          [
+            "V084",
+            "V090"
+          ],
+          [
+            "V084",
+            "V092"
+          ],
+          [
+            "V084",
+            "V094"
+          ],
+          [
+            "V084",
+            "V096"
+          ],
+          [
+            "V084",
+            "V098"
+          ],
+          [
+            "V084",
+            "V102"
+          ],
+          [
+            "V084",
+            "V104"
+          ],
+          [
+            "V084",
+            "V108"
+          ],
+          [
+            "V084",
+            "V109"
+          ],
+          [
+            "V084",
+            "V110"
+          ],
+          [
+            "V084",
+            "V112"
+          ],
+          [
+            "V084",
+            "V114"
+          ],
+          [
+            "V084",
+            "V115"
+          ],
+          [
+            "V085",
+            "V089"
+          ],
+          [
+            "V086",
+            "V112"
+          ],
+          [
+            "V087",
+            "V094"
+          ],
+          [
+            "V087",
+            "V098"
+          ],
+          [
+            "V087",
+            "V108"
+          ],
+          [
+            "V087",
+            "V120"
+          ],
+          [
+            "V088",
+            "V100"
+          ],
+          [
+            "V089",
+            "V096"
+          ],
+          [
+            "V089",
+            "V103"
+          ],
+          [
+            "V089",
+            "V106"
+          ],
+          [
+            "V089",
+            "V111"
+          ],
+          [
+            "V090",
+            "V097"
+          ],
+          [
+            "V090",
+            "V110"
+          ],
+          [
+            "V091",
+            "V094"
+          ],
+          [
+            "V091",
+            "V098"
+          ],
+          [
+            "V091",
+            "V105"
+          ],
+          [
+            "V091",
+            "V112"
+          ],
+          [
+            "V091",
+            "V113"
+          ],
+          [
+            "V092",
+            "V095"
+          ],
+          [
+            "V092",
+            "V102"
+          ],
+          [
+            "V092",
+            "V115"
+          ],
+          [
+            "V093",
+            "V105"
+          ],
+          [
+            "V093",
+            "V113"
+          ],
+          [
+            "V094",
+            "V098"
+          ],
+          [
+            "V094",
+            "V104"
+          ],
+          [
+            "V095",
+            "V102"
+          ],
+          [
+            "V095",
+            "V104"
+          ],
+          [
+            "V096",
+            "V109"
+          ],
+          [
+            "V097",
+            "V102"
+          ],
+          [
+            "V098",
+            "V113"
+          ],
+          [
+            "V099",
+            "V105"
+          ],
+          [
+            "V099",
+            "V113"
+          ],
+          [
+            "V099",
+            "V119"
+          ],
+          [
+            "V100",
+            "V106"
+          ],
+          [
+            "V100",
+            "V114"
+          ],
+          [
+            "V101",
+            "V102"
+          ],
+          [
+            "V101",
+            "V120"
+          ],
+          [
+            "V102",
+            "V110"
+          ],
+          [
+            "V104",
+            "V105"
+          ],
+          [
+            "V105",
+            "V108"
+          ],
+          [
+            "V105",
+            "V113"
+          ],
+          [
+            "V105",
+            "V117"
+          ],
+          [
+            "V105",
+            "V118"
+          ],
+          [
+            "V105",
+            "V119"
+          ],
+          [
+            "V108",
+            "V118"
+          ],
+          [
+            "V113",
+            "V117"
+          ]
+        ],
+        "generation_seed": 310253,
+        "n_nodes": 120,
+        "optimal_answer": {
+          "selected_vertices": [
+            "V011",
+            "V015",
+            "V016",
+            "V020",
+            "V025",
+            "V026",
+            "V027",
+            "V029",
+            "V031",
+            "V034",
+            "V037",
+            "V040",
+            "V043",
+            "V048",
+            "V053",
+            "V056",
+            "V060",
+            "V063",
+            "V064",
+            "V066",
+            "V067",
+            "V068",
+            "V073",
+            "V078",
+            "V079",
+            "V081",
+            "V082",
+            "V085",
+            "V087",
+            "V091",
+            "V093",
+            "V096",
+            "V097",
+            "V099",
+            "V100",
+            "V101",
+            "V103",
+            "V104",
+            "V107",
+            "V110",
+            "V111",
+            "V115",
+            "V117"
+          ],
+          "total_weight": 609
+        },
+        "optimal_objective": 609,
+        "optimal_proven": true,
+        "problem_statement": "Maximum weighted independent set on an undirected graph with 120 vertices.\n\nObjective:\n- Choose a subset of vertices with no edge between any chosen pair.\n- total_weight = sum(weights[v] for v in selected_vertices)\n- Higher total_weight is better.\n\nVertex weights:\nV001=4, V002=10, V003=34, V004=17, V005=18, V006=5, V007=5, V008=4, V009=7, V010=12\nV011=14, V012=11, V013=6, V014=7, V015=5, V016=7, V017=4, V018=4, V019=5, V020=11\nV021=5, V022=5, V023=7, V024=6, V025=13, V026=18, V027=12, V028=3, V029=7, V030=7\nV031=4, V032=11, V033=6, V034=17, V035=28, V036=34, V037=4, V038=30, V039=47, V040=15\nV041=7, V042=19, V043=16, V044=6, V045=5, V046=14, V047=29, V048=16, V049=7, V050=14\nV051=6, V052=8, V053=3, V054=4, V055=3, V056=23, V057=4, V058=7, V059=7, V060=14\nV061=11, V062=17, V063=21, V064=3, V065=17, V066=18, V067=28, V068=10, V069=4, V070=4\nV071=4, V072=5, V073=11, V074=11, V075=6, V076=46, V077=3, V078=17, V079=14, V080=5\nV081=9, V082=15, V083=32, V084=5, V085=4, V086=14, V087=27, V088=4, V089=12, V090=6\nV091=12, V092=5, V093=11, V094=9, V095=7, V096=16, V097=5, V098=24, V099=24, V100=29\nV101=3, V102=3, V103=20, V104=11, V105=7, V106=6, V107=9, V108=5, V109=11, V110=5\nV111=35, V112=15, V113=35, V114=13, V115=6, V116=10, V117=47, V118=5, V119=15, V120=4\n\nEdges:\nV001-V010, V001-V063, V002-V003, V002-V011, V002-V018, V002-V084, V002-V090, V002-V094, V002-V097, V003-V004\nV003-V006, V003-V012, V003-V018, V003-V027, V003-V037, V003-V063, V003-V068, V003-V075, V003-V082, V003-V092\nV003-V095, V003-V114, V004-V006, V004-V016, V004-V017, V004-V018, V004-V024, V004-V025, V004-V026, V004-V043\nV004-V057, V004-V071, V004-V075, V004-V090, V004-V096, V004-V102, V004-V106, V004-V107, V004-V115, V005-V007\nV005-V056, V005-V060, V005-V082, V005-V091, V005-V098, V005-V104, V005-V119, V006-V027, V006-V063, V006-V065\nV006-V084, V006-V102, V007-V052, V007-V067, V007-V076, V007-V084, V007-V087, V007-V105, V007-V108, V008-V013\nV008-V045, V008-V073, V008-V101, V008-V103, V008-V105, V009-V012, V009-V025, V009-V049, V009-V051, V009-V055\nV009-V057, V009-V088, V009-V089, V009-V096, V009-V109, V010-V012, V010-V014, V010-V017, V010-V019, V010-V024\nV010-V025, V010-V036, V010-V041, V010-V044, V010-V055, V010-V063, V010-V065, V010-V068, V010-V074, V010-V075\nV010-V092, V010-V095, V010-V100, V010-V106, V011-V018, V011-V086, V012-V017, V012-V018, V012-V027, V012-V030\nV012-V041, V012-V049, V012-V055, V012-V071, V012-V079, V012-V084, V012-V089, V012-V096, V012-V105, V012-V106\nV012-V109, V012-V110, V013-V028, V013-V066, V013-V072, V013-V082, V013-V085, V014-V016, V014-V026, V014-V029\nV014-V041, V014-V051, V014-V055, V014-V071, V014-V074, V014-V096, V015-V035, V015-V054, V015-V083, V015-V112\nV015-V118, V016-V041, V016-V062, V016-V076, V016-V084, V016-V089, V016-V106, V016-V109, V017-V050, V017-V091\nV017-V097, V017-V115, V017-V119, V018-V024, V018-V050, V018-V061, V018-V063, V018-V110, V019-V029, V019-V071\nV019-V089, V019-V109, V020-V021, V020-V022, V020-V033, V020-V059, V020-V072, V020-V086, V020-V098, V021-V032\nV021-V073, V021-V101, V021-V113, V021-V116, V022-V028, V022-V032, V022-V033, V022-V053, V022-V089, V022-V101\nV022-V105, V022-V120, V023-V025, V023-V047, V023-V069, V023-V070, V023-V080, V023-V086, V023-V101, V023-V105\nV024-V027, V024-V050, V024-V061, V024-V065, V024-V080, V024-V084, V024-V098, V025-V036, V025-V046, V025-V051\nV025-V084, V026-V044, V026-V050, V026-V102, V027-V062, V027-V065, V027-V084, V028-V034, V028-V069, V028-V073\nV028-V089, V028-V103, V029-V051, V029-V077, V029-V106, V030-V037, V030-V050, V030-V061, V030-V095, V030-V097\nV030-V099, V031-V046, V031-V062, V031-V071, V032-V070, V032-V078, V032-V081, V032-V086, V032-V089, V032-V105\nV033-V034, V033-V047, V033-V078, V033-V105, V033-V120, V034-V047, V034-V059, V035-V042, V035-V060, V035-V076\nV035-V083, V035-V087, V035-V091, V035-V098, V035-V104, V035-V105, V035-V118, V035-V119, V036-V047, V036-V055\nV036-V064, V036-V071, V036-V077, V036-V088, V036-V089, V036-V096, V036-V106, V036-V110, V036-V111, V037-V044\nV037-V061, V037-V065, V037-V084, V037-V095, V037-V102, V038-V039, V038-V045, V038-V060, V038-V076, V038-V087\nV038-V094, V038-V104, V038-V105, V038-V117, V038-V118, V039-V048, V039-V076, V039-V087, V039-V099, V039-V112\nV039-V117, V040-V055, V040-V077, V040-V089, V040-V109, V041-V048, V041-V055, V041-V073, V041-V089, V042-V045\nV042-V048, V042-V067, V042-V076, V042-V087, V042-V098, V042-V099, V042-V104, V043-V046, V043-V057, V043-V069\nV043-V089, V044-V050, V044-V060, V044-V068, V044-V075, V044-V097, V044-V114, V045-V056, V045-V084, V045-V087\nV045-V093, V046-V049, V046-V051, V046-V096, V047-V058, V047-V066, V047-V070, V047-V081, V047-V086, V049-V051\nV049-V064, V049-V071, V049-V100, V049-V106, V049-V111, V050-V082, V051-V055, V051-V057, V051-V064, V051-V074\nV052-V056, V052-V067, V052-V084, V052-V093, V052-V099, V052-V108, V053-V080, V053-V086, V053-V105, V054-V084\nV054-V098, V054-V105, V054-V112, V054-V118, V055-V088, V055-V109, V056-V076, V056-V084, V057-V084, V057-V088\nV057-V089, V058-V081, V058-V101, V058-V116, V059-V089, V059-V116, V060-V084, V060-V108, V060-V113, V061-V068\nV061-V084, V061-V097, V061-V115, V062-V089, V062-V096, V062-V107, V062-V110, V064-V077, V064-V084, V064-V089\nV065-V082, V065-V084, V065-V115, V067-V076, V067-V084, V067-V094, V067-V098, V067-V105, V067-V112, V067-V113\nV067-V118, V068-V075, V068-V084, V068-V094, V068-V095, V069-V072, V069-V078, V069-V110, V069-V116, V070-V089\nV070-V103, V070-V116, V070-V120, V071-V084, V071-V089, V071-V111, V073-V080, V073-V086, V073-V105, V073-V120\nV074-V106, V074-V111, V075-V084, V076-V093, V076-V113, V077-V107, V078-V116, V080-V089, V080-V105, V081-V086\nV081-V105, V082-V113, V082-V116, V082-V120, V083-V084, V083-V087, V083-V098, V083-V104, V083-V113, V083-V117\nV083-V119, V083-V120, V084-V090, V084-V092, V084-V094, V084-V096, V084-V098, V084-V102, V084-V104, V084-V108\nV084-V109, V084-V110, V084-V112, V084-V114, V084-V115, V085-V089, V086-V112, V087-V094, V087-V098, V087-V108\nV087-V120, V088-V100, V089-V096, V089-V103, V089-V106, V089-V111, V090-V097, V090-V110, V091-V094, V091-V098\nV091-V105, V091-V112, V091-V113, V092-V095, V092-V102, V092-V115, V093-V105, V093-V113, V094-V098, V094-V104\nV095-V102, V095-V104, V096-V109, V097-V102, V098-V113, V099-V105, V099-V113, V099-V119, V100-V106, V100-V114\nV101-V102, V101-V120, V102-V110, V104-V105, V105-V108, V105-V113, V105-V117, V105-V118, V105-V119, V108-V118\nV113-V117\n\nConstraints:\n- `BEST_GUESS` must be valid JSON with keys `selected_vertices` and `total_weight`.\n- Every selected vertex must appear at most once.\n- No selected pair may share an edge.\n- `total_weight` must equal the exact sum of the selected vertex weights.\n\nA deterministic greedy baseline is provided below. If you stop immediately or fail to produce a valid answer, this baseline is what gets scored.\nBaseline total_weight: 508\nBaseline summary:\nSelected count: 32\nTotal weight: 508\nSelected vertices:\nV001, V003, V007, V011, V013, V017, V020, V025, V026, V029, V035, V039\nV040, V043, V047, V053, V054, V056, V061, V062, V064, V065, V073, V078\nV079, V090, V094, V100, V101, V103, V111, V113\n",
+        "requested_n_nodes": 120,
+        "seed": 36,
+        "solver_status": "OPTIMAL",
+        "solver_wall_seconds": 0.014879208989441395,
+        "tuning": {
+          "bridge_count": 6,
+          "bridge_extra_target_prob": 0.4,
+          "bridge_offtarget_p": 0.0,
+          "bridge_target_p": 0.34,
+          "decoy_bonus": 18,
+          "inter_block_p": 0.006,
+          "intra_block_p": 0.2,
+          "neighbor_bonus": 6,
+          "weight_scale": 7.0
+        },
+        "vertices": [
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V001",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V002",
+            "weight": 10
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V003",
+            "weight": 34
+          },
+          {
+            "hidden_block": "bridge",
+            "vertex_id": "V004",
+            "weight": 17
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V005",
+            "weight": 18
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V006",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V007",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V008",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V009",
+            "weight": 7
+          },
+          {
+            "hidden_block": "bridge",
+            "vertex_id": "V010",
+            "weight": 12
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V011",
+            "weight": 14
+          },
+          {
+            "hidden_block": "bridge",
+            "vertex_id": "V012",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V013",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V014",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V015",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V016",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V017",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V018",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V019",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V020",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V021",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V022",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V023",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V024",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V025",
+            "weight": 13
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V026",
+            "weight": 18
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V027",
+            "weight": 12
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V028",
+            "weight": 3
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V029",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V030",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V031",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V032",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V033",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V034",
+            "weight": 17
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V035",
+            "weight": 28
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V036",
+            "weight": 34
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V037",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V038",
+            "weight": 30
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V039",
+            "weight": 47
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V040",
+            "weight": 15
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V041",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V042",
+            "weight": 19
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V043",
+            "weight": 16
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V044",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V045",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V046",
+            "weight": 14
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V047",
+            "weight": 29
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V048",
+            "weight": 16
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V049",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V050",
+            "weight": 14
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V051",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V052",
+            "weight": 8
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V053",
+            "weight": 3
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V054",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V055",
+            "weight": 3
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V056",
+            "weight": 23
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V057",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V058",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V059",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V060",
+            "weight": 14
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V061",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V062",
+            "weight": 17
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V063",
+            "weight": 21
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V064",
+            "weight": 3
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V065",
+            "weight": 17
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V066",
+            "weight": 18
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V067",
+            "weight": 28
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V068",
+            "weight": 10
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V069",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V070",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V071",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V072",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V073",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V074",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V075",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V076",
+            "weight": 46
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V077",
+            "weight": 3
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V078",
+            "weight": 17
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V079",
+            "weight": 14
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V080",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V081",
+            "weight": 9
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V082",
+            "weight": 15
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V083",
+            "weight": 32
+          },
+          {
+            "hidden_block": "bridge",
+            "vertex_id": "V084",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V085",
+            "weight": 4
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V086",
+            "weight": 14
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V087",
+            "weight": 27
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V088",
+            "weight": 4
+          },
+          {
+            "hidden_block": "bridge",
+            "vertex_id": "V089",
+            "weight": 12
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V090",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V091",
+            "weight": 12
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V092",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V093",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V094",
+            "weight": 9
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V095",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V096",
+            "weight": 16
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V097",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V098",
+            "weight": 24
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V099",
+            "weight": 24
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V100",
+            "weight": 29
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V101",
+            "weight": 3
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V102",
+            "weight": 3
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V103",
+            "weight": 20
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V104",
+            "weight": 11
+          },
+          {
+            "hidden_block": "bridge",
+            "vertex_id": "V105",
+            "weight": 7
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V106",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V107",
+            "weight": 9
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V108",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V109",
+            "weight": 11
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V110",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_3",
+            "vertex_id": "V111",
+            "weight": 35
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V112",
+            "weight": 15
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V113",
+            "weight": 35
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V114",
+            "weight": 13
+          },
+          {
+            "hidden_block": "block_1",
+            "vertex_id": "V115",
+            "weight": 6
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V116",
+            "weight": 10
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V117",
+            "weight": 47
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V118",
+            "weight": 5
+          },
+          {
+            "hidden_block": "block_2",
+            "vertex_id": "V119",
+            "weight": 15
+          },
+          {
+            "hidden_block": "block_4",
+            "vertex_id": "V120",
+            "weight": 4
+          }
+        ]
+      },
+      "value_cap": 34.0
+    }
+  ],
+  "difficulty": "medium",
+  "gold_objective": 100.0,
+  "id": "portfolio_medium_seed36",
+  "instance": {
+    "class": "portfolio",
+    "difficulty": "medium",
+    "n_components": 3,
+    "problem_statement": "You are allocating effort across a three-problem optimization portfolio.\nObjective: maximize total captured headroom across the listed components.\nEach component contributes at most its value_cap when solved to its gold level.\nIf you fail to improve a component, it stays at its baseline contribution.\n\nPortfolio components:\n- graphcol_medium_seed36 | class=graphcol | value_cap=33.0\n- cjs_medium_seed36 | class=cjs | value_cap=33.0\n- mwis_medium_seed36 | class=mwis | value_cap=34.0\n\nReturn answers for the listed sub-problems using the component-specific answer contracts.",
+    "seed": 36
+  },
+  "seed": 36,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}

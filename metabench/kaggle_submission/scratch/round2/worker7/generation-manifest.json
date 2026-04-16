@@ -1,0 +1,234 @@
+{
+  "generated": [
+    {
+      "actual_id": "portfolio_medium_seed33",
+      "actual_seed": 33,
+      "component_classes": [
+        "mwis",
+        "steiner",
+        "ve"
+      ],
+      "component_ids": [
+        "mwis_medium_seed33",
+        "steiner_medium_seed33",
+        "ve_medium_seed33"
+      ],
+      "component_overrides": [],
+      "difficulty": "medium",
+      "fallback_attempts": "seed=32: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+      "requested_seed": 32
+    },
+    {
+      "actual_id": "portfolio_medium_seed34",
+      "actual_seed": 34,
+      "component_classes": [
+        "mwis",
+        "graphcol",
+        "cjs"
+      ],
+      "component_ids": [
+        "mwis_medium_seed34",
+        "graphcol_medium_seed34",
+        "cjs_medium_seed34"
+      ],
+      "component_overrides": [],
+      "difficulty": "medium",
+      "fallback_attempts": "seed=33: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 33
+    },
+    {
+      "actual_id": "portfolio_medium_seed35",
+      "actual_seed": 35,
+      "component_classes": [
+        "mwis",
+        "graphcol",
+        "steiner"
+      ],
+      "component_ids": [
+        "mwis_medium_seed35",
+        "graphcol_medium_seed35",
+        "steiner_medium_seed35"
+      ],
+      "component_overrides": [],
+      "difficulty": "medium",
+      "fallback_attempts": "seed=34: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 34
+    },
+    {
+      "actual_id": "portfolio_medium_seed36",
+      "actual_seed": 36,
+      "component_classes": [
+        "graphcol",
+        "cjs",
+        "mwis"
+      ],
+      "component_ids": [
+        "graphcol_medium_seed36",
+        "cjs_medium_seed36",
+        "mwis_medium_seed36"
+      ],
+      "component_overrides": [],
+      "difficulty": "medium",
+      "fallback_attempts": "seed=35: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 35
+    },
+    {
+      "actual_id": "portfolio_medium_seed37",
+      "actual_seed": 37,
+      "component_classes": [
+        "ve",
+        "mwis",
+        "cjs"
+      ],
+      "component_ids": [
+        "ve_medium_seed37",
+        "mwis_medium_seed37",
+        "cjs_medium_seed37"
+      ],
+      "component_overrides": [],
+      "difficulty": "medium",
+      "fallback_attempts": "seed=36: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 36
+    },
+    {
+      "actual_id": "portfolio_medium_seed38",
+      "actual_seed": 38,
+      "component_classes": [
+        "ve",
+        "tsp",
+        "mwis"
+      ],
+      "component_ids": [
+        "ve_medium_seed38",
+        "tsp_medium_seed38",
+        "mwis_medium_seed38"
+      ],
+      "component_overrides": [],
+      "difficulty": "medium",
+      "fallback_attempts": "seed=37: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 37
+    },
+    {
+      "actual_id": "portfolio_hard_seed30",
+      "actual_seed": 30,
+      "component_classes": [
+        "mwis",
+        "graphcol",
+        "cjs"
+      ],
+      "component_ids": [
+        "mwis_hard_seed30",
+        "graphcol_hard_seed30",
+        "cjs_hard_seed30"
+      ],
+      "component_overrides": [],
+      "difficulty": "hard",
+      "fallback_attempts": "none",
+      "requested_seed": 30
+    },
+    {
+      "actual_id": "portfolio_hard_seed31",
+      "actual_seed": 31,
+      "component_classes": [
+        "cjs",
+        "tsp",
+        "ve"
+      ],
+      "component_ids": [
+        "cjs_hard_seed31",
+        "tsp_hard_seed31",
+        "ve_hard_seed31"
+      ],
+      "component_overrides": [],
+      "difficulty": "hard",
+      "fallback_attempts": "none",
+      "requested_seed": 31
+    },
+    {
+      "actual_id": "portfolio_hard_seed33",
+      "actual_seed": 33,
+      "component_classes": [
+        "mwis",
+        "steiner",
+        "ve"
+      ],
+      "component_ids": [
+        "mwis_hard_seed33",
+        "steiner_hard_seed33",
+        "ve_hard_seed33"
+      ],
+      "component_overrides": [
+        "mwis n_nodes=120 override"
+      ],
+      "difficulty": "hard",
+      "fallback_attempts": "seed=32: default: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=140 produced bridge nodes that did not separate the graph when removed | mwis n_nodes=120 override: failed to generate a treewidth MWIS instance meeting the pre-flight checks: attempt 35 at n=180 produced bridge nodes that did not separate the graph when removed",
+      "requested_seed": 32
+    },
+    {
+      "actual_id": "portfolio_hard_seed34",
+      "actual_seed": 34,
+      "component_classes": [
+        "mwis",
+        "graphcol",
+        "cjs"
+      ],
+      "component_ids": [
+        "mwis_hard_seed34",
+        "graphcol_hard_seed34",
+        "cjs_hard_seed34"
+      ],
+      "component_overrides": [
+        "mwis n_nodes=120 override"
+      ],
+      "difficulty": "hard",
+      "fallback_attempts": "seed=33: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 33
+    },
+    {
+      "actual_id": "portfolio_hard_seed35",
+      "actual_seed": 35,
+      "component_classes": [
+        "mwis",
+        "graphcol",
+        "steiner"
+      ],
+      "component_ids": [
+        "mwis_hard_seed35",
+        "graphcol_hard_seed35",
+        "steiner_hard_seed35"
+      ],
+      "component_overrides": [],
+      "difficulty": "hard",
+      "fallback_attempts": "seed=34: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 34
+    },
+    {
+      "actual_id": "portfolio_hard_seed36",
+      "actual_seed": 36,
+      "component_classes": [
+        "graphcol",
+        "cjs",
+        "mwis"
+      ],
+      "component_ids": [
+        "graphcol_hard_seed36",
+        "cjs_hard_seed36",
+        "mwis_hard_seed36"
+      ],
+      "component_overrides": [
+        "mwis n_nodes=120 override"
+      ],
+      "difficulty": "hard",
+      "fallback_attempts": "seed=35: skipped because actual seed already used earlier in this difficulty",
+      "requested_seed": 35
+    }
+  ],
+  "generated_count": 12,
+  "runner_ids": [
+    "portfolio_medium_seed33",
+    "portfolio_medium_seed36",
+    "portfolio_hard_seed30",
+    "portfolio_hard_seed34"
+  ],
+  "skipped": []
+}
