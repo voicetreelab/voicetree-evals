@@ -1,0 +1,7 @@
+{"baseline_objective": 155.0, "gold_objective": 90.0, "id": "cjs_medium_seed1", "value_cap": 100.0}
+{"baseline_objective": 72.0, "gold_objective": 59.0, "id": "steiner_medium_seed1", "value_cap": 100.0}
+{"baseline_objective": 20.0, "gold_objective": 4.0, "id": "graphcol_medium_seed1", "value_cap": 100.0}
+{"baseline_objective": 588.2206603869462, "gold_objective": 470.14629428718786, "id": "tsp_medium_seed1", "value_cap": 100.0}
+{"baseline_objective": 480.0, "gold_objective": 542.0, "id": "mwis_medium_seed1", "value_cap": 100.0}
+{"baseline_objective": 0.5, "gold_objective": 0.49014481565752194, "id": "ve_medium_seed1", "value_cap": 100.0}
+{"baseline_objective": 0.0, "gold_objective": 100.0, "id": "portfolio_medium_seed1", "value_cap": 100.0}

@@ -624,3 +624,4 @@ isContextNode: false
 
 
 OKAY YOUR TASK NOW . LET"S PROPOSE A REAL JOBSHOP PROBLEM THAT WOULD HAVE THIS INDETERMINATE BOUNDARY SUBPROBLEM SHAPE
+[[/Users/bobbobby/repos/voicetree-evals/metabench/voicetree-15-4/recommended-problem-setup-post-tsp_2_1_0.md]]

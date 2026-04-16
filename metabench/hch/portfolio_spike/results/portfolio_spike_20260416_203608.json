@@ -1,0 +1,597 @@
+{
+  "abandoned_problems": [],
+  "cost_per_second": 0.05,
+  "feasibility_failure_count": 0,
+  "final_plan": [],
+  "forecast_brier_by_problem": {
+    "P1": {
+      "p_within_10pct": null,
+      "p_within_20pct": null,
+      "p_within_50pct": null,
+      "p_within_5pct": null
+    },
+    "P2": {
+      "p_within_10pct": null,
+      "p_within_20pct": null,
+      "p_within_50pct": null,
+      "p_within_5pct": null
+    },
+    "P3": {
+      "p_within_10pct": null,
+      "p_within_20pct": null,
+      "p_within_50pct": null,
+      "p_within_5pct": null
+    },
+    "P4": {
+      "p_within_10pct": null,
+      "p_within_20pct": null,
+      "p_within_50pct": null,
+      "p_within_5pct": null
+    }
+  },
+  "forecast_event_by_problem": {
+    "P1": {
+      "p_within_10pct": 0.0,
+      "p_within_20pct": 0.0,
+      "p_within_50pct": 0.0,
+      "p_within_5pct": 0.0
+    },
+    "P2": {
+      "p_within_10pct": 0.0,
+      "p_within_20pct": 0.0,
+      "p_within_50pct": 1.0,
+      "p_within_5pct": 0.0
+    },
+    "P3": {
+      "p_within_10pct": 0.0,
+      "p_within_20pct": 0.0,
+      "p_within_50pct": 1.0,
+      "p_within_5pct": 0.0
+    },
+    "P4": {
+      "p_within_10pct": 0.0,
+      "p_within_20pct": 0.0,
+      "p_within_50pct": 0.0,
+      "p_within_5pct": 0.0
+    }
+  },
+  "forecast_history": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "P4": []
+  },
+  "initial_allocation": {
+    "P1": 0,
+    "P2": 0,
+    "P3": 0,
+    "P4": 0
+  },
+  "initial_plan": null,
+  "max_exec_turns": 8,
+  "model": "gemini-3.1-pro-preview",
+  "parse_fail": true,
+  "per_problem_turns": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "P4": []
+  },
+  "plan_evolution": [],
+  "preflight": {
+    "P1": {
+      "baseline_score": 155.0,
+      "gap_pct": 72.22222222222223,
+      "gold_method": "CP-SAT exact schedule",
+      "gold_score": 90.0,
+      "gold_wall_seconds": 0.012599750189110637
+    },
+    "P2": {
+      "baseline_score": 72.0,
+      "gap_pct": 22.033898305084747,
+      "gold_method": "Exact joint enumeration",
+      "gold_score": 59.0,
+      "gold_wall_seconds": 0.9343619579449296
+    },
+    "P3": {
+      "baseline_score": 588.2206603869462,
+      "gap_pct": 25.114388337097655,
+      "gold_method": "CP-SAT exact circuit",
+      "gold_score": 470.14629428718786,
+      "gold_wall_seconds": 0.01700137509033084
+    },
+    "P4": {
+      "baseline_score": 20.0,
+      "gap_pct": 400.0,
+      "gold_method": "CP-SAT exact min-conflict coloring",
+      "gold_score": 4.0,
+      "gold_wall_seconds": 0.022567458217963576
+    }
+  },
+  "problems": {
+    "P1": {
+      "baseline_score": 155.0,
+      "final_answer": {
+        "factory_a": {
+          "MA1": [
+            [
+              "J1",
+              8,
+              15
+            ],
+            [
+              "J2",
+              26,
+              30
+            ],
+            [
+              "J3",
+              62,
+              65
+            ],
+            [
+              "J4",
+              92,
+              101
+            ],
+            [
+              "J5",
+              101,
+              108
+            ]
+          ],
+          "MA2": [
+            [
+              "J1",
+              0,
+              1
+            ],
+            [
+              "J2",
+              30,
+              38
+            ],
+            [
+              "J3",
+              65,
+              71
+            ],
+            [
+              "J4",
+              71,
+              74
+            ],
+            [
+              "J5",
+              108,
+              114
+            ]
+          ],
+          "MA3": [
+            [
+              "J1",
+              24,
+              29
+            ],
+            [
+              "J2",
+              43,
+              44
+            ],
+            [
+              "J3",
+              44,
+              48
+            ],
+            [
+              "J4",
+              88,
+              92
+            ],
+            [
+              "J5",
+              95,
+              101
+            ]
+          ],
+          "MA4": [
+            [
+              "J1",
+              16,
+              24
+            ],
+            [
+              "J2",
+              38,
+              43
+            ],
+            [
+              "J3",
+              48,
+              55
+            ],
+            [
+              "J4",
+              83,
+              87
+            ],
+            [
+              "J5",
+              87,
+              95
+            ]
+          ],
+          "MA5": [
+            [
+              "J1",
+              1,
+              8
+            ],
+            [
+              "J2",
+              22,
+              26
+            ],
+            [
+              "J3",
+              55,
+              62
+            ],
+            [
+              "J4",
+              74,
+              83
+            ],
+            [
+              "J5",
+              115,
+              124
+            ]
+          ],
+          "MA6": [
+            [
+              "J1",
+              15,
+              16
+            ],
+            [
+              "J2",
+              16,
+              22
+            ],
+            [
+              "J3",
+              22,
+              30
+            ],
+            [
+              "J4",
+              87,
+              88
+            ],
+            [
+              "J5",
+              114,
+              115
+            ]
+          ]
+        },
+        "factory_b": {
+          "MB1": [
+            [
+              "J1",
+              41,
+              42
+            ],
+            [
+              "J2",
+              51,
+              60
+            ],
+            [
+              "J3",
+              105,
+              107
+            ],
+            [
+              "J4",
+              110,
+              114
+            ],
+            [
+              "J5",
+              133,
+              139
+            ]
+          ],
+          "MB2": [
+            [
+              "J1",
+              43,
+              44
+            ],
+            [
+              "J2",
+              60,
+              62
+            ],
+            [
+              "J3",
+              96,
+              105
+            ],
+            [
+              "J4",
+              130,
+              136
+            ],
+            [
+              "J5",
+              147,
+              148
+            ]
+          ],
+          "MB3": [
+            [
+              "J1",
+              42,
+              43
+            ],
+            [
+              "J2",
+              65,
+              70
+            ],
+            [
+              "J3",
+              71,
+              80
+            ],
+            [
+              "J4",
+              114,
+              121
+            ],
+            [
+              "J5",
+              152,
+              155
+            ]
+          ],
+          "MB4": [
+            [
+              "J1",
+              29,
+              33
+            ],
+            [
+              "J2",
+              62,
+              65
+            ],
+            [
+              "J3",
+              86,
+              88
+            ],
+            [
+              "J4",
+              101,
+              110
+            ],
+            [
+              "J5",
+              124,
+              133
+            ]
+          ],
+          "MB5": [
+            [
+              "J1",
+              35,
+              41
+            ],
+            [
+              "J2",
+              70,
+              72
+            ],
+            [
+              "J3",
+              80,
+              86
+            ],
+            [
+              "J4",
+              136,
+              142
+            ],
+            [
+              "J5",
+              148,
+              152
+            ]
+          ],
+          "MB6": [
+            [
+              "J1",
+              33,
+              35
+            ],
+            [
+              "J2",
+              44,
+              51
+            ],
+            [
+              "J3",
+              88,
+              96
+            ],
+            [
+              "J4",
+              121,
+              130
+            ],
+            [
+              "J5",
+              139,
+              147
+            ]
+          ]
+        },
+        "makespan": 155
+      },
+      "final_gap_pct": 72.22222222222223,
+      "final_score": 155.0,
+      "final_source": "baseline",
+      "gold_score": 90.0,
+      "label": "Coupled jobshop 5x6",
+      "metric_name": "makespan",
+      "subtasks_executed": 0,
+      "value_cap": 50,
+      "value_captured": 0.0
+    },
+    "P2": {
+      "baseline_score": 72.0,
+      "final_answer": {
+        "edges": [
+          [
+            "Bay",
+            "Pine"
+          ],
+          [
+            "Pine",
+            "Port"
+          ],
+          [
+            "Dune",
+            "Port"
+          ]
+        ],
+        "frequencies": {
+          "Bay": 3,
+          "Dune": 2,
+          "Pine": 1,
+          "Port": 3
+        }
+      },
+      "final_gap_pct": 22.033898305084747,
+      "final_score": 72.0,
+      "final_source": "baseline",
+      "gold_score": 59.0,
+      "label": "Steiner x coloring N=8 K=4",
+      "metric_name": "total_cost",
+      "subtasks_executed": 0,
+      "value_cap": 60,
+      "value_captured": 0.0
+    },
+    "P3": {
+      "baseline_score": 588.2206603869462,
+      "final_answer": [
+        0,
+        7,
+        8,
+        18,
+        11,
+        9,
+        4,
+        12,
+        14,
+        19,
+        13,
+        6,
+        1,
+        5,
+        17,
+        10,
+        3,
+        2,
+        15,
+        16
+      ],
+      "final_gap_pct": 25.114388337097655,
+      "final_score": 588.2206603869462,
+      "final_source": "baseline",
+      "gold_score": 470.14629428718786,
+      "label": "Euclidean TSP-20",
+      "metric_name": "tour_length",
+      "subtasks_executed": 0,
+      "value_cap": 20,
+      "value_captured": 0.0
+    },
+    "P4": {
+      "baseline_score": 20.0,
+      "final_answer": {
+        "assignment": {
+          "N01": 1,
+          "N02": 2,
+          "N03": 3,
+          "N04": 4,
+          "N05": 2,
+          "N06": 2,
+          "N07": 3,
+          "N08": 4,
+          "N09": 1,
+          "N10": 4,
+          "N11": 3,
+          "N12": 1,
+          "N13": 1,
+          "N14": 2,
+          "N15": 3,
+          "N16": 3,
+          "N17": 2,
+          "N18": 4,
+          "N19": 3,
+          "N20": 4,
+          "N21": 2,
+          "N22": 4,
+          "N23": 3,
+          "N24": 4,
+          "N25": 2,
+          "N26": 1,
+          "N27": 3,
+          "N28": 1,
+          "N29": 1,
+          "N30": 1
+        }
+      },
+      "final_gap_pct": 400.0,
+      "final_score": 20.0,
+      "final_source": "baseline",
+      "gold_score": 4.0,
+      "label": "Slack graph coloring 30 nodes",
+      "metric_name": "scored_cost",
+      "subtasks_executed": 0,
+      "value_cap": 100,
+      "value_captured": 0.0
+    }
+  },
+  "revised_best_guess_downward": false,
+  "seed": 1,
+  "session_net_score": -0.6841135708033108,
+  "session_time_cost": 0.6841135708033108,
+  "session_value_sum": 0.0,
+  "stop_reason": "turn1_died",
+  "subtask_killed_count": 0,
+  "total_wall_budget_s": 1800,
+  "total_wall_seconds": 13.682271416066214,
+  "turn1_died": true,
+  "turn1_wall_seconds": 13.640497458865866,
+  "turn_count": 1,
+  "turns": [
+    {
+      "input_tokens": 4996,
+      "output_tokens": 231,
+      "parse_ok": false,
+      "parsed": null,
+      "phase": "plan",
+      "raw_text": "```json\n{\n  \"PLAN\": [\n    {\n      \"id\": 1,\n      \"problem\": \"P2\",\n      \"desc\": \"Find optimal Steiner tree and frequency assignment for 8 nodes\",\n      \"budget_s\": 300\n    },\n    {\n      \"id\": 2,\n      \"problem\": \"P4\",\n      \"desc\": \"Find 0-conflict 4-coloring for 30 nodes\",\n      \"budget_s\": 600\n    },\n    {\n      \"id\": 3,\n      \"problem\": \"P3\",\n      \"desc\": \"Optimize TSP-20 tour using coordinate geometry\",\n      \"budget_s\": 300\n    },\n    {\n      \"id\": 4,\n      \"problem\": \"P1\",\n      \"desc\": \"Improve coupled job shop schedule\",\n      \"budget_s\": 400\n    }\n  ],\n  \"NEXT_SUB_ID\": 1\n}\n```",
+      "thinking_tokens": 1117,
+      "timed_out": false,
+      "total_tokens": 6344,
+      "turn_index": 1,
+      "wall_seconds": 13.640497458865866
+    }
+  ]
+}

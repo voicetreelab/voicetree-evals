@@ -1,0 +1,2041 @@
+class: cjs
+difficulty: medium
+seed: 1
+model: gemini-2.5-flash
+verdict: PASS
+feasible: True
+score: 88.12059769305064
+gap_pct: 11.11111111111111
+llm_wall_s: 76.829
+
+--- instance (problem_statement omitted) ---
+{
+  "answer_contract": "Object with \"factory_a\", \"factory_b\", and \"makespan\". Each factory maps machine names to lists of [\"J<id>\", start, end] triples.",
+  "baseline_gap_pct": 72.22222222222223,
+  "baseline_objective": 155,
+  "baseline_submission": {
+    "factory_a": {
+      "MA1": [
+        [
+          "J1",
+          8,
+          15
+        ],
+        [
+          "J2",
+          26,
+          30
+        ],
+        [
+          "J3",
+          62,
+          65
+        ],
+        [
+          "J4",
+          92,
+          101
+        ],
+        [
+          "J5",
+          101,
+          108
+        ]
+      ],
+      "MA2": [
+        [
+          "J1",
+          0,
+          1
+        ],
+        [
+          "J2",
+          30,
+          38
+        ],
+        [
+          "J3",
+          65,
+          71
+        ],
+        [
+          "J4",
+          71,
+          74
+        ],
+        [
+          "J5",
+          108,
+          114
+        ]
+      ],
+      "MA3": [
+        [
+          "J1",
+          24,
+          29
+        ],
+        [
+          "J2",
+          43,
+          44
+        ],
+        [
+          "J3",
+          44,
+          48
+        ],
+        [
+          "J4",
+          88,
+          92
+        ],
+        [
+          "J5",
+          95,
+          101
+        ]
+      ],
+      "MA4": [
+        [
+          "J1",
+          16,
+          24
+        ],
+        [
+          "J2",
+          38,
+          43
+        ],
+        [
+          "J3",
+          48,
+          55
+        ],
+        [
+          "J4",
+          83,
+          87
+        ],
+        [
+          "J5",
+          87,
+          95
+        ]
+      ],
+      "MA5": [
+        [
+          "J1",
+          1,
+          8
+        ],
+        [
+          "J2",
+          22,
+          26
+        ],
+        [
+          "J3",
+          55,
+          62
+        ],
+        [
+          "J4",
+          74,
+          83
+        ],
+        [
+          "J5",
+          115,
+          124
+        ]
+      ],
+      "MA6": [
+        [
+          "J1",
+          15,
+          16
+        ],
+        [
+          "J2",
+          16,
+          22
+        ],
+        [
+          "J3",
+          22,
+          30
+        ],
+        [
+          "J4",
+          87,
+          88
+        ],
+        [
+          "J5",
+          114,
+          115
+        ]
+      ]
+    },
+    "factory_b": {
+      "MB1": [
+        [
+          "J1",
+          41,
+          42
+        ],
+        [
+          "J2",
+          51,
+          60
+        ],
+        [
+          "J3",
+          105,
+          107
+        ],
+        [
+          "J4",
+          110,
+          114
+        ],
+        [
+          "J5",
+          133,
+          139
+        ]
+      ],
+      "MB2": [
+        [
+          "J1",
+          43,
+          44
+        ],
+        [
+          "J2",
+          60,
+          62
+        ],
+        [
+          "J3",
+          96,
+          105
+        ],
+        [
+          "J4",
+          130,
+          136
+        ],
+        [
+          "J5",
+          147,
+          148
+        ]
+      ],
+      "MB3": [
+        [
+          "J1",
+          42,
+          43
+        ],
+        [
+          "J2",
+          65,
+          70
+        ],
+        [
+          "J3",
+          71,
+          80
+        ],
+        [
+          "J4",
+          114,
+          121
+        ],
+        [
+          "J5",
+          152,
+          155
+        ]
+      ],
+      "MB4": [
+        [
+          "J1",
+          29,
+          33
+        ],
+        [
+          "J2",
+          62,
+          65
+        ],
+        [
+          "J3",
+          86,
+          88
+        ],
+        [
+          "J4",
+          101,
+          110
+        ],
+        [
+          "J5",
+          124,
+          133
+        ]
+      ],
+      "MB5": [
+        [
+          "J1",
+          35,
+          41
+        ],
+        [
+          "J2",
+          70,
+          72
+        ],
+        [
+          "J3",
+          80,
+          86
+        ],
+        [
+          "J4",
+          136,
+          142
+        ],
+        [
+          "J5",
+          148,
+          152
+        ]
+      ],
+      "MB6": [
+        [
+          "J1",
+          33,
+          35
+        ],
+        [
+          "J2",
+          44,
+          51
+        ],
+        [
+          "J3",
+          88,
+          96
+        ],
+        [
+          "J4",
+          121,
+          130
+        ],
+        [
+          "J5",
+          139,
+          147
+        ]
+      ]
+    },
+    "makespan": 155
+  },
+  "class": "cjs",
+  "difficulty": "medium",
+  "gold_objective": 90,
+  "gold_submission": {
+    "factory_a": {
+      "MA1": [
+        [
+          "J5",
+          14,
+          21
+        ],
+        [
+          "J2",
+          21,
+          25
+        ],
+        [
+          "J4",
+          25,
+          34
+        ],
+        [
+          "J3",
+          34,
+          37
+        ],
+        [
+          "J1",
+          37,
+          44
+        ]
+      ],
+      "MA2": [
+        [
+          "J4",
+          0,
+          3
+        ],
+        [
+          "J1",
+          3,
+          4
+        ],
+        [
+          "J5",
+          21,
+          27
+        ],
+        [
+          "J2",
+          27,
+          35
+        ],
+        [
+          "J3",
+          37,
+          43
+        ]
+      ],
+      "MA3": [
+        [
+          "J5",
+          8,
+          14
+        ],
+        [
+          "J3",
+          14,
+          18
+        ],
+        [
+          "J4",
+          18,
+          22
+        ],
+        [
+          "J2",
+          40,
+          41
+        ],
+        [
+          "J1",
+          53,
+          58
+        ]
+      ],
+      "MA4": [
+        [
+          "J5",
+          0,
+          8
+        ],
+        [
+          "J4",
+          12,
+          16
+        ],
+        [
+          "J3",
+          18,
+          25
+        ],
+        [
+          "J2",
+          35,
+          40
+        ],
+        [
+          "J1",
+          45,
+          53
+        ]
+      ],
+      "MA5": [
+        [
+          "J4",
+          3,
+          12
+        ],
+        [
+          "J2",
+          14,
+          18
+        ],
+        [
+          "J1",
+          18,
+          25
+        ],
+        [
+          "J3",
+          25,
+          32
+        ],
+        [
+          "J5",
+          32,
+          41
+        ]
+      ],
+      "MA6": [
+        [
+          "J3",
+          0,
+          8
+        ],
+        [
+          "J2",
+          8,
+          14
+        ],
+        [
+          "J4",
+          16,
+          17
+        ],
+        [
+          "J5",
+          27,
+          28
+        ],
+        [
+          "J1",
+          44,
+          45
+        ]
+      ]
+    },
+    "factory_b": {
+      "MB1": [
+        [
+          "J4",
+          43,
+          47
+        ],
+        [
+          "J5",
+          52,
+          58
+        ],
+        [
+          "J2",
+          58,
+          67
+        ],
+        [
+          "J1",
+          87,
+          88
+        ],
+        [
+          "J3",
+          88,
+          90
+        ]
+      ],
+      "MB2": [
+        [
+          "J4",
+          63,
+          69
+        ],
+        [
+          "J2",
+          69,
+          71
+        ],
+        [
+          "J5",
+          71,
+          72
+        ],
+        [
+          "J3",
+          79,
+          88
+        ],
+        [
+          "J1",
+          89,
+          90
+        ]
+      ],
+      "MB3": [
+        [
+          "J4",
+          47,
+          54
+        ],
+        [
+          "J3",
+          54,
+          63
+        ],
+        [
+          "J2",
+          74,
+          79
+        ],
+        [
+          "J5",
+          79,
+          82
+        ],
+        [
+          "J1",
+          88,
+          89
+        ]
+      ],
+      "MB4": [
+        [
+          "J4",
+          34,
+          43
+        ],
+        [
+          "J5",
+          43,
+          52
+        ],
+        [
+          "J1",
+          58,
+          62
+        ],
+        [
+          "J3",
+          69,
+          71
+        ],
+        [
+          "J2",
+          71,
+          74
+        ]
+      ],
+      "MB5": [
+        [
+          "J3",
+          63,
+          69
+        ],
+        [
+          "J4",
+          69,
+          75
+        ],
+        [
+          "J5",
+          75,
+          79
+        ],
+        [
+          "J2",
+          79,
+          81
+        ],
+        [
+          "J1",
+          81,
+          87
+        ]
+      ],
+      "MB6": [
+        [
+          "J2",
+          41,
+          48
+        ],
+        [
+          "J4",
+          54,
+          63
+        ],
+        [
+          "J5",
+          63,
+          71
+        ],
+        [
+          "J3",
+          71,
+          79
+        ],
+        [
+          "J1",
+          79,
+          81
+        ]
+      ]
+    },
+    "makespan": 90
+  },
+  "jobs": [
+    {
+      "factory_a": [
+        {
+          "duration": 1,
+          "machine_name": "MA2"
+        },
+        {
+          "duration": 7,
+          "machine_name": "MA5"
+        },
+        {
+          "duration": 7,
+          "machine_name": "MA1"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MA6"
+        },
+        {
+          "duration": 8,
+          "machine_name": "MA4"
+        },
+        {
+          "duration": 5,
+          "machine_name": "MA3"
+        }
+      ],
+      "factory_b": [
+        {
+          "duration": 4,
+          "machine_name": "MB4"
+        },
+        {
+          "duration": 2,
+          "machine_name": "MB6"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MB5"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MB1"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MB3"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MB2"
+        }
+      ],
+      "job_id": 1
+    },
+    {
+      "factory_a": [
+        {
+          "duration": 6,
+          "machine_name": "MA6"
+        },
+        {
+          "duration": 4,
+          "machine_name": "MA5"
+        },
+        {
+          "duration": 4,
+          "machine_name": "MA1"
+        },
+        {
+          "duration": 8,
+          "machine_name": "MA2"
+        },
+        {
+          "duration": 5,
+          "machine_name": "MA4"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MA3"
+        }
+      ],
+      "factory_b": [
+        {
+          "duration": 7,
+          "machine_name": "MB6"
+        },
+        {
+          "duration": 9,
+          "machine_name": "MB1"
+        },
+        {
+          "duration": 2,
+          "machine_name": "MB2"
+        },
+        {
+          "duration": 3,
+          "machine_name": "MB4"
+        },
+        {
+          "duration": 5,
+          "machine_name": "MB3"
+        },
+        {
+          "duration": 2,
+          "machine_name": "MB5"
+        }
+      ],
+      "job_id": 2
+    },
+    {
+      "factory_a": [
+        {
+          "duration": 8,
+          "machine_name": "MA6"
+        },
+        {
+          "duration": 4,
+          "machine_name": "MA3"
+        },
+        {
+          "duration": 7,
+          "machine_name": "MA4"
+        },
+        {
+          "duration": 7,
+          "machine_name": "MA5"
+        },
+        {
+          "duration": 3,
+          "machine_name": "MA1"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MA2"
+        }
+      ],
+      "factory_b": [
+        {
+          "duration": 9,
+          "machine_name": "MB3"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MB5"
+        },
+        {
+          "duration": 2,
+          "machine_name": "MB4"
+        },
+        {
+          "duration": 8,
+          "machine_name": "MB6"
+        },
+        {
+          "duration": 9,
+          "machine_name": "MB2"
+        },
+        {
+          "duration": 2,
+          "machine_name": "MB1"
+        }
+      ],
+      "job_id": 3
+    },
+    {
+      "factory_a": [
+        {
+          "duration": 3,
+          "machine_name": "MA2"
+        },
+        {
+          "duration": 9,
+          "machine_name": "MA5"
+        },
+        {
+          "duration": 4,
+          "machine_name": "MA4"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MA6"
+        },
+        {
+          "duration": 4,
+          "machine_name": "MA3"
+        },
+        {
+          "duration": 9,
+          "machine_name": "MA1"
+        }
+      ],
+      "factory_b": [
+        {
+          "duration": 9,
+          "machine_name": "MB4"
+        },
+        {
+          "duration": 4,
+          "machine_name": "MB1"
+        },
+        {
+          "duration": 7,
+          "machine_name": "MB3"
+        },
+        {
+          "duration": 9,
+          "machine_name": "MB6"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MB2"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MB5"
+        }
+      ],
+      "job_id": 4
+    },
+    {
+      "factory_a": [
+        {
+          "duration": 8,
+          "machine_name": "MA4"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MA3"
+        },
+        {
+          "duration": 7,
+          "machine_name": "MA1"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MA2"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MA6"
+        },
+        {
+          "duration": 9,
+          "machine_name": "MA5"
+        }
+      ],
+      "factory_b": [
+        {
+          "duration": 9,
+          "machine_name": "MB4"
+        },
+        {
+          "duration": 6,
+          "machine_name": "MB1"
+        },
+        {
+          "duration": 8,
+          "machine_name": "MB6"
+        },
+        {
+          "duration": 1,
+          "machine_name": "MB2"
+        },
+        {
+          "duration": 4,
+          "machine_name": "MB5"
+        },
+        {
+          "duration": 3,
+          "machine_name": "MB3"
+        }
+      ],
+      "job_id": 5
+    }
+  ],
+  "metric_name": "makespan",
+  "n_jobs": 5,
+  "n_machines": 6,
+  "seed": 1
+}
+
+--- raw model output ---
+The problem asks us to minimize the coupled makespan of a two-factory job shop scheduling problem. We have 5 jobs and 6 machines in each factory. Each job has a sequence of operations in Factory A, followed by a sequence of operations in Factory B. A job cannot start any operation in Factory B until all its operations in Factory A are complete.
+
+Let's first analyze the total processing time for each job in Factory A and Factory B.
+
+Job 1:
+Factory A: MA2 (1) -> MA5 (7) -> MA1 (7) -> MA6 (1) -> MA4 (8) -> MA3 (5). Total A time = 1+7+7+1+8+5 = 29
+Factory B: MB4 (4) -> MB6 (2) -> MB5 (6) -> MB1 (1) -> MB3 (1) -> MB2 (1). Total B time = 4+2+6+1+1+1 = 15
+
+Job 2:
+Factory A: MA6 (6) -> MA5 (4) -> MA1 (4) -> MA2 (8) -> MA4 (5) -> MA3 (1). Total A time = 6+4+4+8+5+1 = 28
+Factory B: MB6 (7) -> MB1 (9) -> MB2 (2) -> MB4 (3) -> MB3 (5) -> MB5 (2). Total B time = 7+9+2+3+5+2 = 28
+
+Job 3:
+Factory A: MA6 (8) -> MA3 (4) -> MA4 (7) -> MA5 (7) -> MA1 (3) -> MA2 (6). Total A time = 8+4+7+7+3+6 = 35
+Factory B: MB3 (9) -> MB5 (6) -> MB4 (2) -> MB6 (8) -> MB2 (9) -> MB1 (2). Total B time = 9+6+2+8+9+2 = 36
+
+Job 4:
+Factory A: MA2 (3) -> MA5 (9) -> MA4 (4) -> MA6 (1) -> MA3 (4) -> MA1 (9). Total A time = 3+9+4+1+4+9 = 30
+Factory B: MB4 (9) -> MB1 (4) -> MB3 (7) -> MB6 (9) -> MB2 (6) -> MB5 (6). Total B time = 9+4+7+9+6+6 = 41
+
+Job 5:
+Factory A: MA4 (8) -> MA3 (6) -> MA1 (7) -> MA2 (6) -> MA6 (1) -> MA5 (9). Total A time = 8+6+7+6+1+9 = 37
+Factory B: MB4 (9) -> MB1 (6) -> MB6 (8) -> MB2 (1) -> MB5 (4) -> MB3 (3). Total B time = 9+6+8+1+4+3 = 31
+
+Total processing times:
+Job 1: A=29, B=15
+Job 2: A=28, B=28
+Job 3: A=35, B=36
+Job 4: A=30, B=41
+Job 5: A=37, B=31
+
+The baseline makespan is 155. We need to find a schedule with a lower makespan.
+
+Let's try to schedule Factory A operations first, aiming to finish jobs as early as possible to allow Factory B to start. A common heuristic for job shop scheduling is to prioritize jobs with longer processing times on critical machines or jobs that are bottlenecks.
+
+Consider the total processing time for each machine in Factory A:
+MA1: J1(7), J2(4), J3(3), J4(9), J5(7) = 30
+MA2: J1(1), J2(8), J3(6), J4(3), J5(6) = 24
+MA3: J1(5), J2(1), J3(4), J4(4), J5(6) = 20
+MA4: J1(8), J2(5), J3(7), J4(4), J5(8) = 32
+MA5: J1(7), J2(4), J3(7), J4(9), J5(9) = 36
+MA6: J1(1), J2(6), J3(8), J4(1), J5(1) = 17
+
+Critical machines in Factory A are MA5 (36), MA4 (32), MA1 (30).
+
+Consider the total processing time for each machine in Factory B:
+MB1: J1(1), J2(9), J3(2), J4(4), J5(6) = 22
+MB2: J1(1), J2(2), J3(9), J4(6), J5(1) = 19
+MB3: J1(1), J2(5), J3(9), J4(7), J5(3) = 25
+MB4: J1(4), J2(3), J3(2), J4(9), J5(9) = 27
+MB5: J1(6), J2(2), J3(6), J4(6), J5(4) = 24
+MB6: J1(2), J2(7), J3(8), J4(9), J5(8) = 34
+
+Critical machines in Factory B are MB6 (34), MB4 (27), MB3 (25), MB5 (24).
+
+Let's try to schedule Factory A operations using a simple greedy approach, prioritizing jobs that have operations on critical machines or jobs that have long total processing times in Factory A.
+Jobs with long A times: J5 (37), J3 (35), J4 (30), J1 (29), J2 (28).
+
+Let's try to schedule Factory A operations by prioritizing jobs that have operations on MA5 or MA4.
+J5: MA4(8) -> MA3(6) -> MA1(7) -> MA2(6) -> MA6(1) -> MA5(9)
+J3: MA6(8) -> MA3(4) -> MA4(7) -> MA5(7) -> MA1(3) -> MA2(6)
+J4: MA2(3) -> MA5(9) -> MA4(4) -> MA6(1) -> MA3(4) -> MA1(9)
+J1: MA2(1) -> MA5(7) -> MA1(7) -> MA6(1) -> MA4(8) -> MA3(5)
+J2: MA6(6) -> MA5(4) -> MA1(4) -> MA2(8) -> MA4(5) -> MA3(1)
+
+Let's try to schedule Factory A operations by prioritizing jobs with longer total processing times in Factory A.
+Order: J5, J3, J4, J1, J2.
+
+Factory A Schedule:
+MA1:
+MA2:
+MA3:
+MA4:
+MA5:
+MA6:
+
+Let's try to schedule Factory A operations using a list scheduling approach, always picking the available operation with the earliest start time. When multiple operations are available, prioritize based on job index (J1, J2, J3, J4, J5).
+
+Factory A:
+J1: MA2(1) -> MA5(7) -> MA1(7) -> MA6(1) -> MA4(8) -> MA3(5)
+J2: MA6(6) -> MA5(4) -> MA1(4) -> MA2(8) -> MA4(5) -> MA3(1)
+J3: MA6(8) -> MA3(4) -> MA4(7) -> MA5(7) -> MA1(3) -> MA2(6)
+J4: MA2(3) -> MA5(9) -> MA4(4) -> MA6(1) -> MA3(4) -> MA1(9)
+J5: MA4(8) -> MA3(6) -> MA1(7) -> MA2(6) -> MA6(1) -> MA5(9)
+
+Let's try to schedule Factory A operations by prioritizing jobs with longer total processing times in Factory A, and then within that, by earliest available machine.
+
+Let's try to schedule Factory A operations by prioritizing jobs with longer total processing times in Factory A.
+Order: J5, J3, J4, J1, J2.
+
+Factory A Schedule:
+Time = 0
+Available operations:
+J1: MA2(1)
+J2: MA6(6)
+J3: MA6(8)
+J4: MA2(3)
+J5: MA4(8)
+
+Machine availability: MA1=0, MA2=0, MA3=0, MA4=0, MA5=0, MA6=0
+Job completion times in A: J1_A_end=0, J2_A_end=0, J3_A_end=0, J4_A_end=0, J5_A_end=0
+Job next op start times: J1_next_op_start=0, J2_next_op_start=0, J3_next_op_start=0, J4_next_op_start=0, J5_next_op_start=0
+
+Let's try a simple greedy schedule for Factory A, prioritizing jobs by their index (J1, J2, J3, J4, J5) and then by the order of operations.
+
+Factory A Schedule:
+MA1:
+MA2: J1[0-1] (J1_next_op_start=1)
+MA3:
+MA4:
+MA5:
+MA6: J2[0-6] (J2_next_op_start=6)
+
+Time = 1
+Available operations:
+J1: MA5(7) (requires J1_next_op_start=1, MA5_avail=0) -> J1 MA5[1-8] (J1_next_op_start=8)
+J3: MA6(8) (requires J3_next_op_start=0, MA6_avail=6) -> J3 MA6[6-14] (J3_next_op_start=14)
+J4: MA2(3) (requires J4_next_op_start=0, MA2_avail=1) -> J4 MA2[1-4] (J4_next_op_start=4)
+J5: MA4(8) (requires J5_next_op_start=0, MA4_avail=0) -> J5 MA4[0-8] (J5_next_op_start=8)
+
+Time = 4
+Available operations:
+J4: MA5(9) (requires J4_next_op_start=4, MA5_avail=8) -> J4 MA5[8-17] (J4_next_op_start=17)
+
+Time = 6
+J2: MA5(4) (requires J2_next_op_start=6, MA5_avail=17) -> J2 MA5[17-21] (J2_next_op_start=21)
+
+Time = 8
+J1: MA1(7) (requires J1_next_op_start=8, MA1_avail=0) -> J1 MA1[8-15] (J1_next_op_start=15)
+J5: MA3(6) (requires J5_next_op_start=8, MA3_avail=0) -> J5 MA3[8-14] (J5_next_op_start=14)
+
+Time = 14
+J3: MA3(4) (requires J3_next_op_start=14, MA3_avail=14) -> J3 MA3[14-18] (J3_next_op_start=18)
+
+Time = 15
+J1: MA6(1) (requires J1_next_op_start=15, MA6_avail=14) -> J1 MA6[15-16] (J1_next_op_start=16)
+
+Time = 16
+J1: MA4(8) (requires J1_next_op_start=16, MA4_avail=8) -> J1 MA4[16-24] (J1_next_op_start=24)
+
+Time = 17
+J4: MA4(4) (requires J4_next_op_start=17, MA4_avail=24) -> J4 MA4[24-28] (J4_next_op_start=28)
+
+Time = 18
+J3: MA4(7) (requires J3_next_op_start=18, MA4_avail=28) -> J3 MA4[28-35] (J3_next_op_start=35)
+
+Time = 21
+J2: MA1(4) (requires J2_next_op_start=21, MA1_avail=15) -> J2 MA1[21-25] (J2_next_op_start=25)
+
+Time = 24
+J1: MA3(5) (requires J1_next_op_start=24, MA3_avail=18) -> J1 MA3[24-29] (J1_A_end=29)
+
+Time = 25
+J2: MA2(8) (requires J2_next_op_start=25, MA2_avail=4) -> J2 MA2[25-33] (J2_next_op_start=33)
+
+Time = 28
+J4: MA6(1) (requires J4_next_op_start=28, MA6_avail=16) -> J4 MA6[28-29] (J4_next_op_start=29)
+
+Time = 29
+J4: MA3(4) (requires J4_next_op_start=29, MA3_avail=29) -> J4 MA3[29-33] (J4_next_op_start=33)
+
+Time = 33
+J2: MA4(5) (requires J2_next_op_start=33, MA4_avail=35) -> J2 MA4[35-40] (J2_next_op_start=40)
+J4: MA1(9) (requires J4_next_op_start=33, MA1_avail=25) -> J4 MA1[33-42] (J4_A_end=42)
+
+Time = 35
+J3: MA5(7) (requires J3_next_op_start=35, MA5_avail=21) -> J3 MA5[35-42] (J3_next_op_start=42)
+
+Time = 40
+J2: MA3(1) (requires J2_next_op_start=40, MA3_avail=33) -> J2 MA3[40-41] (J2_A_end=41)
+
+Time = 42
+J3: MA1(3) (requires J3_next_op_start=42, MA1_avail=42) -> J3 MA1[42-45] (J3_next_op_start=45)
+
+J5: MA1(7) (requires J5_next_op_start=14, MA1_avail=45) -> J5 MA1[45-52] (J5_next_op_start=52)
+
+Time = 45
+J3: MA2(6) (requires J3_next_op_start=45, MA2_avail=33) -> J3 MA2[45-51] (J3_A_end=51)
+
+Time = 51
+J5: MA2(6) (requires J5_next_op_start=52, MA2_avail=51) -> J5 MA2[52-58] (J5_next_op_start=58)
+
+Time = 58
+J5: MA6(1) (requires J5_next_op_start=58, MA6_avail=29) -> J5 MA6[58-59] (J5_next_op_start=59)
+
+Time = 59
+J5: MA5(9) (requires J5_next_op_start=59, MA5_avail=42) -> J5 MA5[59-68] (J5_A_end=68)
+
+Factory A completion times:
+J1_A_end = 29
+J2_A_end = 41
+J3_A_end = 51
+J4_A_end = 42
+J5_A_end = 68
+
+This is a simple FCFS-like schedule for Factory A. Let's list the operations:
+Factory A:
+MA1: J1[8-15], J2[21-25], J4[33-42], J3[42-45], J5[45-52]
+MA2: J1[0-1], J4[1-4], J2[25-33], J3[45-51], J5[52-58]
+MA3: J5[8-14], J3[14-18], J1[24-29], J4[29-33], J2[40-41]
+MA4: J5[0-8], J1[16-24], J4[24-28], J3[28-35], J2[35-40]
+MA5: J1[1-8], J4[8-17], J2[17-21], J3[35-42], J5[59-68]
+MA6: J2[0-6], J3[6-14], J1[15-16], J4[28-29], J5[58-59]
+
+Now, let's schedule Factory B operations. The earliest a job can start in Factory B is its A_end time.
+J1_A_end = 29
+J2_A_end = 41
+J3_A_end = 51
+J4_A_end = 42
+J5_A_end = 68
+
+Factory B operations:
+J1: MB4 (4) -> MB6 (2) -> MB5 (6) -> MB1 (1) -> MB3 (1) -> MB2 (1)
+J2: MB6 (7) -> MB1 (9) -> MB2 (2) -> MB4 (3) -> MB3 (5) -> MB5 (2)
+J3: MB3 (9) -> MB5 (6) -> MB4 (2) -> MB6 (8) -> MB2 (9) -> MB1 (2)
+J4: MB4 (9) -> MB1 (4) -> MB3 (7) -> MB6 (9) -> MB2 (6) -> MB5 (6)
+J5: MB4 (9) -> MB1 (6) -> MB6 (8) -> MB2 (1) -> MB5 (4) -> MB3 (3)
+
+Let's schedule Factory B operations using a similar greedy approach, prioritizing jobs by their index (J1, J2, J3, J4, J5) and then by the order of operations, respecting the A_end times.
+
+Factory B Schedule:
+Machine availability: MB1=0, MB2=0, MB3=0, MB4=0, MB5=0, MB6=0
+Job next op start times: J1_B_next_op_start=29, J2_B_next_op_start=41, J3_B_next_op_start=51, J4_B_next_op_start=42, J5_B_next_op_start=68
+Job completion times in B: J1_B_end=0, J2_B_end=0, J3_B_end=0, J4_B_end=0, J5_B_end=0
+
+Time = 29
+Available operations:
+J1: MB4(4) (requires J1_B_next_op_start=29, MB4_avail=0) -> J1 MB4[29-33] (J1_B_next_op_start=33)
+
+Time = 33
+Available operations:
+J1: MB6(2) (requires J1_B_next_op_start=33, MB6_avail=0) -> J1 MB6[33-35] (J1_B_next_op_start=35)
+
+Time = 35
+Available operations:
+J1: MB5(6) (requires J1_B_next_op_start=35, MB5_avail=0) -> J1 MB5[35-41] (J1_B_next_op_start=41)
+
+Time = 41
+Available operations:
+J1: MB1(1) (requires J1_B_next_op_start=41, MB1_avail=0) -> J1 MB1[41-42] (J1_B_next_op_start=42)
+J2: MB6(7) (requires J2_B_next_op_start=41, MB6_avail=35) -> J2 MB6[41-48] (J2_B_next_op_start=48)
+
+Time = 42
+Available operations:
+J1: MB3(1) (requires J1_B_next_op_start=42, MB3_avail=0) -> J1 MB3[42-43] (J1_B_next_op_start=43)
+J4: MB4(9) (requires J4_B_next_op_start=42, MB4_avail=33) -> J4 MB4[42-51] (J4_B_next_op_start=51)
+
+Time = 43
+Available operations:
+J1: MB2(1) (requires J1_B_next_op_start=43, MB2_avail=0) -> J1 MB2[43-44] (J1_B_end=44)
+
+Time = 48
+Available operations:
+J2: MB1(9) (requires J2_B_next_op_start=48, MB1_avail=42) -> J2 MB1[48-57] (J2_B_next_op_start=57)
+
+Time = 51
+Available operations:
+J3: MB3(9) (requires J3_B_next_op_start=51, MB3_avail=43) -> J3 MB3[51-60] (J3_B_next_op_start=60)
+J4: MB1(4) (requires J4_B_next_op_start=51, MB1_avail=57) -> J4 MB1[57-61] (J4_B_next_op_start=61)
+
+Time = 57
+J2: MB2(2) (requires J2_B_next_op_start=57, MB2_avail=44) -> J2 MB2[57-59] (J2_B_next_op_start=59)
+
+Time = 59
+J2: MB4(3) (requires J2_B_next_op_start=59, MB4_avail=51) -> J2 MB4[59-62] (J2_B_next_op_start=62)
+
+Time = 60
+J3: MB5(6) (requires J3_B_next_op_start=60, MB5_avail=41) -> J3 MB5[60-66] (J3_B_next_op_start=66)
+
+Time = 61
+J4: MB3(7) (requires J4_B_next_op_start=61, MB3_avail=60) -> J4 MB3[61-68] (J4_B_next_op_start=68)
+
+Time = 62
+J2: MB3(5) (requires J2_B_next_op_start=62, MB3_avail=68) -> J2 MB3[68-73] (J2_B_next_op_start=73)
+
+Time = 66
+J3: MB4(2) (requires J3_B_next_op_start=66, MB4_avail=62) -> J3 MB4[66-68] (J3_B_next_op_start=68)
+
+Time = 68
+J3: MB6(8) (requires J3_B_next_op_start=68, MB6_avail=48) -> J3 MB6[68-76] (J3_B_next_op_start=76)
+J4: MB6(9) (requires J4_B_next_op_start=68, MB6_avail=76) -> J4 MB6[76-85] (J4_B_next_op_start=85)
+J5: MB4(9) (requires J5_B_next_op_start=68, MB4_avail=68) -> J5 MB4[68-77] (J5_B_next_op_start=77)
+
+Time = 73
+J2: MB5(2) (requires J2_B_next_op_start=73, MB5_avail=66) -> J2 MB5[73-75] (J2_B_end=75)
+
+Time = 75
+J5: MB1(6) (requires J5_B_next_op_start=77, MB1_avail=61) -> J5 MB1[77-83] (J5_B_next_op_start=83)
+
+Time = 76
+J3: MB2(9) (requires J3_B_next_op_start=76, MB2_avail=59) -> J3 MB2[76-85] (J3_B_next_op_start=85)
+
+Time = 83
+J5: MB6(8) (requires J5_B_next_op_start=83, MB6_avail=85) -> J5 MB6[85-93] (J5_B_next_op_start=93)
+
+Time = 85
+J3: MB1(2) (requires J3_B_next_op_start=85, MB1_avail=83) -> J3 MB1[85-87] (J3_B_end=87)
+J4: MB2(6) (requires J4_B_next_op_start=85, MB2_avail=85) -> J4 MB2[85-91] (J4_B_next_op_start=91)
+
+Time = 91
+J4: MB5(6) (requires J4_B_next_op_start=91, MB5_avail=75) -> J4 MB5[91-97] (J4_B_end=97)
+
+Time = 93
+J5: MB2(1) (requires J5_B_next_op_start=93, MB2_avail=91) -> J5 MB2[93-94] (J5_B_next_op_start=94)
+
+Time = 94
+J5: MB5(4) (requires J5_B_next_op_start=94, MB5_avail=97) -> J5 MB5[97-101] (J5_B_next_op_start=101)
+
+Time = 101
+J5: MB3(3) (requires J5_B_next_op_start=101, MB3_avail=73) -> J5 MB3[101-104] (J5_B_end=104)
+
+Makespan = 104. This is significantly better than 155.
+
+Let's double check the schedule for validity.
+Factory A:
+MA1: J1[8-15], J2[21-25], J4[33-42], J3[42-45], J5[45-52]
+MA2: J1[0-1], J4[1-4], J2[25-33], J3[45-51], J5[52-58]
+MA3: J5[8-14], J3[14-18], J1[24-29], J4[29-33], J2[40-41]
+MA4: J5[0-8], J1[16-24], J4[24-28], J3[28-35], J2[35-40]
+MA5: J1[1-8], J4[8-17], J2[17-21], J3[35-42], J5[59-68]
+MA6: J2[0-6], J3[6-14], J1[15-16], J4[28-29], J5[58-59]
+
+Check machine conflicts:
+MA1: [8-15] J1, [21-25] J2, [33-42] J4, [42-45] J3, [45-52] J5. No conflicts.
+MA2: [0-1] J1, [1-4] J4, [25-33] J2, [45-51] J3, [52-58] J5. No conflicts.
+MA3: [8-14] J5, [14-18] J3, [24-29] J1, [29-33] J4, [40-41] J2. No conflicts.
+MA4: [0-8] J5, [16-24] J1, [24-28] J4, [28-35] J3, [35-40] J2. No conflicts.
+MA5: [1-8] J1, [8-17] J4, [17-21] J2, [35-42] J3, [59-68] J5. No conflicts.
+MA6: [0-6] J2, [6-14] J3, [15-16] J1, [28-29] J4, [58-59] J5. No conflicts.
+
+Check job precedence and start times in Factory A:
+J1: MA2(1)[0-1] -> MA5(7)[1-8] -> MA1(7)[8-15] -> MA6(1)[15-16] -> MA4(8)[16-24] -> MA3(5)[24-29]. All good. J1_A_end=29.
+J2: MA6(6)[0-6] -> MA5(4)[17-21] (wait for MA5) -> MA1(4)[21-25] -> MA2(8)[25-33] -> MA4(5)[35-40] (wait for MA4) -> MA3(1)[40-41]. All good. J2_A_end=41.
+J3: MA6(8)[6-14] -> MA3(4)[14-18] -> MA4(7)[28-35] (wait for MA4) -> MA5(7)[35-42] -> MA1(3)[42-45] -> MA2(6)[45-51]. All good. J3_A_end=51.
+J4: MA2(3)[1-4] -> MA5(9)[8-17] (wait for MA5) -> MA4(4)[24-28] (wait for MA4) -> MA6(1)[28-29] -> MA3(4)[29-33] -> MA1(9)[33-42]. All good. J4_A_end=42.
+J5: MA4(8)[0-8] -> MA3(6)[8-14] -> MA1(7)[45-52] (wait for MA1) -> MA2(6)[52-58] (wait for MA2) -> MA6(1)[58-59] -> MA5(9)[59-68]. All good. J5_A_end=68.
+
+Factory B:
+MB1: J1[41-42], J2[48-57], J4[57-61], J3[85-87], J5[77-83]
+MB2: J1[43-44], J2[57-59], J3[76-85], J4[85-91], J5[93-94]
+MB3: J1[42-43], J3[51-60], J4[61-68], J2[68-73], J5[101-104]
+MB4: J1[29-33], J4[42-51], J2[59-62], J3[66-68], J5[68-77]
+MB5: J1[35-41], J3[60-66], J2[73-75], J4[91-97], J5[97-101]
+MB6: J1[33-35], J2[41-48], J3[68-76], J4[76-85], J5[85-93]
+
+Check machine conflicts:
+MB1: [41-42] J1, [48-57] J2, [57-61] J4, [77-83] J5, [85-87] J3. No conflicts.
+MB2: [43-44] J1, [57-59] J2, [76-85] J3, [85-91] J4, [93-94] J5. No conflicts.
+MB3: [42-43] J1, [51-60] J3, [61-68] J4, [68-73] J2, [101-104] J5. No conflicts.
+MB4: [29-33] J1, [42-51] J4, [59-62] J2, [66-68] J3, [68-77] J5. No conflicts.
+MB5: [35-41] J1, [60-66] J3, [73-75] J2, [91-97] J4, [97-101] J5. No conflicts.
+MB6: [33-35] J1, [41-48] J2, [68-76] J3, [76-85] J4, [85-93] J5. No conflicts.
+
+Check job precedence and A_end times in Factory B:
+J1: A_end=29. MB4(4)[29-33] -> MB6(2)[33-35] -> MB5(6)[35-41] -> MB1(1)[41-42] -> MB3(1)[42-43] -> MB2(1)[43-44]. All good. J1_B_end=44.
+J2: A_end=41. MB6(7)[41-48] -> MB1(9)[48-57] -> MB2(2)[57-59] -> MB4(3)[59-62] -> MB3(5)[68-73] (wait for MB3) -> MB5(2)[73-75]. All good. J2_B_end=75.
+J3: A_end=51. MB3(9)[51-60] -> MB5(6)[60-66] -> MB4(2)[66-68] -> MB6(8)[68-76] -> MB2(9)[76-85] -> MB1(2)[85-87]. All good. J3_B_end=87.
+J4: A_end=42. MB4(9)[42-51] -> MB1(4)[57-61] (wait for MB1) -> MB3(7)[61-68] -> MB6(9)[76-85] (wait for MB6) -> MB2(6)[85-91] -> MB5(6)[91-97]. All good. J4_B_end=97.
+J5: A_end=68. MB4(9)[68-77] -> MB1(6)[77-83] -> MB6(8)[85-93] (wait for MB6) -> MB2(1)[93-94] -> MB5(4)[97-101] (wait for MB5) -> MB3(3)[101-104]. All good. J5_B_end=104.
+
+The makespan is 104. This is a valid schedule.
+
+Let's try to optimize Factory A schedule further.
+The current A_end times are: J1=29, J2=41, J3=51, J4=42, J5=68.
+The maximum A_end is 68 (J5).
+The total processing time for J5 in Factory A is 37.
+J5: MA4(8) -> MA3(6) -> MA1(7) -> MA2(6) -> MA6(1) -> MA5(9)
+
+Let's try to prioritize jobs with longer total processing times in Factory A first, then by job index.
+Order: J5, J3, J4, J1, J2.
+
+Factory A Schedule (Prioritize J5, J3, J4, J1, J2):
+Machine availability: MA1=0, MA2=0, MA3=0, MA4=0, MA5=0, MA6=0
+Job completion times in A: J1_A_end=0, J2_A_end=0, J3_A_end=0, J4_A_end=0, J5_A_end=0
+Job next op start times: J1_next_op_start=0, J2_next_op_start=0, J3_next_op_start=0, J4_next_op_start=0, J5_next_op_start=0
+
+Time = 0
+Available operations:
+J5: MA4(8) -> J5 MA4[0-8] (J5_next_op_start=8)
+J3: MA6(8) -> J3 MA6[0-8] (J3_next_op_start=8)
+J4: MA2(3) -> J4 MA2[0-3] (J4_next_op_start=3)
+J1: MA2(1) (MA2 busy)
+J2: MA6(6) (MA6 busy)
+
+Time = 3
+Available operations:
+J4: MA5(9) (requires J4_next_op_start=3, MA5_avail=0) -> J4 MA5[3-12] (J4_next_op_start=12)
+J1: MA2(1) (MA2_avail=3) -> J1 MA2[3-4] (J1_next_op_start=4)
+
+Time = 4
+Available operations:
+J1: MA5(7) (requires J1_next_op_start=4, MA5_avail=12) -> J1 MA5[12-19] (J1_next_op_start=19)
+
+Time = 8
+Available operations:
+J5: MA3(6) (requires J5_next_op_start=8, MA3_avail=0) -> J5 MA3[8-14] (J5_next_op_start=14)
+J3: MA3(4) (requires J3_next_op_start=8, MA3_avail=14) -> J3 MA3[14-18] (J3_next_op_start=18)
+J2: MA6(6) (requires J2_next_op_start=0, MA6_avail=8) -> J2 MA6[8-14] (J2_next_op_start=14)
+
+Time = 12
+Available operations:
+J4: MA4(4) (requires J4_next_op_start=12, MA4_avail=8) -> J4 MA4[12-16] (J4_next_op_start=16)
+
+Time = 14
+Available operations:
+J5: MA1(7) (requires J5_next_op_start=14, MA1_avail=0) -> J5 MA1[14-21] (J5_next_op_start=21)
+J2: MA5(4) (requires J2_next_op_start=14, MA5_avail=19) -> J2 MA5[19-23] (J2_next_op_start=23)
+
+Time = 16
+Available operations:
+J4: MA6(1) (requires J4_next_op_start=16, MA6_avail=14) -> J4 MA6[16-17] (J4_next_op_start=17)
+
+Time = 17
+Available operations:
+J4: MA3(4) (requires J4_next_op_start=17, MA3_avail=18) -> J4 MA3[18-22] (J4_next_op_start=22)
+
+Time = 18
+Available operations:
+J3: MA4(7) (requires J3_next_op_start=18, MA4_avail=16) -> J3 MA4[18-25] (J3_next_op_start=25)
+
+Time = 19
+Available operations:
+J1: MA1(7) (requires J1_next_op_start=19, MA1_avail=21) -> J1 MA1[21-28] (J1_next_op_start=28)
+
+Time = 21
+Available operations:
+J5: MA2(6) (requires J5_next_op_start=21, MA2_avail=4) -> J5 MA2[21-27] (J5_next_op_start=27)
+
+Time = 22
+Available operations:
+J4: MA1(9) (requires J4_next_op_start=22, MA1_avail=28) -> J4 MA1[28-37] (J4_A_end=37)
+
+Time = 23
+Available operations:
+J2: MA1(4) (requires J2_next_op_start=23, MA1_avail=37) -> J2 MA1[37-41] (J2_next_op_start=41)
+
+Time = 25
+Available operations:
+J3: MA5(7) (requires J3_next_op_start=25, MA5_avail=23) -> J3 MA5[25-32] (J3_next_op_start=32)
+
+Time = 27
+Available operations:
+J5: MA6(1) (requires J5_next_op_start=27, MA6_avail=17) -> J5 MA6[27-28] (J5_next_op_start=28)
+
+Time = 28
+Available operations:
+J1: MA6(1) (requires J1_next_op_start=28, MA6_avail=28) -> J1 MA6[28-29] (J1_next_op_start=29)
+J5: MA5(9) (requires J5_next_op_start=28, MA5_avail=32) -> J5 MA5[32-41] (J5_A_end=41)
+
+Time = 29
+Available operations:
+J1: MA4(8) (requires J1_next_op_start=29, MA4_avail=25) -> J1 MA4[29-37] (J1_next_op_start=37)
+
+Time = 32
+Available operations:
+J3: MA1(3) (requires J3_next_op_start=32, MA1_avail=41) -> J3 MA1[41-44] (J3_next_op_start=44)
+
+Time = 37
+Available operations:
+J1: MA3(5) (requires J1_next_op_start=37, MA3_avail=22) -> J1 MA3[37-42] (J1_A_end=42)
+
+Time = 41
+Available operations:
+J2: MA2(8) (requires J2_next_op_start=41, MA2_avail=27) -> J2 MA2[41-49] (J2_next_op_start=49)
+
+Time = 44
+Available operations:
+J3: MA2(6) (requires J3_next_op_start=44, MA2_avail=49) -> J3 MA2[49-55] (J3_A_end=55)
+
+Time = 49
+Available operations:
+J2: MA4(5) (requires J2_next_op_start=49, MA4_avail=37) -> J2 MA4[49-54] (J2_next_op_start=54)
+
+Time = 54
+Available operations:
+J2: MA3(1) (requires J2_next_op_start=54, MA3_avail=42) -> J2 MA3[54-55] (J2_A_end=55)
+
+Factory A completion times:
+J1_A_end = 42
+J2_A_end = 55
+J3_A_end = 55
+J4_A_end = 37
+J5_A_end = 41
+
+This schedule for Factory A has earlier completion times for J1, J4, J5, but later for J2, J3.
+Max A_end is 55. This is better than 68.
+
+Factory A Schedule (Prioritize J5, J3, J4, J1, J2):
+MA1: J5[14-21], J1[21-28], J4[28-37], J2[37-41], J3[41-44]
+MA2: J4[0-3], J1[3-4], J5[21-27], J2[41-49], J3[49-55]
+MA3: J5[8-14], J3[14-18], J4[18-22], J1[37-42], J2[54-55]
+MA4: J5[0-8], J4[12-16], J3[18-25], J1[29-37], J2[49-54]
+MA5: J4[3-12], J1[12-19], J2[19-23], J3[25-32], J5[32-41]
+MA6: J3[0-8], J2[8-14], J4[16-17], J5[27-28], J1[28-29]
+
+Now, let's schedule Factory B operations with these new A_end times.
+J1_A_end = 42
+J2_A_end = 55
+J3_A_end = 55
+J4_A_end = 37
+J5_A_end = 41
+
+Factory B operations:
+J1: MB4 (4) -> MB6 (2) -> MB5 (6) -> MB1 (1) -> MB3 (1) -> MB2 (1)
+J2: MB6 (7) -> MB1 (9) -> MB2 (2) -> MB4 (3) -> MB3 (5) -> MB5 (2)
+J3: MB3 (9) -> MB5 (6) -> MB4 (2) -> MB6 (8) -> MB2 (9) -> MB1 (2)
+J4: MB4 (9) -> MB1 (4) -> MB3 (7) -> MB6 (9) -> MB2 (6) -> MB5 (6)
+J5: MB4 (9) -> MB1 (6) -> MB6 (8) -> MB2 (1) -> MB5 (4) -> MB3 (3)
+
+Let's schedule Factory B operations using a similar greedy approach, prioritizing jobs by their index (J1, J2, J3, J4, J5) and then by the order of operations, respecting the A_end times.
+
+Factory B Schedule:
+Machine availability: MB1=0, MB2=0, MB3=0, MB4=0, MB5=0, MB6=0
+Job next op start times: J1_B_next_op_start=42, J2_B_next_op_start=55, J3_B_next_op_start=55, J4_B_next_op_start=37, J5_B_next_op_start=41
+Job completion times in B: J1_B_end=0, J2_B_end=0, J3_B_end=0, J4_B_end=0, J5_B_end=0
+
+Time = 37
+Available operations:
+J4: MB4(9) (requires J4_B_next_op_start=37, MB4_avail=0) -> J4 MB4[37-46] (J4_B_next_op_start=46)
+
+Time = 41
+Available operations:
+J5: MB4(9) (requires J5_B_next_op_start=41, MB4_avail=46) -> J5 MB4[46-55] (J5_B_next_op_start=55)
+
+Time = 42
+Available operations:
+J1: MB4(4) (requires J1_B_next_op_start=42, MB4_avail=55) -> J1 MB4[55-59] (J1_B_next_op_start=59)
+
+Time = 46
+Available operations:
+J4: MB1(4) (requires J4_B_next_op_start=46, MB1_avail=0) -> J4 MB1[46-50] (J4_B_next_op_start=50)
+
+Time = 50
+Available operations:
+J4: MB3(7) (requires J4_B_next_op_start=50, MB3_avail=0) -> J4 MB3[50-57] (J4_B_next_op_start=57)
+
+Time = 55
+Available operations:
+J2: MB6(7) (requires J2_B_next_op_start=55, MB6_avail=0) -> J2 MB6[55-62] (J2_B_next_op_start=62)
+J3: MB3(9) (requires J3_B_next_op_start=55, MB3_avail=57) -> J3 MB3[57-66] (J3_B_next_op_start=66)
+J5: MB1(6) (requires J5_B_next_op_start=55, MB1_avail=50) -> J5 MB1[55-61] (J5_B_next_op_start=61)
+
+Time = 57
+Available operations:
+J4: MB6(9) (requires J4_B_next_op_start=57, MB6_avail=62) -> J4 MB6[62-71] (J4_B_next_op_start=71)
+
+Time = 59
+Available operations:
+J1: MB6(2) (requires J1_B_next_op_start=59, MB6_avail=71) -> J1 MB6[71-73] (J1_B_next_op_start=73)
+
+Time = 61
+Available operations:
+J5: MB6(8) (requires J5_B_next_op_start=61, MB6_avail=73) -> J5 MB6[73-81] (J5_B_next_op_start=81)
+
+Time = 62
+Available operations:
+J2: MB1(9) (requires J2_B_next_op_start=62, MB1_avail=61) -> J2 MB1[62-71] (J2_B_next_op_start=71)
+
+Time = 66
+Available operations:
+J3: MB5(6) (requires J3_B_next_op_start=66, MB5_avail=0) -> J3 MB5[66-72] (J3_B_next_op_start=72)
+
+Time = 71
+Available operations:
+J2: MB2(2) (requires J2_B_next_op_start=71, MB2_avail=0) -> J2 MB2[71-73] (J2_B_next_op_start=73)
+J4: MB2(6) (requires J4_B_next_op_start=71, MB2_avail=73) -> J4 MB2[73-79] (J4_B_next_op_start=79)
+
+Time = 72
+Available operations:
+J3: MB4(2) (requires J3_B_next_op_start=72, MB4_avail=59) -> J3 MB4[72-74] (J3_B_next_op_start=74)
+
+Time = 73
+Available operations:
+J1: MB5(6) (requires J1_B_next_op_start=73, MB5_avail=72) -> J1 MB5[73-79] (J1_B_next_op_start=79)
+J2: MB4(3) (requires J2_B_next_op_start=73, MB4_avail=74) -> J2 MB4[74-77] (J2_B_next_op_start=77)
+
+Time = 74
+Available operations:
+J3: MB6(8) (requires J3_B_next_op_start=74, MB6_avail=81) -> J3 MB6[81-89] (J3_B_next_op_start=89)
+
+Time = 77
+Available operations:
+J2: MB3(5) (requires J2_B_next_op_start=77, MB3_avail=66) -> J2 MB3[77-82] (J2_B_next_op_start=82)
+
+Time = 79
+Available operations:
+J1: MB1(1) (requires J1_B_next_op_start=79, MB1_avail=71) -> J1 MB1[79-80] (J1_B_next_op_start=80)
+J4: MB5(6) (requires J4_B_next_op_start=79, MB5_avail=79) -> J4 MB5[79-85] (J4_B_end=85)
+
+Time = 80
+Available operations:
+J1: MB3(1) (requires J1_B_next_op_start=80, MB3_avail=82) -> J1 MB3[82-83] (J1_B_next_op_start=83)
+
+Time = 81
+Available operations:
+J5: MB2(1) (requires J5_B_next_op_start=81, MB2_avail=79) -> J5 MB2[81-82] (J5_B_next_op_start=82)
+
+Time = 82
+Available operations:
+J1: MB2(1) (requires J1_B_next_op_start=83, MB2_avail=82) -> J1 MB2[83-84] (J1_B_end=84)
+J2: MB5(2) (requires J2_B_next_op_start=82, MB5_avail=85) -> J2 MB5[85-87] (J2_B_end=87)
+J5: MB5(4) (requires J5_B_next_op_start=82, MB5_avail=87) -> J5 MB5[87-91] (J5_B_next_op_start=91)
+
+Time = 89
+Available operations:
+J3: MB2(9) (requires J3_B_next_op_start=89, MB2_avail=84) -> J3 MB2[89-98] (J3_B_next_op_start=98)
+
+Time = 91
+Available operations:
+J5: MB3(3) (requires J5_B_next_op_start=91, MB3_avail=83) -> J5 MB3[91-94] (J5_B_end=94)
+
+Time = 98
+Available operations:
+J3: MB1(2) (requires J3_B_next_op_start=98, MB1_avail=80) -> J3 MB1[98-100] (J3_B_end=100)
+
+Makespan = 100. This is even better!
+
+Let's verify the second schedule.
+Factory A completion times:
+J1_A_end = 42
+J2_A_end = 55
+J3_A_end = 55
+J4_A_end = 37
+J5_A_end = 41
+
+Factory A Schedule:
+MA1: J5[14-21], J1[21-28], J4[28-37], J2[37-41], J3[41-44]
+MA2: J4[0-3], J1[3-4], J5[21-27], J2[41-49], J3[49-55]
+MA3: J5[8-14], J3[14-18], J4[18-22], J1[37-42], J2[54-55]
+MA4: J5[0-8], J4[12-16], J3[18-25], J1[29-37], J2[49-54]
+MA5: J4[3-12], J1[12-19], J2[19-23], J3[25-32], J5[32-41]
+MA6: J3[0-8], J2[8-14], J4[16-17], J5[27-28], J1[28-29]
+
+Factory B Schedule:
+MB1: J4[46-50], J5[55-61], J2[62-71], J1[79-80], J3[98-100]
+MB2: J2[71-73], J4[73-79], J5[81-82], J1[83-84], J3[89-98]
+MB3: J4[50-57], J3[57-66], J2[77-82], J1[82-83], J5[91-94]
+MB4: J4[37-46], J5[46-55], J1[55-59], J3[72-74], J2[74-77]
+MB5: J3[66-72], J1[73-79], J4[79-85], J2[85-87], J5[87-91]
+MB6: J2[55-62], J4[62-71], J1[71-73], J5[73-81], J3[81-89]
+
+Check machine conflicts in Factory B:
+MB1: [46-50] J4, [55-61] J5, [62-71] J2, [79-80] J1, [98-100] J3. No conflicts.
+MB2: [71-73] J2, [73-79] J4, [81-82] J5, [83-84] J1, [89-98] J3. No conflicts.
+MB3: [50-57] J4, [57-66] J3, [77-82] J2, [82-83] J1, [91-94] J5. No conflicts.
+MB4: [37-46] J4, [46-55] J5, [55-59] J1, [72-74] J3, [74-77] J2. No conflicts.
+MB5: [66-72] J3, [73-79] J1, [79-85] J4, [85-87] J2, [87-91] J5. No conflicts.
+MB6: [55-62] J2, [62-71] J4, [71-73] J1, [73-81] J5, [81-89] J3. No conflicts.
+
+Check job precedence and A_end times in Factory B:
+J1: A_end=42. MB4(4)[55-59] (wait for MB4) -> MB6(2)[71-73] (wait for MB6) -> MB5(6)[73-79] -> MB1(1)[79-80] -> MB3(1)[82-83] (wait for MB3) -> MB2(1)[83-84]. All good. J1_B_end=84.
+J2: A_end=55. MB6(7)[55-62] -> MB1(9)[62-71] -> MB2(2)[71-73] -> MB4(3)[74-77] (wait for MB4) -> MB3(5)[77-82] -> MB5(2)[85-87] (wait for MB5). All good. J2_B_end=87.
+J3: A_end=55. MB3(9)[57-66] (wait for MB3) -> MB5(6)[66-72] -> MB4(2)[72-74] -> MB6(8)[81-89] (wait for MB6) -> MB2(9)[89-98] -> MB1(2)[98-100]. All good. J3_B_end=100.
+J4: A_end=37. MB4(9)[37-46] -> MB1(4)[46-50] -> MB3(7)[50-57] -> MB6(9)[62-71] (wait for MB6) -> MB2(6)[73-79] (wait for MB2) -> MB5(6)[79-85]. All good. J4_B_end=85.
+J5: A_end=41. MB4(9)[46-55] (wait for MB4) -> MB1(6)[55-61] -> MB6(8)[73-81] (wait for MB6) -> MB2(1)[81-82] -> MB5(4)[87-91] (wait for MB5) -> MB3(3)[91-94]. All good. J5_B_end=94.
+
+The makespan is 100. This is a valid schedule and an improvement over the baseline of 155.
+
+Let's format the output.
+
+Factory A:
+MA1: J5[14-21], J1[21-28], J4[28-37], J2[37-41], J3[41-44]
+MA2: J4[0-3], J1[3-4], J5[21-27], J2[41-49], J3[49-55]
+MA3: J5[8-14], J3[14-18], J4[18-22], J1[37-42], J2[54-55]
+MA4: J5[0-8], J4[12-16], J3[18-25], J1[29-37], J2[49-54]
+MA5: J4[3-12], J1[12-19], J2[19-23], J3[25-32], J5[32-41]
+MA6: J3[0-8], J2[8-14], J4[16-17], J5[27-28], J1[28-29]
+
+Factory B:
+MB1: J4[46-50], J5[55-61], J2[62-71], J1[79-80], J3[98-100]
+MB2: J2[71-73], J4[73-79], J5[81-82], J1[83-84], J3[89-98]
+MB3: J4[50-57], J3[57-66], J2[77-82], J1[82-83], J5[91-94]
+MB4: J4[37-46], J5[46-55], J1[55-59], J3[72-74], J2[74-77]
+MB5: J3[66-72], J1[73-79], J4[79-85], J2[85-87], J5[87-91]
+MB6: J2[55-62], J4[62-71], J1[71-73], J5[73-81], J3[81-89]
+
+Final makespan: 100.
+This is a significant improvement over the baseline of 155.
+The scheduling strategy used was:
+1. For Factory A, prioritize jobs with longer total processing times in Factory A (J5, J3, J4, J1, J2). Within this, use a greedy approach: schedule the earliest available operation on the earliest available machine.
+2. For Factory B, use the A_end times from the Factory A schedule as the earliest start times. Then, prioritize jobs by their index (J1, J2, J3, J4, J5) and then by the order of operations, respecting machine availability and job precedence.
+
+The choice of job priority for Factory A (longest total processing time) seems to have worked well in reducing the maximum A_end time, which in turn allowed Factory B operations to start earlier. The FCFS-like approach for Factory B then filled in the gaps.
+The makespan is determined by the completion of J3's last operation on MB1 at time 100.
+J3_A_end = 55. J3_B_total_time = 36.
+J3: MB3 (9) -> MB5 (6) -> MB4 (2) -> MB6 (8) -> MB2 (9) -> MB1 (2)
+J3 MB3[57-66] (start 57, wait 2 for MB3)
+J3 MB5[66-72] (start 66, no wait)
+J3 MB4[72-74] (start 72, no wait)
+J3 MB6[81-89] (start 81, wait 7 for MB6)
+J3 MB2[89-98] (start 89, no wait)
+J3 MB1[98-100] (start 98, no wait)
+Total time for J3 in B is 100-57 = 43, which is longer than its processing time of 36 due to waiting for machines.
+The critical path seems to involve J3 in Factory B.
+Let's check the critical path for the makespan of 100.
+J3 finishes at 100 on MB1.
+J3 MB1[98-100]
+Previous op for J3 is MB2[89-98].
+Previous op for J3 is MB6[81-89].
+Previous op for J3 is MB4[72-74].
+Previous op for J3 is MB5[66-72].
+Previous op for J3 is MB3[57-66].
+J3 starts B at 57. J3_A_end is 55. So J3 waits 2 units before starting B.
+The machine MB3 was available at 0. J4 used MB3[50-57]. So J3 had to wait for J4 on MB3.
+J4 MB3[50-57]. J4_A_end = 37. J4 MB1[46-50]. J4 MB4[37-46].
+So J4 starts B at 37.
+The critical path seems to be:
+J4 MA4[0-8] -> J4 MA5[3-12] -> J4 MA4[12-16] -> J4 MA6[16-17] -> J4 MA3[18-22] -> J4 MA1[28-37] (J4_A_end=37)
+J4 MB4[37-46] -> J4 MB1[46-50] -> J4 MB3[50-57]
+J3 MB3[57-66] (J3 waits for J4 on MB3)
+J3 MB5[66-72]
+J3 MB4[72-74]
+J3 MB6[81-89] (J3 waits for J5 on MB6, J5 MB6[73-81])
+J3 MB2[89-98]
+J3 MB1[98-100]
+This path has a length of 100.
+The schedule seems robust.
+The JSON output needs to be precise.
+The format is `{"factory_a": {"MA1": [["J1", 0, 3], ...]}, "factory_b": {"MB1": [["J1", 3, 5], ...]}, "makespan": 42}`.
+The times are start and end times, not start and duration.
+For example, J1 MA2 (1) -> MA5 (7) -> MA1 (7) -> MA6 (1) -> MA4 (8) -> MA3 (5)
+In my schedule:
+J1 MA2[3-4] (duration 1)
+J1 MA5[12-19] (duration 7)
+J1 MA1[21-28] (duration 7)
+J1 MA6[28-29] (duration 1)
+J1 MA4[29-37] (duration 8)
+J1 MA3[37-42] (duration 5)
+This matches the durations.
+The JSON output should be a dictionary with two keys: "factory_a" and "factory_b", each containing a dictionary of machine schedules. And a "makespan" key.
+Each machine schedule is a list of `[job_id, start_time, end_time]` tuples.
+The job_id should be "J1", "J2", etc.
+The times are integers.BEST_GUESS: {"factory_a": {"MA1": [["J5", 14, 21], ["J1", 21, 28], ["J4", 28, 37], ["J2", 37, 41], ["J3", 41, 44]], "MA2": [["J4", 0, 3], ["J1", 3, 4], ["J5", 21, 27], ["J2", 41, 49], ["J3", 49, 55]], "MA3": [["J5", 8, 14], ["J3", 14, 18], ["J4", 18, 22], ["J1", 37, 42], ["J2", 54, 55]], "MA4": [["J5", 0, 8], ["J4", 12, 16], ["J3", 18, 25], ["J1", 29, 37], ["J2", 49, 54]], "MA5": [["J4", 3, 12], ["J1", 12, 19], ["J2", 19, 23], ["J3", 25, 32], ["J5", 32, 41]], "MA6": [["J3", 0, 8], ["J2", 8, 14], ["J4", 16, 17], ["J5", 27, 28], ["J1", 28, 29]]}, "factory_b": {"MB1": [["J4", 46, 50], ["J5", 55, 61], ["J2", 62, 71], ["J1", 79, 80], ["J3", 98, 100]], "MB2": [["J2", 71, 73], ["J4", 73, 79], ["J5", 81, 82], ["J1", 83, 84], ["J3", 89, 98]], "MB3": [["J4", 50, 57], ["J3", 57, 66], ["J2", 77, 82], ["J1", 82, 83], ["J5", 91, 94]], "MB4": [["J4", 37, 46], ["J5", 46, 55], ["J1", 55, 59], ["J3", 72, 74], ["J2", 74, 77]], "MB5": [["J3", 66, 72], ["J1", 73, 79], ["J4", 79, 85], ["J2", 85, 87], ["J5", 87, 91]], "MB6": [["J2", 55, 62], ["J4", 62, 71], ["J1", 71, 73], ["J5", 73, 81], ["J3", 81, 89]]}, "makespan": 100}
+
+--- parsed submission ---
+{
+  "factory_a": {
+    "MA1": [
+      [
+        "J5",
+        14,
+        21
+      ],
+      [
+        "J1",
+        21,
+        28
+      ],
+      [
+        "J4",
+        28,
+        37
+      ],
+      [
+        "J2",
+        37,
+        41
+      ],
+      [
+        "J3",
+        41,
+        44
+      ]
+    ],
+    "MA2": [
+      [
+        "J4",
+        0,
+        3
+      ],
+      [
+        "J1",
+        3,
+        4
+      ],
+      [
+        "J5",
+        21,
+        27
+      ],
+      [
+        "J2",
+        41,
+        49
+      ],
+      [
+        "J3",
+        49,
+        55
+      ]
+    ],
+    "MA3": [
+      [
+        "J5",
+        8,
+        14
+      ],
+      [
+        "J3",
+        14,
+        18
+      ],
+      [
+        "J4",
+        18,
+        22
+      ],
+      [
+        "J1",
+        37,
+        42
+      ],
+      [
+        "J2",
+        54,
+        55
+      ]
+    ],
+    "MA4": [
+      [
+        "J5",
+        0,
+        8
+      ],
+      [
+        "J4",
+        12,
+        16
+      ],
+      [
+        "J3",
+        18,
+        25
+      ],
+      [
+        "J1",
+        29,
+        37
+      ],
+      [
+        "J2",
+        49,
+        54
+      ]
+    ],
+    "MA5": [
+      [
+        "J4",
+        3,
+        12
+      ],
+      [
+        "J1",
+        12,
+        19
+      ],
+      [
+        "J2",
+        19,
+        23
+      ],
+      [
+        "J3",
+        25,
+        32
+      ],
+      [
+        "J5",
+        32,
+        41
+      ]
+    ],
+    "MA6": [
+      [
+        "J3",
+        0,
+        8
+      ],
+      [
+        "J2",
+        8,
+        14
+      ],
+      [
+        "J4",
+        16,
+        17
+      ],
+      [
+        "J5",
+        27,
+        28
+      ],
+      [
+        "J1",
+        28,
+        29
+      ]
+    ]
+  },
+  "factory_b": {
+    "MB1": [
+      [
+        "J4",
+        46,
+        50
+      ],
+      [
+        "J5",
+        55,
+        61
+      ],
+      [
+        "J2",
+        62,
+        71
+      ],
+      [
+        "J1",
+        79,
+        80
+      ],
+      [
+        "J3",
+        98,
+        100
+      ]
+    ],
+    "MB2": [
+      [
+        "J2",
+        71,
+        73
+      ],
+      [
+        "J4",
+        73,
+        79
+      ],
+      [
+        "J5",
+        81,
+        82
+      ],
+      [
+        "J1",
+        83,
+        84
+      ],
+      [
+        "J3",
+        89,
+        98
+      ]
+    ],
+    "MB3": [
+      [
+        "J4",
+        50,
+        57
+      ],
+      [
+        "J3",
+        57,
+        66
+      ],
+      [
+        "J2",
+        77,
+        82
+      ],
+      [
+        "J1",
+        82,
+        83
+      ],
+      [
+        "J5",
+        91,
+        94
+      ]
+    ],
+    "MB4": [
+      [
+        "J4",
+        37,
+        46
+      ],
+      [
+        "J5",
+        46,
+        55
+      ],
+      [
+        "J1",
+        55,
+        59
+      ],
+      [
+        "J3",
+        72,
+        74
+      ],
+      [
+        "J2",
+        74,
+        77
+      ]
+    ],
+    "MB5": [
+      [
+        "J3",
+        66,
+        72
+      ],
+      [
+        "J1",
+        73,
+        79
+      ],
+      [
+        "J4",
+        79,
+        85
+      ],
+      [
+        "J2",
+        85,
+        87
+      ],
+      [
+        "J5",
+        87,
+        91
+      ]
+    ],
+    "MB6": [
+      [
+        "J2",
+        55,
+        62
+      ],
+      [
+        "J4",
+        62,
+        71
+      ],
+      [
+        "J1",
+        71,
+        73
+      ],
+      [
+        "J5",
+        73,
+        81
+      ],
+      [
+        "J3",
+        81,
+        89
+      ]
+    ]
+  },
+  "makespan": 100
+}
+
+--- verifier details ---
+{
+  "baseline_objective": 155,
+  "failure_reason": null,
+  "gap_pct": 11.11111111111111,
+  "gold_objective": 90,
+  "metric_name": "makespan",
+  "verified_makespan": 100,
+  "verified_objective": 100
+}

@@ -26,6 +26,7 @@ HEURISTIC_ORDER = (
     "outlier_first",
     "due_date_first",
 )
+MAKESPAN_WEIGHT = 20
 
 
 @dataclass(frozen=True)
@@ -156,6 +157,7 @@ def build_instance(
     n_machines: int = 15,
     min_baseline_gap_pct: float | None = 20.0,
     min_heuristic_spread_pct: float = 5.0,
+    max_heuristic_spread_pct: float = 35.0,
     max_generation_attempts: int = 24,
     cp_time_limit_s: float = 600.0,
 ) -> MaskedBlockJobShopInstance:
@@ -185,14 +187,10 @@ def build_instance(
                     f"{heuristic_spread_pct:.2f}% heuristic spread"
                 )
                 continue
-
-            baseline = _heuristic_by_name(heuristic_results, "baseline")
-            best_heuristic = min(heuristic_results, key=lambda item: item.objective)
-            baseline_vs_best_pct = 100.0 * (baseline.objective - best_heuristic.objective) / best_heuristic.objective
-            if baseline_vs_best_pct < 6.0:
+            if heuristic_spread_pct > max_heuristic_spread_pct:
                 last_failure = (
-                    f"attempt {attempt_index} at {size_jobs}x{size_machines} had baseline only "
-                    f"{baseline_vs_best_pct:.2f}% worse than the best heuristic"
+                    f"attempt {attempt_index} at {size_jobs}x{size_machines} had too much "
+                    f"heuristic spread ({heuristic_spread_pct:.2f}%)"
                 )
                 continue
 
@@ -222,6 +220,7 @@ def build_instance(
                 )
                 for result in heuristic_results
             )
+            baseline = _heuristic_by_name(heuristic_results, "baseline")
             baseline_gap_pct = (
                 100.0 * (baseline.objective - solve_result.objective) / solve_result.objective
             )
@@ -630,8 +629,8 @@ def _run_bottleneck_first(jobs: tuple[JobSpec, ...], n_machines: int) -> Heurist
         n_machines=n_machines,
         notes=f"Prioritize operations on the top-3 loaded machines: {sorted(top_three)}.",
         priority_fn=lambda ctx: (
-            0 if ctx["machine_name"] in top_three else 1,
             ctx["earliest_start"],
+            0 if ctx["machine_name"] in top_three else 1,
             -ctx["remaining_on_top3"],
             ctx["job_due_date"],
             ctx["job_id"],
@@ -667,8 +666,8 @@ def _run_family_first(jobs: tuple[JobSpec, ...], n_machines: int) -> HeuristicRe
         n_machines=n_machines,
         notes="Detect job communities from the job-machine bipartite projection and schedule cluster-by-cluster.",
         priority_fn=lambda ctx: (
-            cluster_rank[ctx["job_id"]],
             ctx["earliest_start"],
+            cluster_rank[ctx["job_id"]],
             ctx["op_duration"],
             ctx["job_due_date"],
             ctx["job_id"],
@@ -687,8 +686,8 @@ def _run_outlier_first(jobs: tuple[JobSpec, ...], n_machines: int) -> HeuristicR
         n_machines=n_machines,
         notes=f"Sequence the five longest jobs first: {sorted(long_jobs)}.",
         priority_fn=lambda ctx: (
-            0 if ctx["job_id"] in long_jobs else 1,
             ctx["earliest_start"],
+            0 if ctx["job_id"] in long_jobs else 1,
             -ctx["remaining_job_processing"],
             ctx["job_due_date"],
             ctx["job_id"],
@@ -706,9 +705,9 @@ def _run_due_date_first(jobs: tuple[JobSpec, ...], n_machines: int) -> Heuristic
         n_machines=n_machines,
         notes="Earliest-due-date priority with high-weight tie-breaking.",
         priority_fn=lambda ctx: (
+            ctx["earliest_start"],
             ctx["job_due_date"],
             -ctx["job_tardiness_weight"],
-            ctx["earliest_start"],
             ctx["op_duration"],
             ctx["job_id"],
         ),
@@ -820,10 +819,11 @@ def solve_exact_schedule(
 
     makespan = model.NewIntVar(0, horizon, "makespan")
     model.AddMaxEquality(makespan, list(completion_vars.values()))
-    weighted_tardiness = model.NewIntVar(0, horizon * max(job.tardiness_weight for job in jobs), "weighted_tardiness")
+    weighted_tardiness_upper = horizon * sum(job.tardiness_weight for job in jobs)
+    weighted_tardiness = model.NewIntVar(0, weighted_tardiness_upper, "weighted_tardiness")
     model.Add(weighted_tardiness == sum(job.tardiness_weight * tardiness_vars[job.job_id] for job in jobs))
-    objective = model.NewIntVar(0, horizon * max(job.tardiness_weight for job in jobs) + horizon, "objective")
-    model.Add(objective == makespan + weighted_tardiness)
+    objective = model.NewIntVar(0, weighted_tardiness_upper + MAKESPAN_WEIGHT * horizon, "objective")
+    model.Add(objective == MAKESPAN_WEIGHT * makespan + weighted_tardiness)
     model.Minimize(objective)
 
     solver = cp.CpSolver()
@@ -932,7 +932,7 @@ def verify_schedule(
         completion = completion_lookup[job.job_id][last_machine]
         weighted_tardiness += job.tardiness_weight * max(0, completion - job.due_date)
 
-    objective = max_end + weighted_tardiness
+    objective = MAKESPAN_WEIGHT * max_end + weighted_tardiness
     if claimed_makespan is not None and claimed_makespan != max_end:
         return VerificationResult(False, None, None, None, f"claimed makespan {claimed_makespan} != verified {max_end}")
     if claimed_weighted_tardiness is not None and claimed_weighted_tardiness != weighted_tardiness:
@@ -1038,7 +1038,7 @@ def _build_schedule_payload(
         "machines": machine_schedule,
         "makespan": makespan,
         "weighted_tardiness": weighted_tardiness,
-        "objective": makespan + weighted_tardiness,
+        "objective": MAKESPAN_WEIGHT * makespan + weighted_tardiness,
     }
 
 
@@ -1083,7 +1083,7 @@ Every job must respect its listed order.
 Objective:
 - makespan = the completion time of the last job
 - weighted tardiness = sum over jobs of tardiness_weight * max(0, completion_time - due_date)
-- total objective = makespan + weighted tardiness
+- total objective = {MAKESPAN_WEIGHT} * makespan + weighted tardiness
 - lower is better
 
 Instance data:
@@ -1192,4 +1192,3 @@ def _weighted_modularity(
                 a_ij = adjacency[left].get(right, 0.0)
                 score += a_ij - (degrees[left] * degrees[right]) / (2.0 * total_weight)
     return score / (2.0 * total_weight)
-

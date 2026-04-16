@@ -92,3 +92,4 @@ A-lead consolidates fragments → `benchmark/questions.jsonl` once all 6 agents 
 builds [[experiment-spec]]
 
 [[/Users/bobbobby/repos/voicetree-evals/metabench/voicetree-16-4/factory-plan_1.md]]
+[[/Users/bobbobby/repos/voicetree-evals/metabench/voicetree-16-4/factory-plan_2.md]]

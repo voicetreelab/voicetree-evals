@@ -10,16 +10,16 @@ from gemini_client import DEFAULT_MODELS, load_local_env
 from jobshop_instance import build_instance
 from protocol import run_protocol
 
-DEFAULT_SEEDS = [1, 2, 3]
+DEFAULT_SEEDS = [1]
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Run the Codex MetaGame v2 coupled job-shop local spike.")
+    parser = argparse.ArgumentParser(description="Run the masked block jobshop local spike.")
     parser.add_argument(
         "--models",
         nargs="+",
         default=DEFAULT_MODELS,
-        help="Gemini model ids to run.",
+        help="Gemini model ids to run. Defaults to one Gemini 3 Pro configuration.",
     )
     parser.add_argument(
         "--seeds",
@@ -31,19 +31,19 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--n-jobs",
         type=int,
-        default=6,
-        help="Number of jobs in each factory instance.",
+        default=25,
+        help="Requested number of jobs. If 25x15 fails to prove optimal in 10m, the builder falls back to 20x12.",
     )
     parser.add_argument(
         "--n-machines",
         type=int,
-        default=7,
-        help="Number of machines in each factory.",
+        default=15,
+        help="Requested number of machines.",
     )
     parser.add_argument(
         "--smoke",
         action="store_true",
-        help="Run the 3x4 single-model smoke configuration.",
+        help="Run the smaller 20x12 fallback-sized configuration.",
     )
     parser.add_argument(
         "--output",
@@ -54,8 +54,26 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--min-baseline-gap-pct",
         type=float,
-        default=None,
-        help="Optional instance prefilter: regenerate deterministically until baseline gap meets this percentage.",
+        default=20.0,
+        help="Regenerate deterministically until the baseline objective gap meets this percentage.",
+    )
+    parser.add_argument(
+        "--min-heuristic-spread-pct",
+        type=float,
+        default=5.0,
+        help="Regenerate until the pre-flight heuristic spread exceeds this percentage.",
+    )
+    parser.add_argument(
+        "--max-heuristic-spread-pct",
+        type=float,
+        default=35.0,
+        help="Regenerate until the pre-flight heuristic spread is at most this percentage.",
+    )
+    parser.add_argument(
+        "--cp-time-limit-s",
+        type=float,
+        default=600.0,
+        help="CP-SAT time limit in seconds for the composite objective solve.",
     )
     return parser.parse_args()
 
@@ -64,7 +82,7 @@ def default_output_path() -> Path:
     results_dir = Path(__file__).resolve().parent / "results"
     results_dir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    return results_dir / f"spike_{stamp}.jsonl"
+    return results_dir / f"masked_block_spike_{stamp}.jsonl"
 
 
 def main() -> None:
@@ -76,11 +94,15 @@ def main() -> None:
     n_jobs = args.n_jobs
     n_machines = args.n_machines
     min_baseline_gap_pct = args.min_baseline_gap_pct
+    min_heuristic_spread_pct = args.min_heuristic_spread_pct
+    max_heuristic_spread_pct = args.max_heuristic_spread_pct
+    cp_time_limit_s = args.cp_time_limit_s
     if args.smoke:
-        models = ["gemini-2.5-pro"]
+        models = DEFAULT_MODELS[:1]
         seeds = [1]
-        n_jobs = 3
-        n_machines = 4
+        n_jobs = 20
+        n_machines = 12
+        min_baseline_gap_pct = 10.0
 
     output_path = args.output or default_output_path()
     rows: list[dict] = []
@@ -92,9 +114,15 @@ def main() -> None:
                 n_jobs=n_jobs,
                 n_machines=n_machines,
                 min_baseline_gap_pct=min_baseline_gap_pct,
+                min_heuristic_spread_pct=min_heuristic_spread_pct,
+                max_heuristic_spread_pct=max_heuristic_spread_pct,
+                cp_time_limit_s=cp_time_limit_s,
             )
             for model in models:
-                print(f"running seed={seed} model={model} size={n_jobs}x{n_machines}")
+                print(
+                    "running "
+                    f"seed={seed} model={model} requested={n_jobs}x{n_machines} actual={instance.n_jobs}x{instance.n_machines}"
+                )
                 try:
                     row = run_protocol(instance, model)
                 except Exception as exc:
