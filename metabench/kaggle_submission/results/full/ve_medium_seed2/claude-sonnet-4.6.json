@@ -1,0 +1,51 @@
+{
+  "baseline": {
+    "evaluation": {
+      "details": {
+        "failure_reason": "BEST_GUESS must be a JSON object"
+      },
+      "feasible": false,
+      "gap_pct": 100.0,
+      "mode": "solo",
+      "submission": null
+    },
+    "gap_pct": 100.0,
+    "submission": null
+  },
+  "baseline_objective": 0.5,
+  "cf_delta": 0.0,
+  "cf_parsed": {},
+  "class": "ve",
+  "difficulty": "medium",
+  "error": "skipped remaining rows after repeated timeouts on mwis_medium_seed3",
+  "feasible": false,
+  "final_evaluation": {
+    "details": {
+      "failure_reason": "skipped remaining rows after repeated timeouts on mwis_medium_seed3"
+    },
+    "feasible": false,
+    "gap_pct": 100.0,
+    "mode": "solo",
+    "submission": null
+  },
+  "final_submission_source": "not_run",
+  "gap_pct": 100.0,
+  "gold_objective": 0.5093841774779408,
+  "id": "ve_medium_seed2",
+  "model": "claude-sonnet-4.6",
+  "model_slug": "claude-sonnet-4.6",
+  "n_exec_turns": 0,
+  "parse_events": [],
+  "parse_path": "not_run",
+  "parsed": {},
+  "retries": 0,
+  "score": 0.0,
+  "score_after_cf": 0.0,
+  "score_at_stop": 0.0,
+  "seed": 2,
+  "status": "skipped_model",
+  "stop_reason": "skipped_model",
+  "transcript": [],
+  "value_cap": 100.0,
+  "wall_s": 0.0
+}

@@ -1,0 +1,211 @@
+{
+  "baseline": {
+    "evaluation": {
+      "details": {
+        "baseline_gap_pct": 10.416666666666666,
+        "baseline_objective": 344,
+        "failure_reason": "submission must be an object",
+        "optimal_objective": 384
+      },
+      "feasible": false,
+      "gap_pct": 100.0,
+      "mode": "solo",
+      "submission": null
+    },
+    "gap_pct": 100.0,
+    "submission": null
+  },
+  "baseline_objective": 344.0,
+  "cf_delta": 0.0,
+  "cf_parsed": {},
+  "class": "mwis",
+  "difficulty": "medium",
+  "error": "RuntimeError: llm CLI timed out after 180s",
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_gap_pct": 10.416666666666666,
+      "baseline_objective": 344,
+      "improves_on_baseline": true,
+      "normalized_submission": {
+        "selected_vertices": [
+          "V004",
+          "V007",
+          "V011",
+          "V012",
+          "V017",
+          "V019",
+          "V026",
+          "V030",
+          "V039",
+          "V040",
+          "V041",
+          "V043",
+          "V050",
+          "V051",
+          "V057",
+          "V058",
+          "V060",
+          "V062",
+          "V064",
+          "V071",
+          "V072",
+          "V083",
+          "V085",
+          "V087",
+          "V088",
+          "V092",
+          "V096",
+          "V100",
+          "V104",
+          "V108",
+          "V110",
+          "V113",
+          "V118",
+          "V120"
+        ],
+        "total_weight": 369
+      },
+      "optimal_objective": 384,
+      "selected_count": 34,
+      "submitted_objective": 369
+    },
+    "feasible": true,
+    "gap_pct": 3.90625,
+    "mode": "solo",
+    "submission": {
+      "selected_vertices": [
+        "V004",
+        "V007",
+        "V011",
+        "V012",
+        "V017",
+        "V019",
+        "V026",
+        "V030",
+        "V039",
+        "V040",
+        "V041",
+        "V043",
+        "V050",
+        "V051",
+        "V057",
+        "V058",
+        "V060",
+        "V062",
+        "V064",
+        "V071",
+        "V072",
+        "V083",
+        "V085",
+        "V087",
+        "V088",
+        "V092",
+        "V096",
+        "V100",
+        "V104",
+        "V108",
+        "V110",
+        "V113",
+        "V118",
+        "V120"
+      ],
+      "total_weight": 369
+    }
+  },
+  "final_submission_source": "parsed",
+  "gap_pct": 3.90625,
+  "gold_objective": 384.0,
+  "id": "mwis_medium_seed10",
+  "model": "gemini-flash-latest",
+  "model_slug": "gemini-flash-latest",
+  "n_exec_turns": 1,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    }
+  ],
+  "parse_path": "strict_protocol",
+  "parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V071",
+        "V060",
+        "V113",
+        "V058",
+        "V039",
+        "V030",
+        "V088",
+        "V043",
+        "V051",
+        "V011",
+        "V085",
+        "V104",
+        "V004",
+        "V007",
+        "V041",
+        "V096",
+        "V110",
+        "V118",
+        "V120",
+        "V062",
+        "V012",
+        "V026",
+        "V050",
+        "V072",
+        "V092",
+        "V064",
+        "V019",
+        "V083",
+        "V108",
+        "V017",
+        "V040",
+        "V100",
+        "V087",
+        "V057"
+      ],
+      "total_weight": 369
+    },
+    "continue_forecast": {
+      "expected_delta_score": 5.0,
+      "expected_gap_reduction": 0.05,
+      "p_improve": 0.4
+    },
+    "decision": "continue",
+    "next_sub": {
+      "desc": "Perform more exhaustive local search and 2-for-1 swaps to further increase the total weight.",
+      "id": 2,
+      "p_solve": 0.4,
+      "time_budget_s": 600
+    },
+    "quality_forecast": {
+      "p_gap_le_10": 0.7,
+      "p_gap_le_2": 0.1,
+      "p_gap_le_5": 0.3
+    },
+    "subtask_body": "I constructed an improved MWIS candidate by prioritizing high-weight vertices and iteratively adding non-conflicting vertices. I then performed local swaps, such as replacing V002 (7) with V062 (10) and V045 (4) with V083 (5), and added several non-conflicting vertices like V100 (5), V087 (5), and V057 (4). The final set contains 34 vertices with a total weight of 369.",
+    "subtask_id": 1,
+    "updated_plan_state": "1. Analyze high-weight vertices and their conflict sets.\n2. Build a candidate set starting with the highest-weight vertices (V071, V060, V113, V058).\n3. Iteratively add vertices with the highest weight that do not conflict with the current set.\n4. Perform local swaps (e.g., replacing one vertex with two or more) to increase total weight.\n5. Verify the final set for independence and weight accuracy."
+  },
+  "retries": 0,
+  "score": 91.78397265624953,
+  "score_after_cf": 91.78397265624953,
+  "score_at_stop": 91.78397265624953,
+  "seed": 10,
+  "status": "ok",
+  "stop_reason": "error",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: 1. Analyze high-weight vertices and their conflict sets.\n2. Build a candidate set starting with the highest-weight vertices (V071, V060, V113, V058).\n3. Iteratively add vertices with the highest weight that do not conflict with the current set.\n4. Perform local swaps (e.g., replacing one vertex with two or more) to increase total weight.\n5. Verify the final set for independence and weight accuracy.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct an improved MWIS candidate using a greedy approach with high-weight prioritization and conflict analysis.\", \"p_solve\": 0.5, \"time_budget_s\": 600}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: I constructed an improved MWIS candidate by prioritizing high-weight vertices and iteratively adding non-conflicting vertices. I then performed local swaps, such as replacing V002 (7) with V062 (10) and V045 (4) with V083 (5), and added several non-conflicting vertices like V100 (5), V087 (5), and V057 (4). The final set contains 34 vertices with a total weight of 369.\n\nBEST_GUESS: {\"selected_vertices\": [\"V071\", \"V060\", \"V113\", \"V058\", \"V039\", \"V030\", \"V088\", \"V043\", \"V051\", \"V011\", \"V085\", \"V104\", \"V004\", \"V007\", \"V041\", \"V096\", \"V110\", \"V118\", \"V120\", \"V062\", \"V012\", \"V026\", \"V050\", \"V072\", \"V092\", \"V064\", \"V019\", \"V083\", \"V108\", \"V017\", \"V040\", \"V100\", \"V087\", \"V057\"], \"total_weight\": 369}\nUPDATED_PLAN_STATE: 1. Analyze high-weight vertices and their conflict sets.\n2. Build a candidate set starting with the highest-weight vertices (V071, V060, V113, V058).\n3. Iteratively add vertices with the highest weight that do not conflict with the current set.\n4. Perform local swaps (e.g., replacing one vertex with two or more) to increase total weight.\n5. Verify the final set for independence and weight accuracy.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.1, \"p_gap_le_5\": 0.3, \"p_gap_le_10\": 0.7}\nCONTINUE_FORECAST: {\"p_improve\": 0.4, \"expected_delta_score\": 5.0, \"expected_gap_reduction\": 0.05}\nDECISION: continue\nNEXT_SUB: {\"id\": 2, \"desc\": \"Perform more exhaustive local search and 2-for-1 swaps to further increase the total weight.\", \"p_solve\": 0.4, \"time_budget_s\": 600}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 430.9777551670559
+}

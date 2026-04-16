@@ -1,0 +1,62 @@
+{
+  "baseline": {
+    "evaluation": {
+      "details": {
+        "baseline_gap_pct": 14.0,
+        "baseline_objective": 387,
+        "failure_reason": "submission must be an object",
+        "optimal_objective": 450
+      },
+      "feasible": false,
+      "gap_pct": 100.0,
+      "mode": "solo",
+      "submission": null
+    },
+    "gap_pct": 100.0,
+    "submission": null
+  },
+  "baseline_objective": 387.0,
+  "cf_delta": 0.0,
+  "cf_parsed": {},
+  "class": "mwis",
+  "difficulty": "medium",
+  "error": "RuntimeError: llm CLI timed out after 120s",
+  "feasible": false,
+  "final_evaluation": {
+    "details": {
+      "baseline_gap_pct": 14.0,
+      "baseline_objective": 387,
+      "failure_reason": "submission must be an object",
+      "optimal_objective": 450
+    },
+    "feasible": false,
+    "gap_pct": 100.0,
+    "mode": "solo",
+    "submission": null
+  },
+  "final_submission_source": "baseline",
+  "gap_pct": 100.0,
+  "gold_objective": 450.0,
+  "id": "mwis_medium_seed3",
+  "model": "claude-sonnet-4.6",
+  "model_slug": "claude-sonnet-4.6",
+  "n_exec_turns": 0,
+  "parse_events": [],
+  "parse_path": "baseline_only",
+  "parsed": {},
+  "retries": 2,
+  "score": 0.0,
+  "score_after_cf": 0.0,
+  "score_at_stop": 0.0,
+  "seed": 3,
+  "status": "skipped_after_timeouts",
+  "stop_reason": "skipped_after_timeouts",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Analyze the graph structure and vertex weights to find a high-quality independent set. Start from the baseline (387), then try to improve by: (1) identifying high-weight vertices not in baseline and checking if they can be added or swapped in, (2) focusing on heavy hitters like V028=39, V043=33, V051=28, V060=23, V092=23, V111=23, V120=19, V077=18, V054=17, V049=16, V055=16, V074=16, V006=16, V005=20, V015=20. Build a greedy solution prioritizing high-weight vertices, then do local search swaps to improve. Target: 420+.\n\nNEXT_SUB: {\"id\": 1, \"desc\": \"Manual construction of improved independent set by carefully selecting high-weight vertices and resolving conflicts\", \"p_solve\": 0.65, \"time_budget_s\": 580}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 127.78376637492329
+}

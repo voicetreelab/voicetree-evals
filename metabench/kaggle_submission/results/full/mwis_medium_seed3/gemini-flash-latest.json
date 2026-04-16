@@ -1,0 +1,221 @@
+{
+  "baseline": {
+    "evaluation": {
+      "details": {
+        "baseline_gap_pct": 14.0,
+        "baseline_objective": 387,
+        "failure_reason": "submission must be an object",
+        "optimal_objective": 450
+      },
+      "feasible": false,
+      "gap_pct": 100.0,
+      "mode": "solo",
+      "submission": null
+    },
+    "gap_pct": 100.0,
+    "submission": null
+  },
+  "baseline_objective": 387.0,
+  "cf_delta": 0.0,
+  "cf_parsed": {},
+  "class": "mwis",
+  "difficulty": "medium",
+  "error": "counterfactual turn parse failed",
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_gap_pct": 14.0,
+      "baseline_objective": 387,
+      "improves_on_baseline": true,
+      "normalized_submission": {
+        "selected_vertices": [
+          "V001",
+          "V003",
+          "V006",
+          "V010",
+          "V017",
+          "V018",
+          "V020",
+          "V022",
+          "V024",
+          "V027",
+          "V031",
+          "V037",
+          "V039",
+          "V043",
+          "V045",
+          "V048",
+          "V051",
+          "V052",
+          "V060",
+          "V065",
+          "V071",
+          "V073",
+          "V074",
+          "V080",
+          "V090",
+          "V092",
+          "V093",
+          "V101",
+          "V103",
+          "V107",
+          "V110",
+          "V111",
+          "V117",
+          "V120"
+        ],
+        "total_weight": 401
+      },
+      "optimal_objective": 450,
+      "selected_count": 34,
+      "submitted_objective": 401
+    },
+    "feasible": true,
+    "gap_pct": 10.88888888888889,
+    "mode": "solo",
+    "submission": {
+      "selected_vertices": [
+        "V001",
+        "V003",
+        "V006",
+        "V010",
+        "V017",
+        "V018",
+        "V020",
+        "V022",
+        "V024",
+        "V027",
+        "V031",
+        "V037",
+        "V039",
+        "V043",
+        "V045",
+        "V048",
+        "V051",
+        "V052",
+        "V060",
+        "V065",
+        "V071",
+        "V073",
+        "V074",
+        "V080",
+        "V090",
+        "V092",
+        "V093",
+        "V101",
+        "V103",
+        "V107",
+        "V110",
+        "V111",
+        "V117",
+        "V120"
+      ],
+      "total_weight": 401
+    }
+  },
+  "final_submission_source": "parsed",
+  "gap_pct": 10.88888888888889,
+  "gold_objective": 450.0,
+  "id": "mwis_medium_seed3",
+  "model": "gemini-flash-latest",
+  "model_slug": "gemini-flash-latest",
+  "n_exec_turns": 1,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [
+        "subtask",
+        "best_guess",
+        "updated_plan_state",
+        "quality_forecast",
+        "continue_forecast"
+      ],
+      "mode": "cf_strict_parse_failed",
+      "turn_index": 3
+    }
+  ],
+  "parse_path": "strict_protocol",
+  "parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V001",
+        "V003",
+        "V006",
+        "V010",
+        "V017",
+        "V018",
+        "V020",
+        "V022",
+        "V024",
+        "V027",
+        "V031",
+        "V037",
+        "V039",
+        "V043",
+        "V045",
+        "V048",
+        "V051",
+        "V052",
+        "V060",
+        "V065",
+        "V071",
+        "V073",
+        "V074",
+        "V080",
+        "V090",
+        "V092",
+        "V093",
+        "V101",
+        "V103",
+        "V107",
+        "V110",
+        "V111",
+        "V117",
+        "V120"
+      ],
+      "total_weight": 401
+    },
+    "continue_forecast": {
+      "expected_delta_score": 5.0,
+      "expected_gap_reduction": 2.0,
+      "p_improve": 0.4
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.7,
+      "p_gap_le_2": 0.1,
+      "p_gap_le_5": 0.3
+    },
+    "subtask_body": "I performed a local search starting from the baseline and identified a high-value swap. By removing V028 (39), V030 (9), and V075 (7), I was able to add V043 (33), V071 (14), V101 (15), and V117 (7), resulting in a net gain of 14 points. I also verified that V003 (7) can replace V050 (7) without any additional conflicts, though this is a neutral swap. The final set was checked for all edge constraints.",
+    "subtask_id": 1,
+    "updated_plan_state": "The current plan is to continue searching for local improvements, specifically looking for 2-for-1 or 3-for-2 swaps that increase the total weight while maintaining the independent set property."
+  },
+  "retries": 0,
+  "score": 86.78485100402135,
+  "score_after_cf": 86.78485100402135,
+  "score_at_stop": 86.78485100402135,
+  "seed": 3,
+  "status": "ok",
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Start from the baseline, identify high-weight vertices, and iteratively build an independent set by prioritizing higher weights while checking for edge conflicts.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct an improved independent set by prioritizing high-weight vertices and resolving conflicts.\", \"p_solve\": 0.5, \"time_budget_s\": 600}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: I performed a local search starting from the baseline and identified a high-value swap. By removing V028 (39), V030 (9), and V075 (7), I was able to add V043 (33), V071 (14), V101 (15), and V117 (7), resulting in a net gain of 14 points. I also verified that V003 (7) can replace V050 (7) without any additional conflicts, though this is a neutral swap. The final set was checked for all edge constraints.\n\nBEST_GUESS: {\"selected_vertices\": [\"V001\", \"V003\", \"V006\", \"V010\", \"V017\", \"V018\", \"V020\", \"V022\", \"V024\", \"V027\", \"V031\", \"V037\", \"V039\", \"V043\", \"V045\", \"V048\", \"V051\", \"V052\", \"V060\", \"V065\", \"V071\", \"V073\", \"V074\", \"V080\", \"V090\", \"V092\", \"V093\", \"V101\", \"V103\", \"V107\", \"V110\", \"V111\", \"V117\", \"V120\"], \"total_weight\": 401}\nUPDATED_PLAN_STATE: The current plan is to continue searching for local improvements, specifically looking for 2-for-1 or 3-for-2 swaps that increase the total weight while maintaining the independent set property.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.1, \"p_gap_le_5\": 0.3, \"p_gap_le_10\": 0.7}\nCONTINUE_FORECAST: {\"p_improve\": 0.4, \"expected_delta_score\": 5.0, \"expected_gap_reduction\": 2.0}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "18)? No.\n    *   V084 (5)? No.\n    *   V089 (14)? No.\n\n    *   Wait, let me check V051 (28) again.\n    *   V051 edges: V011, V015, V023, V040, V070, V091.\n    *   If I remove V051 (28), can I add something better?\n    *   V011 (5), V015 (20), V023 (3), V040 (4), V070 (5), V091 (4).\n    *   Wait, 5+20+3+4+5+4 = 41.\n    *   If I remove V051 (28), can I add V015 (20)?\n    *   V015 edges: V009, V018, V021, V023, V024, V027, V031, V036, V051, V054, V073, V074, V082, V089, V091, V094, V097, V103, V106, V107, V114, V115.\n    *   V015 is connected to V018, V024, V027, V031, V073, V074, V103, V107.\n    *   So to add V015 (20), I'd have to remove V051 (28) AND V018 (5), V024 (13), V027 (6), V031 (10), V073 (8), V074 (16), V103 (6), V107 (10).\n    *   That's a lot of weight to lose.\n\n    *   Wait, let me check V043 (33) again.\n    *   V043 edges: V005, V009, V028, V030, V053, V062, V075, V083, V089, V097, V100.\n    *   If I remove V043 (33), can I add something better?\n    *   V028 (39)?\n    *   V028 edges: V005, V043, V056, V063, V071, V089, V101, V106, V117.\n    *   To add V028 (39), I'd have to remove V043 (33), V071 (14), V101 (15), V117 (7).\n    *   33+14+15+7 = 69. 39 < 69. No.\n\n    *   Wait, I think 414 is a very good score.\n    *   Let me just double check the vertex weights one more time.\n    *   V001=14, V002=4, V003=7, V004=9, V005=20, V006=16, V007=4, V008=5, V009=5, V010=5\n    *   V011=5, V012=9, V013=12, V014=4, V015=20, V016=4, V017=12, V018=5, V019=5, V020=5\n    *   V021=13, V022=11, V023=3, V024=13, V025=7, V026=4, V027=6, V028=39, V029=3, V030=9\n    *   V031=10, V032=4, V033=4, V034=4, V035=7, V036=10, V037=5, V038=6, V039=15, V040=4\n    *   V041=9, V042=4, V043=33, V044=5, V045=5, V046=4, V047=8, V048=5, V049=16, V050=7\n    *   V051=28, V052=3, V053=4, V054=17, V055=16, V056=6, V057=7, V058=10, V059=5, V060=23\n    *   V061=7, V062=3, V063=5, V064=3, V065=10, V066=4, V067=6, V068=4, V069=10, V070=5\n    *   V071=14, V072=5, V073=8, V074=16, V075=7, V076=4, V077=18, V078=4, V079=6, V080=4\n    *   V081=9, V082=9, V083=11, V084=5, V085=5, V086=4, V087=6, V088=4, V089=14, V090=10\n    *   V091=4, V092=23, V093=8, V094=4, V095=9, V096=6, V097=10, V098=5, V099=12, V100=8\n    *   V101=15, V102=3, V103=6, V104=11, V105=4, V106=12, V107=10, V108=6, V109=",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 374.180419833865
+}
