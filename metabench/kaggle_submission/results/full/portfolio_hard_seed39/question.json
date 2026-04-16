@@ -1,0 +1,1143 @@
+{
+  "baseline_objective": 0.0,
+  "class": "portfolio",
+  "components": [
+    {
+      "class": "steiner",
+      "problem_id": "steiner_hard_seed39",
+      "sub_instance": {
+        "answer_contract": "Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.",
+        "baseline_cost": 68,
+        "baseline_gap_pct": 70.0,
+        "baseline_submission": {
+          "edges": [
+            [
+              "Cliff",
+              "Dune"
+            ],
+            [
+              "Cliff",
+              "Ridge"
+            ],
+            [
+              "Dune",
+              "Grove"
+            ],
+            [
+              "Grove",
+              "Mill"
+            ]
+          ],
+          "frequencies": {
+            "Cliff": 1,
+            "Dune": 1,
+            "Grove": 2,
+            "Mill": 1,
+            "Ridge": 1
+          }
+        },
+        "cable_only_cost": 54,
+        "cable_only_submission": {
+          "edges": [
+            [
+              "Dune",
+              "Grove"
+            ],
+            [
+              "Mill",
+              "Ridge"
+            ],
+            [
+              "Grove",
+              "Mill"
+            ]
+          ],
+          "frequencies": {
+            "Dune": 1,
+            "Grove": 2,
+            "Mill": 1,
+            "Ridge": 1
+          }
+        },
+        "class": "steiner",
+        "difficulty": "hard",
+        "edges": [
+          {
+            "cost": 8,
+            "u": "Port",
+            "v": "Rock"
+          },
+          {
+            "cost": 12,
+            "u": "Bay",
+            "v": "Cliff"
+          },
+          {
+            "cost": 11,
+            "u": "Bay",
+            "v": "Mill"
+          },
+          {
+            "cost": 4,
+            "u": "Bay",
+            "v": "Ridge"
+          },
+          {
+            "cost": 3,
+            "u": "Bay",
+            "v": "Cove"
+          },
+          {
+            "cost": 9,
+            "u": "Cliff",
+            "v": "Dune"
+          },
+          {
+            "cost": 12,
+            "u": "Cliff",
+            "v": "Mill"
+          },
+          {
+            "cost": 16,
+            "u": "Cliff",
+            "v": "Harbor"
+          },
+          {
+            "cost": 5,
+            "u": "Cliff",
+            "v": "Grove"
+          },
+          {
+            "cost": 14,
+            "u": "Cliff",
+            "v": "Ridge"
+          },
+          {
+            "cost": 14,
+            "u": "Cliff",
+            "v": "Cove"
+          },
+          {
+            "cost": 11,
+            "u": "Pine",
+            "v": "Port"
+          },
+          {
+            "cost": 14,
+            "u": "Pine",
+            "v": "Rock"
+          },
+          {
+            "cost": 16,
+            "u": "Dune",
+            "v": "Mill"
+          },
+          {
+            "cost": 7,
+            "u": "Dune",
+            "v": "Harbor"
+          },
+          {
+            "cost": 6,
+            "u": "Dune",
+            "v": "Grove"
+          },
+          {
+            "cost": 10,
+            "u": "Mill",
+            "v": "Port"
+          },
+          {
+            "cost": 13,
+            "u": "Mill",
+            "v": "Pine"
+          },
+          {
+            "cost": 18,
+            "u": "Mill",
+            "v": "Rock"
+          },
+          {
+            "cost": 9,
+            "u": "Mill",
+            "v": "Ridge"
+          },
+          {
+            "cost": 4,
+            "u": "Cape",
+            "v": "Port"
+          },
+          {
+            "cost": 8,
+            "u": "Cape",
+            "v": "Pine"
+          },
+          {
+            "cost": 7,
+            "u": "Cape",
+            "v": "Rock"
+          },
+          {
+            "cost": 12,
+            "u": "Cape",
+            "v": "Mill"
+          },
+          {
+            "cost": 18,
+            "u": "Harbor",
+            "v": "Pine"
+          },
+          {
+            "cost": 9,
+            "u": "Grove",
+            "v": "Mill"
+          },
+          {
+            "cost": 12,
+            "u": "Grove",
+            "v": "Harbor"
+          },
+          {
+            "cost": 9,
+            "u": "Cove",
+            "v": "Mill"
+          },
+          {
+            "cost": 2,
+            "u": "Cove",
+            "v": "Ridge"
+          }
+        ],
+        "freq_penalty": 15,
+        "gold_cost": 40,
+        "gold_submission": {
+          "edges": [
+            [
+              "Dune",
+              "Mill"
+            ],
+            [
+              "Mill",
+              "Ridge"
+            ]
+          ],
+          "frequencies": {
+            "Dune": 1,
+            "Mill": 1,
+            "Ridge": 1
+          }
+        },
+        "interference_pairs": [
+          [
+            "Port",
+            "Rock"
+          ],
+          [
+            "Dune",
+            "Pine"
+          ],
+          [
+            "Dune",
+            "Harbor"
+          ],
+          [
+            "Dune",
+            "Grove"
+          ],
+          [
+            "Cape",
+            "Port"
+          ],
+          [
+            "Cape",
+            "Rock"
+          ],
+          [
+            "Grove",
+            "Pine"
+          ],
+          [
+            "Grove",
+            "Harbor"
+          ]
+        ],
+        "k": 4,
+        "n": 12,
+        "n_terminals": 3,
+        "problem_statement": "Coastal Emergency scenario:\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\n\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\nIf an interference pair is active on both ends, those two villages must use different frequencies.\n\nObjective:\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\n\nVillages:\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape, Harbor, Grove, Ridge, Cove\n\nRequired terminals:\n- Dune, Mill, Ridge\n\nAvailable cable links:\n- Port-Rock: cost 8\n- Bay-Cliff: cost 12\n- Bay-Mill: cost 11\n- Bay-Ridge: cost 4\n- Bay-Cove: cost 3\n- Cliff-Dune: cost 9\n- Cliff-Mill: cost 12\n- Cliff-Harbor: cost 16\n- Cliff-Grove: cost 5\n- Cliff-Ridge: cost 14\n- Cliff-Cove: cost 14\n- Pine-Port: cost 11\n- Pine-Rock: cost 14\n- Dune-Mill: cost 16\n- Dune-Harbor: cost 7\n- Dune-Grove: cost 6\n- Mill-Port: cost 10\n- Mill-Pine: cost 13\n- Mill-Rock: cost 18\n- Mill-Ridge: cost 9\n- Cape-Port: cost 4\n- Cape-Pine: cost 8\n- Cape-Rock: cost 7\n- Cape-Mill: cost 12\n- Harbor-Pine: cost 18\n- Grove-Mill: cost 9\n- Grove-Harbor: cost 12\n- Cove-Mill: cost 9\n- Cove-Ridge: cost 2\n\nInterference pairs:\n- Port / Rock\n- Dune / Pine\n- Dune / Harbor\n- Dune / Grove\n- Cape / Port\n- Cape / Rock\n- Grove / Pine\n- Grove / Harbor\n\nRules:\n- Your cable choice must be a tree, not a cyclic network.\n- All required terminals must lie in one connected component.\n- Frequencies matter only for active villages in the chosen network.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline total cost: 68\nBaseline answer summary:\nEdges: Cliff-Dune(9), Cliff-Ridge(14), Dune-Grove(6), Grove-Mill(9)\nActive villages: Cliff, Dune, Mill, Grove, Ridge\nFrequencies: Cliff=1, Dune=1, Mill=1, Grove=2, Ridge=1\nEdge cost: 38\nFrequencies used: 2\nTotal cost: 68\n\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\n",
+        "seed": 39,
+        "terminals": [
+          "Dune",
+          "Mill",
+          "Ridge"
+        ],
+        "villages": [
+          "Port",
+          "Bay",
+          "Cliff",
+          "Pine",
+          "Rock",
+          "Dune",
+          "Mill",
+          "Cape",
+          "Harbor",
+          "Grove",
+          "Ridge",
+          "Cove"
+        ]
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "graphcol",
+      "problem_id": "graphcol_hard_seed39",
+      "sub_instance": {
+        "answer_contract_hint": "Object with \"assignment\": {\"N01\": 1, ..., \"N30\": 4}.",
+        "baseline_answer": {
+          "assignment": {
+            "N01": 1,
+            "N02": 2,
+            "N03": 3,
+            "N04": 4,
+            "N05": 4,
+            "N06": 2,
+            "N07": 3,
+            "N08": 4,
+            "N09": 1,
+            "N10": 2,
+            "N11": 3,
+            "N12": 4,
+            "N13": 4,
+            "N14": 1,
+            "N15": 3,
+            "N16": 2,
+            "N17": 2,
+            "N18": 1,
+            "N19": 1,
+            "N20": 3,
+            "N21": 2,
+            "N22": 2,
+            "N23": 2,
+            "N24": 4,
+            "N25": 1,
+            "N26": 3,
+            "N27": 3,
+            "N28": 4,
+            "N29": 2,
+            "N30": 2
+          }
+        },
+        "baseline_conflicts": 12,
+        "baseline_scored_cost": 16,
+        "class": "graphcol",
+        "difficulty": "hard",
+        "edges": [
+          [
+            "N01",
+            "N04"
+          ],
+          [
+            "N01",
+            "N05"
+          ],
+          [
+            "N01",
+            "N06"
+          ],
+          [
+            "N01",
+            "N13"
+          ],
+          [
+            "N01",
+            "N16"
+          ],
+          [
+            "N01",
+            "N21"
+          ],
+          [
+            "N01",
+            "N22"
+          ],
+          [
+            "N01",
+            "N23"
+          ],
+          [
+            "N01",
+            "N27"
+          ],
+          [
+            "N01",
+            "N28"
+          ],
+          [
+            "N01",
+            "N29"
+          ],
+          [
+            "N02",
+            "N04"
+          ],
+          [
+            "N02",
+            "N05"
+          ],
+          [
+            "N02",
+            "N07"
+          ],
+          [
+            "N02",
+            "N09"
+          ],
+          [
+            "N02",
+            "N13"
+          ],
+          [
+            "N02",
+            "N14"
+          ],
+          [
+            "N02",
+            "N18"
+          ],
+          [
+            "N02",
+            "N19"
+          ],
+          [
+            "N02",
+            "N24"
+          ],
+          [
+            "N02",
+            "N26"
+          ],
+          [
+            "N02",
+            "N27"
+          ],
+          [
+            "N03",
+            "N05"
+          ],
+          [
+            "N03",
+            "N06"
+          ],
+          [
+            "N03",
+            "N08"
+          ],
+          [
+            "N03",
+            "N09"
+          ],
+          [
+            "N03",
+            "N10"
+          ],
+          [
+            "N03",
+            "N13"
+          ],
+          [
+            "N03",
+            "N17"
+          ],
+          [
+            "N03",
+            "N18"
+          ],
+          [
+            "N03",
+            "N19"
+          ],
+          [
+            "N03",
+            "N21"
+          ],
+          [
+            "N03",
+            "N24"
+          ],
+          [
+            "N03",
+            "N27"
+          ],
+          [
+            "N04",
+            "N10"
+          ],
+          [
+            "N04",
+            "N11"
+          ],
+          [
+            "N04",
+            "N16"
+          ],
+          [
+            "N04",
+            "N18"
+          ],
+          [
+            "N04",
+            "N19"
+          ],
+          [
+            "N04",
+            "N20"
+          ],
+          [
+            "N04",
+            "N23"
+          ],
+          [
+            "N04",
+            "N30"
+          ],
+          [
+            "N05",
+            "N06"
+          ],
+          [
+            "N05",
+            "N07"
+          ],
+          [
+            "N05",
+            "N09"
+          ],
+          [
+            "N05",
+            "N10"
+          ],
+          [
+            "N05",
+            "N15"
+          ],
+          [
+            "N05",
+            "N17"
+          ],
+          [
+            "N05",
+            "N19"
+          ],
+          [
+            "N05",
+            "N20"
+          ],
+          [
+            "N05",
+            "N21"
+          ],
+          [
+            "N05",
+            "N27"
+          ],
+          [
+            "N06",
+            "N08"
+          ],
+          [
+            "N06",
+            "N12"
+          ],
+          [
+            "N06",
+            "N14"
+          ],
+          [
+            "N06",
+            "N15"
+          ],
+          [
+            "N06",
+            "N19"
+          ],
+          [
+            "N06",
+            "N28"
+          ],
+          [
+            "N06",
+            "N30"
+          ],
+          [
+            "N07",
+            "N08"
+          ],
+          [
+            "N07",
+            "N09"
+          ],
+          [
+            "N07",
+            "N15"
+          ],
+          [
+            "N07",
+            "N24"
+          ],
+          [
+            "N07",
+            "N30"
+          ],
+          [
+            "N08",
+            "N10"
+          ],
+          [
+            "N08",
+            "N14"
+          ],
+          [
+            "N08",
+            "N15"
+          ],
+          [
+            "N08",
+            "N20"
+          ],
+          [
+            "N08",
+            "N25"
+          ],
+          [
+            "N08",
+            "N27"
+          ],
+          [
+            "N08",
+            "N29"
+          ],
+          [
+            "N09",
+            "N16"
+          ],
+          [
+            "N09",
+            "N17"
+          ],
+          [
+            "N09",
+            "N21"
+          ],
+          [
+            "N09",
+            "N26"
+          ],
+          [
+            "N10",
+            "N11"
+          ],
+          [
+            "N10",
+            "N12"
+          ],
+          [
+            "N10",
+            "N13"
+          ],
+          [
+            "N10",
+            "N15"
+          ],
+          [
+            "N10",
+            "N18"
+          ],
+          [
+            "N10",
+            "N21"
+          ],
+          [
+            "N10",
+            "N22"
+          ],
+          [
+            "N10",
+            "N23"
+          ],
+          [
+            "N10",
+            "N25"
+          ],
+          [
+            "N10",
+            "N28"
+          ],
+          [
+            "N11",
+            "N16"
+          ],
+          [
+            "N11",
+            "N19"
+          ],
+          [
+            "N11",
+            "N21"
+          ],
+          [
+            "N11",
+            "N22"
+          ],
+          [
+            "N11",
+            "N28"
+          ],
+          [
+            "N11",
+            "N29"
+          ],
+          [
+            "N11",
+            "N30"
+          ],
+          [
+            "N12",
+            "N18"
+          ],
+          [
+            "N12",
+            "N20"
+          ],
+          [
+            "N12",
+            "N21"
+          ],
+          [
+            "N12",
+            "N23"
+          ],
+          [
+            "N12",
+            "N26"
+          ],
+          [
+            "N12",
+            "N29"
+          ],
+          [
+            "N13",
+            "N18"
+          ],
+          [
+            "N13",
+            "N19"
+          ],
+          [
+            "N13",
+            "N20"
+          ],
+          [
+            "N13",
+            "N22"
+          ],
+          [
+            "N13",
+            "N23"
+          ],
+          [
+            "N13",
+            "N28"
+          ],
+          [
+            "N13",
+            "N29"
+          ],
+          [
+            "N14",
+            "N15"
+          ],
+          [
+            "N14",
+            "N16"
+          ],
+          [
+            "N14",
+            "N23"
+          ],
+          [
+            "N15",
+            "N17"
+          ],
+          [
+            "N15",
+            "N19"
+          ],
+          [
+            "N15",
+            "N20"
+          ],
+          [
+            "N15",
+            "N21"
+          ],
+          [
+            "N15",
+            "N22"
+          ],
+          [
+            "N15",
+            "N23"
+          ],
+          [
+            "N15",
+            "N24"
+          ],
+          [
+            "N15",
+            "N27"
+          ],
+          [
+            "N15",
+            "N30"
+          ],
+          [
+            "N16",
+            "N20"
+          ],
+          [
+            "N16",
+            "N26"
+          ],
+          [
+            "N16",
+            "N27"
+          ],
+          [
+            "N17",
+            "N19"
+          ],
+          [
+            "N17",
+            "N20"
+          ],
+          [
+            "N17",
+            "N27"
+          ],
+          [
+            "N18",
+            "N19"
+          ],
+          [
+            "N18",
+            "N20"
+          ],
+          [
+            "N18",
+            "N21"
+          ],
+          [
+            "N18",
+            "N25"
+          ],
+          [
+            "N18",
+            "N29"
+          ],
+          [
+            "N18",
+            "N30"
+          ],
+          [
+            "N19",
+            "N21"
+          ],
+          [
+            "N19",
+            "N24"
+          ],
+          [
+            "N19",
+            "N28"
+          ],
+          [
+            "N20",
+            "N21"
+          ],
+          [
+            "N20",
+            "N23"
+          ],
+          [
+            "N20",
+            "N24"
+          ],
+          [
+            "N20",
+            "N25"
+          ],
+          [
+            "N21",
+            "N27"
+          ],
+          [
+            "N21",
+            "N28"
+          ],
+          [
+            "N22",
+            "N29"
+          ],
+          [
+            "N23",
+            "N25"
+          ],
+          [
+            "N23",
+            "N26"
+          ],
+          [
+            "N24",
+            "N27"
+          ],
+          [
+            "N25",
+            "N26"
+          ],
+          [
+            "N25",
+            "N27"
+          ],
+          [
+            "N25",
+            "N28"
+          ],
+          [
+            "N26",
+            "N28"
+          ],
+          [
+            "N26",
+            "N29"
+          ],
+          [
+            "N26",
+            "N30"
+          ],
+          [
+            "N27",
+            "N28"
+          ],
+          [
+            "N28",
+            "N30"
+          ]
+        ],
+        "gold_answer": {
+          "assignment": {
+            "N01": 4,
+            "N02": 4,
+            "N03": 4,
+            "N04": 1,
+            "N05": 2,
+            "N06": 1,
+            "N07": 1,
+            "N08": 2,
+            "N09": 3,
+            "N10": 3,
+            "N11": 4,
+            "N12": 4,
+            "N13": 1,
+            "N14": 3,
+            "N15": 4,
+            "N16": 2,
+            "N17": 1,
+            "N18": 2,
+            "N19": 3,
+            "N20": 3,
+            "N21": 1,
+            "N22": 2,
+            "N23": 2,
+            "N24": 2,
+            "N25": 4,
+            "N26": 1,
+            "N27": 3,
+            "N28": 2,
+            "N29": 3,
+            "N30": 3
+          }
+        },
+        "gold_conflicts": 0,
+        "gold_scored_cost": 4,
+        "label": "Slack graph coloring 30 nodes",
+        "metric_name": "scored_cost",
+        "n_nodes": 30,
+        "nodes": [
+          "N01",
+          "N02",
+          "N03",
+          "N04",
+          "N05",
+          "N06",
+          "N07",
+          "N08",
+          "N09",
+          "N10",
+          "N11",
+          "N12",
+          "N13",
+          "N14",
+          "N15",
+          "N16",
+          "N17",
+          "N18",
+          "N19",
+          "N20",
+          "N21",
+          "N22",
+          "N23",
+          "N24",
+          "N25",
+          "N26",
+          "N27",
+          "N28",
+          "N29",
+          "N30"
+        ],
+        "num_colors": 4,
+        "problem_statement": "Slack graph coloring:\nAssign each node a color in {1, 2, 3, 4}.\n\nObjective:\nscored_cost = 4 + number_of_conflicting_edges\nwhere a conflicting edge has the same color on both endpoints.\n\nNodes:\n- N01, N02, N03, N04, N05, N06, N07, N08, N09, N10, N11, N12, N13, N14, N15, N16, N17, N18, N19, N20, N21, N22, N23, N24, N25, N26, N27, N28, N29, N30\n\nEdges:\n- N01-N04\n- N01-N05\n- N01-N06\n- N01-N13\n- N01-N16\n- N01-N21\n- N01-N22\n- N01-N23\n- N01-N27\n- N01-N28\n- N01-N29\n- N02-N04\n- N02-N05\n- N02-N07\n- N02-N09\n- N02-N13\n- N02-N14\n- N02-N18\n- N02-N19\n- N02-N24\n- N02-N26\n- N02-N27\n- N03-N05\n- N03-N06\n- N03-N08\n- N03-N09\n- N03-N10\n- N03-N13\n- N03-N17\n- N03-N18\n- N03-N19\n- N03-N21\n- N03-N24\n- N03-N27\n- N04-N10\n- N04-N11\n- N04-N16\n- N04-N18\n- N04-N19\n- N04-N20\n- N04-N23\n- N04-N30\n- N05-N06\n- N05-N07\n- N05-N09\n- N05-N10\n- N05-N15\n- N05-N17\n- N05-N19\n- N05-N20\n- N05-N21\n- N05-N27\n- N06-N08\n- N06-N12\n- N06-N14\n- N06-N15\n- N06-N19\n- N06-N28\n- N06-N30\n- N07-N08\n- N07-N09\n- N07-N15\n- N07-N24\n- N07-N30\n- N08-N10\n- N08-N14\n- N08-N15\n- N08-N20\n- N08-N25\n- N08-N27\n- N08-N29\n- N09-N16\n- N09-N17\n- N09-N21\n- N09-N26\n- N10-N11\n- N10-N12\n- N10-N13\n- N10-N15\n- N10-N18\n- N10-N21\n- N10-N22\n- N10-N23\n- N10-N25\n- N10-N28\n- N11-N16\n- N11-N19\n- N11-N21\n- N11-N22\n- N11-N28\n- N11-N29\n- N11-N30\n- N12-N18\n- N12-N20\n- N12-N21\n- N12-N23\n- N12-N26\n- N12-N29\n- N13-N18\n- N13-N19\n- N13-N20\n- N13-N22\n- N13-N23\n- N13-N28\n- N13-N29\n- N14-N15\n- N14-N16\n- N14-N23\n- N15-N17\n- N15-N19\n- N15-N20\n- N15-N21\n- N15-N22\n- N15-N23\n- N15-N24\n- N15-N27\n- N15-N30\n- N16-N20\n- N16-N26\n- N16-N27\n- N17-N19\n- N17-N20\n- N17-N27\n- N18-N19\n- N18-N20\n- N18-N21\n- N18-N25\n- N18-N29\n- N18-N30\n- N19-N21\n- N19-N24\n- N19-N28\n- N20-N21\n- N20-N23\n- N20-N24\n- N20-N25\n- N21-N27\n- N21-N28\n- N22-N29\n- N23-N25\n- N23-N26\n- N24-N27\n- N25-N26\n- N25-N27\n- N25-N28\n- N26-N28\n- N26-N29\n- N26-N30\n- N27-N28\n- N28-N30\n\nRules:\n- Every node must receive one integer color in {1, 2, 3, 4}.\n- Lower scored_cost is better.\n- This graph is 4-colorable, but there are multiple valid 4-colorings.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline summary:\nConflicts: 12\nScored cost: 16\nConflicting edges: N03-N27, N06-N30, N07-N15, N10-N21, N10-N22, N10-N23, N13-N28, N15-N20, N15-N27, N18-N19, N18-N25, N22-N29\nAssignment: N01=1, N02=2, N03=3, N04=4, N05=4, N06=2, N07=3, N08=4, N09=1, N10=2, N11=3, N12=4, N13=4, N14=1, N15=3, N16=2, N17=2, N18=1, N19=1, N20=3, N21=2, N22=2, N23=2, N24=4, N25=1, N26=3, N27=3, N28=4, N29=2, N30=2\n",
+        "seed": 39
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "tsp",
+      "problem_id": "tsp_hard_seed39",
+      "sub_instance": {
+        "baseline_length": 444.68030642276375,
+        "baseline_tour": [
+          0,
+          2,
+          8,
+          11,
+          17,
+          12,
+          14,
+          3,
+          16,
+          18,
+          15,
+          19,
+          5,
+          7,
+          13,
+          9,
+          4,
+          1,
+          10,
+          6
+        ],
+        "coords": [
+          [
+            26,
+            33
+          ],
+          [
+            49,
+            3
+          ],
+          [
+            24,
+            28
+          ],
+          [
+            50,
+            93
+          ],
+          [
+            72,
+            0
+          ],
+          [
+            82,
+            32
+          ],
+          [
+            86,
+            45
+          ],
+          [
+            90,
+            22
+          ],
+          [
+            3,
+            37
+          ],
+          [
+            86,
+            9
+          ],
+          [
+            46,
+            1
+          ],
+          [
+            13,
+            54
+          ],
+          [
+            44,
+            54
+          ],
+          [
+            96,
+            12
+          ],
+          [
+            50,
+            65
+          ],
+          [
+            74,
+            38
+          ],
+          [
+            34,
+            91
+          ],
+          [
+            8,
+            58
+          ],
+          [
+            55,
+            32
+          ],
+          [
+            73,
+            41
+          ]
+        ],
+        "difficulty": "hard",
+        "optimal_length": 341.59011853103436,
+        "problem_statement": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (26, 33)\n- 1: (49, 3)\n- 2: (24, 28)\n- 3: (50, 93)\n- 4: (72, 0)\n- 5: (82, 32)\n- 6: (86, 45)\n- 7: (90, 22)\n- 8: (3, 37)\n- 9: (86, 9)\n- 10: (46, 1)\n- 11: (13, 54)\n- 12: (44, 54)\n- 13: (96, 12)\n- 14: (50, 65)\n- 15: (74, 38)\n- 16: (34, 91)\n- 17: (8, 58)\n- 18: (55, 32)\n- 19: (73, 41)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 444.680\nBaseline tour: [0, 2, 8, 11, 17, 12, 14, 3, 16, 18, 15, 19, 5, 7, 13, 9, 4, 1, 10, 6]\n",
+        "seed": 39
+      },
+      "value_cap": 34.0
+    }
+  ],
+  "difficulty": "hard",
+  "gold_objective": 100.0,
+  "id": "portfolio_hard_seed39",
+  "instance": {
+    "class": "portfolio",
+    "difficulty": "hard",
+    "n_components": 3,
+    "problem_statement": "You are allocating effort across a three-problem optimization portfolio.\nObjective: maximize total captured headroom across the listed components.\nEach component contributes at most its value_cap when solved to its gold level.\nIf you fail to improve a component, it stays at its baseline contribution.\n\nPortfolio components:\n- steiner_hard_seed39 | class=steiner | value_cap=33.0\n- graphcol_hard_seed39 | class=graphcol | value_cap=33.0\n- tsp_hard_seed39 | class=tsp | value_cap=34.0\n\nReturn answers for the listed sub-problems using the component-specific answer contracts.",
+    "seed": 39
+  },
+  "seed": 39,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}

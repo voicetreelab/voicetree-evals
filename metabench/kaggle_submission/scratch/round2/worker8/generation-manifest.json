@@ -1,0 +1,254 @@
+[
+  {
+    "difficulty": "medium",
+    "requested_seeds": [
+      38,
+      39,
+      40
+    ],
+    "rows": [
+      {
+        "actual_seed": 38,
+        "attempts": [],
+        "classes": [
+          "ve",
+          "tsp",
+          "mwis"
+        ],
+        "component_ids": [
+          "ve_medium_seed38",
+          "tsp_medium_seed38",
+          "mwis_medium_seed38"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_medium_seed38",
+        "requested_seed": 38
+      },
+      {
+        "actual_seed": 39,
+        "attempts": [],
+        "classes": [
+          "steiner",
+          "graphcol",
+          "tsp"
+        ],
+        "component_ids": [
+          "steiner_medium_seed39",
+          "graphcol_medium_seed39",
+          "tsp_medium_seed39"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_medium_seed39",
+        "requested_seed": 39
+      },
+      {
+        "actual_seed": 40,
+        "attempts": [],
+        "classes": [
+          "tsp",
+          "mwis",
+          "cjs"
+        ],
+        "component_ids": [
+          "tsp_medium_seed40",
+          "mwis_medium_seed40",
+          "cjs_medium_seed40"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_medium_seed40",
+        "requested_seed": 40
+      }
+    ]
+  },
+  {
+    "difficulty": "medium",
+    "requested_seeds": [
+      41,
+      42,
+      43
+    ],
+    "rows": [
+      {
+        "actual_seed": 41,
+        "attempts": [],
+        "classes": [
+          "tsp",
+          "graphcol",
+          "steiner"
+        ],
+        "component_ids": [
+          "tsp_medium_seed41",
+          "graphcol_medium_seed41",
+          "steiner_medium_seed41"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_medium_seed41",
+        "requested_seed": 41
+      },
+      {
+        "actual_seed": 42,
+        "attempts": [],
+        "classes": [
+          "ve",
+          "cjs",
+          "mwis"
+        ],
+        "component_ids": [
+          "ve_medium_seed42",
+          "cjs_medium_seed42",
+          "mwis_medium_seed42"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_medium_seed42",
+        "requested_seed": 42
+      },
+      {
+        "actual_seed": 43,
+        "attempts": [],
+        "classes": [
+          "cjs",
+          "graphcol",
+          "steiner"
+        ],
+        "component_ids": [
+          "cjs_medium_seed43",
+          "graphcol_medium_seed43",
+          "steiner_medium_seed43"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_medium_seed43",
+        "requested_seed": 43
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "requested_seeds": [
+      36,
+      37,
+      38
+    ],
+    "rows": [
+      {
+        "actual_seed": 36,
+        "attempts": [],
+        "classes": [
+          "graphcol",
+          "cjs",
+          "mwis"
+        ],
+        "component_ids": [
+          "graphcol_hard_seed36",
+          "cjs_hard_seed36",
+          "mwis_hard_seed36"
+        ],
+        "component_overrides": [
+          "mwis: mwis n_nodes=120 override"
+        ],
+        "id": "portfolio_hard_seed36",
+        "requested_seed": 36
+      },
+      {
+        "actual_seed": 37,
+        "attempts": [],
+        "classes": [
+          "ve",
+          "mwis",
+          "cjs"
+        ],
+        "component_ids": [
+          "ve_hard_seed37",
+          "mwis_hard_seed37",
+          "cjs_hard_seed37"
+        ],
+        "component_overrides": [
+          "mwis: mwis n_nodes=120 override"
+        ],
+        "id": "portfolio_hard_seed37",
+        "requested_seed": 37
+      },
+      {
+        "actual_seed": 38,
+        "attempts": [],
+        "classes": [
+          "ve",
+          "tsp",
+          "mwis"
+        ],
+        "component_ids": [
+          "ve_hard_seed38",
+          "tsp_hard_seed38",
+          "mwis_hard_seed38"
+        ],
+        "component_overrides": [
+          "mwis: mwis n_nodes=120 override"
+        ],
+        "id": "portfolio_hard_seed38",
+        "requested_seed": 38
+      }
+    ]
+  },
+  {
+    "difficulty": "hard",
+    "requested_seeds": [
+      39,
+      40,
+      41
+    ],
+    "rows": [
+      {
+        "actual_seed": 39,
+        "attempts": [],
+        "classes": [
+          "steiner",
+          "graphcol",
+          "tsp"
+        ],
+        "component_ids": [
+          "steiner_hard_seed39",
+          "graphcol_hard_seed39",
+          "tsp_hard_seed39"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_hard_seed39",
+        "requested_seed": 39
+      },
+      {
+        "actual_seed": 40,
+        "attempts": [],
+        "classes": [
+          "tsp",
+          "mwis",
+          "cjs"
+        ],
+        "component_ids": [
+          "tsp_hard_seed40",
+          "mwis_hard_seed40",
+          "cjs_hard_seed40"
+        ],
+        "component_overrides": [
+          "mwis: mwis n_nodes=120 override"
+        ],
+        "id": "portfolio_hard_seed40",
+        "requested_seed": 40
+      },
+      {
+        "actual_seed": 41,
+        "attempts": [],
+        "classes": [
+          "tsp",
+          "graphcol",
+          "steiner"
+        ],
+        "component_ids": [
+          "tsp_hard_seed41",
+          "graphcol_hard_seed41",
+          "steiner_hard_seed41"
+        ],
+        "component_overrides": [],
+        "id": "portfolio_hard_seed41",
+        "requested_seed": 41
+      }
+    ]
+  }
+]

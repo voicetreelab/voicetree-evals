@@ -1,0 +1,28 @@
+{
+  "models": {
+    "claude-sonnet-4.6": {
+      "avg_score": 5.90096221928446,
+      "feasible_runs": 0,
+      "parsed_runs": 4,
+      "runs": 4
+    },
+    "gemini-flash-latest": {
+      "avg_score": -25.45229340522783,
+      "feasible_runs": 0,
+      "parsed_runs": 3,
+      "runs": 4
+    },
+    "gpt-5.4-mini": {
+      "avg_score": 1.6762782218662329,
+      "feasible_runs": 0,
+      "parsed_runs": 4,
+      "runs": 4
+    }
+  },
+  "question_ids": [
+    "portfolio_medium_seed38",
+    "portfolio_medium_seed41",
+    "portfolio_hard_seed36",
+    "portfolio_hard_seed39"
+  ]
+}
