@@ -1,0 +1,8 @@
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q41_hch.py", "stdout_tail": ""}
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q41_vanilla.py", "stdout_tail": ""}
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q43_hch.py", "stdout_tail": ""}
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q43_vanilla.py", "stdout_tail": ""}
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q44_hch.py", "stdout_tail": ""}
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q44_vanilla.py", "stdout_tail": ""}
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q48_hch.py", "stdout_tail": ""}
+{"error": "PARSE_ERROR", "message": "Bridge output missing payload marker", "task_file": "q48_vanilla.py", "stdout_tail": ""}

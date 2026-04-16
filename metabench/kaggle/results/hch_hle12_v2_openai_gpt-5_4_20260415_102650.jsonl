@@ -1,0 +1,2 @@
+{"error": "KERNEL_BUSY", "message": "Kaggle kernel stayed busy past the idle-wait window. Ask the user before forcing it.", "task_file": "q41_hch.py"}
+{"error": "KERNEL_BUSY", "message": "Kaggle kernel stayed busy past the idle-wait window. Ask the user before forcing it.", "task_file": "q41_vanilla.py"}

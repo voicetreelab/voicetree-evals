@@ -1,0 +1,5 @@
+{"error": "EXECUTION_TIMEOUT", "message": "Execution exceeded 420s without returning to idle.", "task_file": "q43_hch.py"}
+{"error": "KERNEL_BUSY", "message": "Kaggle kernel stayed busy past the idle-wait window. Ask the user before forcing it.", "task_file": "q43_vanilla.py"}
+{"error": "KERNEL_BUSY", "message": "Kaggle kernel stayed busy past the idle-wait window. Ask the user before forcing it.", "task_file": "q44_hch.py"}
+{"error": "KERNEL_BUSY", "message": "Kaggle kernel stayed busy past the idle-wait window. Ask the user before forcing it.", "task_file": "q44_vanilla.py"}
+{"error": "KERNEL_BUSY", "message": "Kaggle kernel stayed busy past the idle-wait window. Ask the user before forcing it.", "task_file": "q48_hch.py"}
