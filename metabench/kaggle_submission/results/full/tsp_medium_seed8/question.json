@@ -1,0 +1,122 @@
+{
+  "baseline_objective": 481.17297652228615,
+  "class": "tsp",
+  "components": null,
+  "difficulty": "medium",
+  "gold_objective": 411.72592378747373,
+  "id": "tsp_medium_seed8",
+  "instance": {
+    "baseline_length": 481.17297652228615,
+    "baseline_tour": [
+      0,
+      15,
+      18,
+      4,
+      13,
+      3,
+      2,
+      17,
+      16,
+      6,
+      14,
+      19,
+      11,
+      7,
+      5,
+      9,
+      10,
+      1,
+      12,
+      8
+    ],
+    "coords": [
+      [
+        24,
+        96
+      ],
+      [
+        64,
+        6
+      ],
+      [
+        89,
+        92
+      ],
+      [
+        69,
+        84
+      ],
+      [
+        53,
+        63
+      ],
+      [
+        10,
+        44
+      ],
+      [
+        47,
+        26
+      ],
+      [
+        30,
+        43
+      ],
+      [
+        94,
+        26
+      ],
+      [
+        13,
+        13
+      ],
+      [
+        30,
+        7
+      ],
+      [
+        26,
+        36
+      ],
+      [
+        93,
+        20
+      ],
+      [
+        71,
+        70
+      ],
+      [
+        37,
+        18
+      ],
+      [
+        41,
+        93
+      ],
+      [
+        66,
+        40
+      ],
+      [
+        83,
+        42
+      ],
+      [
+        47,
+        67
+      ],
+      [
+        28,
+        25
+      ]
+    ],
+    "difficulty": "medium",
+    "optimal_length": 411.72592378747373,
+    "problem_statement": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (24, 96)\n- 1: (64, 6)\n- 2: (89, 92)\n- 3: (69, 84)\n- 4: (53, 63)\n- 5: (10, 44)\n- 6: (47, 26)\n- 7: (30, 43)\n- 8: (94, 26)\n- 9: (13, 13)\n- 10: (30, 7)\n- 11: (26, 36)\n- 12: (93, 20)\n- 13: (71, 70)\n- 14: (37, 18)\n- 15: (41, 93)\n- 16: (66, 40)\n- 17: (83, 42)\n- 18: (47, 67)\n- 19: (28, 25)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 481.173\nBaseline tour: [0, 15, 18, 4, 13, 3, 2, 17, 16, 6, 14, 19, 11, 7, 5, 9, 10, 1, 12, 8]\n",
+    "seed": 8
+  },
+  "seed": 8,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}
