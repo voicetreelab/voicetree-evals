@@ -1,0 +1,63 @@
+{
+  "baseline_objective": 0.0,
+  "class": "portfolio",
+  "component_gap_pcts": {},
+  "difficulty": "medium",
+  "error": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 215, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 175, in main\n    result = run_instance(\n        llm,\n    ...<7 lines>...\n        components=row.get(\"components\"),\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 141, in run_instance\n    exec_response = _call_model(\n        llm=llm,\n        prompt_text=exec_prompt,\n        timeout_s=expected_turn_s,\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 437, in _call_model\n    thread.join(timeout=timeout_s)\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py\", line 1095, in join\n    self._handle.join(timeout)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyboardInterrupt",
+  "feasible": false,
+  "final_evaluation": {
+    "components": [],
+    "details": {},
+    "mode": "portfolio"
+  },
+  "final_submission_source": "none",
+  "gap_pct": null,
+  "gold_objective": 100.0,
+  "id": "portfolio_medium_seed8",
+  "model": "gemini-flash-latest",
+  "model_slug": "gemini-flash-latest",
+  "n_exec_turns": 0,
+  "parse_path": "runner_error",
+  "runner": {
+    "attempts": [
+      {
+        "attempt": 1,
+        "error": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 215, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 175, in main\n    result = run_instance(\n        llm,\n    ...<7 lines>...\n        components=row.get(\"components\"),\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 255, in run_instance\n    cf_response = _call_model(llm=llm, prompt_text=cf_prompt, timeout_s=cf_timeout_s)\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 437, in _call_model\n    thread.join(timeout=timeout_s)\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py\", line 1095, in join\n    self._handle.join(timeout)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyboardInterrupt",
+        "launcher_wall_s": 240.01822209358215,
+        "outer_timeout": true,
+        "parse_path": "runner_error",
+        "returncode": -2,
+        "stop_reason": "runner_timeout"
+      },
+      {
+        "attempt": 2,
+        "error": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 215, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 175, in main\n    result = run_instance(\n        llm,\n    ...<7 lines>...\n        components=row.get(\"components\"),\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 141, in run_instance\n    exec_response = _call_model(\n        llm=llm,\n        prompt_text=exec_prompt,\n        timeout_s=expected_turn_s,\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 437, in _call_model\n    thread.join(timeout=timeout_s)\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py\", line 1095, in join\n    self._handle.join(timeout)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyboardInterrupt",
+        "launcher_wall_s": 240.02172589302063,
+        "outer_timeout": true,
+        "parse_path": "runner_error",
+        "returncode": -2,
+        "stop_reason": "runner_timeout"
+      },
+      {
+        "attempt": 3,
+        "error": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 215, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 175, in main\n    result = run_instance(\n        llm,\n    ...<7 lines>...\n        components=row.get(\"components\"),\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 141, in run_instance\n    exec_response = _call_model(\n        llm=llm,\n        prompt_text=exec_prompt,\n        timeout_s=expected_turn_s,\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 437, in _call_model\n    thread.join(timeout=timeout_s)\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py\", line 1095, in join\n    self._handle.join(timeout)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyboardInterrupt",
+        "launcher_wall_s": 240.02102518081665,
+        "outer_timeout": true,
+        "parse_path": "runner_error",
+        "returncode": -2,
+        "stop_reason": "runner_timeout"
+      }
+    ],
+    "question_source": "/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/scratch/round1/worker6/questions.partial.jsonl",
+    "raw_stderr_tail": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 215, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 175, in main\n    result = run_instance(\n        llm,\n    ...<7 lines>...\n        components=row.get(\"components\"),\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 141, in run_instance\n    exec_response = _call_model(\n        llm=llm,\n        prompt_text=exec_prompt,\n        timeout_s=expected_turn_s,\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 437, in _call_model\n    thread.join(timeout=timeout_s)\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py\", line 1095, in join\n    self._handle.join(timeout)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyboardInterrupt\n",
+    "raw_stdout_tail": "  [portfolio-medium-s8] plan turn (budget=300s)...\n  [portfolio-medium-s8] plan \u2713 (23.4s)\n  [portfolio-medium-s8] exec turn 2 (budget=300s, elapsed=23s)...\n  [portfolio-medium-s8] exec 2 \u2713 feasible=False gap=100.0% (144.9s)\n  [portfolio-medium-s8] exec turn 3 (budget=300s, elapsed=168s)...\n"
+  },
+  "score": 0.0,
+  "score_after_cf": 0.0,
+  "score_at_stop": 0.0,
+  "seed": 8,
+  "stop_reason": "runner_timeout",
+  "transcript": [],
+  "value_cap": 100.0,
+  "wall_s": 240.02102518081665
+}

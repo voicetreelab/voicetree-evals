@@ -1,0 +1,517 @@
+{
+  "duration_s": 1171.8216841220856,
+  "finished_at_epoch_s": 1776361845.825428,
+  "models": {
+    "claude-sonnet-4.6": {
+      "results": {
+        "portfolio_medium_seed11": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed11": 96.1038961038961,
+            "steiner_medium_seed11": 22.413793103448278,
+            "tsp_medium_seed11": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed11: tour must contain exactly 20 cities"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": 24.78922595742578,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 41.99873683298938
+        },
+        "portfolio_medium_seed2": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed2": 113.33333333333333,
+            "steiner_medium_seed2": 18.309859154929576,
+            "tsp_medium_seed2": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed2: tour items must be integers"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": 24.47608921012602,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 49.63315024995245
+        },
+        "portfolio_medium_seed5": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed5": 115.78947368421052,
+            "steiner_medium_seed5": 20.689655172413794,
+            "tsp_medium_seed5": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed5: tour must contain exactly 20 cities"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 2,
+          "parse_path": "strict_protocol_cf",
+          "score": 23.15700085140034,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 4,
+          "wall_s": 60.30826329207048
+        },
+        "portfolio_medium_seed8": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed8": 103.8961038961039,
+            "steiner_medium_seed8": 20.754716981132077,
+            "tsp_medium_seed8": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed8: submission must provide tour as a list of city indices"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": 24.026728114972272,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 42.484310791129246
+        }
+      },
+      "skipped_after_first_two_api_errors": false
+    },
+    "gemini-flash-latest": {
+      "results": {
+        "portfolio_medium_seed11": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed11": 96.1038961038961,
+            "steiner_medium_seed11": 22.413793103448278,
+            "tsp_medium_seed11": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "steiner_medium_seed11: interference violation between Cape and Port",
+            "tsp_medium_seed11: tour must contain exactly 20 cities"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": -9.4541372642869,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 214.79703833302483
+        },
+        "portfolio_medium_seed2": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed2": 113.33333333333333,
+            "steiner_medium_seed2": 18.309859154929576,
+            "tsp_medium_seed2": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "steiner_medium_seed2: interference violation between Dune and Port",
+            "tsp_medium_seed2: tour must contain exactly 20 cities"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": -8.137342787499074,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 162.7468609160278
+        },
+        "portfolio_medium_seed5": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed5": 115.78947368421052,
+            "steiner_medium_seed5": 46.55172413793103,
+            "tsp_medium_seed5": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed5: tour must contain exactly 20 cities"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": 5.798483044876928,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 236.78896700008772
+        },
+        "portfolio_medium_seed8": {
+          "attempt_count": 3,
+          "component_gap_pcts": {},
+          "error": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 215, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 175, in main\n    result = run_instance(\n        llm,\n    ...<7 lines>...\n        components=row.get(\"components\"),\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 141, in run_instance\n    exec_response = _call_model(\n        llm=llm,\n        prompt_text=exec_prompt,\n        timeout_s=expected_turn_s,\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 437, in _call_model\n    thread.join(timeout=timeout_s)\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py\", line 1095, in join\n    self._handle.join(timeout)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyboardInterrupt",
+          "failure_reasons": [],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 0,
+          "parse_path": "runner_error",
+          "score": 0.0,
+          "stop_reason": "runner_timeout",
+          "transcript_entries": 0,
+          "wall_s": 240.02102518081665
+        }
+      },
+      "skipped_after_first_two_api_errors": false
+    },
+    "gpt-5.4-mini": {
+      "results": {
+        "portfolio_medium_seed11": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed11": 96.1038961038961,
+            "steiner_medium_seed11": 22.413793103448278,
+            "tsp_medium_seed11": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed11: submission must provide tour as a list of city indices"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": 26.142143461573408,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 14.94038720917888
+        },
+        "portfolio_medium_seed2": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed2": 100.0,
+            "steiner_medium_seed2": 18.309859154929576,
+            "tsp_medium_seed2": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "cjs_medium_seed2: schedule must be an object",
+            "steiner_medium_seed2: submission must be an object",
+            "tsp_medium_seed2: submission must provide tour as a list of city indices"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": -0.8710435979417526,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 17.420877416851
+        },
+        "portfolio_medium_seed5": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed5": 115.78947368421052,
+            "steiner_medium_seed5": 20.689655172413794,
+            "tsp_medium_seed5": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed5: submission must provide tour as a list of city indices"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 1,
+          "parse_path": "strict_protocol_cf",
+          "score": 25.356836218097857,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 3,
+          "wall_s": 16.311555792111903
+        },
+        "portfolio_medium_seed8": {
+          "attempt_count": 1,
+          "component_gap_pcts": {
+            "cjs_medium_seed8": 103.8961038961039,
+            "steiner_medium_seed8": 20.754716981132077,
+            "tsp_medium_seed8": 100.0
+          },
+          "error": null,
+          "failure_reasons": [
+            "tsp_medium_seed8: submission must provide tour as a list of city indices"
+          ],
+          "feasible": false,
+          "gap_pct": null,
+          "n_exec_turns": 2,
+          "parse_path": "strict_protocol_cf",
+          "score": 25.083117571226236,
+          "stop_reason": "decision_stop",
+          "transcript_entries": 4,
+          "wall_s": 21.356521000154316
+        }
+      },
+      "skipped_after_first_two_api_errors": false
+    }
+  },
+  "outer_timeout_s": 240,
+  "question_ids": [
+    "portfolio_medium_seed2",
+    "portfolio_medium_seed5",
+    "portfolio_medium_seed8",
+    "portfolio_medium_seed11"
+  ],
+  "question_source": "/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/scratch/round1/worker6/questions.partial.jsonl",
+  "questions": {
+    "portfolio_medium_seed11": {
+      "claude-sonnet-4.6": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed11": 96.1038961038961,
+          "steiner_medium_seed11": 22.413793103448278,
+          "tsp_medium_seed11": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed11: tour must contain exactly 20 cities"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": 24.78922595742578,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 41.99873683298938
+      },
+      "gemini-flash-latest": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed11": 96.1038961038961,
+          "steiner_medium_seed11": 22.413793103448278,
+          "tsp_medium_seed11": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "steiner_medium_seed11: interference violation between Cape and Port",
+          "tsp_medium_seed11: tour must contain exactly 20 cities"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": -9.4541372642869,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 214.79703833302483
+      },
+      "gpt-5.4-mini": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed11": 96.1038961038961,
+          "steiner_medium_seed11": 22.413793103448278,
+          "tsp_medium_seed11": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed11: submission must provide tour as a list of city indices"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": 26.142143461573408,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 14.94038720917888
+      }
+    },
+    "portfolio_medium_seed2": {
+      "claude-sonnet-4.6": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed2": 113.33333333333333,
+          "steiner_medium_seed2": 18.309859154929576,
+          "tsp_medium_seed2": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed2: tour items must be integers"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": 24.47608921012602,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 49.63315024995245
+      },
+      "gemini-flash-latest": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed2": 113.33333333333333,
+          "steiner_medium_seed2": 18.309859154929576,
+          "tsp_medium_seed2": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "steiner_medium_seed2: interference violation between Dune and Port",
+          "tsp_medium_seed2: tour must contain exactly 20 cities"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": -8.137342787499074,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 162.7468609160278
+      },
+      "gpt-5.4-mini": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed2": 100.0,
+          "steiner_medium_seed2": 18.309859154929576,
+          "tsp_medium_seed2": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "cjs_medium_seed2: schedule must be an object",
+          "steiner_medium_seed2: submission must be an object",
+          "tsp_medium_seed2: submission must provide tour as a list of city indices"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": -0.8710435979417526,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 17.420877416851
+      }
+    },
+    "portfolio_medium_seed5": {
+      "claude-sonnet-4.6": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed5": 115.78947368421052,
+          "steiner_medium_seed5": 20.689655172413794,
+          "tsp_medium_seed5": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed5: tour must contain exactly 20 cities"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 2,
+        "parse_path": "strict_protocol_cf",
+        "score": 23.15700085140034,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 4,
+        "wall_s": 60.30826329207048
+      },
+      "gemini-flash-latest": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed5": 115.78947368421052,
+          "steiner_medium_seed5": 46.55172413793103,
+          "tsp_medium_seed5": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed5: tour must contain exactly 20 cities"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": 5.798483044876928,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 236.78896700008772
+      },
+      "gpt-5.4-mini": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed5": 115.78947368421052,
+          "steiner_medium_seed5": 20.689655172413794,
+          "tsp_medium_seed5": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed5: submission must provide tour as a list of city indices"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": 25.356836218097857,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 16.311555792111903
+      }
+    },
+    "portfolio_medium_seed8": {
+      "claude-sonnet-4.6": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed8": 103.8961038961039,
+          "steiner_medium_seed8": 20.754716981132077,
+          "tsp_medium_seed8": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed8: submission must provide tour as a list of city indices"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 1,
+        "parse_path": "strict_protocol_cf",
+        "score": 24.026728114972272,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 3,
+        "wall_s": 42.484310791129246
+      },
+      "gemini-flash-latest": {
+        "attempt_count": 3,
+        "component_gap_pcts": {},
+        "error": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 215, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/eval_harness/run_local.py\", line 175, in main\n    result = run_instance(\n        llm,\n    ...<7 lines>...\n        components=row.get(\"components\"),\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 141, in run_instance\n    exec_response = _call_model(\n        llm=llm,\n        prompt_text=exec_prompt,\n        timeout_s=expected_turn_s,\n    )\n  File \"/Users/bobbobby/repos/voicetree-evals/metabench/kaggle_submission/harness/runner.py\", line 437, in _call_model\n    thread.join(timeout=timeout_s)\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.13/3.13.12_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py\", line 1095, in join\n    self._handle.join(timeout)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^\nKeyboardInterrupt",
+        "failure_reasons": [],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 0,
+        "parse_path": "runner_error",
+        "score": 0.0,
+        "stop_reason": "runner_timeout",
+        "transcript_entries": 0,
+        "wall_s": 240.02102518081665
+      },
+      "gpt-5.4-mini": {
+        "attempt_count": 1,
+        "component_gap_pcts": {
+          "cjs_medium_seed8": 103.8961038961039,
+          "steiner_medium_seed8": 20.754716981132077,
+          "tsp_medium_seed8": 100.0
+        },
+        "error": null,
+        "failure_reasons": [
+          "tsp_medium_seed8: submission must provide tour as a list of city indices"
+        ],
+        "feasible": false,
+        "gap_pct": null,
+        "n_exec_turns": 2,
+        "parse_path": "strict_protocol_cf",
+        "score": 25.083117571226236,
+        "stop_reason": "decision_stop",
+        "transcript_entries": 4,
+        "wall_s": 21.356521000154316
+      }
+    }
+  },
+  "recovery": true,
+  "started_at_epoch_s": 1776360674.003744
+}

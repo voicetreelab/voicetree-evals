@@ -1,0 +1,1324 @@
+{
+  "baseline_objective": 0.0,
+  "class": "portfolio",
+  "components": [
+    {
+      "class": "cjs",
+      "problem_id": "cjs_medium_seed11",
+      "sub_instance": {
+        "answer_contract": "Object with \"factory_a\", \"factory_b\", and \"makespan\". Each factory maps machine names to lists of [\"J<id>\", start, end] triples.",
+        "baseline_gap_pct": 96.1038961038961,
+        "baseline_objective": 151,
+        "baseline_submission": {
+          "factory_a": {
+            "MA1": [
+              [
+                "J1",
+                15,
+                22
+              ],
+              [
+                "J2",
+                22,
+                30
+              ],
+              [
+                "J3",
+                30,
+                34
+              ],
+              [
+                "J4",
+                68,
+                77
+              ],
+              [
+                "J5",
+                105,
+                109
+              ]
+            ],
+            "MA2": [
+              [
+                "J1",
+                14,
+                15
+              ],
+              [
+                "J2",
+                15,
+                16
+              ],
+              [
+                "J3",
+                43,
+                50
+              ],
+              [
+                "J4",
+                98,
+                102
+              ],
+              [
+                "J5",
+                102,
+                105
+              ]
+            ],
+            "MA3": [
+              [
+                "J1",
+                22,
+                30
+              ],
+              [
+                "J2",
+                35,
+                42
+              ],
+              [
+                "J3",
+                58,
+                65
+              ],
+              [
+                "J4",
+                65,
+                68
+              ],
+              [
+                "J5",
+                109,
+                117
+              ]
+            ],
+            "MA4": [
+              [
+                "J1",
+                0,
+                3
+              ],
+              [
+                "J2",
+                42,
+                51
+              ],
+              [
+                "J3",
+                51,
+                58
+              ],
+              [
+                "J4",
+                77,
+                81
+              ],
+              [
+                "J5",
+                117,
+                122
+              ]
+            ],
+            "MA5": [
+              [
+                "J1",
+                3,
+                5
+              ],
+              [
+                "J2",
+                30,
+                35
+              ],
+              [
+                "J3",
+                35,
+                43
+              ],
+              [
+                "J4",
+                81,
+                89
+              ],
+              [
+                "J5",
+                123,
+                129
+              ]
+            ],
+            "MA6": [
+              [
+                "J1",
+                5,
+                14
+              ],
+              [
+                "J2",
+                16,
+                18
+              ],
+              [
+                "J3",
+                34,
+                35
+              ],
+              [
+                "J4",
+                89,
+                98
+              ],
+              [
+                "J5",
+                122,
+                123
+              ]
+            ]
+          },
+          "factory_b": {
+            "MB1": [
+              [
+                "J1",
+                43,
+                45
+              ],
+              [
+                "J2",
+                77,
+                82
+              ],
+              [
+                "J3",
+                82,
+                86
+              ],
+              [
+                "J4",
+                105,
+                112
+              ],
+              [
+                "J5",
+                145,
+                147
+              ]
+            ],
+            "MB2": [
+              [
+                "J1",
+                34,
+                43
+              ],
+              [
+                "J2",
+                53,
+                58
+              ],
+              [
+                "J3",
+                99,
+                104
+              ],
+              [
+                "J4",
+                121,
+                128
+              ],
+              [
+                "J5",
+                129,
+                134
+              ]
+            ],
+            "MB3": [
+              [
+                "J1",
+                46,
+                47
+              ],
+              [
+                "J2",
+                64,
+                68
+              ],
+              [
+                "J3",
+                91,
+                97
+              ],
+              [
+                "J4",
+                128,
+                135
+              ],
+              [
+                "J5",
+                143,
+                145
+              ]
+            ],
+            "MB4": [
+              [
+                "J1",
+                33,
+                34
+              ],
+              [
+                "J2",
+                68,
+                77
+              ],
+              [
+                "J3",
+                77,
+                79
+              ],
+              [
+                "J4",
+                119,
+                121
+              ],
+              [
+                "J5",
+                141,
+                143
+              ]
+            ],
+            "MB5": [
+              [
+                "J1",
+                30,
+                33
+              ],
+              [
+                "J2",
+                51,
+                53
+              ],
+              [
+                "J3",
+                86,
+                91
+              ],
+              [
+                "J4",
+                112,
+                119
+              ],
+              [
+                "J5",
+                147,
+                151
+              ]
+            ],
+            "MB6": [
+              [
+                "J1",
+                45,
+                46
+              ],
+              [
+                "J2",
+                58,
+                64
+              ],
+              [
+                "J3",
+                97,
+                99
+              ],
+              [
+                "J4",
+                102,
+                105
+              ],
+              [
+                "J5",
+                134,
+                141
+              ]
+            ]
+          },
+          "makespan": 151
+        },
+        "class": "cjs",
+        "difficulty": "medium",
+        "gold_objective": 77,
+        "gold_submission": {
+          "factory_a": {
+            "MA1": [
+              [
+                "J3",
+                0,
+                4
+              ],
+              [
+                "J4",
+                4,
+                13
+              ],
+              [
+                "J5",
+                13,
+                17
+              ],
+              [
+                "J2",
+                17,
+                25
+              ],
+              [
+                "J1",
+                25,
+                32
+              ]
+            ],
+            "MA2": [
+              [
+                "J2",
+                0,
+                1
+              ],
+              [
+                "J5",
+                1,
+                4
+              ],
+              [
+                "J3",
+                13,
+                20
+              ],
+              [
+                "J1",
+                20,
+                21
+              ],
+              [
+                "J4",
+                34,
+                38
+              ]
+            ],
+            "MA3": [
+              [
+                "J4",
+                0,
+                3
+              ],
+              [
+                "J5",
+                17,
+                25
+              ],
+              [
+                "J2",
+                30,
+                37
+              ],
+              [
+                "J1",
+                37,
+                45
+              ],
+              [
+                "J3",
+                45,
+                52
+              ]
+            ],
+            "MA4": [
+              [
+                "J1",
+                0,
+                3
+              ],
+              [
+                "J4",
+                13,
+                17
+              ],
+              [
+                "J3",
+                20,
+                27
+              ],
+              [
+                "J5",
+                27,
+                32
+              ],
+              [
+                "J2",
+                37,
+                46
+              ]
+            ],
+            "MA5": [
+              [
+                "J1",
+                3,
+                5
+              ],
+              [
+                "J3",
+                5,
+                13
+              ],
+              [
+                "J4",
+                17,
+                25
+              ],
+              [
+                "J2",
+                25,
+                30
+              ],
+              [
+                "J5",
+                35,
+                41
+              ]
+            ],
+            "MA6": [
+              [
+                "J2",
+                1,
+                3
+              ],
+              [
+                "J3",
+                4,
+                5
+              ],
+              [
+                "J1",
+                5,
+                14
+              ],
+              [
+                "J4",
+                25,
+                34
+              ],
+              [
+                "J5",
+                34,
+                35
+              ]
+            ]
+          },
+          "factory_b": {
+            "MB1": [
+              [
+                "J4",
+                41,
+                48
+              ],
+              [
+                "J3",
+                54,
+                58
+              ],
+              [
+                "J5",
+                58,
+                60
+              ],
+              [
+                "J1",
+                62,
+                64
+              ],
+              [
+                "J2",
+                72,
+                77
+              ]
+            ],
+            "MB2": [
+              [
+                "J5",
+                41,
+                46
+              ],
+              [
+                "J2",
+                48,
+                53
+              ],
+              [
+                "J1",
+                53,
+                62
+              ],
+              [
+                "J4",
+                62,
+                69
+              ],
+              [
+                "J3",
+                71,
+                76
+              ]
+            ],
+            "MB3": [
+              [
+                "J5",
+                56,
+                58
+              ],
+              [
+                "J2",
+                59,
+                63
+              ],
+              [
+                "J3",
+                63,
+                69
+              ],
+              [
+                "J4",
+                69,
+                76
+              ],
+              [
+                "J1",
+                76,
+                77
+              ]
+            ],
+            "MB4": [
+              [
+                "J1",
+                51,
+                52
+              ],
+              [
+                "J3",
+                52,
+                54
+              ],
+              [
+                "J5",
+                54,
+                56
+              ],
+              [
+                "J4",
+                58,
+                60
+              ],
+              [
+                "J2",
+                63,
+                72
+              ]
+            ],
+            "MB5": [
+              [
+                "J2",
+                46,
+                48
+              ],
+              [
+                "J1",
+                48,
+                51
+              ],
+              [
+                "J4",
+                51,
+                58
+              ],
+              [
+                "J3",
+                58,
+                63
+              ],
+              [
+                "J5",
+                63,
+                67
+              ]
+            ],
+            "MB6": [
+              [
+                "J4",
+                38,
+                41
+              ],
+              [
+                "J5",
+                46,
+                53
+              ],
+              [
+                "J2",
+                53,
+                59
+              ],
+              [
+                "J1",
+                64,
+                65
+              ],
+              [
+                "J3",
+                69,
+                71
+              ]
+            ]
+          },
+          "makespan": 77
+        },
+        "jobs": [
+          {
+            "factory_a": [
+              {
+                "duration": 3,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA6"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA3"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 3,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB1"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MB3"
+              }
+            ],
+            "job_id": 1
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 1,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MA6"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA3"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA4"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 2,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 6,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MB1"
+              }
+            ],
+            "job_id": 2
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 4,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MA6"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MA3"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 2,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MB1"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 6,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MB2"
+              }
+            ],
+            "job_id": 3
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 3,
+                "machine_name": "MA3"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA5"
+              },
+              {
+                "duration": 9,
+                "machine_name": "MA6"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MA2"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 3,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB1"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB5"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB3"
+              }
+            ],
+            "job_id": 4
+          },
+          {
+            "factory_a": [
+              {
+                "duration": 3,
+                "machine_name": "MA2"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MA1"
+              },
+              {
+                "duration": 8,
+                "machine_name": "MA3"
+              },
+              {
+                "duration": 5,
+                "machine_name": "MA4"
+              },
+              {
+                "duration": 1,
+                "machine_name": "MA6"
+              },
+              {
+                "duration": 6,
+                "machine_name": "MA5"
+              }
+            ],
+            "factory_b": [
+              {
+                "duration": 5,
+                "machine_name": "MB2"
+              },
+              {
+                "duration": 7,
+                "machine_name": "MB6"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB4"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB3"
+              },
+              {
+                "duration": 2,
+                "machine_name": "MB1"
+              },
+              {
+                "duration": 4,
+                "machine_name": "MB5"
+              }
+            ],
+            "job_id": 5
+          }
+        ],
+        "metric_name": "makespan",
+        "n_jobs": 5,
+        "n_machines": 6,
+        "problem_statement": "You run a two-factory manufacturing pipeline. Factory A makes components, then Factory B finishes the same jobs.\nEach factory is its own job shop with one-job-per-machine exclusivity and no preemption.\nEvery job must finish all of its Factory A operations before that same job may start any Factory B operation.\nYour objective is to minimize the coupled makespan: the time when the final Factory B operation finishes.\n\nInstance size: 5 jobs, 6 machines in each factory.\nJobs and ordered operations:\n- Job 1: Factory A MA4 (3) -> MA5 (2) -> MA6 (9) -> MA2 (1) -> MA1 (7) -> MA3 (8); Factory B MB5 (3) -> MB4 (1) -> MB2 (9) -> MB1 (2) -> MB6 (1) -> MB3 (1)\n- Job 2: Factory A MA2 (1) -> MA6 (2) -> MA1 (8) -> MA5 (5) -> MA3 (7) -> MA4 (9); Factory B MB5 (2) -> MB2 (5) -> MB6 (6) -> MB3 (4) -> MB4 (9) -> MB1 (5)\n- Job 3: Factory A MA1 (4) -> MA6 (1) -> MA5 (8) -> MA2 (7) -> MA4 (7) -> MA3 (7); Factory B MB4 (2) -> MB1 (4) -> MB5 (5) -> MB3 (6) -> MB6 (2) -> MB2 (5)\n- Job 4: Factory A MA3 (3) -> MA1 (9) -> MA4 (4) -> MA5 (8) -> MA6 (9) -> MA2 (4); Factory B MB6 (3) -> MB1 (7) -> MB5 (7) -> MB4 (2) -> MB2 (7) -> MB3 (7)\n- Job 5: Factory A MA2 (3) -> MA1 (4) -> MA3 (8) -> MA4 (5) -> MA6 (1) -> MA5 (6); Factory B MB2 (5) -> MB6 (7) -> MB4 (2) -> MB3 (2) -> MB1 (2) -> MB5 (4)\n\nConstraints:\n- A machine handles at most one job at a time.\n- Each job must respect its listed operation order inside each factory.\n- Factory B job Jx cannot start until Factory A job Jx has fully completed.\n- When you emit a schedule, every required operation must appear exactly once.\n\nA deterministic feasible baseline schedule is provided below. If you stop immediately or fail to produce a valid schedule, this baseline is what gets scored.\nBaseline makespan: 151\nBaseline schedule summary:\nFactory A: MA1: J1[15-22],J2[22-30],J3[30-34],J4[68-77],J5[105-109]; MA2: J1[14-15],J2[15-16],J3[43-50],J4[98-102],J5[102-105]; MA3: J1[22-30],J2[35-42],J3[58-65],J4[65-68],J5[109-117]; MA4: J1[0-3],J2[42-51],J3[51-58],J4[77-81],J5[117-122]; MA5: J1[3-5],J2[30-35],J3[35-43],J4[81-89],J5[123-129]; MA6: J1[5-14],J2[16-18],J3[34-35],J4[89-98],J5[122-123]\nFactory B: MB1: J1[43-45],J2[77-82],J3[82-86],J4[105-112],J5[145-147]; MB2: J1[34-43],J2[53-58],J3[99-104],J4[121-128],J5[129-134]; MB3: J1[46-47],J2[64-68],J3[91-97],J4[128-135],J5[143-145]; MB4: J1[33-34],J2[68-77],J3[77-79],J4[119-121],J5[141-143]; MB5: J1[30-33],J2[51-53],J3[86-91],J4[112-119],J5[147-151]; MB6: J1[45-46],J2[58-64],J3[97-99],J4[102-105],J5[134-141]\nMakespan: 151\n",
+        "seed": 11
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "steiner",
+      "problem_id": "steiner_medium_seed11",
+      "sub_instance": {
+        "answer_contract": "Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.",
+        "baseline_cost": 71,
+        "baseline_gap_pct": 22.413793103448278,
+        "baseline_submission": {
+          "edges": [
+            [
+              "Bay",
+              "Cape"
+            ],
+            [
+              "Dune",
+              "Port"
+            ],
+            [
+              "Cape",
+              "Port"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Cape": 3,
+            "Dune": 2,
+            "Port": 1
+          }
+        },
+        "cable_only_cost": 69,
+        "cable_only_submission": {
+          "edges": [
+            [
+              "Bay",
+              "Cape"
+            ],
+            [
+              "Cape",
+              "Port"
+            ],
+            [
+              "Cape",
+              "Dune"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Cape": 3,
+            "Dune": 2,
+            "Port": 1
+          }
+        },
+        "class": "steiner",
+        "difficulty": "medium",
+        "edges": [
+          {
+            "cost": 9,
+            "u": "Bay",
+            "v": "Cliff"
+          },
+          {
+            "cost": 14,
+            "u": "Bay",
+            "v": "Pine"
+          },
+          {
+            "cost": 5,
+            "u": "Bay",
+            "v": "Rock"
+          },
+          {
+            "cost": 5,
+            "u": "Bay",
+            "v": "Mill"
+          },
+          {
+            "cost": 11,
+            "u": "Bay",
+            "v": "Cape"
+          },
+          {
+            "cost": 10,
+            "u": "Cliff",
+            "v": "Port"
+          },
+          {
+            "cost": 13,
+            "u": "Cliff",
+            "v": "Rock"
+          },
+          {
+            "cost": 13,
+            "u": "Cliff",
+            "v": "Dune"
+          },
+          {
+            "cost": 14,
+            "u": "Cliff",
+            "v": "Mill"
+          },
+          {
+            "cost": 15,
+            "u": "Pine",
+            "v": "Port"
+          },
+          {
+            "cost": 9,
+            "u": "Dune",
+            "v": "Port"
+          },
+          {
+            "cost": 6,
+            "u": "Dune",
+            "v": "Pine"
+          },
+          {
+            "cost": 3,
+            "u": "Mill",
+            "v": "Rock"
+          },
+          {
+            "cost": 6,
+            "u": "Cape",
+            "v": "Port"
+          },
+          {
+            "cost": 6,
+            "u": "Cape",
+            "v": "Cliff"
+          },
+          {
+            "cost": 11,
+            "u": "Cape",
+            "v": "Pine"
+          },
+          {
+            "cost": 16,
+            "u": "Cape",
+            "v": "Rock"
+          },
+          {
+            "cost": 7,
+            "u": "Cape",
+            "v": "Dune"
+          },
+          {
+            "cost": 16,
+            "u": "Cape",
+            "v": "Mill"
+          }
+        ],
+        "freq_penalty": 15,
+        "gold_cost": 58,
+        "gold_submission": {
+          "edges": [
+            [
+              "Bay",
+              "Cliff"
+            ],
+            [
+              "Cliff",
+              "Port"
+            ],
+            [
+              "Dune",
+              "Port"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Cliff": 2,
+            "Dune": 2,
+            "Port": 1
+          }
+        },
+        "interference_pairs": [
+          [
+            "Bay",
+            "Cliff"
+          ],
+          [
+            "Cliff",
+            "Mill"
+          ],
+          [
+            "Pine",
+            "Port"
+          ],
+          [
+            "Dune",
+            "Port"
+          ],
+          [
+            "Dune",
+            "Pine"
+          ],
+          [
+            "Cape",
+            "Port"
+          ],
+          [
+            "Cape",
+            "Pine"
+          ],
+          [
+            "Cape",
+            "Dune"
+          ]
+        ],
+        "k": 4,
+        "n": 8,
+        "n_terminals": 3,
+        "problem_statement": "Coastal Emergency scenario:\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\n\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\nIf an interference pair is active on both ends, those two villages must use different frequencies.\n\nObjective:\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\n\nVillages:\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape\n\nRequired terminals:\n- Port, Bay, Dune\n\nAvailable cable links:\n- Bay-Cliff: cost 9\n- Bay-Pine: cost 14\n- Bay-Rock: cost 5\n- Bay-Mill: cost 5\n- Bay-Cape: cost 11\n- Cliff-Port: cost 10\n- Cliff-Rock: cost 13\n- Cliff-Dune: cost 13\n- Cliff-Mill: cost 14\n- Pine-Port: cost 15\n- Dune-Port: cost 9\n- Dune-Pine: cost 6\n- Mill-Rock: cost 3\n- Cape-Port: cost 6\n- Cape-Cliff: cost 6\n- Cape-Pine: cost 11\n- Cape-Rock: cost 16\n- Cape-Dune: cost 7\n- Cape-Mill: cost 16\n\nInterference pairs:\n- Bay / Cliff\n- Cliff / Mill\n- Pine / Port\n- Dune / Port\n- Dune / Pine\n- Cape / Port\n- Cape / Pine\n- Cape / Dune\n\nRules:\n- Your cable choice must be a tree, not a cyclic network.\n- All required terminals must lie in one connected component.\n- Frequencies matter only for active villages in the chosen network.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline total cost: 71\nBaseline answer summary:\nEdges: Bay-Cape(11), Dune-Port(9), Cape-Port(6)\nActive villages: Port, Bay, Dune, Cape\nFrequencies: Port=1, Bay=1, Dune=2, Cape=3\nEdge cost: 26\nFrequencies used: 3\nTotal cost: 71\n\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\n",
+        "seed": 11,
+        "terminals": [
+          "Port",
+          "Bay",
+          "Dune"
+        ],
+        "villages": [
+          "Port",
+          "Bay",
+          "Cliff",
+          "Pine",
+          "Rock",
+          "Dune",
+          "Mill",
+          "Cape"
+        ]
+      },
+      "value_cap": 33.0
+    },
+    {
+      "class": "tsp",
+      "problem_id": "tsp_medium_seed11",
+      "sub_instance": {
+        "baseline_length": 486.0121346636562,
+        "baseline_tour": [
+          0,
+          13,
+          9,
+          12,
+          3,
+          4,
+          8,
+          14,
+          10,
+          11,
+          19,
+          17,
+          5,
+          2,
+          18,
+          16,
+          7,
+          15,
+          6,
+          1
+        ],
+        "coords": [
+          [
+            33,
+            45
+          ],
+          [
+            98,
+            69
+          ],
+          [
+            73,
+            42
+          ],
+          [
+            51,
+            69
+          ],
+          [
+            39,
+            83
+          ],
+          [
+            82,
+            55
+          ],
+          [
+            58,
+            9
+          ],
+          [
+            86,
+            7
+          ],
+          [
+            20,
+            64
+          ],
+          [
+            47,
+            40
+          ],
+          [
+            1,
+            81
+          ],
+          [
+            8,
+            97
+          ],
+          [
+            55,
+            55
+          ],
+          [
+            38,
+            48
+          ],
+          [
+            6,
+            85
+          ],
+          [
+            77,
+            2
+          ],
+          [
+            97,
+            18
+          ],
+          [
+            67,
+            88
+          ],
+          [
+            92,
+            40
+          ],
+          [
+            16,
+            100
+          ]
+        ],
+        "difficulty": "medium",
+        "optimal_length": 380.39005686347554,
+        "problem_statement": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (33, 45)\n- 1: (98, 69)\n- 2: (73, 42)\n- 3: (51, 69)\n- 4: (39, 83)\n- 5: (82, 55)\n- 6: (58, 9)\n- 7: (86, 7)\n- 8: (20, 64)\n- 9: (47, 40)\n- 10: (1, 81)\n- 11: (8, 97)\n- 12: (55, 55)\n- 13: (38, 48)\n- 14: (6, 85)\n- 15: (77, 2)\n- 16: (97, 18)\n- 17: (67, 88)\n- 18: (92, 40)\n- 19: (16, 100)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 486.012\nBaseline tour: [0, 13, 9, 12, 3, 4, 8, 14, 10, 11, 19, 17, 5, 2, 18, 16, 7, 15, 6, 1]\n",
+        "seed": 11
+      },
+      "value_cap": 34.0
+    }
+  ],
+  "difficulty": "medium",
+  "gold_objective": 100.0,
+  "id": "portfolio_medium_seed11",
+  "instance": {
+    "class": "portfolio",
+    "difficulty": "medium",
+    "n_components": 3,
+    "problem_statement": "You are allocating effort across a three-problem optimization portfolio.\nObjective: maximize total captured headroom across the listed components.\nEach component contributes at most its value_cap when solved to its gold level.\nIf you fail to improve a component, it stays at its baseline contribution.\n\nPortfolio components:\n- cjs_medium_seed11 | class=cjs | value_cap=33.0\n- steiner_medium_seed11 | class=steiner | value_cap=33.0\n- tsp_medium_seed11 | class=tsp | value_cap=34.0\n\nReturn answers for the listed sub-problems using the component-specific answer contracts.",
+    "seed": 11
+  },
+  "seed": 11,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}
