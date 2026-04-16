@@ -12,6 +12,7 @@ venv/
 .env.local
 .env.*.local
 !.env.example
+metabench/hch/metagame/.env
 
 # OS
 .DS_Store

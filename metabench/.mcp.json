@@ -1,5 +1,12 @@
 {
   "mcpServers": {
+    "colab-proxy-mcp": {
+      "command": "uvx",
+      "args": [
+        "git+https://github.com/googlecolab/colab-mcp"
+      ],
+      "timeout": 30000
+    },
     "voicetree": {
       "type": "http",
       "url": "http://127.0.0.1:3002/mcp"
