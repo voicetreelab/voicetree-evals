@@ -1,0 +1,948 @@
+└── ▢ World Model
+    ├── ▢ Alignment Pressure
+    │   ├── ▢ Alignment Pressure: subtopic 0
+    │   │   ├── · Note 14 under sub-00
+    │   │   │           ⇢ Note 49 under sub-01
+    │   │   │           ⇢ Note 8 under sub-07
+    │   │   │           ⇢ Note 23 under sub-02
+    │   │   ├── · Note 53 under sub-00
+    │   │   │           ⇢ Note 399 under sub-00
+    │   │   │           ⇢ Note 66 under sub-01
+    │   │   │           ⇢ Note 33 under sub-01
+    │   │   │           ⇢ Note 74 under sub-03
+    │   │   ├── · Note 92 under sub-00
+    │   │   │           ⇢ Note 225 under sub-04
+    │   │   ├── · Note 131 under sub-00
+    │   │   │           ⇢ Note 308 under sub-03
+    │   │   ├── · Note 170 under sub-00
+    │   │   ├── · Note 209 under sub-00
+    │   │   ├── · Note 248 under sub-00
+    │   │   ├── · Note 287 under sub-00
+    │   │   ├── · Note 326 under sub-00
+    │   │   ├── · Note 365 under sub-00
+    │   │   └── · Note 404 under sub-00
+    │   ├── ▢ Alignment Pressure: subtopic 1
+    │   │   ├── · Note 15 under sub-01
+    │   │   │           ⇢ Note 5 under sub-04
+    │   │   │           ⇢ Note 376 under sub-04
+    │   │   ├── · Note 54 under sub-01
+    │   │   │           ⇢ Note 250 under sub-02
+    │   │   │           ⇢ Note 11 under sub-02
+    │   │   ├── · Note 93 under sub-01
+    │   │   │           ⇢ Note 350 under sub-06
+    │   │   ├── · Note 132 under sub-01
+    │   │   │           ⇢ Note 133 under sub-02
+    │   │   ├── · Note 171 under sub-01
+    │   │   ├── · Note 210 under sub-01
+    │   │   ├── · Note 249 under sub-01
+    │   │   ├── · Note 288 under sub-01
+    │   │   ├── · Note 327 under sub-01
+    │   │   ├── · Note 366 under sub-01
+    │   │   └── · Note 405 under sub-01
+    │   ├── ▢ Alignment Pressure: subtopic 2
+    │   │   ├── · Note 16 under sub-02
+    │   │   │           ⇢ Note 15 under sub-01
+    │   │   │           ⇢ Note 88 under sub-01
+    │   │   │           ⇢ Note 47 under sub-07
+    │   │   │           ⇢ Note 64 under sub-04
+    │   │   ├── · Note 55 under sub-02
+    │   │   │           ⇢ Note 365 under sub-00
+    │   │   │           ⇢ Note 212 under sub-03
+    │   │   │           ⇢ Note 360 under sub-00
+    │   │   │           ⇢ Note 337 under sub-04
+    │   │   │           ⇢ Note 27 under sub-01
+    │   │   │           ⇢ Note 66 under sub-01
+    │   │   │           ⇢ Note 31 under sub-05
+    │   │   ├── · Note 94 under sub-02
+    │   │   ├── · Note 133 under sub-02
+    │   │   │           ⇢ Note 359 under sub-07
+    │   │   ├── · Note 172 under sub-02
+    │   │   ├── · Note 211 under sub-02
+    │   │   ├── · Note 250 under sub-02
+    │   │   ├── · Note 289 under sub-02
+    │   │   ├── · Note 328 under sub-02
+    │   │   ├── · Note 367 under sub-02
+    │   │   └── · Note 406 under sub-02
+    │   ├── ▢ Alignment Pressure: subtopic 3
+    │   │   ├── · Note 17 under sub-03
+    │   │   │           ⇢ Note 328 under sub-02
+    │   │   │           ⇢ Note 241 under sub-06
+    │   │   │           ⇢ Note 258 under sub-03
+    │   │   │           ⇢ Note 342 under sub-04
+    │   │   │           ⇢ Note 344 under sub-00
+    │   │   │           ⇢ Note 75 under sub-04
+    │   │   ├── · Note 56 under sub-03
+    │   │   │           ⇢ Note 47 under sub-07
+    │   │   ├── · Note 95 under sub-03
+    │   │   ├── · Note 134 under sub-03
+    │   │   ├── · Note 173 under sub-03
+    │   │   ├── · Note 212 under sub-03
+    │   │   ├── · Note 251 under sub-03
+    │   │   │           ⇢ Note 230 under sub-03
+    │   │   ├── · Note 290 under sub-03
+    │   │   ├── · Note 329 under sub-03
+    │   │   │           ⇢ Note 272 under sub-06
+    │   │   ├── · Note 368 under sub-03
+    │   │   └── · Note 407 under sub-03
+    │   ├── ▢ Alignment Pressure: subtopic 4
+    │   │   ├── · Note 18 under sub-04
+    │   │   │           ⇢ Note 65 under sub-00
+    │   │   │           ⇢ Note 70 under sub-05
+    │   │   ├── · Note 57 under sub-04
+    │   │   │           ⇢ Note 45 under sub-05
+    │   │   │           ⇢ Note 396 under sub-05
+    │   │   │           ⇢ Note 241 under sub-06
+    │   │   │           ⇢ Note 25 under sub-04
+    │   │   │           ⇢ Note 30 under sub-04
+    │   │   ├── · Note 96 under sub-04
+    │   │   ├── · Note 135 under sub-04
+    │   │   ├── · Note 174 under sub-04
+    │   │   ├── · Note 213 under sub-04
+    │   │   ├── · Note 252 under sub-04
+    │   │   ├── · Note 291 under sub-04
+    │   │   ├── · Note 330 under sub-04
+    │   │   │           ⇢ Note 407 under sub-03
+    │   │   │           ⇢ Note 166 under sub-01
+    │   │   │           ⇢ Note 205 under sub-01
+    │   │   │           ⇢ Note 110 under sub-00
+    │   │   ├── · Note 369 under sub-04
+    │   │   └── · Note 408 under sub-04
+    │   ├── ▢ Alignment Pressure: subtopic 5
+    │   │   ├── · Note 19 under sub-05
+    │   │   │           ⇢ Note 227 under sub-00
+    │   │   │           ⇢ Note 34 under sub-02
+    │   │   ├── · Note 58 under sub-05
+    │   │   │           ⇢ Note 45 under sub-05
+    │   │   │           ⇢ Note 255 under sub-00
+    │   │   │           ⇢ Note 66 under sub-01
+    │   │   │           ⇢ Note 224 under sub-03
+    │   │   ├── · Note 97 under sub-05
+    │   │   ├── · Note 136 under sub-05
+    │   │   ├── · Note 175 under sub-05
+    │   │   ├── · Note 214 under sub-05
+    │   │   ├── · Note 253 under sub-05
+    │   │   ├── · Note 292 under sub-05
+    │   │   ├── · Note 331 under sub-05
+    │   │   ├── · Note 370 under sub-05
+    │   │   │           ⇢ Note 283 under sub-01
+    │   │   │           ⇢ Note 309 under sub-04
+    │   │   └── · Note 409 under sub-05
+    │   └── ▢ Alignment Pressure: subtopic 6
+    │       ├── · Note 20 under sub-06
+    │       │           ⇢ Note 59 under sub-06
+    │       │           ⇢ Note 9 under sub-00
+    │       │           ⇢ Note 391 under sub-00
+    │       │           ⇢ Note 82 under sub-03
+    │       │           ⇢ Note 37 under sub-05
+    │       │           ⇢ Note 272 under sub-06
+    │       ├── · Note 59 under sub-06
+    │       │           ⇢ Note 9 under sub-00
+    │       │           ⇢ Note 52 under sub-04
+    │       │           ⇢ Note 77 under sub-06
+    │       ├── · Note 98 under sub-06
+    │       ├── · Note 137 under sub-06
+    │       ├── · Note 176 under sub-06
+    │       ├── · Note 215 under sub-06
+    │       │           ⇢ Note 46 under sub-06
+    │       ├── · Note 254 under sub-06
+    │       ├── · Note 293 under sub-06
+    │       ├── · Note 332 under sub-06
+    │       ├── · Note 371 under sub-06
+    │       └── · Note 410 under sub-06
+    │                   ⇢ Note 366 under sub-01
+    ├── ▢ Cognitive Thresholds
+    │   ├── ▢ Cognitive Thresholds: subtopic 0
+    │   │   ├── · Note 9 under sub-00
+    │   │   │           ⇢ Note 122 under sub-04
+    │   │   │           ⇢ Note 85 under sub-06
+    │   │   │           ⇢ Note 35 under sub-03
+    │   │   │           ⇢ Note 309 under sub-04
+    │   │   │           ⇢ Note 77 under sub-06
+    │   │   ├── · Note 48 under sub-00
+    │   │   │           ⇢ Note 11 under sub-02
+    │   │   │           ⇢ Note 207 under sub-03
+    │   │   │           ⇢ Note 130 under sub-04
+    │   │   │           ⇢ Note 177 under sub-00
+    │   │   │           ⇢ Note 141 under sub-03
+    │   │   │           ⇢ Note 66 under sub-01
+    │   │   │           ⇢ Note 265 under sub-05
+    │   │   │           ⇢ Note 343 under sub-05
+    │   │   │           ⇢ Note 389 under sub-06
+    │   │   ├── · Note 87 under sub-00
+    │   │   │           ⇢ Note 234 under sub-07
+    │   │   ├── · Note 126 under sub-00
+    │   │   ├── · Note 165 under sub-00
+    │   │   ├── · Note 204 under sub-00
+    │   │   ├── · Note 243 under sub-00
+    │   │   ├── · Note 282 under sub-00
+    │   │   ├── · Note 321 under sub-00
+    │   │   │           ⇢ Note 36 under sub-04
+    │   │   ├── · Note 360 under sub-00
+    │   │   │           ⇢ Note 398 under sub-07
+    │   │   └── · Note 399 under sub-00
+    │   │               ⇢ Note 87 under sub-00
+    │   ├── ▢ Cognitive Thresholds: subtopic 1
+    │   │   ├── · Note 10 under sub-01
+    │   │   │           ⇢ Note 50 under sub-02
+    │   │   │           ⇢ Note 402 under sub-03
+    │   │   │           ⇢ Note 13 under sub-04
+    │   │   │           ⇢ Note 417 under sub-01
+    │   │   │           ⇢ Note 262 under sub-02
+    │   │   ├── · Note 49 under sub-01
+    │   │   │           ⇢ Note 48 under sub-00
+    │   │   │           ⇢ Note 197 under sub-01
+    │   │   │           ⇢ Note 275 under sub-01
+    │   │   │           ⇢ Note 221 under sub-00
+    │   │   │           ⇢ Note 222 under sub-01
+    │   │   │           ⇢ Note 185 under sub-03
+    │   │   │           ⇢ Note 264 under sub-04
+    │   │   │           ⇢ Note 75 under sub-04
+    │   │   ├── · Note 88 under sub-01
+    │   │   │           ⇢ Note 389 under sub-06
+    │   │   ├── · Note 127 under sub-01
+    │   │   ├── · Note 166 under sub-01
+    │   │   ├── · Note 205 under sub-01
+    │   │   ├── · Note 244 under sub-01
+    │   │   ├── · Note 283 under sub-01
+    │   │   ├── · Note 322 under sub-01
+    │   │   ├── · Note 361 under sub-01
+    │   │   │           ⇢ Note 323 under sub-02
+    │   │   │           ⇢ Note 104 under sub-00
+    │   │   └── · Note 400 under sub-01
+    │   ├── ▢ Cognitive Thresholds: subtopic 2
+    │   │   ├── · Note 11 under sub-02
+    │   │   │           ⇢ Note 19 under sub-05
+    │   │   │           ⇢ Note 51 under sub-03
+    │   │   │           ⇢ Note 256 under sub-01
+    │   │   │           ⇢ Note 28 under sub-02
+    │   │   ├── · Note 50 under sub-02
+    │   │   │           ⇢ Note 2 under sub-01
+    │   │   │           ⇢ Note 5 under sub-04
+    │   │   │           ⇢ Note 230 under sub-03
+    │   │   ├── · Note 89 under sub-02
+    │   │   ├── · Note 128 under sub-02
+    │   │   ├── · Note 167 under sub-02
+    │   │   ├── · Note 206 under sub-02
+    │   │   ├── · Note 245 under sub-02
+    │   │   ├── · Note 284 under sub-02
+    │   │   ├── · Note 323 under sub-02
+    │   │   │           ⇢ Note 197 under sub-01
+    │   │   ├── · Note 362 under sub-02
+    │   │   └── · Note 401 under sub-02
+    │   ├── ▢ Cognitive Thresholds: subtopic 3
+    │   │   ├── · Note 12 under sub-03
+    │   │   │           ⇢ Note 175 under sub-05
+    │   │   │           ⇢ Note 364 under sub-04
+    │   │   │           ⇢ Note 46 under sub-06
+    │   │   │           ⇢ Note 351 under sub-07
+    │   │   ├── · Note 51 under sub-03
+    │   │   │           ⇢ Note 328 under sub-02
+    │   │   │           ⇢ Note 45 under sub-05
+    │   │   │           ⇢ Note 65 under sub-00
+    │   │   ├── · Note 90 under sub-03
+    │   │   ├── · Note 129 under sub-03
+    │   │   │           ⇢ Note 80 under sub-01
+    │   │   ├── · Note 168 under sub-03
+    │   │   ├── · Note 207 under sub-03
+    │   │   ├── · Note 246 under sub-03
+    │   │   ├── · Note 285 under sub-03
+    │   │   ├── · Note 324 under sub-03
+    │   │   ├── · Note 363 under sub-03
+    │   │   └── · Note 402 under sub-03
+    │   │               ⇢ Note 279 under sub-05
+    │   └── ▢ Cognitive Thresholds: subtopic 4
+    │       ├── · Note 13 under sub-04
+    │       │           ⇢ Note 36 under sub-04
+    │       ├── · Note 52 under sub-04
+    │       │           ⇢ Note 16 under sub-02
+    │       ├── · Note 91 under sub-04
+    │       ├── · Note 130 under sub-04
+    │       ├── · Note 169 under sub-04
+    │       ├── · Note 208 under sub-04
+    │       ├── · Note 247 under sub-04
+    │       ├── · Note 286 under sub-04
+    │       ├── · Note 325 under sub-04
+    │       │           ⇢ Note 256 under sub-01
+    │       │           ⇢ Note 259 under sub-04
+    │       ├── · Note 364 under sub-04
+    │       └── · Note 403 under sub-04
+    ├── ▢ Economic Dynamics
+    │   ├── ▢ Economic Dynamics: subtopic 0
+    │   │   ├── · Note 1 under sub-00
+    │   │   │           ⇢ Note 26 under sub-00
+    │   │   │           ⇢ Note 266 under sub-00
+    │   │   │           ⇢ Note 344 under sub-00
+    │   │   ├── · Note 40 under sub-00
+    │   │   │           ⇢ Note 16 under sub-02
+    │   │   │           ⇢ Note 211 under sub-02
+    │   │   │           ⇢ Note 45 under sub-05
+    │   │   │           ⇢ Note 388 under sub-05
+    │   │   │           ⇢ Note 38 under sub-06
+    │   │   ├── · Note 79 under sub-00
+    │   │   │           ⇢ Note 48 under sub-00
+    │   │   │           ⇢ Note 40 under sub-00
+    │   │   │           ⇢ Note 69 under sub-04
+    │   │   │           ⇢ Note 307 under sub-02
+    │   │   ├── · Note 118 under sub-00
+    │   │   │           ⇢ Note 53 under sub-00
+    │   │   ├── · Note 157 under sub-00
+    │   │   ├── · Note 196 under sub-00
+    │   │   ├── · Note 235 under sub-00
+    │   │   │           ⇢ Note 418 under sub-02
+    │   │   ├── · Note 274 under sub-00
+    │   │   ├── · Note 313 under sub-00
+    │   │   │           ⇢ Note 118 under sub-00
+    │   │   ├── · Note 352 under sub-00
+    │   │   └── · Note 391 under sub-00
+    │   ├── ▢ Economic Dynamics: subtopic 1
+    │   │   ├── · Note 2 under sub-01
+    │   │   │           ⇢ Note 20 under sub-06
+    │   │   ├── · Note 41 under sub-01
+    │   │   │           ⇢ Note 49 under sub-01
+    │   │   │           ⇢ Note 394 under sub-03
+    │   │   │           ⇢ Note 25 under sub-04
+    │   │   │           ⇢ Note 184 under sub-02
+    │   │   │           ⇢ Note 151 under sub-02
+    │   │   ├── · Note 80 under sub-01
+    │   │   │           ⇢ Note 18 under sub-04
+    │   │   │           ⇢ Note 91 under sub-04
+    │   │   │           ⇢ Note 1 under sub-00
+    │   │   │           ⇢ Note 79 under sub-00
+    │   │   ├── · Note 119 under sub-01
+    │   │   ├── · Note 158 under sub-01
+    │   │   ├── · Note 197 under sub-01
+    │   │   ├── · Note 236 under sub-01
+    │   │   ├── · Note 275 under sub-01
+    │   │   ├── · Note 314 under sub-01
+    │   │   ├── · Note 353 under sub-01
+    │   │   └── · Note 392 under sub-01
+    │   ├── ▢ Economic Dynamics: subtopic 2
+    │   │   ├── · Note 3 under sub-02
+    │   │   │           ⇢ Note 59 under sub-06
+    │   │   │           ⇢ Note 42 under sub-02
+    │   │   │           ⇢ Note 33 under sub-01
+    │   │   │           ⇢ Note 233 under sub-06
+    │   │   ├── · Note 42 under sub-02
+    │   │   │           ⇢ Note 15 under sub-01
+    │   │   │           ⇢ Note 157 under sub-00
+    │   │   │           ⇢ Note 3 under sub-02
+    │   │   │           ⇢ Note 110 under sub-00
+    │   │   │           ⇢ Note 72 under sub-01
+    │   │   ├── · Note 81 under sub-02
+    │   │   │           ⇢ Note 12 under sub-03
+    │   │   ├── · Note 120 under sub-02
+    │   │   ├── · Note 159 under sub-02
+    │   │   │           ⇢ Note 124 under sub-06
+    │   │   ├── · Note 198 under sub-02
+    │   │   │           ⇢ Note 278 under sub-04
+    │   │   ├── · Note 237 under sub-02
+    │   │   │           ⇢ Note 159 under sub-02
+    │   │   ├── · Note 276 under sub-02
+    │   │   ├── · Note 315 under sub-02
+    │   │   ├── · Note 354 under sub-02
+    │   │   │           ⇢ Note 145 under sub-02
+    │   │   └── · Note 393 under sub-02
+    │   ├── ▢ Economic Dynamics: subtopic 3
+    │   │   ├── · Note 4 under sub-03
+    │   │   │           ⇢ Note 174 under sub-04
+    │   │   │           ⇢ Note 118 under sub-00
+    │   │   │           ⇢ Note 80 under sub-01
+    │   │   │           ⇢ Note 297 under sub-03
+    │   │   │           ⇢ Note 260 under sub-00
+    │   │   │           ⇢ Note 342 under sub-04
+    │   │   │           ⇢ Note 381 under sub-04
+    │   │   │           ⇢ Note 70 under sub-05
+    │   │   │           ⇢ Note 35 under sub-03
+    │   │   ├── · Note 43 under sub-03
+    │   │   │           ⇢ Note 15 under sub-01
+    │   │   │           ⇢ Note 176 under sub-06
+    │   │   │           ⇢ Note 10 under sub-01
+    │   │   │           ⇢ Note 280 under sub-06
+    │   │   │           ⇢ Note 33 under sub-01
+    │   │   ├── · Note 82 under sub-03
+    │   │   ├── · Note 121 under sub-03
+    │   │   ├── · Note 160 under sub-03
+    │   │   │           ⇢ Note 119 under sub-01
+    │   │   ├── · Note 199 under sub-03
+    │   │   │           ⇢ Note 103 under sub-04
+    │   │   ├── · Note 238 under sub-03
+    │   │   │           ⇢ Note 343 under sub-05
+    │   │   ├── · Note 277 under sub-03
+    │   │   │           ⇢ Note 291 under sub-04
+    │   │   ├── · Note 316 under sub-03
+    │   │   │           ⇢ Note 206 under sub-02
+    │   │   ├── · Note 355 under sub-03
+    │   │   └── · Note 394 under sub-03
+    │   ├── ▢ Economic Dynamics: subtopic 4
+    │   │   ├── · Note 5 under sub-04
+    │   │   │           ⇢ Note 57 under sub-04
+    │   │   │           ⇢ Note 90 under sub-03
+    │   │   │           ⇢ Note 163 under sub-06
+    │   │   ├── · Note 44 under sub-04
+    │   │   │           ⇢ Note 136 under sub-05
+    │   │   │           ⇢ Note 8 under sub-07
+    │   │   │           ⇢ Note 257 under sub-02
+    │   │   │           ⇢ Note 145 under sub-02
+    │   │   │           ⇢ Note 78 under sub-07
+    │   │   ├── · Note 83 under sub-04
+    │   │   │           ⇢ Note 247 under sub-04
+    │   │   ├── · Note 122 under sub-04
+    │   │   ├── · Note 161 under sub-04
+    │   │   │           ⇢ Note 372 under sub-00
+    │   │   ├── · Note 200 under sub-04
+    │   │   ├── · Note 239 under sub-04
+    │   │   ├── · Note 278 under sub-04
+    │   │   ├── · Note 317 under sub-04
+    │   │   ├── · Note 356 under sub-04
+    │   │   └── · Note 395 under sub-04
+    │   ├── ▢ Economic Dynamics: subtopic 5
+    │   │   ├── · Note 6 under sub-05
+    │   │   │           ⇢ Note 130 under sub-04
+    │   │   │           ⇢ Note 43 under sub-03
+    │   │   │           ⇢ Note 201 under sub-05
+    │   │   ├── · Note 45 under sub-05
+    │   │   │           ⇢ Note 127 under sub-01
+    │   │   │           ⇢ Note 323 under sub-02
+    │   │   │           ⇢ Note 207 under sub-03
+    │   │   │           ⇢ Note 84 under sub-05
+    │   │   │           ⇢ Note 30 under sub-04
+    │   │   ├── · Note 84 under sub-05
+    │   │   ├── · Note 123 under sub-05
+    │   │   │           ⇢ Note 316 under sub-03
+    │   │   ├── · Note 162 under sub-05
+    │   │   ├── · Note 201 under sub-05
+    │   │   ├── · Note 240 under sub-05
+    │   │   ├── · Note 279 under sub-05
+    │   │   ├── · Note 318 under sub-05
+    │   │   │           ⇢ Note 31 under sub-05
+    │   │   ├── · Note 357 under sub-05
+    │   │   │           ⇢ Note 333 under sub-00
+    │   │   └── · Note 396 under sub-05
+    │   ├── ▢ Economic Dynamics: subtopic 6
+    │   │   ├── · Note 7 under sub-06
+    │   │   │           ⇢ Note 209 under sub-00
+    │   │   │           ⇢ Note 50 under sub-02
+    │   │   │           ⇢ Note 317 under sub-04
+    │   │   │           ⇢ Note 64 under sub-04
+    │   │   │           ⇢ Note 306 under sub-01
+    │   │   │           ⇢ Note 39 under sub-07
+    │   │   ├── · Note 46 under sub-06
+    │   │   │           ⇢ Note 18 under sub-04
+    │   │   │           ⇢ Note 165 under sub-00
+    │   │   │           ⇢ Note 333 under sub-00
+    │   │   │           ⇢ Note 25 under sub-04
+    │   │   │           ⇢ Note 260 under sub-00
+    │   │   │           ⇢ Note 222 under sub-01
+    │   │   │           ⇢ Note 30 under sub-04
+    │   │   ├── · Note 85 under sub-06
+    │   │   ├── · Note 124 under sub-06
+    │   │   ├── · Note 163 under sub-06
+    │   │   ├── · Note 202 under sub-06
+    │   │   ├── · Note 241 under sub-06
+    │   │   │           ⇢ Note 329 under sub-03
+    │   │   │           ⇢ Note 69 under sub-04
+    │   │   ├── · Note 280 under sub-06
+    │   │   ├── · Note 319 under sub-06
+    │   │   │           ⇢ Note 285 under sub-03
+    │   │   │           ⇢ Note 385 under sub-02
+    │   │   ├── · Note 358 under sub-06
+    │   │   └── · Note 397 under sub-06
+    │   └── ▢ Economic Dynamics: subtopic 7
+    │       ├── · Note 8 under sub-07
+    │       │           ⇢ Note 10 under sub-01
+    │       ├── · Note 47 under sub-07
+    │       │           ⇢ Note 94 under sub-02
+    │       │           ⇢ Note 91 under sub-04
+    │       │           ⇢ Note 1 under sub-00
+    │       │           ⇢ Note 242 under sub-07
+    │       │           ⇢ Note 25 under sub-04
+    │       │           ⇢ Note 220 under sub-04
+    │       │           ⇢ Note 65 under sub-00
+    │       ├── · Note 86 under sub-07
+    │       │           ⇢ Note 17 under sub-03
+    │       │           ⇢ Note 162 under sub-05
+    │       │           ⇢ Note 342 under sub-04
+    │       ├── · Note 125 under sub-07
+    │       │           ⇢ Note 56 under sub-03
+    │       │           ⇢ Note 378 under sub-01
+    │       ├── · Note 164 under sub-07
+    │       ├── · Note 203 under sub-07
+    │       ├── · Note 242 under sub-07
+    │       ├── · Note 281 under sub-07
+    │       ├── · Note 320 under sub-07
+    │       │           ⇢ Note 127 under sub-01
+    │       ├── · Note 359 under sub-07
+    │       │           ⇢ Note 86 under sub-07
+    │       └── · Note 398 under sub-07
+    ├── ▢ Governance Timing
+    │   ├── ▢ Governance Timing: subtopic 0
+    │   │   ├── · Note 21 under sub-00
+    │   │   │           ⇢ Note 210 under sub-01
+    │   │   │           ⇢ Note 3 under sub-02
+    │   │   │           ⇢ Note 257 under sub-02
+    │   │   │           ⇢ Note 416 under sub-00
+    │   │   │           ⇢ Note 272 under sub-06
+    │   │   │           ⇢ Note 39 under sub-07
+    │   │   ├── · Note 60 under sub-00
+    │   │   │           ⇢ Note 18 under sub-04
+    │   │   │           ⇢ Note 75 under sub-04
+    │   │   ├── · Note 99 under sub-00
+    │   │   │           ⇢ Note 372 under sub-00
+    │   │   ├── · Note 138 under sub-00
+    │   │   ├── · Note 177 under sub-00
+    │   │   ├── · Note 216 under sub-00
+    │   │   │           ⇢ Note 27 under sub-01
+    │   │   ├── · Note 255 under sub-00
+    │   │   │           ⇢ Note 174 under sub-04
+    │   │   ├── · Note 294 under sub-00
+    │   │   │           ⇢ Note 250 under sub-02
+    │   │   ├── · Note 333 under sub-00
+    │   │   ├── · Note 372 under sub-00
+    │   │   └── · Note 411 under sub-00
+    │   │               ⇢ Note 355 under sub-03
+    │   ├── ▢ Governance Timing: subtopic 1
+    │   │   ├── · Note 22 under sub-01
+    │   │   │           ⇢ Note 329 under sub-03
+    │   │   │           ⇢ Note 361 under sub-01
+    │   │   │           ⇢ Note 79 under sub-00
+    │   │   │           ⇢ Note 264 under sub-04
+    │   │   │           ⇢ Note 38 under sub-06
+    │   │   │           ⇢ Note 39 under sub-07
+    │   │   ├── · Note 61 under sub-01
+    │   │   │           ⇢ Note 46 under sub-06
+    │   │   │           ⇢ Note 227 under sub-00
+    │   │   │           ⇢ Note 267 under sub-01
+    │   │   │           ⇢ Note 309 under sub-04
+    │   │   │           ⇢ Note 38 under sub-06
+    │   │   ├── · Note 100 under sub-01
+    │   │   ├── · Note 139 under sub-01
+    │   │   │           ⇢ Note 210 under sub-01
+    │   │   ├── · Note 178 under sub-01
+    │   │   ├── · Note 217 under sub-01
+    │   │   ├── · Note 256 under sub-01
+    │   │   ├── · Note 295 under sub-01
+    │   │   ├── · Note 334 under sub-01
+    │   │   │           ⇢ Note 261 under sub-01
+    │   │   ├── · Note 373 under sub-01
+    │   │   └── · Note 412 under sub-01
+    │   ├── ▢ Governance Timing: subtopic 2
+    │   │   ├── · Note 23 under sub-02
+    │   │   │           ⇢ Note 289 under sub-02
+    │   │   │           ⇢ Note 399 under sub-00
+    │   │   │           ⇢ Note 1 under sub-00
+    │   │   │           ⇢ Note 199 under sub-03
+    │   │   │           ⇢ Note 238 under sub-03
+    │   │   ├── · Note 62 under sub-02
+    │   │   │           ⇢ Note 1 under sub-00
+    │   │   │           ⇢ Note 281 under sub-07
+    │   │   ├── · Note 101 under sub-02
+    │   │   │           ⇢ Note 328 under sub-02
+    │   │   │           ⇢ Note 388 under sub-05
+    │   │   ├── · Note 140 under sub-02
+    │   │   ├── · Note 179 under sub-02
+    │   │   ├── · Note 218 under sub-02
+    │   │   │           ⇢ Note 126 under sub-00
+    │   │   ├── · Note 257 under sub-02
+    │   │   ├── · Note 296 under sub-02
+    │   │   ├── · Note 335 under sub-02
+    │   │   ├── · Note 374 under sub-02
+    │   │   │           ⇢ Note 361 under sub-01
+    │   │   │           ⇢ Note 419 under sub-03
+    │   │   └── · Note 413 under sub-02
+    │   ├── ▢ Governance Timing: subtopic 3
+    │   │   ├── · Note 24 under sub-03
+    │   │   │           ⇢ Note 18 under sub-04
+    │   │   │           ⇢ Note 324 under sub-03
+    │   │   │           ⇢ Note 29 under sub-03
+    │   │   │           ⇢ Note 35 under sub-03
+    │   │   ├── · Note 63 under sub-03
+    │   │   │           ⇢ Note 174 under sub-04
+    │   │   │           ⇢ Note 41 under sub-01
+    │   │   │           ⇢ Note 46 under sub-06
+    │   │   │           ⇢ Note 263 under sub-03
+    │   │   │           ⇢ Note 114 under sub-04
+    │   │   ├── · Note 102 under sub-03
+    │   │   │           ⇢ Note 255 under sub-00
+    │   │   ├── · Note 141 under sub-03
+    │   │   ├── · Note 180 under sub-03
+    │   │   │           ⇢ Note 145 under sub-02
+    │   │   ├── · Note 219 under sub-03
+    │   │   ├── · Note 258 under sub-03
+    │   │   ├── · Note 297 under sub-03
+    │   │   │           ⇢ Note 355 under sub-03
+    │   │   ├── · Note 336 under sub-03
+    │   │   │           ⇢ Note 372 under sub-00
+    │   │   ├── · Note 375 under sub-03
+    │   │   └── · Note 414 under sub-03
+    │   │               ⇢ Note 15 under sub-01
+    │   └── ▢ Governance Timing: subtopic 4
+    │       ├── · Note 25 under sub-04
+    │       │           ⇢ Note 53 under sub-00
+    │       │           ⇢ Note 292 under sub-05
+    │       │           ⇢ Note 52 under sub-04
+    │       │           ⇢ Note 403 under sub-04
+    │       │           ⇢ Note 224 under sub-03
+    │       │           ⇢ Note 226 under sub-05
+    │       │           ⇢ Note 350 under sub-06
+    │       ├── · Note 64 under sub-04
+    │       │           ⇢ Note 25 under sub-04
+    │       │           ⇢ Note 186 under sub-04
+    │       │           ⇢ Note 31 under sub-05
+    │       ├── · Note 103 under sub-04
+    │       ├── · Note 142 under sub-04
+    │       │           ⇢ Note 201 under sub-05
+    │       ├── · Note 181 under sub-04
+    │       │           ⇢ Note 310 under sub-05
+    │       ├── · Note 220 under sub-04
+    │       │           ⇢ Note 230 under sub-03
+    │       │           ⇢ Note 156 under sub-07
+    │       ├── · Note 259 under sub-04
+    │       │           ⇢ Note 299 under sub-00
+    │       ├── · Note 298 under sub-04
+    │       │           ⇢ Note 109 under sub-05
+    │       ├── · Note 337 under sub-04
+    │       │           ⇢ Note 246 under sub-03
+    │       │           ⇢ Note 228 under sub-01
+    │       ├── · Note 376 under sub-04
+    │       │           ⇢ Note 407 under sub-03
+    │       └── · Note 415 under sub-04
+    ├── ▢ Infrastructure Bottlenecks
+    │   ├── ▢ Infrastructure Bottlenecks: subtopic 0
+    │   │   ├── · Note 26 under sub-00
+    │   │   │           ⇢ Note 6 under sub-05
+    │   │   │           ⇢ Note 189 under sub-01
+    │   │   │           ⇢ Note 74 under sub-03
+    │   │   ├── · Note 65 under sub-00
+    │   │   │           ⇢ Note 215 under sub-06
+    │   │   │           ⇢ Note 49 under sub-01
+    │   │   │           ⇢ Note 277 under sub-03
+    │   │   │           ⇢ Note 316 under sub-03
+    │   │   │           ⇢ Note 67 under sub-02
+    │   │   │           ⇢ Note 150 under sub-01
+    │   │   │           ⇢ Note 36 under sub-04
+    │   │   ├── · Note 104 under sub-00
+    │   │   │           ⇢ Note 186 under sub-04
+    │   │   │           ⇢ Note 150 under sub-01
+    │   │   ├── · Note 143 under sub-00
+    │   │   │           ⇢ Note 141 under sub-03
+    │   │   │           ⇢ Note 376 under sub-04
+    │   │   ├── · Note 182 under sub-00
+    │   │   │           ⇢ Note 71 under sub-00
+    │   │   ├── · Note 221 under sub-00
+    │   │   ├── · Note 260 under sub-00
+    │   │   ├── · Note 299 under sub-00
+    │   │   ├── · Note 338 under sub-00
+    │   │   │           ⇢ Note 361 under sub-01
+    │   │   ├── · Note 377 under sub-00
+    │   │   └── · Note 416 under sub-00
+    │   │               ⇢ Note 107 under sub-03
+    │   ├── ▢ Infrastructure Bottlenecks: subtopic 1
+    │   │   ├── · Note 27 under sub-01
+    │   │   │           ⇢ Note 326 under sub-00
+    │   │   │           ⇢ Note 404 under sub-00
+    │   │   │           ⇢ Note 40 under sub-00
+    │   │   │           ⇢ Note 60 under sub-00
+    │   │   ├── · Note 66 under sub-01
+    │   │   │           ⇢ Note 16 under sub-02
+    │   │   │           ⇢ Note 293 under sub-06
+    │   │   │           ⇢ Note 123 under sub-05
+    │   │   ├── · Note 105 under sub-01
+    │   │   │           ⇢ Note 100 under sub-01
+    │   │   ├── · Note 144 under sub-01
+    │   │   ├── · Note 183 under sub-01
+    │   │   │           ⇢ Note 341 under sub-03
+    │   │   ├── · Note 222 under sub-01
+    │   │   ├── · Note 261 under sub-01
+    │   │   ├── · Note 300 under sub-01
+    │   │   │           ⇢ Note 138 under sub-00
+    │   │   ├── · Note 339 under sub-01
+    │   │   ├── · Note 378 under sub-01
+    │   │   └── · Note 417 under sub-01
+    │   ├── ▢ Infrastructure Bottlenecks: subtopic 2
+    │   │   ├── · Note 28 under sub-02
+    │   │   │           ⇢ Note 57 under sub-04
+    │   │   │           ⇢ Note 391 under sub-00
+    │   │   │           ⇢ Note 36 under sub-04
+    │   │   ├── · Note 67 under sub-02
+    │   │   │           ⇢ Note 405 under sub-01
+    │   │   │           ⇢ Note 77 under sub-06
+    │   │   ├── · Note 106 under sub-02
+    │   │   │           ⇢ Note 303 under sub-04
+    │   │   ├── · Note 145 under sub-02
+    │   │   ├── · Note 184 under sub-02
+    │   │   ├── · Note 223 under sub-02
+    │   │   │           ⇢ Note 22 under sub-01
+    │   │   ├── · Note 262 under sub-02
+    │   │   ├── · Note 301 under sub-02
+    │   │   ├── · Note 340 under sub-02
+    │   │   ├── · Note 379 under sub-02
+    │   │   └── · Note 418 under sub-02
+    │   ├── ▢ Infrastructure Bottlenecks: subtopic 3
+    │   │   ├── · Note 29 under sub-03
+    │   │   │           ⇢ Note 14 under sub-00
+    │   │   │           ⇢ Note 254 under sub-06
+    │   │   │           ⇢ Note 45 under sub-05
+    │   │   │           ⇢ Note 262 under sub-02
+    │   │   │           ⇢ Note 38 under sub-06
+    │   │   ├── · Note 68 under sub-03
+    │   │   │           ⇢ Note 96 under sub-04
+    │   │   │           ⇢ Note 50 under sub-02
+    │   │   │           ⇢ Note 403 under sub-04
+    │   │   │           ⇢ Note 4 under sub-03
+    │   │   ├── · Note 107 under sub-03
+    │   │   │           ⇢ Note 36 under sub-04
+    │   │   ├── · Note 146 under sub-03
+    │   │   ├── · Note 185 under sub-03
+    │   │   ├── · Note 224 under sub-03
+    │   │   ├── · Note 263 under sub-03
+    │   │   │           ⇢ Note 131 under sub-00
+    │   │   ├── · Note 302 under sub-03
+    │   │   ├── · Note 341 under sub-03
+    │   │   ├── · Note 380 under sub-03
+    │   │   │           ⇢ Note 265 under sub-05
+    │   │   └── · Note 419 under sub-03
+    │   ├── ▢ Infrastructure Bottlenecks: subtopic 4
+    │   │   ├── · Note 30 under sub-04
+    │   │   │           ⇢ Note 68 under sub-03
+    │   │   │           ⇢ Note 230 under sub-03
+    │   │   ├── · Note 69 under sub-04
+    │   │   │           ⇢ Note 12 under sub-03
+    │   │   │           ⇢ Note 151 under sub-02
+    │   │   ├── · Note 108 under sub-04
+    │   │   ├── · Note 147 under sub-04
+    │   │   ├── · Note 186 under sub-04
+    │   │   │           ⇢ Note 167 under sub-02
+    │   │   ├── · Note 225 under sub-04
+    │   │   ├── · Note 264 under sub-04
+    │   │   ├── · Note 303 under sub-04
+    │   │   │           ⇢ Note 40 under sub-00
+    │   │   │           ⇢ Note 348 under sub-04
+    │   │   ├── · Note 342 under sub-04
+    │   │   └── · Note 381 under sub-04
+    │   └── ▢ Infrastructure Bottlenecks: subtopic 5
+    │       ├── · Note 31 under sub-05
+    │       │           ⇢ Note 132 under sub-01
+    │       │           ⇢ Note 252 under sub-04
+    │       │           ⇢ Note 58 under sub-05
+    │       │           ⇢ Note 129 under sub-03
+    │       │           ⇢ Note 27 under sub-01
+    │       │           ⇢ Note 39 under sub-07
+    │       ├── · Note 70 under sub-05
+    │       │           ⇢ Note 326 under sub-00
+    │       │           ⇢ Note 284 under sub-02
+    │       │           ⇢ Note 403 under sub-04
+    │       │           ⇢ Note 42 under sub-02
+    │       │           ⇢ Note 112 under sub-02
+    │       │           ⇢ Note 231 under sub-04
+    │       ├── · Note 109 under sub-05
+    │       │           ⇢ Note 49 under sub-01
+    │       ├── · Note 148 under sub-05
+    │       ├── · Note 187 under sub-05
+    │       ├── · Note 226 under sub-05
+    │       ├── · Note 265 under sub-05
+    │       ├── · Note 304 under sub-05
+    │       ├── · Note 343 under sub-05
+    │       └── · Note 382 under sub-05
+    └── ▢ Retrieval Dynamics
+        ├── ▢ Retrieval Dynamics: subtopic 0
+        │   ├── · Note 32 under sub-00
+        │   │           ⇢ Note 166 under sub-01
+        │   │           ⇢ Note 294 under sub-00
+        │   │           ⇢ Note 376 under sub-04
+        │   │           ⇢ Note 69 under sub-04
+        │   │           ⇢ Note 37 under sub-05
+        │   ├── · Note 71 under sub-00
+        │   │           ⇢ Note 88 under sub-01
+        │   │           ⇢ Note 50 under sub-02
+        │   │           ⇢ Note 5 under sub-04
+        │   │           ⇢ Note 339 under sub-01
+        │   │           ⇢ Note 267 under sub-01
+        │   ├── · Note 110 under sub-00
+        │   ├── · Note 149 under sub-00
+        │   ├── · Note 188 under sub-00
+        │   │           ⇢ Note 378 under sub-01
+        │   ├── · Note 227 under sub-00
+        │   ├── · Note 266 under sub-00
+        │   ├── · Note 305 under sub-00
+        │   │           ⇢ Note 66 under sub-01
+        │   │           ⇢ Note 189 under sub-01
+        │   ├── · Note 344 under sub-00
+        │   └── · Note 383 under sub-00
+        │               ⇢ Note 331 under sub-05
+        ├── ▢ Retrieval Dynamics: subtopic 1
+        │   ├── · Note 33 under sub-01
+        │   │           ⇢ Note 10 under sub-01
+        │   │           ⇢ Note 49 under sub-01
+        │   │           ⇢ Note 6 under sub-05
+        │   │           ⇢ Note 227 under sub-00
+        │   ├── · Note 72 under sub-01
+        │   │           ⇢ Note 367 under sub-02
+        │   │           ⇢ Note 135 under sub-04
+        │   │           ⇢ Note 59 under sub-06
+        │   │           ⇢ Note 400 under sub-01
+        │   │           ⇢ Note 3 under sub-02
+        │   │           ⇢ Note 76 under sub-05
+        │   ├── · Note 111 under sub-01
+        │   ├── · Note 150 under sub-01
+        │   │           ⇢ Note 81 under sub-02
+        │   ├── · Note 189 under sub-01
+        │   │           ⇢ Note 280 under sub-06
+        │   ├── · Note 228 under sub-01
+        │   ├── · Note 267 under sub-01
+        │   ├── · Note 306 under sub-01
+        │   ├── · Note 345 under sub-01
+        │   │           ⇢ Note 370 under sub-05
+        │   └── · Note 384 under sub-01
+        │               ⇢ Note 59 under sub-06
+        │               ⇢ Note 218 under sub-02
+        │               ⇢ Note 299 under sub-00
+        ├── ▢ Retrieval Dynamics: subtopic 2
+        │   ├── · Note 34 under sub-02
+        │   │           ⇢ Note 249 under sub-01
+        │   │           ⇢ Note 59 under sub-06
+        │   │           ⇢ Note 281 under sub-07
+        │   │           ⇢ Note 389 under sub-06
+        │   ├── · Note 73 under sub-02
+        │   │           ⇢ Note 46 under sub-06
+        │   │           ⇢ Note 85 under sub-06
+        │   │           ⇢ Note 27 under sub-01
+        │   │           ⇢ Note 222 under sub-01
+        │   ├── · Note 112 under sub-02
+        │   ├── · Note 151 under sub-02
+        │   │           ⇢ Note 227 under sub-00
+        │   ├── · Note 190 under sub-02
+        │   │           ⇢ Note 11 under sub-02
+        │   │           ⇢ Note 258 under sub-03
+        │   │           ⇢ Note 194 under sub-06
+        │   ├── · Note 229 under sub-02
+        │   │           ⇢ Note 40 under sub-00
+        │   ├── · Note 268 under sub-02
+        │   │           ⇢ Note 124 under sub-06
+        │   ├── · Note 307 under sub-02
+        │   │           ⇢ Note 223 under sub-02
+        │   │           ⇢ Note 305 under sub-00
+        │   ├── · Note 346 under sub-02
+        │   └── · Note 385 under sub-02
+        ├── ▢ Retrieval Dynamics: subtopic 3
+        │   ├── · Note 35 under sub-03
+        │   │           ⇢ Note 50 under sub-02
+        │   │           ⇢ Note 325 under sub-04
+        │   │           ⇢ Note 22 under sub-01
+        │   ├── · Note 74 under sub-03
+        │   │           ⇢ Note 236 under sub-01
+        │   │           ⇢ Note 43 under sub-03
+        │   │           ⇢ Note 111 under sub-01
+        │   ├── · Note 113 under sub-03
+        │   ├── · Note 152 under sub-03
+        │   │           ⇢ Note 288 under sub-01
+        │   ├── · Note 191 under sub-03
+        │   │           ⇢ Note 54 under sub-01
+        │   │           ⇢ Note 199 under sub-03
+        │   ├── · Note 230 under sub-03
+        │   ├── · Note 269 under sub-03
+        │   │           ⇢ Note 211 under sub-02
+        │   ├── · Note 308 under sub-03
+        │   │           ⇢ Note 275 under sub-01
+        │   │           ⇢ Note 301 under sub-02
+        │   ├── · Note 347 under sub-03
+        │   │           ⇢ Note 130 under sub-04
+        │   └── · Note 386 under sub-03
+        │               ⇢ Note 156 under sub-07
+        ├── ▢ Retrieval Dynamics: subtopic 4
+        │   ├── · Note 36 under sub-04
+        │   │           ⇢ Note 249 under sub-01
+        │   │           ⇢ Note 400 under sub-01
+        │   │           ⇢ Note 47 under sub-07
+        │   │           ⇢ Note 334 under sub-01
+        │   │           ⇢ Note 415 under sub-04
+        │   │           ⇢ Note 74 under sub-03
+        │   ├── · Note 75 under sub-04
+        │   │           ⇢ Note 10 under sub-01
+        │   │           ⇢ Note 284 under sub-02
+        │   │           ⇢ Note 198 under sub-02
+        │   │           ⇢ Note 149 under sub-00
+        │   │           ⇢ Note 36 under sub-04
+        │   ├── · Note 114 under sub-04
+        │   │           ⇢ Note 374 under sub-02
+        │   │           ⇢ Note 187 under sub-05
+        │   ├── · Note 153 under sub-04
+        │   │           ⇢ Note 265 under sub-05
+        │   ├── · Note 192 under sub-04
+        │   ├── · Note 231 under sub-04
+        │   │           ⇢ Note 328 under sub-02
+        │   ├── · Note 270 under sub-04
+        │   ├── · Note 309 under sub-04
+        │   ├── · Note 348 under sub-04
+        │   │           ⇢ Note 106 under sub-02
+        │   └── · Note 387 under sub-04
+        ├── ▢ Retrieval Dynamics: subtopic 5
+        │   ├── · Note 37 under sub-05
+        │   │           ⇢ Note 168 under sub-03
+        │   │           ⇢ Note 160 under sub-03
+        │   │           ⇢ Note 238 under sub-03
+        │   │           ⇢ Note 200 under sub-04
+        │   │           ⇢ Note 21 under sub-00
+        │   │           ⇢ Note 73 under sub-02
+        │   │           ⇢ Note 78 under sub-07
+        │   ├── · Note 76 under sub-05
+        │   │           ⇢ Note 131 under sub-00
+        │   │           ⇢ Note 368 under sub-03
+        │   │           ⇢ Note 66 under sub-01
+        │   │           ⇢ Note 31 under sub-05
+        │   ├── · Note 115 under sub-05
+        │   ├── · Note 154 under sub-05
+        │   │           ⇢ Note 139 under sub-01
+        │   ├── · Note 193 under sub-05
+        │   ├── · Note 232 under sub-05
+        │   ├── · Note 271 under sub-05
+        │   ├── · Note 310 under sub-05
+        │   ├── · Note 349 under sub-05
+        │   └── · Note 388 under sub-05
+        ├── ▢ Retrieval Dynamics: subtopic 6
+        │   ├── · Note 38 under sub-06
+        │   │           ⇢ Note 10 under sub-01
+        │   │           ⇢ Note 82 under sub-03
+        │   │           ⇢ Note 21 under sub-00
+        │   │           ⇢ Note 65 under sub-00
+        │   │           ⇢ Note 339 under sub-01
+        │   ├── · Note 77 under sub-06
+        │   │           ⇢ Note 289 under sub-02
+        │   │           ⇢ Note 20 under sub-06
+        │   │           ⇢ Note 49 under sub-01
+        │   │           ⇢ Note 47 under sub-07
+        │   │           ⇢ Note 341 under sub-03
+        │   │           ⇢ Note 117 under sub-07
+        │   ├── · Note 116 under sub-06
+        │   ├── · Note 155 under sub-06
+        │   ├── · Note 194 under sub-06
+        │   │           ⇢ Note 33 under sub-01
+        │   ├── · Note 233 under sub-06
+        │   ├── · Note 272 under sub-06
+        │   ├── · Note 311 under sub-06
+        │   ├── · Note 350 under sub-06
+        │   └── · Note 389 under sub-06
+        │               ⇢ Note 343 under sub-05
+        └── ▢ Retrieval Dynamics: subtopic 7
+            ├── · Note 39 under sub-07
+            │           ⇢ Note 366 under sub-01
+            │           ⇢ Note 96 under sub-04
+            │           ⇢ Note 357 under sub-05
+            │           ⇢ Note 21 under sub-00
+            │           ⇢ Note 33 under sub-01
+            ├── · Note 78 under sub-07
+            │           ⇢ Note 133 under sub-02
+            │           ⇢ Note 10 under sub-01
+            │           ⇢ Note 86 under sub-07
+            │           ⇢ Note 116 under sub-06
+            ├── · Note 117 under sub-07
+            │           ⇢ Note 130 under sub-04
+            │           ⇢ Note 315 under sub-02
+            ├── · Note 156 under sub-07
+            │           ⇢ Note 217 under sub-01
+            ├── · Note 195 under sub-07
+            │           ⇢ Note 305 under sub-00
+            ├── · Note 234 under sub-07
+            ├── · Note 273 under sub-07
+            ├── · Note 312 under sub-07
+            ├── · Note 351 under sub-07
+            └── · Note 390 under sub-07

@@ -1,0 +1,18 @@
+{
+  "name": "llm-graph-viz",
+  "version": "0.1.0",
+  "description": "Benchmark for LLM graph serialization",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate-fixtures": "tsx scripts/generate-fixtures.ts",
+    "render": "tsx scripts/render.ts",
+    "arboricity": "tsx scripts/arboricity.ts",
+    "parse": "tsx scripts/parse.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}

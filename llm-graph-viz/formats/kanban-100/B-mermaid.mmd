@@ -1,0 +1,352 @@
+graph TD
+  backlog["Backlog"]
+  backlog/app["App — Backlog"]
+  backlog/app/t-004["T-004: document cache layer (app)"]
+  backlog/app/t-005["T-005: add auth flow (app)"]
+  backlog/app/t-006["T-006: optimize pagination (app)"]
+  backlog/app/t-007["T-007: fix error handling (app)"]
+  backlog/infra["Infra — Backlog"]
+  backlog/infra/t-008["T-008: document cache layer (infra)"]
+  backlog/infra/t-009["T-009: add pagination (infra)"]
+  backlog/infra/t-010["T-010: document metrics (infra)"]
+  backlog/infra/t-011["T-011: migrate export dialog (infra)"]
+  backlog/platform["Platform — Backlog"]
+  backlog/platform/t-001["T-001: migrate feature flag (platform)"]
+  backlog/platform/t-002["T-002: document retry logic (platform)"]
+  backlog/platform/t-003["T-003: migrate retry logic (platform)"]
+  backlog/research["Research — Backlog"]
+  backlog/research/t-012["T-012: migrate cache layer (research)"]
+  backlog/research/t-013["T-013: fix search index (research)"]
+  backlog/research/t-014["T-014: refactor cache layer (research)"]
+  blocked["Blocked"]
+  blocked/app["App — Blocked"]
+  blocked/app/t-053["T-053: refactor error handling (app)"]
+  blocked/app/t-054["T-054: migrate export dialog (app)"]
+  blocked/app/t-055["T-055: fix cache layer (app)"]
+  blocked/app/t-056["T-056: fix feature flag (app)"]
+  blocked/app/t-057["T-057: refactor export dialog (app)"]
+  blocked/infra["Infra — Blocked"]
+  blocked/infra/t-058["T-058: add export dialog (infra)"]
+  blocked/infra/t-059["T-059: refactor pagination (infra)"]
+  blocked/infra/t-060["T-060: migrate retry logic (infra)"]
+  blocked/platform["Platform — Blocked"]
+  blocked/platform/t-049["T-049: refactor auth flow (platform)"]
+  blocked/platform/t-050["T-050: migrate search index (platform)"]
+  blocked/platform/t-051["T-051: optimize pagination (platform)"]
+  blocked/platform/t-052["T-052: add cache layer (platform)"]
+  blocked/research["Research — Blocked"]
+  blocked/research/t-061["T-061: add feature flag (research)"]
+  blocked/research/t-062["T-062: refactor error handling (research)"]
+  blocked/research/t-063["T-063: document pagination (research)"]
+  done["Done"]
+  done/app["App — Done"]
+  done/app/t-069["T-069: add feature flag (app)"]
+  done/app/t-070["T-070: optimize export dialog (app)"]
+  done/app/t-071["T-071: migrate retry logic (app)"]
+  done/app/t-072["T-072: migrate feature flag (app)"]
+  done/infra["Infra — Done"]
+  done/infra/t-073["T-073: optimize retry logic (infra)"]
+  done/infra/t-074["T-074: refactor feature flag (infra)"]
+  done/platform["Platform — Done"]
+  done/platform/t-064["T-064: fix auth flow (platform)"]
+  done/platform/t-065["T-065: migrate error handling (platform)"]
+  done/platform/t-066["T-066: fix export dialog (platform)"]
+  done/platform/t-067["T-067: refactor cache layer (platform)"]
+  done/platform/t-068["T-068: add metrics (platform)"]
+  done/research["Research — Done"]
+  in-progress["In Progress"]
+  in-progress/app["App — In Progress"]
+  in-progress/app/t-018["T-018: fix metrics (app)"]
+  in-progress/app/t-019["T-019: migrate cache layer (app)"]
+  in-progress/app/t-020["T-020: add metrics (app)"]
+  in-progress/app/t-021["T-021: optimize feature flag (app)"]
+  in-progress/infra["Infra — In Progress"]
+  in-progress/infra/t-022["T-022: document metrics (infra)"]
+  in-progress/infra/t-023["T-023: fix export dialog (infra)"]
+  in-progress/infra/t-024["T-024: add error handling (infra)"]
+  in-progress/infra/t-025["T-025: refactor retry logic (infra)"]
+  in-progress/infra/t-026["T-026: add auth flow (infra)"]
+  in-progress/platform["Platform — In Progress"]
+  in-progress/platform/t-015["T-015: migrate search index (platform)"]
+  in-progress/platform/t-016["T-016: add search index (platform)"]
+  in-progress/platform/t-017["T-017: refactor search index (platform)"]
+  in-progress/research["Research — In Progress"]
+  in-progress/research/t-027["T-027: fix search index (research)"]
+  in-progress/research/t-028["T-028: fix pagination (research)"]
+  in-progress/research/t-029["T-029: fix retry logic (research)"]
+  in-progress/research/t-030["T-030: add metrics (research)"]
+  review["Review"]
+  review/app["App — Review"]
+  review/app/t-036["T-036: document metrics (app)"]
+  review/app/t-037["T-037: document export dialog (app)"]
+  review/app/t-038["T-038: optimize cache layer (app)"]
+  review/app/t-039["T-039: fix export dialog (app)"]
+  review/app/t-040["T-040: optimize error handling (app)"]
+  review/infra["Infra — Review"]
+  review/infra/t-041["T-041: migrate auth flow (infra)"]
+  review/infra/t-042["T-042: optimize auth flow (infra)"]
+  review/infra/t-043["T-043: refactor error handling (infra)"]
+  review/platform["Platform — Review"]
+  review/platform/t-031["T-031: optimize rate limiter (platform)"]
+  review/platform/t-032["T-032: fix pagination (platform)"]
+  review/platform/t-033["T-033: fix error handling (platform)"]
+  review/platform/t-034["T-034: refactor cache layer (platform)"]
+  review/platform/t-035["T-035: optimize metrics (platform)"]
+  review/research["Research — Review"]
+  review/research/t-044["T-044: fix rate limiter (research)"]
+  review/research/t-045["T-045: fix cache layer (research)"]
+  review/research/t-046["T-046: document error handling (research)"]
+  review/research/t-047["T-047: optimize auth flow (research)"]
+  review/research/t-048["T-048: optimize auth flow (research)"]
+  root["Kanban Root"]
+  root --> backlog
+  backlog --> backlog/app
+  backlog/app --> backlog/app/t-004
+  backlog/app --> backlog/app/t-005
+  backlog/app --> backlog/app/t-006
+  backlog/app --> backlog/app/t-007
+  backlog --> backlog/infra
+  backlog/infra --> backlog/infra/t-008
+  backlog/infra --> backlog/infra/t-009
+  backlog/infra --> backlog/infra/t-010
+  backlog/infra --> backlog/infra/t-011
+  backlog --> backlog/platform
+  backlog/platform --> backlog/platform/t-001
+  backlog/platform --> backlog/platform/t-002
+  backlog/platform --> backlog/platform/t-003
+  backlog --> backlog/research
+  backlog/research --> backlog/research/t-012
+  backlog/research --> backlog/research/t-013
+  backlog/research --> backlog/research/t-014
+  root --> blocked
+  blocked --> blocked/app
+  blocked/app --> blocked/app/t-053
+  blocked/app --> blocked/app/t-054
+  blocked/app --> blocked/app/t-055
+  blocked/app --> blocked/app/t-056
+  blocked/app --> blocked/app/t-057
+  blocked --> blocked/infra
+  blocked/infra --> blocked/infra/t-058
+  blocked/infra --> blocked/infra/t-059
+  blocked/infra --> blocked/infra/t-060
+  blocked --> blocked/platform
+  blocked/platform --> blocked/platform/t-049
+  blocked/platform --> blocked/platform/t-050
+  blocked/platform --> blocked/platform/t-051
+  blocked/platform --> blocked/platform/t-052
+  blocked --> blocked/research
+  blocked/research --> blocked/research/t-061
+  blocked/research --> blocked/research/t-062
+  blocked/research --> blocked/research/t-063
+  root --> done
+  done --> done/app
+  done/app --> done/app/t-069
+  done/app --> done/app/t-070
+  done/app --> done/app/t-071
+  done/app --> done/app/t-072
+  done --> done/infra
+  done/infra --> done/infra/t-073
+  done/infra --> done/infra/t-074
+  done --> done/platform
+  done/platform --> done/platform/t-064
+  done/platform --> done/platform/t-065
+  done/platform --> done/platform/t-066
+  done/platform --> done/platform/t-067
+  done/platform --> done/platform/t-068
+  done --> done/research
+  root --> in-progress
+  in-progress --> in-progress/app
+  in-progress/app --> in-progress/app/t-018
+  in-progress/app --> in-progress/app/t-019
+  in-progress/app --> in-progress/app/t-020
+  in-progress/app --> in-progress/app/t-021
+  in-progress --> in-progress/infra
+  in-progress/infra --> in-progress/infra/t-022
+  in-progress/infra --> in-progress/infra/t-023
+  in-progress/infra --> in-progress/infra/t-024
+  in-progress/infra --> in-progress/infra/t-025
+  in-progress/infra --> in-progress/infra/t-026
+  in-progress --> in-progress/platform
+  in-progress/platform --> in-progress/platform/t-015
+  in-progress/platform --> in-progress/platform/t-016
+  in-progress/platform --> in-progress/platform/t-017
+  in-progress --> in-progress/research
+  in-progress/research --> in-progress/research/t-027
+  in-progress/research --> in-progress/research/t-028
+  in-progress/research --> in-progress/research/t-029
+  in-progress/research --> in-progress/research/t-030
+  root --> review
+  review --> review/app
+  review/app --> review/app/t-036
+  review/app --> review/app/t-037
+  review/app --> review/app/t-038
+  review/app --> review/app/t-039
+  review/app --> review/app/t-040
+  review --> review/infra
+  review/infra --> review/infra/t-041
+  review/infra --> review/infra/t-042
+  review/infra --> review/infra/t-043
+  review --> review/platform
+  review/platform --> review/platform/t-031
+  review/platform --> review/platform/t-032
+  review/platform --> review/platform/t-033
+  review/platform --> review/platform/t-034
+  review/platform --> review/platform/t-035
+  review --> review/research
+  review/research --> review/research/t-044
+  review/research --> review/research/t-045
+  review/research --> review/research/t-046
+  review/research --> review/research/t-047
+  review/research --> review/research/t-048
+  backlog/app/t-004 -.-> backlog/app/t-007
+  backlog/app/t-004 -.-> backlog/infra/t-008
+  backlog/app/t-004 -.-> backlog/infra/t-009
+  backlog/app/t-004 -.-> backlog/infra/t-010
+  backlog/app/t-004 -.-> backlog/infra/t-011
+  backlog/app/t-004 -.-> backlog/platform/t-003
+  backlog/app/t-004 -.-> blocked/infra/t-058
+  backlog/app/t-004 -.-> done/infra/t-074
+  backlog/app/t-004 -.-> in-progress/app/t-019
+  backlog/app/t-005 -.-> backlog/app/t-004
+  backlog/app/t-005 -.-> backlog/app/t-006
+  backlog/app/t-005 -.-> backlog/platform/t-001
+  backlog/app/t-005 -.-> backlog/platform/t-003
+  backlog/app/t-005 -.-> blocked/infra/t-059
+  backlog/app/t-005 -.-> blocked/research/t-062
+  backlog/app/t-005 -.-> done/infra/t-074
+  backlog/app/t-005 -.-> in-progress/research/t-030
+  backlog/app/t-005 -.-> review/platform/t-034
+  backlog/app/t-005 -.-> review/research/t-047
+  backlog/app/t-006 -.-> backlog/app/t-004
+  backlog/app/t-006 -.-> backlog/infra/t-008
+  backlog/app/t-006 -.-> backlog/infra/t-009
+  backlog/app/t-006 -.-> backlog/infra/t-010
+  backlog/app/t-006 -.-> backlog/infra/t-011
+  backlog/app/t-006 -.-> backlog/platform/t-002
+  backlog/app/t-006 -.-> backlog/platform/t-003
+  backlog/app/t-006 -.-> backlog/research/t-012
+  backlog/app/t-006 -.-> blocked/research/t-061
+  backlog/app/t-006 -.-> review/app/t-037
+  backlog/app/t-006 -.-> review/platform/t-032
+  backlog/app/t-007 -.-> backlog/app/t-005
+  backlog/app/t-007 -.-> backlog/app/t-006
+  backlog/app/t-007 -.-> backlog/infra/t-008
+  backlog/app/t-007 -.-> backlog/infra/t-009
+  backlog/app/t-007 -.-> backlog/infra/t-010
+  backlog/app/t-007 -.-> backlog/infra/t-011
+  backlog/app/t-007 -.-> backlog/platform/t-001
+  backlog/app/t-007 -.-> backlog/platform/t-003
+  backlog/app/t-007 -.-> backlog/research/t-012
+  backlog/app/t-007 -.-> blocked/app/t-053
+  backlog/app/t-007 -.-> done/app/t-070
+  backlog/app/t-007 -.-> review/research/t-045
+  backlog/app/t-007 -.-> review/research/t-047
+  backlog/infra/t-008 -.-> backlog/app/t-005
+  backlog/infra/t-008 -.-> backlog/app/t-006
+  backlog/infra/t-008 -.-> backlog/infra/t-009
+  backlog/infra/t-008 -.-> backlog/infra/t-011
+  backlog/infra/t-008 -.-> backlog/platform/t-003
+  backlog/infra/t-008 -.-> blocked/platform/t-050
+  backlog/infra/t-008 -.-> done/app/t-071
+  backlog/infra/t-008 -.-> done/platform/t-068
+  backlog/infra/t-008 -.-> review/app/t-036
+  backlog/infra/t-008 -.-> review/platform/t-032
+  backlog/infra/t-008 -.-> review/research/t-048
+  backlog/infra/t-009 -.-> backlog/app/t-005
+  backlog/infra/t-009 -.-> backlog/infra/t-010
+  backlog/infra/t-009 -.-> backlog/infra/t-011
+  backlog/infra/t-009 -.-> backlog/platform/t-002
+  backlog/infra/t-009 -.-> backlog/platform/t-003
+  backlog/infra/t-009 -.-> blocked/research/t-062
+  backlog/infra/t-009 -.-> in-progress/infra/t-026
+  backlog/infra/t-009 -.-> review/platform/t-034
+  backlog/infra/t-010 -.-> backlog/app/t-005
+  backlog/infra/t-010 -.-> backlog/infra/t-008
+  backlog/infra/t-010 -.-> backlog/infra/t-011
+  backlog/infra/t-010 -.-> backlog/platform/t-002
+  backlog/infra/t-010 -.-> backlog/platform/t-003
+  backlog/infra/t-010 -.-> backlog/research/t-012
+  backlog/infra/t-010 -.-> done/platform/t-066
+  backlog/infra/t-010 -.-> in-progress/app/t-021
+  backlog/infra/t-010 -.-> in-progress/platform/t-015
+  backlog/infra/t-010 -.-> in-progress/platform/t-016
+  backlog/infra/t-011 -.-> backlog/app/t-005
+  backlog/infra/t-011 -.-> backlog/app/t-007
+  backlog/infra/t-011 -.-> backlog/platform/t-001
+  backlog/infra/t-011 -.-> backlog/platform/t-002
+  backlog/infra/t-011 -.-> backlog/platform/t-003
+  backlog/infra/t-011 -.-> backlog/research/t-012
+  backlog/infra/t-011 -.-> in-progress/app/t-018
+  backlog/infra/t-011 -.-> in-progress/platform/t-015
+  backlog/infra/t-011 -.-> review/app/t-040
+  backlog/infra/t-011 -.-> review/platform/t-032
+  backlog/infra/t-011 -.-> review/research/t-045
+  backlog/platform/t-001 -.-> backlog/app/t-004
+  backlog/platform/t-001 -.-> backlog/app/t-006
+  backlog/platform/t-001 -.-> backlog/infra/t-008
+  backlog/platform/t-001 -.-> backlog/infra/t-009
+  backlog/platform/t-001 -.-> backlog/infra/t-010
+  backlog/platform/t-001 -.-> backlog/platform/t-003
+  backlog/platform/t-001 -.-> blocked/app/t-055
+  backlog/platform/t-001 -.-> blocked/platform/t-050
+  backlog/platform/t-001 -.-> done/infra/t-073
+  backlog/platform/t-001 -.-> done/platform/t-067
+  backlog/platform/t-002 -.-> backlog/app/t-004
+  backlog/platform/t-002 -.-> backlog/app/t-005
+  backlog/platform/t-002 -.-> backlog/app/t-007
+  backlog/platform/t-002 -.-> backlog/infra/t-008
+  backlog/platform/t-002 -.-> backlog/platform/t-001
+  backlog/platform/t-002 -.-> backlog/research/t-012
+  backlog/platform/t-002 -.-> blocked/research/t-063
+  backlog/platform/t-002 -.-> in-progress/research/t-029
+  backlog/platform/t-002 -.-> in-progress/research/t-030
+  backlog/platform/t-002 -.-> review/app/t-036
+  backlog/platform/t-002 -.-> review/platform/t-034
+  backlog/platform/t-003 -.-> backlog/app/t-006
+  backlog/platform/t-003 -.-> backlog/platform/t-002
+  backlog/platform/t-003 -.-> backlog/research/t-012
+  backlog/platform/t-003 -.-> blocked/app/t-055
+  backlog/platform/t-003 -.-> done/infra/t-073
+  backlog/platform/t-003 -.-> in-progress/infra/t-026
+  backlog/platform/t-003 -.-> in-progress/research/t-028
+  backlog/platform/t-003 -.-> review/research/t-044
+  backlog/research/t-012 -.-> backlog/app/t-004
+  backlog/research/t-012 -.-> backlog/app/t-005
+  backlog/research/t-012 -.-> backlog/infra/t-008
+  backlog/research/t-012 -.-> backlog/infra/t-009
+  backlog/research/t-012 -.-> backlog/platform/t-001
+  backlog/research/t-012 -.-> blocked/app/t-054
+  backlog/research/t-012 -.-> blocked/app/t-057
+  backlog/research/t-012 -.-> blocked/platform/t-050
+  blocked/app/t-054 -.-> backlog/app/t-007
+  blocked/app/t-056 -.-> backlog/research/t-013
+  blocked/infra/t-058 -.-> review/research/t-047
+  blocked/infra/t-059 -.-> backlog/app/t-005
+  blocked/infra/t-060 -.-> review/app/t-040
+  blocked/platform/t-051 -.-> backlog/infra/t-010
+  blocked/platform/t-052 -.-> in-progress/platform/t-015
+  blocked/research/t-061 -.-> done/platform/t-065
+  blocked/research/t-062 -.-> backlog/platform/t-001
+  blocked/research/t-063 -.-> review/platform/t-034
+  done/app/t-069 -.-> in-progress/app/t-019
+  done/app/t-070 -.-> backlog/infra/t-008
+  done/app/t-071 -.-> backlog/platform/t-001
+  done/infra/t-073 -.-> in-progress/infra/t-024
+  done/infra/t-074 -.-> in-progress/research/t-028
+  done/platform/t-066 -.-> review/app/t-040
+  done/platform/t-067 -.-> backlog/research/t-012
+  in-progress/app/t-018 -.-> backlog/app/t-006
+  in-progress/app/t-021 -.-> done/platform/t-065
+  in-progress/infra/t-022 -.-> backlog/infra/t-011
+  in-progress/infra/t-025 -.-> review/infra/t-041
+  in-progress/infra/t-026 -.-> done/app/t-072
+  in-progress/platform/t-015 -.-> in-progress/infra/t-023
+  in-progress/research/t-028 -.-> done/infra/t-073
+  in-progress/research/t-029 -.-> blocked/app/t-055
+  review/app/t-039 -.-> in-progress/app/t-019
+  review/app/t-040 -.-> in-progress/app/t-018
+  review/infra/t-041 -.-> blocked/infra/t-058
+  review/infra/t-043 -.-> done/platform/t-068
+  review/research/t-044 -.-> done/platform/t-068
+  review/research/t-045 -.-> review/platform/t-034
+  review/research/t-047 -.-> backlog/research/t-014

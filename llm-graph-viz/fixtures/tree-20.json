@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": "proj",
+      "title": "Project Root",
+      "parent": null
+    },
+    {
+      "id": "proj/frontend",
+      "title": "Frontend",
+      "parent": "proj"
+    },
+    {
+      "id": "proj/backend",
+      "title": "Backend",
+      "parent": "proj"
+    },
+    {
+      "id": "proj/docs",
+      "title": "Documentation",
+      "parent": "proj"
+    },
+    {
+      "id": "proj/frontend/ui",
+      "title": "UI Components",
+      "parent": "proj/frontend"
+    },
+    {
+      "id": "proj/frontend/state",
+      "title": "State Management",
+      "parent": "proj/frontend"
+    },
+    {
+      "id": "proj/frontend/ui/button",
+      "title": "Button Component",
+      "parent": "proj/frontend/ui"
+    },
+    {
+      "id": "proj/frontend/ui/modal",
+      "title": "Modal Component",
+      "parent": "proj/frontend/ui"
+    },
+    {
+      "id": "proj/frontend/ui/form",
+      "title": "Form Component",
+      "parent": "proj/frontend/ui"
+    },
+    {
+      "id": "proj/frontend/state/store",
+      "title": "Redux Store",
+      "parent": "proj/frontend/state"
+    },
+    {
+      "id": "proj/backend/api",
+      "title": "REST API",
+      "parent": "proj/backend"
+    },
+    {
+      "id": "proj/backend/db",
+      "title": "Database",
+      "parent": "proj/backend"
+    },
+    {
+      "id": "proj/backend/auth",
+      "title": "Authentication",
+      "parent": "proj/backend"
+    },
+    {
+      "id": "proj/backend/api/users",
+      "title": "Users Endpoint",
+      "parent": "proj/backend/api"
+    },
+    {
+      "id": "proj/backend/api/orders",
+      "title": "Orders Endpoint",
+      "parent": "proj/backend/api"
+    },
+    {
+      "id": "proj/backend/db/migrations",
+      "title": "Migrations",
+      "parent": "proj/backend/db"
+    },
+    {
+      "id": "proj/backend/db/schema",
+      "title": "Schema",
+      "parent": "proj/backend/db"
+    },
+    {
+      "id": "proj/docs/readme",
+      "title": "README",
+      "parent": "proj/docs"
+    },
+    {
+      "id": "proj/docs/changelog",
+      "title": "CHANGELOG",
+      "parent": "proj/docs"
+    },
+    {
+      "id": "proj/docs/api-ref",
+      "title": "API Reference",
+      "parent": "proj/docs"
+    }
+  ],
+  "edges": [
+    {
+      "src": "proj/frontend/ui/form",
+      "tgt": "proj/backend/api/users",
+      "label": "calls"
+    },
+    {
+      "src": "proj/backend/api/users",
+      "tgt": "proj/backend/auth",
+      "label": "requires"
+    },
+    {
+      "src": "proj/backend/api/orders",
+      "tgt": "proj/backend/db/schema",
+      "label": "reads"
+    },
+    {
+      "src": "proj/frontend/ui/modal",
+      "tgt": "proj/frontend/ui/button",
+      "label": "uses"
+    },
+    {
+      "src": "proj/docs/api-ref",
+      "tgt": "proj/backend/api",
+      "label": "documents"
+    }
+  ]
+}

@@ -1,0 +1,4263 @@
+{
+  "nodes": [
+    {
+      "id": "wm",
+      "title": "World Model",
+      "parent": null
+    },
+    {
+      "id": "wm/economic-dynamics",
+      "title": "Economic Dynamics",
+      "parent": "wm"
+    },
+    {
+      "id": "wm/cognitive-thresholds",
+      "title": "Cognitive Thresholds",
+      "parent": "wm"
+    },
+    {
+      "id": "wm/alignment-pressure",
+      "title": "Alignment Pressure",
+      "parent": "wm"
+    },
+    {
+      "id": "wm/governance-timing",
+      "title": "Governance Timing",
+      "parent": "wm"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks",
+      "title": "Infrastructure Bottlenecks",
+      "parent": "wm"
+    },
+    {
+      "id": "wm/retrieval-dynamics",
+      "title": "Retrieval Dynamics",
+      "parent": "wm"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00",
+      "title": "Economic Dynamics: subtopic 0",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01",
+      "title": "Economic Dynamics: subtopic 1",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02",
+      "title": "Economic Dynamics: subtopic 2",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03",
+      "title": "Economic Dynamics: subtopic 3",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04",
+      "title": "Economic Dynamics: subtopic 4",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05",
+      "title": "Economic Dynamics: subtopic 5",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06",
+      "title": "Economic Dynamics: subtopic 6",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07",
+      "title": "Economic Dynamics: subtopic 7",
+      "parent": "wm/economic-dynamics"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00",
+      "title": "Cognitive Thresholds: subtopic 0",
+      "parent": "wm/cognitive-thresholds"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01",
+      "title": "Cognitive Thresholds: subtopic 1",
+      "parent": "wm/cognitive-thresholds"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02",
+      "title": "Cognitive Thresholds: subtopic 2",
+      "parent": "wm/cognitive-thresholds"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03",
+      "title": "Cognitive Thresholds: subtopic 3",
+      "parent": "wm/cognitive-thresholds"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04",
+      "title": "Cognitive Thresholds: subtopic 4",
+      "parent": "wm/cognitive-thresholds"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00",
+      "title": "Alignment Pressure: subtopic 0",
+      "parent": "wm/alignment-pressure"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01",
+      "title": "Alignment Pressure: subtopic 1",
+      "parent": "wm/alignment-pressure"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02",
+      "title": "Alignment Pressure: subtopic 2",
+      "parent": "wm/alignment-pressure"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03",
+      "title": "Alignment Pressure: subtopic 3",
+      "parent": "wm/alignment-pressure"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04",
+      "title": "Alignment Pressure: subtopic 4",
+      "parent": "wm/alignment-pressure"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05",
+      "title": "Alignment Pressure: subtopic 5",
+      "parent": "wm/alignment-pressure"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06",
+      "title": "Alignment Pressure: subtopic 6",
+      "parent": "wm/alignment-pressure"
+    },
+    {
+      "id": "wm/governance-timing/sub-00",
+      "title": "Governance Timing: subtopic 0",
+      "parent": "wm/governance-timing"
+    },
+    {
+      "id": "wm/governance-timing/sub-01",
+      "title": "Governance Timing: subtopic 1",
+      "parent": "wm/governance-timing"
+    },
+    {
+      "id": "wm/governance-timing/sub-02",
+      "title": "Governance Timing: subtopic 2",
+      "parent": "wm/governance-timing"
+    },
+    {
+      "id": "wm/governance-timing/sub-03",
+      "title": "Governance Timing: subtopic 3",
+      "parent": "wm/governance-timing"
+    },
+    {
+      "id": "wm/governance-timing/sub-04",
+      "title": "Governance Timing: subtopic 4",
+      "parent": "wm/governance-timing"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00",
+      "title": "Infrastructure Bottlenecks: subtopic 0",
+      "parent": "wm/infrastructure-bottlenecks"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01",
+      "title": "Infrastructure Bottlenecks: subtopic 1",
+      "parent": "wm/infrastructure-bottlenecks"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02",
+      "title": "Infrastructure Bottlenecks: subtopic 2",
+      "parent": "wm/infrastructure-bottlenecks"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03",
+      "title": "Infrastructure Bottlenecks: subtopic 3",
+      "parent": "wm/infrastructure-bottlenecks"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04",
+      "title": "Infrastructure Bottlenecks: subtopic 4",
+      "parent": "wm/infrastructure-bottlenecks"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05",
+      "title": "Infrastructure Bottlenecks: subtopic 5",
+      "parent": "wm/infrastructure-bottlenecks"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00",
+      "title": "Retrieval Dynamics: subtopic 0",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01",
+      "title": "Retrieval Dynamics: subtopic 1",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02",
+      "title": "Retrieval Dynamics: subtopic 2",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03",
+      "title": "Retrieval Dynamics: subtopic 3",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04",
+      "title": "Retrieval Dynamics: subtopic 4",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05",
+      "title": "Retrieval Dynamics: subtopic 5",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06",
+      "title": "Retrieval Dynamics: subtopic 6",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07",
+      "title": "Retrieval Dynamics: subtopic 7",
+      "parent": "wm/retrieval-dynamics"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-001",
+      "title": "Note 1 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-002",
+      "title": "Note 2 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-003",
+      "title": "Note 3 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-004",
+      "title": "Note 4 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-005",
+      "title": "Note 5 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-006",
+      "title": "Note 6 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-007",
+      "title": "Note 7 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-008",
+      "title": "Note 8 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-009",
+      "title": "Note 9 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-010",
+      "title": "Note 10 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-011",
+      "title": "Note 11 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-012",
+      "title": "Note 12 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-013",
+      "title": "Note 13 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-014",
+      "title": "Note 14 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-015",
+      "title": "Note 15 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-016",
+      "title": "Note 16 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-017",
+      "title": "Note 17 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-018",
+      "title": "Note 18 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-019",
+      "title": "Note 19 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-020",
+      "title": "Note 20 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-021",
+      "title": "Note 21 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-022",
+      "title": "Note 22 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-023",
+      "title": "Note 23 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-024",
+      "title": "Note 24 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-025",
+      "title": "Note 25 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-026",
+      "title": "Note 26 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-027",
+      "title": "Note 27 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-028",
+      "title": "Note 28 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-029",
+      "title": "Note 29 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-030",
+      "title": "Note 30 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-031",
+      "title": "Note 31 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-032",
+      "title": "Note 32 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-033",
+      "title": "Note 33 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-034",
+      "title": "Note 34 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-035",
+      "title": "Note 35 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-036",
+      "title": "Note 36 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-037",
+      "title": "Note 37 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-038",
+      "title": "Note 38 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-039",
+      "title": "Note 39 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-040",
+      "title": "Note 40 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-041",
+      "title": "Note 41 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-042",
+      "title": "Note 42 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-043",
+      "title": "Note 43 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-044",
+      "title": "Note 44 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-045",
+      "title": "Note 45 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-046",
+      "title": "Note 46 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-047",
+      "title": "Note 47 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-048",
+      "title": "Note 48 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-049",
+      "title": "Note 49 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-050",
+      "title": "Note 50 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-051",
+      "title": "Note 51 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-052",
+      "title": "Note 52 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-053",
+      "title": "Note 53 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-054",
+      "title": "Note 54 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-055",
+      "title": "Note 55 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-056",
+      "title": "Note 56 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-057",
+      "title": "Note 57 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-058",
+      "title": "Note 58 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-059",
+      "title": "Note 59 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-060",
+      "title": "Note 60 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-061",
+      "title": "Note 61 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-062",
+      "title": "Note 62 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-063",
+      "title": "Note 63 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-064",
+      "title": "Note 64 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "title": "Note 65 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-066",
+      "title": "Note 66 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-067",
+      "title": "Note 67 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-068",
+      "title": "Note 68 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-069",
+      "title": "Note 69 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-070",
+      "title": "Note 70 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-071",
+      "title": "Note 71 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-072",
+      "title": "Note 72 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-073",
+      "title": "Note 73 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-074",
+      "title": "Note 74 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-075",
+      "title": "Note 75 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-076",
+      "title": "Note 76 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-077",
+      "title": "Note 77 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-078",
+      "title": "Note 78 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-079",
+      "title": "Note 79 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-080",
+      "title": "Note 80 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-081",
+      "title": "Note 81 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-082",
+      "title": "Note 82 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-083",
+      "title": "Note 83 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-084",
+      "title": "Note 84 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-085",
+      "title": "Note 85 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-086",
+      "title": "Note 86 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-087",
+      "title": "Note 87 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-088",
+      "title": "Note 88 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-089",
+      "title": "Note 89 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-090",
+      "title": "Note 90 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-091",
+      "title": "Note 91 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-092",
+      "title": "Note 92 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-093",
+      "title": "Note 93 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-094",
+      "title": "Note 94 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-095",
+      "title": "Note 95 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-096",
+      "title": "Note 96 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-097",
+      "title": "Note 97 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-098",
+      "title": "Note 98 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-099",
+      "title": "Note 99 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-100",
+      "title": "Note 100 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-101",
+      "title": "Note 101 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-102",
+      "title": "Note 102 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-103",
+      "title": "Note 103 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-104",
+      "title": "Note 104 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-105",
+      "title": "Note 105 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-106",
+      "title": "Note 106 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-107",
+      "title": "Note 107 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-108",
+      "title": "Note 108 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-109",
+      "title": "Note 109 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-110",
+      "title": "Note 110 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-111",
+      "title": "Note 111 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-112",
+      "title": "Note 112 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-113",
+      "title": "Note 113 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-114",
+      "title": "Note 114 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-115",
+      "title": "Note 115 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-116",
+      "title": "Note 116 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-117",
+      "title": "Note 117 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-118",
+      "title": "Note 118 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-119",
+      "title": "Note 119 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-120",
+      "title": "Note 120 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-121",
+      "title": "Note 121 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-122",
+      "title": "Note 122 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-123",
+      "title": "Note 123 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-124",
+      "title": "Note 124 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-125",
+      "title": "Note 125 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-126",
+      "title": "Note 126 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-127",
+      "title": "Note 127 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-128",
+      "title": "Note 128 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-129",
+      "title": "Note 129 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-130",
+      "title": "Note 130 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-131",
+      "title": "Note 131 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-132",
+      "title": "Note 132 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-133",
+      "title": "Note 133 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-134",
+      "title": "Note 134 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-135",
+      "title": "Note 135 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-136",
+      "title": "Note 136 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-137",
+      "title": "Note 137 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-138",
+      "title": "Note 138 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-139",
+      "title": "Note 139 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-140",
+      "title": "Note 140 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-141",
+      "title": "Note 141 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-142",
+      "title": "Note 142 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-143",
+      "title": "Note 143 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-144",
+      "title": "Note 144 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-145",
+      "title": "Note 145 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-146",
+      "title": "Note 146 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-147",
+      "title": "Note 147 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-148",
+      "title": "Note 148 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-149",
+      "title": "Note 149 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-150",
+      "title": "Note 150 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-151",
+      "title": "Note 151 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-152",
+      "title": "Note 152 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-153",
+      "title": "Note 153 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-154",
+      "title": "Note 154 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-155",
+      "title": "Note 155 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-156",
+      "title": "Note 156 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-157",
+      "title": "Note 157 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-158",
+      "title": "Note 158 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-159",
+      "title": "Note 159 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-160",
+      "title": "Note 160 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-161",
+      "title": "Note 161 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-162",
+      "title": "Note 162 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-163",
+      "title": "Note 163 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-164",
+      "title": "Note 164 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-165",
+      "title": "Note 165 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-166",
+      "title": "Note 166 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-167",
+      "title": "Note 167 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-168",
+      "title": "Note 168 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-169",
+      "title": "Note 169 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-170",
+      "title": "Note 170 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-171",
+      "title": "Note 171 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-172",
+      "title": "Note 172 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-173",
+      "title": "Note 173 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-174",
+      "title": "Note 174 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-175",
+      "title": "Note 175 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-176",
+      "title": "Note 176 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-177",
+      "title": "Note 177 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-178",
+      "title": "Note 178 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-179",
+      "title": "Note 179 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-180",
+      "title": "Note 180 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-181",
+      "title": "Note 181 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-182",
+      "title": "Note 182 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-183",
+      "title": "Note 183 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-184",
+      "title": "Note 184 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-185",
+      "title": "Note 185 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-186",
+      "title": "Note 186 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-187",
+      "title": "Note 187 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-188",
+      "title": "Note 188 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-189",
+      "title": "Note 189 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-190",
+      "title": "Note 190 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-191",
+      "title": "Note 191 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-192",
+      "title": "Note 192 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-193",
+      "title": "Note 193 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-194",
+      "title": "Note 194 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-195",
+      "title": "Note 195 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-196",
+      "title": "Note 196 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-197",
+      "title": "Note 197 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-198",
+      "title": "Note 198 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-199",
+      "title": "Note 199 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-200",
+      "title": "Note 200 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-201",
+      "title": "Note 201 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-202",
+      "title": "Note 202 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-203",
+      "title": "Note 203 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-204",
+      "title": "Note 204 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-205",
+      "title": "Note 205 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-206",
+      "title": "Note 206 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-207",
+      "title": "Note 207 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-208",
+      "title": "Note 208 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-209",
+      "title": "Note 209 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-210",
+      "title": "Note 210 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-211",
+      "title": "Note 211 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-212",
+      "title": "Note 212 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-213",
+      "title": "Note 213 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-214",
+      "title": "Note 214 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-215",
+      "title": "Note 215 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-216",
+      "title": "Note 216 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-217",
+      "title": "Note 217 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-218",
+      "title": "Note 218 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-219",
+      "title": "Note 219 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-220",
+      "title": "Note 220 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-221",
+      "title": "Note 221 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-222",
+      "title": "Note 222 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-223",
+      "title": "Note 223 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-224",
+      "title": "Note 224 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-225",
+      "title": "Note 225 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-226",
+      "title": "Note 226 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-227",
+      "title": "Note 227 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-228",
+      "title": "Note 228 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-229",
+      "title": "Note 229 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-230",
+      "title": "Note 230 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-231",
+      "title": "Note 231 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-232",
+      "title": "Note 232 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-233",
+      "title": "Note 233 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-234",
+      "title": "Note 234 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-235",
+      "title": "Note 235 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-236",
+      "title": "Note 236 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-237",
+      "title": "Note 237 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-238",
+      "title": "Note 238 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-239",
+      "title": "Note 239 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-240",
+      "title": "Note 240 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-241",
+      "title": "Note 241 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-242",
+      "title": "Note 242 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-243",
+      "title": "Note 243 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-244",
+      "title": "Note 244 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-245",
+      "title": "Note 245 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-246",
+      "title": "Note 246 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-247",
+      "title": "Note 247 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-248",
+      "title": "Note 248 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-249",
+      "title": "Note 249 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-250",
+      "title": "Note 250 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-251",
+      "title": "Note 251 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-252",
+      "title": "Note 252 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-253",
+      "title": "Note 253 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-254",
+      "title": "Note 254 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-255",
+      "title": "Note 255 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-256",
+      "title": "Note 256 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-257",
+      "title": "Note 257 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-258",
+      "title": "Note 258 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-259",
+      "title": "Note 259 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-260",
+      "title": "Note 260 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-261",
+      "title": "Note 261 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-262",
+      "title": "Note 262 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-263",
+      "title": "Note 263 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-264",
+      "title": "Note 264 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-265",
+      "title": "Note 265 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-266",
+      "title": "Note 266 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-267",
+      "title": "Note 267 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-268",
+      "title": "Note 268 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-269",
+      "title": "Note 269 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-270",
+      "title": "Note 270 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-271",
+      "title": "Note 271 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-272",
+      "title": "Note 272 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-273",
+      "title": "Note 273 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-274",
+      "title": "Note 274 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-275",
+      "title": "Note 275 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-276",
+      "title": "Note 276 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-277",
+      "title": "Note 277 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-278",
+      "title": "Note 278 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-279",
+      "title": "Note 279 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-280",
+      "title": "Note 280 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-281",
+      "title": "Note 281 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-282",
+      "title": "Note 282 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-283",
+      "title": "Note 283 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-284",
+      "title": "Note 284 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-285",
+      "title": "Note 285 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-286",
+      "title": "Note 286 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-287",
+      "title": "Note 287 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-288",
+      "title": "Note 288 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-289",
+      "title": "Note 289 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-290",
+      "title": "Note 290 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-291",
+      "title": "Note 291 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-292",
+      "title": "Note 292 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-293",
+      "title": "Note 293 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-294",
+      "title": "Note 294 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-295",
+      "title": "Note 295 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-296",
+      "title": "Note 296 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-297",
+      "title": "Note 297 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-298",
+      "title": "Note 298 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-299",
+      "title": "Note 299 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-300",
+      "title": "Note 300 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-301",
+      "title": "Note 301 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-302",
+      "title": "Note 302 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-303",
+      "title": "Note 303 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-304",
+      "title": "Note 304 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-305",
+      "title": "Note 305 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-306",
+      "title": "Note 306 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-307",
+      "title": "Note 307 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-308",
+      "title": "Note 308 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-309",
+      "title": "Note 309 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-310",
+      "title": "Note 310 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-311",
+      "title": "Note 311 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-312",
+      "title": "Note 312 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-313",
+      "title": "Note 313 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-314",
+      "title": "Note 314 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-315",
+      "title": "Note 315 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-316",
+      "title": "Note 316 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-317",
+      "title": "Note 317 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-318",
+      "title": "Note 318 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-319",
+      "title": "Note 319 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-320",
+      "title": "Note 320 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-321",
+      "title": "Note 321 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-322",
+      "title": "Note 322 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-323",
+      "title": "Note 323 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-324",
+      "title": "Note 324 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-325",
+      "title": "Note 325 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-326",
+      "title": "Note 326 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-327",
+      "title": "Note 327 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-328",
+      "title": "Note 328 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-329",
+      "title": "Note 329 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-330",
+      "title": "Note 330 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-331",
+      "title": "Note 331 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-332",
+      "title": "Note 332 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-333",
+      "title": "Note 333 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-334",
+      "title": "Note 334 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-335",
+      "title": "Note 335 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-336",
+      "title": "Note 336 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-337",
+      "title": "Note 337 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-338",
+      "title": "Note 338 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-339",
+      "title": "Note 339 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-340",
+      "title": "Note 340 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-341",
+      "title": "Note 341 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-342",
+      "title": "Note 342 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-343",
+      "title": "Note 343 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-344",
+      "title": "Note 344 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-345",
+      "title": "Note 345 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-346",
+      "title": "Note 346 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-347",
+      "title": "Note 347 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-348",
+      "title": "Note 348 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-349",
+      "title": "Note 349 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-350",
+      "title": "Note 350 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-351",
+      "title": "Note 351 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-352",
+      "title": "Note 352 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-353",
+      "title": "Note 353 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-354",
+      "title": "Note 354 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-355",
+      "title": "Note 355 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-356",
+      "title": "Note 356 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-357",
+      "title": "Note 357 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-358",
+      "title": "Note 358 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-359",
+      "title": "Note 359 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-360",
+      "title": "Note 360 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-361",
+      "title": "Note 361 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-362",
+      "title": "Note 362 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-363",
+      "title": "Note 363 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-364",
+      "title": "Note 364 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-365",
+      "title": "Note 365 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-366",
+      "title": "Note 366 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-367",
+      "title": "Note 367 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-368",
+      "title": "Note 368 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-369",
+      "title": "Note 369 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-370",
+      "title": "Note 370 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-371",
+      "title": "Note 371 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-372",
+      "title": "Note 372 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-373",
+      "title": "Note 373 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-374",
+      "title": "Note 374 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-375",
+      "title": "Note 375 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-376",
+      "title": "Note 376 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-377",
+      "title": "Note 377 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-378",
+      "title": "Note 378 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-379",
+      "title": "Note 379 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-380",
+      "title": "Note 380 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-04/note-381",
+      "title": "Note 381 under sub-04",
+      "parent": "wm/infrastructure-bottlenecks/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-05/note-382",
+      "title": "Note 382 under sub-05",
+      "parent": "wm/infrastructure-bottlenecks/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-00/note-383",
+      "title": "Note 383 under sub-00",
+      "parent": "wm/retrieval-dynamics/sub-00"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-01/note-384",
+      "title": "Note 384 under sub-01",
+      "parent": "wm/retrieval-dynamics/sub-01"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-02/note-385",
+      "title": "Note 385 under sub-02",
+      "parent": "wm/retrieval-dynamics/sub-02"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-03/note-386",
+      "title": "Note 386 under sub-03",
+      "parent": "wm/retrieval-dynamics/sub-03"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-04/note-387",
+      "title": "Note 387 under sub-04",
+      "parent": "wm/retrieval-dynamics/sub-04"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-05/note-388",
+      "title": "Note 388 under sub-05",
+      "parent": "wm/retrieval-dynamics/sub-05"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-06/note-389",
+      "title": "Note 389 under sub-06",
+      "parent": "wm/retrieval-dynamics/sub-06"
+    },
+    {
+      "id": "wm/retrieval-dynamics/sub-07/note-390",
+      "title": "Note 390 under sub-07",
+      "parent": "wm/retrieval-dynamics/sub-07"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-00/note-391",
+      "title": "Note 391 under sub-00",
+      "parent": "wm/economic-dynamics/sub-00"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-01/note-392",
+      "title": "Note 392 under sub-01",
+      "parent": "wm/economic-dynamics/sub-01"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-02/note-393",
+      "title": "Note 393 under sub-02",
+      "parent": "wm/economic-dynamics/sub-02"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-03/note-394",
+      "title": "Note 394 under sub-03",
+      "parent": "wm/economic-dynamics/sub-03"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-04/note-395",
+      "title": "Note 395 under sub-04",
+      "parent": "wm/economic-dynamics/sub-04"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-05/note-396",
+      "title": "Note 396 under sub-05",
+      "parent": "wm/economic-dynamics/sub-05"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-06/note-397",
+      "title": "Note 397 under sub-06",
+      "parent": "wm/economic-dynamics/sub-06"
+    },
+    {
+      "id": "wm/economic-dynamics/sub-07/note-398",
+      "title": "Note 398 under sub-07",
+      "parent": "wm/economic-dynamics/sub-07"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-00/note-399",
+      "title": "Note 399 under sub-00",
+      "parent": "wm/cognitive-thresholds/sub-00"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-01/note-400",
+      "title": "Note 400 under sub-01",
+      "parent": "wm/cognitive-thresholds/sub-01"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-02/note-401",
+      "title": "Note 401 under sub-02",
+      "parent": "wm/cognitive-thresholds/sub-02"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-03/note-402",
+      "title": "Note 402 under sub-03",
+      "parent": "wm/cognitive-thresholds/sub-03"
+    },
+    {
+      "id": "wm/cognitive-thresholds/sub-04/note-403",
+      "title": "Note 403 under sub-04",
+      "parent": "wm/cognitive-thresholds/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-00/note-404",
+      "title": "Note 404 under sub-00",
+      "parent": "wm/alignment-pressure/sub-00"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-01/note-405",
+      "title": "Note 405 under sub-01",
+      "parent": "wm/alignment-pressure/sub-01"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-02/note-406",
+      "title": "Note 406 under sub-02",
+      "parent": "wm/alignment-pressure/sub-02"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-03/note-407",
+      "title": "Note 407 under sub-03",
+      "parent": "wm/alignment-pressure/sub-03"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-04/note-408",
+      "title": "Note 408 under sub-04",
+      "parent": "wm/alignment-pressure/sub-04"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-05/note-409",
+      "title": "Note 409 under sub-05",
+      "parent": "wm/alignment-pressure/sub-05"
+    },
+    {
+      "id": "wm/alignment-pressure/sub-06/note-410",
+      "title": "Note 410 under sub-06",
+      "parent": "wm/alignment-pressure/sub-06"
+    },
+    {
+      "id": "wm/governance-timing/sub-00/note-411",
+      "title": "Note 411 under sub-00",
+      "parent": "wm/governance-timing/sub-00"
+    },
+    {
+      "id": "wm/governance-timing/sub-01/note-412",
+      "title": "Note 412 under sub-01",
+      "parent": "wm/governance-timing/sub-01"
+    },
+    {
+      "id": "wm/governance-timing/sub-02/note-413",
+      "title": "Note 413 under sub-02",
+      "parent": "wm/governance-timing/sub-02"
+    },
+    {
+      "id": "wm/governance-timing/sub-03/note-414",
+      "title": "Note 414 under sub-03",
+      "parent": "wm/governance-timing/sub-03"
+    },
+    {
+      "id": "wm/governance-timing/sub-04/note-415",
+      "title": "Note 415 under sub-04",
+      "parent": "wm/governance-timing/sub-04"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-00/note-416",
+      "title": "Note 416 under sub-00",
+      "parent": "wm/infrastructure-bottlenecks/sub-00"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-01/note-417",
+      "title": "Note 417 under sub-01",
+      "parent": "wm/infrastructure-bottlenecks/sub-01"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-02/note-418",
+      "title": "Note 418 under sub-02",
+      "parent": "wm/infrastructure-bottlenecks/sub-02"
+    },
+    {
+      "id": "wm/infrastructure-bottlenecks/sub-03/note-419",
+      "title": "Note 419 under sub-03",
+      "parent": "wm/infrastructure-bottlenecks/sub-03"
+    }
+  ],
+  "edges": [
+    {
+      "src": "wm/economic-dynamics/sub-00/note-001",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-026"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-002",
+      "tgt": "wm/alignment-pressure/sub-06/note-020"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-003",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-033"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-003",
+      "tgt": "wm/alignment-pressure/sub-06/note-059"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-003",
+      "tgt": "wm/economic-dynamics/sub-02/note-042"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-070"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/economic-dynamics/sub-01/note-080"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-035"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-005",
+      "tgt": "wm/alignment-pressure/sub-04/note-057"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-006",
+      "tgt": "wm/economic-dynamics/sub-03/note-043"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-007",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-050"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-007",
+      "tgt": "wm/governance-timing/sub-04/note-064"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-007",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-039"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-008",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-010"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-009",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-035"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-009",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-077"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-010",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-013"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-010",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-050"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-011",
+      "tgt": "wm/alignment-pressure/sub-05/note-019"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-011",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-051"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-011",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-028"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-012",
+      "tgt": "wm/economic-dynamics/sub-06/note-046"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-04/note-013",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-036"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-014",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-049"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-014",
+      "tgt": "wm/governance-timing/sub-02/note-023"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-014",
+      "tgt": "wm/economic-dynamics/sub-07/note-008"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-01/note-015",
+      "tgt": "wm/economic-dynamics/sub-04/note-005"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-016",
+      "tgt": "wm/alignment-pressure/sub-01/note-015"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-016",
+      "tgt": "wm/economic-dynamics/sub-07/note-047"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-016",
+      "tgt": "wm/governance-timing/sub-04/note-064"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-017",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-075"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-018",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-065"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-018",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-070"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-019",
+      "tgt": "wm/retrieval-dynamics/sub-02/note-034"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-020",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-009"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-020",
+      "tgt": "wm/retrieval-dynamics/sub-05/note-037"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-020",
+      "tgt": "wm/alignment-pressure/sub-06/note-059"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-021",
+      "tgt": "wm/economic-dynamics/sub-02/note-003"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-021",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-039"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-022",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-039"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-022",
+      "tgt": "wm/economic-dynamics/sub-00/note-079"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-022",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-038"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-023",
+      "tgt": "wm/economic-dynamics/sub-00/note-001"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-024",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-029"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-024",
+      "tgt": "wm/alignment-pressure/sub-04/note-018"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-024",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-035"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-025",
+      "tgt": "wm/alignment-pressure/sub-00/note-053"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-025",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-052"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-026",
+      "tgt": "wm/economic-dynamics/sub-05/note-006"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-026",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-074"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-027",
+      "tgt": "wm/governance-timing/sub-00/note-060"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-027",
+      "tgt": "wm/economic-dynamics/sub-00/note-040"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-02/note-028",
+      "tgt": "wm/alignment-pressure/sub-04/note-057"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-02/note-028",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-036"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-029",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-038"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-029",
+      "tgt": "wm/economic-dynamics/sub-05/note-045"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-029",
+      "tgt": "wm/alignment-pressure/sub-00/note-014"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-04/note-030",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-068"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-031",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-027"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-031",
+      "tgt": "wm/alignment-pressure/sub-05/note-058"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-031",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-039"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-032",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-069"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-032",
+      "tgt": "wm/retrieval-dynamics/sub-05/note-037"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-033",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-010"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-033",
+      "tgt": "wm/economic-dynamics/sub-05/note-006"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-033",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-049"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-034",
+      "tgt": "wm/alignment-pressure/sub-06/note-059"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-035",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-050"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-035",
+      "tgt": "wm/governance-timing/sub-01/note-022"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-036",
+      "tgt": "wm/economic-dynamics/sub-07/note-047"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-036",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-074"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-037",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-078"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-037",
+      "tgt": "wm/retrieval-dynamics/sub-02/note-073"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-037",
+      "tgt": "wm/governance-timing/sub-00/note-021"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-038",
+      "tgt": "wm/governance-timing/sub-00/note-021"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-038",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-065"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-038",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-010"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-039",
+      "tgt": "wm/governance-timing/sub-00/note-021"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-039",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-033"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-040",
+      "tgt": "wm/economic-dynamics/sub-05/note-045"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-040",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-038"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-040",
+      "tgt": "wm/alignment-pressure/sub-02/note-016"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-041",
+      "tgt": "wm/governance-timing/sub-04/note-025"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-041",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-049"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-042",
+      "tgt": "wm/alignment-pressure/sub-01/note-015"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-042",
+      "tgt": "wm/economic-dynamics/sub-02/note-003"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-042",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-072"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-043",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-010"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-043",
+      "tgt": "wm/alignment-pressure/sub-01/note-015"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-043",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-033"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-044",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-078"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-044",
+      "tgt": "wm/economic-dynamics/sub-07/note-008"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-045",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-030"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-046",
+      "tgt": "wm/alignment-pressure/sub-04/note-018"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-046",
+      "tgt": "wm/governance-timing/sub-04/note-025"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-046",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-030"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-047",
+      "tgt": "wm/economic-dynamics/sub-00/note-001"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-047",
+      "tgt": "wm/governance-timing/sub-04/note-025"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-047",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-065"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-011"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-066"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-048"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-075"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-050",
+      "tgt": "wm/economic-dynamics/sub-04/note-005"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-050",
+      "tgt": "wm/economic-dynamics/sub-01/note-002"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-051",
+      "tgt": "wm/economic-dynamics/sub-05/note-045"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-051",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-065"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-04/note-052",
+      "tgt": "wm/alignment-pressure/sub-02/note-016"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-053",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-066"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-053",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-033"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-053",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-074"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-01/note-054",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-011"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-055",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-027"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-055",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-031"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-055",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-066"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-056",
+      "tgt": "wm/economic-dynamics/sub-07/note-047"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-057",
+      "tgt": "wm/economic-dynamics/sub-05/note-045"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-057",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-030"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-057",
+      "tgt": "wm/governance-timing/sub-04/note-025"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-058",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-066"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-058",
+      "tgt": "wm/economic-dynamics/sub-05/note-045"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-059",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-077"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-059",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-009"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-059",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-052"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-060",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-075"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-060",
+      "tgt": "wm/alignment-pressure/sub-04/note-018"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-061",
+      "tgt": "wm/economic-dynamics/sub-06/note-046"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-061",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-038"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-062",
+      "tgt": "wm/economic-dynamics/sub-00/note-001"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-063",
+      "tgt": "wm/economic-dynamics/sub-01/note-041"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-063",
+      "tgt": "wm/economic-dynamics/sub-06/note-046"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-064",
+      "tgt": "wm/governance-timing/sub-04/note-025"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-064",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-031"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-036"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-049"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-067"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-066",
+      "tgt": "wm/alignment-pressure/sub-02/note-016"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-02/note-067",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-077"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-068",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-050"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-068",
+      "tgt": "wm/economic-dynamics/sub-03/note-004"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-04/note-069",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-012"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-070",
+      "tgt": "wm/economic-dynamics/sub-02/note-042"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-071",
+      "tgt": "wm/economic-dynamics/sub-04/note-005"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-071",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-050"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-072",
+      "tgt": "wm/alignment-pressure/sub-06/note-059"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-072",
+      "tgt": "wm/retrieval-dynamics/sub-05/note-076"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-072",
+      "tgt": "wm/economic-dynamics/sub-02/note-003"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-073",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-027"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-073",
+      "tgt": "wm/economic-dynamics/sub-06/note-046"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-074",
+      "tgt": "wm/economic-dynamics/sub-03/note-043"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-075",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-010"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-075",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-036"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-076",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-031"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-076",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-066"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-077",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-049"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-077",
+      "tgt": "wm/economic-dynamics/sub-07/note-047"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-077",
+      "tgt": "wm/alignment-pressure/sub-06/note-020"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-078",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-010"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-079",
+      "tgt": "wm/economic-dynamics/sub-00/note-040"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-079",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-048"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-079",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-069"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-080",
+      "tgt": "wm/economic-dynamics/sub-00/note-079"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-080",
+      "tgt": "wm/alignment-pressure/sub-04/note-018"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-080",
+      "tgt": "wm/economic-dynamics/sub-00/note-001"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-023",
+      "tgt": "wm/economic-dynamics/sub-03/note-238"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-038",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-339"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-036",
+      "tgt": "wm/governance-timing/sub-01/note-334"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-047",
+      "tgt": "wm/governance-timing/sub-04/note-220"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-037",
+      "tgt": "wm/economic-dynamics/sub-04/note-200"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-064",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-186"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-077",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-341"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-026",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-189"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-027",
+      "tgt": "wm/alignment-pressure/sub-00/note-404"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-029",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-262"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-021",
+      "tgt": "wm/governance-timing/sub-02/note-257"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-044",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-145"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-075",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-284"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-025",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-403"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-041",
+      "tgt": "wm/economic-dynamics/sub-03/note-394"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-058",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-224"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-012",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-364"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-042",
+      "tgt": "wm/economic-dynamics/sub-00/note-157"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-045",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-127"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-068",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-403"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-031",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-129"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-017",
+      "tgt": "wm/economic-dynamics/sub-06/note-241"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-047",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-091"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-02/note-067",
+      "tgt": "wm/alignment-pressure/sub-01/note-405"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-010",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-402"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-009",
+      "tgt": "wm/economic-dynamics/sub-04/note-122"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-058",
+      "tgt": "wm/governance-timing/sub-00/note-255"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-019",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-227"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/governance-timing/sub-03/note-297"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-076",
+      "tgt": "wm/alignment-pressure/sub-03/note-368"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-074",
+      "tgt": "wm/economic-dynamics/sub-01/note-236"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-061",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-267"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-009",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-309"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-036",
+      "tgt": "wm/alignment-pressure/sub-01/note-249"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-044",
+      "tgt": "wm/governance-timing/sub-02/note-257"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-022",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-264"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-020",
+      "tgt": "wm/economic-dynamics/sub-00/note-391"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-381"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-039",
+      "tgt": "wm/alignment-pressure/sub-01/note-366"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-221"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-342"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-343"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-061",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-309"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-051",
+      "tgt": "wm/alignment-pressure/sub-02/note-328"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-020",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-272"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-066",
+      "tgt": "wm/alignment-pressure/sub-06/note-293"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-005",
+      "tgt": "wm/economic-dynamics/sub-06/note-163"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-034",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-389"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-021",
+      "tgt": "wm/alignment-pressure/sub-01/note-210"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-012",
+      "tgt": "wm/alignment-pressure/sub-05/note-175"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-057",
+      "tgt": "wm/economic-dynamics/sub-05/note-396"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-035",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-325"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-073",
+      "tgt": "wm/economic-dynamics/sub-06/note-085"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-040",
+      "tgt": "wm/alignment-pressure/sub-02/note-211"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-063",
+      "tgt": "wm/alignment-pressure/sub-04/note-174"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-020",
+      "tgt": "wm/economic-dynamics/sub-03/note-082"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-070",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-403"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/economic-dynamics/sub-00/note-118"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-025",
+      "tgt": "wm/alignment-pressure/sub-05/note-292"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-011",
+      "tgt": "wm/governance-timing/sub-01/note-256"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-023",
+      "tgt": "wm/alignment-pressure/sub-02/note-289"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-207"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-016",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-088"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-003",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-233"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-017",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-344"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-017",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-342"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-006",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-130"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-001",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-344"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-024",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-324"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-010",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-417"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-264"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-046",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-260"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-041",
+      "tgt": "wm/retrieval-dynamics/sub-02/note-151"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-010",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-262"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-053",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-399"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-036",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-400"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-046",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-222"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-057",
+      "tgt": "wm/economic-dynamics/sub-06/note-241"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-017",
+      "tgt": "wm/alignment-pressure/sub-02/note-328"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-063",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-263"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-036",
+      "tgt": "wm/governance-timing/sub-04/note-415"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-076",
+      "tgt": "wm/alignment-pressure/sub-00/note-131"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-025",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-350"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-045",
+      "tgt": "wm/economic-dynamics/sub-05/note-084"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-080",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-091"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-032",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-166"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-01/note-041",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-184"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-042",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-110"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-04/note-069",
+      "tgt": "wm/retrieval-dynamics/sub-02/note-151"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-078",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-116"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-078",
+      "tgt": "wm/economic-dynamics/sub-07/note-086"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-061",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-227"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-075",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-149"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-037",
+      "tgt": "wm/economic-dynamics/sub-03/note-238"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-025",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-224"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-043",
+      "tgt": "wm/alignment-pressure/sub-06/note-176"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-070",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-231"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-066",
+      "tgt": "wm/economic-dynamics/sub-05/note-123"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-075",
+      "tgt": "wm/economic-dynamics/sub-02/note-198"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-031",
+      "tgt": "wm/alignment-pressure/sub-04/note-252"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-062",
+      "tgt": "wm/economic-dynamics/sub-07/note-281"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-072",
+      "tgt": "wm/alignment-pressure/sub-02/note-367"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-222"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-021",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-416"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-045",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-207"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-038",
+      "tgt": "wm/economic-dynamics/sub-03/note-082"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-025",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-226"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-068",
+      "tgt": "wm/alignment-pressure/sub-04/note-096"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/economic-dynamics/sub-01/note-275"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-027",
+      "tgt": "wm/alignment-pressure/sub-00/note-326"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "tgt": "wm/economic-dynamics/sub-03/note-277"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-039",
+      "tgt": "wm/alignment-pressure/sub-04/note-096"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-071",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-088"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-185"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-055",
+      "tgt": "wm/alignment-pressure/sub-00/note-365"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-034",
+      "tgt": "wm/economic-dynamics/sub-07/note-281"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-006",
+      "tgt": "wm/economic-dynamics/sub-05/note-201"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-01/note-054",
+      "tgt": "wm/alignment-pressure/sub-02/note-250"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-034",
+      "tgt": "wm/alignment-pressure/sub-01/note-249"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-046",
+      "tgt": "wm/governance-timing/sub-00/note-333"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-005",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-090"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-150"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-007",
+      "tgt": "wm/alignment-pressure/sub-00/note-209"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-032",
+      "tgt": "wm/governance-timing/sub-00/note-294"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-029",
+      "tgt": "wm/alignment-pressure/sub-06/note-254"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-021",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-272"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-017",
+      "tgt": "wm/governance-timing/sub-03/note-258"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-072",
+      "tgt": "wm/alignment-pressure/sub-04/note-135"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/governance-timing/sub-03/note-141"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-001",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-266"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-071",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-267"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-063",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-114"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-012",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-351"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-023",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-399"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-070",
+      "tgt": "wm/alignment-pressure/sub-00/note-326"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-043",
+      "tgt": "wm/economic-dynamics/sub-06/note-280"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-023",
+      "tgt": "wm/economic-dynamics/sub-03/note-199"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-007",
+      "tgt": "wm/economic-dynamics/sub-04/note-317"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-130"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-01/note-015",
+      "tgt": "wm/governance-timing/sub-04/note-376"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-070",
+      "tgt": "wm/retrieval-dynamics/sub-02/note-112"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-047",
+      "tgt": "wm/economic-dynamics/sub-07/note-242"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-033",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-227"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-022",
+      "tgt": "wm/alignment-pressure/sub-03/note-329"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-047",
+      "tgt": "wm/alignment-pressure/sub-02/note-094"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-039",
+      "tgt": "wm/economic-dynamics/sub-05/note-357"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-009",
+      "tgt": "wm/economic-dynamics/sub-06/note-085"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-046",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-165"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-02/note-028",
+      "tgt": "wm/economic-dynamics/sub-00/note-391"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-050",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-230"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-055",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-360"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-074",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-111"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-031",
+      "tgt": "wm/alignment-pressure/sub-01/note-132"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-389"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "tgt": "wm/economic-dynamics/sub-03/note-316"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-055",
+      "tgt": "wm/governance-timing/sub-04/note-337"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/alignment-pressure/sub-04/note-174"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-079",
+      "tgt": "wm/retrieval-dynamics/sub-02/note-307"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-007",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-306"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-045",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-323"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-040",
+      "tgt": "wm/retrieval-dynamics/sub-05/note-388"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-049",
+      "tgt": "wm/economic-dynamics/sub-01/note-197"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-078",
+      "tgt": "wm/alignment-pressure/sub-02/note-133"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-037",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-168"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-077",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-117"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-04/note-030",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-230"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-077",
+      "tgt": "wm/alignment-pressure/sub-02/note-289"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-055",
+      "tgt": "wm/alignment-pressure/sub-03/note-212"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-032",
+      "tgt": "wm/governance-timing/sub-04/note-376"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-037",
+      "tgt": "wm/economic-dynamics/sub-03/note-160"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-044",
+      "tgt": "wm/alignment-pressure/sub-05/note-136"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-022",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-361"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-265"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-070",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-284"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-072",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-400"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-073",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-222"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-071",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-339"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-065",
+      "tgt": "wm/alignment-pressure/sub-06/note-215"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-004",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-260"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-048",
+      "tgt": "wm/governance-timing/sub-00/note-177"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-190",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-194"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-305",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-066"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-081",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-012"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-337",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-246"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-334",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-261"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-330",
+      "tgt": "wm/alignment-pressure/sub-03/note-407"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-361",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-323"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-319",
+      "tgt": "wm/cognitive-thresholds/sub-03/note-285"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-389",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-343"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-399",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-087"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-305",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-189"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-198",
+      "tgt": "wm/economic-dynamics/sub-04/note-278"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-380",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-265"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-123",
+      "tgt": "wm/economic-dynamics/sub-03/note-316"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-337",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-228"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-370",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-309"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-05/note-154",
+      "tgt": "wm/governance-timing/sub-01/note-139"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-384",
+      "tgt": "wm/alignment-pressure/sub-06/note-059"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-188",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-378"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-330",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-166"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-02/note-223",
+      "tgt": "wm/governance-timing/sub-01/note-022"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-181",
+      "tgt": "wm/retrieval-dynamics/sub-05/note-310"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-308",
+      "tgt": "wm/economic-dynamics/sub-01/note-275"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-345",
+      "tgt": "wm/alignment-pressure/sub-05/note-370"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-298",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-109"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-04/note-325",
+      "tgt": "wm/governance-timing/sub-04/note-259"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-307",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-305"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-143",
+      "tgt": "wm/governance-timing/sub-04/note-376"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-268",
+      "tgt": "wm/economic-dynamics/sub-06/note-124"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-237",
+      "tgt": "wm/economic-dynamics/sub-02/note-159"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-101",
+      "tgt": "wm/alignment-pressure/sub-02/note-328"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-114",
+      "tgt": "wm/governance-timing/sub-02/note-374"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-297",
+      "tgt": "wm/economic-dynamics/sub-03/note-355"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-313",
+      "tgt": "wm/economic-dynamics/sub-00/note-118"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-269",
+      "tgt": "wm/alignment-pressure/sub-02/note-211"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-402",
+      "tgt": "wm/economic-dynamics/sub-05/note-279"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-143",
+      "tgt": "wm/governance-timing/sub-03/note-141"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-241",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-069"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-255",
+      "tgt": "wm/alignment-pressure/sub-04/note-174"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-086",
+      "tgt": "wm/economic-dynamics/sub-05/note-162"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-191",
+      "tgt": "wm/economic-dynamics/sub-03/note-199"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-199",
+      "tgt": "wm/governance-timing/sub-04/note-103"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-086",
+      "tgt": "wm/alignment-pressure/sub-03/note-017"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-114",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-187"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-086",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-342"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-384",
+      "tgt": "wm/governance-timing/sub-02/note-218"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-04/note-186",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-167"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-152",
+      "tgt": "wm/alignment-pressure/sub-01/note-288"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-156",
+      "tgt": "wm/governance-timing/sub-01/note-217"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-218",
+      "tgt": "wm/cognitive-thresholds/sub-00/note-126"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-354",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-145"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-118",
+      "tgt": "wm/alignment-pressure/sub-00/note-053"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-195",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-305"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-411",
+      "tgt": "wm/economic-dynamics/sub-03/note-355"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-307",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-223"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-241",
+      "tgt": "wm/alignment-pressure/sub-03/note-329"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-04/note-325",
+      "tgt": "wm/governance-timing/sub-01/note-256"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-216",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-027"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-087",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-234"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-102",
+      "tgt": "wm/governance-timing/sub-00/note-255"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-231",
+      "tgt": "wm/alignment-pressure/sub-02/note-328"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-190",
+      "tgt": "wm/governance-timing/sub-03/note-258"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-02/note-323",
+      "tgt": "wm/economic-dynamics/sub-01/note-197"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-384",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-299"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-183",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-341"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-125",
+      "tgt": "wm/infrastructure-bottlenecks/sub-01/note-378"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-117",
+      "tgt": "wm/economic-dynamics/sub-02/note-315"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-357",
+      "tgt": "wm/governance-timing/sub-00/note-333"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-220",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-230"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-161",
+      "tgt": "wm/governance-timing/sub-00/note-372"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-088",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-389"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-308",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-301"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-07/note-117",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-130"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-092",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-225"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-348",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-106"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-02/note-159",
+      "tgt": "wm/economic-dynamics/sub-06/note-124"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-104",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-150"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-330",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-205"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-338",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-361"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-04/note-303",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-348"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-316",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-206"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-00/note-383",
+      "tgt": "wm/alignment-pressure/sub-05/note-331"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-01/note-132",
+      "tgt": "wm/alignment-pressure/sub-02/note-133"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-374",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-419"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-336",
+      "tgt": "wm/governance-timing/sub-00/note-372"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-150",
+      "tgt": "wm/economic-dynamics/sub-02/note-081"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-300",
+      "tgt": "wm/governance-timing/sub-00/note-138"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-359",
+      "tgt": "wm/economic-dynamics/sub-07/note-086"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-06/note-319",
+      "tgt": "wm/retrieval-dynamics/sub-02/note-385"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-02/note-133",
+      "tgt": "wm/economic-dynamics/sub-07/note-359"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-182",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-071"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-00/note-131",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-308"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-259",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-299"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-347",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-130"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-251",
+      "tgt": "wm/retrieval-dynamics/sub-03/note-230"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-320",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-127"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-01/note-361",
+      "tgt": "wm/infrastructure-bottlenecks/sub-00/note-104"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-03/note-129",
+      "tgt": "wm/economic-dynamics/sub-01/note-080"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-277",
+      "tgt": "wm/alignment-pressure/sub-04/note-291"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-376",
+      "tgt": "wm/alignment-pressure/sub-03/note-407"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-099",
+      "tgt": "wm/governance-timing/sub-00/note-372"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-01/note-189",
+      "tgt": "wm/economic-dynamics/sub-06/note-280"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-386",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-156"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-04/note-083",
+      "tgt": "wm/cognitive-thresholds/sub-04/note-247"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-229",
+      "tgt": "wm/economic-dynamics/sub-00/note-040"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-06/note-194",
+      "tgt": "wm/retrieval-dynamics/sub-01/note-033"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-414",
+      "tgt": "wm/alignment-pressure/sub-01/note-015"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-142",
+      "tgt": "wm/economic-dynamics/sub-05/note-201"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-321",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-036"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-104",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-186"
+    },
+    {
+      "src": "wm/governance-timing/sub-04/note-220",
+      "tgt": "wm/retrieval-dynamics/sub-07/note-156"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-374",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-361"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-01/note-093",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-350"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-03/note-329",
+      "tgt": "wm/retrieval-dynamics/sub-06/note-272"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-263",
+      "tgt": "wm/alignment-pressure/sub-00/note-131"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-01/note-105",
+      "tgt": "wm/governance-timing/sub-01/note-100"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-410",
+      "tgt": "wm/alignment-pressure/sub-01/note-366"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-05/note-370",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-283"
+    },
+    {
+      "src": "wm/governance-timing/sub-00/note-294",
+      "tgt": "wm/alignment-pressure/sub-02/note-250"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-04/note-303",
+      "tgt": "wm/economic-dynamics/sub-00/note-040"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-04/note-153",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-265"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-04/note-330",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-110"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-03/note-191",
+      "tgt": "wm/alignment-pressure/sub-01/note-054"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-00/note-235",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-418"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-05/note-109",
+      "tgt": "wm/cognitive-thresholds/sub-01/note-049"
+    },
+    {
+      "src": "wm/governance-timing/sub-03/note-180",
+      "tgt": "wm/infrastructure-bottlenecks/sub-02/note-145"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-02/note-106",
+      "tgt": "wm/infrastructure-bottlenecks/sub-04/note-303"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-238",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-343"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-03/note-160",
+      "tgt": "wm/economic-dynamics/sub-01/note-119"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-07/note-125",
+      "tgt": "wm/alignment-pressure/sub-03/note-056"
+    },
+    {
+      "src": "wm/governance-timing/sub-01/note-139",
+      "tgt": "wm/alignment-pressure/sub-01/note-210"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-151",
+      "tgt": "wm/retrieval-dynamics/sub-00/note-227"
+    },
+    {
+      "src": "wm/alignment-pressure/sub-06/note-215",
+      "tgt": "wm/economic-dynamics/sub-06/note-046"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-00/note-416",
+      "tgt": "wm/infrastructure-bottlenecks/sub-03/note-107"
+    },
+    {
+      "src": "wm/economic-dynamics/sub-05/note-318",
+      "tgt": "wm/infrastructure-bottlenecks/sub-05/note-031"
+    },
+    {
+      "src": "wm/infrastructure-bottlenecks/sub-03/note-107",
+      "tgt": "wm/retrieval-dynamics/sub-04/note-036"
+    },
+    {
+      "src": "wm/cognitive-thresholds/sub-00/note-360",
+      "tgt": "wm/economic-dynamics/sub-07/note-398"
+    },
+    {
+      "src": "wm/governance-timing/sub-02/note-101",
+      "tgt": "wm/retrieval-dynamics/sub-05/note-388"
+    },
+    {
+      "src": "wm/retrieval-dynamics/sub-02/note-190",
+      "tgt": "wm/cognitive-thresholds/sub-02/note-011"
+    }
+  ]
+}

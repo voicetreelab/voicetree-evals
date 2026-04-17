@@ -1,0 +1,1266 @@
+{
+  "nodes": [
+    {
+      "id": "root",
+      "title": "Kanban Root",
+      "parent": null
+    },
+    {
+      "id": "backlog",
+      "title": "Backlog",
+      "parent": "root"
+    },
+    {
+      "id": "backlog/platform",
+      "title": "Platform — Backlog",
+      "parent": "backlog"
+    },
+    {
+      "id": "backlog/app",
+      "title": "App — Backlog",
+      "parent": "backlog"
+    },
+    {
+      "id": "backlog/infra",
+      "title": "Infra — Backlog",
+      "parent": "backlog"
+    },
+    {
+      "id": "backlog/research",
+      "title": "Research — Backlog",
+      "parent": "backlog"
+    },
+    {
+      "id": "in-progress",
+      "title": "In Progress",
+      "parent": "root"
+    },
+    {
+      "id": "in-progress/platform",
+      "title": "Platform — In Progress",
+      "parent": "in-progress"
+    },
+    {
+      "id": "in-progress/app",
+      "title": "App — In Progress",
+      "parent": "in-progress"
+    },
+    {
+      "id": "in-progress/infra",
+      "title": "Infra — In Progress",
+      "parent": "in-progress"
+    },
+    {
+      "id": "in-progress/research",
+      "title": "Research — In Progress",
+      "parent": "in-progress"
+    },
+    {
+      "id": "review",
+      "title": "Review",
+      "parent": "root"
+    },
+    {
+      "id": "review/platform",
+      "title": "Platform — Review",
+      "parent": "review"
+    },
+    {
+      "id": "review/app",
+      "title": "App — Review",
+      "parent": "review"
+    },
+    {
+      "id": "review/infra",
+      "title": "Infra — Review",
+      "parent": "review"
+    },
+    {
+      "id": "review/research",
+      "title": "Research — Review",
+      "parent": "review"
+    },
+    {
+      "id": "blocked",
+      "title": "Blocked",
+      "parent": "root"
+    },
+    {
+      "id": "blocked/platform",
+      "title": "Platform — Blocked",
+      "parent": "blocked"
+    },
+    {
+      "id": "blocked/app",
+      "title": "App — Blocked",
+      "parent": "blocked"
+    },
+    {
+      "id": "blocked/infra",
+      "title": "Infra — Blocked",
+      "parent": "blocked"
+    },
+    {
+      "id": "blocked/research",
+      "title": "Research — Blocked",
+      "parent": "blocked"
+    },
+    {
+      "id": "done",
+      "title": "Done",
+      "parent": "root"
+    },
+    {
+      "id": "done/platform",
+      "title": "Platform — Done",
+      "parent": "done"
+    },
+    {
+      "id": "done/app",
+      "title": "App — Done",
+      "parent": "done"
+    },
+    {
+      "id": "done/infra",
+      "title": "Infra — Done",
+      "parent": "done"
+    },
+    {
+      "id": "done/research",
+      "title": "Research — Done",
+      "parent": "done"
+    },
+    {
+      "id": "backlog/platform/t-001",
+      "title": "T-001: migrate feature flag (platform)",
+      "parent": "backlog/platform"
+    },
+    {
+      "id": "backlog/platform/t-002",
+      "title": "T-002: document retry logic (platform)",
+      "parent": "backlog/platform"
+    },
+    {
+      "id": "backlog/platform/t-003",
+      "title": "T-003: migrate retry logic (platform)",
+      "parent": "backlog/platform"
+    },
+    {
+      "id": "backlog/app/t-004",
+      "title": "T-004: document cache layer (app)",
+      "parent": "backlog/app"
+    },
+    {
+      "id": "backlog/app/t-005",
+      "title": "T-005: add auth flow (app)",
+      "parent": "backlog/app"
+    },
+    {
+      "id": "backlog/app/t-006",
+      "title": "T-006: optimize pagination (app)",
+      "parent": "backlog/app"
+    },
+    {
+      "id": "backlog/app/t-007",
+      "title": "T-007: fix error handling (app)",
+      "parent": "backlog/app"
+    },
+    {
+      "id": "backlog/infra/t-008",
+      "title": "T-008: document cache layer (infra)",
+      "parent": "backlog/infra"
+    },
+    {
+      "id": "backlog/infra/t-009",
+      "title": "T-009: add pagination (infra)",
+      "parent": "backlog/infra"
+    },
+    {
+      "id": "backlog/infra/t-010",
+      "title": "T-010: document metrics (infra)",
+      "parent": "backlog/infra"
+    },
+    {
+      "id": "backlog/infra/t-011",
+      "title": "T-011: migrate export dialog (infra)",
+      "parent": "backlog/infra"
+    },
+    {
+      "id": "backlog/research/t-012",
+      "title": "T-012: migrate cache layer (research)",
+      "parent": "backlog/research"
+    },
+    {
+      "id": "backlog/research/t-013",
+      "title": "T-013: fix search index (research)",
+      "parent": "backlog/research"
+    },
+    {
+      "id": "backlog/research/t-014",
+      "title": "T-014: refactor cache layer (research)",
+      "parent": "backlog/research"
+    },
+    {
+      "id": "in-progress/platform/t-015",
+      "title": "T-015: migrate search index (platform)",
+      "parent": "in-progress/platform"
+    },
+    {
+      "id": "in-progress/platform/t-016",
+      "title": "T-016: add search index (platform)",
+      "parent": "in-progress/platform"
+    },
+    {
+      "id": "in-progress/platform/t-017",
+      "title": "T-017: refactor search index (platform)",
+      "parent": "in-progress/platform"
+    },
+    {
+      "id": "in-progress/app/t-018",
+      "title": "T-018: fix metrics (app)",
+      "parent": "in-progress/app"
+    },
+    {
+      "id": "in-progress/app/t-019",
+      "title": "T-019: migrate cache layer (app)",
+      "parent": "in-progress/app"
+    },
+    {
+      "id": "in-progress/app/t-020",
+      "title": "T-020: add metrics (app)",
+      "parent": "in-progress/app"
+    },
+    {
+      "id": "in-progress/app/t-021",
+      "title": "T-021: optimize feature flag (app)",
+      "parent": "in-progress/app"
+    },
+    {
+      "id": "in-progress/infra/t-022",
+      "title": "T-022: document metrics (infra)",
+      "parent": "in-progress/infra"
+    },
+    {
+      "id": "in-progress/infra/t-023",
+      "title": "T-023: fix export dialog (infra)",
+      "parent": "in-progress/infra"
+    },
+    {
+      "id": "in-progress/infra/t-024",
+      "title": "T-024: add error handling (infra)",
+      "parent": "in-progress/infra"
+    },
+    {
+      "id": "in-progress/infra/t-025",
+      "title": "T-025: refactor retry logic (infra)",
+      "parent": "in-progress/infra"
+    },
+    {
+      "id": "in-progress/infra/t-026",
+      "title": "T-026: add auth flow (infra)",
+      "parent": "in-progress/infra"
+    },
+    {
+      "id": "in-progress/research/t-027",
+      "title": "T-027: fix search index (research)",
+      "parent": "in-progress/research"
+    },
+    {
+      "id": "in-progress/research/t-028",
+      "title": "T-028: fix pagination (research)",
+      "parent": "in-progress/research"
+    },
+    {
+      "id": "in-progress/research/t-029",
+      "title": "T-029: fix retry logic (research)",
+      "parent": "in-progress/research"
+    },
+    {
+      "id": "in-progress/research/t-030",
+      "title": "T-030: add metrics (research)",
+      "parent": "in-progress/research"
+    },
+    {
+      "id": "review/platform/t-031",
+      "title": "T-031: optimize rate limiter (platform)",
+      "parent": "review/platform"
+    },
+    {
+      "id": "review/platform/t-032",
+      "title": "T-032: fix pagination (platform)",
+      "parent": "review/platform"
+    },
+    {
+      "id": "review/platform/t-033",
+      "title": "T-033: fix error handling (platform)",
+      "parent": "review/platform"
+    },
+    {
+      "id": "review/platform/t-034",
+      "title": "T-034: refactor cache layer (platform)",
+      "parent": "review/platform"
+    },
+    {
+      "id": "review/platform/t-035",
+      "title": "T-035: optimize metrics (platform)",
+      "parent": "review/platform"
+    },
+    {
+      "id": "review/app/t-036",
+      "title": "T-036: document metrics (app)",
+      "parent": "review/app"
+    },
+    {
+      "id": "review/app/t-037",
+      "title": "T-037: document export dialog (app)",
+      "parent": "review/app"
+    },
+    {
+      "id": "review/app/t-038",
+      "title": "T-038: optimize cache layer (app)",
+      "parent": "review/app"
+    },
+    {
+      "id": "review/app/t-039",
+      "title": "T-039: fix export dialog (app)",
+      "parent": "review/app"
+    },
+    {
+      "id": "review/app/t-040",
+      "title": "T-040: optimize error handling (app)",
+      "parent": "review/app"
+    },
+    {
+      "id": "review/infra/t-041",
+      "title": "T-041: migrate auth flow (infra)",
+      "parent": "review/infra"
+    },
+    {
+      "id": "review/infra/t-042",
+      "title": "T-042: optimize auth flow (infra)",
+      "parent": "review/infra"
+    },
+    {
+      "id": "review/infra/t-043",
+      "title": "T-043: refactor error handling (infra)",
+      "parent": "review/infra"
+    },
+    {
+      "id": "review/research/t-044",
+      "title": "T-044: fix rate limiter (research)",
+      "parent": "review/research"
+    },
+    {
+      "id": "review/research/t-045",
+      "title": "T-045: fix cache layer (research)",
+      "parent": "review/research"
+    },
+    {
+      "id": "review/research/t-046",
+      "title": "T-046: document error handling (research)",
+      "parent": "review/research"
+    },
+    {
+      "id": "review/research/t-047",
+      "title": "T-047: optimize auth flow (research)",
+      "parent": "review/research"
+    },
+    {
+      "id": "review/research/t-048",
+      "title": "T-048: optimize auth flow (research)",
+      "parent": "review/research"
+    },
+    {
+      "id": "blocked/platform/t-049",
+      "title": "T-049: refactor auth flow (platform)",
+      "parent": "blocked/platform"
+    },
+    {
+      "id": "blocked/platform/t-050",
+      "title": "T-050: migrate search index (platform)",
+      "parent": "blocked/platform"
+    },
+    {
+      "id": "blocked/platform/t-051",
+      "title": "T-051: optimize pagination (platform)",
+      "parent": "blocked/platform"
+    },
+    {
+      "id": "blocked/platform/t-052",
+      "title": "T-052: add cache layer (platform)",
+      "parent": "blocked/platform"
+    },
+    {
+      "id": "blocked/app/t-053",
+      "title": "T-053: refactor error handling (app)",
+      "parent": "blocked/app"
+    },
+    {
+      "id": "blocked/app/t-054",
+      "title": "T-054: migrate export dialog (app)",
+      "parent": "blocked/app"
+    },
+    {
+      "id": "blocked/app/t-055",
+      "title": "T-055: fix cache layer (app)",
+      "parent": "blocked/app"
+    },
+    {
+      "id": "blocked/app/t-056",
+      "title": "T-056: fix feature flag (app)",
+      "parent": "blocked/app"
+    },
+    {
+      "id": "blocked/app/t-057",
+      "title": "T-057: refactor export dialog (app)",
+      "parent": "blocked/app"
+    },
+    {
+      "id": "blocked/infra/t-058",
+      "title": "T-058: add export dialog (infra)",
+      "parent": "blocked/infra"
+    },
+    {
+      "id": "blocked/infra/t-059",
+      "title": "T-059: refactor pagination (infra)",
+      "parent": "blocked/infra"
+    },
+    {
+      "id": "blocked/infra/t-060",
+      "title": "T-060: migrate retry logic (infra)",
+      "parent": "blocked/infra"
+    },
+    {
+      "id": "blocked/research/t-061",
+      "title": "T-061: add feature flag (research)",
+      "parent": "blocked/research"
+    },
+    {
+      "id": "blocked/research/t-062",
+      "title": "T-062: refactor error handling (research)",
+      "parent": "blocked/research"
+    },
+    {
+      "id": "blocked/research/t-063",
+      "title": "T-063: document pagination (research)",
+      "parent": "blocked/research"
+    },
+    {
+      "id": "done/platform/t-064",
+      "title": "T-064: fix auth flow (platform)",
+      "parent": "done/platform"
+    },
+    {
+      "id": "done/platform/t-065",
+      "title": "T-065: migrate error handling (platform)",
+      "parent": "done/platform"
+    },
+    {
+      "id": "done/platform/t-066",
+      "title": "T-066: fix export dialog (platform)",
+      "parent": "done/platform"
+    },
+    {
+      "id": "done/platform/t-067",
+      "title": "T-067: refactor cache layer (platform)",
+      "parent": "done/platform"
+    },
+    {
+      "id": "done/platform/t-068",
+      "title": "T-068: add metrics (platform)",
+      "parent": "done/platform"
+    },
+    {
+      "id": "done/app/t-069",
+      "title": "T-069: add feature flag (app)",
+      "parent": "done/app"
+    },
+    {
+      "id": "done/app/t-070",
+      "title": "T-070: optimize export dialog (app)",
+      "parent": "done/app"
+    },
+    {
+      "id": "done/app/t-071",
+      "title": "T-071: migrate retry logic (app)",
+      "parent": "done/app"
+    },
+    {
+      "id": "done/app/t-072",
+      "title": "T-072: migrate feature flag (app)",
+      "parent": "done/app"
+    },
+    {
+      "id": "done/infra/t-073",
+      "title": "T-073: optimize retry logic (infra)",
+      "parent": "done/infra"
+    },
+    {
+      "id": "done/infra/t-074",
+      "title": "T-074: refactor feature flag (infra)",
+      "parent": "done/infra"
+    }
+  ],
+  "edges": [
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "backlog/platform/t-001",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "backlog/platform/t-003",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "backlog/app/t-004",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "backlog/platform/t-001",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "backlog/app/t-006",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/platform/t-001",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "backlog/infra/t-008",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "backlog/infra/t-009",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "backlog/infra/t-010",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "backlog/platform/t-001",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "backlog/platform/t-001",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "backlog/platform/t-002",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "backlog/app/t-004",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "backlog/app/t-005",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/platform/t-002",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "backlog/app/t-007",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "backlog/infra/t-008",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "backlog/platform/t-002",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "backlog/platform/t-002",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "backlog/platform/t-002",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "backlog/research/t-012",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "backlog/platform/t-003",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "backlog/platform/t-003",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "backlog/app/t-006",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/platform/t-003",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "backlog/platform/t-003",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "backlog/platform/t-003",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "backlog/platform/t-003",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "backlog/platform/t-003",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "backlog/research/t-012",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "backlog/app/t-004",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/app/t-004",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "backlog/app/t-007",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "backlog/infra/t-008",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "backlog/infra/t-009",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "backlog/infra/t-010",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "backlog/infra/t-011",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "backlog/app/t-004",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "backlog/app/t-006",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/app/t-005",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "backlog/app/t-005",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "backlog/app/t-005",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "backlog/app/t-005",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "backlog/app/t-005",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "backlog/app/t-005",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/app/t-006",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/infra/t-008",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/infra/t-009",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/infra/t-010",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/infra/t-011",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/research/t-012",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/infra/t-008",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/infra/t-009",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/infra/t-010",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/infra/t-011",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "backlog/research/t-012",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "backlog/infra/t-009",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "backlog/infra/t-008",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "backlog/infra/t-011",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "backlog/infra/t-008",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "backlog/infra/t-010",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "backlog/infra/t-011",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "backlog/infra/t-009",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "backlog/infra/t-011",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "backlog/research/t-012",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "backlog/research/t-012",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "backlog/app/t-006",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "backlog/app/t-007",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "backlog/platform/t-003",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "done/platform/t-067",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "done/infra/t-073",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "blocked/platform/t-050",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-001",
+      "tgt": "blocked/app/t-055",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "review/platform/t-034",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "review/app/t-036",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "blocked/research/t-063",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "in-progress/research/t-029",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-002",
+      "tgt": "in-progress/research/t-030",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "in-progress/research/t-028",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "blocked/app/t-055",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "review/research/t-044",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "done/infra/t-073",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/platform/t-003",
+      "tgt": "in-progress/infra/t-026",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "done/infra/t-074",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "blocked/infra/t-058",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-004",
+      "tgt": "in-progress/app/t-019",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "in-progress/research/t-030",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "review/platform/t-034",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "blocked/research/t-062",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "blocked/infra/t-059",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "review/research/t-047",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-005",
+      "tgt": "done/infra/t-074",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "review/platform/t-032",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "review/app/t-037",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-006",
+      "tgt": "blocked/research/t-061",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "review/research/t-047",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "review/research/t-045",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "done/app/t-070",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/app/t-007",
+      "tgt": "blocked/app/t-053",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "blocked/platform/t-050",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "review/platform/t-032",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "review/app/t-036",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "done/app/t-071",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "review/research/t-048",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-008",
+      "tgt": "done/platform/t-068",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "review/platform/t-034",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "blocked/research/t-062",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-009",
+      "tgt": "in-progress/infra/t-026",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "in-progress/platform/t-015",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "in-progress/platform/t-016",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "in-progress/app/t-021",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-010",
+      "tgt": "done/platform/t-066",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "review/research/t-045",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "review/platform/t-032",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "review/app/t-040",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "in-progress/app/t-018",
+      "label": "related-to"
+    },
+    {
+      "src": "backlog/infra/t-011",
+      "tgt": "in-progress/platform/t-015",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "blocked/platform/t-050",
+      "label": "blocks"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "blocked/app/t-054",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "backlog/research/t-012",
+      "tgt": "blocked/app/t-057",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "in-progress/platform/t-015",
+      "tgt": "in-progress/infra/t-023",
+      "label": "blocks"
+    },
+    {
+      "src": "in-progress/app/t-018",
+      "tgt": "backlog/app/t-006",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "in-progress/app/t-021",
+      "tgt": "done/platform/t-065",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "in-progress/infra/t-022",
+      "tgt": "backlog/infra/t-011",
+      "label": "related-to"
+    },
+    {
+      "src": "in-progress/infra/t-025",
+      "tgt": "review/infra/t-041",
+      "label": "related-to"
+    },
+    {
+      "src": "in-progress/infra/t-026",
+      "tgt": "done/app/t-072",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "in-progress/research/t-028",
+      "tgt": "done/infra/t-073",
+      "label": "related-to"
+    },
+    {
+      "src": "in-progress/research/t-029",
+      "tgt": "blocked/app/t-055",
+      "label": "related-to"
+    },
+    {
+      "src": "review/app/t-039",
+      "tgt": "in-progress/app/t-019",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "review/app/t-040",
+      "tgt": "in-progress/app/t-018",
+      "label": "related-to"
+    },
+    {
+      "src": "review/infra/t-041",
+      "tgt": "blocked/infra/t-058",
+      "label": "blocks"
+    },
+    {
+      "src": "review/infra/t-043",
+      "tgt": "done/platform/t-068",
+      "label": "related-to"
+    },
+    {
+      "src": "review/research/t-044",
+      "tgt": "done/platform/t-068",
+      "label": "related-to"
+    },
+    {
+      "src": "review/research/t-045",
+      "tgt": "review/platform/t-034",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "review/research/t-047",
+      "tgt": "backlog/research/t-014",
+      "label": "related-to"
+    },
+    {
+      "src": "blocked/platform/t-051",
+      "tgt": "backlog/infra/t-010",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "blocked/platform/t-052",
+      "tgt": "in-progress/platform/t-015",
+      "label": "blocks"
+    },
+    {
+      "src": "blocked/app/t-054",
+      "tgt": "backlog/app/t-007",
+      "label": "related-to"
+    },
+    {
+      "src": "blocked/app/t-056",
+      "tgt": "backlog/research/t-013",
+      "label": "blocks"
+    },
+    {
+      "src": "blocked/infra/t-058",
+      "tgt": "review/research/t-047",
+      "label": "blocks"
+    },
+    {
+      "src": "blocked/infra/t-059",
+      "tgt": "backlog/app/t-005",
+      "label": "related-to"
+    },
+    {
+      "src": "blocked/infra/t-060",
+      "tgt": "review/app/t-040",
+      "label": "blocks"
+    },
+    {
+      "src": "blocked/research/t-061",
+      "tgt": "done/platform/t-065",
+      "label": "related-to"
+    },
+    {
+      "src": "blocked/research/t-062",
+      "tgt": "backlog/platform/t-001",
+      "label": "blocks"
+    },
+    {
+      "src": "blocked/research/t-063",
+      "tgt": "review/platform/t-034",
+      "label": "blocks"
+    },
+    {
+      "src": "done/platform/t-066",
+      "tgt": "review/app/t-040",
+      "label": "related-to"
+    },
+    {
+      "src": "done/platform/t-067",
+      "tgt": "backlog/research/t-012",
+      "label": "related-to"
+    },
+    {
+      "src": "done/app/t-069",
+      "tgt": "in-progress/app/t-019",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "done/app/t-070",
+      "tgt": "backlog/infra/t-008",
+      "label": "related-to"
+    },
+    {
+      "src": "done/app/t-071",
+      "tgt": "backlog/platform/t-001",
+      "label": "blocks"
+    },
+    {
+      "src": "done/infra/t-073",
+      "tgt": "in-progress/infra/t-024",
+      "label": "duplicate-of"
+    },
+    {
+      "src": "done/infra/t-074",
+      "tgt": "in-progress/research/t-028",
+      "label": "related-to"
+    }
+  ]
+}

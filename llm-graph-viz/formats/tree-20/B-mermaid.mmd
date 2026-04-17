@@ -1,0 +1,45 @@
+graph TD
+  proj["Project Root"]
+  proj/backend["Backend"]
+  proj/backend/api["REST API"]
+  proj/backend/api/orders["Orders Endpoint"]
+  proj/backend/api/users["Users Endpoint"]
+  proj/backend/auth["Authentication"]
+  proj/backend/db["Database"]
+  proj/backend/db/migrations["Migrations"]
+  proj/backend/db/schema["Schema"]
+  proj/docs["Documentation"]
+  proj/docs/api-ref["API Reference"]
+  proj/docs/changelog["CHANGELOG"]
+  proj/docs/readme["README"]
+  proj/frontend["Frontend"]
+  proj/frontend/state["State Management"]
+  proj/frontend/state/store["Redux Store"]
+  proj/frontend/ui["UI Components"]
+  proj/frontend/ui/button["Button Component"]
+  proj/frontend/ui/form["Form Component"]
+  proj/frontend/ui/modal["Modal Component"]
+  proj --> proj/backend
+  proj/backend --> proj/backend/api
+  proj/backend/api --> proj/backend/api/orders
+  proj/backend/api --> proj/backend/api/users
+  proj/backend --> proj/backend/auth
+  proj/backend --> proj/backend/db
+  proj/backend/db --> proj/backend/db/migrations
+  proj/backend/db --> proj/backend/db/schema
+  proj --> proj/docs
+  proj/docs --> proj/docs/api-ref
+  proj/docs --> proj/docs/changelog
+  proj/docs --> proj/docs/readme
+  proj --> proj/frontend
+  proj/frontend --> proj/frontend/state
+  proj/frontend/state --> proj/frontend/state/store
+  proj/frontend --> proj/frontend/ui
+  proj/frontend/ui --> proj/frontend/ui/button
+  proj/frontend/ui --> proj/frontend/ui/form
+  proj/frontend/ui --> proj/frontend/ui/modal
+  proj/backend/api/orders -.-> proj/backend/db/schema
+  proj/backend/api/users -.-> proj/backend/auth
+  proj/docs/api-ref -.-> proj/backend/api
+  proj/frontend/ui/form -.-> proj/backend/api/users
+  proj/frontend/ui/modal -.-> proj/frontend/ui/button

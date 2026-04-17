@@ -1,0 +1,36 @@
+└── ▢ Project Root
+    ├── ▢ Backend
+    │   ├── ▢ REST API
+    │   │   ├── · Orders Endpoint
+    │   │   │           ⇢ Schema
+    │   │   └── · Users Endpoint
+    │   │               ⇢ Authentication
+    │   ├── · Authentication
+    │   └── ▢ Database
+    │       ├── · Migrations
+    │       └── · Schema
+    ├── ▢ Documentation
+    │   ├── · API Reference
+    │   │           ⇢ REST API
+    │   ├── · CHANGELOG
+    │   └── · README
+    └── ▢ Frontend
+        ├── ▢ State Management
+        │   └── · Redux Store
+        └── ▢ UI Components
+            ├── · Button Component
+            ├── · Form Component
+            │           ⇢ Users Endpoint
+            └── · Modal Component
+                        ⇢ Button Component
+
+[Cross-Links]
+  @[proj/backend/api/orders] ⇢ @[proj/backend/db/schema] [reads]
+  @[proj/backend/api/users] ⇢ @[proj/backend/auth] [requires]
+  @[proj/docs/api-ref] ⇢ @[proj/backend/api] [documents]
+  @[proj/frontend/ui/form] ⇢ @[proj/backend/api/users] [calls]
+  @[proj/frontend/ui/modal] ⇢ @[proj/frontend/ui/button] [uses]
+
+Legend:
+  @[id]   = stable node identifier (use in edge references)
+  ⇢       = directed edge src → tgt

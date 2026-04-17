@@ -1,0 +1,410 @@
+└── ▢ Kanban Root
+    ├── ▢ Backlog
+    │   ├── ▢ App — Backlog
+    │   │   ├── · T-004: document cache layer (app)
+    │   │   │           ⇢ T-007: fix error handling (app)
+    │   │   │           ⇢ T-008: document cache layer (infra)
+    │   │   │           ⇢ T-009: add pagination (infra)
+    │   │   │           ⇢ T-010: document metrics (infra)
+    │   │   │           ⇢ T-011: migrate export dialog (infra)
+    │   │   │           ⇢ T-003: migrate retry logic (platform)
+    │   │   │           ⇢ T-058: add export dialog (infra)
+    │   │   │           ⇢ T-074: refactor feature flag (infra)
+    │   │   │           ⇢ T-019: migrate cache layer (app)
+    │   │   ├── · T-005: add auth flow (app)
+    │   │   │           ⇢ T-004: document cache layer (app)
+    │   │   │           ⇢ T-006: optimize pagination (app)
+    │   │   │           ⇢ T-001: migrate feature flag (platform)
+    │   │   │           ⇢ T-003: migrate retry logic (platform)
+    │   │   │           ⇢ T-059: refactor pagination (infra)
+    │   │   │           ⇢ T-062: refactor error handling (research)
+    │   │   │           ⇢ T-074: refactor feature flag (infra)
+    │   │   │           ⇢ T-030: add metrics (research)
+    │   │   │           ⇢ T-034: refactor cache layer (platform)
+    │   │   │           ⇢ T-047: optimize auth flow (research)
+    │   │   ├── · T-006: optimize pagination (app)
+    │   │   │           ⇢ T-004: document cache layer (app)
+    │   │   │           ⇢ T-008: document cache layer (infra)
+    │   │   │           ⇢ T-009: add pagination (infra)
+    │   │   │           ⇢ T-010: document metrics (infra)
+    │   │   │           ⇢ T-011: migrate export dialog (infra)
+    │   │   │           ⇢ T-002: document retry logic (platform)
+    │   │   │           ⇢ T-003: migrate retry logic (platform)
+    │   │   │           ⇢ T-012: migrate cache layer (research)
+    │   │   │           ⇢ T-061: add feature flag (research)
+    │   │   │           ⇢ T-037: document export dialog (app)
+    │   │   │           ⇢ T-032: fix pagination (platform)
+    │   │   └── · T-007: fix error handling (app)
+    │   │               ⇢ T-005: add auth flow (app)
+    │   │               ⇢ T-006: optimize pagination (app)
+    │   │               ⇢ T-008: document cache layer (infra)
+    │   │               ⇢ T-009: add pagination (infra)
+    │   │               ⇢ T-010: document metrics (infra)
+    │   │               ⇢ T-011: migrate export dialog (infra)
+    │   │               ⇢ T-001: migrate feature flag (platform)
+    │   │               ⇢ T-003: migrate retry logic (platform)
+    │   │               ⇢ T-012: migrate cache layer (research)
+    │   │               ⇢ T-053: refactor error handling (app)
+    │   │               ⇢ T-070: optimize export dialog (app)
+    │   │               ⇢ T-045: fix cache layer (research)
+    │   │               ⇢ T-047: optimize auth flow (research)
+    │   ├── ▢ Infra — Backlog
+    │   │   ├── · T-008: document cache layer (infra)
+    │   │   │           ⇢ T-005: add auth flow (app)
+    │   │   │           ⇢ T-006: optimize pagination (app)
+    │   │   │           ⇢ T-009: add pagination (infra)
+    │   │   │           ⇢ T-011: migrate export dialog (infra)
+    │   │   │           ⇢ T-003: migrate retry logic (platform)
+    │   │   │           ⇢ T-050: migrate search index (platform)
+    │   │   │           ⇢ T-071: migrate retry logic (app)
+    │   │   │           ⇢ T-068: add metrics (platform)
+    │   │   │           ⇢ T-036: document metrics (app)
+    │   │   │           ⇢ T-032: fix pagination (platform)
+    │   │   │           ⇢ T-048: optimize auth flow (research)
+    │   │   ├── · T-009: add pagination (infra)
+    │   │   │           ⇢ T-005: add auth flow (app)
+    │   │   │           ⇢ T-010: document metrics (infra)
+    │   │   │           ⇢ T-011: migrate export dialog (infra)
+    │   │   │           ⇢ T-002: document retry logic (platform)
+    │   │   │           ⇢ T-003: migrate retry logic (platform)
+    │   │   │           ⇢ T-062: refactor error handling (research)
+    │   │   │           ⇢ T-026: add auth flow (infra)
+    │   │   │           ⇢ T-034: refactor cache layer (platform)
+    │   │   ├── · T-010: document metrics (infra)
+    │   │   │           ⇢ T-005: add auth flow (app)
+    │   │   │           ⇢ T-008: document cache layer (infra)
+    │   │   │           ⇢ T-011: migrate export dialog (infra)
+    │   │   │           ⇢ T-002: document retry logic (platform)
+    │   │   │           ⇢ T-003: migrate retry logic (platform)
+    │   │   │           ⇢ T-012: migrate cache layer (research)
+    │   │   │           ⇢ T-066: fix export dialog (platform)
+    │   │   │           ⇢ T-021: optimize feature flag (app)
+    │   │   │           ⇢ T-015: migrate search index (platform)
+    │   │   │           ⇢ T-016: add search index (platform)
+    │   │   └── · T-011: migrate export dialog (infra)
+    │   │               ⇢ T-005: add auth flow (app)
+    │   │               ⇢ T-007: fix error handling (app)
+    │   │               ⇢ T-001: migrate feature flag (platform)
+    │   │               ⇢ T-002: document retry logic (platform)
+    │   │               ⇢ T-003: migrate retry logic (platform)
+    │   │               ⇢ T-012: migrate cache layer (research)
+    │   │               ⇢ T-018: fix metrics (app)
+    │   │               ⇢ T-015: migrate search index (platform)
+    │   │               ⇢ T-040: optimize error handling (app)
+    │   │               ⇢ T-032: fix pagination (platform)
+    │   │               ⇢ T-045: fix cache layer (research)
+    │   ├── ▢ Platform — Backlog
+    │   │   ├── · T-001: migrate feature flag (platform)
+    │   │   │           ⇢ T-004: document cache layer (app)
+    │   │   │           ⇢ T-006: optimize pagination (app)
+    │   │   │           ⇢ T-008: document cache layer (infra)
+    │   │   │           ⇢ T-009: add pagination (infra)
+    │   │   │           ⇢ T-010: document metrics (infra)
+    │   │   │           ⇢ T-003: migrate retry logic (platform)
+    │   │   │           ⇢ T-055: fix cache layer (app)
+    │   │   │           ⇢ T-050: migrate search index (platform)
+    │   │   │           ⇢ T-073: optimize retry logic (infra)
+    │   │   │           ⇢ T-067: refactor cache layer (platform)
+    │   │   ├── · T-002: document retry logic (platform)
+    │   │   │           ⇢ T-004: document cache layer (app)
+    │   │   │           ⇢ T-005: add auth flow (app)
+    │   │   │           ⇢ T-007: fix error handling (app)
+    │   │   │           ⇢ T-008: document cache layer (infra)
+    │   │   │           ⇢ T-001: migrate feature flag (platform)
+    │   │   │           ⇢ T-012: migrate cache layer (research)
+    │   │   │           ⇢ T-063: document pagination (research)
+    │   │   │           ⇢ T-029: fix retry logic (research)
+    │   │   │           ⇢ T-030: add metrics (research)
+    │   │   │           ⇢ T-036: document metrics (app)
+    │   │   │           ⇢ T-034: refactor cache layer (platform)
+    │   │   └── · T-003: migrate retry logic (platform)
+    │   │               ⇢ T-006: optimize pagination (app)
+    │   │               ⇢ T-002: document retry logic (platform)
+    │   │               ⇢ T-012: migrate cache layer (research)
+    │   │               ⇢ T-055: fix cache layer (app)
+    │   │               ⇢ T-073: optimize retry logic (infra)
+    │   │               ⇢ T-026: add auth flow (infra)
+    │   │               ⇢ T-028: fix pagination (research)
+    │   │               ⇢ T-044: fix rate limiter (research)
+    │   └── ▢ Research — Backlog
+    │       ├── · T-012: migrate cache layer (research)
+    │       │           ⇢ T-004: document cache layer (app)
+    │       │           ⇢ T-005: add auth flow (app)
+    │       │           ⇢ T-008: document cache layer (infra)
+    │       │           ⇢ T-009: add pagination (infra)
+    │       │           ⇢ T-001: migrate feature flag (platform)
+    │       │           ⇢ T-054: migrate export dialog (app)
+    │       │           ⇢ T-057: refactor export dialog (app)
+    │       │           ⇢ T-050: migrate search index (platform)
+    │       ├── · T-013: fix search index (research)
+    │       └── · T-014: refactor cache layer (research)
+    ├── ▢ Blocked
+    │   ├── ▢ App — Blocked
+    │   │   ├── · T-053: refactor error handling (app)
+    │   │   ├── · T-054: migrate export dialog (app)
+    │   │   │           ⇢ T-007: fix error handling (app)
+    │   │   ├── · T-055: fix cache layer (app)
+    │   │   ├── · T-056: fix feature flag (app)
+    │   │   │           ⇢ T-013: fix search index (research)
+    │   │   └── · T-057: refactor export dialog (app)
+    │   ├── ▢ Infra — Blocked
+    │   │   ├── · T-058: add export dialog (infra)
+    │   │   │           ⇢ T-047: optimize auth flow (research)
+    │   │   ├── · T-059: refactor pagination (infra)
+    │   │   │           ⇢ T-005: add auth flow (app)
+    │   │   └── · T-060: migrate retry logic (infra)
+    │   │               ⇢ T-040: optimize error handling (app)
+    │   ├── ▢ Platform — Blocked
+    │   │   ├── · T-049: refactor auth flow (platform)
+    │   │   ├── · T-050: migrate search index (platform)
+    │   │   ├── · T-051: optimize pagination (platform)
+    │   │   │           ⇢ T-010: document metrics (infra)
+    │   │   └── · T-052: add cache layer (platform)
+    │   │               ⇢ T-015: migrate search index (platform)
+    │   └── ▢ Research — Blocked
+    │       ├── · T-061: add feature flag (research)
+    │       │           ⇢ T-065: migrate error handling (platform)
+    │       ├── · T-062: refactor error handling (research)
+    │       │           ⇢ T-001: migrate feature flag (platform)
+    │       └── · T-063: document pagination (research)
+    │                   ⇢ T-034: refactor cache layer (platform)
+    ├── ▢ Done
+    │   ├── ▢ App — Done
+    │   │   ├── · T-069: add feature flag (app)
+    │   │   │           ⇢ T-019: migrate cache layer (app)
+    │   │   ├── · T-070: optimize export dialog (app)
+    │   │   │           ⇢ T-008: document cache layer (infra)
+    │   │   ├── · T-071: migrate retry logic (app)
+    │   │   │           ⇢ T-001: migrate feature flag (platform)
+    │   │   └── · T-072: migrate feature flag (app)
+    │   ├── ▢ Infra — Done
+    │   │   ├── · T-073: optimize retry logic (infra)
+    │   │   │           ⇢ T-024: add error handling (infra)
+    │   │   └── · T-074: refactor feature flag (infra)
+    │   │               ⇢ T-028: fix pagination (research)
+    │   ├── ▢ Platform — Done
+    │   │   ├── · T-064: fix auth flow (platform)
+    │   │   ├── · T-065: migrate error handling (platform)
+    │   │   ├── · T-066: fix export dialog (platform)
+    │   │   │           ⇢ T-040: optimize error handling (app)
+    │   │   ├── · T-067: refactor cache layer (platform)
+    │   │   │           ⇢ T-012: migrate cache layer (research)
+    │   │   └── · T-068: add metrics (platform)
+    │   └── · Research — Done
+    ├── ▢ In Progress
+    │   ├── ▢ App — In Progress
+    │   │   ├── · T-018: fix metrics (app)
+    │   │   │           ⇢ T-006: optimize pagination (app)
+    │   │   ├── · T-019: migrate cache layer (app)
+    │   │   ├── · T-020: add metrics (app)
+    │   │   └── · T-021: optimize feature flag (app)
+    │   │               ⇢ T-065: migrate error handling (platform)
+    │   ├── ▢ Infra — In Progress
+    │   │   ├── · T-022: document metrics (infra)
+    │   │   │           ⇢ T-011: migrate export dialog (infra)
+    │   │   ├── · T-023: fix export dialog (infra)
+    │   │   ├── · T-024: add error handling (infra)
+    │   │   ├── · T-025: refactor retry logic (infra)
+    │   │   │           ⇢ T-041: migrate auth flow (infra)
+    │   │   └── · T-026: add auth flow (infra)
+    │   │               ⇢ T-072: migrate feature flag (app)
+    │   ├── ▢ Platform — In Progress
+    │   │   ├── · T-015: migrate search index (platform)
+    │   │   │           ⇢ T-023: fix export dialog (infra)
+    │   │   ├── · T-016: add search index (platform)
+    │   │   └── · T-017: refactor search index (platform)
+    │   └── ▢ Research — In Progress
+    │       ├── · T-027: fix search index (research)
+    │       ├── · T-028: fix pagination (research)
+    │       │           ⇢ T-073: optimize retry logic (infra)
+    │       ├── · T-029: fix retry logic (research)
+    │       │           ⇢ T-055: fix cache layer (app)
+    │       └── · T-030: add metrics (research)
+    └── ▢ Review
+        ├── ▢ App — Review
+        │   ├── · T-036: document metrics (app)
+        │   ├── · T-037: document export dialog (app)
+        │   ├── · T-038: optimize cache layer (app)
+        │   ├── · T-039: fix export dialog (app)
+        │   │           ⇢ T-019: migrate cache layer (app)
+        │   └── · T-040: optimize error handling (app)
+        │               ⇢ T-018: fix metrics (app)
+        ├── ▢ Infra — Review
+        │   ├── · T-041: migrate auth flow (infra)
+        │   │           ⇢ T-058: add export dialog (infra)
+        │   ├── · T-042: optimize auth flow (infra)
+        │   └── · T-043: refactor error handling (infra)
+        │               ⇢ T-068: add metrics (platform)
+        ├── ▢ Platform — Review
+        │   ├── · T-031: optimize rate limiter (platform)
+        │   ├── · T-032: fix pagination (platform)
+        │   ├── · T-033: fix error handling (platform)
+        │   ├── · T-034: refactor cache layer (platform)
+        │   └── · T-035: optimize metrics (platform)
+        └── ▢ Research — Review
+            ├── · T-044: fix rate limiter (research)
+            │           ⇢ T-068: add metrics (platform)
+            ├── · T-045: fix cache layer (research)
+            │           ⇢ T-034: refactor cache layer (platform)
+            ├── · T-046: document error handling (research)
+            ├── · T-047: optimize auth flow (research)
+            │           ⇢ T-014: refactor cache layer (research)
+            └── · T-048: optimize auth flow (research)
+
+[Cross-Links]
+  @[backlog/app/t-004] ⇢ @[backlog/app/t-007] [duplicate-of]
+  @[backlog/app/t-004] ⇢ @[backlog/infra/t-008] [duplicate-of]
+  @[backlog/app/t-004] ⇢ @[backlog/infra/t-009] [related-to]
+  @[backlog/app/t-004] ⇢ @[backlog/infra/t-010] [blocks]
+  @[backlog/app/t-004] ⇢ @[backlog/infra/t-011] [duplicate-of]
+  @[backlog/app/t-004] ⇢ @[backlog/platform/t-003] [duplicate-of]
+  @[backlog/app/t-004] ⇢ @[blocked/infra/t-058] [blocks]
+  @[backlog/app/t-004] ⇢ @[done/infra/t-074] [related-to]
+  @[backlog/app/t-004] ⇢ @[in-progress/app/t-019] [related-to]
+  @[backlog/app/t-005] ⇢ @[backlog/app/t-004] [blocks]
+  @[backlog/app/t-005] ⇢ @[backlog/app/t-006] [related-to]
+  @[backlog/app/t-005] ⇢ @[backlog/platform/t-001] [related-to]
+  @[backlog/app/t-005] ⇢ @[backlog/platform/t-003] [duplicate-of]
+  @[backlog/app/t-005] ⇢ @[blocked/infra/t-059] [duplicate-of]
+  @[backlog/app/t-005] ⇢ @[blocked/research/t-062] [duplicate-of]
+  @[backlog/app/t-005] ⇢ @[done/infra/t-074] [related-to]
+  @[backlog/app/t-005] ⇢ @[in-progress/research/t-030] [blocks]
+  @[backlog/app/t-005] ⇢ @[review/platform/t-034] [duplicate-of]
+  @[backlog/app/t-005] ⇢ @[review/research/t-047] [related-to]
+  @[backlog/app/t-006] ⇢ @[backlog/app/t-004] [duplicate-of]
+  @[backlog/app/t-006] ⇢ @[backlog/infra/t-008] [blocks]
+  @[backlog/app/t-006] ⇢ @[backlog/infra/t-009] [blocks]
+  @[backlog/app/t-006] ⇢ @[backlog/infra/t-010] [duplicate-of]
+  @[backlog/app/t-006] ⇢ @[backlog/infra/t-011] [related-to]
+  @[backlog/app/t-006] ⇢ @[backlog/platform/t-002] [blocks]
+  @[backlog/app/t-006] ⇢ @[backlog/platform/t-003] [blocks]
+  @[backlog/app/t-006] ⇢ @[backlog/research/t-012] [related-to]
+  @[backlog/app/t-006] ⇢ @[blocked/research/t-061] [duplicate-of]
+  @[backlog/app/t-006] ⇢ @[review/app/t-037] [blocks]
+  @[backlog/app/t-006] ⇢ @[review/platform/t-032] [blocks]
+  @[backlog/app/t-007] ⇢ @[backlog/app/t-005] [related-to]
+  @[backlog/app/t-007] ⇢ @[backlog/app/t-006] [related-to]
+  @[backlog/app/t-007] ⇢ @[backlog/infra/t-008] [related-to]
+  @[backlog/app/t-007] ⇢ @[backlog/infra/t-009] [duplicate-of]
+  @[backlog/app/t-007] ⇢ @[backlog/infra/t-010] [related-to]
+  @[backlog/app/t-007] ⇢ @[backlog/infra/t-011] [duplicate-of]
+  @[backlog/app/t-007] ⇢ @[backlog/platform/t-001] [duplicate-of]
+  @[backlog/app/t-007] ⇢ @[backlog/platform/t-003] [related-to]
+  @[backlog/app/t-007] ⇢ @[backlog/research/t-012] [duplicate-of]
+  @[backlog/app/t-007] ⇢ @[blocked/app/t-053] [duplicate-of]
+  @[backlog/app/t-007] ⇢ @[done/app/t-070] [related-to]
+  @[backlog/app/t-007] ⇢ @[review/research/t-045] [related-to]
+  @[backlog/app/t-007] ⇢ @[review/research/t-047] [blocks]
+  @[backlog/infra/t-008] ⇢ @[backlog/app/t-005] [duplicate-of]
+  @[backlog/infra/t-008] ⇢ @[backlog/app/t-006] [duplicate-of]
+  @[backlog/infra/t-008] ⇢ @[backlog/infra/t-009] [blocks]
+  @[backlog/infra/t-008] ⇢ @[backlog/infra/t-011] [related-to]
+  @[backlog/infra/t-008] ⇢ @[backlog/platform/t-003] [blocks]
+  @[backlog/infra/t-008] ⇢ @[blocked/platform/t-050] [blocks]
+  @[backlog/infra/t-008] ⇢ @[done/app/t-071] [related-to]
+  @[backlog/infra/t-008] ⇢ @[done/platform/t-068] [blocks]
+  @[backlog/infra/t-008] ⇢ @[review/app/t-036] [duplicate-of]
+  @[backlog/infra/t-008] ⇢ @[review/platform/t-032] [blocks]
+  @[backlog/infra/t-008] ⇢ @[review/research/t-048] [duplicate-of]
+  @[backlog/infra/t-009] ⇢ @[backlog/app/t-005] [duplicate-of]
+  @[backlog/infra/t-009] ⇢ @[backlog/infra/t-010] [related-to]
+  @[backlog/infra/t-009] ⇢ @[backlog/infra/t-011] [duplicate-of]
+  @[backlog/infra/t-009] ⇢ @[backlog/platform/t-002] [blocks]
+  @[backlog/infra/t-009] ⇢ @[backlog/platform/t-003] [duplicate-of]
+  @[backlog/infra/t-009] ⇢ @[blocked/research/t-062] [duplicate-of]
+  @[backlog/infra/t-009] ⇢ @[in-progress/infra/t-026] [blocks]
+  @[backlog/infra/t-009] ⇢ @[review/platform/t-034] [blocks]
+  @[backlog/infra/t-010] ⇢ @[backlog/app/t-005] [duplicate-of]
+  @[backlog/infra/t-010] ⇢ @[backlog/infra/t-008] [blocks]
+  @[backlog/infra/t-010] ⇢ @[backlog/infra/t-011] [related-to]
+  @[backlog/infra/t-010] ⇢ @[backlog/platform/t-002] [blocks]
+  @[backlog/infra/t-010] ⇢ @[backlog/platform/t-003] [blocks]
+  @[backlog/infra/t-010] ⇢ @[backlog/research/t-012] [duplicate-of]
+  @[backlog/infra/t-010] ⇢ @[done/platform/t-066] [blocks]
+  @[backlog/infra/t-010] ⇢ @[in-progress/app/t-021] [related-to]
+  @[backlog/infra/t-010] ⇢ @[in-progress/platform/t-015] [blocks]
+  @[backlog/infra/t-010] ⇢ @[in-progress/platform/t-016] [related-to]
+  @[backlog/infra/t-011] ⇢ @[backlog/app/t-005] [duplicate-of]
+  @[backlog/infra/t-011] ⇢ @[backlog/app/t-007] [blocks]
+  @[backlog/infra/t-011] ⇢ @[backlog/platform/t-001] [blocks]
+  @[backlog/infra/t-011] ⇢ @[backlog/platform/t-002] [related-to]
+  @[backlog/infra/t-011] ⇢ @[backlog/platform/t-003] [related-to]
+  @[backlog/infra/t-011] ⇢ @[backlog/research/t-012] [duplicate-of]
+  @[backlog/infra/t-011] ⇢ @[in-progress/app/t-018] [related-to]
+  @[backlog/infra/t-011] ⇢ @[in-progress/platform/t-015] [duplicate-of]
+  @[backlog/infra/t-011] ⇢ @[review/app/t-040] [related-to]
+  @[backlog/infra/t-011] ⇢ @[review/platform/t-032] [related-to]
+  @[backlog/infra/t-011] ⇢ @[review/research/t-045] [duplicate-of]
+  @[backlog/platform/t-001] ⇢ @[backlog/app/t-004] [blocks]
+  @[backlog/platform/t-001] ⇢ @[backlog/app/t-006] [related-to]
+  @[backlog/platform/t-001] ⇢ @[backlog/infra/t-008] [blocks]
+  @[backlog/platform/t-001] ⇢ @[backlog/infra/t-009] [duplicate-of]
+  @[backlog/platform/t-001] ⇢ @[backlog/infra/t-010] [related-to]
+  @[backlog/platform/t-001] ⇢ @[backlog/platform/t-003] [related-to]
+  @[backlog/platform/t-001] ⇢ @[blocked/app/t-055] [blocks]
+  @[backlog/platform/t-001] ⇢ @[blocked/platform/t-050] [duplicate-of]
+  @[backlog/platform/t-001] ⇢ @[done/infra/t-073] [duplicate-of]
+  @[backlog/platform/t-001] ⇢ @[done/platform/t-067] [duplicate-of]
+  @[backlog/platform/t-002] ⇢ @[backlog/app/t-004] [blocks]
+  @[backlog/platform/t-002] ⇢ @[backlog/app/t-005] [duplicate-of]
+  @[backlog/platform/t-002] ⇢ @[backlog/app/t-007] [related-to]
+  @[backlog/platform/t-002] ⇢ @[backlog/infra/t-008] [related-to]
+  @[backlog/platform/t-002] ⇢ @[backlog/platform/t-001] [duplicate-of]
+  @[backlog/platform/t-002] ⇢ @[backlog/research/t-012] [related-to]
+  @[backlog/platform/t-002] ⇢ @[blocked/research/t-063] [related-to]
+  @[backlog/platform/t-002] ⇢ @[in-progress/research/t-029] [duplicate-of]
+  @[backlog/platform/t-002] ⇢ @[in-progress/research/t-030] [blocks]
+  @[backlog/platform/t-002] ⇢ @[review/app/t-036] [duplicate-of]
+  @[backlog/platform/t-002] ⇢ @[review/platform/t-034] [blocks]
+  @[backlog/platform/t-003] ⇢ @[backlog/app/t-006] [blocks]
+  @[backlog/platform/t-003] ⇢ @[backlog/platform/t-002] [duplicate-of]
+  @[backlog/platform/t-003] ⇢ @[backlog/research/t-012] [related-to]
+  @[backlog/platform/t-003] ⇢ @[blocked/app/t-055] [blocks]
+  @[backlog/platform/t-003] ⇢ @[done/infra/t-073] [duplicate-of]
+  @[backlog/platform/t-003] ⇢ @[in-progress/infra/t-026] [related-to]
+  @[backlog/platform/t-003] ⇢ @[in-progress/research/t-028] [related-to]
+  @[backlog/platform/t-003] ⇢ @[review/research/t-044] [related-to]
+  @[backlog/research/t-012] ⇢ @[backlog/app/t-004] [blocks]
+  @[backlog/research/t-012] ⇢ @[backlog/app/t-005] [duplicate-of]
+  @[backlog/research/t-012] ⇢ @[backlog/infra/t-008] [blocks]
+  @[backlog/research/t-012] ⇢ @[backlog/infra/t-009] [related-to]
+  @[backlog/research/t-012] ⇢ @[backlog/platform/t-001] [related-to]
+  @[backlog/research/t-012] ⇢ @[blocked/app/t-054] [duplicate-of]
+  @[backlog/research/t-012] ⇢ @[blocked/app/t-057] [duplicate-of]
+  @[backlog/research/t-012] ⇢ @[blocked/platform/t-050] [blocks]
+  @[blocked/app/t-054] ⇢ @[backlog/app/t-007] [related-to]
+  @[blocked/app/t-056] ⇢ @[backlog/research/t-013] [blocks]
+  @[blocked/infra/t-058] ⇢ @[review/research/t-047] [blocks]
+  @[blocked/infra/t-059] ⇢ @[backlog/app/t-005] [related-to]
+  @[blocked/infra/t-060] ⇢ @[review/app/t-040] [blocks]
+  @[blocked/platform/t-051] ⇢ @[backlog/infra/t-010] [duplicate-of]
+  @[blocked/platform/t-052] ⇢ @[in-progress/platform/t-015] [blocks]
+  @[blocked/research/t-061] ⇢ @[done/platform/t-065] [related-to]
+  @[blocked/research/t-062] ⇢ @[backlog/platform/t-001] [blocks]
+  @[blocked/research/t-063] ⇢ @[review/platform/t-034] [blocks]
+  @[done/app/t-069] ⇢ @[in-progress/app/t-019] [duplicate-of]
+  @[done/app/t-070] ⇢ @[backlog/infra/t-008] [related-to]
+  @[done/app/t-071] ⇢ @[backlog/platform/t-001] [blocks]
+  @[done/infra/t-073] ⇢ @[in-progress/infra/t-024] [duplicate-of]
+  @[done/infra/t-074] ⇢ @[in-progress/research/t-028] [related-to]
+  @[done/platform/t-066] ⇢ @[review/app/t-040] [related-to]
+  @[done/platform/t-067] ⇢ @[backlog/research/t-012] [related-to]
+  @[in-progress/app/t-018] ⇢ @[backlog/app/t-006] [duplicate-of]
+  @[in-progress/app/t-021] ⇢ @[done/platform/t-065] [duplicate-of]
+  @[in-progress/infra/t-022] ⇢ @[backlog/infra/t-011] [related-to]
+  @[in-progress/infra/t-025] ⇢ @[review/infra/t-041] [related-to]
+  @[in-progress/infra/t-026] ⇢ @[done/app/t-072] [duplicate-of]
+  @[in-progress/platform/t-015] ⇢ @[in-progress/infra/t-023] [blocks]
+  @[in-progress/research/t-028] ⇢ @[done/infra/t-073] [related-to]
+  @[in-progress/research/t-029] ⇢ @[blocked/app/t-055] [related-to]
+  @[review/app/t-039] ⇢ @[in-progress/app/t-019] [duplicate-of]
+  @[review/app/t-040] ⇢ @[in-progress/app/t-018] [related-to]
+  @[review/infra/t-041] ⇢ @[blocked/infra/t-058] [blocks]
+  @[review/infra/t-043] ⇢ @[done/platform/t-068] [related-to]
+  @[review/research/t-044] ⇢ @[done/platform/t-068] [related-to]
+  @[review/research/t-045] ⇢ @[review/platform/t-034] [duplicate-of]
+  @[review/research/t-047] ⇢ @[backlog/research/t-014] [related-to]
+
+Legend:
+  @[id]   = stable node identifier (use in edge references)
+  ⇢       = directed edge src → tgt

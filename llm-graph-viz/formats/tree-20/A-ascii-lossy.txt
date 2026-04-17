@@ -1,0 +1,25 @@
+└── ▢ Project Root
+    ├── ▢ Backend
+    │   ├── ▢ REST API
+    │   │   ├── · Orders Endpoint
+    │   │   │           ⇢ Schema
+    │   │   └── · Users Endpoint
+    │   │               ⇢ Authentication
+    │   ├── · Authentication
+    │   └── ▢ Database
+    │       ├── · Migrations
+    │       └── · Schema
+    ├── ▢ Documentation
+    │   ├── · API Reference
+    │   │           ⇢ REST API
+    │   ├── · CHANGELOG
+    │   └── · README
+    └── ▢ Frontend
+        ├── ▢ State Management
+        │   └── · Redux Store
+        └── ▢ UI Components
+            ├── · Button Component
+            ├── · Form Component
+            │           ⇢ Users Endpoint
+            └── · Modal Component
+                        ⇢ Button Component

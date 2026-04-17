@@ -1,0 +1,42 @@
+═══ arboricity report ═══
+nodes N         : 20
+edges E         : 5
+undirected      : 5
+density UB      : 1
+Nash-Williams LB: 1
+greedy forests  : 1
+degeneracy      : 1
+
+═══ SPINE (containment hierarchy, no cross-edges) ═══
+└── ▢ Project Root @[proj]
+    ├── ▢ Backend @[proj/backend]
+    │   ├── ▢ REST API @[proj/backend/api]
+    │   │   ├── · Orders Endpoint @[proj/backend/api/orders]
+    │   │   └── · Users Endpoint @[proj/backend/api/users]
+    │   ├── · Authentication @[proj/backend/auth]
+    │   └── ▢ Database @[proj/backend/db]
+    │       ├── · Migrations @[proj/backend/db/migrations]
+    │       └── · Schema @[proj/backend/db/schema]
+    ├── ▢ Documentation @[proj/docs]
+    │   ├── · API Reference @[proj/docs/api-ref]
+    │   ├── · CHANGELOG @[proj/docs/changelog]
+    │   └── · README @[proj/docs/readme]
+    └── ▢ Frontend @[proj/frontend]
+        ├── ▢ State Management @[proj/frontend/state]
+        │   └── · Redux Store @[proj/frontend/state/store]
+        └── ▢ UI Components @[proj/frontend/ui]
+            ├── · Button Component @[proj/frontend/ui/button]
+            ├── · Form Component @[proj/frontend/ui/form]
+            └── · Modal Component @[proj/frontend/ui/modal]
+
+═══ COVER FOREST 1 (|E|=5) ═══
+● API Reference @[proj/docs/api-ref]
+└── ⇢ REST API @[proj/backend/api] [documents]
+● Form Component @[proj/frontend/ui/form]
+└── ⇢ Users Endpoint @[proj/backend/api/users] [calls]
+● Modal Component @[proj/frontend/ui/modal]
+└── ⇢ Button Component @[proj/frontend/ui/button] [uses]
+● Orders Endpoint @[proj/backend/api/orders]
+└── ⇢ Schema @[proj/backend/db/schema] [reads]
+● Users Endpoint @[proj/backend/api/users]
+└── ⇢ Authentication @[proj/backend/auth] [requires]
