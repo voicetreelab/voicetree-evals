@@ -54,7 +54,21 @@ Brier is decomposed via Murphy (1973) into reliability/resolution/uncertainty an
 
 **M1 BSS:** a normalized Brier of subtask-solvability forecasts (`p_solve`) — measures whether the model knows which subtasks it will solve. **M2 BSS:** a normalized Brier of output-quality forecasts (`p_gap_le_X`) — measures whether the model knows how close-to-optimal its answer is. Negative BSS = the model's confidence is strictly worse than ignoring it and quoting the class base rate (e.g., Gemini Flash's M1 BSS of −0.79 means the model is actively deceiving itself compared to just guessing the average).
 
-Small-tier · frontier-tier separated by `·`; bold = positive-axis replication or frontier patching the small-tier failure. Total N > 320 model-rows scored across 6 models; full per-model counts, per-class decomposition, and raw transcripts in the public repo. See **Figure 1** (Media Gallery): Pareto chart of feasibility × metacog composite.
+Small-tier · frontier-tier separated by `·`; bold = positive-axis replication or frontier patching the small-tier failure. Total N > 320 model-rows scored across 6 models; full per-model counts, per-class decomposition, and raw transcripts in the public repo.
+
+### Figures
+
+**Figure 5 — Per-lab cognitive-profile fingerprint (hexagonal radar).** Each hexagon plots 6 metacog skills (M1–M6) on 6 axes. Family shape = metacog fingerprint. The annotated version shows the distinctive "fingerprint shape" each family produces.
+
+![Figure 5 — Cognitive-profile radar (annotated)](figure5-cognitive-profile-radar-annotated.png)
+
+**Figure 6 — Per-lab cognitive profile, 8-skill bar chart (family-averaged).**
+
+![Figure 6 — Per-lab bar chart](figure6-per-lab-bar-chart.png)
+
+**Submission proof (Kaggle AGI Metacognition track, 2026-04-17).**
+
+![Submission proof](submission_proof.png)
 
 ### Family-consistency verdict (closes the "one-model-per-family" critique)
 
@@ -80,4 +94,4 @@ Voicetree — AI agent orchestration platform. Research conducted independently.
 
 ## References & Citations
 
-Full bibliography hosted in our public repository: **`github.com/voicetree-ai/metabench-evals/references.md`**. Core citations used in this writeup: Kadavath et al. (2022); Ackerman et al. (2025); Kirichenko et al. (2025); Laskov & Shafto (2024), "Beyond Bench"; Murphy (1973); Nelson & Narens (1990); Russell & Wefald (1991); Christiano et al. (2018); Huang et al. (2024); Wang & Zhao (2024); Shinn et al. (2023); Han et al. (2024); Snell et al. (2025); Li, Hendrycks et al. (2025).
+Full bibliography: **[github.com/voicetree-ai/metabench-evals/blob/main/references.md](https://github.com/voicetree-ai/metabench-evals/blob/main/references.md)**. Core citations used in this writeup: Kadavath et al. (2022); Ackerman et al. (2025); Kirichenko et al. (2025); Laskov & Shafto (2024), "Beyond Bench"; Murphy (1973); Nelson & Narens (1990); Russell & Wefald (1991); Christiano et al. (2018); Huang et al. (2024); Wang & Zhao (2024); Shinn et al. (2023); Han et al. (2024); Snell et al. (2025); Li, Hendrycks et al. (2025).
