@@ -3,7 +3,7 @@ isContextNode: false
 ---
 # # Factored Self-Assessment: Benchmarks for Metacognitive Monitoring and Control in LLMs
 
-### Voicetree (Manu Bhat, Lochlan Hill)
+### Voicetree (Manu Masson, Lochlan Hill)
 
 ## Problem Statement
 

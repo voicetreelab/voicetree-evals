@@ -1,6 +1,6 @@
 # Capability-Controlled Metacognition: Model Families Specialize on Different Self-Knowledge Axes
 
-**Team:** Voicetree (Manu Bhat, Lochlan Hill)
+**Team:** Voicetree (Manu Masson, Lochlan Hill)
 **Track:** Metacognition
 
 ## Problem Statement
