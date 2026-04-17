@@ -37,7 +37,7 @@ Invariants enforced by `scripts/graph.ts`:
 
 - Small-tree (tree-20) exists so a human can read the entire graph in one glance, which is the only way to debug the rubric and catch scorer bugs.
 - Medium-high-arboricity (kanban-100) tests formats against *adversarial* structure — the tree-cover format E is most interesting at a(G) approaching 6 because BF-192's analysis predicted the crossover near there.
-- Large-world-model-like (world-model-like-465) exists to test at realistic-zettelkasten scale (~500 nodes, a=3). This is a direct structural copy of the BF-192 measured fixture, with synthetic content in place of the original AGI-predictions notes.
+- Large-world-model-like (world-model-like-465) exists to test at realistic-zettelkasten scale (~500 nodes, a=3). This is a structural copy of the BF-192 measured fixture — same N, E, and arboricity as the real upstream zettelkasten — with fully synthetic content (titles, edge labels, and folder names are all generated from a seeded PRNG).
 
 Adding more fixtures is a straightforward PR — see `scripts/generate-fixtures.ts`.
 
