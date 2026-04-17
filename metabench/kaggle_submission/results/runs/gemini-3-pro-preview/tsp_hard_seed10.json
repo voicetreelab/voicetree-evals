@@ -1,0 +1,186 @@
+{
+  "baseline_objective": 589.6582259632314,
+  "cf_delta": -0.12629207624820538,
+  "cf_parsed": {
+    "best_guess": {
+      "tour": [
+        6,
+        12,
+        3,
+        15,
+        7,
+        9,
+        1,
+        17,
+        11,
+        5,
+        18,
+        16,
+        8,
+        19,
+        14,
+        2,
+        13,
+        10,
+        4,
+        0
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.0,
+      "expected_gap_reduction": 0.0,
+      "p_improve": 0.0
+    },
+    "decision": null,
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.95,
+      "p_gap_le_2": 0.8,
+      "p_gap_le_5": 0.9
+    },
+    "subtask_body": "The current tour is already highly optimized and follows a clean perimeter sweep with inner points correctly inserted. I will output the same tour.",
+    "subtask_id": 2,
+    "updated_plan_state": "Stop here as the tour is highly optimized and time is limited."
+  },
+  "class": "tsp",
+  "difficulty": "hard",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_length": 589.6582259632314,
+      "computed_length": 442.8740545630947,
+      "normalized_tour": [
+        0,
+        4,
+        10,
+        13,
+        2,
+        14,
+        19,
+        8,
+        16,
+        18,
+        5,
+        11,
+        17,
+        1,
+        9,
+        7,
+        15,
+        3,
+        12,
+        6
+      ],
+      "optimal_length": 442.8740545630947
+    },
+    "feasible": true,
+    "gap_pct": 0.0,
+    "mode": "solo",
+    "submission": {
+      "tour": [
+        6,
+        12,
+        3,
+        15,
+        7,
+        9,
+        1,
+        17,
+        11,
+        5,
+        18,
+        16,
+        8,
+        19,
+        14,
+        2,
+        13,
+        10,
+        4,
+        0
+      ]
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gold_objective": 442.8740545630947,
+  "id": "tsp_hard_seed10",
+  "model": "gemini-3-pro-preview",
+  "model_slug": "gemini-3-pro-preview",
+  "n_exec_turns": 1,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 3
+    }
+  ],
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "tour": [
+        6,
+        12,
+        3,
+        15,
+        7,
+        9,
+        1,
+        17,
+        11,
+        5,
+        18,
+        16,
+        8,
+        19,
+        14,
+        2,
+        13,
+        10,
+        4,
+        0
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.0,
+      "expected_gap_reduction": 0.0,
+      "p_improve": 0.0
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.95,
+      "p_gap_le_2": 0.8,
+      "p_gap_le_5": 0.9
+    },
+    "subtask_body": "Constructed a perimeter sweep incorporating inner points.\nCalculated total distance to be ~442.5, which is significantly better than the baseline of 589.6.",
+    "subtask_id": 1,
+    "updated_plan_state": "Stop here as the tour is highly optimized and time is limited."
+  },
+  "score": 99.46149927167222,
+  "score_after_cf": 99.46149927167222,
+  "score_at_stop": 99.58779134792043,
+  "seed": 10,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Group cities by coordinates and trace a perimeter or sweep path. Calculate distances to ensure no crossings.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Refine the initial sweep path and calculate total distance\", \"p_solve\": 0.9, \"time_budget_s\": 300}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: Constructed a perimeter sweep incorporating inner points.\nCalculated total distance to be ~442.5, which is significantly better than the baseline of 589.6.\nBEST_GUESS: {\"tour\": [6, 12, 3, 15, 7, 9, 1, 17, 11, 5, 18, 16, 8, 19, 14, 2, 13, 10, 4, 0]}\nUPDATED_PLAN_STATE: Stop here as the tour is highly optimized and time is limited.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.8, \"p_gap_le_5\": 0.9, \"p_gap_le_10\": 0.95}\nCONTINUE_FORECAST: {\"p_improve\": 0.0, \"expected_delta_score\": 0.0, \"expected_gap_reduction\": 0.0}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: The current tour is already highly optimized and follows a clean perimeter sweep with inner points correctly inserted. I will output the same tour.\nBEST_GUESS: {\"tour\": [6, 12, 3, 15, 7, 9, 1, 17, 11, 5, 18, 16, 8, 19, 14, 2, 13, 10, 4, 0]}\nUPDATED_PLAN_STATE: Stop here as the tour is highly optimized and time is limited.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.8, \"p_gap_le_5\": 0.9, \"p_gap_le_10\": 0.95}\nCONTINUE_FORECAST: {\"p_improve\": 0.0, \"expected_delta_score\": 0.0, \"expected_gap_reduction\": 0.0}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 53.850084541831166
+}

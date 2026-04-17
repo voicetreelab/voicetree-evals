@@ -1,0 +1,38 @@
+{
+  "model": "gemini-flash-latest",
+  "model_slug": "gemini-flash-latest",
+  "rows": [
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": true,
+      "id": "mbj_medium_seed1",
+      "score": 90.71655108234403
+    },
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": false,
+      "id": "mbj_medium_seed5",
+      "score": 0.0
+    },
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": false,
+      "id": "mbj_hard_seed1",
+      "score": 0.0
+    },
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": true,
+      "id": "portfolio_medium_seed50",
+      "score": 7.196287567840798
+    }
+  ]
+}

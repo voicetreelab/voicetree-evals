@@ -1,0 +1,119 @@
+{
+  "detail_rows": [
+    {
+      "cf_delta": 0.0,
+      "cf_parsed": {},
+      "class": "steiner",
+      "difficulty": "medium",
+      "error": "InternalServerError: Error code: 503 - {'message': 'The requested model is currently unavailable.', 'type': 'invalid_request_error'}",
+      "feasible": true,
+      "final_evaluation": {
+        "details": {
+          "baseline_cost": 72,
+          "computed_cost": 72,
+          "edge_cost": 27,
+          "failure_reason": null,
+          "gold_cost": 59,
+          "normalized_submission": {
+            "edges": [
+              [
+                "Bay",
+                "Pine"
+              ],
+              [
+                "Pine",
+                "Port"
+              ],
+              [
+                "Dune",
+                "Port"
+              ]
+            ],
+            "frequencies": {
+              "Bay": 1,
+              "Dune": 3,
+              "Pine": 2,
+              "Port": 1
+            }
+          },
+          "num_frequencies_used": 3,
+          "scored_cost": 72,
+          "used_baseline_fallback": false
+        },
+        "feasible": true,
+        "gap_pct": 22.033898305084747,
+        "mode": "solo",
+        "submission": {
+          "edges": [
+            [
+              "Bay",
+              "Pine"
+            ],
+            [
+              "Pine",
+              "Port"
+            ],
+            [
+              "Dune",
+              "Port"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Dune": 3,
+            "Pine": 2,
+            "Port": 1
+          }
+        }
+      },
+      "final_submission_source": "baseline",
+      "gap_pct": 22.033898305084747,
+      "id": "steiner_medium_seed1",
+      "n_exec_turns": 0,
+      "parse_events": [],
+      "parse_path": "baseline_only",
+      "parsed": {},
+      "score": 77.95227018296525,
+      "score_after_cf": 77.95227018296525,
+      "score_at_stop": 77.95227018296525,
+      "seed": 1,
+      "stop_reason": "error",
+      "transcript": [],
+      "wall_s": 1.3831598830001894
+    }
+  ],
+  "effective_model": "gpt-5.4-mini",
+  "effective_name": "gpt-5.4-mini",
+  "eval_result": "Runs(runs=[Run(task=Task(func=<function detailed_run at 0x7c5429b39f80>, name='meta_hch_prod_gpt-5.4-mini_20260416t173007z', description='', result_type=<class 'kaggle_benchmarks.results.PassFail'>, version=1, store_task=True, store_run=True), result=77.95227018296525, chat=Chat(history=[Chat(history=[Message(content='You are solving an optimization problem.\\n\\nValue. Each problem is worth up to 100 points of value. Your gap to the optimum reduces value linearly, at 1 point per percentage point of gap, floored at 0.\\n\\nTime cost. Wall time costs 0.01 points per second.\\n\\nBudgets. Total wall budget is 1800s. Turn 1 planning budget is 300s. Each execution subtask may budget up to 600s. The harness reserves 300s for a forced one-more-turn counterfactual branch after a clean stop.\\n\\nProtocol. You may decompose the problem into subtasks, revise your plan each turn, and stop when you judge no more work is worth its time cost. The harness extracts structured fields from your raw text, so when a field expects JSON, emit valid JSON.\\n\\nOutput budget. Your response is token-limited. Keep SUB_N sections under 30 lines \u2014 key moves and result only. You MUST reach all structured fields (BEST_GUESS, UPDATED_PLAN_STATE, QUALITY_FORECAST, CONTINUE_FORECAST, DECISION) in every exec turn.\\n\\nDo not call tools. Do not write code, pseudocode, or solver sketches. Work only from the prompt, the running transcript, the current best artifact, and your own reasoning.', sender=Actor(name='System', avatar='\u2699\ufe0f'), _status=<Status.SUCCESS: 'success'>, is_visible_to_llm=True, _meta={}), Message(content='Coastal Emergency scenario:\\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\\n\\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\\nIf an interference pair is active on both ends, those two villages must use different frequencies.\\n\\nObjective:\\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\\n\\nVillages:\\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape\\n\\nRequired terminals:\\n- Port, Bay, Dune\\n\\nAvailable cable links:\\n- Bay-Cliff: cost 8\\n- Bay-Pine: cost 8\\n- Bay-Rock: cost 20\\n- Bay-Mill: cost 4\\n- Bay-Cape: cost 9\\n- Cliff-Pine: cost 10\\n- Cliff-Rock: cost 12\\n- Cliff-Dune: cost 23\\n- Cliff-Mill: cost 12\\n- Pine-Port: cost 12\\n- Pine-Rock: cost 18\\n- Dune-Port: cost 7\\n- Dune-Pine: cost 16\\n- Mill-Port: cost 18\\n- Mill-Pine: cost 8\\n- Cape-Port: cost 19\\n- Cape-Cliff: cost 2\\n- Cape-Pine: cost 9\\n- Cape-Rock: cost 11\\n- Cape-Dune: cost 21\\n- Cape-Mill: cost 12\\n\\nInterference pairs:\\n- Bay / Cliff\\n- Bay / Mill\\n- Cliff / Rock\\n- Cliff / Dune\\n- Cliff / Mill\\n- Pine / Port\\n- Dune / Port\\n- Dune / Pine\\n\\nRules:\\n- Your cable choice must be a tree, not a cyclic network.\\n- All required terminals must lie in one connected component.\\n- Frequencies matter only for active villages in the chosen network.\\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\\n\\nBaseline total cost: 72\\nBaseline answer summary:\\nEdges: Bay-Pine(8), Pine-Port(12), Dune-Port(7)\\nActive villages: Port, Bay, Pine, Dune\\nFrequencies: Port=1, Bay=1, Pine=2, Dune=3\\nEdge cost: 27\\nFrequencies used: 3\\nTotal cost: 72\\n\\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\\n\\n\\nTurn 1 for Steiner x Coloring is planning only. Do not emit BEST_GUESS yet.\\n\\nEmit, in order:\\n- `PLAN_STATE`: plan (\u2264 15 lines). We will quote this back to you verbatim on every later turn.\\n- `NEXT_SUB`: `{id: 1, desc, p_solve, time_budget_s}`. `p_solve` is your probability that the final answer lands within the target gap after this subtask. `time_budget_s` must be <= 600.\\n\\nExample shape:\\nPLAN_STATE: Start from the baseline, identify the main bottleneck, then spend one subtask trying to produce a cleaner feasible answer.\\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct one improved feasible candidate\", \"p_solve\": 0.35, \"time_budget_s\": 180}\\n\\nDo NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, `QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets (`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` followed by the value.\\nCORRECT: PLAN_STATE: Start from the baseline...\\nWRONG:   ## PLAN_STATE\\nStart from the baseline...  (markdown header \u2014 will not parse)\\nWRONG:   - PLAN_STATE: Start from the baseline...   (bullet prefix \u2014 will not parse)\\n\\nEmit both labelled fields exactly once, in the listed order. Failing to emit either required field causes strict-parse failure, and no score is recorded for the turn. Do not emit BEST_GUESS yet.\\n\\nPlanning budget: 300s.', sender=Actor(name='User', avatar='\ud83d\udc64'), _status=<Status.SUCCESS: 'success'>, is_visible_to_llm=True, _meta={})], name='run-steiner-medium-seed1', _id_suffix='25e6fccd', sender=Actor(name='System', avatar='\u2699\ufe0f'), _status=<Status.SUCCESS: 'success'>)], name='meta_hch_prod_gpt-5.4-mini_20260416t173007z', _id_suffix='cebcb43c', sender=Actor(name='System', avatar='\u2699\ufe0f'), _status=<Status.SUCCESS: 'success'>), status=<Status.SUCCESS: 'success'>, params={'llm': OpenAI(name='gpt-5.4-mini'), 'id': 'steiner_medium_seed1', 'class_': 'steiner', 'difficulty': 'medium', 'seed': 1, 'instance': {'answer_contract': 'Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.', 'baseline_cost': 72, 'baseline_gap_pct': 22.033898305084747, 'baseline_submission': {'edges': [['Bay', 'Pine'], ['Pine', 'Port'], ['Dune', 'Port']], 'frequencies': {'Bay': 1, 'Dune': 3, 'Pine': 2, 'Port': 1}}, 'cable_only_cost': 72, 'cable_only_submission': {'edges': [['Bay', 'Pine'], ['Pine', 'Port'], ['Dune', 'Port']], 'frequencies': {'Bay': 1, 'Dune': 3, 'Pine': 2, 'Port': 1}}, 'class': 'steiner', 'difficulty': 'medium', 'edges': [{'cost': 8, 'u': 'Bay', 'v': 'Cliff'}, {'cost': 8, 'u': 'Bay', 'v': 'Pine'}, {'cost': 20, 'u': 'Bay', 'v': 'Rock'}, {'cost': 4, 'u': 'Bay', 'v': 'Mill'}, {'cost': 9, 'u': 'Bay', 'v': 'Cape'}, {'cost': 10, 'u': 'Cliff', 'v': 'Pine'}, {'cost': 12, 'u': 'Cliff', 'v': 'Rock'}, {'cost': 23, 'u': 'Cliff', 'v': 'Dune'}, {'cost': 12, 'u': 'Cliff', 'v': 'Mill'}, {'cost': 12, 'u': 'Pine', 'v': 'Port'}, {'cost': 18, 'u': 'Pine', 'v': 'Rock'}, {'cost': 7, 'u': 'Dune', 'v': 'Port'}, {'cost': 16, 'u': 'Dune', 'v': 'Pine'}, {'cost': 18, 'u': 'Mill', 'v': 'Port'}, {'cost': 8, 'u': 'Mill', 'v': 'Pine'}, {'cost': 19, 'u': 'Cape', 'v': 'Port'}, {'cost': 2, 'u': 'Cape', 'v': 'Cliff'}, {'cost': 9, 'u': 'Cape', 'v': 'Pine'}, {'cost': 11, 'u': 'Cape', 'v': 'Rock'}, {'cost': 21, 'u': 'Cape', 'v': 'Dune'}, {'cost': 12, 'u': 'Cape', 'v': 'Mill'}], 'freq_penalty': 15, 'gold_cost': 59, 'gold_submission': {'edges': [['Bay', 'Mill'], ['Dune', 'Port'], ['Mill', 'Port']], 'frequencies': {'Bay': 2, 'Dune': 2, 'Mill': 1, 'Port': 1}}, 'interference_pairs': [['Bay', 'Cliff'], ['Bay', 'Mill'], ['Cliff', 'Rock'], ['Cliff', 'Dune'], ['Cliff', 'Mill'], ['Pine', 'Port'], ['Dune', 'Port'], ['Dune', 'Pine']], 'k': 4, 'n': 8, 'n_terminals': 3, 'problem_statement': 'Coastal Emergency scenario:\\nStorm season is coming. You need to wire a resilient emergency communication network across coastal villages.\\n\\nYou may choose any subset of the available cable links, but the chosen cable network must be a single connected tree that includes every required terminal village.\\nEvery village that lies in your chosen network is active and must be assigned a radio frequency.\\nIf an interference pair is active on both ends, those two villages must use different frequencies.\\n\\nObjective:\\ntotal_cost = sum(cable costs used) + 15 * num_frequencies_used\\n\\nVillages:\\n- Port, Bay, Cliff, Pine, Rock, Dune, Mill, Cape\\n\\nRequired terminals:\\n- Port, Bay, Dune\\n\\nAvailable cable links:\\n- Bay-Cliff: cost 8\\n- Bay-Pine: cost 8\\n- Bay-Rock: cost 20\\n- Bay-Mill: cost 4\\n- Bay-Cape: cost 9\\n- Cliff-Pine: cost 10\\n- Cliff-Rock: cost 12\\n- Cliff-Dune: cost 23\\n- Cliff-Mill: cost 12\\n- Pine-Port: cost 12\\n- Pine-Rock: cost 18\\n- Dune-Port: cost 7\\n- Dune-Pine: cost 16\\n- Mill-Port: cost 18\\n- Mill-Pine: cost 8\\n- Cape-Port: cost 19\\n- Cape-Cliff: cost 2\\n- Cape-Pine: cost 9\\n- Cape-Rock: cost 11\\n- Cape-Dune: cost 21\\n- Cape-Mill: cost 12\\n\\nInterference pairs:\\n- Bay / Cliff\\n- Bay / Mill\\n- Cliff / Rock\\n- Cliff / Dune\\n- Cliff / Mill\\n- Pine / Port\\n- Dune / Port\\n- Dune / Pine\\n\\nRules:\\n- Your cable choice must be a tree, not a cyclic network.\\n- All required terminals must lie in one connected component.\\n- Frequencies matter only for active villages in the chosen network.\\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\\n\\nBaseline total cost: 72\\nBaseline answer summary:\\nEdges: Bay-Pine(8), Pine-Port(12), Dune-Port(7)\\nActive villages: Port, Bay, Pine, Dune\\nFrequencies: Port=1, Bay=1, Pine=2, Dune=3\\nEdge cost: 27\\nFrequencies used: 3\\nTotal cost: 72\\n\\nAnswer contract hint: Object with \"edges\": [[\"Port\", \"Bay\"], ...] and \"frequencies\": {\"Port\": 1, ...}.\\n', 'seed': 1, 'terminals': ['Port', 'Bay', 'Dune'], 'villages': ['Port', 'Bay', 'Cliff', 'Pine', 'Rock', 'Dune', 'Mill', 'Cape']}, 'gold_objective': 59.0, 'baseline_objective': 72.0, 'value_cap': 100.0, 'wall_budget_s': 1800, 'components': None}, id='Run #1', param_id=0, subruns=Runs(runs=[]), assertion_results=[], start_time=datetime.datetime(2026, 4, 16, 17, 30, 9, 272293, tzinfo=datetime.timezone.utc), end_time=datetime.datetime(2026, 4, 16, 17, 30, 10, 656856, tzinfo=datetime.timezone.utc), cached=False, error_message=None)])",
+  "eval_summary": [
+    {
+      "class": "steiner",
+      "difficulty": "medium",
+      "id": "steiner_medium_seed1",
+      "result": 77.95227018296525,
+      "seed": 1
+    }
+  ],
+  "evaluate_signature": "(grid: dict[str, typing.Iterable[typing.Any]] | None = None, evaluation_data: pandas.core.frame.DataFrame | None = None, n_jobs: int = 1, timeout: float | None = None, stop_condition: Optional[Callable[[ForwardRef('runs.Runs[T]')], bool]] = None, max_attempts: int = 1, retry_delay: int = 1, remove_run_files: bool = False, **kwargs: Iterable[Any]) -> 'runs.Runs[T]'",
+  "missing_ids": [],
+  "requested_model": "gpt-5.4-mini",
+  "row_count": 1,
+  "row_ids": [
+    "steiner_medium_seed1"
+  ],
+  "run_files": {
+    "meta_hch_prod_gpt-5.4-mini_20260416t173007z-run_param_id_0_gpt-5.4-mini.run.json": "{\n  \"taskVersion\": {\n    \"versionNumber\": 1,\n    \"name\": \"meta_hch_prod_gpt-5.4-mini_20260416t173007z\",\n    \"description\": \"\",\n    \"definition\": \"    @kbench.task(name=TASK_NAME)\\n    def detailed_run(\\n        llm,\\n        id,\\n        class_,\\n        difficulty,\\n        seed,\\n        instance,\\n        gold_objective,\\n        baseline_objective,\\n        value_cap,\\n        wall_budget_s=1800,\\n        components=None,\\n    ):\\n        del wall_budget_s\\n        inst = module._coerce_json(instance, default=None)\\n        if not isinstance(inst, dict):\\n            raise TypeError(\\\"instance must be a dict or JSON object string\\\")\\n        normalized_components = module._normalize_components(components)\\n\\n        row = module.run_instance(\\n            llm=llm,\\n            instance=inst,\\n            cls=str(class_),\\n            difficulty=str(difficulty),\\n            seed=int(seed),\\n            gold_objective=float(gold_objective),\\n            baseline_objective=float(baseline_objective),\\n            value_cap=float(value_cap),\\n            components=normalized_components,\\n        )\\n        final_submission_source, final_evaluation = evaluate_final_submission(\\n            row,\\n            instance=inst,\\n            cls=str(class_),\\n            components=normalized_components,\\n        )\\n        gap_pct = final_evaluation.get(\\\"gap_pct\\\")\\n        if gap_pct is None:\\n            gap_pct = final_evaluation.get(\\\"details\\\", {}).get(\\\"gap_pct\\\")\\n        detail = {\\n            \\\"id\\\": str(id),\\n            \\\"class\\\": str(class_),\\n            \\\"difficulty\\\": str(difficulty),\\n            \\\"seed\\\": int(seed),\\n            \\\"score\\\": float(row[\\\"score\\\"]),\\n            \\\"score_at_stop\\\": float(row[\\\"score_at_stop\\\"]),\\n            \\\"score_after_cf\\\": float(row[\\\"score_after_cf\\\"]),\\n            \\\"cf_delta\\\": float(row[\\\"cf_delta\\\"]),\\n            \\\"stop_reason\\\": row[\\\"stop_reason\\\"],\\n            \\\"wall_s\\\": float(row[\\\"wall_s\\\"]),\\n            \\\"n_exec_turns\\\": int(row[\\\"n_exec_turns\\\"]),\\n            \\\"error\\\": row[\\\"error\\\"],\\n            \\\"parsed\\\": row[\\\"parsed\\\"],\\n            \\\"cf_parsed\\\": row[\\\"cf_parsed\\\"],\\n            \\\"transcript\\\": row[\\\"transcript\\\"],\\n            \\\"parse_path\\\": infer_parse_path(row),\\n            \\\"parse_events\\\": row.get(\\\"parse_events\\\"),\\n            \\\"feasible\\\": infer_feasible(final_evaluation),\\n            \\\"final_submission_source\\\": final_submission_source,\\n            \\\"final_evaluation\\\": final_evaluation,\\n            \\\"gap_pct\\\": gap_pct,\\n        }\\n        detail_rows.append(detail)\\n        return float(row[\\\"score\\\"])\\n\"\n  },\n  \"modelVersion\": {\n    \"slug\": \"gpt-5.4-mini\"\n  },\n  \"state\": \"BENCHMARK_TASK_RUN_STATE_COMPLETED\",\n  \"startTime\": \"2026-04-16T17:30:09.272293Z\",\n  \"endTime\": \"2026-04-16T17:30:10.656856Z\",\n  \"conversations\": [\n    {\n      \"id\": \"meta_hch_prod_gpt-5.4-mini_20260416t173007z-cebcb43c\",\n      \"metrics\": {},\n      \"modelVersionSlug\": \"model_version_slug for conversation is DEPRECATED\"\n    },\n    {\n      \"id\": \"run-steiner-medium-seed1-25e6fccd\",\n      \"metrics\": {},\n      \"modelVersionSlug\": \"model_version_slug for conversation is DEPRECATED\"\n    }\n  ],\n  \"results\": [\n    {\n      \"type\": \"AGGREGATED\",\n      \"numericResult\": {\n        \"value\": 77.95227018296525\n      }\n    }\n  ],\n  \"pyRunId\": \"meta_hch_prod_gpt-5.4-mini_20260416t173007z-Run #1\"\n}"
+  },
+  "run_files_by_row": {
+    "steiner_medium_seed1": {
+      "contents": "{\n  \"taskVersion\": {\n    \"versionNumber\": 1,\n    \"name\": \"meta_hch_prod_gpt-5.4-mini_20260416t173007z\",\n    \"description\": \"\",\n    \"definition\": \"    @kbench.task(name=TASK_NAME)\\n    def detailed_run(\\n        llm,\\n        id,\\n        class_,\\n        difficulty,\\n        seed,\\n        instance,\\n        gold_objective,\\n        baseline_objective,\\n        value_cap,\\n        wall_budget_s=1800,\\n        components=None,\\n    ):\\n        del wall_budget_s\\n        inst = module._coerce_json(instance, default=None)\\n        if not isinstance(inst, dict):\\n            raise TypeError(\\\"instance must be a dict or JSON object string\\\")\\n        normalized_components = module._normalize_components(components)\\n\\n        row = module.run_instance(\\n            llm=llm,\\n            instance=inst,\\n            cls=str(class_),\\n            difficulty=str(difficulty),\\n            seed=int(seed),\\n            gold_objective=float(gold_objective),\\n            baseline_objective=float(baseline_objective),\\n            value_cap=float(value_cap),\\n            components=normalized_components,\\n        )\\n        final_submission_source, final_evaluation = evaluate_final_submission(\\n            row,\\n            instance=inst,\\n            cls=str(class_),\\n            components=normalized_components,\\n        )\\n        gap_pct = final_evaluation.get(\\\"gap_pct\\\")\\n        if gap_pct is None:\\n            gap_pct = final_evaluation.get(\\\"details\\\", {}).get(\\\"gap_pct\\\")\\n        detail = {\\n            \\\"id\\\": str(id),\\n            \\\"class\\\": str(class_),\\n            \\\"difficulty\\\": str(difficulty),\\n            \\\"seed\\\": int(seed),\\n            \\\"score\\\": float(row[\\\"score\\\"]),\\n            \\\"score_at_stop\\\": float(row[\\\"score_at_stop\\\"]),\\n            \\\"score_after_cf\\\": float(row[\\\"score_after_cf\\\"]),\\n            \\\"cf_delta\\\": float(row[\\\"cf_delta\\\"]),\\n            \\\"stop_reason\\\": row[\\\"stop_reason\\\"],\\n            \\\"wall_s\\\": float(row[\\\"wall_s\\\"]),\\n            \\\"n_exec_turns\\\": int(row[\\\"n_exec_turns\\\"]),\\n            \\\"error\\\": row[\\\"error\\\"],\\n            \\\"parsed\\\": row[\\\"parsed\\\"],\\n            \\\"cf_parsed\\\": row[\\\"cf_parsed\\\"],\\n            \\\"transcript\\\": row[\\\"transcript\\\"],\\n            \\\"parse_path\\\": infer_parse_path(row),\\n            \\\"parse_events\\\": row.get(\\\"parse_events\\\"),\\n            \\\"feasible\\\": infer_feasible(final_evaluation),\\n            \\\"final_submission_source\\\": final_submission_source,\\n            \\\"final_evaluation\\\": final_evaluation,\\n            \\\"gap_pct\\\": gap_pct,\\n        }\\n        detail_rows.append(detail)\\n        return float(row[\\\"score\\\"])\\n\"\n  },\n  \"modelVersion\": {\n    \"slug\": \"gpt-5.4-mini\"\n  },\n  \"state\": \"BENCHMARK_TASK_RUN_STATE_COMPLETED\",\n  \"startTime\": \"2026-04-16T17:30:09.272293Z\",\n  \"endTime\": \"2026-04-16T17:30:10.656856Z\",\n  \"conversations\": [\n    {\n      \"id\": \"meta_hch_prod_gpt-5.4-mini_20260416t173007z-cebcb43c\",\n      \"metrics\": {},\n      \"modelVersionSlug\": \"model_version_slug for conversation is DEPRECATED\"\n    },\n    {\n      \"id\": \"run-steiner-medium-seed1-25e6fccd\",\n      \"metrics\": {},\n      \"modelVersionSlug\": \"model_version_slug for conversation is DEPRECATED\"\n    }\n  ],\n  \"results\": [\n    {\n      \"type\": \"AGGREGATED\",\n      \"numericResult\": {\n        \"value\": 77.95227018296525\n      }\n    }\n  ],\n  \"pyRunId\": \"meta_hch_prod_gpt-5.4-mini_20260416t173007z-Run #1\"\n}",
+      "filename": "meta_hch_prod_gpt-5.4-mini_20260416t173007z-run_param_id_0_gpt-5.4-mini.run.json",
+      "param_id": 0
+    }
+  },
+  "status": "ok",
+  "task_files": {
+    "meta_hch_prod_gpt-5.4-mini_20260416t173007z.task.json": "{\n  \"versionNumber\": 1,\n  \"name\": \"meta_hch_prod_gpt-5.4-mini_20260416t173007z\",\n  \"definition\": \"    @kbench.task(name=TASK_NAME)\\n    def detailed_run(\\n        llm,\\n        id,\\n        class_,\\n        difficulty,\\n        seed,\\n        instance,\\n        gold_objective,\\n        baseline_objective,\\n        value_cap,\\n        wall_budget_s=1800,\\n        components=None,\\n    ):\\n        del wall_budget_s\\n        inst = module._coerce_json(instance, default=None)\\n        if not isinstance(inst, dict):\\n            raise TypeError(\\\"instance must be a dict or JSON object string\\\")\\n        normalized_components = module._normalize_components(components)\\n\\n        row = module.run_instance(\\n            llm=llm,\\n            instance=inst,\\n            cls=str(class_),\\n            difficulty=str(difficulty),\\n            seed=int(seed),\\n            gold_objective=float(gold_objective),\\n            baseline_objective=float(baseline_objective),\\n            value_cap=float(value_cap),\\n            components=normalized_components,\\n        )\\n        final_submission_source, final_evaluation = evaluate_final_submission(\\n            row,\\n            instance=inst,\\n            cls=str(class_),\\n            components=normalized_components,\\n        )\\n        gap_pct = final_evaluation.get(\\\"gap_pct\\\")\\n        if gap_pct is None:\\n            gap_pct = final_evaluation.get(\\\"details\\\", {}).get(\\\"gap_pct\\\")\\n        detail = {\\n            \\\"id\\\": str(id),\\n            \\\"class\\\": str(class_),\\n            \\\"difficulty\\\": str(difficulty),\\n            \\\"seed\\\": int(seed),\\n            \\\"score\\\": float(row[\\\"score\\\"]),\\n            \\\"score_at_stop\\\": float(row[\\\"score_at_stop\\\"]),\\n            \\\"score_after_cf\\\": float(row[\\\"score_after_cf\\\"]),\\n            \\\"cf_delta\\\": float(row[\\\"cf_delta\\\"]),\\n            \\\"stop_reason\\\": row[\\\"stop_reason\\\"],\\n            \\\"wall_s\\\": float(row[\\\"wall_s\\\"]),\\n            \\\"n_exec_turns\\\": int(row[\\\"n_exec_turns\\\"]),\\n            \\\"error\\\": row[\\\"error\\\"],\\n            \\\"parsed\\\": row[\\\"parsed\\\"],\\n            \\\"cf_parsed\\\": row[\\\"cf_parsed\\\"],\\n            \\\"transcript\\\": row[\\\"transcript\\\"],\\n            \\\"parse_path\\\": infer_parse_path(row),\\n            \\\"parse_events\\\": row.get(\\\"parse_events\\\"),\\n            \\\"feasible\\\": infer_feasible(final_evaluation),\\n            \\\"final_submission_source\\\": final_submission_source,\\n            \\\"final_evaluation\\\": final_evaluation,\\n            \\\"gap_pct\\\": gap_pct,\\n        }\\n        detail_rows.append(detail)\\n        return float(row[\\\"score\\\"])\\n\"\n}"
+  },
+  "task_name": "meta_hch_prod_gpt-5.4-mini_20260416t173007z"
+}

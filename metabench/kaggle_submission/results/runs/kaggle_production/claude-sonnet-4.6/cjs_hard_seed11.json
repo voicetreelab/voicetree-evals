@@ -1,0 +1,534 @@
+{
+  "detail_row": {
+    "cf_delta": 0.0,
+    "cf_parsed": {},
+    "class": "cjs",
+    "difficulty": "hard",
+    "error": "InternalServerError: Error code: 503 - {'message': 'The requested model is currently unavailable.', 'type': 'invalid_request_error'}",
+    "feasible": true,
+    "final_evaluation": {
+      "details": {
+        "baseline_objective": 191,
+        "failure_reason": null,
+        "gap_pct": 124.70588235294117,
+        "gold_objective": 85,
+        "metric_name": "makespan",
+        "verified_makespan": 191,
+        "verified_objective": 191
+      },
+      "feasible": true,
+      "gap_pct": 124.70588235294117,
+      "mode": "solo",
+      "submission": {
+        "factory_a": {
+          "MA1": [
+            [
+              "J1",
+              22,
+              30
+            ],
+            [
+              "J2",
+              30,
+              37
+            ],
+            [
+              "J3",
+              74,
+              80
+            ],
+            [
+              "J4",
+              80,
+              87
+            ],
+            [
+              "J5",
+              107,
+              115
+            ],
+            [
+              "J6",
+              138,
+              147
+            ]
+          ],
+          "MA2": [
+            [
+              "J1",
+              30,
+              33
+            ],
+            [
+              "J2",
+              48,
+              53
+            ],
+            [
+              "J3",
+              87,
+              93
+            ],
+            [
+              "J4",
+              98,
+              99
+            ],
+            [
+              "J5",
+              118,
+              125
+            ],
+            [
+              "J6",
+              147,
+              150
+            ]
+          ],
+          "MA3": [
+            [
+              "J1",
+              15,
+              22
+            ],
+            [
+              "J2",
+              46,
+              48
+            ],
+            [
+              "J3",
+              65,
+              69
+            ],
+            [
+              "J4",
+              99,
+              104
+            ],
+            [
+              "J5",
+              104,
+              107
+            ],
+            [
+              "J6",
+              152,
+              155
+            ]
+          ],
+          "MA4": [
+            [
+              "J1",
+              0,
+              3
+            ],
+            [
+              "J2",
+              37,
+              46
+            ],
+            [
+              "J3",
+              69,
+              74
+            ],
+            [
+              "J4",
+              87,
+              94
+            ],
+            [
+              "J5",
+              94,
+              102
+            ],
+            [
+              "J6",
+              125,
+              133
+            ]
+          ],
+          "MA5": [
+            [
+              "J1",
+              3,
+              5
+            ],
+            [
+              "J2",
+              5,
+              10
+            ],
+            [
+              "J3",
+              80,
+              82
+            ],
+            [
+              "J4",
+              109,
+              110
+            ],
+            [
+              "J5",
+              128,
+              131
+            ],
+            [
+              "J6",
+              150,
+              152
+            ]
+          ],
+          "MA6": [
+            [
+              "J1",
+              14,
+              15
+            ],
+            [
+              "J2",
+              53,
+              59
+            ],
+            [
+              "J3",
+              82,
+              87
+            ],
+            [
+              "J4",
+              94,
+              98
+            ],
+            [
+              "J5",
+              115,
+              118
+            ],
+            [
+              "J6",
+              118,
+              125
+            ]
+          ],
+          "MA7": [
+            [
+              "J1",
+              5,
+              14
+            ],
+            [
+              "J2",
+              59,
+              63
+            ],
+            [
+              "J3",
+              63,
+              65
+            ],
+            [
+              "J4",
+              104,
+              109
+            ],
+            [
+              "J5",
+              125,
+              128
+            ],
+            [
+              "J6",
+              133,
+              138
+            ]
+          ]
+        },
+        "factory_b": {
+          "MB1": [
+            [
+              "J1",
+              46,
+              47
+            ],
+            [
+              "J2",
+              78,
+              80
+            ],
+            [
+              "J3",
+              94,
+              101
+            ],
+            [
+              "J4",
+              130,
+              134
+            ],
+            [
+              "J5",
+              134,
+              139
+            ],
+            [
+              "J6",
+              155,
+              159
+            ]
+          ],
+          "MB2": [
+            [
+              "J1",
+              45,
+              46
+            ],
+            [
+              "J2",
+              89,
+              91
+            ],
+            [
+              "J3",
+              93,
+              94
+            ],
+            [
+              "J4",
+              114,
+              117
+            ],
+            [
+              "J5",
+              143,
+              147
+            ],
+            [
+              "J6",
+              183,
+              187
+            ]
+          ],
+          "MB3": [
+            [
+              "J1",
+              51,
+              55
+            ],
+            [
+              "J2",
+              72,
+              77
+            ],
+            [
+              "J3",
+              106,
+              110
+            ],
+            [
+              "J4",
+              126,
+              127
+            ],
+            [
+              "J5",
+              163,
+              167
+            ],
+            [
+              "J6",
+              176,
+              178
+            ]
+          ],
+          "MB4": [
+            [
+              "J1",
+              43,
+              45
+            ],
+            [
+              "J2",
+              77,
+              78
+            ],
+            [
+              "J3",
+              101,
+              103
+            ],
+            [
+              "J4",
+              124,
+              126
+            ],
+            [
+              "J5",
+              154,
+              163
+            ],
+            [
+              "J6",
+              187,
+              191
+            ]
+          ],
+          "MB5": [
+            [
+              "J1",
+              34,
+              43
+            ],
+            [
+              "J2",
+              82,
+              89
+            ],
+            [
+              "J3",
+              103,
+              106
+            ],
+            [
+              "J4",
+              110,
+              114
+            ],
+            [
+              "J5",
+              147,
+              151
+            ],
+            [
+              "J6",
+              167,
+              176
+            ]
+          ],
+          "MB6": [
+            [
+              "J1",
+              47,
+              51
+            ],
+            [
+              "J2",
+              63,
+              72
+            ],
+            [
+              "J3",
+              112,
+              113
+            ],
+            [
+              "J4",
+              117,
+              124
+            ],
+            [
+              "J5",
+              151,
+              154
+            ],
+            [
+              "J6",
+              178,
+              183
+            ]
+          ],
+          "MB7": [
+            [
+              "J1",
+              33,
+              34
+            ],
+            [
+              "J2",
+              80,
+              82
+            ],
+            [
+              "J3",
+              110,
+              112
+            ],
+            [
+              "J4",
+              127,
+              130
+            ],
+            [
+              "J5",
+              139,
+              143
+            ],
+            [
+              "J6",
+              159,
+              167
+            ]
+          ]
+        },
+        "makespan": 191
+      }
+    },
+    "final_submission_source": "baseline",
+    "gap_pct": 124.70588235294117,
+    "id": "cjs_hard_seed11",
+    "n_exec_turns": 0,
+    "parse_events": [],
+    "parse_path": "baseline_only",
+    "parsed": {},
+    "score": -0.014087073730006523,
+    "score_after_cf": -0.014087073730006523,
+    "score_at_stop": -0.014087073730006523,
+    "seed": 11,
+    "stop_reason": "error",
+    "transcript": [],
+    "wall_s": 1.4087156510013301
+  },
+  "effective_model": "claude-sonnet-4.6",
+  "requested_model": "claude-sonnet-4.6",
+  "run_file": {
+    "filename": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-run_param_id_124_claude-sonnet-4.6.run.json",
+    "param_id": 124
+  },
+  "run_json": {
+    "conversations": [
+      {
+        "id": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-03774f90",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      },
+      {
+        "id": "run-cjs-hard-seed11-a1db8969",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      }
+    ],
+    "endTime": "2026-04-16T20:32:28.046883Z",
+    "modelVersion": {
+      "slug": "claude-sonnet-4.6"
+    },
+    "pyRunId": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-Run #125",
+    "results": [
+      {
+        "numericResult": {
+          "value": -0.014087073730006523
+        },
+        "type": "AGGREGATED"
+      }
+    ],
+    "startTime": "2026-04-16T20:32:26.636166Z",
+    "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+    "taskVersion": {
+      "definition": "    @kbench.task(name=TASK_NAME)\n    def detailed_run(\n        llm,\n        id,\n        class_,\n        difficulty,\n        seed,\n        instance,\n        gold_objective,\n        baseline_objective,\n        value_cap,\n        wall_budget_s=1800,\n        components=None,\n    ):\n        del wall_budget_s\n        inst = module._coerce_json(instance, default=None)\n        if not isinstance(inst, dict):\n            raise TypeError(\"instance must be a dict or JSON object string\")\n        normalized_components = module._normalize_components(components)\n\n        row = module.run_instance(\n            llm=llm,\n            instance=inst,\n            cls=str(class_),\n            difficulty=str(difficulty),\n            seed=int(seed),\n            gold_objective=float(gold_objective),\n            baseline_objective=float(baseline_objective),\n            value_cap=float(value_cap),\n            components=normalized_components,\n        )\n        final_submission_source, final_evaluation = evaluate_final_submission(\n            row,\n            instance=inst,\n            cls=str(class_),\n            components=normalized_components,\n        )\n        gap_pct = final_evaluation.get(\"gap_pct\")\n        if gap_pct is None:\n            gap_pct = final_evaluation.get(\"details\", {}).get(\"gap_pct\")\n        detail = {\n            \"id\": str(id),\n            \"class\": str(class_),\n            \"difficulty\": str(difficulty),\n            \"seed\": int(seed),\n            \"score\": float(row[\"score\"]),\n            \"score_at_stop\": float(row[\"score_at_stop\"]),\n            \"score_after_cf\": float(row[\"score_after_cf\"]),\n            \"cf_delta\": float(row[\"cf_delta\"]),\n            \"stop_reason\": row[\"stop_reason\"],\n            \"wall_s\": float(row[\"wall_s\"]),\n            \"n_exec_turns\": int(row[\"n_exec_turns\"]),\n            \"error\": row[\"error\"],\n            \"parsed\": row[\"parsed\"],\n            \"cf_parsed\": row[\"cf_parsed\"],\n            \"transcript\": row[\"transcript\"],\n            \"parse_path\": infer_parse_path(row),\n            \"parse_events\": row.get(\"parse_events\"),\n            \"feasible\": infer_feasible(final_evaluation),\n            \"final_submission_source\": final_submission_source,\n            \"final_evaluation\": final_evaluation,\n            \"gap_pct\": gap_pct,\n        }\n        detail_rows.append(detail)\n        return float(row[\"score\"])\n",
+      "description": "",
+      "name": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z",
+      "versionNumber": 1
+    }
+  }
+}

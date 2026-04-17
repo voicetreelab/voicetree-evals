@@ -1,0 +1,27 @@
+{
+  "taskVersion": {
+    "versionNumber": 1,
+    "name": "metacog_optim_v1",
+    "description": ""
+  },
+  "modelVersion": {},
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "startTime": "2026-04-16T15:17:21.446465Z",
+  "endTime": "2026-04-16T15:17:21.446615Z",
+  "conversations": [
+    {
+      "id": "metacog_optim_v1-4ad2024f",
+      "metrics": {},
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+    }
+  ],
+  "results": [
+    {
+      "type": "AGGREGATED",
+      "numericResult": {
+        "value": 12.5
+      }
+    }
+  ],
+  "pyRunId": "metacog_optim_v1-Run #1"
+}

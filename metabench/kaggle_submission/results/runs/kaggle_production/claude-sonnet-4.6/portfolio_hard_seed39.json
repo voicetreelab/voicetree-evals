@@ -1,0 +1,241 @@
+{
+  "detail_row": {
+    "cf_delta": 0.0,
+    "cf_parsed": {},
+    "class": "portfolio",
+    "difficulty": "hard",
+    "error": "InternalServerError: Error code: 503 - {'message': 'The requested model is currently unavailable.', 'type': 'invalid_request_error'}",
+    "feasible": false,
+    "final_evaluation": {
+      "components": [
+        {
+          "class": "steiner",
+          "details": {
+            "baseline_cost": 68,
+            "computed_cost": 68,
+            "edge_cost": 38,
+            "failure_reason": null,
+            "gold_cost": 40,
+            "normalized_submission": {
+              "edges": [
+                [
+                  "Cliff",
+                  "Dune"
+                ],
+                [
+                  "Cliff",
+                  "Ridge"
+                ],
+                [
+                  "Dune",
+                  "Grove"
+                ],
+                [
+                  "Grove",
+                  "Mill"
+                ]
+              ],
+              "frequencies": {
+                "Cliff": 1,
+                "Dune": 1,
+                "Grove": 2,
+                "Mill": 1,
+                "Ridge": 1
+              }
+            },
+            "num_frequencies_used": 2,
+            "scored_cost": 68,
+            "used_baseline_fallback": false
+          },
+          "feasible": true,
+          "gap_pct": 70.0,
+          "problem_id": "steiner_hard_seed39",
+          "value_cap": 33.0
+        },
+        {
+          "class": "graphcol",
+          "details": {
+            "baseline_scored_cost": 16.0,
+            "error": "submission must be an object with an assignment mapping",
+            "gold_scored_cost": 4.0
+          },
+          "feasible": false,
+          "gap_pct": Infinity,
+          "problem_id": "graphcol_hard_seed39",
+          "value_cap": 33.0
+        },
+        {
+          "class": "tsp",
+          "details": {
+            "baseline_length": 444.68030642276375,
+            "failure_reason": "submission must provide tour as a list of city indices",
+            "optimal_length": 341.59011853103436
+          },
+          "feasible": false,
+          "gap_pct": 100.0,
+          "problem_id": "tsp_hard_seed39",
+          "value_cap": 34.0
+        }
+      ],
+      "details": {
+        "components": [
+          {
+            "class": "steiner",
+            "details": {
+              "baseline_cost": 68,
+              "computed_cost": 68,
+              "edge_cost": 38,
+              "failure_reason": null,
+              "gold_cost": 40,
+              "normalized_submission": {
+                "edges": [
+                  [
+                    "Cliff",
+                    "Dune"
+                  ],
+                  [
+                    "Cliff",
+                    "Ridge"
+                  ],
+                  [
+                    "Dune",
+                    "Grove"
+                  ],
+                  [
+                    "Grove",
+                    "Mill"
+                  ]
+                ],
+                "frequencies": {
+                  "Cliff": 1,
+                  "Dune": 1,
+                  "Grove": 2,
+                  "Mill": 1,
+                  "Ridge": 1
+                }
+              },
+              "num_frequencies_used": 2,
+              "scored_cost": 68,
+              "used_baseline_fallback": false
+            },
+            "feasible": true,
+            "gap_pct": 70.0,
+            "problem_id": "steiner_hard_seed39",
+            "value_cap": 33.0
+          },
+          {
+            "class": "graphcol",
+            "details": {
+              "baseline_scored_cost": 16.0,
+              "error": "submission must be an object with an assignment mapping",
+              "gold_scored_cost": 4.0
+            },
+            "feasible": false,
+            "gap_pct": Infinity,
+            "problem_id": "graphcol_hard_seed39",
+            "value_cap": 33.0
+          },
+          {
+            "class": "tsp",
+            "details": {
+              "baseline_length": 444.68030642276375,
+              "failure_reason": "submission must provide tour as a list of city indices",
+              "optimal_length": 341.59011853103436
+            },
+            "feasible": false,
+            "gap_pct": 100.0,
+            "problem_id": "tsp_hard_seed39",
+            "value_cap": 34.0
+          }
+        ]
+      },
+      "mode": "portfolio",
+      "submission": {
+        "graphcol_hard_seed39": null,
+        "steiner_hard_seed39": {
+          "edges": [
+            [
+              "Cliff",
+              "Dune"
+            ],
+            [
+              "Cliff",
+              "Ridge"
+            ],
+            [
+              "Dune",
+              "Grove"
+            ],
+            [
+              "Grove",
+              "Mill"
+            ]
+          ],
+          "frequencies": {
+            "Cliff": 1,
+            "Dune": 1,
+            "Grove": 2,
+            "Mill": 1,
+            "Ridge": 1
+          }
+        },
+        "tsp_hard_seed39": null
+      }
+    },
+    "final_submission_source": "baseline",
+    "gap_pct": null,
+    "id": "portfolio_hard_seed39",
+    "n_exec_turns": 0,
+    "parse_events": [],
+    "parse_path": "baseline_only",
+    "parsed": {},
+    "score": 9.82203360774993,
+    "score_after_cf": 9.82203360774993,
+    "score_at_stop": 9.82203360774993,
+    "seed": 39,
+    "stop_reason": "error",
+    "transcript": [],
+    "wall_s": 1.5593387250009982
+  },
+  "effective_model": "claude-sonnet-4.6",
+  "requested_model": "claude-sonnet-4.6",
+  "run_file": {
+    "filename": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-run_param_id_203_claude-sonnet-4.6.run.json",
+    "param_id": 203
+  },
+  "run_json": {
+    "conversations": [
+      {
+        "id": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-f07bb085",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      },
+      {
+        "id": "run-portfolio-hard-seed39-63d0f81b",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      }
+    ],
+    "endTime": "2026-04-16T20:34:20.233506Z",
+    "modelVersion": {
+      "slug": "claude-sonnet-4.6"
+    },
+    "pyRunId": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-Run #204",
+    "results": [
+      {
+        "numericResult": {
+          "value": 9.82203360774993
+        },
+        "type": "AGGREGATED"
+      }
+    ],
+    "startTime": "2026-04-16T20:34:18.673013Z",
+    "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+    "taskVersion": {
+      "definition": "    @kbench.task(name=TASK_NAME)\n    def detailed_run(\n        llm,\n        id,\n        class_,\n        difficulty,\n        seed,\n        instance,\n        gold_objective,\n        baseline_objective,\n        value_cap,\n        wall_budget_s=1800,\n        components=None,\n    ):\n        del wall_budget_s\n        inst = module._coerce_json(instance, default=None)\n        if not isinstance(inst, dict):\n            raise TypeError(\"instance must be a dict or JSON object string\")\n        normalized_components = module._normalize_components(components)\n\n        row = module.run_instance(\n            llm=llm,\n            instance=inst,\n            cls=str(class_),\n            difficulty=str(difficulty),\n            seed=int(seed),\n            gold_objective=float(gold_objective),\n            baseline_objective=float(baseline_objective),\n            value_cap=float(value_cap),\n            components=normalized_components,\n        )\n        final_submission_source, final_evaluation = evaluate_final_submission(\n            row,\n            instance=inst,\n            cls=str(class_),\n            components=normalized_components,\n        )\n        gap_pct = final_evaluation.get(\"gap_pct\")\n        if gap_pct is None:\n            gap_pct = final_evaluation.get(\"details\", {}).get(\"gap_pct\")\n        detail = {\n            \"id\": str(id),\n            \"class\": str(class_),\n            \"difficulty\": str(difficulty),\n            \"seed\": int(seed),\n            \"score\": float(row[\"score\"]),\n            \"score_at_stop\": float(row[\"score_at_stop\"]),\n            \"score_after_cf\": float(row[\"score_after_cf\"]),\n            \"cf_delta\": float(row[\"cf_delta\"]),\n            \"stop_reason\": row[\"stop_reason\"],\n            \"wall_s\": float(row[\"wall_s\"]),\n            \"n_exec_turns\": int(row[\"n_exec_turns\"]),\n            \"error\": row[\"error\"],\n            \"parsed\": row[\"parsed\"],\n            \"cf_parsed\": row[\"cf_parsed\"],\n            \"transcript\": row[\"transcript\"],\n            \"parse_path\": infer_parse_path(row),\n            \"parse_events\": row.get(\"parse_events\"),\n            \"feasible\": infer_feasible(final_evaluation),\n            \"final_submission_source\": final_submission_source,\n            \"final_evaluation\": final_evaluation,\n            \"gap_pct\": gap_pct,\n        }\n        detail_rows.append(detail)\n        return float(row[\"score\"])\n",
+      "description": "",
+      "name": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z",
+      "versionNumber": 1
+    }
+  }
+}

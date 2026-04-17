@@ -1,0 +1,38 @@
+{
+  "model": "claude-sonnet-4.6",
+  "model_slug": "claude-sonnet-4.6",
+  "rows": [
+    {
+      "attempts": 3,
+      "billing_error": false,
+      "error": "exec turn 2 timed out after 300s",
+      "feasible": true,
+      "id": "mbj_medium_seed1",
+      "score": 71.19658565098862
+    },
+    {
+      "attempts": 3,
+      "billing_error": false,
+      "error": "exec turn 2 timed out after 300s",
+      "feasible": true,
+      "id": "mbj_medium_seed5",
+      "score": 72.89554622292053
+    },
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": true,
+      "id": "mbj_hard_seed1",
+      "score": 96.89075859632501
+    },
+    {
+      "attempts": 3,
+      "billing_error": false,
+      "error": "exec turn 2 parse failed",
+      "feasible": false,
+      "id": "portfolio_medium_seed50",
+      "score": 0.5660153237590997
+    }
+  ]
+}

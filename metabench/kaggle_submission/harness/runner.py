@@ -18,6 +18,7 @@ from harness.protocol import (
     PLAN_TURN_BUDGET_S,
     TOTAL_BUDGET_S,
     parse_exec_turn,
+    parse_exec_turn_partial,
     parse_plan_turn,
 )
 from harness.render_nl import render_nl
@@ -25,9 +26,11 @@ from harness.scoring import score_portfolio, score_solo
 from verifiers import CLASS_TO_VERIFIER
 
 try:
+    import kaggle_benchmarks as kbench
     from kaggle_benchmarks import chats as kbench_chats
     from kaggle_benchmarks import contexts as kbench_contexts
 except Exception:  # pragma: no cover - local tests do not require kaggle_benchmarks.
+    kbench = None
     kbench_chats = None
     kbench_contexts = None
 
@@ -47,7 +50,7 @@ def run_instance(
     del gold_objective, baseline_objective, value_cap  # encoded in the instance/components payloads.
 
     system_prompt = build_system_prompt()
-    instance_nl = render_nl(instance, cls)
+    instance_nl = render_nl(instance, cls, components=components)
     run_start = time.monotonic()
 
     transcript: list[dict[str, str]] = []
@@ -68,8 +71,12 @@ def run_instance(
     last_eval = current_eval
     last_subtask: dict[str, Any] | None = None
     subtask_history: list[dict[str, Any]] = []
+    parse_events: list[dict[str, Any]] = []
+
+    label = f"{cls}-{difficulty}-s{seed}"
 
     with _chat_session(name=f"run-{cls}-{difficulty}-seed{seed}", system_prompt=system_prompt):
+        print(f"  [{label}] plan turn (budget={PLAN_TURN_BUDGET_S}s)...", flush=True)
         try:
             plan_response = _call_model(
                 llm=llm,
@@ -88,19 +95,24 @@ def run_instance(
             plan_parsed = parse_plan_turn(plan_response["text"], cls=cls)
 
         if error is not None:
+            print(f"  [{label}] plan ERROR: {error} ({plan_response['wall_s']:.1f}s)", flush=True)
             stop_reason = "error"
         elif plan_response["timed_out"]:
+            print(f"  [{label}] plan TIMEOUT ({plan_response['wall_s']:.1f}s)", flush=True)
             stop_reason = "wall_budget"
             error = f"plan turn timed out after {PLAN_TURN_BUDGET_S}s"
         elif plan_parsed is None:
+            print(f"  [{label}] plan PARSE FAILED ({plan_response['wall_s']:.1f}s)", flush=True)
             stop_reason = "error"
             error = "plan turn parse failed"
         else:
             next_sub = plan_parsed.get("next_sub")
             if not next_sub:
+                print(f"  [{label}] plan PARSE FAILED — no NEXT_SUB ({plan_response['wall_s']:.1f}s)", flush=True)
                 stop_reason = "error"
                 error = "plan turn omitted NEXT_SUB"
             else:
+                print(f"  [{label}] plan ✓ ({plan_response['wall_s']:.1f}s)", flush=True)
                 turn_index = 2
                 while next_sub is not None:
                     if n_exec_turns >= MAX_EXEC_TURNS:
@@ -124,6 +136,7 @@ def run_instance(
                         subtask_history=subtask_history,
                     )
 
+                    print(f"  [{label}] exec turn {turn_index} (budget={expected_turn_s}s, elapsed={elapsed_s:.0f}s)...", flush=True)
                     try:
                         exec_response = _call_model(
                             llm=llm,
@@ -133,6 +146,7 @@ def run_instance(
                     except Exception as exc:  # noqa: BLE001
                         exec_response = {"text": "", "timed_out": False, "wall_s": time.monotonic() - run_start}
                         error = f"{type(exc).__name__}: {exc}"
+                        print(f"  [{label}] exec {turn_index} ERROR: {error}", flush=True)
                         stop_reason = "error"
                         break
 
@@ -149,38 +163,74 @@ def run_instance(
                     subtask_history.append(last_subtask)
 
                     if exec_response["timed_out"]:
+                        print(f"  [{label}] exec {turn_index} TIMEOUT ({exec_response['wall_s']:.1f}s)", flush=True)
                         stop_reason = "wall_budget"
                         error = f"exec turn {turn_index} timed out after {expected_turn_s}s"
                         break
 
-                    exec_parsed = parse_exec_turn(
-                        exec_response["text"],
+                    parse_outcome = _parse_exec_with_rescue(
+                        llm=llm,
+                        raw_text=exec_response["text"],
                         cls=cls,
                         expected_subtask_id=next_sub["id"],
+                        require_decision=True,
+                    )
+                    exec_parsed = parse_outcome["parsed"]
+                    parse_events.append(
+                        {
+                            "turn_index": turn_index,
+                            "mode": parse_outcome["mode"],
+                            "missing_or_invalid": parse_outcome["missing_or_invalid"],
+                        }
                     )
                     if exec_parsed is None:
+                        print(f"  [{label}] exec {turn_index} PARSE FAILED ({exec_response['wall_s']:.1f}s)", flush=True)
                         stop_reason = "error"
                         error = f"exec turn {turn_index} parse failed"
                         break
 
                     parsed = exec_parsed
-                    last_emitted_best_guess = exec_parsed["best_guess"]
-                    last_eval = _evaluate_submission(
-                        cls=cls,
-                        instance=instance,
-                        submission=last_emitted_best_guess,
-                        components=components,
-                    )
+                    if exec_parsed.get("best_guess") is not None:
+                        last_emitted_best_guess = exec_parsed["best_guess"]
+                        last_eval = _evaluate_submission(
+                            cls=cls,
+                            instance=instance,
+                            submission=last_emitted_best_guess,
+                            components=components,
+                        )
 
-                    if _is_prompt_worthy(last_eval):
-                        current_best = last_eval["submission"]
-                        current_eval = last_eval
+                        feasible_flag = last_eval.get("feasible", False)
+                        gap = last_eval.get("gap_pct", 100.0)
+                        mode_suffix = "" if parse_outcome["mode"] == "strict" else f" via {parse_outcome['mode']}"
+                        print(
+                            f"  [{label}] exec {turn_index} ✓ feasible={feasible_flag} gap={gap:.1f}%"
+                            f"{mode_suffix} ({exec_response['wall_s']:.1f}s)",
+                            flush=True,
+                        )
 
-                    if exec_parsed["decision"] == "stop":
+                        if _is_prompt_worthy(last_eval):
+                            current_best = last_eval["submission"]
+                            current_eval = last_eval
+                    else:
+                        print(
+                            f"  [{label}] exec {turn_index} parsed without usable BEST_GUESS"
+                            f" via {parse_outcome['mode']} ({exec_response['wall_s']:.1f}s)",
+                            flush=True,
+                        )
+
+                    if exec_parsed.get("decision") == "stop":
                         stop_reason = "decision_stop"
                         break
 
-                    next_sub = exec_parsed["next_sub"]
+                    next_sub = exec_parsed.get("next_sub")
+                    if exec_parsed.get("decision") != "continue" or next_sub is None:
+                        print(
+                            f"  [{label}] exec {turn_index} rescued partial output but missing control fields",
+                            flush=True,
+                        )
+                        stop_reason = "error"
+                        error = f"exec turn {turn_index} parse failed"
+                        break
                     turn_index += 1
 
     stop_eval = last_eval if last_eval is not None else current_eval
@@ -214,23 +264,33 @@ def run_instance(
             if cf_response["timed_out"]:
                 error = error or f"counterfactual turn timed out after {cf_timeout_s}s"
             else:
-                parsed_cf = parse_exec_turn(
-                    cf_response["text"],
+                cf_parse_outcome = _parse_exec_with_rescue(
+                    llm=llm,
+                    raw_text=cf_response["text"],
                     cls=cls,
                     expected_subtask_id=cf_turn_index - 1,
                     require_decision=False,
+                )
+                parsed_cf = cf_parse_outcome["parsed"]
+                parse_events.append(
+                    {
+                        "turn_index": cf_turn_index,
+                        "mode": f"cf_{cf_parse_outcome['mode']}",
+                        "missing_or_invalid": cf_parse_outcome["missing_or_invalid"],
+                    }
                 )
                 if parsed_cf is None:
                     error = error or "counterfactual turn parse failed"
                 else:
                     cf_parsed = parsed_cf
-                    cf_eval = _evaluate_submission(
-                        cls=cls,
-                        instance=instance,
-                        submission=parsed_cf["best_guess"],
-                        components=components,
-                    )
-                    score_after_cf = _score_evaluation(cf_eval, wall_s=time.monotonic() - run_start)
+                    if parsed_cf.get("best_guess") is not None:
+                        cf_eval = _evaluate_submission(
+                            cls=cls,
+                            instance=instance,
+                            submission=parsed_cf["best_guess"],
+                            components=components,
+                        )
+                        score_after_cf = _score_evaluation(cf_eval, wall_s=time.monotonic() - run_start)
         else:
             error = error or "counterfactual turn skipped because no wall budget remained"
 
@@ -247,8 +307,109 @@ def run_instance(
         "transcript": transcript,
         "parsed": parsed,
         "cf_parsed": cf_parsed,
+        "parse_events": parse_events,
         "error": error,
     }
+
+
+def _parse_exec_with_rescue(
+    *,
+    llm: Any,
+    raw_text: str,
+    cls: str | None,
+    expected_subtask_id: int | None,
+    require_decision: bool,
+) -> dict[str, Any]:
+    strict = parse_exec_turn(
+        raw_text,
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+    )
+    if strict is not None:
+        return {"parsed": strict, "mode": "strict", "missing_or_invalid": []}
+
+    partial = parse_exec_turn_partial(
+        raw_text,
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+    )
+    missing_or_invalid = list(partial.pop("missing_or_invalid", []))
+    if partial.get("best_guess") is not None:
+        return {
+            "parsed": partial,
+            "mode": "partial_rescue",
+            "missing_or_invalid": missing_or_invalid,
+        }
+
+    judge_llm = _get_judge_llm()
+    if judge_llm is None:
+        return {"parsed": partial or None, "mode": "strict_parse_failed", "missing_or_invalid": missing_or_invalid}
+
+    rescue_prompt = _build_exec_rescue_prompt(
+        raw_text=raw_text,
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+        missing_or_invalid=missing_or_invalid,
+    )
+    try:
+        rescue_response = _call_model(llm=judge_llm, prompt_text=rescue_prompt, timeout_s=45)
+    except Exception:
+        return {"parsed": partial or None, "mode": "strict_parse_failed", "missing_or_invalid": missing_or_invalid}
+    if rescue_response["timed_out"] or not rescue_response["text"]:
+        return {"parsed": partial or None, "mode": "strict_parse_failed", "missing_or_invalid": missing_or_invalid}
+
+    rescued = parse_exec_turn_partial(
+        rescue_response["text"],
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+    )
+    rescued.pop("missing_or_invalid", None)
+    merged = dict(partial)
+    for key, value in rescued.items():
+        if key not in merged:
+            merged[key] = value
+
+    mode = "judge_rescue" if merged.get("best_guess") is not None else "strict_parse_failed"
+    return {"parsed": merged or None, "mode": mode, "missing_or_invalid": missing_or_invalid}
+
+
+def _get_judge_llm() -> Any | None:
+    if kbench is not None and hasattr(kbench, "judge_llm"):
+        return getattr(kbench, "judge_llm")
+    return None
+
+
+def _build_exec_rescue_prompt(
+    *,
+    raw_text: str,
+    cls: str | None,
+    expected_subtask_id: int | None,
+    require_decision: bool,
+    missing_or_invalid: list[str],
+) -> str:
+    subtask_label = "SUB_N"
+    if expected_subtask_id is not None:
+        subtask_label = f"SUB_{expected_subtask_id}"
+
+    decision_rule = "Include `DECISION`." if require_decision else "Do not include `DECISION` unless explicit."
+    missing_text = ", ".join(missing_or_invalid) if missing_or_invalid else "unknown"
+
+    return (
+        "You are extracting structured fields from a prior model response. Do not solve the task again.\n\n"
+        f"Problem class: {cls or 'unknown'}\n"
+        f"Fields missing or invalid in strict parse: {missing_text}\n\n"
+        "Return only literal labelled lines that can be recovered confidently from the raw response.\n"
+        f"Allowed labels: `{subtask_label}`, `BEST_GUESS`, `UPDATED_PLAN_STATE`, `QUALITY_FORECAST`, "
+        "`CONTINUE_FORECAST`, `DECISION`, `NEXT_SUB`.\n"
+        f"{decision_rule} Include `NEXT_SUB` only if the decision is `continue`.\n"
+        "If a field cannot be recovered confidently, omit it.\n\n"
+        "RAW RESPONSE:\n"
+        f"{raw_text.strip()}"
+    )
 
 
 def _chat_session(*, name: str, system_prompt: str):
@@ -329,6 +490,12 @@ def _initial_best_guess(
         if not isinstance(problem_id, str) or not isinstance(sub_instance, dict):
             continue
         baseline_submission = sub_instance.get("baseline_submission")
+        if baseline_submission is None:
+            baseline_submission = sub_instance.get("baseline_answer")
+        if baseline_submission is None:
+            baseline_tour = sub_instance.get("baseline_tour")
+            if baseline_tour is not None:
+                baseline_submission = {"tour": list(baseline_tour)}
         if baseline_submission is not None:
             answers[problem_id] = baseline_submission
     return answers or None

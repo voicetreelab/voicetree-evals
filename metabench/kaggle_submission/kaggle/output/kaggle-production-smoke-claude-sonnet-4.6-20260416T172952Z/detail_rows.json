@@ -1,0 +1,83 @@
+[
+  {
+    "cf_delta": 0.0,
+    "cf_parsed": {},
+    "class": "steiner",
+    "difficulty": "medium",
+    "error": "InternalServerError: Error code: 503 - {'message': 'The requested model is currently unavailable.', 'type': 'invalid_request_error'}",
+    "feasible": true,
+    "final_evaluation": {
+      "details": {
+        "baseline_cost": 72,
+        "computed_cost": 72,
+        "edge_cost": 27,
+        "failure_reason": null,
+        "gold_cost": 59,
+        "normalized_submission": {
+          "edges": [
+            [
+              "Bay",
+              "Pine"
+            ],
+            [
+              "Pine",
+              "Port"
+            ],
+            [
+              "Dune",
+              "Port"
+            ]
+          ],
+          "frequencies": {
+            "Bay": 1,
+            "Dune": 3,
+            "Pine": 2,
+            "Port": 1
+          }
+        },
+        "num_frequencies_used": 3,
+        "scored_cost": 72,
+        "used_baseline_fallback": false
+      },
+      "feasible": true,
+      "gap_pct": 22.033898305084747,
+      "mode": "solo",
+      "submission": {
+        "edges": [
+          [
+            "Bay",
+            "Pine"
+          ],
+          [
+            "Pine",
+            "Port"
+          ],
+          [
+            "Dune",
+            "Port"
+          ]
+        ],
+        "frequencies": {
+          "Bay": 1,
+          "Dune": 3,
+          "Pine": 2,
+          "Port": 1
+        }
+      }
+    },
+    "final_submission_source": "baseline",
+    "gap_pct": 22.033898305084747,
+    "id": "steiner_medium_seed1",
+    "n_exec_turns": 0,
+    "parse_events": [],
+    "parse_path": "baseline_only",
+    "parsed": {},
+    "score": 77.95172844287525,
+    "score_after_cf": 77.95172844287525,
+    "score_at_stop": 77.95172844287525,
+    "seed": 1,
+    "stop_reason": "error",
+    "transcript": [],
+    "wall_s": 1.4373360060003506
+  }
+]

@@ -1,0 +1,1007 @@
+{
+  "baseline_objective": 220.0,
+  "cf_delta": -0.21798314834013582,
+  "cf_parsed": {
+    "best_guess": {
+      "factory_a": {
+        "MA1": [
+          [
+            "J1",
+            2,
+            6
+          ],
+          [
+            "J2",
+            48,
+            57
+          ],
+          [
+            "J3",
+            57,
+            65
+          ],
+          [
+            "J4",
+            115,
+            123
+          ],
+          [
+            "J5",
+            132,
+            134
+          ],
+          [
+            "J6",
+            134,
+            141
+          ]
+        ],
+        "MA2": [
+          [
+            "J1",
+            23,
+            29
+          ],
+          [
+            "J2",
+            38,
+            42
+          ],
+          [
+            "J3",
+            42,
+            44
+          ],
+          [
+            "J4",
+            108,
+            110
+          ],
+          [
+            "J5",
+            141,
+            142
+          ],
+          [
+            "J6",
+            168,
+            172
+          ]
+        ],
+        "MA3": [
+          [
+            "J1",
+            13,
+            20
+          ],
+          [
+            "J2",
+            32,
+            38
+          ],
+          [
+            "J3",
+            85,
+            92
+          ],
+          [
+            "J4",
+            92,
+            98
+          ],
+          [
+            "J5",
+            142,
+            143
+          ],
+          [
+            "J6",
+            172,
+            178
+          ]
+        ],
+        "MA4": [
+          [
+            "J1",
+            6,
+            12
+          ],
+          [
+            "J2",
+            42,
+            48
+          ],
+          [
+            "J3",
+            68,
+            72
+          ],
+          [
+            "J4",
+            98,
+            104
+          ],
+          [
+            "J5",
+            104,
+            107
+          ],
+          [
+            "J6",
+            147,
+            156
+          ]
+        ],
+        "MA5": [
+          [
+            "J1",
+            0,
+            2
+          ],
+          [
+            "J2",
+            57,
+            65
+          ],
+          [
+            "J3",
+            78,
+            85
+          ],
+          [
+            "J4",
+            110,
+            115
+          ],
+          [
+            "J5",
+            115,
+            124
+          ],
+          [
+            "J6",
+            141,
+            147
+          ]
+        ],
+        "MA6": [
+          [
+            "J1",
+            20,
+            23
+          ],
+          [
+            "J2",
+            23,
+            32
+          ],
+          [
+            "J3",
+            65,
+            68
+          ],
+          [
+            "J4",
+            123,
+            130
+          ],
+          [
+            "J5",
+            134,
+            141
+          ],
+          [
+            "J6",
+            156,
+            165
+          ]
+        ],
+        "MA7": [
+          [
+            "J1",
+            12,
+            13
+          ],
+          [
+            "J2",
+            65,
+            72
+          ],
+          [
+            "J3",
+            72,
+            78
+          ],
+          [
+            "J4",
+            104,
+            108
+          ],
+          [
+            "J5",
+            124,
+            132
+          ],
+          [
+            "J6",
+            165,
+            168
+          ]
+        ]
+      },
+      "factory_b": {
+        "MB1": [
+          [
+            "J1",
+            53,
+            61
+          ],
+          [
+            "J2",
+            72,
+            80
+          ],
+          [
+            "J3",
+            132,
+            135
+          ],
+          [
+            "J4",
+            152,
+            161
+          ],
+          [
+            "J5",
+            195,
+            198
+          ],
+          [
+            "J6",
+            213,
+            220
+          ]
+        ],
+        "MB2": [
+          [
+            "J1",
+            48,
+            53
+          ],
+          [
+            "J2",
+            88,
+            97
+          ],
+          [
+            "J3",
+            97,
+            105
+          ],
+          [
+            "J4",
+            166,
+            175
+          ],
+          [
+            "J5",
+            175,
+            184
+          ],
+          [
+            "J6",
+            208,
+            213
+          ]
+        ],
+        "MB3": [
+          [
+            "J1",
+            43,
+            48
+          ],
+          [
+            "J2",
+            100,
+            104
+          ],
+          [
+            "J3",
+            120,
+            123
+          ],
+          [
+            "J4",
+            133,
+            140
+          ],
+          [
+            "J5",
+            186,
+            187
+          ],
+          [
+            "J6",
+            205,
+            206
+          ]
+        ],
+        "MB4": [
+          [
+            "J1",
+            29,
+            36
+          ],
+          [
+            "J2",
+            104,
+            111
+          ],
+          [
+            "J3",
+            111,
+            115
+          ],
+          [
+            "J4",
+            130,
+            133
+          ],
+          [
+            "J5",
+            143,
+            151
+          ],
+          [
+            "J6",
+            197,
+            205
+          ]
+        ],
+        "MB5": [
+          [
+            "J1",
+            64,
+            69
+          ],
+          [
+            "J2",
+            80,
+            82
+          ],
+          [
+            "J3",
+            115,
+            120
+          ],
+          [
+            "J4",
+            161,
+            166
+          ],
+          [
+            "J5",
+            187,
+            193
+          ],
+          [
+            "J6",
+            193,
+            197
+          ]
+        ],
+        "MB6": [
+          [
+            "J1",
+            61,
+            64
+          ],
+          [
+            "J2",
+            97,
+            100
+          ],
+          [
+            "J3",
+            123,
+            132
+          ],
+          [
+            "J4",
+            140,
+            148
+          ],
+          [
+            "J5",
+            193,
+            195
+          ],
+          [
+            "J6",
+            206,
+            208
+          ]
+        ],
+        "MB7": [
+          [
+            "J1",
+            36,
+            43
+          ],
+          [
+            "J2",
+            82,
+            88
+          ],
+          [
+            "J3",
+            135,
+            137
+          ],
+          [
+            "J4",
+            148,
+            152
+          ],
+          [
+            "J5",
+            184,
+            186
+          ],
+          [
+            "J6",
+            186,
+            187
+          ]
+        ]
+      },
+      "makespan": 220
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.6,
+      "expected_gap_reduction": 1.5,
+      "p_improve": 0.18
+    },
+    "decision": null,
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.4,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.12
+    },
+    "subtask_body": "I rechecked whether a safe B-only improvement exists with Factory A releases fixed at J1=29, J2=72, J3=92, J4=130, J5=143, J6=178.\nThe dominant tail is J6 on B: MB7(1)-MB5(4)-MB4(8)-MB3(1)-MB6(2)-MB2(5)-MB1(7), total 28, so with release 178 its job-only bound is 206.\nA tempting left shift is to start J6 on MB7 at 178 and then MB5 at 179, but MB4 is blocked by J5 at 143-151 and then idle until much later in baseline; however moving J6 earlier on MB4 creates knock-on conflicts with J3/J4/J5 chains.\nI checked the key tail machines:\nMB4 baseline order J1,J2,J3,J4,J5,J6 already matches first-op needs for J1/J4/J5 and late-op need for J6; swapping J6 ahead of J5 helps J6 but tends to postpone J5 into MB5/MB6/MB1 and preserves or worsens makespan.\nMB5 baseline has J5 at 187-193 then J6 at 193-197. Reversing them forces J5 later and does not clearly reduce the final MB1 completion below 220.\nMB2 and MB1 are especially tight: J4 needs MB1 before J5/J6, and J5 needs MB2 before its MB1. Pushing J6 earlier on MB2 usually delays J5 or J4 and keeps MB1 near 220.\nI also rechecked whether J6 could be released much earlier by obvious A-machine resequencing; baseline A already packs many chains tightly and J6\u2019s route crosses heavily used MA1/5/4/6/7/2/3, so a manual valid redesign remains error-prone.\nNet: I still do not have a fully validated schedule better than 220.\nSafest scored answer remains the complete baseline schedule.",
+    "subtask_id": 2,
+    "updated_plan_state": "Keep the baseline as the incumbent. Any further work should target a concrete full Factory A resequencing for J6 or a jointly rebuilt late B tail, but only if a complete validity check can be maintained."
+  },
+  "class": "cjs",
+  "difficulty": "hard",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_objective": 220,
+      "failure_reason": null,
+      "gap_pct": 126.80412371134021,
+      "gold_objective": 97,
+      "metric_name": "makespan",
+      "verified_makespan": 220,
+      "verified_objective": 220
+    },
+    "feasible": true,
+    "gap_pct": 126.80412371134021,
+    "mode": "solo",
+    "submission": {
+      "factory_a": {
+        "MA1": [
+          [
+            "J1",
+            2,
+            6
+          ],
+          [
+            "J2",
+            48,
+            57
+          ],
+          [
+            "J3",
+            57,
+            65
+          ],
+          [
+            "J4",
+            115,
+            123
+          ],
+          [
+            "J5",
+            132,
+            134
+          ],
+          [
+            "J6",
+            134,
+            141
+          ]
+        ],
+        "MA2": [
+          [
+            "J1",
+            23,
+            29
+          ],
+          [
+            "J2",
+            38,
+            42
+          ],
+          [
+            "J3",
+            42,
+            44
+          ],
+          [
+            "J4",
+            108,
+            110
+          ],
+          [
+            "J5",
+            141,
+            142
+          ],
+          [
+            "J6",
+            168,
+            172
+          ]
+        ],
+        "MA3": [
+          [
+            "J1",
+            13,
+            20
+          ],
+          [
+            "J2",
+            32,
+            38
+          ],
+          [
+            "J3",
+            85,
+            92
+          ],
+          [
+            "J4",
+            92,
+            98
+          ],
+          [
+            "J5",
+            142,
+            143
+          ],
+          [
+            "J6",
+            172,
+            178
+          ]
+        ],
+        "MA4": [
+          [
+            "J1",
+            6,
+            12
+          ],
+          [
+            "J2",
+            42,
+            48
+          ],
+          [
+            "J3",
+            68,
+            72
+          ],
+          [
+            "J4",
+            98,
+            104
+          ],
+          [
+            "J5",
+            104,
+            107
+          ],
+          [
+            "J6",
+            147,
+            156
+          ]
+        ],
+        "MA5": [
+          [
+            "J1",
+            0,
+            2
+          ],
+          [
+            "J2",
+            57,
+            65
+          ],
+          [
+            "J3",
+            78,
+            85
+          ],
+          [
+            "J4",
+            110,
+            115
+          ],
+          [
+            "J5",
+            115,
+            124
+          ],
+          [
+            "J6",
+            141,
+            147
+          ]
+        ],
+        "MA6": [
+          [
+            "J1",
+            20,
+            23
+          ],
+          [
+            "J2",
+            23,
+            32
+          ],
+          [
+            "J3",
+            65,
+            68
+          ],
+          [
+            "J4",
+            123,
+            130
+          ],
+          [
+            "J5",
+            134,
+            141
+          ],
+          [
+            "J6",
+            156,
+            165
+          ]
+        ],
+        "MA7": [
+          [
+            "J1",
+            12,
+            13
+          ],
+          [
+            "J2",
+            65,
+            72
+          ],
+          [
+            "J3",
+            72,
+            78
+          ],
+          [
+            "J4",
+            104,
+            108
+          ],
+          [
+            "J5",
+            124,
+            132
+          ],
+          [
+            "J6",
+            165,
+            168
+          ]
+        ]
+      },
+      "factory_b": {
+        "MB1": [
+          [
+            "J1",
+            53,
+            61
+          ],
+          [
+            "J2",
+            72,
+            80
+          ],
+          [
+            "J3",
+            132,
+            135
+          ],
+          [
+            "J4",
+            152,
+            161
+          ],
+          [
+            "J5",
+            195,
+            198
+          ],
+          [
+            "J6",
+            213,
+            220
+          ]
+        ],
+        "MB2": [
+          [
+            "J1",
+            48,
+            53
+          ],
+          [
+            "J2",
+            88,
+            97
+          ],
+          [
+            "J3",
+            97,
+            105
+          ],
+          [
+            "J4",
+            166,
+            175
+          ],
+          [
+            "J5",
+            175,
+            184
+          ],
+          [
+            "J6",
+            208,
+            213
+          ]
+        ],
+        "MB3": [
+          [
+            "J1",
+            43,
+            48
+          ],
+          [
+            "J2",
+            100,
+            104
+          ],
+          [
+            "J3",
+            120,
+            123
+          ],
+          [
+            "J4",
+            133,
+            140
+          ],
+          [
+            "J5",
+            186,
+            187
+          ],
+          [
+            "J6",
+            205,
+            206
+          ]
+        ],
+        "MB4": [
+          [
+            "J1",
+            29,
+            36
+          ],
+          [
+            "J2",
+            104,
+            111
+          ],
+          [
+            "J3",
+            111,
+            115
+          ],
+          [
+            "J4",
+            130,
+            133
+          ],
+          [
+            "J5",
+            143,
+            151
+          ],
+          [
+            "J6",
+            197,
+            205
+          ]
+        ],
+        "MB5": [
+          [
+            "J1",
+            64,
+            69
+          ],
+          [
+            "J2",
+            80,
+            82
+          ],
+          [
+            "J3",
+            115,
+            120
+          ],
+          [
+            "J4",
+            161,
+            166
+          ],
+          [
+            "J5",
+            187,
+            193
+          ],
+          [
+            "J6",
+            193,
+            197
+          ]
+        ],
+        "MB6": [
+          [
+            "J1",
+            61,
+            64
+          ],
+          [
+            "J2",
+            97,
+            100
+          ],
+          [
+            "J3",
+            123,
+            132
+          ],
+          [
+            "J4",
+            140,
+            148
+          ],
+          [
+            "J5",
+            193,
+            195
+          ],
+          [
+            "J6",
+            206,
+            208
+          ]
+        ],
+        "MB7": [
+          [
+            "J1",
+            36,
+            43
+          ],
+          [
+            "J2",
+            82,
+            88
+          ],
+          [
+            "J3",
+            135,
+            137
+          ],
+          [
+            "J4",
+            148,
+            152
+          ],
+          [
+            "J5",
+            184,
+            186
+          ],
+          [
+            "J6",
+            186,
+            187
+          ]
+        ]
+      },
+      "makespan": 220
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gold_objective": 97.0,
+  "id": "cjs_hard_seed10",
+  "model": "gpt-5.4",
+  "model_slug": "gpt-5.4",
+  "n_exec_turns": 1,
+  "parse_events": [
+    {
+      "missing_or_invalid": [
+        "best_guess"
+      ],
+      "mode": "strict_parse_failed",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 3
+    }
+  ],
+  "parse_path": "strict_parse_failed",
+  "parsed": {
+    "continue_forecast": {
+      "expected_delta_score": 1.1,
+      "expected_gap_reduction": 2.5,
+      "p_improve": 0.28
+    },
+    "decision": "stop",
+    "quality_forecast": {
+      "p_gap_le_10": 0.4,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.12
+    },
+    "subtask_body": "I derived Factory A job completion times from the baseline: J1=29, J2=72, J3=92, J4=130, J5=143, J6=178.\nThese are already fairly compact versus each job\u2019s total A load, so a big gain likely needs coordinated A+B redesign, not just left-shifting B.\nFactory B release bottleneck is mainly late jobs J4/J5/J6; baseline final tail is J6 on MB1 at 213-220.\nA quick check of B job-chain lengths from release gives lower bounds: J1 40 -> 69, J2 39 -> 111, J3 34 -> 126, J4 45 -> 175, J5 31 -> 174, J6 28 -> 206. So 206 is a crude coupled lower bound just from J6 with baseline A release.\nThe baseline 220 is only 14 above that crude bound, suggesting limited easy improvement without materially earlier A completion for J6 or smarter B contention management.\nI inspected whether B-only resequencing near the tail could beat 220 while keeping A fixed; MB4/MB5/MB7/MB2/MB1 interactions among J4-J6 are tight, and naive swaps tend to delay J4/J5 enough to offset J6 gains.\nI do not yet have a fully revalidated improved complete schedule below 220.\nGiven parse/scoring risk, the best valid artifact remains the provided baseline schedule.",
+    "subtask_id": 1,
+    "updated_plan_state": "Keep the baseline as the safe incumbent. If continuing, do one focused subtask on Factory A redesign to release J6 materially earlier while preserving complete validity, then rebuild only the affected Factory B tail."
+  },
+  "score": -0.41446381584042685,
+  "score_after_cf": -0.41446381584042685,
+  "score_at_stop": -0.19648066750029103,
+  "seed": 10,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Use the baseline as a feasibility anchor and target a modest but real makespan cut by rescheduling from precedence/release logic rather than full search.\nFirst compute each job\u2019s Factory A completion lower bounds and identify which B-machine chains drive the 220 makespan.\nThen try to build a tighter Factory A schedule that releases promising jobs earlier without badly delaying others, focusing on jobs whose B tails are long or end on MB1/MB2.\nNext construct a Factory B schedule from those A completion times, left-shifting operations greedily while preserving each job order and machine capacity.\nCompare against baseline critical tail, especially jobs 4/5/6 on MB1-MB2-MB4/MB7, and exploit any idle gaps.\nIf a clean global redesign is hard, preserve much of baseline A and only improve B sequencing around the late jobs.\nNeed final output as a complete operation-by-operation schedule, so keep all machine timelines explicit and validity-check every job appears exactly once.\nPrimary risk is invalid overlap or violating the A-to-B coupling; prefer conservative feasible improvement over aggressive but error-prone edits.\nStopping rule: if no credible feasible schedule below 220 emerges after one substantive construction, return the best valid candidate found.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Derive job release times from Factory A, identify the critical late-chain structure, and construct one complete feasible schedule aiming to beat makespan 220\", \"p_solve\": 0.42, \"time_budget_s\": 240}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: I derived Factory A job completion times from the baseline: J1=29, J2=72, J3=92, J4=130, J5=143, J6=178.\nThese are already fairly compact versus each job\u2019s total A load, so a big gain likely needs coordinated A+B redesign, not just left-shifting B.\nFactory B release bottleneck is mainly late jobs J4/J5/J6; baseline final tail is J6 on MB1 at 213-220.\nA quick check of B job-chain lengths from release gives lower bounds: J1 40 -> 69, J2 39 -> 111, J3 34 -> 126, J4 45 -> 175, J5 31 -> 174, J6 28 -> 206. So 206 is a crude coupled lower bound just from J6 with baseline A release.\nThe baseline 220 is only 14 above that crude bound, suggesting limited easy improvement without materially earlier A completion for J6 or smarter B contention management.\nI inspected whether B-only resequencing near the tail could beat 220 while keeping A fixed; MB4/MB5/MB7/MB2/MB1 interactions among J4-J6 are tight, and naive swaps tend to delay J4/J5 enough to offset J6 gains.\nI do not yet have a fully revalidated improved complete schedule below 220.\nGiven parse/scoring risk, the best valid artifact remains the provided baseline schedule.\nUPDATED_PLAN_STATE: Keep the baseline as the safe incumbent. If continuing, do one focused subtask on Factory A redesign to release J6 materially earlier while preserving complete validity, then rebuild only the affected Factory B tail.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.02, \"p_gap_le_5\": 0.12, \"p_gap_le_10\": 0.4}\nCONTINUE_FORECAST: {\"p_improve\": 0.28, \"expected_delta_score\": 1.1, \"expected_gap_reduction\": 2.5}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: I rechecked whether a safe B-only improvement exists with Factory A releases fixed at J1=29, J2=72, J3=92, J4=130, J5=143, J6=178.\nThe dominant tail is J6 on B: MB7(1)-MB5(4)-MB4(8)-MB3(1)-MB6(2)-MB2(5)-MB1(7), total 28, so with release 178 its job-only bound is 206.\nA tempting left shift is to start J6 on MB7 at 178 and then MB5 at 179, but MB4 is blocked by J5 at 143-151 and then idle until much later in baseline; however moving J6 earlier on MB4 creates knock-on conflicts with J3/J4/J5 chains.\nI checked the key tail machines:\nMB4 baseline order J1,J2,J3,J4,J5,J6 already matches first-op needs for J1/J4/J5 and late-op need for J6; swapping J6 ahead of J5 helps J6 but tends to postpone J5 into MB5/MB6/MB1 and preserves or worsens makespan.\nMB5 baseline has J5 at 187-193 then J6 at 193-197. Reversing them forces J5 later and does not clearly reduce the final MB1 completion below 220.\nMB2 and MB1 are especially tight: J4 needs MB1 before J5/J6, and J5 needs MB2 before its MB1. Pushing J6 earlier on MB2 usually delays J5 or J4 and keeps MB1 near 220.\nI also rechecked whether J6 could be released much earlier by obvious A-machine resequencing; baseline A already packs many chains tightly and J6\u2019s route crosses heavily used MA1/5/4/6/7/2/3, so a manual valid redesign remains error-prone.\nNet: I still do not have a fully validated schedule better than 220.\nSafest scored answer remains the complete baseline schedule.\nBEST_GUESS: {\"factory_a\":{\"MA1\":[[\"J1\",2,6],[\"J2\",48,57],[\"J3\",57,65],[\"J4\",115,123],[\"J5\",132,134],[\"J6\",134,141]],\"MA2\":[[\"J1\",23,29],[\"J2\",38,42],[\"J3\",42,44],[\"J4\",108,110],[\"J5\",141,142],[\"J6\",168,172]],\"MA3\":[[\"J1\",13,20],[\"J2\",32,38],[\"J3\",85,92],[\"J4\",92,98],[\"J5\",142,143],[\"J6\",172,178]],\"MA4\":[[\"J1\",6,12],[\"J2\",42,48],[\"J3\",68,72],[\"J4\",98,104],[\"J5\",104,107],[\"J6\",147,156]],\"MA5\":[[\"J1\",0,2],[\"J2\",57,65],[\"J3\",78,85],[\"J4\",110,115],[\"J5\",115,124],[\"J6\",141,147]],\"MA6\":[[\"J1\",20,23],[\"J2\",23,32],[\"J3\",65,68],[\"J4\",123,130],[\"J5\",134,141],[\"J6\",156,165]],\"MA7\":[[\"J1\",12,13],[\"J2\",65,72],[\"J3\",72,78],[\"J4\",104,108],[\"J5\",124,132],[\"J6\",165,168]]},\"factory_b\":{\"MB1\":[[\"J1\",53,61],[\"J2\",72,80],[\"J3\",132,135],[\"J4\",152,161],[\"J5\",195,198],[\"J6\",213,220]],\"MB2\":[[\"J1\",48,53],[\"J2\",88,97],[\"J3\",97,105],[\"J4\",166,175],[\"J5\",175,184],[\"J6\",208,213]],\"MB3\":[[\"J1\",43,48],[\"J2\",100,104],[\"J3\",120,123],[\"J4\",133,140],[\"J5\",186,187],[\"J6\",205,206]],\"MB4\":[[\"J1\",29,36],[\"J2\",104,111],[\"J3\",111,115],[\"J4\",130,133],[\"J5\",143,151],[\"J6\",197,205]],\"MB5\":[[\"J1\",64,69],[\"J2\",80,82],[\"J3\",115,120],[\"J4\",161,166],[\"J5\",187,193],[\"J6\",193,197]],\"MB6\":[[\"J1\",61,64],[\"J2\",97,100],[\"J3\",123,132],[\"J4\",140,148],[\"J5\",193,195],[\"J6\",206,208]],\"MB7\":[[\"J1\",36,43],[\"J2\",82,88],[\"J3\",135,137],[\"J4\",148,152],[\"J5\",184,186],[\"J6\",186,187]]},\"makespan\":220}\nUPDATED_PLAN_STATE: Keep the baseline as the incumbent. Any further work should target a concrete full Factory A resequencing for J6 or a jointly rebuilt late B tail, but only if a complete validity check can be maintained.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.12,\"p_gap_le_10\":0.4}\nCONTINUE_FORECAST: {\"p_improve\":0.18,\"expected_delta_score\":0.6,\"expected_gap_reduction\":1.5}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 41.44640012504533
+}

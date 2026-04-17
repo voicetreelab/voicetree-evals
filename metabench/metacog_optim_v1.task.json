@@ -1,0 +1,5 @@
+{
+  "versionNumber": 1,
+  "name": "metacog_optim_v1",
+  "definition": "@kbench.task(name=\"metacog_optim_v1\")\ndef run(\n    llm: Any,\n    id: str,\n    class_: str,\n    difficulty: str,\n    seed: int,\n    instance: Any,\n    gold_objective: float,\n    baseline_objective: float,\n    value_cap: float,\n    wall_budget_s: int = 1800,\n    components: Any = None,\n) -> float:\n    del id, wall_budget_s\n\n    inst = _coerce_json(instance, default=None)\n    if not isinstance(inst, dict):\n        raise TypeError(\"instance must be a dict or JSON object string\")\n\n    row = run_instance(\n        llm=llm,\n        instance=inst,\n        cls=str(class_),\n        difficulty=str(difficulty),\n        seed=int(seed),\n        gold_objective=float(gold_objective),\n        baseline_objective=float(baseline_objective),\n        value_cap=float(value_cap),\n        components=_normalize_components(components),\n    )\n    return float(row[\"score\"])\n"
+}

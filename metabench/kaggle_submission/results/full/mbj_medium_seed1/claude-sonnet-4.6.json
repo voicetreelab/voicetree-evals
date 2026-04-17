@@ -1,0 +1,313 @@
+{
+  "attempts": 3,
+  "baseline_objective": 7167.0,
+  "cf_delta": 0.0,
+  "cf_parsed": {},
+  "class": "mbj",
+  "difficulty": "medium",
+  "error": "exec turn 2 timed out after 300s",
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_objective": 7167,
+      "failure_reason": null,
+      "gap_pct": 25.736842105263158,
+      "gold_objective": 5700,
+      "metric_name": "objective",
+      "verified_makespan": 339,
+      "verified_objective": 7167,
+      "verified_weighted_tardiness": 387
+    },
+    "feasible": true,
+    "gap_pct": 25.736842105263158,
+    "mode": "solo",
+    "submission": {
+      "machines": {
+        "M1": [
+          [
+            "J7",
+            0,
+            12
+          ],
+          [
+            "J1",
+            12,
+            20
+          ],
+          [
+            "J3",
+            37,
+            52
+          ],
+          [
+            "J6",
+            52,
+            63
+          ],
+          [
+            "J4",
+            87,
+            135
+          ],
+          [
+            "J5",
+            135,
+            168
+          ],
+          [
+            "J8",
+            168,
+            210
+          ],
+          [
+            "J2",
+            210,
+            258
+          ]
+        ],
+        "M2": [
+          [
+            "J5",
+            0,
+            27
+          ],
+          [
+            "J3",
+            27,
+            37
+          ],
+          [
+            "J6",
+            37,
+            48
+          ],
+          [
+            "J7",
+            48,
+            61
+          ],
+          [
+            "J1",
+            61,
+            75
+          ],
+          [
+            "J4",
+            162,
+            195
+          ],
+          [
+            "J8",
+            234,
+            267
+          ],
+          [
+            "J2",
+            294,
+            339
+          ]
+        ],
+        "M3": [
+          [
+            "J3",
+            0,
+            12
+          ],
+          [
+            "J1",
+            20,
+            34
+          ],
+          [
+            "J5",
+            34,
+            79
+          ],
+          [
+            "J7",
+            113,
+            123
+          ],
+          [
+            "J6",
+            152,
+            166
+          ],
+          [
+            "J2",
+            258,
+            294
+          ],
+          [
+            "J8",
+            294,
+            321
+          ]
+        ],
+        "M4": [
+          [
+            "J4",
+            0,
+            30
+          ],
+          [
+            "J2",
+            30,
+            66
+          ],
+          [
+            "J1",
+            75,
+            87
+          ]
+        ],
+        "M5": [
+          [
+            "J3",
+            52,
+            69
+          ],
+          [
+            "J7",
+            123,
+            133
+          ],
+          [
+            "J4",
+            135,
+            162
+          ],
+          [
+            "J5",
+            183,
+            207
+          ]
+        ],
+        "M6": [
+          [
+            "J2",
+            66,
+            90
+          ],
+          [
+            "J5",
+            90,
+            129
+          ],
+          [
+            "J3",
+            129,
+            140
+          ],
+          [
+            "J6",
+            140,
+            152
+          ],
+          [
+            "J8",
+            210,
+            234
+          ]
+        ],
+        "M7": [
+          [
+            "J1",
+            0,
+            4
+          ],
+          [
+            "J8",
+            4,
+            52
+          ],
+          [
+            "J4",
+            60,
+            87
+          ],
+          [
+            "J3",
+            87,
+            91
+          ],
+          [
+            "J6",
+            91,
+            99
+          ],
+          [
+            "J7",
+            99,
+            113
+          ],
+          [
+            "J2",
+            113,
+            128
+          ],
+          [
+            "J5",
+            168,
+            183
+          ]
+        ],
+        "M8": [
+          [
+            "J6",
+            0,
+            10
+          ],
+          [
+            "J4",
+            30,
+            60
+          ],
+          [
+            "J8",
+            60,
+            90
+          ],
+          [
+            "J1",
+            90,
+            102
+          ],
+          [
+            "J7",
+            133,
+            140
+          ]
+        ]
+      },
+      "makespan": 339,
+      "objective": 7167,
+      "weighted_tardiness": 387
+    }
+  },
+  "final_objective": null,
+  "final_submission_source": "baseline",
+  "gap_pct": 25.736842105263158,
+  "gold_objective": 5700.0,
+  "id": "mbj_medium_seed1",
+  "model": "claude-sonnet-4.6",
+  "model_slug": "claude-sonnet-4.6",
+  "n_exec_turns": 1,
+  "parse_events": [],
+  "parse_path": "baseline_only",
+  "parsed": {},
+  "score": 71.19658565098862,
+  "score_after_cf": 71.19658565098862,
+  "score_at_stop": 71.19658565098862,
+  "seed": 1,
+  "skipped": false,
+  "stop_reason": "wall_budget",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Analyze the baseline schedule (makespan=339, obj=7167). Key bottleneck is M2 which finishes at 339. Strategy: try to reorder operations on critical machines to reduce makespan and tardiness. J6 has weight=9 and due_date=123, currently finishes at 166 (tardiness=43, contribution=387). Focus on: (1) getting J6 done earlier to cut weighted tardiness, (2) reducing makespan by compressing M2/M3 chains. Will manually construct an improved schedule by reordering jobs on each machine, respecting precedence constraints, and compute objective.\n\nNEXT_SUB: {\"id\": 1, \"desc\": \"Manually construct improved feasible schedule focusing on J6 priority and M2 bottleneck reduction\", \"p_solve\": 0.55, \"time_budget_s\": 300}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 306.65725591685623
+}

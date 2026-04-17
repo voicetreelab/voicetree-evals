@@ -1,0 +1,3 @@
+__KAGGLE_PROD_RESULT_START__
+{"status": "ok", "cwd": "/kaggle/working", "is_configured": true, "llm_type": "OpenAI", "llm_model": "google/gemini-3-flash-preview", "llm_name": "google/gemini-3-flash-preview", "llm_attrs": ["as_dict", "avatar", "client", "id", "invoke", "model", "name", "prompt", "respond", "role", "send", "serializer", "stream", "stream_responses", "support_structured_outputs", "support_temperature"], "registry_size": 0, "registry_names": []}
+__KAGGLE_PROD_RESULT_END__

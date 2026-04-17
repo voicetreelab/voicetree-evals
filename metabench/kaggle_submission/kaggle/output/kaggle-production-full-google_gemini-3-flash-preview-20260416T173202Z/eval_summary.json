@@ -1,0 +1,184 @@
+[
+  {
+    "class": "cjs",
+    "difficulty": "medium",
+    "id": "cjs_medium_seed1",
+    "result": 69.64801522685222,
+    "seed": 1
+  },
+  {
+    "class": "steiner",
+    "difficulty": "medium",
+    "id": "steiner_medium_seed1",
+    "result": 95.96907697031,
+    "seed": 1
+  },
+  {
+    "class": "graphcol",
+    "difficulty": "medium",
+    "id": "graphcol_medium_seed1",
+    "result": 97.32922878309999,
+    "seed": 1
+  },
+  {
+    "class": "tsp",
+    "difficulty": "medium",
+    "id": "tsp_medium_seed1",
+    "result": 93.01206057178229,
+    "seed": 1
+  },
+  {
+    "class": "mwis",
+    "difficulty": "medium",
+    "id": "mwis_medium_seed1",
+    "result": 88.26297247532736,
+    "seed": 1
+  },
+  {
+    "class": "ve",
+    "difficulty": "medium",
+    "id": "ve_medium_seed1",
+    "result": 0.0,
+    "seed": 1
+  },
+  {
+    "class": "portfolio",
+    "difficulty": "medium",
+    "id": "portfolio_medium_seed1",
+    "result": 33.23569902153872,
+    "seed": 1
+  },
+  {
+    "class": "cjs",
+    "difficulty": "hard",
+    "id": "cjs_hard_seed1",
+    "result": 0.0,
+    "seed": 1
+  },
+  {
+    "class": "cjs",
+    "difficulty": "hard",
+    "id": "cjs_hard_seed2",
+    "result": 69.94212382683965,
+    "seed": 2
+  },
+  {
+    "class": "cjs",
+    "difficulty": "hard",
+    "id": "cjs_hard_seed3",
+    "result": 75.22126372314777,
+    "seed": 3
+  },
+  {
+    "class": "steiner",
+    "difficulty": "hard",
+    "id": "steiner_hard_seed1",
+    "result": 95.34063826978999,
+    "seed": 1
+  },
+  {
+    "class": "steiner",
+    "difficulty": "hard",
+    "id": "steiner_hard_seed2",
+    "result": 95.60406334223,
+    "seed": 2
+  },
+  {
+    "class": "steiner",
+    "difficulty": "hard",
+    "id": "steiner_hard_seed3",
+    "result": 94.80004390863,
+    "seed": 3
+  },
+  {
+    "class": "graphcol",
+    "difficulty": "hard",
+    "id": "graphcol_hard_seed1",
+    "result": 97.45491938997,
+    "seed": 1
+  },
+  {
+    "class": "graphcol",
+    "difficulty": "hard",
+    "id": "graphcol_hard_seed2",
+    "result": 97.07757713990999,
+    "seed": 2
+  },
+  {
+    "class": "graphcol",
+    "difficulty": "hard",
+    "id": "graphcol_hard_seed3",
+    "result": -3.7485298350400083,
+    "seed": 3
+  },
+  {
+    "class": "tsp",
+    "difficulty": "hard",
+    "id": "tsp_hard_seed1",
+    "result": 91.34105498710272,
+    "seed": 1
+  },
+  {
+    "class": "tsp",
+    "difficulty": "hard",
+    "id": "tsp_hard_seed2",
+    "result": 93.40136018313,
+    "seed": 2
+  },
+  {
+    "class": "tsp",
+    "difficulty": "hard",
+    "id": "tsp_hard_seed3",
+    "result": 95.34180068129001,
+    "seed": 3
+  },
+  {
+    "class": "mwis",
+    "difficulty": "hard",
+    "id": "mwis_hard_seed1",
+    "result": 83.64359854858826,
+    "seed": 1
+  },
+  {
+    "class": "mwis",
+    "difficulty": "hard",
+    "id": "mwis_hard_seed2",
+    "result": 89.7195844014349,
+    "seed": 2
+  },
+  {
+    "class": "mwis",
+    "difficulty": "hard",
+    "id": "mwis_hard_seed4",
+    "result": 87.09484723753295,
+    "seed": 4
+  },
+  {
+    "class": "ve",
+    "difficulty": "hard",
+    "id": "ve_hard_seed1",
+    "result": 0.0,
+    "seed": 1
+  },
+  {
+    "class": "ve",
+    "difficulty": "hard",
+    "id": "ve_hard_seed2",
+    "result": 0.0,
+    "seed": 2
+  },
+  {
+    "class": "ve",
+    "difficulty": "hard",
+    "id": "ve_hard_seed3",
+    "result": 0.0,
+    "seed": 3
+  },
+  {
+    "class": "portfolio",
+    "difficulty": "hard",
+    "id": "portfolio_hard_seed2",
+    "result": -14.279596787150059,
+    "seed": 2
+  }
+]

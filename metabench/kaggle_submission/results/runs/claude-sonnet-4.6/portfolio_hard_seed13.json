@@ -1,0 +1,301 @@
+{
+  "baseline_objective": 0.0,
+  "cf_delta": 0.0,
+  "cf_parsed": {},
+  "class": "portfolio",
+  "difficulty": "hard",
+  "error": "plan turn timed out after 300s",
+  "feasible": false,
+  "final_evaluation": {
+    "components": [
+      {
+        "class": "graphcol",
+        "details": {
+          "baseline_scored_cost": 22.0,
+          "conflict_count": 18,
+          "gold_scored_cost": 4.0,
+          "normalized_submission": {
+            "assignment": {
+              "N01": 1,
+              "N02": 2,
+              "N03": 3,
+              "N04": 4,
+              "N05": 2,
+              "N06": 2,
+              "N07": 3,
+              "N08": 2,
+              "N09": 1,
+              "N10": 4,
+              "N11": 3,
+              "N12": 4,
+              "N13": 1,
+              "N14": 1,
+              "N15": 1,
+              "N16": 4,
+              "N17": 2,
+              "N18": 2,
+              "N19": 4,
+              "N20": 4,
+              "N21": 1,
+              "N22": 2,
+              "N23": 3,
+              "N24": 4,
+              "N25": 3,
+              "N26": 4,
+              "N27": 3,
+              "N28": 1,
+              "N29": 1,
+              "N30": 1
+            }
+          },
+          "scored_cost": 22.0
+        },
+        "feasible": true,
+        "gap_pct": 450.0,
+        "problem_id": "graphcol_hard_seed13",
+        "value_cap": 33.0
+      },
+      {
+        "class": "ve",
+        "details": {
+          "failure_reason": "BEST_GUESS must be a JSON object"
+        },
+        "feasible": false,
+        "gap_pct": 100.0,
+        "problem_id": "ve_hard_seed13",
+        "value_cap": 33.0
+      },
+      {
+        "class": "steiner",
+        "details": {
+          "baseline_cost": 77,
+          "computed_cost": 77,
+          "edge_cost": 47,
+          "failure_reason": null,
+          "gold_cost": 64,
+          "normalized_submission": {
+            "edges": [
+              [
+                "Bay",
+                "Pine"
+              ],
+              [
+                "Bay",
+                "Rock"
+              ],
+              [
+                "Dune",
+                "Rock"
+              ],
+              [
+                "Grove",
+                "Pine"
+              ]
+            ],
+            "frequencies": {
+              "Bay": 1,
+              "Dune": 1,
+              "Grove": 1,
+              "Pine": 2,
+              "Rock": 1
+            }
+          },
+          "num_frequencies_used": 2,
+          "scored_cost": 77,
+          "used_baseline_fallback": false
+        },
+        "feasible": true,
+        "gap_pct": 20.3125,
+        "problem_id": "steiner_hard_seed13",
+        "value_cap": 34.0
+      }
+    ],
+    "details": {
+      "components": [
+        {
+          "class": "graphcol",
+          "details": {
+            "baseline_scored_cost": 22.0,
+            "conflict_count": 18,
+            "gold_scored_cost": 4.0,
+            "normalized_submission": {
+              "assignment": {
+                "N01": 1,
+                "N02": 2,
+                "N03": 3,
+                "N04": 4,
+                "N05": 2,
+                "N06": 2,
+                "N07": 3,
+                "N08": 2,
+                "N09": 1,
+                "N10": 4,
+                "N11": 3,
+                "N12": 4,
+                "N13": 1,
+                "N14": 1,
+                "N15": 1,
+                "N16": 4,
+                "N17": 2,
+                "N18": 2,
+                "N19": 4,
+                "N20": 4,
+                "N21": 1,
+                "N22": 2,
+                "N23": 3,
+                "N24": 4,
+                "N25": 3,
+                "N26": 4,
+                "N27": 3,
+                "N28": 1,
+                "N29": 1,
+                "N30": 1
+              }
+            },
+            "scored_cost": 22.0
+          },
+          "feasible": true,
+          "gap_pct": 450.0,
+          "problem_id": "graphcol_hard_seed13",
+          "value_cap": 33.0
+        },
+        {
+          "class": "ve",
+          "details": {
+            "failure_reason": "BEST_GUESS must be a JSON object"
+          },
+          "feasible": false,
+          "gap_pct": 100.0,
+          "problem_id": "ve_hard_seed13",
+          "value_cap": 33.0
+        },
+        {
+          "class": "steiner",
+          "details": {
+            "baseline_cost": 77,
+            "computed_cost": 77,
+            "edge_cost": 47,
+            "failure_reason": null,
+            "gold_cost": 64,
+            "normalized_submission": {
+              "edges": [
+                [
+                  "Bay",
+                  "Pine"
+                ],
+                [
+                  "Bay",
+                  "Rock"
+                ],
+                [
+                  "Dune",
+                  "Rock"
+                ],
+                [
+                  "Grove",
+                  "Pine"
+                ]
+              ],
+              "frequencies": {
+                "Bay": 1,
+                "Dune": 1,
+                "Grove": 1,
+                "Pine": 2,
+                "Rock": 1
+              }
+            },
+            "num_frequencies_used": 2,
+            "scored_cost": 77,
+            "used_baseline_fallback": false
+          },
+          "feasible": true,
+          "gap_pct": 20.3125,
+          "problem_id": "steiner_hard_seed13",
+          "value_cap": 34.0
+        }
+      ]
+    },
+    "mode": "portfolio",
+    "submission": {
+      "graphcol_hard_seed13": {
+        "assignment": {
+          "N01": 1,
+          "N02": 2,
+          "N03": 3,
+          "N04": 4,
+          "N05": 2,
+          "N06": 2,
+          "N07": 3,
+          "N08": 2,
+          "N09": 1,
+          "N10": 4,
+          "N11": 3,
+          "N12": 4,
+          "N13": 1,
+          "N14": 1,
+          "N15": 1,
+          "N16": 4,
+          "N17": 2,
+          "N18": 2,
+          "N19": 4,
+          "N20": 4,
+          "N21": 1,
+          "N22": 2,
+          "N23": 3,
+          "N24": 4,
+          "N25": 3,
+          "N26": 4,
+          "N27": 3,
+          "N28": 1,
+          "N29": 1,
+          "N30": 1
+        }
+      },
+      "steiner_hard_seed13": {
+        "edges": [
+          [
+            "Bay",
+            "Pine"
+          ],
+          [
+            "Bay",
+            "Rock"
+          ],
+          [
+            "Dune",
+            "Rock"
+          ],
+          [
+            "Grove",
+            "Pine"
+          ]
+        ],
+        "frequencies": {
+          "Bay": 1,
+          "Dune": 1,
+          "Grove": 1,
+          "Pine": 2,
+          "Rock": 1
+        }
+      },
+      "ve_hard_seed13": null
+    }
+  },
+  "final_submission_source": "baseline",
+  "gold_objective": 100.0,
+  "id": "portfolio_hard_seed13",
+  "model": "claude-sonnet-4.6",
+  "model_slug": "claude-sonnet-4.6",
+  "n_exec_turns": 0,
+  "parse_events": [],
+  "parse_path": "baseline_only",
+  "parsed": {},
+  "score": 12.093610029155387,
+  "score_after_cf": 12.093610029155387,
+  "score_at_stop": 12.093610029155387,
+  "seed": 13,
+  "stop_reason": "wall_budget",
+  "transcript": [],
+  "value_cap": 100.0,
+  "wall_s": 300.0028544999659
+}

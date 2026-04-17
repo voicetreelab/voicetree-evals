@@ -296,6 +296,59 @@ def parse_exec_turn(
         "next_sub": next_sub,
     }
 
+def parse_exec_turn_partial(
+    text: str,
+    *,
+    cls: str | None = None,
+    expected_subtask_id: int | None = None,
+    require_decision: bool = True,
+) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+
+    subtask = parse_subtask_block(text, expected_subtask_id=expected_subtask_id)
+    if subtask is not None:
+        subtask_id, subtask_body = subtask
+        result["subtask_id"] = subtask_id
+        result["subtask_body"] = subtask_body
+
+    best_guess = parse_best_guess(text)
+    if best_guess is not None:
+        result["best_guess"] = best_guess
+
+    updated_plan_state = parse_updated_plan_state(text)
+    if updated_plan_state is not None:
+        result["updated_plan_state"] = updated_plan_state
+
+    quality_forecast = parse_quality_forecast(text, cls=cls)
+    if quality_forecast is not None:
+        result["quality_forecast"] = quality_forecast
+
+    continue_forecast = parse_continue_forecast(text)
+    if continue_forecast is not None:
+        result["continue_forecast"] = continue_forecast
+
+    decision = parse_decision(text)
+    if decision is not None:
+        result["decision"] = decision
+
+    next_sub = parse_next_sub(text)
+    if next_sub is not None:
+        result["next_sub"] = next_sub
+
+    missing_or_invalid: list[str] = []
+    if "subtask_id" not in result or "subtask_body" not in result:
+        missing_or_invalid.append("subtask")
+    for field in ("best_guess", "updated_plan_state", "quality_forecast", "continue_forecast"):
+        if field not in result:
+            missing_or_invalid.append(field)
+    if require_decision and "decision" not in result:
+        missing_or_invalid.append("decision")
+    if decision == "continue" and "next_sub" not in result:
+        missing_or_invalid.append("next_sub")
+
+    result["missing_or_invalid"] = missing_or_invalid
+    return result
+
 # ──────────────────────────────────────────────────────────────────────
 # harness/render_nl.py
 # ──────────────────────────────────────────────────────────────────────
@@ -303,16 +356,64 @@ def parse_exec_turn(
 import json
 from typing import Any
 
-def render_nl(instance: dict[str, Any], cls: str) -> str:
+def render_nl(
+    instance: dict[str, Any],
+    cls: str,
+    components: list[Any] | None = None,
+) -> str:
     if not isinstance(instance, dict):
         raise TypeError("instance must be a dict")
 
     problem_statement = instance.get("problem_statement")
+    base_nl: str
     if isinstance(problem_statement, str) and problem_statement.strip():
-        return problem_statement
+        base_nl = problem_statement
+    else:
+        renderer = _FALLBACK_RENDERERS.get(cls, _render_generic)
+        base_nl = renderer(instance)
 
-    renderer = _FALLBACK_RENDERERS.get(cls, _render_generic)
-    return renderer(instance)
+    if cls == "portfolio" and components:
+        return _render_portfolio(base_nl, components)
+    return base_nl
+
+def _render_portfolio(base_nl: str, components: list[Any]) -> str:
+    try:
+        pass  # import inlined
+    except Exception:
+        CLASS_TO_BEST_GUESS_SCHEMA = {}
+
+    parts: list[str] = [base_nl.rstrip(), ""]
+    for comp in components:
+        if not isinstance(comp, dict):
+            continue
+        sub_cls = comp.get("class")
+        sub_inst = comp.get("sub_instance", {}) or {}
+        pid = comp.get("problem_id")
+        value_cap = comp.get("value_cap")
+        parts.append(f"=== {pid} (class={sub_cls}, value_cap={value_cap}) ===")
+
+        sub_ps = sub_inst.get("problem_statement")
+        if isinstance(sub_ps, str) and sub_ps.strip():
+            parts.append(sub_ps.rstrip())
+        else:
+            renderer = _FALLBACK_RENDERERS.get(sub_cls, _render_generic)
+            parts.append(renderer(sub_inst))
+
+        contract = sub_inst.get("answer_contract")
+        if isinstance(contract, str) and contract.strip():
+            parts.append(f"Answer contract for {pid}: {contract}")
+
+        schema = CLASS_TO_BEST_GUESS_SCHEMA.get(sub_cls) if isinstance(sub_cls, str) else None
+        if schema:
+            parts.append(f"ANSWER SCHEMA for {pid} (class={sub_cls}):\n{schema}")
+        parts.append("")
+
+    parts.append(
+        "Return a single BEST_GUESS JSON object whose top-level keys are the component "
+        "problem_ids above, each mapped to an object obeying that component's ANSWER SCHEMA. "
+        "Do not wrap the answers under an `answers` key."
+    )
+    return "\n".join(parts)
 
 def _render_generic(instance: dict[str, Any]) -> str:
     return json.dumps(instance, indent=2, sort_keys=True)
@@ -345,6 +446,14 @@ def _render_cjs(instance: dict[str, Any]) -> str:
     machines = instance.get("machines")
     return f"Coupled job-shop instance with {len(jobs) if isinstance(jobs, list) else '?'} jobs and {len(machines) if isinstance(machines, list) else '?'} machines."
 
+def _render_mbj(instance: dict[str, Any]) -> str:
+    jobs = instance.get("jobs")
+    n_machines = instance.get("n_machines", "?")
+    return (
+        f"Masked block job-shop instance with "
+        f"{len(jobs) if isinstance(jobs, list) else '?'} jobs and {n_machines} machines."
+    )
+
 def _render_steiner(instance: dict[str, Any]) -> str:
     nodes = instance.get("nodes", [])
     terminals = instance.get("terminals", [])
@@ -369,6 +478,7 @@ def _render_ve(instance: dict[str, Any]) -> str:
 _FALLBACK_RENDERERS = {
     "cjs": _render_cjs,
     "graphcol": _render_graphcol,
+    "mbj": _render_mbj,
     "mwis": _render_mwis,
     "steiner": _render_steiner,
     "tsp": _render_tsp,
@@ -400,2135 +510,58 @@ def score_portfolio(components: list[dict[str, Any]], wall_s: float) -> float:
     return value_sum - 0.05 * float(wall_s)
 
 # ──────────────────────────────────────────────────────────────────────
-# verifiers/cjs.py
+# verifiers/cjs.py (isolated namespace)
 # ──────────────────────────────────────────────────────────────────────
 
-from dataclasses import dataclass
-from typing import Any
-
-INFEASIBLE_GAP_PCT = 100.0
-
-@dataclass(frozen=True)
-class OperationSpec:
-    machine_name: str
-    duration: int
-
-@dataclass(frozen=True)
-class JobSpec:
-    job_id: int
-    factory_a: tuple[OperationSpec, ...]
-    factory_b: tuple[OperationSpec, ...]
-
-@dataclass(frozen=True)
-class VerificationResult:
-    is_feasible: bool
-    verified_makespan: int | None
-    failure_reason: str | None
-
-def cjs_verify(instance: dict[str, Any], submission: dict[str, Any]) -> tuple[float, bool, dict[str, Any]]:
-    """BEST_GUESS schema: {"factory_a": {"MA1": [["J1", 0, 3], ...]}, "factory_b": {"MB1": [["J1", 3, 5], ...]}, "makespan": 42}."""
-    parsed_instance = _parse_instance(instance)
-    if isinstance(parsed_instance, str):
-        return INFEASIBLE_GAP_PCT, False, {"failure_reason": parsed_instance}
-
-    jobs, n_machines, gold_objective, baseline_objective = parsed_instance
-    result = _verify_schedule(
-        jobs=jobs,
-        n_machines=n_machines,
-        schedule=submission,
-    )
-    details = {
-        "metric_name": "makespan",
-        "gold_objective": gold_objective,
-        "baseline_objective": baseline_objective,
-        "verified_makespan": result.verified_makespan,
-        "verified_objective": result.verified_makespan,
-        "failure_reason": result.failure_reason,
-    }
-    if not result.is_feasible or result.verified_makespan is None:
-        details["gap_pct"] = INFEASIBLE_GAP_PCT
-        return INFEASIBLE_GAP_PCT, False, details
-
-    gap_pct = 100.0 * (result.verified_makespan - gold_objective) / gold_objective
-    details["gap_pct"] = gap_pct
-    return gap_pct, True, details
-
-def _parse_instance(
-    instance: dict[str, Any] | Any,
-) -> tuple[tuple[JobSpec, ...], int, int, int | None] | str:
-    if not isinstance(instance, dict):
-        return "instance must be an object"
-
-    raw_n_machines = instance.get("n_machines")
-    raw_jobs = instance.get("jobs")
-    raw_gold_objective = instance.get("gold_objective", instance.get("gold_makespan"))
-    raw_baseline_objective = instance.get("baseline_objective", instance.get("baseline_makespan"))
-
-    try:
-        n_machines = int(raw_n_machines)
-    except Exception:
-        return "instance.n_machines must be an integer"
-    if n_machines <= 0:
-        return "instance.n_machines must be positive"
-
-    try:
-        gold_objective = int(raw_gold_objective)
-    except Exception:
-        return "instance.gold_objective must be an integer"
-    if gold_objective <= 0:
-        return "instance.gold_objective must be positive"
-
-    baseline_objective = None
-    if raw_baseline_objective is not None:
-        try:
-            baseline_objective = int(raw_baseline_objective)
-        except Exception:
-            return "instance.baseline_objective must be an integer when present"
-
-    if not isinstance(raw_jobs, list):
-        return "instance.jobs must be a list"
-
-    jobs: list[JobSpec] = []
-    for raw_job in raw_jobs:
-        parsed_job = _parse_job(raw_job)
-        if isinstance(parsed_job, str):
-            return parsed_job
-        jobs.append(parsed_job)
-    if not jobs:
-        return "instance.jobs must not be empty"
-
-    return tuple(jobs), n_machines, gold_objective, baseline_objective
-
-def _parse_job(raw_job: Any) -> JobSpec | str:
-    if not isinstance(raw_job, dict):
-        return "each job must be an object"
-
-    try:
-        job_id = int(raw_job["job_id"])
-    except Exception:
-        return "job.job_id must be an integer"
-
-    parsed_a = _parse_route(raw_job.get("factory_a"), factory_key="factory_a", job_id=job_id)
-    if isinstance(parsed_a, str):
-        return parsed_a
-    parsed_b = _parse_route(raw_job.get("factory_b"), factory_key="factory_b", job_id=job_id)
-    if isinstance(parsed_b, str):
-        return parsed_b
-
-    return JobSpec(job_id=job_id, factory_a=parsed_a, factory_b=parsed_b)
-
-def _parse_route(raw_route: Any, *, factory_key: str, job_id: int) -> tuple[OperationSpec, ...] | str:
-    if not isinstance(raw_route, list):
-        return f"job {job_id} {factory_key} must be a list"
-    operations: list[OperationSpec] = []
-    for raw_op in raw_route:
-        if not isinstance(raw_op, dict):
-            return f"job {job_id} {factory_key} entries must be objects"
-        machine_name = raw_op.get("machine_name")
-        duration = raw_op.get("duration")
-        if not isinstance(machine_name, str) or not machine_name:
-            return f"job {job_id} {factory_key} machine_name must be a non-empty string"
-        try:
-            duration_int = int(duration)
-        except Exception:
-            return f"job {job_id} {factory_key} duration must be an integer"
-        if duration_int <= 0:
-            return f"job {job_id} {factory_key} duration must be positive"
-        operations.append(OperationSpec(machine_name=machine_name, duration=duration_int))
-    if not operations:
-        return f"job {job_id} {factory_key} must not be empty"
-    return tuple(operations)
-
-def _verify_schedule(
-    *,
-    jobs: tuple[JobSpec, ...],
-    n_machines: int,
-    schedule: dict[str, Any] | None,
-) -> VerificationResult:
-    if not isinstance(schedule, dict):
-        return VerificationResult(False, None, "schedule must be an object")
-
-    try:
-        factory_a = schedule["factory_a"]
-        factory_b = schedule["factory_b"]
-        claimed_makespan = int(schedule["makespan"])
-    except Exception:
-        return VerificationResult(False, None, "schedule must contain factory_a, factory_b, makespan")
-
-    expected_a = {f"MA{index}" for index in range(1, n_machines + 1)}
-    expected_b = {f"MB{index}" for index in range(1, n_machines + 1)}
-    if not isinstance(factory_a, dict) or not isinstance(factory_b, dict):
-        return VerificationResult(False, None, "factory schedules must be objects")
-
-    parsed_a = _parse_factory_schedule(factory_a, expected_a)
-    if isinstance(parsed_a, str):
-        return VerificationResult(False, None, parsed_a)
-    parsed_b = _parse_factory_schedule(factory_b, expected_b)
-    if isinstance(parsed_b, str):
-        return VerificationResult(False, None, parsed_b)
-
-    jobs_by_id = {job.job_id: job for job in jobs}
-    seen_ops_a: set[tuple[int, str]] = set()
-    seen_ops_b: set[tuple[int, str]] = set()
-    start_a: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}
-    completion_a: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}
-    start_b: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}
-    completion_b: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}
-    max_end = 0
-
-    for machine_name, entries in parsed_a.items():
-        reason = _check_machine_conflicts(entries)
-        if reason:
-            return VerificationResult(False, None, reason)
-        for job_id, start, end in entries:
-            job = jobs_by_id.get(job_id)
-            if job is None:
-                return VerificationResult(False, None, f"unknown job J{job_id} in {machine_name}")
-            duration = _duration_for_machine(job.factory_a, machine_name)
-            if duration is None:
-                return VerificationResult(False, None, f"job J{job_id} does not use machine {machine_name} in factory A")
-            if end - start != duration:
-                return VerificationResult(
-                    False,
-                    None,
-                    f"duration mismatch for J{job_id} on {machine_name}: expected {duration}, got {end - start}",
-                )
-            key = (job_id, machine_name)
-            if key in seen_ops_a:
-                return VerificationResult(False, None, f"duplicate operation for J{job_id} on {machine_name}")
-            seen_ops_a.add(key)
-            start_a[job_id][machine_name] = start
-            completion_a[job_id][machine_name] = end
-            max_end = max(max_end, end)
-
-    for machine_name, entries in parsed_b.items():
-        reason = _check_machine_conflicts(entries)
-        if reason:
-            return VerificationResult(False, None, reason)
-        for job_id, start, end in entries:
-            job = jobs_by_id.get(job_id)
-            if job is None:
-                return VerificationResult(False, None, f"unknown job J{job_id} in {machine_name}")
-            duration = _duration_for_machine(job.factory_b, machine_name)
-            if duration is None:
-                return VerificationResult(False, None, f"job J{job_id} does not use machine {machine_name} in factory B")
-            if end - start != duration:
-                return VerificationResult(
-                    False,
-                    None,
-                    f"duration mismatch for J{job_id} on {machine_name}: expected {duration}, got {end - start}",
-                )
-            key = (job_id, machine_name)
-            if key in seen_ops_b:
-                return VerificationResult(False, None, f"duplicate operation for J{job_id} on {machine_name}")
-            seen_ops_b.add(key)
-            start_b[job_id][machine_name] = start
-            completion_b[job_id][machine_name] = end
-            max_end = max(max_end, end)
-
-    for job in jobs:
-        expected_a = {(job.job_id, op.machine_name) for op in job.factory_a}
-        expected_b = {(job.job_id, op.machine_name) for op in job.factory_b}
-        if len(seen_ops_a.intersection(expected_a)) != len(job.factory_a):
-            return VerificationResult(False, None, f"missing factory A operations for J{job.job_id}")
-        if len(seen_ops_b.intersection(expected_b)) != len(job.factory_b):
-            return VerificationResult(False, None, f"missing factory B operations for J{job.job_id}")
-
-        reason = _check_route_precedence(job.factory_a, start_a[job.job_id], completion_a[job.job_id])
-        if reason:
-            return VerificationResult(False, None, f"factory A precedence failed for J{job.job_id}: {reason}")
-        reason = _check_route_precedence(job.factory_b, start_b[job.job_id], completion_b[job.job_id])
-        if reason:
-            return VerificationResult(False, None, f"factory B precedence failed for J{job.job_id}: {reason}")
-
-        last_a_machine = job.factory_a[-1].machine_name
-        first_b_machine = job.factory_b[0].machine_name
-        if start_b[job.job_id][first_b_machine] < completion_a[job.job_id][last_a_machine]:
-            return VerificationResult(False, None, f"coupling violation for J{job.job_id}")
-
-    if claimed_makespan != max_end:
-        return VerificationResult(False, None, f"claimed makespan {claimed_makespan} does not match verified {max_end}")
-
-    return VerificationResult(True, max_end, None)
-
-def _parse_factory_schedule(
-    factory_schedule: dict[str, Any],
-    expected_machines: set[str],
-) -> dict[str, list[tuple[int, int, int]]] | str:
-    parsed: dict[str, list[tuple[int, int, int]]] = {}
-    for machine_name in expected_machines:
-        entries = factory_schedule.get(machine_name, [])
-        if not isinstance(entries, list):
-            return f"machine {machine_name} must map to a list"
-        machine_entries: list[tuple[int, int, int]] = []
-        for item in entries:
-            if not isinstance(item, list) or len(item) != 3:
-                return f"machine {machine_name} entries must be [job, start, end]"
-            job_label, start, end = item
-            try:
-                job_id = int(str(job_label).lstrip("Jj"))
-                start_int = int(start)
-                end_int = int(end)
-            except Exception:
-                return f"machine {machine_name} has non-integer schedule entry"
-            if end_int <= start_int:
-                return f"machine {machine_name} has non-positive duration for J{job_id}"
-            machine_entries.append((job_id, start_int, end_int))
-        parsed[machine_name] = sorted(machine_entries, key=lambda item: (item[1], item[2], item[0]))
-    unknown = set(factory_schedule) - expected_machines
-    if unknown:
-        return f"unknown machines in schedule: {sorted(unknown)}"
-    return parsed
-
-def _check_machine_conflicts(entries: list[tuple[int, int, int]]) -> str | None:
-    for index in range(1, len(entries)):
-        previous = entries[index - 1]
-        current = entries[index]
-        if current[1] < previous[2]:
-            return f"machine overlap between J{previous[0]} and J{current[0]}"
-    return None
-
-def _duration_for_machine(route: tuple[OperationSpec, ...], machine_name: str) -> int | None:
-    for op in route:
-        if op.machine_name == machine_name:
-            return op.duration
-    return None
-
-def _check_route_precedence(
-    route: tuple[OperationSpec, ...],
-    start_lookup: dict[str, int],
-    completion_lookup: dict[str, int],
-) -> str | None:
-    previous_end = None
-    for op in route:
-        machine_name = op.machine_name
-        if machine_name not in start_lookup or machine_name not in completion_lookup:
-            return f"missing timing for {machine_name}"
-        current_start = start_lookup[machine_name]
-        current_end = completion_lookup[machine_name]
-        if previous_end is not None and current_start < previous_end:
-            return f"{machine_name} starts at {current_start} before predecessor finished at {previous_end}"
-        previous_end = current_end
-    return None
+_CJS_VERIFIER_SOURCE = 'from dataclasses import dataclass\nfrom typing import Any\n\nINFEASIBLE_GAP_PCT = 100.0\n\n@dataclass(frozen=True)\nclass OperationSpec:\n    machine_name: str\n    duration: int\n\n@dataclass(frozen=True)\nclass JobSpec:\n    job_id: int\n    factory_a: tuple[OperationSpec, ...]\n    factory_b: tuple[OperationSpec, ...]\n\n@dataclass(frozen=True)\nclass VerificationResult:\n    is_feasible: bool\n    verified_makespan: int | None\n    failure_reason: str | None\n\ndef verify(instance: dict[str, Any], submission: dict[str, Any]) -> tuple[float, bool, dict[str, Any]]:\n    """BEST_GUESS schema: {"factory_a": {"MA1": [["J1", 0, 3], ...]}, "factory_b": {"MB1": [["J1", 3, 5], ...]}, "makespan": 42}."""\n    parsed_instance = _parse_instance(instance)\n    if isinstance(parsed_instance, str):\n        return INFEASIBLE_GAP_PCT, False, {"failure_reason": parsed_instance}\n\n    jobs, n_machines, gold_objective, baseline_objective = parsed_instance\n    result = _verify_schedule(\n        jobs=jobs,\n        n_machines=n_machines,\n        schedule=submission,\n    )\n    details = {\n        "metric_name": "makespan",\n        "gold_objective": gold_objective,\n        "baseline_objective": baseline_objective,\n        "verified_makespan": result.verified_makespan,\n        "verified_objective": result.verified_makespan,\n        "failure_reason": result.failure_reason,\n    }\n    if not result.is_feasible or result.verified_makespan is None:\n        details["gap_pct"] = INFEASIBLE_GAP_PCT\n        return INFEASIBLE_GAP_PCT, False, details\n\n    gap_pct = 100.0 * (result.verified_makespan - gold_objective) / gold_objective\n    details["gap_pct"] = gap_pct\n    return gap_pct, True, details\n\ndef _parse_instance(\n    instance: dict[str, Any] | Any,\n) -> tuple[tuple[JobSpec, ...], int, int, int | None] | str:\n    if not isinstance(instance, dict):\n        return "instance must be an object"\n\n    raw_n_machines = instance.get("n_machines")\n    raw_jobs = instance.get("jobs")\n    raw_gold_objective = instance.get("gold_objective", instance.get("gold_makespan"))\n    raw_baseline_objective = instance.get("baseline_objective", instance.get("baseline_makespan"))\n\n    try:\n        n_machines = int(raw_n_machines)\n    except Exception:\n        return "instance.n_machines must be an integer"\n    if n_machines <= 0:\n        return "instance.n_machines must be positive"\n\n    try:\n        gold_objective = int(raw_gold_objective)\n    except Exception:\n        return "instance.gold_objective must be an integer"\n    if gold_objective <= 0:\n        return "instance.gold_objective must be positive"\n\n    baseline_objective = None\n    if raw_baseline_objective is not None:\n        try:\n            baseline_objective = int(raw_baseline_objective)\n        except Exception:\n            return "instance.baseline_objective must be an integer when present"\n\n    if not isinstance(raw_jobs, list):\n        return "instance.jobs must be a list"\n\n    jobs: list[JobSpec] = []\n    for raw_job in raw_jobs:\n        parsed_job = _parse_job(raw_job)\n        if isinstance(parsed_job, str):\n            return parsed_job\n        jobs.append(parsed_job)\n    if not jobs:\n        return "instance.jobs must not be empty"\n\n    return tuple(jobs), n_machines, gold_objective, baseline_objective\n\ndef _parse_job(raw_job: Any) -> JobSpec | str:\n    if not isinstance(raw_job, dict):\n        return "each job must be an object"\n\n    try:\n        job_id = int(raw_job["job_id"])\n    except Exception:\n        return "job.job_id must be an integer"\n\n    parsed_a = _parse_route(raw_job.get("factory_a"), factory_key="factory_a", job_id=job_id)\n    if isinstance(parsed_a, str):\n        return parsed_a\n    parsed_b = _parse_route(raw_job.get("factory_b"), factory_key="factory_b", job_id=job_id)\n    if isinstance(parsed_b, str):\n        return parsed_b\n\n    return JobSpec(job_id=job_id, factory_a=parsed_a, factory_b=parsed_b)\n\ndef _parse_route(raw_route: Any, *, factory_key: str, job_id: int) -> tuple[OperationSpec, ...] | str:\n    if not isinstance(raw_route, list):\n        return f"job {job_id} {factory_key} must be a list"\n    operations: list[OperationSpec] = []\n    for raw_op in raw_route:\n        if not isinstance(raw_op, dict):\n            return f"job {job_id} {factory_key} entries must be objects"\n        machine_name = raw_op.get("machine_name")\n        duration = raw_op.get("duration")\n        if not isinstance(machine_name, str) or not machine_name:\n            return f"job {job_id} {factory_key} machine_name must be a non-empty string"\n        try:\n            duration_int = int(duration)\n        except Exception:\n            return f"job {job_id} {factory_key} duration must be an integer"\n        if duration_int <= 0:\n            return f"job {job_id} {factory_key} duration must be positive"\n        operations.append(OperationSpec(machine_name=machine_name, duration=duration_int))\n    if not operations:\n        return f"job {job_id} {factory_key} must not be empty"\n    return tuple(operations)\n\ndef _verify_schedule(\n    *,\n    jobs: tuple[JobSpec, ...],\n    n_machines: int,\n    schedule: dict[str, Any] | None,\n) -> VerificationResult:\n    if not isinstance(schedule, dict):\n        return VerificationResult(False, None, "schedule must be an object")\n\n    try:\n        factory_a = schedule["factory_a"]\n        factory_b = schedule["factory_b"]\n        claimed_makespan = int(schedule["makespan"])\n    except Exception:\n        return VerificationResult(False, None, "schedule must contain factory_a, factory_b, makespan")\n\n    expected_a = {f"MA{index}" for index in range(1, n_machines + 1)}\n    expected_b = {f"MB{index}" for index in range(1, n_machines + 1)}\n    if not isinstance(factory_a, dict) or not isinstance(factory_b, dict):\n        return VerificationResult(False, None, "factory schedules must be objects")\n\n    parsed_a = _parse_factory_schedule(factory_a, expected_a)\n    if isinstance(parsed_a, str):\n        return VerificationResult(False, None, parsed_a)\n    parsed_b = _parse_factory_schedule(factory_b, expected_b)\n    if isinstance(parsed_b, str):\n        return VerificationResult(False, None, parsed_b)\n\n    jobs_by_id = {job.job_id: job for job in jobs}\n    seen_ops_a: set[tuple[int, str]] = set()\n    seen_ops_b: set[tuple[int, str]] = set()\n    start_a: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}\n    completion_a: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}\n    start_b: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}\n    completion_b: dict[int, dict[str, int]] = {job.job_id: {} for job in jobs}\n    max_end = 0\n\n    for machine_name, entries in parsed_a.items():\n        reason = _check_machine_conflicts(entries)\n        if reason:\n            return VerificationResult(False, None, reason)\n        for job_id, start, end in entries:\n            job = jobs_by_id.get(job_id)\n            if job is None:\n                return VerificationResult(False, None, f"unknown job J{job_id} in {machine_name}")\n            duration = _duration_for_machine(job.factory_a, machine_name)\n            if duration is None:\n                return VerificationResult(False, None, f"job J{job_id} does not use machine {machine_name} in factory A")\n            if end - start != duration:\n                return VerificationResult(\n                    False,\n                    None,\n                    f"duration mismatch for J{job_id} on {machine_name}: expected {duration}, got {end - start}",\n                )\n            key = (job_id, machine_name)\n            if key in seen_ops_a:\n                return VerificationResult(False, None, f"duplicate operation for J{job_id} on {machine_name}")\n            seen_ops_a.add(key)\n            start_a[job_id][machine_name] = start\n            completion_a[job_id][machine_name] = end\n            max_end = max(max_end, end)\n\n    for machine_name, entries in parsed_b.items():\n        reason = _check_machine_conflicts(entries)\n        if reason:\n            return VerificationResult(False, None, reason)\n        for job_id, start, end in entries:\n            job = jobs_by_id.get(job_id)\n            if job is None:\n                return VerificationResult(False, None, f"unknown job J{job_id} in {machine_name}")\n            duration = _duration_for_machine(job.factory_b, machine_name)\n            if duration is None:\n                return VerificationResult(False, None, f"job J{job_id} does not use machine {machine_name} in factory B")\n            if end - start != duration:\n                return VerificationResult(\n                    False,\n                    None,\n                    f"duration mismatch for J{job_id} on {machine_name}: expected {duration}, got {end - start}",\n                )\n            key = (job_id, machine_name)\n            if key in seen_ops_b:\n                return VerificationResult(False, None, f"duplicate operation for J{job_id} on {machine_name}")\n            seen_ops_b.add(key)\n            start_b[job_id][machine_name] = start\n            completion_b[job_id][machine_name] = end\n            max_end = max(max_end, end)\n\n    for job in jobs:\n        expected_a = {(job.job_id, op.machine_name) for op in job.factory_a}\n        expected_b = {(job.job_id, op.machine_name) for op in job.factory_b}\n        if len(seen_ops_a.intersection(expected_a)) != len(job.factory_a):\n            return VerificationResult(False, None, f"missing factory A operations for J{job.job_id}")\n        if len(seen_ops_b.intersection(expected_b)) != len(job.factory_b):\n            return VerificationResult(False, None, f"missing factory B operations for J{job.job_id}")\n\n        reason = _check_route_precedence(job.factory_a, start_a[job.job_id], completion_a[job.job_id])\n        if reason:\n            return VerificationResult(False, None, f"factory A precedence failed for J{job.job_id}: {reason}")\n        reason = _check_route_precedence(job.factory_b, start_b[job.job_id], completion_b[job.job_id])\n        if reason:\n            return VerificationResult(False, None, f"factory B precedence failed for J{job.job_id}: {reason}")\n\n        last_a_machine = job.factory_a[-1].machine_name\n        first_b_machine = job.factory_b[0].machine_name\n        if start_b[job.job_id][first_b_machine] < completion_a[job.job_id][last_a_machine]:\n            return VerificationResult(False, None, f"coupling violation for J{job.job_id}")\n\n    if claimed_makespan != max_end:\n        return VerificationResult(False, None, f"claimed makespan {claimed_makespan} does not match verified {max_end}")\n\n    return VerificationResult(True, max_end, None)\n\ndef _parse_factory_schedule(\n    factory_schedule: dict[str, Any],\n    expected_machines: set[str],\n) -> dict[str, list[tuple[int, int, int]]] | str:\n    parsed: dict[str, list[tuple[int, int, int]]] = {}\n    for machine_name in expected_machines:\n        entries = factory_schedule.get(machine_name, [])\n        if not isinstance(entries, list):\n            return f"machine {machine_name} must map to a list"\n        machine_entries: list[tuple[int, int, int]] = []\n        for item in entries:\n            if not isinstance(item, list) or len(item) != 3:\n                return f"machine {machine_name} entries must be [job, start, end]"\n            job_label, start, end = item\n            try:\n                job_id = int(str(job_label).lstrip("Jj"))\n                start_int = int(start)\n                end_int = int(end)\n            except Exception:\n                return f"machine {machine_name} has non-integer schedule entry"\n            if end_int <= start_int:\n                return f"machine {machine_name} has non-positive duration for J{job_id}"\n            machine_entries.append((job_id, start_int, end_int))\n        parsed[machine_name] = sorted(machine_entries, key=lambda item: (item[1], item[2], item[0]))\n    unknown = set(factory_schedule) - expected_machines\n    if unknown:\n        return f"unknown machines in schedule: {sorted(unknown)}"\n    return parsed\n\ndef _check_machine_conflicts(entries: list[tuple[int, int, int]]) -> str | None:\n    for index in range(1, len(entries)):\n        previous = entries[index - 1]\n        current = entries[index]\n        if current[1] < previous[2]:\n            return f"machine overlap between J{previous[0]} and J{current[0]}"\n    return None\n\ndef _duration_for_machine(route: tuple[OperationSpec, ...], machine_name: str) -> int | None:\n    for op in route:\n        if op.machine_name == machine_name:\n            return op.duration\n    return None\n\ndef _check_route_precedence(\n    route: tuple[OperationSpec, ...],\n    start_lookup: dict[str, int],\n    completion_lookup: dict[str, int],\n) -> str | None:\n    previous_end = None\n    for op in route:\n        machine_name = op.machine_name\n        if machine_name not in start_lookup or machine_name not in completion_lookup:\n            return f"missing timing for {machine_name}"\n        current_start = start_lookup[machine_name]\n        current_end = completion_lookup[machine_name]\n        if previous_end is not None and current_start < previous_end:\n            return f"{machine_name} starts at {current_start} before predecessor finished at {previous_end}"\n        previous_end = current_end\n    return None'
+_CJS_VERIFIER_GLOBALS: dict[str, Any] = {'__name__': '__voicetree_verifier_cjs__', '__file__': 'verifiers/cjs.py'}
+exec(compile(_CJS_VERIFIER_SOURCE, 'verifiers/cjs.py', 'exec'), _CJS_VERIFIER_GLOBALS, _CJS_VERIFIER_GLOBALS)
+cjs_verify = _CJS_VERIFIER_GLOBALS['verify']
 
 # ──────────────────────────────────────────────────────────────────────
-# verifiers/graphcol.py
+# verifiers/graphcol.py (isolated namespace)
 # ──────────────────────────────────────────────────────────────────────
 
-import math
-from dataclasses import dataclass
-from typing import Any
-
-@dataclass(frozen=True)
-class ParsedInstance:
-    nodes: tuple[str, ...]
-    edges: tuple[tuple[str, str], ...]
-    num_colors: int
-    gold_scored_cost: float
-    baseline_scored_cost: float | None
-
-def graphcol_verify(instance: dict[str, Any], submission: dict[str, Any] | None) -> tuple[float, bool, dict[str, Any]]:
-    """BEST_GUESS schema: {"assignment": {"N01": 1, ..., "N30": 4}}."""
-    try:
-        parsed = _parse_instance(instance)
-    except ValueError as exc:
-        return math.inf, False, {"error": str(exc)}
-
-    raw_assignment = submission.get("assignment", submission) if isinstance(submission, dict) else submission
-    if not isinstance(raw_assignment, dict):
-        return math.inf, False, _failure_details(parsed, "submission must be an object with an assignment mapping")
-
-    normalized: dict[str, int] = {}
-    for node in parsed.nodes:
-        if node not in raw_assignment:
-            return math.inf, False, _failure_details(parsed, f"missing color for {node}")
-        try:
-            color = int(raw_assignment[node])
-        except Exception:
-            return math.inf, False, _failure_details(parsed, f"color for {node} is not an integer")
-        if not 1 <= color <= parsed.num_colors:
-            return math.inf, False, _failure_details(
-                parsed,
-                f"color for {node} must be between 1 and {parsed.num_colors}",
-            )
-        normalized[node] = color
-
-    conflict_count = sum(1 for left, right in parsed.edges if normalized[left] == normalized[right])
-    scored_cost = float(parsed.num_colors + conflict_count)
-    gap_pct = 100.0 * (scored_cost - parsed.gold_scored_cost) / parsed.gold_scored_cost
-    details = {
-        "conflict_count": conflict_count,
-        "scored_cost": scored_cost,
-        "gold_scored_cost": parsed.gold_scored_cost,
-        "baseline_scored_cost": parsed.baseline_scored_cost,
-        "normalized_submission": {
-            "assignment": {node: normalized[node] for node in parsed.nodes},
-        },
-    }
-    return gap_pct, True, details
-
-def _parse_instance(instance: dict[str, Any]) -> ParsedInstance:
-    if not isinstance(instance, dict):
-        raise ValueError("instance must be an object")
-
-    raw_nodes = instance.get("nodes")
-    if not isinstance(raw_nodes, list) or not raw_nodes or not all(isinstance(node, str) for node in raw_nodes):
-        raise ValueError("instance.nodes must be a non-empty list of node ids")
-    nodes = tuple(raw_nodes)
-    node_set = set(nodes)
-    if len(node_set) != len(nodes):
-        raise ValueError("instance.nodes contains duplicates")
-
-    raw_edges = instance.get("edges")
-    if not isinstance(raw_edges, list):
-        raise ValueError("instance.edges must be a list")
-    edges: list[tuple[str, str]] = []
-    for raw_edge in raw_edges:
-        if not isinstance(raw_edge, (list, tuple)) or len(raw_edge) != 2:
-            raise ValueError("each edge must be a two-item list")
-        left, right = raw_edge
-        if not isinstance(left, str) or not isinstance(right, str):
-            raise ValueError("edge endpoints must be strings")
-        if left not in node_set or right not in node_set:
-            raise ValueError("edge endpoint missing from instance.nodes")
-        if left == right:
-            raise ValueError("self-loops are not allowed")
-        edges.append((left, right) if left < right else (right, left))
-
-    num_colors = instance.get("num_colors")
-    if not isinstance(num_colors, int) or num_colors <= 0:
-        raise ValueError("instance.num_colors must be a positive integer")
-
-    gold_scored_cost = instance.get("gold_scored_cost")
-    if gold_scored_cost is None:
-        gold_conflicts = instance.get("gold_conflicts")
-        if not isinstance(gold_conflicts, int) or gold_conflicts < 0:
-            raise ValueError("instance must provide gold_scored_cost or a non-negative gold_conflicts")
-        gold_scored_cost = float(num_colors + gold_conflicts)
-    else:
-        gold_scored_cost = float(gold_scored_cost)
-
-    baseline_scored_cost = instance.get("baseline_scored_cost")
-    if baseline_scored_cost is None:
-        baseline_conflicts = instance.get("baseline_conflicts")
-        baseline_scored_cost = (
-            float(num_colors + baseline_conflicts)
-            if isinstance(baseline_conflicts, int) and baseline_conflicts >= 0
-            else None
-        )
-    else:
-        baseline_scored_cost = float(baseline_scored_cost)
-
-    return ParsedInstance(
-        nodes=nodes,
-        edges=tuple(edges),
-        num_colors=num_colors,
-        gold_scored_cost=gold_scored_cost,
-        baseline_scored_cost=baseline_scored_cost,
-    )
-
-def _failure_details(parsed: ParsedInstance, error: str) -> dict[str, Any]:
-    return {
-        "error": error,
-        "gold_scored_cost": parsed.gold_scored_cost,
-        "baseline_scored_cost": parsed.baseline_scored_cost,
-    }
+_GRAPHCOL_VERIFIER_SOURCE = 'import math\nfrom dataclasses import dataclass\nfrom typing import Any\n\n@dataclass(frozen=True)\nclass ParsedInstance:\n    nodes: tuple[str, ...]\n    edges: tuple[tuple[str, str], ...]\n    num_colors: int\n    gold_scored_cost: float\n    baseline_scored_cost: float | None\n\ndef verify(instance: dict[str, Any], submission: dict[str, Any] | None) -> tuple[float, bool, dict[str, Any]]:\n    """BEST_GUESS schema: {"assignment": {"N01": 1, ..., "N30": 4}}."""\n    try:\n        parsed = _parse_instance(instance)\n    except ValueError as exc:\n        return math.inf, False, {"error": str(exc)}\n\n    raw_assignment = submission.get("assignment", submission) if isinstance(submission, dict) else submission\n    if not isinstance(raw_assignment, dict):\n        return math.inf, False, _failure_details(parsed, "submission must be an object with an assignment mapping")\n\n    normalized: dict[str, int] = {}\n    for node in parsed.nodes:\n        if node not in raw_assignment:\n            return math.inf, False, _failure_details(parsed, f"missing color for {node}")\n        try:\n            color = int(raw_assignment[node])\n        except Exception:\n            return math.inf, False, _failure_details(parsed, f"color for {node} is not an integer")\n        if not 1 <= color <= parsed.num_colors:\n            return math.inf, False, _failure_details(\n                parsed,\n                f"color for {node} must be between 1 and {parsed.num_colors}",\n            )\n        normalized[node] = color\n\n    conflict_count = sum(1 for left, right in parsed.edges if normalized[left] == normalized[right])\n    scored_cost = float(parsed.num_colors + conflict_count)\n    gap_pct = 100.0 * (scored_cost - parsed.gold_scored_cost) / parsed.gold_scored_cost\n    details = {\n        "conflict_count": conflict_count,\n        "scored_cost": scored_cost,\n        "gold_scored_cost": parsed.gold_scored_cost,\n        "baseline_scored_cost": parsed.baseline_scored_cost,\n        "normalized_submission": {\n            "assignment": {node: normalized[node] for node in parsed.nodes},\n        },\n    }\n    return gap_pct, True, details\n\ndef _parse_instance(instance: dict[str, Any]) -> ParsedInstance:\n    if not isinstance(instance, dict):\n        raise ValueError("instance must be an object")\n\n    raw_nodes = instance.get("nodes")\n    if not isinstance(raw_nodes, list) or not raw_nodes or not all(isinstance(node, str) for node in raw_nodes):\n        raise ValueError("instance.nodes must be a non-empty list of node ids")\n    nodes = tuple(raw_nodes)\n    node_set = set(nodes)\n    if len(node_set) != len(nodes):\n        raise ValueError("instance.nodes contains duplicates")\n\n    raw_edges = instance.get("edges")\n    if not isinstance(raw_edges, list):\n        raise ValueError("instance.edges must be a list")\n    edges: list[tuple[str, str]] = []\n    for raw_edge in raw_edges:\n        if not isinstance(raw_edge, (list, tuple)) or len(raw_edge) != 2:\n            raise ValueError("each edge must be a two-item list")\n        left, right = raw_edge\n        if not isinstance(left, str) or not isinstance(right, str):\n            raise ValueError("edge endpoints must be strings")\n        if left not in node_set or right not in node_set:\n            raise ValueError("edge endpoint missing from instance.nodes")\n        if left == right:\n            raise ValueError("self-loops are not allowed")\n        edges.append((left, right) if left < right else (right, left))\n\n    num_colors = instance.get("num_colors")\n    if not isinstance(num_colors, int) or num_colors <= 0:\n        raise ValueError("instance.num_colors must be a positive integer")\n\n    gold_scored_cost = instance.get("gold_scored_cost")\n    if gold_scored_cost is None:\n        gold_conflicts = instance.get("gold_conflicts")\n        if not isinstance(gold_conflicts, int) or gold_conflicts < 0:\n            raise ValueError("instance must provide gold_scored_cost or a non-negative gold_conflicts")\n        gold_scored_cost = float(num_colors + gold_conflicts)\n    else:\n        gold_scored_cost = float(gold_scored_cost)\n\n    baseline_scored_cost = instance.get("baseline_scored_cost")\n    if baseline_scored_cost is None:\n        baseline_conflicts = instance.get("baseline_conflicts")\n        baseline_scored_cost = (\n            float(num_colors + baseline_conflicts)\n            if isinstance(baseline_conflicts, int) and baseline_conflicts >= 0\n            else None\n        )\n    else:\n        baseline_scored_cost = float(baseline_scored_cost)\n\n    return ParsedInstance(\n        nodes=nodes,\n        edges=tuple(edges),\n        num_colors=num_colors,\n        gold_scored_cost=gold_scored_cost,\n        baseline_scored_cost=baseline_scored_cost,\n    )\n\ndef _failure_details(parsed: ParsedInstance, error: str) -> dict[str, Any]:\n    return {\n        "error": error,\n        "gold_scored_cost": parsed.gold_scored_cost,\n        "baseline_scored_cost": parsed.baseline_scored_cost,\n    }'
+_GRAPHCOL_VERIFIER_GLOBALS: dict[str, Any] = {'__name__': '__voicetree_verifier_graphcol__', '__file__': 'verifiers/graphcol.py'}
+exec(compile(_GRAPHCOL_VERIFIER_SOURCE, 'verifiers/graphcol.py', 'exec'), _GRAPHCOL_VERIFIER_GLOBALS, _GRAPHCOL_VERIFIER_GLOBALS)
+graphcol_verify = _GRAPHCOL_VERIFIER_GLOBALS['verify']
 
 # ──────────────────────────────────────────────────────────────────────
-# verifiers/mwis.py
+# verifiers/mwis.py (isolated namespace)
 # ──────────────────────────────────────────────────────────────────────
 
-from dataclasses import dataclass
-from typing import Any
-
-@dataclass(frozen=True)
-class InstanceView:
-    node_order: dict[str, int]
-    weights: dict[str, int]
-    edges: tuple[tuple[str, str], ...]
-    optimal_objective: int
-    baseline_objective: int | None
-    baseline_gap_pct: float | None
-
-def mwis_verify(instance: dict[str, Any], submission: dict[str, Any] | None) -> tuple[float, bool, dict[str, Any]]:
-    """BEST_GUESS schema: {"selected_vertices": ["V001", ...], "total_weight": 123}."""
-
-    parsed_instance, instance_error = _parse_instance(instance)
-    if parsed_instance is None:
-        return 100.0, False, {"failure_reason": instance_error}
-
-    normalized_submission, failure_reason = _normalize_submission(parsed_instance, submission)
-    if normalized_submission is None:
-        return 100.0, False, {
-            "failure_reason": failure_reason,
-            "optimal_objective": parsed_instance.optimal_objective,
-            "baseline_objective": parsed_instance.baseline_objective,
-            "baseline_gap_pct": parsed_instance.baseline_gap_pct,
-        }
-
-    submitted_objective = normalized_submission["total_weight"]
-    optimal_objective = parsed_instance.optimal_objective
-    if optimal_objective <= 0:
-        return 100.0, False, {
-            "failure_reason": "optimal_objective must be a positive integer",
-            "submitted_objective": submitted_objective,
-        }
-
-    gap_pct = max(0.0, 100.0 * (optimal_objective - submitted_objective) / optimal_objective)
-    details: dict[str, Any] = {
-        "submitted_objective": submitted_objective,
-        "optimal_objective": optimal_objective,
-        "baseline_objective": parsed_instance.baseline_objective,
-        "baseline_gap_pct": parsed_instance.baseline_gap_pct,
-        "selected_count": len(normalized_submission["selected_vertices"]),
-        "normalized_submission": normalized_submission,
-    }
-    if parsed_instance.baseline_objective is not None:
-        details["improves_on_baseline"] = submitted_objective > parsed_instance.baseline_objective
-    return gap_pct, True, details
-
-def _parse_instance(instance: dict[str, Any]) -> tuple[InstanceView | None, str | None]:
-    if not isinstance(instance, dict):
-        return None, "instance must be an object"
-
-    weights, node_order, weight_error = _parse_vertices(instance.get("vertices"))
-    if weights is None or node_order is None:
-        return None, weight_error
-
-    edges, edge_error = _parse_edges(instance.get("edges"), weights)
-    if edges is None:
-        return None, edge_error
-
-    optimal_objective, error = _parse_int_field(
-        instance.get("optimal_objective"),
-        field_name="optimal_objective",
-    )
-    if error and isinstance(instance.get("optimal_answer"), dict):
-        optimal_objective, error = _parse_int_field(
-            instance["optimal_answer"].get("total_weight"),
-            field_name="optimal_answer.total_weight",
-        )
-    if error:
-        return None, error
-
-    baseline_objective: int | None = None
-    baseline_error: str | None = None
-    if "baseline_objective" in instance:
-        baseline_objective, baseline_error = _parse_int_field(
-            instance.get("baseline_objective"),
-            field_name="baseline_objective",
-        )
-    elif isinstance(instance.get("baseline_answer"), dict):
-        baseline_objective, baseline_error = _parse_int_field(
-            instance["baseline_answer"].get("total_weight"),
-            field_name="baseline_answer.total_weight",
-        )
-    if baseline_error:
-        return None, baseline_error
-
-    baseline_gap_pct: float | None = None
-    raw_baseline_gap = instance.get("baseline_gap_pct")
-    if raw_baseline_gap is not None:
-        try:
-            baseline_gap_pct = float(raw_baseline_gap)
-        except Exception:
-            return None, "baseline_gap_pct must be numeric"
-
-    return (
-        InstanceView(
-            node_order=node_order,
-            weights=weights,
-            edges=edges,
-            optimal_objective=optimal_objective,
-            baseline_objective=baseline_objective,
-            baseline_gap_pct=baseline_gap_pct,
-        ),
-        None,
-    )
-
-def _parse_vertices(
-    raw_vertices: Any,
-) -> tuple[dict[str, int] | None, dict[str, int] | None, str | None]:
-    if not isinstance(raw_vertices, list):
-        return None, None, "instance.vertices must be a list"
-
-    weights: dict[str, int] = {}
-    node_order: dict[str, int] = {}
-    for index, item in enumerate(raw_vertices):
-        if not isinstance(item, dict):
-            return None, None, "each instance.vertices entry must be an object"
-        raw_vertex = item.get("vertex_id")
-        if not isinstance(raw_vertex, str) or not raw_vertex.strip():
-            return None, None, "each vertex must have a non-empty string vertex_id"
-        vertex = raw_vertex.strip()
-        if vertex in weights:
-            return None, None, f"duplicate vertex_id {vertex}"
-        try:
-            weight = int(item.get("weight"))
-        except Exception:
-            return None, None, f"weight for {vertex} must be an integer"
-        weights[vertex] = weight
-        node_order[vertex] = index
-    if not weights:
-        return None, None, "instance must contain at least one vertex"
-    return weights, node_order, None
-
-def _parse_edges(
-    raw_edges: Any,
-    weights: dict[str, int],
-) -> tuple[tuple[tuple[str, str], ...] | None, str | None]:
-    if not isinstance(raw_edges, list):
-        return None, "instance.edges must be a list"
-
-    edge_set: set[tuple[str, str]] = set()
-    for item in raw_edges:
-        if not isinstance(item, (list, tuple)) or len(item) != 2:
-            return None, "each edge must be a two-item list"
-        left_raw, right_raw = item
-        if not isinstance(left_raw, str) or not isinstance(right_raw, str):
-            return None, "edge endpoints must be strings"
-        left = left_raw.strip()
-        right = right_raw.strip()
-        if left not in weights or right not in weights:
-            return None, f"unknown edge endpoint in {item!r}"
-        if left == right:
-            return None, f"self-loop {left} is not allowed"
-        edge_set.add(_edge(left, right))
-    return tuple(sorted(edge_set)), None
-
-def _parse_int_field(raw_value: Any, *, field_name: str) -> tuple[int, str | None]:
-    try:
-        return int(raw_value), None
-    except Exception:
-        return 0, f"{field_name} must be an integer"
-
-def _normalize_submission(
-    instance: InstanceView,
-    submission: dict[str, Any] | None,
-) -> tuple[dict[str, Any] | None, str | None]:
-    if not isinstance(submission, dict):
-        return None, "submission must be an object"
-
-    raw_vertices = submission.get("selected_vertices")
-    if not isinstance(raw_vertices, list):
-        return None, "selected_vertices must be a list"
-
-    raw_total_weight = submission.get("total_weight")
-    try:
-        claimed_total_weight = int(raw_total_weight)
-    except Exception:
-        return None, "total_weight must be an integer"
-
-    seen: set[str] = set()
-    normalized_vertices: list[str] = []
-    for raw_vertex in raw_vertices:
-        if not isinstance(raw_vertex, str):
-            return None, "selected_vertices entries must be strings"
-        vertex = raw_vertex.strip()
-        if vertex not in instance.weights:
-            return None, f"unknown vertex {raw_vertex!r}"
-        if vertex in seen:
-            return None, f"duplicate vertex {vertex}"
-        seen.add(vertex)
-        normalized_vertices.append(vertex)
-
-    selected_set = set(normalized_vertices)
-    for left, right in instance.edges:
-        if left in selected_set and right in selected_set:
-            return None, f"selected set is not independent: edge {left}-{right} is internal"
-
-    verified_total_weight = sum(instance.weights[vertex] for vertex in normalized_vertices)
-    if verified_total_weight != claimed_total_weight:
-        return None, (
-            f"claimed total_weight {claimed_total_weight} does not match computed {verified_total_weight}"
-        )
-
-    ordered_vertices = sorted(normalized_vertices, key=instance.node_order.__getitem__)
-    return {
-        "selected_vertices": ordered_vertices,
-        "total_weight": verified_total_weight,
-    }, None
-
-def _edge(left: str, right: str) -> tuple[str, str]:
-    return (left, right) if left < right else (right, left)
+_MWIS_VERIFIER_SOURCE = 'from dataclasses import dataclass\nfrom typing import Any\n\n@dataclass(frozen=True)\nclass InstanceView:\n    node_order: dict[str, int]\n    weights: dict[str, int]\n    edges: tuple[tuple[str, str], ...]\n    optimal_objective: int\n    baseline_objective: int | None\n    baseline_gap_pct: float | None\n\ndef verify(instance: dict[str, Any], submission: dict[str, Any] | None) -> tuple[float, bool, dict[str, Any]]:\n    """BEST_GUESS schema: {"selected_vertices": ["V001", ...], "total_weight": 123}."""\n\n    parsed_instance, instance_error = _parse_instance(instance)\n    if parsed_instance is None:\n        return 100.0, False, {"failure_reason": instance_error}\n\n    normalized_submission, failure_reason = _normalize_submission(parsed_instance, submission)\n    if normalized_submission is None:\n        return 100.0, False, {\n            "failure_reason": failure_reason,\n            "optimal_objective": parsed_instance.optimal_objective,\n            "baseline_objective": parsed_instance.baseline_objective,\n            "baseline_gap_pct": parsed_instance.baseline_gap_pct,\n        }\n\n    submitted_objective = normalized_submission["total_weight"]\n    optimal_objective = parsed_instance.optimal_objective\n    if optimal_objective <= 0:\n        return 100.0, False, {\n            "failure_reason": "optimal_objective must be a positive integer",\n            "submitted_objective": submitted_objective,\n        }\n\n    gap_pct = max(0.0, 100.0 * (optimal_objective - submitted_objective) / optimal_objective)\n    details: dict[str, Any] = {\n        "submitted_objective": submitted_objective,\n        "optimal_objective": optimal_objective,\n        "baseline_objective": parsed_instance.baseline_objective,\n        "baseline_gap_pct": parsed_instance.baseline_gap_pct,\n        "selected_count": len(normalized_submission["selected_vertices"]),\n        "normalized_submission": normalized_submission,\n    }\n    if parsed_instance.baseline_objective is not None:\n        details["improves_on_baseline"] = submitted_objective > parsed_instance.baseline_objective\n    return gap_pct, True, details\n\ndef _parse_instance(instance: dict[str, Any]) -> tuple[InstanceView | None, str | None]:\n    if not isinstance(instance, dict):\n        return None, "instance must be an object"\n\n    weights, node_order, weight_error = _parse_vertices(instance.get("vertices"))\n    if weights is None or node_order is None:\n        return None, weight_error\n\n    edges, edge_error = _parse_edges(instance.get("edges"), weights)\n    if edges is None:\n        return None, edge_error\n\n    optimal_objective, error = _parse_int_field(\n        instance.get("optimal_objective"),\n        field_name="optimal_objective",\n    )\n    if error and isinstance(instance.get("optimal_answer"), dict):\n        optimal_objective, error = _parse_int_field(\n            instance["optimal_answer"].get("total_weight"),\n            field_name="optimal_answer.total_weight",\n        )\n    if error:\n        return None, error\n\n    baseline_objective: int | None = None\n    baseline_error: str | None = None\n    if "baseline_objective" in instance:\n        baseline_objective, baseline_error = _parse_int_field(\n            instance.get("baseline_objective"),\n            field_name="baseline_objective",\n        )\n    elif isinstance(instance.get("baseline_answer"), dict):\n        baseline_objective, baseline_error = _parse_int_field(\n            instance["baseline_answer"].get("total_weight"),\n            field_name="baseline_answer.total_weight",\n        )\n    if baseline_error:\n        return None, baseline_error\n\n    baseline_gap_pct: float | None = None\n    raw_baseline_gap = instance.get("baseline_gap_pct")\n    if raw_baseline_gap is not None:\n        try:\n            baseline_gap_pct = float(raw_baseline_gap)\n        except Exception:\n            return None, "baseline_gap_pct must be numeric"\n\n    return (\n        InstanceView(\n            node_order=node_order,\n            weights=weights,\n            edges=edges,\n            optimal_objective=optimal_objective,\n            baseline_objective=baseline_objective,\n            baseline_gap_pct=baseline_gap_pct,\n        ),\n        None,\n    )\n\ndef _parse_vertices(\n    raw_vertices: Any,\n) -> tuple[dict[str, int] | None, dict[str, int] | None, str | None]:\n    if not isinstance(raw_vertices, list):\n        return None, None, "instance.vertices must be a list"\n\n    weights: dict[str, int] = {}\n    node_order: dict[str, int] = {}\n    for index, item in enumerate(raw_vertices):\n        if not isinstance(item, dict):\n            return None, None, "each instance.vertices entry must be an object"\n        raw_vertex = item.get("vertex_id")\n        if not isinstance(raw_vertex, str) or not raw_vertex.strip():\n            return None, None, "each vertex must have a non-empty string vertex_id"\n        vertex = raw_vertex.strip()\n        if vertex in weights:\n            return None, None, f"duplicate vertex_id {vertex}"\n        try:\n            weight = int(item.get("weight"))\n        except Exception:\n            return None, None, f"weight for {vertex} must be an integer"\n        weights[vertex] = weight\n        node_order[vertex] = index\n    if not weights:\n        return None, None, "instance must contain at least one vertex"\n    return weights, node_order, None\n\ndef _parse_edges(\n    raw_edges: Any,\n    weights: dict[str, int],\n) -> tuple[tuple[tuple[str, str], ...] | None, str | None]:\n    if not isinstance(raw_edges, list):\n        return None, "instance.edges must be a list"\n\n    edge_set: set[tuple[str, str]] = set()\n    for item in raw_edges:\n        if not isinstance(item, (list, tuple)) or len(item) != 2:\n            return None, "each edge must be a two-item list"\n        left_raw, right_raw = item\n        if not isinstance(left_raw, str) or not isinstance(right_raw, str):\n            return None, "edge endpoints must be strings"\n        left = left_raw.strip()\n        right = right_raw.strip()\n        if left not in weights or right not in weights:\n            return None, f"unknown edge endpoint in {item!r}"\n        if left == right:\n            return None, f"self-loop {left} is not allowed"\n        edge_set.add(_edge(left, right))\n    return tuple(sorted(edge_set)), None\n\ndef _parse_int_field(raw_value: Any, *, field_name: str) -> tuple[int, str | None]:\n    try:\n        return int(raw_value), None\n    except Exception:\n        return 0, f"{field_name} must be an integer"\n\ndef _normalize_submission(\n    instance: InstanceView,\n    submission: dict[str, Any] | None,\n) -> tuple[dict[str, Any] | None, str | None]:\n    if not isinstance(submission, dict):\n        return None, "submission must be an object"\n\n    raw_vertices = submission.get("selected_vertices")\n    if not isinstance(raw_vertices, list):\n        return None, "selected_vertices must be a list"\n\n    raw_total_weight = submission.get("total_weight")\n    try:\n        claimed_total_weight = int(raw_total_weight)\n    except Exception:\n        return None, "total_weight must be an integer"\n\n    seen: set[str] = set()\n    normalized_vertices: list[str] = []\n    for raw_vertex in raw_vertices:\n        if not isinstance(raw_vertex, str):\n            return None, "selected_vertices entries must be strings"\n        vertex = raw_vertex.strip()\n        if vertex not in instance.weights:\n            return None, f"unknown vertex {raw_vertex!r}"\n        if vertex in seen:\n            return None, f"duplicate vertex {vertex}"\n        seen.add(vertex)\n        normalized_vertices.append(vertex)\n\n    selected_set = set(normalized_vertices)\n    for left, right in instance.edges:\n        if left in selected_set and right in selected_set:\n            return None, f"selected set is not independent: edge {left}-{right} is internal"\n\n    verified_total_weight = sum(instance.weights[vertex] for vertex in normalized_vertices)\n    if verified_total_weight != claimed_total_weight:\n        return None, (\n            f"claimed total_weight {claimed_total_weight} does not match computed {verified_total_weight}"\n        )\n\n    ordered_vertices = sorted(normalized_vertices, key=instance.node_order.__getitem__)\n    return {\n        "selected_vertices": ordered_vertices,\n        "total_weight": verified_total_weight,\n    }, None\n\ndef _edge(left: str, right: str) -> tuple[str, str]:\n    return (left, right) if left < right else (right, left)'
+_MWIS_VERIFIER_GLOBALS: dict[str, Any] = {'__name__': '__voicetree_verifier_mwis__', '__file__': 'verifiers/mwis.py'}
+exec(compile(_MWIS_VERIFIER_SOURCE, 'verifiers/mwis.py', 'exec'), _MWIS_VERIFIER_GLOBALS, _MWIS_VERIFIER_GLOBALS)
+mwis_verify = _MWIS_VERIFIER_GLOBALS['verify']
 
 # ──────────────────────────────────────────────────────────────────────
-# verifiers/steiner.py
+# verifiers/steiner.py (isolated namespace)
 # ──────────────────────────────────────────────────────────────────────
 
-from typing import Any
-
-FREQ_PENALTY = 15
-
-def steiner_verify(instance: dict[str, Any], submission: dict[str, Any] | None) -> tuple[float, bool, dict[str, Any]]:
-    """BEST_GUESS schema: {"edges": [["VillageA", "VillageB"], ...], "frequencies": {"VillageA": 1, ...}}."""
-
-    villages = tuple(_require_list_of_strings(instance, "villages"))
-    terminals = tuple(_require_list_of_strings(instance, "terminals"))
-    edges = _require_edges(instance)
-    interference_pairs = tuple(tuple(pair) for pair in _require_string_pairs(instance, "interference_pairs"))
-    baseline_cost = int(instance["baseline_cost"])
-    gold_cost = int(instance["gold_cost"])
-    freq_penalty = int(instance.get("freq_penalty", FREQ_PENALTY))
-    village_order = {village: index for index, village in enumerate(villages)}
-    edge_lookup = {canonical_edge(edge["u"], edge["v"]): int(edge["cost"]) for edge in edges}
-
-    check = _evaluate_submission(
-        villages=villages,
-        terminals=terminals,
-        interference_pairs=interference_pairs,
-        village_order=village_order,
-        edge_lookup=edge_lookup,
-        submission=submission,
-        freq_penalty=freq_penalty,
-    )
-
-    if check["feasible"]:
-        scored_cost = int(check["computed_cost"])
-        feasible = True
-        used_baseline_fallback = False
-    else:
-        scored_cost = baseline_cost
-        feasible = False
-        used_baseline_fallback = True
-
-    gap_pct = 100.0 * (scored_cost - gold_cost) / gold_cost
-    details = {
-        "failure_reason": check["failure_reason"],
-        "computed_cost": check["computed_cost"],
-        "scored_cost": scored_cost,
-        "edge_cost": check["edge_cost"],
-        "num_frequencies_used": check["num_frequencies_used"],
-        "normalized_submission": check["normalized_submission"],
-        "baseline_cost": baseline_cost,
-        "gold_cost": gold_cost,
-        "used_baseline_fallback": used_baseline_fallback,
-    }
-    return gap_pct, feasible, details
-
-def canonical_edge(u: str, v: str) -> tuple[str, str]:
-    if u == v:
-        raise ValueError(f"self loops are not allowed: {u}")
-    return (u, v) if u < v else (v, u)
-
-def ordered_edges(
-    edge_keys: set[tuple[str, str]] | tuple[tuple[str, str], ...],
-    villages: tuple[str, ...],
-) -> list[tuple[str, str]]:
-    order = {village: index for index, village in enumerate(villages)}
-    return sorted(edge_keys, key=lambda item: (order[item[0]], order[item[1]]))
-
-def active_villages_for_edges(
-    terminals: tuple[str, ...],
-    edge_keys: set[tuple[str, str]],
-    villages: tuple[str, ...],
-) -> tuple[str, ...]:
-    active = set(terminals)
-    for u, v in edge_keys:
-        active.add(u)
-        active.add(v)
-    return tuple(village for village in villages if village in active)
-
-def _require_list_of_strings(instance: dict[str, Any], key: str) -> list[str]:
-    value = instance.get(key)
-    if not isinstance(value, list) or not all(isinstance(item, str) for item in value):
-        raise ValueError(f"instance[{key!r}] must be a list of strings")
-    return value
-
-def _require_string_pairs(instance: dict[str, Any], key: str) -> list[list[str]]:
-    value = instance.get(key)
-    if not isinstance(value, list):
-        raise ValueError(f"instance[{key!r}] must be a list")
-    normalized: list[list[str]] = []
-    for item in value:
-        if not isinstance(item, list | tuple) or len(item) != 2:
-            raise ValueError(f"instance[{key!r}] must contain two-item pairs")
-        left, right = item
-        if not isinstance(left, str) or not isinstance(right, str):
-            raise ValueError(f"instance[{key!r}] must contain string pairs")
-        normalized.append([left, right])
-    return normalized
-
-def _require_edges(instance: dict[str, Any]) -> list[dict[str, Any]]:
-    value = instance.get("edges")
-    if not isinstance(value, list):
-        raise ValueError("instance['edges'] must be a list")
-    normalized: list[dict[str, Any]] = []
-    for item in value:
-        if not isinstance(item, dict):
-            raise ValueError("instance['edges'] entries must be objects")
-        u = item.get("u")
-        v = item.get("v")
-        cost = item.get("cost")
-        if not isinstance(u, str) or not isinstance(v, str):
-            raise ValueError("instance['edges'] entries must contain string u/v fields")
-        normalized.append({"u": u, "v": v, "cost": int(cost)})
-    return normalized
-
-def _evaluate_submission(
-    *,
-    villages: tuple[str, ...],
-    terminals: tuple[str, ...],
-    interference_pairs: tuple[tuple[str, str], ...],
-    village_order: dict[str, int],
-    edge_lookup: dict[tuple[str, str], int],
-    submission: dict[str, Any] | None,
-    freq_penalty: int,
-) -> dict[str, Any]:
-    if not isinstance(submission, dict):
-        return _failure("submission must be an object")
-
-    raw_edges = submission.get("edges")
-    canonical_edges = _normalize_edges(edge_lookup, raw_edges)
-    if isinstance(canonical_edges, str):
-        return _failure(canonical_edges)
-
-    active = active_villages_for_edges(terminals, canonical_edges, villages)
-    if len(canonical_edges) != len(active) - 1:
-        return _failure("chosen cable links do not form a tree on the active villages")
-    if not _is_connected(active, canonical_edges):
-        return _failure("chosen cable links do not connect the active villages")
-    if not set(terminals).issubset(active):
-        return _failure("all required terminals must be active")
-
-    frequencies = _normalize_frequencies(submission.get("frequencies"))
-    if isinstance(frequencies, str):
-        return _failure(frequencies)
-
-    missing = [village for village in active if village not in frequencies]
-    if missing:
-        return _failure(f"missing frequencies for active villages: {missing}")
-
-    active_set = set(active)
-    for u, v in interference_pairs:
-        if u in active_set and v in active_set and frequencies[u] == frequencies[v]:
-            return _failure(f"interference violation between {u} and {v}")
-
-    edge_cost = sum(edge_lookup[edge] for edge in canonical_edges)
-    num_frequencies_used = len({frequencies[village] for village in active})
-    computed_cost = edge_cost + freq_penalty * num_frequencies_used
-    normalized_submission = {
-        "edges": [list(edge) for edge in ordered_edges(canonical_edges, villages)],
-        "frequencies": {
-            village: frequencies[village]
-            for village in sorted(active, key=lambda name: village_order[name])
-        },
-    }
-    return {
-        "feasible": True,
-        "failure_reason": None,
-        "computed_cost": computed_cost,
-        "edge_cost": edge_cost,
-        "num_frequencies_used": num_frequencies_used,
-        "normalized_submission": normalized_submission,
-    }
-
-def _normalize_edges(
-    edge_lookup: dict[tuple[str, str], int],
-    raw_edges: Any,
-) -> set[tuple[str, str]] | str:
-    if not isinstance(raw_edges, list):
-        return "edges must be a list"
-    canonical: set[tuple[str, str]] = set()
-    for item in raw_edges:
-        if not isinstance(item, list | tuple) or len(item) != 2:
-            return "each edge must be a two-item list"
-        try:
-            u = str(item[0]).strip()
-            v = str(item[1]).strip()
-        except Exception:
-            return "edges must contain village names"
-        edge = canonical_edge(u, v)
-        if edge not in edge_lookup:
-            return f"unknown cable edge: {edge[0]}-{edge[1]}"
-        canonical.add(edge)
-    return canonical
-
-def _normalize_frequencies(raw_frequencies: Any) -> dict[str, int] | str:
-    if not isinstance(raw_frequencies, dict):
-        return "frequencies must be an object"
-    normalized: dict[str, int] = {}
-    for village, value in raw_frequencies.items():
-        try:
-            freq = int(value)
-        except Exception:
-            return f"frequency for {village} is not an integer"
-        if freq <= 0:
-            return f"frequency for {village} must be positive"
-        normalized[str(village).strip()] = freq
-    return normalized
-
-def _is_connected(active: tuple[str, ...], edges: set[tuple[str, str]]) -> bool:
-    if not active:
-        return False
-    adjacency = {village: set() for village in active}
-    for u, v in edges:
-        adjacency[u].add(v)
-        adjacency[v].add(u)
-    stack = [active[0]]
-    seen: set[str] = set()
-    while stack:
-        village = stack.pop()
-        if village in seen:
-            continue
-        seen.add(village)
-        stack.extend(adjacency[village] - seen)
-    return seen == set(active)
-
-def _failure(reason: str) -> dict[str, Any]:
-    return {
-        "feasible": False,
-        "failure_reason": reason,
-        "computed_cost": None,
-        "edge_cost": None,
-        "num_frequencies_used": None,
-        "normalized_submission": None,
-    }
+_STEINER_VERIFIER_SOURCE = 'from typing import Any\n\nFREQ_PENALTY = 15\n\ndef verify(instance: dict[str, Any], submission: dict[str, Any] | None) -> tuple[float, bool, dict[str, Any]]:\n    """BEST_GUESS schema: {"edges": [["VillageA", "VillageB"], ...], "frequencies": {"VillageA": 1, ...}}."""\n\n    villages = tuple(_require_list_of_strings(instance, "villages"))\n    terminals = tuple(_require_list_of_strings(instance, "terminals"))\n    edges = _require_edges(instance)\n    interference_pairs = tuple(tuple(pair) for pair in _require_string_pairs(instance, "interference_pairs"))\n    baseline_cost = int(instance["baseline_cost"])\n    gold_cost = int(instance["gold_cost"])\n    freq_penalty = int(instance.get("freq_penalty", FREQ_PENALTY))\n    village_order = {village: index for index, village in enumerate(villages)}\n    edge_lookup = {canonical_edge(edge["u"], edge["v"]): int(edge["cost"]) for edge in edges}\n\n    check = _evaluate_submission(\n        villages=villages,\n        terminals=terminals,\n        interference_pairs=interference_pairs,\n        village_order=village_order,\n        edge_lookup=edge_lookup,\n        submission=submission,\n        freq_penalty=freq_penalty,\n    )\n\n    if check["feasible"]:\n        scored_cost = int(check["computed_cost"])\n        feasible = True\n        used_baseline_fallback = False\n    else:\n        scored_cost = baseline_cost\n        feasible = False\n        used_baseline_fallback = True\n\n    gap_pct = 100.0 * (scored_cost - gold_cost) / gold_cost\n    details = {\n        "failure_reason": check["failure_reason"],\n        "computed_cost": check["computed_cost"],\n        "scored_cost": scored_cost,\n        "edge_cost": check["edge_cost"],\n        "num_frequencies_used": check["num_frequencies_used"],\n        "normalized_submission": check["normalized_submission"],\n        "baseline_cost": baseline_cost,\n        "gold_cost": gold_cost,\n        "used_baseline_fallback": used_baseline_fallback,\n    }\n    return gap_pct, feasible, details\n\ndef canonical_edge(u: str, v: str) -> tuple[str, str]:\n    if u == v:\n        raise ValueError(f"self loops are not allowed: {u}")\n    return (u, v) if u < v else (v, u)\n\ndef ordered_edges(\n    edge_keys: set[tuple[str, str]] | tuple[tuple[str, str], ...],\n    villages: tuple[str, ...],\n) -> list[tuple[str, str]]:\n    order = {village: index for index, village in enumerate(villages)}\n    return sorted(edge_keys, key=lambda item: (order[item[0]], order[item[1]]))\n\ndef active_villages_for_edges(\n    terminals: tuple[str, ...],\n    edge_keys: set[tuple[str, str]],\n    villages: tuple[str, ...],\n) -> tuple[str, ...]:\n    active = set(terminals)\n    for u, v in edge_keys:\n        active.add(u)\n        active.add(v)\n    return tuple(village for village in villages if village in active)\n\ndef _require_list_of_strings(instance: dict[str, Any], key: str) -> list[str]:\n    value = instance.get(key)\n    if not isinstance(value, list) or not all(isinstance(item, str) for item in value):\n        raise ValueError(f"instance[{key!r}] must be a list of strings")\n    return value\n\ndef _require_string_pairs(instance: dict[str, Any], key: str) -> list[list[str]]:\n    value = instance.get(key)\n    if not isinstance(value, list):\n        raise ValueError(f"instance[{key!r}] must be a list")\n    normalized: list[list[str]] = []\n    for item in value:\n        if not isinstance(item, list | tuple) or len(item) != 2:\n            raise ValueError(f"instance[{key!r}] must contain two-item pairs")\n        left, right = item\n        if not isinstance(left, str) or not isinstance(right, str):\n            raise ValueError(f"instance[{key!r}] must contain string pairs")\n        normalized.append([left, right])\n    return normalized\n\ndef _require_edges(instance: dict[str, Any]) -> list[dict[str, Any]]:\n    value = instance.get("edges")\n    if not isinstance(value, list):\n        raise ValueError("instance[\'edges\'] must be a list")\n    normalized: list[dict[str, Any]] = []\n    for item in value:\n        if not isinstance(item, dict):\n            raise ValueError("instance[\'edges\'] entries must be objects")\n        u = item.get("u")\n        v = item.get("v")\n        cost = item.get("cost")\n        if not isinstance(u, str) or not isinstance(v, str):\n            raise ValueError("instance[\'edges\'] entries must contain string u/v fields")\n        normalized.append({"u": u, "v": v, "cost": int(cost)})\n    return normalized\n\ndef _evaluate_submission(\n    *,\n    villages: tuple[str, ...],\n    terminals: tuple[str, ...],\n    interference_pairs: tuple[tuple[str, str], ...],\n    village_order: dict[str, int],\n    edge_lookup: dict[tuple[str, str], int],\n    submission: dict[str, Any] | None,\n    freq_penalty: int,\n) -> dict[str, Any]:\n    if not isinstance(submission, dict):\n        return _failure("submission must be an object")\n\n    raw_edges = submission.get("edges")\n    canonical_edges = _normalize_edges(edge_lookup, raw_edges)\n    if isinstance(canonical_edges, str):\n        return _failure(canonical_edges)\n\n    active = active_villages_for_edges(terminals, canonical_edges, villages)\n    if len(canonical_edges) != len(active) - 1:\n        return _failure("chosen cable links do not form a tree on the active villages")\n    if not _is_connected(active, canonical_edges):\n        return _failure("chosen cable links do not connect the active villages")\n    if not set(terminals).issubset(active):\n        return _failure("all required terminals must be active")\n\n    frequencies = _normalize_frequencies(submission.get("frequencies"))\n    if isinstance(frequencies, str):\n        return _failure(frequencies)\n\n    missing = [village for village in active if village not in frequencies]\n    if missing:\n        return _failure(f"missing frequencies for active villages: {missing}")\n\n    active_set = set(active)\n    for u, v in interference_pairs:\n        if u in active_set and v in active_set and frequencies[u] == frequencies[v]:\n            return _failure(f"interference violation between {u} and {v}")\n\n    edge_cost = sum(edge_lookup[edge] for edge in canonical_edges)\n    num_frequencies_used = len({frequencies[village] for village in active})\n    computed_cost = edge_cost + freq_penalty * num_frequencies_used\n    normalized_submission = {\n        "edges": [list(edge) for edge in ordered_edges(canonical_edges, villages)],\n        "frequencies": {\n            village: frequencies[village]\n            for village in sorted(active, key=lambda name: village_order[name])\n        },\n    }\n    return {\n        "feasible": True,\n        "failure_reason": None,\n        "computed_cost": computed_cost,\n        "edge_cost": edge_cost,\n        "num_frequencies_used": num_frequencies_used,\n        "normalized_submission": normalized_submission,\n    }\n\ndef _normalize_edges(\n    edge_lookup: dict[tuple[str, str], int],\n    raw_edges: Any,\n) -> set[tuple[str, str]] | str:\n    if not isinstance(raw_edges, list):\n        return "edges must be a list"\n    canonical: set[tuple[str, str]] = set()\n    for item in raw_edges:\n        if not isinstance(item, list | tuple) or len(item) != 2:\n            return "each edge must be a two-item list"\n        try:\n            u = str(item[0]).strip()\n            v = str(item[1]).strip()\n        except Exception:\n            return "edges must contain village names"\n        edge = canonical_edge(u, v)\n        if edge not in edge_lookup:\n            return f"unknown cable edge: {edge[0]}-{edge[1]}"\n        canonical.add(edge)\n    return canonical\n\ndef _normalize_frequencies(raw_frequencies: Any) -> dict[str, int] | str:\n    if not isinstance(raw_frequencies, dict):\n        return "frequencies must be an object"\n    normalized: dict[str, int] = {}\n    for village, value in raw_frequencies.items():\n        try:\n            freq = int(value)\n        except Exception:\n            return f"frequency for {village} is not an integer"\n        if freq <= 0:\n            return f"frequency for {village} must be positive"\n        normalized[str(village).strip()] = freq\n    return normalized\n\ndef _is_connected(active: tuple[str, ...], edges: set[tuple[str, str]]) -> bool:\n    if not active:\n        return False\n    adjacency = {village: set() for village in active}\n    for u, v in edges:\n        adjacency[u].add(v)\n        adjacency[v].add(u)\n    stack = [active[0]]\n    seen: set[str] = set()\n    while stack:\n        village = stack.pop()\n        if village in seen:\n            continue\n        seen.add(village)\n        stack.extend(adjacency[village] - seen)\n    return seen == set(active)\n\ndef _failure(reason: str) -> dict[str, Any]:\n    return {\n        "feasible": False,\n        "failure_reason": reason,\n        "computed_cost": None,\n        "edge_cost": None,\n        "num_frequencies_used": None,\n        "normalized_submission": None,\n    }'
+_STEINER_VERIFIER_GLOBALS: dict[str, Any] = {'__name__': '__voicetree_verifier_steiner__', '__file__': 'verifiers/steiner.py'}
+exec(compile(_STEINER_VERIFIER_SOURCE, 'verifiers/steiner.py', 'exec'), _STEINER_VERIFIER_GLOBALS, _STEINER_VERIFIER_GLOBALS)
+steiner_verify = _STEINER_VERIFIER_GLOBALS['verify']
 
 # ──────────────────────────────────────────────────────────────────────
-# verifiers/tsp.py
+# verifiers/tsp.py (isolated namespace)
 # ──────────────────────────────────────────────────────────────────────
 
-from math import hypot
-from typing import Any
-
-INVALID_GAP_PCT = 100.0
-
-def tsp_verify(instance: dict[str, Any], submission: dict[str, Any] | list[int] | tuple[int, ...]) -> tuple[float, bool, dict[str, Any]]:
-    """BEST_GUESS JSON schema: {"tour": [0, 7, 3, ...]} with every city index exactly once."""
-
-    try:
-        coords = _parse_coords(instance.get("coords"))
-        optimal_length = _read_positive_float(instance, "optimal_length")
-    except (TypeError, ValueError) as exc:
-        details = {"failure_reason": f"invalid instance: {exc}"}
-        return INVALID_GAP_PCT, False, details
-
-    baseline_length = _read_optional_float(instance, "baseline_length")
-    raw_tour = submission.get("tour") if isinstance(submission, dict) else submission
-    normalized_tour, failure_reason = _normalize_submission(coords, raw_tour)
-    if failure_reason is not None:
-        details = {
-            "failure_reason": failure_reason,
-            "baseline_length": baseline_length,
-            "optimal_length": optimal_length,
-        }
-        return INVALID_GAP_PCT, False, details
-
-    computed_length = _tour_length(coords, normalized_tour)
-    gap_pct = 100.0 * max(0.0, computed_length - optimal_length) / optimal_length
-    details = {
-        "computed_length": computed_length,
-        "baseline_length": baseline_length,
-        "optimal_length": optimal_length,
-        "normalized_tour": list(normalized_tour),
-    }
-    return gap_pct, True, details
-
-def _parse_coords(raw_coords: Any) -> tuple[tuple[int, int], ...]:
-    if not isinstance(raw_coords, list):
-        raise TypeError("coords must be a list")
-    coords: list[tuple[int, int]] = []
-    for item in raw_coords:
-        if not isinstance(item, list | tuple) or len(item) != 2:
-            raise TypeError("each coordinate must be a two-item list")
-        x = int(item[0])
-        y = int(item[1])
-        coords.append((x, y))
-    if not coords:
-        raise ValueError("coords must not be empty")
-    return tuple(coords)
-
-def _normalize_submission(
-    coords: tuple[tuple[int, int], ...],
-    raw_tour: Any,
-) -> tuple[tuple[int, ...], str | None]:
-    if not isinstance(raw_tour, list | tuple):
-        return tuple(), "submission must provide tour as a list of city indices"
-
-    n = len(coords)
-    if len(raw_tour) != n:
-        return tuple(), f"tour must contain exactly {n} cities"
-
-    normalized: list[int] = []
-    seen: set[int] = set()
-    for item in raw_tour:
-        try:
-            city = int(item)
-        except Exception:
-            return tuple(), "tour items must be integers"
-        if not 0 <= city < n:
-            return tuple(), f"city index {city} is out of range"
-        if city in seen:
-            return tuple(), f"city {city} appears more than once"
-        normalized.append(city)
-        seen.add(city)
-
-    return _normalize_tour(normalized), None
-
-def _normalize_tour(tour: list[int] | tuple[int, ...]) -> tuple[int, ...]:
-    start_index = tour.index(0)
-    rotated = list(tour[start_index:]) + list(tour[:start_index])
-    reversed_rotated = [rotated[0]] + list(reversed(rotated[1:]))
-    return tuple(rotated) if tuple(rotated) <= tuple(reversed_rotated) else tuple(reversed_rotated)
-
-def _tour_length(coords: tuple[tuple[int, int], ...], tour: tuple[int, ...]) -> float:
-    total = 0.0
-    for idx, city in enumerate(tour):
-        nxt = tour[(idx + 1) % len(tour)]
-        total += _distance(coords, city, nxt)
-    return total
-
-def _distance(coords: tuple[tuple[int, int], ...], a: int, b: int) -> float:
-    ax, ay = coords[a]
-    bx, by = coords[b]
-    return hypot(ax - bx, ay - by)
-
-def _read_positive_float(instance: dict[str, Any], key: str) -> float:
-    value = float(instance[key])
-    if value <= 0.0:
-        raise ValueError(f"{key} must be positive")
-    return value
-
-def _read_optional_float(instance: dict[str, Any], key: str) -> float | None:
-    value = instance.get(key)
-    if value is None:
-        return None
-    return float(value)
+_TSP_VERIFIER_SOURCE = 'from math import hypot\nfrom typing import Any\n\nINVALID_GAP_PCT = 100.0\n\ndef verify(instance: dict[str, Any], submission: dict[str, Any] | list[int] | tuple[int, ...]) -> tuple[float, bool, dict[str, Any]]:\n    """BEST_GUESS JSON schema: {"tour": [0, 7, 3, ...]} with every city index exactly once."""\n\n    try:\n        coords = _parse_coords(instance.get("coords"))\n        optimal_length = _read_positive_float(instance, "optimal_length")\n    except (TypeError, ValueError) as exc:\n        details = {"failure_reason": f"invalid instance: {exc}"}\n        return INVALID_GAP_PCT, False, details\n\n    baseline_length = _read_optional_float(instance, "baseline_length")\n    raw_tour = submission.get("tour") if isinstance(submission, dict) else submission\n    normalized_tour, failure_reason = _normalize_submission(coords, raw_tour)\n    if failure_reason is not None:\n        details = {\n            "failure_reason": failure_reason,\n            "baseline_length": baseline_length,\n            "optimal_length": optimal_length,\n        }\n        return INVALID_GAP_PCT, False, details\n\n    computed_length = _tour_length(coords, normalized_tour)\n    gap_pct = 100.0 * max(0.0, computed_length - optimal_length) / optimal_length\n    details = {\n        "computed_length": computed_length,\n        "baseline_length": baseline_length,\n        "optimal_length": optimal_length,\n        "normalized_tour": list(normalized_tour),\n    }\n    return gap_pct, True, details\n\ndef _parse_coords(raw_coords: Any) -> tuple[tuple[int, int], ...]:\n    if not isinstance(raw_coords, list):\n        raise TypeError("coords must be a list")\n    coords: list[tuple[int, int]] = []\n    for item in raw_coords:\n        if not isinstance(item, list | tuple) or len(item) != 2:\n            raise TypeError("each coordinate must be a two-item list")\n        x = int(item[0])\n        y = int(item[1])\n        coords.append((x, y))\n    if not coords:\n        raise ValueError("coords must not be empty")\n    return tuple(coords)\n\ndef _normalize_submission(\n    coords: tuple[tuple[int, int], ...],\n    raw_tour: Any,\n) -> tuple[tuple[int, ...], str | None]:\n    if not isinstance(raw_tour, list | tuple):\n        return tuple(), "submission must provide tour as a list of city indices"\n\n    n = len(coords)\n    if len(raw_tour) != n:\n        return tuple(), f"tour must contain exactly {n} cities"\n\n    normalized: list[int] = []\n    seen: set[int] = set()\n    for item in raw_tour:\n        try:\n            city = int(item)\n        except Exception:\n            return tuple(), "tour items must be integers"\n        if not 0 <= city < n:\n            return tuple(), f"city index {city} is out of range"\n        if city in seen:\n            return tuple(), f"city {city} appears more than once"\n        normalized.append(city)\n        seen.add(city)\n\n    return _normalize_tour(normalized), None\n\ndef _normalize_tour(tour: list[int] | tuple[int, ...]) -> tuple[int, ...]:\n    start_index = tour.index(0)\n    rotated = list(tour[start_index:]) + list(tour[:start_index])\n    reversed_rotated = [rotated[0]] + list(reversed(rotated[1:]))\n    return tuple(rotated) if tuple(rotated) <= tuple(reversed_rotated) else tuple(reversed_rotated)\n\ndef _tour_length(coords: tuple[tuple[int, int], ...], tour: tuple[int, ...]) -> float:\n    total = 0.0\n    for idx, city in enumerate(tour):\n        nxt = tour[(idx + 1) % len(tour)]\n        total += _distance(coords, city, nxt)\n    return total\n\ndef _distance(coords: tuple[tuple[int, int], ...], a: int, b: int) -> float:\n    ax, ay = coords[a]\n    bx, by = coords[b]\n    return hypot(ax - bx, ay - by)\n\ndef _read_positive_float(instance: dict[str, Any], key: str) -> float:\n    value = float(instance[key])\n    if value <= 0.0:\n        raise ValueError(f"{key} must be positive")\n    return value\n\ndef _read_optional_float(instance: dict[str, Any], key: str) -> float | None:\n    value = instance.get(key)\n    if value is None:\n        return None\n    return float(value)'
+_TSP_VERIFIER_GLOBALS: dict[str, Any] = {'__name__': '__voicetree_verifier_tsp__', '__file__': 'verifiers/tsp.py'}
+exec(compile(_TSP_VERIFIER_SOURCE, 'verifiers/tsp.py', 'exec'), _TSP_VERIFIER_GLOBALS, _TSP_VERIFIER_GLOBALS)
+tsp_verify = _TSP_VERIFIER_GLOBALS['verify']
 
 # ──────────────────────────────────────────────────────────────────────
-# verifiers/ve.py
+# verifiers/ve.py (isolated namespace)
 # ──────────────────────────────────────────────────────────────────────
 
-"""BEST_GUESS JSON schema:
-{
-  "p_query_given_evidence": <float strictly between 0 and 1>,
-  "ordering_used": ["X1", "X2", "..."],  # every eliminable variable exactly once
-  "peak_factor_size_self_report": <positive int>
-}
-"""
-from dataclasses import dataclass
-from itertools import combinations
-import math
-from random import Random
-from typing import Any, Iterable, Sequence
-
-RANDOM_ORDER_SAMPLES = 1000
-DEFAULT_VARIABLE_SIZES = (22, 26, 28)
-DIFFICULTY_TO_VARIABLES = {
-    "medium": 22,
-    "hard": 26,
-}
-FAILURE_GAP_PCT = 100.0
-MIN_POSITIVE = 1e-12
-
-@dataclass(frozen=True)
-class VariableSpec:
-    name: str
-    parents: tuple[str, ...]
-    cpt_true_probs: tuple[float, ...]
-
-@dataclass(frozen=True)
-class Factor:
-    scope: tuple[str, ...]
-    values: tuple[float, ...]
-
-@dataclass(frozen=True)
-class OrderingSummary:
-    name: str
-    ordering: tuple[str, ...]
-    peak_factor_size: int
-
-@dataclass(frozen=True)
-class GuessVerification:
-    is_valid: bool
-    failure_reason: str | None
-    p_query_given_evidence: float | None
-    ordering_used: tuple[str, ...] | None
-    peak_factor_size_self_report: int | None
-    true_peak_factor_size: int | None
-    gap_nats: float | None
-
-@dataclass(frozen=True)
-class GeneratedCandidate:
-    total_variables: int
-    variables: tuple[VariableSpec, ...]
-    query_variable: str
-    evidence: dict[str, int]
-    hidden_clusters: dict[str, tuple[str, ...]]
-    bridge_variables: tuple[str, ...]
-    decoy_variable: str
-
-@dataclass(frozen=True)
-class BayesianVEInstance:
-    seed: int
-    difficulty: str
-    requested_total_variables: int
-    total_variables: int
-    variables: tuple[VariableSpec, ...]
-    query_variable: str
-    evidence: dict[str, int]
-    eliminable_variables: tuple[str, ...]
-    exact_posterior: float
-    baseline_ordering: tuple[str, ...]
-    baseline_peak_factor_size: int
-    gold_ordering: tuple[str, ...]
-    gold_peak_factor_size: int
-    gold_source: str
-    heuristic_results: tuple[OrderingSummary, ...]
-    random_search_best: OrderingSummary
-    min_fill_peak_factor_size: int
-    problem_statement: str
-    hidden_clusters: dict[str, tuple[str, ...]]
-    bridge_variables: tuple[str, ...]
-    decoy_variable: str
-    attempt_index: int
-    size_escalated: bool
-    scale_note: str | None
-
-def build_instance_payload(seed: int, difficulty: str) -> dict[str, Any]:
-    requested_total_variables = _difficulty_to_requested_total_variables(difficulty)
-    instance = build_instance(
-        seed=seed,
-        difficulty=difficulty,
-        requested_total_variables=requested_total_variables,
-    )
-    return _instance_to_payload(instance)
-
-def ve_verify(instance: dict[str, Any], submission: dict[str, Any]) -> tuple[float, bool, dict[str, Any]]:
-    try:
-        ve_instance = _instance_from_payload(instance)
-    except ValueError as exc:
-        return FAILURE_GAP_PCT, False, {"failure_reason": f"invalid instance: {exc}"}
-
-    verification = verify_best_guess(ve_instance, submission)
-    if not verification.is_valid:
-        return FAILURE_GAP_PCT, False, {"failure_reason": verification.failure_reason}
-
-    submitted_probability = float(verification.p_query_given_evidence)
-    gap_pct = _posterior_gap_pct(ve_instance.exact_posterior, submitted_probability)
-    return (
-        gap_pct,
-        True,
-        {
-            "submitted_probability": submitted_probability,
-            "exact_posterior": ve_instance.exact_posterior,
-            "absolute_probability_error": abs(submitted_probability - ve_instance.exact_posterior),
-            "gap_pct": gap_pct,
-            "gap_nats": verification.gap_nats,
-            "ordering_used": list(verification.ordering_used or ()),
-            "submitted_peak_factor_size": verification.peak_factor_size_self_report,
-            "true_peak_factor_size": verification.true_peak_factor_size,
-            "gold_ordering": list(ve_instance.gold_ordering),
-            "gold_peak_factor_size": ve_instance.gold_peak_factor_size,
-            "gold_source": ve_instance.gold_source,
-            "peak_factor_size_matches": (
-                verification.peak_factor_size_self_report == verification.true_peak_factor_size
-            ),
-        },
-    )
-
-def build_instance(
-    *,
-    seed: int,
-    difficulty: str,
-    requested_total_variables: int = 22,
-    max_generation_attempts: int = 16,
-    random_order_samples: int = RANDOM_ORDER_SAMPLES,
-) -> BayesianVEInstance:
-    size_queue = [requested_total_variables]
-    size_queue.extend(
-        size for size in DEFAULT_VARIABLE_SIZES if size > requested_total_variables and size not in size_queue
-    )
-
-    best_candidate: BayesianVEInstance | None = None
-    best_score: tuple[int, int, float] | None = None
-    last_reason = "no candidate generated"
-    scale_note: str | None = None
-
-    for size_index, total_variables in enumerate(size_queue):
-        best_for_size: BayesianVEInstance | None = None
-        best_for_size_score: tuple[int, int, float] | None = None
-        any_hard_enough = False
-
-        for attempt_index in range(max_generation_attempts):
-            candidate_seed = seed + size_index * 100_000 + attempt_index * 10_007
-            candidate = _generate_candidate(seed=candidate_seed, total_variables=total_variables)
-            instance = _finalize_candidate(
-                seed=seed,
-                difficulty=difficulty,
-                requested_total_variables=requested_total_variables,
-                candidate=candidate,
-                attempt_index=attempt_index,
-                random_order_samples=random_order_samples,
-                scale_note=scale_note,
-            )
-            score = _candidate_score(instance)
-            if best_candidate is None or score > best_score:
-                best_candidate = instance
-                best_score = score
-            if best_for_size is None or score > best_for_size_score:
-                best_for_size = instance
-                best_for_size_score = score
-            if total_variables == 22 and instance.min_fill_peak_factor_size <= 4:
-                last_reason = (
-                    f"attempt {attempt_index} at 22 vars still looked easy "
-                    f"(min-fill peak factor size {instance.min_fill_peak_factor_size})"
-                )
-                continue
-            any_hard_enough = True
-
-        if total_variables == 22 and not any_hard_enough:
-            scale_note = "All 22-variable attempts had min-fill peak factor size <= 4, so the spike escalated."
-            last_reason = scale_note
-            continue
-        if best_for_size is not None:
-            return best_for_size
-
-    if best_candidate is not None:
-        return best_candidate
-    raise RuntimeError(f"failed to generate a Bayesian VE instance: {last_reason}")
-
-def verify_best_guess(instance: BayesianVEInstance, best_guess: dict[str, Any]) -> GuessVerification:
-    if not isinstance(best_guess, dict):
-        return GuessVerification(False, "BEST_GUESS must be a JSON object", None, None, None, None, None)
-
-    try:
-        probability = float(best_guess["p_query_given_evidence"])
-    except Exception:
-        return GuessVerification(False, "p_query_given_evidence must be numeric", None, None, None, None, None)
-    if not 0.0 < probability < 1.0:
-        return GuessVerification(
-            False,
-            "p_query_given_evidence must lie strictly between 0 and 1",
-            None,
-            None,
-            None,
-            None,
-            None,
-        )
-
-    ordering_used = best_guess.get("ordering_used")
-    normalized_order = normalize_elimination_order(instance, ordering_used)
-    if normalized_order is None:
-        return GuessVerification(
-            False,
-            "ordering_used must list every eliminable variable exactly once and exclude query/evidence variables",
-            None,
-            None,
-            None,
-            None,
-            None,
-        )
-
-    try:
-        self_reported_peak = int(best_guess["peak_factor_size_self_report"])
-    except Exception:
-        return GuessVerification(
-            False,
-            "peak_factor_size_self_report must be an integer",
-            None,
-            None,
-            None,
-            None,
-            None,
-        )
-    if self_reported_peak < 1:
-        return GuessVerification(
-            False,
-            "peak_factor_size_self_report must be positive",
-            None,
-            None,
-            None,
-            None,
-            None,
-        )
-
-    _, true_peak = evaluate_exact_probability(instance, normalized_order)
-    gap_nats = abs(math.log(instance.exact_posterior) - math.log(probability))
-    return GuessVerification(
-        is_valid=True,
-        failure_reason=None,
-        p_query_given_evidence=probability,
-        ordering_used=normalized_order,
-        peak_factor_size_self_report=self_reported_peak,
-        true_peak_factor_size=true_peak,
-        gap_nats=gap_nats,
-    )
-
-def normalize_elimination_order(
-    instance: BayesianVEInstance,
-    ordering: Sequence[Any] | None,
-) -> tuple[str, ...] | None:
-    if not isinstance(ordering, Sequence) or isinstance(ordering, (str, bytes)):
-        return None
-    names = tuple(str(value).strip() for value in ordering)
-    if not all(names):
-        return None
-    if len(names) != len(instance.eliminable_variables):
-        return None
-    if set(names) != set(instance.eliminable_variables):
-        return None
-    if len(set(names)) != len(names):
-        return None
-    return names
-
-def render_problem(instance: BayesianVEInstance) -> str:
-    evidence_terms = ", ".join(f"{name}={value}" for name, value in instance.evidence.items())
-    lines = [
-        "You are doing exact inference in a Bayesian network with binary variables in {0, 1}.",
-        f"Task: report P({instance.query_variable}=1 | {evidence_terms}).",
-        "All CPT rows below give P(variable=1 | parents); P(variable=0 | parents) = 1 minus that value.",
-        "When you report ordering_used, list every eliminable variable exactly once and do not include the query variable or any evidence variable.",
-        "Interpret peak_factor_size as the largest intermediate factor scope size, counted as the number of variables in that factor before summing out the eliminated variable.",
-        "",
-        f"Variables: {', '.join(variable.name for variable in instance.variables)}",
-        f"Query variable: {instance.query_variable}",
-        f"Evidence: {evidence_terms}",
-        f"Eliminable variables ({len(instance.eliminable_variables)}): {', '.join(instance.eliminable_variables)}",
-        "",
-        "Bayesian network (topological order):",
-    ]
-    for variable in instance.variables:
-        parent_text = ", ".join(variable.parents) if variable.parents else "none"
-        lines.append(f"- {variable.name}: parents = [{parent_text}]")
-        if not variable.parents:
-            lines.append(f"  P({variable.name}=1) = {_fmt_prob(variable.cpt_true_probs[0])}")
-            continue
-        for assignment_index, probability in enumerate(variable.cpt_true_probs):
-            assignment = _bits_from_index(assignment_index, len(variable.parents))
-            parent_terms = ", ".join(
-                f"{parent}={value}" for parent, value in zip(variable.parents, assignment, strict=True)
-            )
-            lines.append(f"  if {parent_terms} -> P({variable.name}=1) = {_fmt_prob(probability)}")
-    return "\n".join(lines)
-
-def evaluate_exact_probability(
-    instance: BayesianVEInstance,
-    ordering: Sequence[str],
-) -> tuple[float, int]:
-    normalized_order = normalize_elimination_order(instance, ordering)
-    if normalized_order is None:
-        raise ValueError("invalid elimination ordering")
-
-    factors = list(_build_conditioned_factors(instance.variables, instance.evidence))
-    peak_factor_size = max((len(factor.scope) for factor in factors if factor.scope), default=1)
-
-    for variable_name in normalized_order:
-        involved = [factor for factor in factors if variable_name in factor.scope]
-        untouched = [factor for factor in factors if variable_name not in factor.scope]
-        if not involved:
-            factors = untouched
-            continue
-        product_factor = _multiply_all(involved)
-        peak_factor_size = max(peak_factor_size, len(product_factor.scope))
-        reduced = _sum_out(product_factor, variable_name)
-        if reduced.scope or not math.isclose(reduced.values[0], 1.0, rel_tol=0.0, abs_tol=1e-12):
-            untouched.append(reduced)
-        factors = untouched
-
-    final_factor = _multiply_all(factors)
-    if instance.query_variable not in final_factor.scope:
-        raise RuntimeError("query variable disappeared during elimination")
-    probability_zero = _factor_probability_for_assignment(final_factor, {instance.query_variable: 0})
-    probability_one = _factor_probability_for_assignment(final_factor, {instance.query_variable: 1})
-    normalizer = probability_zero + probability_one
-    if normalizer <= 0.0:
-        raise RuntimeError("invalid posterior normalizer")
-    return probability_one / normalizer, peak_factor_size
-
-def evaluate_ordering_peak_from_scopes(
-    initial_scopes: Sequence[frozenset[str]],
-    ordering: Sequence[str],
-) -> int:
-    scopes = [set(scope) for scope in initial_scopes if scope]
-    peak_factor_size = max((len(scope) for scope in scopes), default=1)
-    for variable_name in ordering:
-        touched = [scope for scope in scopes if variable_name in scope]
-        untouched = [scope for scope in scopes if variable_name not in scope]
-        if not touched:
-            scopes = untouched
-            continue
-        merged_scope = set().union(*touched)
-        peak_factor_size = max(peak_factor_size, len(merged_scope))
-        next_scope = merged_scope - {variable_name}
-        if next_scope:
-            untouched.append(next_scope)
-        scopes = untouched
-    return peak_factor_size
-
-def _finalize_candidate(
-    *,
-    seed: int,
-    difficulty: str,
-    requested_total_variables: int,
-    candidate: GeneratedCandidate,
-    attempt_index: int,
-    random_order_samples: int,
-    scale_note: str | None,
-) -> BayesianVEInstance:
-    eliminable_variables = tuple(
-        variable.name
-        for variable in candidate.variables
-        if variable.name != candidate.query_variable and variable.name not in candidate.evidence
-    )
-    initial_scopes = tuple(
-        frozenset(factor.scope)
-        for factor in _build_conditioned_factors(candidate.variables, candidate.evidence)
-        if factor.scope
-    )
-
-    heuristic_orders = (
-        OrderingSummary(
-            name="baseline",
-            ordering=tuple(sorted(eliminable_variables)),
-            peak_factor_size=evaluate_ordering_peak_from_scopes(initial_scopes, tuple(sorted(eliminable_variables))),
-        ),
-        OrderingSummary(
-            name="min_neighbors",
-            ordering=_build_greedy_order(initial_scopes, eliminable_variables, rule="min_neighbors"),
-            peak_factor_size=0,
-        ),
-        OrderingSummary(
-            name="min_weight",
-            ordering=_build_greedy_order(initial_scopes, eliminable_variables, rule="min_weight"),
-            peak_factor_size=0,
-        ),
-        OrderingSummary(
-            name="min_fill",
-            ordering=_build_greedy_order(initial_scopes, eliminable_variables, rule="min_fill"),
-            peak_factor_size=0,
-        ),
-    )
-    realized_heuristics: list[OrderingSummary] = []
-    for summary in heuristic_orders:
-        peak = summary.peak_factor_size or evaluate_ordering_peak_from_scopes(initial_scopes, summary.ordering)
-        realized_heuristics.append(
-            OrderingSummary(
-                name=summary.name,
-                ordering=summary.ordering,
-                peak_factor_size=peak,
-            )
-        )
-
-    rng = Random(seed + candidate.total_variables * 997 + attempt_index * 13)
-    random_best_ordering = tuple(eliminable_variables)
-    random_best_peak = evaluate_ordering_peak_from_scopes(initial_scopes, random_best_ordering)
-    for _ in range(random_order_samples):
-        proposal = list(eliminable_variables)
-        rng.shuffle(proposal)
-        peak = evaluate_ordering_peak_from_scopes(initial_scopes, proposal)
-        if peak < random_best_peak:
-            random_best_ordering = tuple(proposal)
-            random_best_peak = peak
-    random_search_best = OrderingSummary(
-        name="random_best_of_1000",
-        ordering=random_best_ordering,
-        peak_factor_size=random_best_peak,
-    )
-
-    gold_candidates = list(realized_heuristics[1:]) + [random_search_best]
-    gold = min(gold_candidates, key=lambda summary: (summary.peak_factor_size, summary.name, summary.ordering))
-    stub = BayesianVEInstance(
-        seed=seed,
-        difficulty=difficulty,
-        requested_total_variables=requested_total_variables,
-        total_variables=candidate.total_variables,
-        variables=candidate.variables,
-        query_variable=candidate.query_variable,
-        evidence=candidate.evidence,
-        eliminable_variables=eliminable_variables,
-        exact_posterior=0.0,
-        baseline_ordering=realized_heuristics[0].ordering,
-        baseline_peak_factor_size=realized_heuristics[0].peak_factor_size,
-        gold_ordering=gold.ordering,
-        gold_peak_factor_size=gold.peak_factor_size,
-        gold_source=gold.name,
-        heuristic_results=tuple(realized_heuristics[1:]),
-        random_search_best=random_search_best,
-        min_fill_peak_factor_size=next(
-            summary.peak_factor_size for summary in realized_heuristics if summary.name == "min_fill"
-        ),
-        problem_statement="",
-        hidden_clusters=candidate.hidden_clusters,
-        bridge_variables=candidate.bridge_variables,
-        decoy_variable=candidate.decoy_variable,
-        attempt_index=attempt_index,
-        size_escalated=candidate.total_variables != requested_total_variables,
-        scale_note=scale_note,
-    )
-    exact_posterior, _ = evaluate_exact_probability(stub, gold.ordering)
-    instance_without_render = BayesianVEInstance(
-        seed=seed,
-        difficulty=difficulty,
-        requested_total_variables=requested_total_variables,
-        total_variables=candidate.total_variables,
-        variables=candidate.variables,
-        query_variable=candidate.query_variable,
-        evidence=candidate.evidence,
-        eliminable_variables=eliminable_variables,
-        exact_posterior=exact_posterior,
-        baseline_ordering=realized_heuristics[0].ordering,
-        baseline_peak_factor_size=realized_heuristics[0].peak_factor_size,
-        gold_ordering=gold.ordering,
-        gold_peak_factor_size=gold.peak_factor_size,
-        gold_source=gold.name,
-        heuristic_results=tuple(realized_heuristics[1:]),
-        random_search_best=random_search_best,
-        min_fill_peak_factor_size=next(
-            summary.peak_factor_size for summary in realized_heuristics if summary.name == "min_fill"
-        ),
-        problem_statement="",
-        hidden_clusters=candidate.hidden_clusters,
-        bridge_variables=candidate.bridge_variables,
-        decoy_variable=candidate.decoy_variable,
-        attempt_index=attempt_index,
-        size_escalated=candidate.total_variables != requested_total_variables,
-        scale_note=scale_note,
-    )
-    return BayesianVEInstance(
-        seed=seed,
-        difficulty=difficulty,
-        requested_total_variables=requested_total_variables,
-        total_variables=candidate.total_variables,
-        variables=candidate.variables,
-        query_variable=candidate.query_variable,
-        evidence=candidate.evidence,
-        eliminable_variables=eliminable_variables,
-        exact_posterior=exact_posterior,
-        baseline_ordering=realized_heuristics[0].ordering,
-        baseline_peak_factor_size=realized_heuristics[0].peak_factor_size,
-        gold_ordering=gold.ordering,
-        gold_peak_factor_size=gold.peak_factor_size,
-        gold_source=gold.name,
-        heuristic_results=tuple(realized_heuristics[1:]),
-        random_search_best=random_search_best,
-        min_fill_peak_factor_size=next(
-            summary.peak_factor_size for summary in realized_heuristics if summary.name == "min_fill"
-        ),
-        problem_statement=render_problem(instance_without_render),
-        hidden_clusters=candidate.hidden_clusters,
-        bridge_variables=candidate.bridge_variables,
-        decoy_variable=candidate.decoy_variable,
-        attempt_index=attempt_index,
-        size_escalated=candidate.total_variables != requested_total_variables,
-        scale_note=scale_note,
-    )
-
-def _candidate_score(instance: BayesianVEInstance) -> tuple[int, int, float]:
-    heuristic_peaks = [summary.peak_factor_size for summary in instance.heuristic_results]
-    spread = max(heuristic_peaks) - min(heuristic_peaks)
-    baseline_advantage = instance.baseline_peak_factor_size - instance.gold_peak_factor_size
-    posterior_balance = -abs(instance.exact_posterior - 0.5)
-    return (baseline_advantage, spread, posterior_balance)
-
-def _generate_candidate(*, seed: int, total_variables: int) -> GeneratedCandidate:
-    rng = Random(seed)
-    cluster_sizes = _cluster_sizes(total_variables - 3)
-    hidden_clusters = {
-        "A": tuple(f"A{index}" for index in range(1, cluster_sizes[0] + 1)),
-        "B": tuple(f"B{index}" for index in range(1, cluster_sizes[1] + 1)),
-        "C": tuple(f"C{index}" for index in range(1, cluster_sizes[2] + 1)),
-    }
-    bridge_variables = ("BR01", "BR12")
-    decoy_variable = "D0"
-
-    early_clusters = {name: values[: max(3, len(values) // 2)] for name, values in hidden_clusters.items()}
-    late_clusters = {name: values[len(early_clusters[name]) :] for name, values in hidden_clusters.items()}
-
-    topological_order = (
-        list(hidden_clusters["A"][: len(early_clusters["A"])])
-        + list(hidden_clusters["B"][: len(early_clusters["B"])])
-        + list(hidden_clusters["C"][: len(early_clusters["C"])])
-        + [decoy_variable, *bridge_variables]
-        + list(late_clusters["A"])
-        + list(late_clusters["B"])
-        + list(late_clusters["C"])
-    )
-
-    parent_map: dict[str, tuple[str, ...]] = {}
-    position = {name: index for index, name in enumerate(topological_order)}
-
-    for cluster_name in ("A", "B", "C"):
-        early_nodes = early_clusters[cluster_name]
-        for index, variable_name in enumerate(early_nodes):
-            parents: list[str] = []
-            if index >= 1:
-                parents.append(early_nodes[index - 1])
-            if index >= 2:
-                parents.append(early_nodes[index - 2])
-            if cluster_name == "B" and index == 0:
-                parents.append(hidden_clusters["A"][min(1, len(hidden_clusters["A"]) - 1)])
-            if cluster_name == "C" and index == 0:
-                parents.append(hidden_clusters["B"][min(1, len(hidden_clusters["B"]) - 1)])
-            parent_map[variable_name] = tuple(dict.fromkeys(parents))
-
-    parent_map[decoy_variable] = (
-        early_clusters["A"][-1],
-        early_clusters["B"][-1],
-        early_clusters["C"][-1],
-    )
-    parent_map["BR01"] = (
-        early_clusters["A"][-2],
-        early_clusters["B"][-2],
-    )
-    parent_map["BR12"] = (
-        early_clusters["B"][-1],
-        early_clusters["C"][-2],
-    )
-
-    for cluster_name in ("A", "B", "C"):
-        late_nodes = late_clusters[cluster_name]
-        all_cluster_nodes = hidden_clusters[cluster_name]
-        for index, variable_name in enumerate(late_nodes):
-            earlier_same_cluster = [name for name in all_cluster_nodes if position[name] < position[variable_name]]
-            parents = list(earlier_same_cluster[-2:]) if len(earlier_same_cluster) >= 2 else list(earlier_same_cluster)
-            if cluster_name == "A":
-                if index in {0, len(late_nodes) - 1}:
-                    parents.append(decoy_variable)
-            elif cluster_name == "B":
-                if index == 0:
-                    parents.append("BR01")
-                if index == 1:
-                    parents.append(decoy_variable)
-                if index == len(late_nodes) - 1:
-                    parents.extend([decoy_variable, "BR12"])
-            else:
-                if index == 0:
-                    parents.append("BR12")
-                if index in {0, len(late_nodes) - 1}:
-                    parents.append(decoy_variable)
-            if cluster_name == "B" and index < len(hidden_clusters["A"]):
-                parents.append(hidden_clusters["A"][min(len(hidden_clusters["A"]) - 1, index + 1)])
-            if cluster_name == "C" and index < len(hidden_clusters["B"]):
-                parents.append(hidden_clusters["B"][min(len(hidden_clusters["B"]) - 1, index + 1)])
-            parent_map[variable_name] = tuple(dict.fromkeys(parents[-3:]))
-
-    variables = tuple(
-        VariableSpec(
-            name=variable_name,
-            parents=parent_map.get(variable_name, ()),
-            cpt_true_probs=_generate_cpt(
-                rng=rng,
-                variable_name=variable_name,
-                parents=parent_map.get(variable_name, ()),
-            ),
-        )
-        for variable_name in topological_order
-    )
-
-    query_variable = late_clusters["B"][-1]
-    evidence_candidates = [
-        late_clusters["A"][-1],
-        hidden_clusters["B"][0],
-        late_clusters["B"][0],
-        late_clusters["C"][-1],
-        hidden_clusters["C"][1],
-    ]
-    evidence = {
-        variable_name: rng.randint(0, 1)
-        for variable_name in evidence_candidates
-        if variable_name != query_variable
-    }
-    return GeneratedCandidate(
-        total_variables=total_variables,
-        variables=variables,
-        query_variable=query_variable,
-        evidence=evidence,
-        hidden_clusters=hidden_clusters,
-        bridge_variables=bridge_variables,
-        decoy_variable=decoy_variable,
-    )
-
-def _cluster_sizes(core_variable_count: int) -> tuple[int, int, int]:
-    base = core_variable_count // 3
-    remainder = core_variable_count - 3 * base
-    return (base, base + remainder, base)
-
-def _generate_cpt(*, rng: Random, variable_name: str, parents: Sequence[str]) -> tuple[float, ...]:
-    if not parents:
-        return (_rounded_probability(0.35 + 0.30 * rng.random()),)
-
-    base = rng.uniform(-0.9, 0.9)
-    weights = []
-    for parent_name in parents:
-        magnitude = rng.uniform(0.55, 1.35)
-        sign = -1.0 if rng.random() < 0.45 else 1.0
-        if parent_name in {"D0", "BR01", "BR12"} or variable_name in {"D0", "BR01", "BR12"}:
-            magnitude += 0.15
-        weights.append(sign * magnitude)
-
-    probabilities = []
-    for assignment_index in range(1 << len(parents)):
-        assignment = _bits_from_index(assignment_index, len(parents))
-        logit = base
-        for bit, weight in zip(assignment, weights, strict=True):
-            logit += weight * (1.0 if bit else -1.0)
-        probability = 1.0 / (1.0 + math.exp(-logit))
-        probabilities.append(_rounded_probability(probability))
-    return tuple(probabilities)
-
-def _rounded_probability(probability: float) -> float:
-    clipped = min(0.95, max(0.05, probability))
-    return round(clipped, 3)
-
-def _build_conditioned_factors(
-    variables: Sequence[VariableSpec],
-    evidence: dict[str, int],
-) -> tuple[Factor, ...]:
-    factors: list[Factor] = []
-    for variable in variables:
-        reduced_scope = [parent for parent in variable.parents if parent not in evidence]
-        include_variable = variable.name not in evidence
-        if include_variable:
-            reduced_scope.append(variable.name)
-        values: list[float] = []
-        for assignment_index in range(1 << len(reduced_scope)):
-            reduced_assignment = _bits_from_index(assignment_index, len(reduced_scope))
-            assignment_map = dict(zip(reduced_scope, reduced_assignment, strict=True))
-            parent_assignment = tuple(
-                evidence[parent_name] if parent_name in evidence else assignment_map[parent_name]
-                for parent_name in variable.parents
-            )
-            variable_value = evidence[variable.name] if variable.name in evidence else assignment_map[variable.name]
-            p_true = variable.cpt_true_probs[_index_from_bits(parent_assignment)]
-            values.append(p_true if variable_value == 1 else 1.0 - p_true)
-        factors.append(Factor(scope=tuple(reduced_scope), values=tuple(values)))
-    return tuple(factors)
-
-def _build_greedy_order(
-    initial_scopes: Sequence[frozenset[str]],
-    eliminable_variables: Sequence[str],
-    *,
-    rule: str,
-) -> tuple[str, ...]:
-    remaining = list(eliminable_variables)
-    scopes = [set(scope) for scope in initial_scopes if scope]
-    order: list[str] = []
-
-    while remaining:
-        adjacency = _adjacency_from_scopes(scopes)
-        incident_scopes = {name: [scope for scope in scopes if name in scope] for name in remaining}
-
-        def score(name: str) -> tuple[Any, ...]:
-            neighbors = adjacency.get(name, set())
-            mass = sum(1 << len(scope) for scope in incident_scopes[name]) or 1
-            if rule == "min_neighbors":
-                return (len(neighbors), mass, name)
-            if rule == "min_weight":
-                return (mass, len(neighbors), name)
-            if rule == "min_fill":
-                fill_edges = 0
-                neighbor_list = sorted(neighbors)
-                for left, right in combinations(neighbor_list, 2):
-                    if right not in adjacency.get(left, set()):
-                        fill_edges += 1
-                return (fill_edges, len(neighbors), mass, name)
-            raise ValueError(f"unknown rule: {rule}")
-
-        choice = min(remaining, key=score)
-        order.append(choice)
-        remaining.remove(choice)
-
-        touched = [scope for scope in scopes if choice in scope]
-        untouched = [scope for scope in scopes if choice not in scope]
-        merged = set().union(*touched) if touched else {choice}
-        next_scope = merged - {choice}
-        if next_scope:
-            untouched.append(next_scope)
-        scopes = untouched
-
-    return tuple(order)
-
-def _adjacency_from_scopes(scopes: Iterable[set[str]]) -> dict[str, set[str]]:
-    adjacency: dict[str, set[str]] = {}
-    for scope in scopes:
-        for variable_name in scope:
-            adjacency.setdefault(variable_name, set())
-        for left, right in combinations(scope, 2):
-            adjacency[left].add(right)
-            adjacency[right].add(left)
-    return adjacency
-
-def _multiply_all(factors: Sequence[Factor]) -> Factor:
-    if not factors:
-        return Factor(scope=(), values=(1.0,))
-    result = factors[0]
-    for factor in factors[1:]:
-        result = _multiply(result, factor)
-    return result
-
-def _multiply(left: Factor, right: Factor) -> Factor:
-    scope = tuple(dict.fromkeys((*left.scope, *right.scope)))
-    values: list[float] = []
-    for assignment_index in range(1 << len(scope)):
-        assignment = _bits_from_index(assignment_index, len(scope))
-        assignment_map = dict(zip(scope, assignment, strict=True))
-        values.append(
-            _factor_probability_for_assignment(left, assignment_map)
-            * _factor_probability_for_assignment(right, assignment_map)
-        )
-    return Factor(scope=scope, values=tuple(values))
-
-def _sum_out(factor: Factor, variable_name: str) -> Factor:
-    if variable_name not in factor.scope:
-        return factor
-    reduced_scope = tuple(name for name in factor.scope if name != variable_name)
-    values: list[float] = []
-    for assignment_index in range(1 << len(reduced_scope)):
-        assignment = _bits_from_index(assignment_index, len(reduced_scope))
-        assignment_map = dict(zip(reduced_scope, assignment, strict=True))
-        total = 0.0
-        for value in (0, 1):
-            total += _factor_probability_for_assignment(
-                factor,
-                {**assignment_map, variable_name: value},
-            )
-        values.append(total)
-    return Factor(scope=reduced_scope, values=tuple(values))
-
-def _factor_probability_for_assignment(factor: Factor, assignment_map: dict[str, int]) -> float:
-    if not factor.scope:
-        return factor.values[0]
-    bits = tuple(int(assignment_map[name]) for name in factor.scope)
-    return factor.values[_index_from_bits(bits)]
-
-def _bits_from_index(index: int, width: int) -> tuple[int, ...]:
-    return tuple((index >> shift) & 1 for shift in reversed(range(width)))
-
-def _index_from_bits(bits: Sequence[int]) -> int:
-    index = 0
-    for bit in bits:
-        index = (index << 1) | int(bit)
-    return index
-
-def _fmt_prob(probability: float) -> str:
-    return f"{probability:.3f}"
-
-def _difficulty_to_requested_total_variables(difficulty: str) -> int:
-    normalized = difficulty.strip().lower()
-    if normalized not in DIFFICULTY_TO_VARIABLES:
-        raise ValueError(f"unsupported difficulty: {difficulty}")
-    return DIFFICULTY_TO_VARIABLES[normalized]
-
-def _instance_to_payload(instance: BayesianVEInstance) -> dict[str, Any]:
-    return {
-        "seed": instance.seed,
-        "difficulty": instance.difficulty,
-        "requested_total_variables": instance.requested_total_variables,
-        "total_variables": instance.total_variables,
-        "variables": [
-            {
-                "name": variable.name,
-                "parents": list(variable.parents),
-                "cpt_true_probs": list(variable.cpt_true_probs),
-            }
-            for variable in instance.variables
-        ],
-        "query_variable": instance.query_variable,
-        "evidence": dict(instance.evidence),
-        "eliminable_variables": list(instance.eliminable_variables),
-        "exact_posterior": instance.exact_posterior,
-        "baseline_ordering": list(instance.baseline_ordering),
-        "baseline_peak_factor_size": instance.baseline_peak_factor_size,
-        "gold_ordering": list(instance.gold_ordering),
-        "gold_peak_factor_size": instance.gold_peak_factor_size,
-        "gold_source": instance.gold_source,
-        "heuristic_results": [
-            {
-                "name": summary.name,
-                "ordering": list(summary.ordering),
-                "peak_factor_size": summary.peak_factor_size,
-            }
-            for summary in instance.heuristic_results
-        ],
-        "random_search_best": {
-            "name": instance.random_search_best.name,
-            "ordering": list(instance.random_search_best.ordering),
-            "peak_factor_size": instance.random_search_best.peak_factor_size,
-        },
-        "min_fill_peak_factor_size": instance.min_fill_peak_factor_size,
-        "problem_statement": instance.problem_statement,
-        "hidden_clusters": {
-            cluster_name: list(variable_names)
-            for cluster_name, variable_names in instance.hidden_clusters.items()
-        },
-        "bridge_variables": list(instance.bridge_variables),
-        "decoy_variable": instance.decoy_variable,
-        "attempt_index": instance.attempt_index,
-        "size_escalated": instance.size_escalated,
-        "scale_note": instance.scale_note,
-    }
-
-def _instance_from_payload(payload: dict[str, Any]) -> BayesianVEInstance:
-    if not isinstance(payload, dict):
-        raise ValueError("instance must be a dict")
-
-    variables_payload = payload.get("variables")
-    if not isinstance(variables_payload, list) or not variables_payload:
-        raise ValueError("variables must be a non-empty list")
-    variables = tuple(_variable_from_payload(item) for item in variables_payload)
-
-    query_variable = _required_str(payload.get("query_variable"), "query_variable")
-    evidence = _int_mapping(payload.get("evidence"), "evidence")
-    eliminable_variables = payload.get("eliminable_variables")
-    if eliminable_variables is None:
-        eliminable_variables_tuple = tuple(
-            variable.name for variable in variables if variable.name != query_variable and variable.name not in evidence
-        )
-    else:
-        eliminable_variables_tuple = _string_tuple(eliminable_variables, "eliminable_variables")
-
-    requested_total_variables = _optional_int(payload.get("requested_total_variables"), 22, "requested_total_variables")
-    total_variables = _optional_int(payload.get("total_variables"), len(variables), "total_variables")
-    seed = _optional_int(payload.get("seed"), 0, "seed")
-    difficulty = str(payload.get("difficulty", "medium"))
-
-    initial_scopes = tuple(
-        frozenset(factor.scope)
-        for factor in _build_conditioned_factors(variables, evidence)
-        if factor.scope
-    )
-
-    baseline_ordering = tuple(sorted(eliminable_variables_tuple))
-    if "baseline_ordering" in payload:
-        baseline_ordering = _string_tuple(payload["baseline_ordering"], "baseline_ordering")
-    baseline_peak = payload.get("baseline_peak_factor_size")
-    if baseline_peak is None:
-        baseline_peak_factor_size = evaluate_ordering_peak_from_scopes(initial_scopes, baseline_ordering)
-    else:
-        baseline_peak_factor_size = _optional_int(baseline_peak, 0, "baseline_peak_factor_size")
-
-    heuristic_payload = payload.get("heuristic_results")
-    if heuristic_payload is None:
-        heuristic_results = (
-            OrderingSummary(
-                name="min_neighbors",
-                ordering=_build_greedy_order(initial_scopes, eliminable_variables_tuple, rule="min_neighbors"),
-                peak_factor_size=0,
-            ),
-            OrderingSummary(
-                name="min_weight",
-                ordering=_build_greedy_order(initial_scopes, eliminable_variables_tuple, rule="min_weight"),
-                peak_factor_size=0,
-            ),
-            OrderingSummary(
-                name="min_fill",
-                ordering=_build_greedy_order(initial_scopes, eliminable_variables_tuple, rule="min_fill"),
-                peak_factor_size=0,
-            ),
-        )
-        heuristic_results = tuple(
-            OrderingSummary(
-                name=summary.name,
-                ordering=summary.ordering,
-                peak_factor_size=evaluate_ordering_peak_from_scopes(initial_scopes, summary.ordering),
-            )
-            for summary in heuristic_results
-        )
-    else:
-        if not isinstance(heuristic_payload, list):
-            raise ValueError("heuristic_results must be a list")
-        heuristic_results = tuple(_ordering_summary_from_payload(item) for item in heuristic_payload)
-
-    random_search_best_payload = payload.get("random_search_best")
-    if random_search_best_payload is None:
-        random_search_best = OrderingSummary(
-            name="random_best_of_1000",
-            ordering=baseline_ordering,
-            peak_factor_size=baseline_peak_factor_size,
-        )
-    else:
-        random_search_best = _ordering_summary_from_payload(random_search_best_payload)
-
-    gold_ordering = payload.get("gold_ordering")
-    if gold_ordering is None:
-        gold_candidates = list(heuristic_results) + [random_search_best]
-        gold = min(gold_candidates, key=lambda summary: (summary.peak_factor_size, summary.name, summary.ordering))
-        gold_ordering_tuple = gold.ordering
-        gold_peak_factor_size = gold.peak_factor_size
-        gold_source = gold.name
-    else:
-        gold_ordering_tuple = _string_tuple(gold_ordering, "gold_ordering")
-        gold_peak = payload.get("gold_peak_factor_size")
-        if gold_peak is None:
-            gold_peak_factor_size = evaluate_ordering_peak_from_scopes(initial_scopes, gold_ordering_tuple)
-        else:
-            gold_peak_factor_size = _optional_int(gold_peak, 0, "gold_peak_factor_size")
-        gold_source = str(payload.get("gold_source", "provided"))
-
-    exact_posterior_value = payload.get("exact_posterior")
-    instance_stub = BayesianVEInstance(
-        seed=seed,
-        difficulty=difficulty,
-        requested_total_variables=requested_total_variables,
-        total_variables=total_variables,
-        variables=variables,
-        query_variable=query_variable,
-        evidence=evidence,
-        eliminable_variables=eliminable_variables_tuple,
-        exact_posterior=0.0,
-        baseline_ordering=baseline_ordering,
-        baseline_peak_factor_size=baseline_peak_factor_size,
-        gold_ordering=gold_ordering_tuple,
-        gold_peak_factor_size=gold_peak_factor_size,
-        gold_source=gold_source,
-        heuristic_results=heuristic_results,
-        random_search_best=random_search_best,
-        min_fill_peak_factor_size=_optional_int(
-            payload.get("min_fill_peak_factor_size"),
-            _min_fill_peak(heuristic_results),
-            "min_fill_peak_factor_size",
-        ),
-        problem_statement=str(payload.get("problem_statement", "")),
-        hidden_clusters=_cluster_mapping(payload.get("hidden_clusters")),
-        bridge_variables=_optional_string_tuple(payload.get("bridge_variables")),
-        decoy_variable=str(payload.get("decoy_variable", "D0")),
-        attempt_index=_optional_int(payload.get("attempt_index"), 0, "attempt_index"),
-        size_escalated=bool(payload.get("size_escalated", total_variables != requested_total_variables)),
-        scale_note=None if payload.get("scale_note") is None else str(payload.get("scale_note")),
-    )
-
-    if exact_posterior_value is None:
-        exact_posterior, _ = evaluate_exact_probability(instance_stub, gold_ordering_tuple)
-    else:
-        exact_posterior = float(exact_posterior_value)
-
-    problem_statement = instance_stub.problem_statement or render_problem(
-        BayesianVEInstance(
-            seed=instance_stub.seed,
-            difficulty=instance_stub.difficulty,
-            requested_total_variables=instance_stub.requested_total_variables,
-            total_variables=instance_stub.total_variables,
-            variables=instance_stub.variables,
-            query_variable=instance_stub.query_variable,
-            evidence=instance_stub.evidence,
-            eliminable_variables=instance_stub.eliminable_variables,
-            exact_posterior=exact_posterior,
-            baseline_ordering=instance_stub.baseline_ordering,
-            baseline_peak_factor_size=instance_stub.baseline_peak_factor_size,
-            gold_ordering=instance_stub.gold_ordering,
-            gold_peak_factor_size=instance_stub.gold_peak_factor_size,
-            gold_source=instance_stub.gold_source,
-            heuristic_results=instance_stub.heuristic_results,
-            random_search_best=instance_stub.random_search_best,
-            min_fill_peak_factor_size=instance_stub.min_fill_peak_factor_size,
-            problem_statement="",
-            hidden_clusters=instance_stub.hidden_clusters,
-            bridge_variables=instance_stub.bridge_variables,
-            decoy_variable=instance_stub.decoy_variable,
-            attempt_index=instance_stub.attempt_index,
-            size_escalated=instance_stub.size_escalated,
-            scale_note=instance_stub.scale_note,
-        )
-    )
-
-    return BayesianVEInstance(
-        seed=instance_stub.seed,
-        difficulty=instance_stub.difficulty,
-        requested_total_variables=instance_stub.requested_total_variables,
-        total_variables=instance_stub.total_variables,
-        variables=instance_stub.variables,
-        query_variable=instance_stub.query_variable,
-        evidence=instance_stub.evidence,
-        eliminable_variables=instance_stub.eliminable_variables,
-        exact_posterior=exact_posterior,
-        baseline_ordering=instance_stub.baseline_ordering,
-        baseline_peak_factor_size=instance_stub.baseline_peak_factor_size,
-        gold_ordering=instance_stub.gold_ordering,
-        gold_peak_factor_size=instance_stub.gold_peak_factor_size,
-        gold_source=instance_stub.gold_source,
-        heuristic_results=instance_stub.heuristic_results,
-        random_search_best=instance_stub.random_search_best,
-        min_fill_peak_factor_size=instance_stub.min_fill_peak_factor_size,
-        problem_statement=problem_statement,
-        hidden_clusters=instance_stub.hidden_clusters,
-        bridge_variables=instance_stub.bridge_variables,
-        decoy_variable=instance_stub.decoy_variable,
-        attempt_index=instance_stub.attempt_index,
-        size_escalated=instance_stub.size_escalated,
-        scale_note=instance_stub.scale_note,
-    )
-
-def _variable_from_payload(payload: dict[str, Any]) -> VariableSpec:
-    if not isinstance(payload, dict):
-        raise ValueError("each variable must be a dict")
-    name = _required_str(payload.get("name"), "variable.name")
-    parents = _string_tuple(payload.get("parents", []), f"{name}.parents")
-    cpt_true_probs_raw = payload.get("cpt_true_probs")
-    if not isinstance(cpt_true_probs_raw, list) or not cpt_true_probs_raw:
-        raise ValueError(f"{name}.cpt_true_probs must be a non-empty list")
-    cpt_true_probs = tuple(float(value) for value in cpt_true_probs_raw)
-    return VariableSpec(name=name, parents=parents, cpt_true_probs=cpt_true_probs)
-
-def _ordering_summary_from_payload(payload: dict[str, Any]) -> OrderingSummary:
-    if not isinstance(payload, dict):
-        raise ValueError("ordering summary must be a dict")
-    return OrderingSummary(
-        name=_required_str(payload.get("name"), "ordering_summary.name"),
-        ordering=_string_tuple(payload.get("ordering"), "ordering_summary.ordering"),
-        peak_factor_size=_optional_int(payload.get("peak_factor_size"), 0, "ordering_summary.peak_factor_size"),
-    )
-
-def _required_str(value: Any, field_name: str) -> str:
-    if not isinstance(value, str) or not value.strip():
-        raise ValueError(f"{field_name} must be a non-empty string")
-    return value.strip()
-
-def _string_tuple(value: Any, field_name: str) -> tuple[str, ...]:
-    if not isinstance(value, list):
-        raise ValueError(f"{field_name} must be a list")
-    result = tuple(str(item).strip() for item in value)
-    if not all(result):
-        raise ValueError(f"{field_name} must not contain empty values")
-    return result
-
-def _optional_string_tuple(value: Any) -> tuple[str, ...]:
-    if value is None:
-        return ()
-    if not isinstance(value, list):
-        raise ValueError("expected a list of strings")
-    return tuple(str(item).strip() for item in value if str(item).strip())
-
-def _int_mapping(value: Any, field_name: str) -> dict[str, int]:
-    if not isinstance(value, dict):
-        raise ValueError(f"{field_name} must be a dict")
-    parsed: dict[str, int] = {}
-    for key, raw in value.items():
-        parsed[str(key)] = int(raw)
-    return parsed
-
-def _cluster_mapping(value: Any) -> dict[str, tuple[str, ...]]:
-    if value is None:
-        return {}
-    if not isinstance(value, dict):
-        raise ValueError("hidden_clusters must be a dict")
-    parsed: dict[str, tuple[str, ...]] = {}
-    for key, raw in value.items():
-        if not isinstance(raw, list):
-            raise ValueError("hidden_clusters values must be lists")
-        parsed[str(key)] = tuple(str(item) for item in raw)
-    return parsed
-
-def _optional_int(value: Any, default: int, field_name: str) -> int:
-    if value is None:
-        return default
-    try:
-        return int(value)
-    except Exception as exc:
-        raise ValueError(f"{field_name} must be an integer") from exc
-
-def _min_fill_peak(heuristic_results: Sequence[OrderingSummary]) -> int:
-    for summary in heuristic_results:
-        if summary.name == "min_fill":
-            return summary.peak_factor_size
-    return 0
-
-def _posterior_gap_pct(exact_posterior: float, submitted_probability: float) -> float:
-    denominator = max(abs(exact_posterior), MIN_POSITIVE)
-    return 100.0 * abs(submitted_probability - exact_posterior) / denominator
-
-__all__ = ["build_instance_payload", "verify"]
+_VE_VERIFIER_SOURCE = '"""BEST_GUESS JSON schema:\n{\n  "p_query_given_evidence": <float strictly between 0 and 1>,\n  "ordering_used": ["X1", "X2", "..."],  # every eliminable variable exactly once\n  "peak_factor_size_self_report": <positive int>\n}\n"""\nfrom dataclasses import dataclass\nfrom itertools import combinations\nimport math\nfrom random import Random\nfrom typing import Any, Iterable, Sequence\n\nRANDOM_ORDER_SAMPLES = 1000\nDEFAULT_VARIABLE_SIZES = (22, 26, 28)\nDIFFICULTY_TO_VARIABLES = {\n    "medium": 22,\n    "hard": 26,\n}\nFAILURE_GAP_PCT = 100.0\nMIN_POSITIVE = 1e-12\n\n@dataclass(frozen=True)\nclass VariableSpec:\n    name: str\n    parents: tuple[str, ...]\n    cpt_true_probs: tuple[float, ...]\n\n@dataclass(frozen=True)\nclass Factor:\n    scope: tuple[str, ...]\n    values: tuple[float, ...]\n\n@dataclass(frozen=True)\nclass OrderingSummary:\n    name: str\n    ordering: tuple[str, ...]\n    peak_factor_size: int\n\n@dataclass(frozen=True)\nclass GuessVerification:\n    is_valid: bool\n    failure_reason: str | None\n    p_query_given_evidence: float | None\n    ordering_used: tuple[str, ...] | None\n    peak_factor_size_self_report: int | None\n    true_peak_factor_size: int | None\n    gap_nats: float | None\n\n@dataclass(frozen=True)\nclass GeneratedCandidate:\n    total_variables: int\n    variables: tuple[VariableSpec, ...]\n    query_variable: str\n    evidence: dict[str, int]\n    hidden_clusters: dict[str, tuple[str, ...]]\n    bridge_variables: tuple[str, ...]\n    decoy_variable: str\n\n@dataclass(frozen=True)\nclass BayesianVEInstance:\n    seed: int\n    difficulty: str\n    requested_total_variables: int\n    total_variables: int\n    variables: tuple[VariableSpec, ...]\n    query_variable: str\n    evidence: dict[str, int]\n    eliminable_variables: tuple[str, ...]\n    exact_posterior: float\n    baseline_ordering: tuple[str, ...]\n    baseline_peak_factor_size: int\n    gold_ordering: tuple[str, ...]\n    gold_peak_factor_size: int\n    gold_source: str\n    heuristic_results: tuple[OrderingSummary, ...]\n    random_search_best: OrderingSummary\n    min_fill_peak_factor_size: int\n    problem_statement: str\n    hidden_clusters: dict[str, tuple[str, ...]]\n    bridge_variables: tuple[str, ...]\n    decoy_variable: str\n    attempt_index: int\n    size_escalated: bool\n    scale_note: str | None\n\ndef build_instance_payload(seed: int, difficulty: str) -> dict[str, Any]:\n    requested_total_variables = _difficulty_to_requested_total_variables(difficulty)\n    instance = build_instance(\n        seed=seed,\n        difficulty=difficulty,\n        requested_total_variables=requested_total_variables,\n    )\n    return _instance_to_payload(instance)\n\ndef verify(instance: dict[str, Any], submission: dict[str, Any]) -> tuple[float, bool, dict[str, Any]]:\n    try:\n        ve_instance = _instance_from_payload(instance)\n    except ValueError as exc:\n        return FAILURE_GAP_PCT, False, {"failure_reason": f"invalid instance: {exc}"}\n\n    verification = verify_best_guess(ve_instance, submission)\n    if not verification.is_valid:\n        return FAILURE_GAP_PCT, False, {"failure_reason": verification.failure_reason}\n\n    submitted_probability = float(verification.p_query_given_evidence)\n    gap_pct = _posterior_gap_pct(ve_instance.exact_posterior, submitted_probability)\n    return (\n        gap_pct,\n        True,\n        {\n            "submitted_probability": submitted_probability,\n            "exact_posterior": ve_instance.exact_posterior,\n            "absolute_probability_error": abs(submitted_probability - ve_instance.exact_posterior),\n            "gap_pct": gap_pct,\n            "gap_nats": verification.gap_nats,\n            "ordering_used": list(verification.ordering_used or ()),\n            "submitted_peak_factor_size": verification.peak_factor_size_self_report,\n            "true_peak_factor_size": verification.true_peak_factor_size,\n            "gold_ordering": list(ve_instance.gold_ordering),\n            "gold_peak_factor_size": ve_instance.gold_peak_factor_size,\n            "gold_source": ve_instance.gold_source,\n            "peak_factor_size_matches": (\n                verification.peak_factor_size_self_report == verification.true_peak_factor_size\n            ),\n        },\n    )\n\ndef build_instance(\n    *,\n    seed: int,\n    difficulty: str,\n    requested_total_variables: int = 22,\n    max_generation_attempts: int = 16,\n    random_order_samples: int = RANDOM_ORDER_SAMPLES,\n) -> BayesianVEInstance:\n    size_queue = [requested_total_variables]\n    size_queue.extend(\n        size for size in DEFAULT_VARIABLE_SIZES if size > requested_total_variables and size not in size_queue\n    )\n\n    best_candidate: BayesianVEInstance | None = None\n    best_score: tuple[int, int, float] | None = None\n    last_reason = "no candidate generated"\n    scale_note: str | None = None\n\n    for size_index, total_variables in enumerate(size_queue):\n        best_for_size: BayesianVEInstance | None = None\n        best_for_size_score: tuple[int, int, float] | None = None\n        any_hard_enough = False\n\n        for attempt_index in range(max_generation_attempts):\n            candidate_seed = seed + size_index * 100_000 + attempt_index * 10_007\n            candidate = _generate_candidate(seed=candidate_seed, total_variables=total_variables)\n            instance = _finalize_candidate(\n                seed=seed,\n                difficulty=difficulty,\n                requested_total_variables=requested_total_variables,\n                candidate=candidate,\n                attempt_index=attempt_index,\n                random_order_samples=random_order_samples,\n                scale_note=scale_note,\n            )\n            score = _candidate_score(instance)\n            if best_candidate is None or score > best_score:\n                best_candidate = instance\n                best_score = score\n            if best_for_size is None or score > best_for_size_score:\n                best_for_size = instance\n                best_for_size_score = score\n            if total_variables == 22 and instance.min_fill_peak_factor_size <= 4:\n                last_reason = (\n                    f"attempt {attempt_index} at 22 vars still looked easy "\n                    f"(min-fill peak factor size {instance.min_fill_peak_factor_size})"\n                )\n                continue\n            any_hard_enough = True\n\n        if total_variables == 22 and not any_hard_enough:\n            scale_note = "All 22-variable attempts had min-fill peak factor size <= 4, so the spike escalated."\n            last_reason = scale_note\n            continue\n        if best_for_size is not None:\n            return best_for_size\n\n    if best_candidate is not None:\n        return best_candidate\n    raise RuntimeError(f"failed to generate a Bayesian VE instance: {last_reason}")\n\ndef verify_best_guess(instance: BayesianVEInstance, best_guess: dict[str, Any]) -> GuessVerification:\n    if not isinstance(best_guess, dict):\n        return GuessVerification(False, "BEST_GUESS must be a JSON object", None, None, None, None, None)\n\n    try:\n        probability = float(best_guess["p_query_given_evidence"])\n    except Exception:\n        return GuessVerification(False, "p_query_given_evidence must be numeric", None, None, None, None, None)\n    if not 0.0 < probability < 1.0:\n        return GuessVerification(\n            False,\n            "p_query_given_evidence must lie strictly between 0 and 1",\n            None,\n            None,\n            None,\n            None,\n            None,\n        )\n\n    ordering_used = best_guess.get("ordering_used")\n    normalized_order = normalize_elimination_order(instance, ordering_used)\n    if normalized_order is None:\n        return GuessVerification(\n            False,\n            "ordering_used must list every eliminable variable exactly once and exclude query/evidence variables",\n            None,\n            None,\n            None,\n            None,\n            None,\n        )\n\n    try:\n        self_reported_peak = int(best_guess["peak_factor_size_self_report"])\n    except Exception:\n        return GuessVerification(\n            False,\n            "peak_factor_size_self_report must be an integer",\n            None,\n            None,\n            None,\n            None,\n            None,\n        )\n    if self_reported_peak < 1:\n        return GuessVerification(\n            False,\n            "peak_factor_size_self_report must be positive",\n            None,\n            None,\n            None,\n            None,\n            None,\n        )\n\n    _, true_peak = evaluate_exact_probability(instance, normalized_order)\n    gap_nats = abs(math.log(instance.exact_posterior) - math.log(probability))\n    return GuessVerification(\n        is_valid=True,\n        failure_reason=None,\n        p_query_given_evidence=probability,\n        ordering_used=normalized_order,\n        peak_factor_size_self_report=self_reported_peak,\n        true_peak_factor_size=true_peak,\n        gap_nats=gap_nats,\n    )\n\ndef normalize_elimination_order(\n    instance: BayesianVEInstance,\n    ordering: Sequence[Any] | None,\n) -> tuple[str, ...] | None:\n    if not isinstance(ordering, Sequence) or isinstance(ordering, (str, bytes)):\n        return None\n    names = tuple(str(value).strip() for value in ordering)\n    if not all(names):\n        return None\n    if len(names) != len(instance.eliminable_variables):\n        return None\n    if set(names) != set(instance.eliminable_variables):\n        return None\n    if len(set(names)) != len(names):\n        return None\n    return names\n\ndef render_problem(instance: BayesianVEInstance) -> str:\n    evidence_terms = ", ".join(f"{name}={value}" for name, value in instance.evidence.items())\n    lines = [\n        "You are doing exact inference in a Bayesian network with binary variables in {0, 1}.",\n        f"Task: report P({instance.query_variable}=1 | {evidence_terms}).",\n        "All CPT rows below give P(variable=1 | parents); P(variable=0 | parents) = 1 minus that value.",\n        "When you report ordering_used, list every eliminable variable exactly once and do not include the query variable or any evidence variable.",\n        "Interpret peak_factor_size as the largest intermediate factor scope size, counted as the number of variables in that factor before summing out the eliminated variable.",\n        "",\n        f"Variables: {\', \'.join(variable.name for variable in instance.variables)}",\n        f"Query variable: {instance.query_variable}",\n        f"Evidence: {evidence_terms}",\n        f"Eliminable variables ({len(instance.eliminable_variables)}): {\', \'.join(instance.eliminable_variables)}",\n        "",\n        "Bayesian network (topological order):",\n    ]\n    for variable in instance.variables:\n        parent_text = ", ".join(variable.parents) if variable.parents else "none"\n        lines.append(f"- {variable.name}: parents = [{parent_text}]")\n        if not variable.parents:\n            lines.append(f"  P({variable.name}=1) = {_fmt_prob(variable.cpt_true_probs[0])}")\n            continue\n        for assignment_index, probability in enumerate(variable.cpt_true_probs):\n            assignment = _bits_from_index(assignment_index, len(variable.parents))\n            parent_terms = ", ".join(\n                f"{parent}={value}" for parent, value in zip(variable.parents, assignment, strict=True)\n            )\n            lines.append(f"  if {parent_terms} -> P({variable.name}=1) = {_fmt_prob(probability)}")\n    return "\\n".join(lines)\n\ndef evaluate_exact_probability(\n    instance: BayesianVEInstance,\n    ordering: Sequence[str],\n) -> tuple[float, int]:\n    normalized_order = normalize_elimination_order(instance, ordering)\n    if normalized_order is None:\n        raise ValueError("invalid elimination ordering")\n\n    factors = list(_build_conditioned_factors(instance.variables, instance.evidence))\n    peak_factor_size = max((len(factor.scope) for factor in factors if factor.scope), default=1)\n\n    for variable_name in normalized_order:\n        involved = [factor for factor in factors if variable_name in factor.scope]\n        untouched = [factor for factor in factors if variable_name not in factor.scope]\n        if not involved:\n            factors = untouched\n            continue\n        product_factor = _multiply_all(involved)\n        peak_factor_size = max(peak_factor_size, len(product_factor.scope))\n        reduced = _sum_out(product_factor, variable_name)\n        if reduced.scope or not math.isclose(reduced.values[0], 1.0, rel_tol=0.0, abs_tol=1e-12):\n            untouched.append(reduced)\n        factors = untouched\n\n    final_factor = _multiply_all(factors)\n    if instance.query_variable not in final_factor.scope:\n        raise RuntimeError("query variable disappeared during elimination")\n    probability_zero = _factor_probability_for_assignment(final_factor, {instance.query_variable: 0})\n    probability_one = _factor_probability_for_assignment(final_factor, {instance.query_variable: 1})\n    normalizer = probability_zero + probability_one\n    if normalizer <= 0.0:\n        raise RuntimeError("invalid posterior normalizer")\n    return probability_one / normalizer, peak_factor_size\n\ndef evaluate_ordering_peak_from_scopes(\n    initial_scopes: Sequence[frozenset[str]],\n    ordering: Sequence[str],\n) -> int:\n    scopes = [set(scope) for scope in initial_scopes if scope]\n    peak_factor_size = max((len(scope) for scope in scopes), default=1)\n    for variable_name in ordering:\n        touched = [scope for scope in scopes if variable_name in scope]\n        untouched = [scope for scope in scopes if variable_name not in scope]\n        if not touched:\n            scopes = untouched\n            continue\n        merged_scope = set().union(*touched)\n        peak_factor_size = max(peak_factor_size, len(merged_scope))\n        next_scope = merged_scope - {variable_name}\n        if next_scope:\n            untouched.append(next_scope)\n        scopes = untouched\n    return peak_factor_size\n\ndef _finalize_candidate(\n    *,\n    seed: int,\n    difficulty: str,\n    requested_total_variables: int,\n    candidate: GeneratedCandidate,\n    attempt_index: int,\n    random_order_samples: int,\n    scale_note: str | None,\n) -> BayesianVEInstance:\n    eliminable_variables = tuple(\n        variable.name\n        for variable in candidate.variables\n        if variable.name != candidate.query_variable and variable.name not in candidate.evidence\n    )\n    initial_scopes = tuple(\n        frozenset(factor.scope)\n        for factor in _build_conditioned_factors(candidate.variables, candidate.evidence)\n        if factor.scope\n    )\n\n    heuristic_orders = (\n        OrderingSummary(\n            name="baseline",\n            ordering=tuple(sorted(eliminable_variables)),\n            peak_factor_size=evaluate_ordering_peak_from_scopes(initial_scopes, tuple(sorted(eliminable_variables))),\n        ),\n        OrderingSummary(\n            name="min_neighbors",\n            ordering=_build_greedy_order(initial_scopes, eliminable_variables, rule="min_neighbors"),\n            peak_factor_size=0,\n        ),\n        OrderingSummary(\n            name="min_weight",\n            ordering=_build_greedy_order(initial_scopes, eliminable_variables, rule="min_weight"),\n            peak_factor_size=0,\n        ),\n        OrderingSummary(\n            name="min_fill",\n            ordering=_build_greedy_order(initial_scopes, eliminable_variables, rule="min_fill"),\n            peak_factor_size=0,\n        ),\n    )\n    realized_heuristics: list[OrderingSummary] = []\n    for summary in heuristic_orders:\n        peak = summary.peak_factor_size or evaluate_ordering_peak_from_scopes(initial_scopes, summary.ordering)\n        realized_heuristics.append(\n            OrderingSummary(\n                name=summary.name,\n                ordering=summary.ordering,\n                peak_factor_size=peak,\n            )\n        )\n\n    rng = Random(seed + candidate.total_variables * 997 + attempt_index * 13)\n    random_best_ordering = tuple(eliminable_variables)\n    random_best_peak = evaluate_ordering_peak_from_scopes(initial_scopes, random_best_ordering)\n    for _ in range(random_order_samples):\n        proposal = list(eliminable_variables)\n        rng.shuffle(proposal)\n        peak = evaluate_ordering_peak_from_scopes(initial_scopes, proposal)\n        if peak < random_best_peak:\n            random_best_ordering = tuple(proposal)\n            random_best_peak = peak\n    random_search_best = OrderingSummary(\n        name="random_best_of_1000",\n        ordering=random_best_ordering,\n        peak_factor_size=random_best_peak,\n    )\n\n    gold_candidates = list(realized_heuristics[1:]) + [random_search_best]\n    gold = min(gold_candidates, key=lambda summary: (summary.peak_factor_size, summary.name, summary.ordering))\n    stub = BayesianVEInstance(\n        seed=seed,\n        difficulty=difficulty,\n        requested_total_variables=requested_total_variables,\n        total_variables=candidate.total_variables,\n        variables=candidate.variables,\n        query_variable=candidate.query_variable,\n        evidence=candidate.evidence,\n        eliminable_variables=eliminable_variables,\n        exact_posterior=0.0,\n        baseline_ordering=realized_heuristics[0].ordering,\n        baseline_peak_factor_size=realized_heuristics[0].peak_factor_size,\n        gold_ordering=gold.ordering,\n        gold_peak_factor_size=gold.peak_factor_size,\n        gold_source=gold.name,\n        heuristic_results=tuple(realized_heuristics[1:]),\n        random_search_best=random_search_best,\n        min_fill_peak_factor_size=next(\n            summary.peak_factor_size for summary in realized_heuristics if summary.name == "min_fill"\n        ),\n        problem_statement="",\n        hidden_clusters=candidate.hidden_clusters,\n        bridge_variables=candidate.bridge_variables,\n        decoy_variable=candidate.decoy_variable,\n        attempt_index=attempt_index,\n        size_escalated=candidate.total_variables != requested_total_variables,\n        scale_note=scale_note,\n    )\n    exact_posterior, _ = evaluate_exact_probability(stub, gold.ordering)\n    instance_without_render = BayesianVEInstance(\n        seed=seed,\n        difficulty=difficulty,\n        requested_total_variables=requested_total_variables,\n        total_variables=candidate.total_variables,\n        variables=candidate.variables,\n        query_variable=candidate.query_variable,\n        evidence=candidate.evidence,\n        eliminable_variables=eliminable_variables,\n        exact_posterior=exact_posterior,\n        baseline_ordering=realized_heuristics[0].ordering,\n        baseline_peak_factor_size=realized_heuristics[0].peak_factor_size,\n        gold_ordering=gold.ordering,\n        gold_peak_factor_size=gold.peak_factor_size,\n        gold_source=gold.name,\n        heuristic_results=tuple(realized_heuristics[1:]),\n        random_search_best=random_search_best,\n        min_fill_peak_factor_size=next(\n            summary.peak_factor_size for summary in realized_heuristics if summary.name == "min_fill"\n        ),\n        problem_statement="",\n        hidden_clusters=candidate.hidden_clusters,\n        bridge_variables=candidate.bridge_variables,\n        decoy_variable=candidate.decoy_variable,\n        attempt_index=attempt_index,\n        size_escalated=candidate.total_variables != requested_total_variables,\n        scale_note=scale_note,\n    )\n    return BayesianVEInstance(\n        seed=seed,\n        difficulty=difficulty,\n        requested_total_variables=requested_total_variables,\n        total_variables=candidate.total_variables,\n        variables=candidate.variables,\n        query_variable=candidate.query_variable,\n        evidence=candidate.evidence,\n        eliminable_variables=eliminable_variables,\n        exact_posterior=exact_posterior,\n        baseline_ordering=realized_heuristics[0].ordering,\n        baseline_peak_factor_size=realized_heuristics[0].peak_factor_size,\n        gold_ordering=gold.ordering,\n        gold_peak_factor_size=gold.peak_factor_size,\n        gold_source=gold.name,\n        heuristic_results=tuple(realized_heuristics[1:]),\n        random_search_best=random_search_best,\n        min_fill_peak_factor_size=next(\n            summary.peak_factor_size for summary in realized_heuristics if summary.name == "min_fill"\n        ),\n        problem_statement=render_problem(instance_without_render),\n        hidden_clusters=candidate.hidden_clusters,\n        bridge_variables=candidate.bridge_variables,\n        decoy_variable=candidate.decoy_variable,\n        attempt_index=attempt_index,\n        size_escalated=candidate.total_variables != requested_total_variables,\n        scale_note=scale_note,\n    )\n\ndef _candidate_score(instance: BayesianVEInstance) -> tuple[int, int, float]:\n    heuristic_peaks = [summary.peak_factor_size for summary in instance.heuristic_results]\n    spread = max(heuristic_peaks) - min(heuristic_peaks)\n    baseline_advantage = instance.baseline_peak_factor_size - instance.gold_peak_factor_size\n    posterior_balance = -abs(instance.exact_posterior - 0.5)\n    return (baseline_advantage, spread, posterior_balance)\n\ndef _generate_candidate(*, seed: int, total_variables: int) -> GeneratedCandidate:\n    rng = Random(seed)\n    cluster_sizes = _cluster_sizes(total_variables - 3)\n    hidden_clusters = {\n        "A": tuple(f"A{index}" for index in range(1, cluster_sizes[0] + 1)),\n        "B": tuple(f"B{index}" for index in range(1, cluster_sizes[1] + 1)),\n        "C": tuple(f"C{index}" for index in range(1, cluster_sizes[2] + 1)),\n    }\n    bridge_variables = ("BR01", "BR12")\n    decoy_variable = "D0"\n\n    early_clusters = {name: values[: max(3, len(values) // 2)] for name, values in hidden_clusters.items()}\n    late_clusters = {name: values[len(early_clusters[name]) :] for name, values in hidden_clusters.items()}\n\n    topological_order = (\n        list(hidden_clusters["A"][: len(early_clusters["A"])])\n        + list(hidden_clusters["B"][: len(early_clusters["B"])])\n        + list(hidden_clusters["C"][: len(early_clusters["C"])])\n        + [decoy_variable, *bridge_variables]\n        + list(late_clusters["A"])\n        + list(late_clusters["B"])\n        + list(late_clusters["C"])\n    )\n\n    parent_map: dict[str, tuple[str, ...]] = {}\n    position = {name: index for index, name in enumerate(topological_order)}\n\n    for cluster_name in ("A", "B", "C"):\n        early_nodes = early_clusters[cluster_name]\n        for index, variable_name in enumerate(early_nodes):\n            parents: list[str] = []\n            if index >= 1:\n                parents.append(early_nodes[index - 1])\n            if index >= 2:\n                parents.append(early_nodes[index - 2])\n            if cluster_name == "B" and index == 0:\n                parents.append(hidden_clusters["A"][min(1, len(hidden_clusters["A"]) - 1)])\n            if cluster_name == "C" and index == 0:\n                parents.append(hidden_clusters["B"][min(1, len(hidden_clusters["B"]) - 1)])\n            parent_map[variable_name] = tuple(dict.fromkeys(parents))\n\n    parent_map[decoy_variable] = (\n        early_clusters["A"][-1],\n        early_clusters["B"][-1],\n        early_clusters["C"][-1],\n    )\n    parent_map["BR01"] = (\n        early_clusters["A"][-2],\n        early_clusters["B"][-2],\n    )\n    parent_map["BR12"] = (\n        early_clusters["B"][-1],\n        early_clusters["C"][-2],\n    )\n\n    for cluster_name in ("A", "B", "C"):\n        late_nodes = late_clusters[cluster_name]\n        all_cluster_nodes = hidden_clusters[cluster_name]\n        for index, variable_name in enumerate(late_nodes):\n            earlier_same_cluster = [name for name in all_cluster_nodes if position[name] < position[variable_name]]\n            parents = list(earlier_same_cluster[-2:]) if len(earlier_same_cluster) >= 2 else list(earlier_same_cluster)\n            if cluster_name == "A":\n                if index in {0, len(late_nodes) - 1}:\n                    parents.append(decoy_variable)\n            elif cluster_name == "B":\n                if index == 0:\n                    parents.append("BR01")\n                if index == 1:\n                    parents.append(decoy_variable)\n                if index == len(late_nodes) - 1:\n                    parents.extend([decoy_variable, "BR12"])\n            else:\n                if index == 0:\n                    parents.append("BR12")\n                if index in {0, len(late_nodes) - 1}:\n                    parents.append(decoy_variable)\n            if cluster_name == "B" and index < len(hidden_clusters["A"]):\n                parents.append(hidden_clusters["A"][min(len(hidden_clusters["A"]) - 1, index + 1)])\n            if cluster_name == "C" and index < len(hidden_clusters["B"]):\n                parents.append(hidden_clusters["B"][min(len(hidden_clusters["B"]) - 1, index + 1)])\n            parent_map[variable_name] = tuple(dict.fromkeys(parents[-3:]))\n\n    variables = tuple(\n        VariableSpec(\n            name=variable_name,\n            parents=parent_map.get(variable_name, ()),\n            cpt_true_probs=_generate_cpt(\n                rng=rng,\n                variable_name=variable_name,\n                parents=parent_map.get(variable_name, ()),\n            ),\n        )\n        for variable_name in topological_order\n    )\n\n    query_variable = late_clusters["B"][-1]\n    evidence_candidates = [\n        late_clusters["A"][-1],\n        hidden_clusters["B"][0],\n        late_clusters["B"][0],\n        late_clusters["C"][-1],\n        hidden_clusters["C"][1],\n    ]\n    evidence = {\n        variable_name: rng.randint(0, 1)\n        for variable_name in evidence_candidates\n        if variable_name != query_variable\n    }\n    return GeneratedCandidate(\n        total_variables=total_variables,\n        variables=variables,\n        query_variable=query_variable,\n        evidence=evidence,\n        hidden_clusters=hidden_clusters,\n        bridge_variables=bridge_variables,\n        decoy_variable=decoy_variable,\n    )\n\ndef _cluster_sizes(core_variable_count: int) -> tuple[int, int, int]:\n    base = core_variable_count // 3\n    remainder = core_variable_count - 3 * base\n    return (base, base + remainder, base)\n\ndef _generate_cpt(*, rng: Random, variable_name: str, parents: Sequence[str]) -> tuple[float, ...]:\n    if not parents:\n        return (_rounded_probability(0.35 + 0.30 * rng.random()),)\n\n    base = rng.uniform(-0.9, 0.9)\n    weights = []\n    for parent_name in parents:\n        magnitude = rng.uniform(0.55, 1.35)\n        sign = -1.0 if rng.random() < 0.45 else 1.0\n        if parent_name in {"D0", "BR01", "BR12"} or variable_name in {"D0", "BR01", "BR12"}:\n            magnitude += 0.15\n        weights.append(sign * magnitude)\n\n    probabilities = []\n    for assignment_index in range(1 << len(parents)):\n        assignment = _bits_from_index(assignment_index, len(parents))\n        logit = base\n        for bit, weight in zip(assignment, weights, strict=True):\n            logit += weight * (1.0 if bit else -1.0)\n        probability = 1.0 / (1.0 + math.exp(-logit))\n        probabilities.append(_rounded_probability(probability))\n    return tuple(probabilities)\n\ndef _rounded_probability(probability: float) -> float:\n    clipped = min(0.95, max(0.05, probability))\n    return round(clipped, 3)\n\ndef _build_conditioned_factors(\n    variables: Sequence[VariableSpec],\n    evidence: dict[str, int],\n) -> tuple[Factor, ...]:\n    factors: list[Factor] = []\n    for variable in variables:\n        reduced_scope = [parent for parent in variable.parents if parent not in evidence]\n        include_variable = variable.name not in evidence\n        if include_variable:\n            reduced_scope.append(variable.name)\n        values: list[float] = []\n        for assignment_index in range(1 << len(reduced_scope)):\n            reduced_assignment = _bits_from_index(assignment_index, len(reduced_scope))\n            assignment_map = dict(zip(reduced_scope, reduced_assignment, strict=True))\n            parent_assignment = tuple(\n                evidence[parent_name] if parent_name in evidence else assignment_map[parent_name]\n                for parent_name in variable.parents\n            )\n            variable_value = evidence[variable.name] if variable.name in evidence else assignment_map[variable.name]\n            p_true = variable.cpt_true_probs[_index_from_bits(parent_assignment)]\n            values.append(p_true if variable_value == 1 else 1.0 - p_true)\n        factors.append(Factor(scope=tuple(reduced_scope), values=tuple(values)))\n    return tuple(factors)\n\ndef _build_greedy_order(\n    initial_scopes: Sequence[frozenset[str]],\n    eliminable_variables: Sequence[str],\n    *,\n    rule: str,\n) -> tuple[str, ...]:\n    remaining = list(eliminable_variables)\n    scopes = [set(scope) for scope in initial_scopes if scope]\n    order: list[str] = []\n\n    while remaining:\n        adjacency = _adjacency_from_scopes(scopes)\n        incident_scopes = {name: [scope for scope in scopes if name in scope] for name in remaining}\n\n        def score(name: str) -> tuple[Any, ...]:\n            neighbors = adjacency.get(name, set())\n            mass = sum(1 << len(scope) for scope in incident_scopes[name]) or 1\n            if rule == "min_neighbors":\n                return (len(neighbors), mass, name)\n            if rule == "min_weight":\n                return (mass, len(neighbors), name)\n            if rule == "min_fill":\n                fill_edges = 0\n                neighbor_list = sorted(neighbors)\n                for left, right in combinations(neighbor_list, 2):\n                    if right not in adjacency.get(left, set()):\n                        fill_edges += 1\n                return (fill_edges, len(neighbors), mass, name)\n            raise ValueError(f"unknown rule: {rule}")\n\n        choice = min(remaining, key=score)\n        order.append(choice)\n        remaining.remove(choice)\n\n        touched = [scope for scope in scopes if choice in scope]\n        untouched = [scope for scope in scopes if choice not in scope]\n        merged = set().union(*touched) if touched else {choice}\n        next_scope = merged - {choice}\n        if next_scope:\n            untouched.append(next_scope)\n        scopes = untouched\n\n    return tuple(order)\n\ndef _adjacency_from_scopes(scopes: Iterable[set[str]]) -> dict[str, set[str]]:\n    adjacency: dict[str, set[str]] = {}\n    for scope in scopes:\n        for variable_name in scope:\n            adjacency.setdefault(variable_name, set())\n        for left, right in combinations(scope, 2):\n            adjacency[left].add(right)\n            adjacency[right].add(left)\n    return adjacency\n\ndef _multiply_all(factors: Sequence[Factor]) -> Factor:\n    if not factors:\n        return Factor(scope=(), values=(1.0,))\n    result = factors[0]\n    for factor in factors[1:]:\n        result = _multiply(result, factor)\n    return result\n\ndef _multiply(left: Factor, right: Factor) -> Factor:\n    scope = tuple(dict.fromkeys((*left.scope, *right.scope)))\n    values: list[float] = []\n    for assignment_index in range(1 << len(scope)):\n        assignment = _bits_from_index(assignment_index, len(scope))\n        assignment_map = dict(zip(scope, assignment, strict=True))\n        values.append(\n            _factor_probability_for_assignment(left, assignment_map)\n            * _factor_probability_for_assignment(right, assignment_map)\n        )\n    return Factor(scope=scope, values=tuple(values))\n\ndef _sum_out(factor: Factor, variable_name: str) -> Factor:\n    if variable_name not in factor.scope:\n        return factor\n    reduced_scope = tuple(name for name in factor.scope if name != variable_name)\n    values: list[float] = []\n    for assignment_index in range(1 << len(reduced_scope)):\n        assignment = _bits_from_index(assignment_index, len(reduced_scope))\n        assignment_map = dict(zip(reduced_scope, assignment, strict=True))\n        total = 0.0\n        for value in (0, 1):\n            total += _factor_probability_for_assignment(\n                factor,\n                {**assignment_map, variable_name: value},\n            )\n        values.append(total)\n    return Factor(scope=reduced_scope, values=tuple(values))\n\ndef _factor_probability_for_assignment(factor: Factor, assignment_map: dict[str, int]) -> float:\n    if not factor.scope:\n        return factor.values[0]\n    bits = tuple(int(assignment_map[name]) for name in factor.scope)\n    return factor.values[_index_from_bits(bits)]\n\ndef _bits_from_index(index: int, width: int) -> tuple[int, ...]:\n    return tuple((index >> shift) & 1 for shift in reversed(range(width)))\n\ndef _index_from_bits(bits: Sequence[int]) -> int:\n    index = 0\n    for bit in bits:\n        index = (index << 1) | int(bit)\n    return index\n\ndef _fmt_prob(probability: float) -> str:\n    return f"{probability:.3f}"\n\ndef _difficulty_to_requested_total_variables(difficulty: str) -> int:\n    normalized = difficulty.strip().lower()\n    if normalized not in DIFFICULTY_TO_VARIABLES:\n        raise ValueError(f"unsupported difficulty: {difficulty}")\n    return DIFFICULTY_TO_VARIABLES[normalized]\n\ndef _instance_to_payload(instance: BayesianVEInstance) -> dict[str, Any]:\n    return {\n        "seed": instance.seed,\n        "difficulty": instance.difficulty,\n        "requested_total_variables": instance.requested_total_variables,\n        "total_variables": instance.total_variables,\n        "variables": [\n            {\n                "name": variable.name,\n                "parents": list(variable.parents),\n                "cpt_true_probs": list(variable.cpt_true_probs),\n            }\n            for variable in instance.variables\n        ],\n        "query_variable": instance.query_variable,\n        "evidence": dict(instance.evidence),\n        "eliminable_variables": list(instance.eliminable_variables),\n        "exact_posterior": instance.exact_posterior,\n        "baseline_ordering": list(instance.baseline_ordering),\n        "baseline_peak_factor_size": instance.baseline_peak_factor_size,\n        "gold_ordering": list(instance.gold_ordering),\n        "gold_peak_factor_size": instance.gold_peak_factor_size,\n        "gold_source": instance.gold_source,\n        "heuristic_results": [\n            {\n                "name": summary.name,\n                "ordering": list(summary.ordering),\n                "peak_factor_size": summary.peak_factor_size,\n            }\n            for summary in instance.heuristic_results\n        ],\n        "random_search_best": {\n            "name": instance.random_search_best.name,\n            "ordering": list(instance.random_search_best.ordering),\n            "peak_factor_size": instance.random_search_best.peak_factor_size,\n        },\n        "min_fill_peak_factor_size": instance.min_fill_peak_factor_size,\n        "problem_statement": instance.problem_statement,\n        "hidden_clusters": {\n            cluster_name: list(variable_names)\n            for cluster_name, variable_names in instance.hidden_clusters.items()\n        },\n        "bridge_variables": list(instance.bridge_variables),\n        "decoy_variable": instance.decoy_variable,\n        "attempt_index": instance.attempt_index,\n        "size_escalated": instance.size_escalated,\n        "scale_note": instance.scale_note,\n    }\n\ndef _instance_from_payload(payload: dict[str, Any]) -> BayesianVEInstance:\n    if not isinstance(payload, dict):\n        raise ValueError("instance must be a dict")\n\n    variables_payload = payload.get("variables")\n    if not isinstance(variables_payload, list) or not variables_payload:\n        raise ValueError("variables must be a non-empty list")\n    variables = tuple(_variable_from_payload(item) for item in variables_payload)\n\n    query_variable = _required_str(payload.get("query_variable"), "query_variable")\n    evidence = _int_mapping(payload.get("evidence"), "evidence")\n    eliminable_variables = payload.get("eliminable_variables")\n    if eliminable_variables is None:\n        eliminable_variables_tuple = tuple(\n            variable.name for variable in variables if variable.name != query_variable and variable.name not in evidence\n        )\n    else:\n        eliminable_variables_tuple = _string_tuple(eliminable_variables, "eliminable_variables")\n\n    requested_total_variables = _optional_int(payload.get("requested_total_variables"), 22, "requested_total_variables")\n    total_variables = _optional_int(payload.get("total_variables"), len(variables), "total_variables")\n    seed = _optional_int(payload.get("seed"), 0, "seed")\n    difficulty = str(payload.get("difficulty", "medium"))\n\n    initial_scopes = tuple(\n        frozenset(factor.scope)\n        for factor in _build_conditioned_factors(variables, evidence)\n        if factor.scope\n    )\n\n    baseline_ordering = tuple(sorted(eliminable_variables_tuple))\n    if "baseline_ordering" in payload:\n        baseline_ordering = _string_tuple(payload["baseline_ordering"], "baseline_ordering")\n    baseline_peak = payload.get("baseline_peak_factor_size")\n    if baseline_peak is None:\n        baseline_peak_factor_size = evaluate_ordering_peak_from_scopes(initial_scopes, baseline_ordering)\n    else:\n        baseline_peak_factor_size = _optional_int(baseline_peak, 0, "baseline_peak_factor_size")\n\n    heuristic_payload = payload.get("heuristic_results")\n    if heuristic_payload is None:\n        heuristic_results = (\n            OrderingSummary(\n                name="min_neighbors",\n                ordering=_build_greedy_order(initial_scopes, eliminable_variables_tuple, rule="min_neighbors"),\n                peak_factor_size=0,\n            ),\n            OrderingSummary(\n                name="min_weight",\n                ordering=_build_greedy_order(initial_scopes, eliminable_variables_tuple, rule="min_weight"),\n                peak_factor_size=0,\n            ),\n            OrderingSummary(\n                name="min_fill",\n                ordering=_build_greedy_order(initial_scopes, eliminable_variables_tuple, rule="min_fill"),\n                peak_factor_size=0,\n            ),\n        )\n        heuristic_results = tuple(\n            OrderingSummary(\n                name=summary.name,\n                ordering=summary.ordering,\n                peak_factor_size=evaluate_ordering_peak_from_scopes(initial_scopes, summary.ordering),\n            )\n            for summary in heuristic_results\n        )\n    else:\n        if not isinstance(heuristic_payload, list):\n            raise ValueError("heuristic_results must be a list")\n        heuristic_results = tuple(_ordering_summary_from_payload(item) for item in heuristic_payload)\n\n    random_search_best_payload = payload.get("random_search_best")\n    if random_search_best_payload is None:\n        random_search_best = OrderingSummary(\n            name="random_best_of_1000",\n            ordering=baseline_ordering,\n            peak_factor_size=baseline_peak_factor_size,\n        )\n    else:\n        random_search_best = _ordering_summary_from_payload(random_search_best_payload)\n\n    gold_ordering = payload.get("gold_ordering")\n    if gold_ordering is None:\n        gold_candidates = list(heuristic_results) + [random_search_best]\n        gold = min(gold_candidates, key=lambda summary: (summary.peak_factor_size, summary.name, summary.ordering))\n        gold_ordering_tuple = gold.ordering\n        gold_peak_factor_size = gold.peak_factor_size\n        gold_source = gold.name\n    else:\n        gold_ordering_tuple = _string_tuple(gold_ordering, "gold_ordering")\n        gold_peak = payload.get("gold_peak_factor_size")\n        if gold_peak is None:\n            gold_peak_factor_size = evaluate_ordering_peak_from_scopes(initial_scopes, gold_ordering_tuple)\n        else:\n            gold_peak_factor_size = _optional_int(gold_peak, 0, "gold_peak_factor_size")\n        gold_source = str(payload.get("gold_source", "provided"))\n\n    exact_posterior_value = payload.get("exact_posterior")\n    instance_stub = BayesianVEInstance(\n        seed=seed,\n        difficulty=difficulty,\n        requested_total_variables=requested_total_variables,\n        total_variables=total_variables,\n        variables=variables,\n        query_variable=query_variable,\n        evidence=evidence,\n        eliminable_variables=eliminable_variables_tuple,\n        exact_posterior=0.0,\n        baseline_ordering=baseline_ordering,\n        baseline_peak_factor_size=baseline_peak_factor_size,\n        gold_ordering=gold_ordering_tuple,\n        gold_peak_factor_size=gold_peak_factor_size,\n        gold_source=gold_source,\n        heuristic_results=heuristic_results,\n        random_search_best=random_search_best,\n        min_fill_peak_factor_size=_optional_int(\n            payload.get("min_fill_peak_factor_size"),\n            _min_fill_peak(heuristic_results),\n            "min_fill_peak_factor_size",\n        ),\n        problem_statement=str(payload.get("problem_statement", "")),\n        hidden_clusters=_cluster_mapping(payload.get("hidden_clusters")),\n        bridge_variables=_optional_string_tuple(payload.get("bridge_variables")),\n        decoy_variable=str(payload.get("decoy_variable", "D0")),\n        attempt_index=_optional_int(payload.get("attempt_index"), 0, "attempt_index"),\n        size_escalated=bool(payload.get("size_escalated", total_variables != requested_total_variables)),\n        scale_note=None if payload.get("scale_note") is None else str(payload.get("scale_note")),\n    )\n\n    if exact_posterior_value is None:\n        exact_posterior, _ = evaluate_exact_probability(instance_stub, gold_ordering_tuple)\n    else:\n        exact_posterior = float(exact_posterior_value)\n\n    problem_statement = instance_stub.problem_statement or render_problem(\n        BayesianVEInstance(\n            seed=instance_stub.seed,\n            difficulty=instance_stub.difficulty,\n            requested_total_variables=instance_stub.requested_total_variables,\n            total_variables=instance_stub.total_variables,\n            variables=instance_stub.variables,\n            query_variable=instance_stub.query_variable,\n            evidence=instance_stub.evidence,\n            eliminable_variables=instance_stub.eliminable_variables,\n            exact_posterior=exact_posterior,\n            baseline_ordering=instance_stub.baseline_ordering,\n            baseline_peak_factor_size=instance_stub.baseline_peak_factor_size,\n            gold_ordering=instance_stub.gold_ordering,\n            gold_peak_factor_size=instance_stub.gold_peak_factor_size,\n            gold_source=instance_stub.gold_source,\n            heuristic_results=instance_stub.heuristic_results,\n            random_search_best=instance_stub.random_search_best,\n            min_fill_peak_factor_size=instance_stub.min_fill_peak_factor_size,\n            problem_statement="",\n            hidden_clusters=instance_stub.hidden_clusters,\n            bridge_variables=instance_stub.bridge_variables,\n            decoy_variable=instance_stub.decoy_variable,\n            attempt_index=instance_stub.attempt_index,\n            size_escalated=instance_stub.size_escalated,\n            scale_note=instance_stub.scale_note,\n        )\n    )\n\n    return BayesianVEInstance(\n        seed=instance_stub.seed,\n        difficulty=instance_stub.difficulty,\n        requested_total_variables=instance_stub.requested_total_variables,\n        total_variables=instance_stub.total_variables,\n        variables=instance_stub.variables,\n        query_variable=instance_stub.query_variable,\n        evidence=instance_stub.evidence,\n        eliminable_variables=instance_stub.eliminable_variables,\n        exact_posterior=exact_posterior,\n        baseline_ordering=instance_stub.baseline_ordering,\n        baseline_peak_factor_size=instance_stub.baseline_peak_factor_size,\n        gold_ordering=instance_stub.gold_ordering,\n        gold_peak_factor_size=instance_stub.gold_peak_factor_size,\n        gold_source=instance_stub.gold_source,\n        heuristic_results=instance_stub.heuristic_results,\n        random_search_best=instance_stub.random_search_best,\n        min_fill_peak_factor_size=instance_stub.min_fill_peak_factor_size,\n        problem_statement=problem_statement,\n        hidden_clusters=instance_stub.hidden_clusters,\n        bridge_variables=instance_stub.bridge_variables,\n        decoy_variable=instance_stub.decoy_variable,\n        attempt_index=instance_stub.attempt_index,\n        size_escalated=instance_stub.size_escalated,\n        scale_note=instance_stub.scale_note,\n    )\n\ndef _variable_from_payload(payload: dict[str, Any]) -> VariableSpec:\n    if not isinstance(payload, dict):\n        raise ValueError("each variable must be a dict")\n    name = _required_str(payload.get("name"), "variable.name")\n    parents = _string_tuple(payload.get("parents", []), f"{name}.parents")\n    cpt_true_probs_raw = payload.get("cpt_true_probs")\n    if not isinstance(cpt_true_probs_raw, list) or not cpt_true_probs_raw:\n        raise ValueError(f"{name}.cpt_true_probs must be a non-empty list")\n    cpt_true_probs = tuple(float(value) for value in cpt_true_probs_raw)\n    return VariableSpec(name=name, parents=parents, cpt_true_probs=cpt_true_probs)\n\ndef _ordering_summary_from_payload(payload: dict[str, Any]) -> OrderingSummary:\n    if not isinstance(payload, dict):\n        raise ValueError("ordering summary must be a dict")\n    return OrderingSummary(\n        name=_required_str(payload.get("name"), "ordering_summary.name"),\n        ordering=_string_tuple(payload.get("ordering"), "ordering_summary.ordering"),\n        peak_factor_size=_optional_int(payload.get("peak_factor_size"), 0, "ordering_summary.peak_factor_size"),\n    )\n\ndef _required_str(value: Any, field_name: str) -> str:\n    if not isinstance(value, str) or not value.strip():\n        raise ValueError(f"{field_name} must be a non-empty string")\n    return value.strip()\n\ndef _string_tuple(value: Any, field_name: str) -> tuple[str, ...]:\n    if not isinstance(value, list):\n        raise ValueError(f"{field_name} must be a list")\n    result = tuple(str(item).strip() for item in value)\n    if not all(result):\n        raise ValueError(f"{field_name} must not contain empty values")\n    return result\n\ndef _optional_string_tuple(value: Any) -> tuple[str, ...]:\n    if value is None:\n        return ()\n    if not isinstance(value, list):\n        raise ValueError("expected a list of strings")\n    return tuple(str(item).strip() for item in value if str(item).strip())\n\ndef _int_mapping(value: Any, field_name: str) -> dict[str, int]:\n    if not isinstance(value, dict):\n        raise ValueError(f"{field_name} must be a dict")\n    parsed: dict[str, int] = {}\n    for key, raw in value.items():\n        parsed[str(key)] = int(raw)\n    return parsed\n\ndef _cluster_mapping(value: Any) -> dict[str, tuple[str, ...]]:\n    if value is None:\n        return {}\n    if not isinstance(value, dict):\n        raise ValueError("hidden_clusters must be a dict")\n    parsed: dict[str, tuple[str, ...]] = {}\n    for key, raw in value.items():\n        if not isinstance(raw, list):\n            raise ValueError("hidden_clusters values must be lists")\n        parsed[str(key)] = tuple(str(item) for item in raw)\n    return parsed\n\ndef _optional_int(value: Any, default: int, field_name: str) -> int:\n    if value is None:\n        return default\n    try:\n        return int(value)\n    except Exception as exc:\n        raise ValueError(f"{field_name} must be an integer") from exc\n\ndef _min_fill_peak(heuristic_results: Sequence[OrderingSummary]) -> int:\n    for summary in heuristic_results:\n        if summary.name == "min_fill":\n            return summary.peak_factor_size\n    return 0\n\ndef _posterior_gap_pct(exact_posterior: float, submitted_probability: float) -> float:\n    denominator = max(abs(exact_posterior), MIN_POSITIVE)\n    return 100.0 * abs(submitted_probability - exact_posterior) / denominator\n\n__all__ = ["build_instance_payload", "verify"]'
+_VE_VERIFIER_GLOBALS: dict[str, Any] = {'__name__': '__voicetree_verifier_ve__', '__file__': 'verifiers/ve.py'}
+exec(compile(_VE_VERIFIER_SOURCE, 'verifiers/ve.py', 'exec'), _VE_VERIFIER_GLOBALS, _VE_VERIFIER_GLOBALS)
+ve_verify = _VE_VERIFIER_GLOBALS['verify']
 
 # ── Verifier registry (built from inlined verify functions above) ─────────────
 _SCHEMA_RE = _re.compile(r"BEST_GUESS(?: JSON)? schema:\s*(.*)", _re.IGNORECASE | _re.DOTALL)
@@ -2561,6 +594,7 @@ from typing import Any
 CLASS_DISPLAY_NAMES = {
     "cjs": "Coupled Job-Shop",
     "graphcol": "Graph Coloring",
+    "mbj": "Masked Block Job-Shop",
     "mwis": "Maximum Weighted Independent Set",
     "steiner": "Steiner x Coloring",
     "tsp": "Traveling Salesperson",
@@ -2663,7 +697,7 @@ def build_exec_prompt(
         f"{timing_block}\n\n"
         f"{current_best_block}\n\n"
         f"Exec turn {turn_index}. Emit, in order:\n"
-        f"- `SUB_{turn_index - 1}`: key findings for this subtask (≤ 30 lines)\n"
+        f"- `SUB_{turn_index - 1}`: key findings for this subtask — HARD LIMIT 30 lines. Stop writing SUB_{turn_index - 1} after 30 lines even if incomplete. BEST_GUESS and the remaining fields MUST follow.\n"
         f"- `BEST_GUESS`: class-specific JSON for `{cls}`\n"
         f"{schema_block}\n"
         "- `UPDATED_PLAN_STATE`: revised plan, or keep the prior plan verbatim\n"
@@ -2751,6 +785,13 @@ def _timing_block(
     )
 
 def _best_guess_schema_block(cls: str) -> str:
+    if cls == "portfolio":
+        return (
+            "- BEST_GUESS for `portfolio`: a single JSON object whose top-level keys are the "
+            "component problem_ids listed above, each mapped to an object obeying that "
+            "component's ANSWER SCHEMA block. Do not nest under an `answers` key."
+        )
+
     try:
         pass  # import inlined
     except Exception:
@@ -2772,9 +813,11 @@ from contextlib import nullcontext
 from typing import Any
 
 try:
+    import kaggle_benchmarks as kbench
     from kaggle_benchmarks import chats as kbench_chats
     from kaggle_benchmarks import contexts as kbench_contexts
 except Exception:  # pragma: no cover - local tests do not require kaggle_benchmarks.
+    kbench = None
     kbench_chats = None
     kbench_contexts = None
 
@@ -2793,7 +836,7 @@ def run_instance(
     del gold_objective, baseline_objective, value_cap  # encoded in the instance/components payloads.
 
     system_prompt = build_system_prompt()
-    instance_nl = render_nl(instance, cls)
+    instance_nl = render_nl(instance, cls, components=components)
     run_start = time.monotonic()
 
     transcript: list[dict[str, str]] = []
@@ -2814,8 +857,12 @@ def run_instance(
     last_eval = current_eval
     last_subtask: dict[str, Any] | None = None
     subtask_history: list[dict[str, Any]] = []
+    parse_events: list[dict[str, Any]] = []
+
+    label = f"{cls}-{difficulty}-s{seed}"
 
     with _chat_session(name=f"run-{cls}-{difficulty}-seed{seed}", system_prompt=system_prompt):
+        print(f"  [{label}] plan turn (budget={PLAN_TURN_BUDGET_S}s)...", flush=True)
         try:
             plan_response = _call_model(
                 llm=llm,
@@ -2834,19 +881,24 @@ def run_instance(
             plan_parsed = parse_plan_turn(plan_response["text"], cls=cls)
 
         if error is not None:
+            print(f"  [{label}] plan ERROR: {error} ({plan_response['wall_s']:.1f}s)", flush=True)
             stop_reason = "error"
         elif plan_response["timed_out"]:
+            print(f"  [{label}] plan TIMEOUT ({plan_response['wall_s']:.1f}s)", flush=True)
             stop_reason = "wall_budget"
             error = f"plan turn timed out after {PLAN_TURN_BUDGET_S}s"
         elif plan_parsed is None:
+            print(f"  [{label}] plan PARSE FAILED ({plan_response['wall_s']:.1f}s)", flush=True)
             stop_reason = "error"
             error = "plan turn parse failed"
         else:
             next_sub = plan_parsed.get("next_sub")
             if not next_sub:
+                print(f"  [{label}] plan PARSE FAILED — no NEXT_SUB ({plan_response['wall_s']:.1f}s)", flush=True)
                 stop_reason = "error"
                 error = "plan turn omitted NEXT_SUB"
             else:
+                print(f"  [{label}] plan ✓ ({plan_response['wall_s']:.1f}s)", flush=True)
                 turn_index = 2
                 while next_sub is not None:
                     if n_exec_turns >= MAX_EXEC_TURNS:
@@ -2870,6 +922,7 @@ def run_instance(
                         subtask_history=subtask_history,
                     )
 
+                    print(f"  [{label}] exec turn {turn_index} (budget={expected_turn_s}s, elapsed={elapsed_s:.0f}s)...", flush=True)
                     try:
                         exec_response = _call_model(
                             llm=llm,
@@ -2879,6 +932,7 @@ def run_instance(
                     except Exception as exc:  # noqa: BLE001
                         exec_response = {"text": "", "timed_out": False, "wall_s": time.monotonic() - run_start}
                         error = f"{type(exc).__name__}: {exc}"
+                        print(f"  [{label}] exec {turn_index} ERROR: {error}", flush=True)
                         stop_reason = "error"
                         break
 
@@ -2895,38 +949,74 @@ def run_instance(
                     subtask_history.append(last_subtask)
 
                     if exec_response["timed_out"]:
+                        print(f"  [{label}] exec {turn_index} TIMEOUT ({exec_response['wall_s']:.1f}s)", flush=True)
                         stop_reason = "wall_budget"
                         error = f"exec turn {turn_index} timed out after {expected_turn_s}s"
                         break
 
-                    exec_parsed = parse_exec_turn(
-                        exec_response["text"],
+                    parse_outcome = _parse_exec_with_rescue(
+                        llm=llm,
+                        raw_text=exec_response["text"],
                         cls=cls,
                         expected_subtask_id=next_sub["id"],
+                        require_decision=True,
+                    )
+                    exec_parsed = parse_outcome["parsed"]
+                    parse_events.append(
+                        {
+                            "turn_index": turn_index,
+                            "mode": parse_outcome["mode"],
+                            "missing_or_invalid": parse_outcome["missing_or_invalid"],
+                        }
                     )
                     if exec_parsed is None:
+                        print(f"  [{label}] exec {turn_index} PARSE FAILED ({exec_response['wall_s']:.1f}s)", flush=True)
                         stop_reason = "error"
                         error = f"exec turn {turn_index} parse failed"
                         break
 
                     parsed = exec_parsed
-                    last_emitted_best_guess = exec_parsed["best_guess"]
-                    last_eval = _evaluate_submission(
-                        cls=cls,
-                        instance=instance,
-                        submission=last_emitted_best_guess,
-                        components=components,
-                    )
+                    if exec_parsed.get("best_guess") is not None:
+                        last_emitted_best_guess = exec_parsed["best_guess"]
+                        last_eval = _evaluate_submission(
+                            cls=cls,
+                            instance=instance,
+                            submission=last_emitted_best_guess,
+                            components=components,
+                        )
 
-                    if _is_prompt_worthy(last_eval):
-                        current_best = last_eval["submission"]
-                        current_eval = last_eval
+                        feasible_flag = last_eval.get("feasible", False)
+                        gap = last_eval.get("gap_pct", 100.0)
+                        mode_suffix = "" if parse_outcome["mode"] == "strict" else f" via {parse_outcome['mode']}"
+                        print(
+                            f"  [{label}] exec {turn_index} ✓ feasible={feasible_flag} gap={gap:.1f}%"
+                            f"{mode_suffix} ({exec_response['wall_s']:.1f}s)",
+                            flush=True,
+                        )
 
-                    if exec_parsed["decision"] == "stop":
+                        if _is_prompt_worthy(last_eval):
+                            current_best = last_eval["submission"]
+                            current_eval = last_eval
+                    else:
+                        print(
+                            f"  [{label}] exec {turn_index} parsed without usable BEST_GUESS"
+                            f" via {parse_outcome['mode']} ({exec_response['wall_s']:.1f}s)",
+                            flush=True,
+                        )
+
+                    if exec_parsed.get("decision") == "stop":
                         stop_reason = "decision_stop"
                         break
 
-                    next_sub = exec_parsed["next_sub"]
+                    next_sub = exec_parsed.get("next_sub")
+                    if exec_parsed.get("decision") != "continue" or next_sub is None:
+                        print(
+                            f"  [{label}] exec {turn_index} rescued partial output but missing control fields",
+                            flush=True,
+                        )
+                        stop_reason = "error"
+                        error = f"exec turn {turn_index} parse failed"
+                        break
                     turn_index += 1
 
     stop_eval = last_eval if last_eval is not None else current_eval
@@ -2960,23 +1050,33 @@ def run_instance(
             if cf_response["timed_out"]:
                 error = error or f"counterfactual turn timed out after {cf_timeout_s}s"
             else:
-                parsed_cf = parse_exec_turn(
-                    cf_response["text"],
+                cf_parse_outcome = _parse_exec_with_rescue(
+                    llm=llm,
+                    raw_text=cf_response["text"],
                     cls=cls,
                     expected_subtask_id=cf_turn_index - 1,
                     require_decision=False,
+                )
+                parsed_cf = cf_parse_outcome["parsed"]
+                parse_events.append(
+                    {
+                        "turn_index": cf_turn_index,
+                        "mode": f"cf_{cf_parse_outcome['mode']}",
+                        "missing_or_invalid": cf_parse_outcome["missing_or_invalid"],
+                    }
                 )
                 if parsed_cf is None:
                     error = error or "counterfactual turn parse failed"
                 else:
                     cf_parsed = parsed_cf
-                    cf_eval = _evaluate_submission(
-                        cls=cls,
-                        instance=instance,
-                        submission=parsed_cf["best_guess"],
-                        components=components,
-                    )
-                    score_after_cf = _score_evaluation(cf_eval, wall_s=time.monotonic() - run_start)
+                    if parsed_cf.get("best_guess") is not None:
+                        cf_eval = _evaluate_submission(
+                            cls=cls,
+                            instance=instance,
+                            submission=parsed_cf["best_guess"],
+                            components=components,
+                        )
+                        score_after_cf = _score_evaluation(cf_eval, wall_s=time.monotonic() - run_start)
         else:
             error = error or "counterfactual turn skipped because no wall budget remained"
 
@@ -2993,8 +1093,106 @@ def run_instance(
         "transcript": transcript,
         "parsed": parsed,
         "cf_parsed": cf_parsed,
+        "parse_events": parse_events,
         "error": error,
     }
+
+def _parse_exec_with_rescue(
+    *,
+    llm: Any,
+    raw_text: str,
+    cls: str | None,
+    expected_subtask_id: int | None,
+    require_decision: bool,
+) -> dict[str, Any]:
+    strict = parse_exec_turn(
+        raw_text,
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+    )
+    if strict is not None:
+        return {"parsed": strict, "mode": "strict", "missing_or_invalid": []}
+
+    partial = parse_exec_turn_partial(
+        raw_text,
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+    )
+    missing_or_invalid = list(partial.pop("missing_or_invalid", []))
+    if partial.get("best_guess") is not None:
+        return {
+            "parsed": partial,
+            "mode": "partial_rescue",
+            "missing_or_invalid": missing_or_invalid,
+        }
+
+    judge_llm = _get_judge_llm()
+    if judge_llm is None:
+        return {"parsed": partial or None, "mode": "strict_parse_failed", "missing_or_invalid": missing_or_invalid}
+
+    rescue_prompt = _build_exec_rescue_prompt(
+        raw_text=raw_text,
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+        missing_or_invalid=missing_or_invalid,
+    )
+    try:
+        rescue_response = _call_model(llm=judge_llm, prompt_text=rescue_prompt, timeout_s=45)
+    except Exception:
+        return {"parsed": partial or None, "mode": "strict_parse_failed", "missing_or_invalid": missing_or_invalid}
+    if rescue_response["timed_out"] or not rescue_response["text"]:
+        return {"parsed": partial or None, "mode": "strict_parse_failed", "missing_or_invalid": missing_or_invalid}
+
+    rescued = parse_exec_turn_partial(
+        rescue_response["text"],
+        cls=cls,
+        expected_subtask_id=expected_subtask_id,
+        require_decision=require_decision,
+    )
+    rescued.pop("missing_or_invalid", None)
+    merged = dict(partial)
+    for key, value in rescued.items():
+        if key not in merged:
+            merged[key] = value
+
+    mode = "judge_rescue" if merged.get("best_guess") is not None else "strict_parse_failed"
+    return {"parsed": merged or None, "mode": mode, "missing_or_invalid": missing_or_invalid}
+
+def _get_judge_llm() -> Any | None:
+    if kbench is not None and hasattr(kbench, "judge_llm"):
+        return getattr(kbench, "judge_llm")
+    return None
+
+def _build_exec_rescue_prompt(
+    *,
+    raw_text: str,
+    cls: str | None,
+    expected_subtask_id: int | None,
+    require_decision: bool,
+    missing_or_invalid: list[str],
+) -> str:
+    subtask_label = "SUB_N"
+    if expected_subtask_id is not None:
+        subtask_label = f"SUB_{expected_subtask_id}"
+
+    decision_rule = "Include `DECISION`." if require_decision else "Do not include `DECISION` unless explicit."
+    missing_text = ", ".join(missing_or_invalid) if missing_or_invalid else "unknown"
+
+    return (
+        "You are extracting structured fields from a prior model response. Do not solve the task again.\n\n"
+        f"Problem class: {cls or 'unknown'}\n"
+        f"Fields missing or invalid in strict parse: {missing_text}\n\n"
+        "Return only literal labelled lines that can be recovered confidently from the raw response.\n"
+        f"Allowed labels: `{subtask_label}`, `BEST_GUESS`, `UPDATED_PLAN_STATE`, `QUALITY_FORECAST`, "
+        "`CONTINUE_FORECAST`, `DECISION`, `NEXT_SUB`.\n"
+        f"{decision_rule} Include `NEXT_SUB` only if the decision is `continue`.\n"
+        "If a field cannot be recovered confidently, omit it.\n\n"
+        "RAW RESPONSE:\n"
+        f"{raw_text.strip()}"
+    )
 
 def _chat_session(*, name: str, system_prompt: str):
     if kbench_chats is None:
@@ -3070,6 +1268,12 @@ def _initial_best_guess(
         if not isinstance(problem_id, str) or not isinstance(sub_instance, dict):
             continue
         baseline_submission = sub_instance.get("baseline_submission")
+        if baseline_submission is None:
+            baseline_submission = sub_instance.get("baseline_answer")
+        if baseline_submission is None:
+            baseline_tour = sub_instance.get("baseline_tour")
+            if baseline_tour is not None:
+                baseline_submission = {"tour": list(baseline_tour)}
         if baseline_submission is not None:
             answers[problem_id] = baseline_submission
     return answers or None

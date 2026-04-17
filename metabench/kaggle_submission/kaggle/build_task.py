@@ -194,6 +194,23 @@ def _clean(src: str, *, rename_verify: str | None = None) -> str:
     return src.strip()
 
 
+def _isolated_verifier_block(stem: str, src: str) -> str:
+    cleaned = _clean(src)
+    source_var = f"_{stem.upper()}_VERIFIER_SOURCE"
+    globals_var = f"_{stem.upper()}_VERIFIER_GLOBALS"
+    module_name = f"__voicetree_verifier_{stem}__"
+    file_name = f"verifiers/{stem}.py"
+    return (
+        f"# {'─' * 70}\n"
+        f"# verifiers/{stem}.py (isolated namespace)\n"
+        f"# {'─' * 70}\n\n"
+        f"{source_var} = {cleaned!r}\n"
+        f"{globals_var}: dict[str, Any] = {{'__name__': {module_name!r}, '__file__': {file_name!r}}}\n"
+        f"exec(compile({source_var}, {file_name!r}, 'exec'), {globals_var}, {globals_var})\n"
+        f"{stem}_verify = {globals_var}['verify']\n\n"
+    )
+
+
 def build_task_source() -> str:
     parts: list[str] = [TASK_HEADER]
 
@@ -202,9 +219,11 @@ def build_task_source() -> str:
         if not path.exists():
             raise FileNotFoundError(f"missing: {path}")
         src = path.read_text(encoding="utf-8")
-        rename = stem if subdir == "verifiers" else None
-        cleaned = _clean(src, rename_verify=rename)
-        parts.append(f"# {'─' * 70}\n# {subdir}/{stem}.py\n# {'─' * 70}\n\n{cleaned}\n\n")
+        if subdir == "verifiers":
+            parts.append(_isolated_verifier_block(stem, src))
+        else:
+            cleaned = _clean(src)
+            parts.append(f"# {'─' * 70}\n# {subdir}/{stem}.py\n# {'─' * 70}\n\n{cleaned}\n\n")
 
         if subdir == "verifiers" and stem == "ve":
             parts.append(VERIFIER_REGISTRY)

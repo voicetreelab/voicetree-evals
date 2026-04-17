@@ -1,0 +1,8 @@
+id,class,difficulty,seed,result
+0,cjs,medium,1,26.350526347437768
+1,steiner,medium,1,76.14457786679525
+2,graphcol,medium,1,0.0
+3,tsp,medium,1,95.07333965871229
+4,mwis,medium,1,88.05783238267735
+5,ve,medium,1,0.0
+6,portfolio,medium,1,12.346310885522017

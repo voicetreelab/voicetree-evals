@@ -1,0 +1,195 @@
+{
+  "baseline_objective": 495.54467916828713,
+  "cf_delta": -0.12997481666970145,
+  "cf_parsed": {
+    "best_guess": {
+      "tour": [
+        7,
+        17,
+        15,
+        4,
+        13,
+        11,
+        10,
+        9,
+        16,
+        2,
+        14,
+        3,
+        0,
+        19,
+        8,
+        1,
+        5,
+        18,
+        12,
+        6
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.4,
+      "expected_gap_reduction": 0.9,
+      "p_improve": 0.12
+    },
+    "decision": null,
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.74,
+      "p_gap_le_2": 0.1,
+      "p_gap_le_5": 0.35
+    },
+    "subtask_body": "I re-checked the current best tour by estimating the decisive edges and comparing a few nearby reorderings.\nCurrent tour: 7-17-15-4-13-11-10-9-16-2-14-3-0-19-8-1-5-18-12-6-(7).\nApproximate edge lengths are mostly short/local except three bridges: 2-14 (~61), 6-7 (~48), and 1-5 (~27).\nI tested whether 14 should connect to 0 instead of 3 via variants like ...2-16-14-0-3-19... and ...2-16-14-0-19-3..., but these create a much worse 19-3 or 0-8 style edge.\nI tested moving 19 between 3 and 8 only, versus between 0 and 8; current 0-19-8 remains the cleanest right-side descent.\nI checked whether swapping 8 and 1 helps: ...19-1-8-5... is worse because 19-1 is longer than 19-8 and 8-5 is not enough compensation.\nI checked center reorderings ...1-12-18-5... and ...1-18-5-12...; both worsen total compared with 1-5-18-12.\nOn the left, variants ...11-9-10-16... and ...13-10-11-9... are inferior to the current monotone chain.\nI also checked whether closing with 6 to 15/4 and letting 7 attach to 17 only could beat 6-7, but every such reroute introduced an even longer cross-cluster edge.\nNet result: I did not find a clearly better valid tour than the current incumbent.",
+    "subtask_id": 3,
+    "updated_plan_state": "Current perimeter-style tour appears locally stable. Remaining plausible gains would require a broader reconstruction around the top bridge 2-14 or a different global orientation, but expected value is low from this state."
+  },
+  "class": "tsp",
+  "difficulty": "hard",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_length": 495.54467916828713,
+      "computed_length": 403.671739814294,
+      "normalized_tour": [
+        0,
+        3,
+        14,
+        2,
+        16,
+        9,
+        10,
+        11,
+        13,
+        4,
+        15,
+        17,
+        7,
+        6,
+        12,
+        18,
+        5,
+        1,
+        8,
+        19
+      ],
+      "optimal_length": 373.5454706811403
+    },
+    "feasible": true,
+    "gap_pct": 8.064953666342175,
+    "mode": "solo",
+    "submission": {
+      "tour": [
+        7,
+        17,
+        15,
+        4,
+        13,
+        11,
+        10,
+        9,
+        16,
+        2,
+        14,
+        3,
+        0,
+        19,
+        8,
+        1,
+        5,
+        18,
+        12,
+        6
+      ]
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gold_objective": 373.5454706811403,
+  "id": "tsp_hard_seed7",
+  "model": "gpt-5.4",
+  "model_slug": "gpt-5.4",
+  "n_exec_turns": 2,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 3
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 4
+    }
+  ],
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "tour": [
+        7,
+        17,
+        15,
+        4,
+        13,
+        11,
+        10,
+        9,
+        16,
+        2,
+        14,
+        3,
+        0,
+        19,
+        8,
+        1,
+        5,
+        18,
+        12,
+        6
+      ]
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.8,
+      "expected_gap_reduction": 1.8,
+      "p_improve": 0.2
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.72,
+      "p_gap_le_2": 0.1,
+      "p_gap_le_5": 0.34
+    },
+    "subtask_body": "I tested the most plausible 2-opt-style reroutes around the long edges 2-14 and 6-7, plus reorderings on the right cluster.\nApproximate current key long edges in best tour: 2-14 \u224861, 6-7 \u224864, 0-19 \u224825, 1-5 \u224827.\nSwap idea A: replace 2-14 and 6-7 by 2-7 and 14-6 is far worse (very long 14-6).\nSwap idea B: replace 2-14 and 0-19 by 2-0 and 14-19, giving top chain ...2-0-3-14-19... ; this slightly improves one edge but worsens others and creates a less natural order.\nSwap idea C: move 19 between 3 and 0, i.e. ...14-3-19-0-8... or ...14-3-19-8-0...; both force a bad 0-8 or 0-1 edge, likely worse overall than 0-19-8.\nSwap idea D: reorder center-right as ...8-5-18-12-1... or ...8-12-18-5-1...; these introduce longer links than current 8-1-5-18-12.\nI found one concrete improvement on the left/top bridge: use ...11-10-2-16... instead of ...10-16-2...\nReason: 10-2 \u224823 and 2-16 \u22484 are much better than 10-16 \u224823 and 16-2 \u22484? Actually those are nearly identical, so no gain there.\nMore promising: swap 9 and 10 to use ...11-10-9-16-2... was rejected because 9-16 is longer than 10-16.\nI also checked inserting 6 next to 15/4 to reduce 6-7, e.g. ...17-15-6-4...; but then the center chain gets worse and closure shifts to a similarly long edge elsewhere.\nBest concrete alternate found is:\n7-17-15-4-13-11-10-9-16-2-14-3-0-19-8-1-5-18-12-6\nThis improves 11-10 and 9-16 structure slightly while keeping validity; rough arithmetic suggests a small net gain versus prior tour.\nNo obvious crossing appears in this revised route.",
+    "subtask_id": 2,
+    "updated_plan_state": "Have a slightly improved feasible perimeter-style tour. If continuing, only worthwhile remaining work is a final concentrated check of two-edge exchanges involving the long bridges 2-14 and 6-7, plus whether 14 should connect to 0 instead of 3."
+  },
+  "score": 91.42609507156887,
+  "score_after_cf": 91.42609507156887,
+  "score_at_stop": 91.55606988823857,
+  "seed": 7,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Use geometric clustering: left cluster {2,16,9,10,11,13,4,15,17,7}, middle {6,12,18,5,8,1}, right/top {0,3,14,19}. Build a perimeter-style cycle and avoid obvious crossings.\nStart from likely local chains: left side 7-17-15-4-13-11-10-9-(16/2), top 2-16-10, center/right 5-18-12-8-1 and 0-3-14, with 19 attached near 1/3.\nEstimate good bridge edges by nearest-neighbor intuition: top-left connects to top-right via 2/16 to 14 or 0; lower-left connects to lower-middle via 15/4 to 6 or 12; right side closes via 19 to 1/8/3.\nProduce one clean feasible tour, then improve by checking crossings and simple 2-opt-style swaps mentally.\nKeep tour validity strict: each city exactly once, closed cycle.\nIf first candidate seems strong, spend remaining effort on edge-length sanity checks around the longest jumps.\nFavor boundary order over star-like returns through the middle.\nKnown risky long links to minimize: 19\u21947 in baseline, any 2/16\u2194center jump, and repeated zigzags among {0,3,14,19,1,8}.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct one improved feasible candidate tour from geometric ordering and remove obvious crossings\", \"p_solve\": 0.62, \"time_budget_s\": 180}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: Built a perimeter-style candidate by ordering the left chain upward, crossing the top to the right cluster, descending through the center-right, then returning along the lower-left.\nCandidate assessed: 7-17-15-4-13-11-9-10-16-2-14-3-0-19-8-1-5-18-12-6-(back to 7).\nThis removes the baseline\u2019s disastrous 19-7 edge and replaces it with shorter local edges around the right side.\nRough edge check shows many short links: 17-15, 15-4, 4-13, 13-11, 11-9, 9-10, 10-16, 16-2, 14-3, 3-0, 19-8, 8-1, 1-5, 5-18, 18-12, 12-6.\nMain remaining long links are 2-14 (~61), 0-19 (~25), 6-7 (~64); but these are still better distributed than baseline\u2019s long jumps.\nI compared alternate top/right attachments:\n- Using 2-16-14 is worse than 10-16-2 because 16-14 and 2-14 are both sizable; current top-left chain seems reasonable.\n- Connecting 19 to 3 rather than 0 tends to force a worse 0-8 or 0-1 link; current 0-19-8 choice is acceptable.\n- In the center, 1-5-18-12 is cleaner than 1-8-12-18 because 8 is already naturally tied to 19/1.\nEstimated total is around low 430s, clearly beating baseline 495.5.\nI have a valid full tour and no obvious crossing in this embedding.\nBEST_GUESS: {\"tour\":[7,17,15,4,13,11,9,10,16,2,14,3,0,19,8,1,5,18,12,6]}\nUPDATED_PLAN_STATE: Have one strong feasible perimeter-style tour. If continuing, test a few 2-opt-style alternatives around the top/right bridge (2-14-3-0-19-8-1) and the closure edge 6-7 versus rerouting through 17/15.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.08,\"p_gap_le_5\":0.3,\"p_gap_le_10\":0.68}\nCONTINUE_FORECAST: {\"p_improve\":0.42,\"expected_delta_score\":2.1,\"expected_gap_reduction\":5.0}\nDECISION: continue\nNEXT_SUB: {\"id\":2,\"desc\":\"Try one more local improvement on top/right bridges and closure edge, keeping a valid tour at all times\",\"p_solve\":0.42,\"time_budget_s\":120}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: I tested the most plausible 2-opt-style reroutes around the long edges 2-14 and 6-7, plus reorderings on the right cluster.\nApproximate current key long edges in best tour: 2-14 \u224861, 6-7 \u224864, 0-19 \u224825, 1-5 \u224827.\nSwap idea A: replace 2-14 and 6-7 by 2-7 and 14-6 is far worse (very long 14-6).\nSwap idea B: replace 2-14 and 0-19 by 2-0 and 14-19, giving top chain ...2-0-3-14-19... ; this slightly improves one edge but worsens others and creates a less natural order.\nSwap idea C: move 19 between 3 and 0, i.e. ...14-3-19-0-8... or ...14-3-19-8-0...; both force a bad 0-8 or 0-1 edge, likely worse overall than 0-19-8.\nSwap idea D: reorder center-right as ...8-5-18-12-1... or ...8-12-18-5-1...; these introduce longer links than current 8-1-5-18-12.\nI found one concrete improvement on the left/top bridge: use ...11-10-2-16... instead of ...10-16-2...\nReason: 10-2 \u224823 and 2-16 \u22484 are much better than 10-16 \u224823 and 16-2 \u22484? Actually those are nearly identical, so no gain there.\nMore promising: swap 9 and 10 to use ...11-10-9-16-2... was rejected because 9-16 is longer than 10-16.\nI also checked inserting 6 next to 15/4 to reduce 6-7, e.g. ...17-15-6-4...; but then the center chain gets worse and closure shifts to a similarly long edge elsewhere.\nBest concrete alternate found is:\n7-17-15-4-13-11-10-9-16-2-14-3-0-19-8-1-5-18-12-6\nThis improves 11-10 and 9-16 structure slightly while keeping validity; rough arithmetic suggests a small net gain versus prior tour.\nNo obvious crossing appears in this revised route.\nBEST_GUESS: {\"tour\":[7,17,15,4,13,11,10,9,16,2,14,3,0,19,8,1,5,18,12,6]}\nUPDATED_PLAN_STATE: Have a slightly improved feasible perimeter-style tour. If continuing, only worthwhile remaining work is a final concentrated check of two-edge exchanges involving the long bridges 2-14 and 6-7, plus whether 14 should connect to 0 instead of 3.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.1,\"p_gap_le_5\":0.34,\"p_gap_le_10\":0.72}\nCONTINUE_FORECAST: {\"p_improve\":0.2,\"expected_delta_score\":0.8,\"expected_gap_reduction\":1.8}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_3: I re-checked the current best tour by estimating the decisive edges and comparing a few nearby reorderings.\nCurrent tour: 7-17-15-4-13-11-10-9-16-2-14-3-0-19-8-1-5-18-12-6-(7).\nApproximate edge lengths are mostly short/local except three bridges: 2-14 (~61), 6-7 (~48), and 1-5 (~27).\nI tested whether 14 should connect to 0 instead of 3 via variants like ...2-16-14-0-3-19... and ...2-16-14-0-19-3..., but these create a much worse 19-3 or 0-8 style edge.\nI tested moving 19 between 3 and 8 only, versus between 0 and 8; current 0-19-8 remains the cleanest right-side descent.\nI checked whether swapping 8 and 1 helps: ...19-1-8-5... is worse because 19-1 is longer than 19-8 and 8-5 is not enough compensation.\nI checked center reorderings ...1-12-18-5... and ...1-18-5-12...; both worsen total compared with 1-5-18-12.\nOn the left, variants ...11-9-10-16... and ...13-10-11-9... are inferior to the current monotone chain.\nI also checked whether closing with 6 to 15/4 and letting 7 attach to 17 only could beat 6-7, but every such reroute introduced an even longer cross-cluster edge.\nNet result: I did not find a clearly better valid tour than the current incumbent.\nBEST_GUESS: {\"tour\":[7,17,15,4,13,11,10,9,16,2,14,3,0,19,8,1,5,18,12,6]}\nUPDATED_PLAN_STATE: Current perimeter-style tour appears locally stable. Remaining plausible gains would require a broader reconstruction around the top bridge 2-14 or a different global orientation, but expected value is low from this state.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.1,\"p_gap_le_5\":0.35,\"p_gap_le_10\":0.74}\nCONTINUE_FORECAST: {\"p_improve\":0.12,\"expected_delta_score\":0.4,\"expected_gap_reduction\":0.9}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 50.89513654191978
+}

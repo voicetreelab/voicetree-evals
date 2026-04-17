@@ -1,7 +1,7 @@
 ---
+color: green
 isContextNode: false
 agent_name: Ben
-color: green
 ---
 # Discussion of Overnight Results — Done
 
@@ -41,3 +41,5 @@ git commit -m "discussion of overnight results + writeup-v2 update"
 - [OVERNIGHT-RESULTS](OVERNIGHT-RESULTS.md)
 
 [[task_1776369185208zf0]]
+
+[[/Users/bobbobby/repos/voicetree-evals/metabench/voicetree-16-4/merged_1776373536540_j2a.md]]

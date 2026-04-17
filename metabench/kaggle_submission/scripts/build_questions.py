@@ -19,7 +19,7 @@ from verifiers.ve import _instance_from_payload, evaluate_exact_probability
 
 WALL_BUDGET_S = 1800
 SOLO_VALUE_CAP = 100.0
-SOLO_CLASSES = ("cjs", "steiner", "graphcol", "tsp", "mwis", "ve")
+SOLO_CLASSES = ("cjs", "steiner", "graphcol", "tsp", "mwis", "ve", "mbj")
 PORTFOLIO_COMPONENT_CAPS = (33.0, 33.0, 34.0)
 MEDIUM_PORTFOLIO_COMPONENT_IDS = (
     "cjs_medium_seed1",
@@ -49,6 +49,10 @@ HARD_SIZE_FALLBACKS: dict[str, tuple[tuple[str, int], ...]] = {
     "mwis": (("n_nodes", mwis.DIFFICULTY_CONFIG["medium"]["n_nodes"]),),
     "steiner": (("n", steiner.DIFFICULTY_CONFIGS["medium"]["n"]),),
     "ve": (("requested_total_variables", ve_verifier.DIFFICULTY_TO_VARIABLES["medium"]),),
+    "mbj": (
+        ("n_jobs", mbj.DIFFICULTY_CONFIGS["medium"]["n_jobs"]),
+        ("n_machines", mbj.DIFFICULTY_CONFIGS["medium"]["n_machines"]),
+    ),
 }
 
 
@@ -282,10 +286,53 @@ def _generate_ve_instance(
     return ve_verifier._instance_to_payload(instance)
 
 
+def _generate_mbj_instance(
+    seed: int,
+    difficulty: str,
+    config_override: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    if config_override is None:
+        return mbj.generate(seed=seed, difficulty=difficulty)
+
+    config = dict(mbj.DIFFICULTY_CONFIGS[difficulty])
+    config.update(config_override)
+    instance = mbj.build_instance(
+        seed=seed,
+        n_jobs=int(config["n_jobs"]),
+        n_machines=int(config["n_machines"]),
+        min_baseline_gap_pct=float(config["min_baseline_gap_pct"]),
+        min_heuristic_spread_pct=float(config["min_heuristic_spread_pct"]),
+        max_heuristic_spread_pct=float(config["max_heuristic_spread_pct"]),
+        max_generation_attempts=int(config["max_generation_attempts"]),
+        cp_time_limit_s=float(config["cp_time_limit_s"]),
+        require_optimal=bool(config.get("require_optimal", True)),
+    )
+    gold_objective = instance.optimal_objective
+    baseline_objective = instance.baseline_objective
+    baseline_gap_pct = 100.0 * (baseline_objective - gold_objective) / max(1, gold_objective)
+    return {
+        "class": "mbj",
+        "difficulty": difficulty,
+        "seed": seed,
+        "n_jobs": instance.n_jobs,
+        "n_machines": instance.n_machines,
+        "metric_name": "objective",
+        "answer_contract": (
+            'Object with "machines", "makespan", "weighted_tardiness", and "objective". '
+            '"machines" maps each machine name (M1..Mk) to a list of ["J<id>", start, end] triples.'
+        ),
+        "jobs": [mbj._job_to_dict(job) for job in instance.jobs],
+        "baseline_submission": instance.baseline_schedule,
+        "gold_submission": instance.optimal_schedule,
+        "baseline_objective": baseline_objective,
+        "gold_objective": gold_objective,
+        "baseline_gap_pct": baseline_gap_pct,
+        "problem_statement": instance.problem_statement,
+    }
+
+
 def _build_mbj_row(seed: int, difficulty: str, *, config_override: dict[str, Any] | None = None) -> SmokeRow:
-    if config_override is not None:
-        raise RuntimeError("mbj does not expose a size override path from build_questions.py")
-    instance = mbj.generate(seed=seed, difficulty=difficulty)
+    instance = _generate_mbj_instance(seed=seed, difficulty=difficulty, config_override=config_override)
     row = _solo_row(
         cls="mbj",
         difficulty=difficulty,
@@ -294,7 +341,7 @@ def _build_mbj_row(seed: int, difficulty: str, *, config_override: dict[str, Any
         gold_objective=float(instance["gold_objective"]),
         baseline_objective=float(instance["baseline_objective"]),
     )
-    return SmokeRow(row=row, notes="MBJ port spike — one row only, not yet in SOLO_CLASSES.")
+    return SmokeRow(row=row)
 
 
 def _build_ve_row(seed: int, difficulty: str, *, config_override: dict[str, Any] | None = None) -> SmokeRow:
@@ -551,6 +598,7 @@ def _build_rows() -> list[SmokeRow]:
         "tsp": _build_tsp_row,
         "mwis": _build_mwis_row,
         "ve": _build_ve_row,
+        "mbj": _build_mbj_row,
     }
     medium_rows = [
         _annotate_row(_build_timed_row(builders[cls], seed, difficulty), requested_seed=seed)
@@ -575,11 +623,6 @@ def _build_rows() -> list[SmokeRow]:
         for cls in HARD_PORTFOLIO_COMPONENT_CLASSES
     )
     rows = list(medium_rows)
-    # MBJ port spike: one medium row, kept out of SOLO_CLASSES so it does not
-    # contaminate portfolio assembly or hard-seed fallback loops.
-    rows.append(
-        _annotate_row(_build_timed_row(_build_mbj_row, 1, "medium"), requested_seed=1)
-    )
     rows.append(
         _build_portfolio_row(
             solo_rows=medium_rows,

@@ -1,0 +1,1077 @@
+{
+  "baseline_objective": 155.0,
+  "cf_delta": -0.04802797625074007,
+  "cf_parsed": {
+    "best_guess": {
+      "factory_a": {
+        "MA1": [
+          [
+            "J1",
+            8,
+            15
+          ],
+          [
+            "J2",
+            26,
+            30
+          ],
+          [
+            "J3",
+            62,
+            65
+          ],
+          [
+            "J4",
+            92,
+            101
+          ],
+          [
+            "J5",
+            101,
+            108
+          ]
+        ],
+        "MA2": [
+          [
+            "J1",
+            0,
+            1
+          ],
+          [
+            "J2",
+            30,
+            38
+          ],
+          [
+            "J3",
+            65,
+            71
+          ],
+          [
+            "J4",
+            71,
+            74
+          ],
+          [
+            "J5",
+            108,
+            114
+          ]
+        ],
+        "MA3": [
+          [
+            "J1",
+            24,
+            29
+          ],
+          [
+            "J2",
+            43,
+            44
+          ],
+          [
+            "J3",
+            44,
+            48
+          ],
+          [
+            "J4",
+            88,
+            92
+          ],
+          [
+            "J5",
+            95,
+            101
+          ]
+        ],
+        "MA4": [
+          [
+            "J1",
+            16,
+            24
+          ],
+          [
+            "J2",
+            38,
+            43
+          ],
+          [
+            "J3",
+            48,
+            55
+          ],
+          [
+            "J4",
+            83,
+            87
+          ],
+          [
+            "J5",
+            87,
+            95
+          ]
+        ],
+        "MA5": [
+          [
+            "J1",
+            1,
+            8
+          ],
+          [
+            "J2",
+            22,
+            26
+          ],
+          [
+            "J3",
+            55,
+            62
+          ],
+          [
+            "J4",
+            74,
+            83
+          ],
+          [
+            "J5",
+            115,
+            124
+          ]
+        ],
+        "MA6": [
+          [
+            "J1",
+            15,
+            16
+          ],
+          [
+            "J2",
+            16,
+            22
+          ],
+          [
+            "J3",
+            22,
+            30
+          ],
+          [
+            "J4",
+            87,
+            88
+          ],
+          [
+            "J5",
+            114,
+            115
+          ]
+        ]
+      },
+      "factory_b": {
+        "MB1": [
+          [
+            "J1",
+            41,
+            42
+          ],
+          [
+            "J2",
+            51,
+            60
+          ],
+          [
+            "J3",
+            105,
+            107
+          ],
+          [
+            "J4",
+            110,
+            114
+          ],
+          [
+            "J5",
+            133,
+            139
+          ]
+        ],
+        "MB2": [
+          [
+            "J1",
+            43,
+            44
+          ],
+          [
+            "J2",
+            60,
+            62
+          ],
+          [
+            "J3",
+            96,
+            105
+          ],
+          [
+            "J4",
+            130,
+            136
+          ],
+          [
+            "J5",
+            147,
+            148
+          ]
+        ],
+        "MB3": [
+          [
+            "J1",
+            42,
+            43
+          ],
+          [
+            "J2",
+            65,
+            70
+          ],
+          [
+            "J3",
+            71,
+            80
+          ],
+          [
+            "J4",
+            114,
+            121
+          ],
+          [
+            "J5",
+            152,
+            155
+          ]
+        ],
+        "MB4": [
+          [
+            "J1",
+            29,
+            33
+          ],
+          [
+            "J2",
+            62,
+            65
+          ],
+          [
+            "J3",
+            86,
+            88
+          ],
+          [
+            "J4",
+            101,
+            110
+          ],
+          [
+            "J5",
+            124,
+            133
+          ]
+        ],
+        "MB5": [
+          [
+            "J1",
+            35,
+            41
+          ],
+          [
+            "J2",
+            70,
+            72
+          ],
+          [
+            "J3",
+            80,
+            86
+          ],
+          [
+            "J4",
+            136,
+            142
+          ],
+          [
+            "J5",
+            148,
+            152
+          ]
+        ],
+        "MB6": [
+          [
+            "J1",
+            33,
+            35
+          ],
+          [
+            "J2",
+            44,
+            51
+          ],
+          [
+            "J3",
+            88,
+            96
+          ],
+          [
+            "J4",
+            121,
+            130
+          ],
+          [
+            "J5",
+            139,
+            147
+          ]
+        ]
+      },
+      "makespan": 155
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.3,
+      "expected_gap_reduction": 1.0,
+      "p_improve": 0.08
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.12,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.05
+    },
+    "subtask_body": "Baseline remains the only fully validated schedule.",
+    "subtask_id": 2,
+    "updated_plan_state": "Keep a valid structured answer at every turn, then spend one more subtask on the highest-value local improvement."
+  },
+  "class": "cjs",
+  "difficulty": "medium",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_objective": 155,
+      "failure_reason": null,
+      "gap_pct": 72.22222222222223,
+      "gold_objective": 90,
+      "metric_name": "makespan",
+      "verified_makespan": 155,
+      "verified_objective": 155
+    },
+    "feasible": true,
+    "gap_pct": 72.22222222222223,
+    "mode": "solo",
+    "submission": {
+      "factory_a": {
+        "MA1": [
+          [
+            "J1",
+            8,
+            15
+          ],
+          [
+            "J2",
+            26,
+            30
+          ],
+          [
+            "J3",
+            62,
+            65
+          ],
+          [
+            "J4",
+            92,
+            101
+          ],
+          [
+            "J5",
+            101,
+            108
+          ]
+        ],
+        "MA2": [
+          [
+            "J1",
+            0,
+            1
+          ],
+          [
+            "J2",
+            30,
+            38
+          ],
+          [
+            "J3",
+            65,
+            71
+          ],
+          [
+            "J4",
+            71,
+            74
+          ],
+          [
+            "J5",
+            108,
+            114
+          ]
+        ],
+        "MA3": [
+          [
+            "J1",
+            24,
+            29
+          ],
+          [
+            "J2",
+            43,
+            44
+          ],
+          [
+            "J3",
+            44,
+            48
+          ],
+          [
+            "J4",
+            88,
+            92
+          ],
+          [
+            "J5",
+            95,
+            101
+          ]
+        ],
+        "MA4": [
+          [
+            "J1",
+            16,
+            24
+          ],
+          [
+            "J2",
+            38,
+            43
+          ],
+          [
+            "J3",
+            48,
+            55
+          ],
+          [
+            "J4",
+            83,
+            87
+          ],
+          [
+            "J5",
+            87,
+            95
+          ]
+        ],
+        "MA5": [
+          [
+            "J1",
+            1,
+            8
+          ],
+          [
+            "J2",
+            22,
+            26
+          ],
+          [
+            "J3",
+            55,
+            62
+          ],
+          [
+            "J4",
+            74,
+            83
+          ],
+          [
+            "J5",
+            115,
+            124
+          ]
+        ],
+        "MA6": [
+          [
+            "J1",
+            15,
+            16
+          ],
+          [
+            "J2",
+            16,
+            22
+          ],
+          [
+            "J3",
+            22,
+            30
+          ],
+          [
+            "J4",
+            87,
+            88
+          ],
+          [
+            "J5",
+            114,
+            115
+          ]
+        ]
+      },
+      "factory_b": {
+        "MB1": [
+          [
+            "J1",
+            41,
+            42
+          ],
+          [
+            "J2",
+            51,
+            60
+          ],
+          [
+            "J3",
+            105,
+            107
+          ],
+          [
+            "J4",
+            110,
+            114
+          ],
+          [
+            "J5",
+            133,
+            139
+          ]
+        ],
+        "MB2": [
+          [
+            "J1",
+            43,
+            44
+          ],
+          [
+            "J2",
+            60,
+            62
+          ],
+          [
+            "J3",
+            96,
+            105
+          ],
+          [
+            "J4",
+            130,
+            136
+          ],
+          [
+            "J5",
+            147,
+            148
+          ]
+        ],
+        "MB3": [
+          [
+            "J1",
+            42,
+            43
+          ],
+          [
+            "J2",
+            65,
+            70
+          ],
+          [
+            "J3",
+            71,
+            80
+          ],
+          [
+            "J4",
+            114,
+            121
+          ],
+          [
+            "J5",
+            152,
+            155
+          ]
+        ],
+        "MB4": [
+          [
+            "J1",
+            29,
+            33
+          ],
+          [
+            "J2",
+            62,
+            65
+          ],
+          [
+            "J3",
+            86,
+            88
+          ],
+          [
+            "J4",
+            101,
+            110
+          ],
+          [
+            "J5",
+            124,
+            133
+          ]
+        ],
+        "MB5": [
+          [
+            "J1",
+            35,
+            41
+          ],
+          [
+            "J2",
+            70,
+            72
+          ],
+          [
+            "J3",
+            80,
+            86
+          ],
+          [
+            "J4",
+            136,
+            142
+          ],
+          [
+            "J5",
+            148,
+            152
+          ]
+        ],
+        "MB6": [
+          [
+            "J1",
+            33,
+            35
+          ],
+          [
+            "J2",
+            44,
+            51
+          ],
+          [
+            "J3",
+            88,
+            96
+          ],
+          [
+            "J4",
+            121,
+            130
+          ],
+          [
+            "J5",
+            139,
+            147
+          ]
+        ]
+      },
+      "makespan": 155
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gold_objective": 90.0,
+  "id": "cjs_medium_seed1",
+  "model": "gpt-5.4-mini",
+  "model_slug": "gpt-5.4-mini",
+  "n_exec_turns": 1,
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "factory_a": {
+        "MA1": [
+          [
+            "J1",
+            8,
+            15
+          ],
+          [
+            "J2",
+            26,
+            30
+          ],
+          [
+            "J3",
+            62,
+            65
+          ],
+          [
+            "J4",
+            92,
+            101
+          ],
+          [
+            "J5",
+            101,
+            108
+          ]
+        ],
+        "MA2": [
+          [
+            "J1",
+            0,
+            1
+          ],
+          [
+            "J2",
+            30,
+            38
+          ],
+          [
+            "J3",
+            65,
+            71
+          ],
+          [
+            "J4",
+            71,
+            74
+          ],
+          [
+            "J5",
+            108,
+            114
+          ]
+        ],
+        "MA3": [
+          [
+            "J1",
+            24,
+            29
+          ],
+          [
+            "J2",
+            43,
+            44
+          ],
+          [
+            "J3",
+            44,
+            48
+          ],
+          [
+            "J4",
+            88,
+            92
+          ],
+          [
+            "J5",
+            95,
+            101
+          ]
+        ],
+        "MA4": [
+          [
+            "J1",
+            16,
+            24
+          ],
+          [
+            "J2",
+            38,
+            43
+          ],
+          [
+            "J3",
+            48,
+            55
+          ],
+          [
+            "J4",
+            83,
+            87
+          ],
+          [
+            "J5",
+            87,
+            95
+          ]
+        ],
+        "MA5": [
+          [
+            "J1",
+            1,
+            8
+          ],
+          [
+            "J2",
+            22,
+            26
+          ],
+          [
+            "J3",
+            55,
+            62
+          ],
+          [
+            "J4",
+            74,
+            83
+          ],
+          [
+            "J5",
+            115,
+            124
+          ]
+        ],
+        "MA6": [
+          [
+            "J1",
+            15,
+            16
+          ],
+          [
+            "J2",
+            16,
+            22
+          ],
+          [
+            "J3",
+            22,
+            30
+          ],
+          [
+            "J4",
+            87,
+            88
+          ],
+          [
+            "J5",
+            114,
+            115
+          ]
+        ]
+      },
+      "factory_b": {
+        "MB1": [
+          [
+            "J1",
+            41,
+            42
+          ],
+          [
+            "J2",
+            51,
+            60
+          ],
+          [
+            "J3",
+            105,
+            107
+          ],
+          [
+            "J4",
+            110,
+            114
+          ],
+          [
+            "J5",
+            133,
+            139
+          ]
+        ],
+        "MB2": [
+          [
+            "J1",
+            43,
+            44
+          ],
+          [
+            "J2",
+            60,
+            62
+          ],
+          [
+            "J3",
+            96,
+            105
+          ],
+          [
+            "J4",
+            130,
+            136
+          ],
+          [
+            "J5",
+            147,
+            148
+          ]
+        ],
+        "MB3": [
+          [
+            "J1",
+            42,
+            43
+          ],
+          [
+            "J2",
+            65,
+            70
+          ],
+          [
+            "J3",
+            71,
+            80
+          ],
+          [
+            "J4",
+            114,
+            121
+          ],
+          [
+            "J5",
+            152,
+            155
+          ]
+        ],
+        "MB4": [
+          [
+            "J1",
+            29,
+            33
+          ],
+          [
+            "J2",
+            62,
+            65
+          ],
+          [
+            "J3",
+            86,
+            88
+          ],
+          [
+            "J4",
+            101,
+            110
+          ],
+          [
+            "J5",
+            124,
+            133
+          ]
+        ],
+        "MB5": [
+          [
+            "J1",
+            35,
+            41
+          ],
+          [
+            "J2",
+            70,
+            72
+          ],
+          [
+            "J3",
+            80,
+            86
+          ],
+          [
+            "J4",
+            136,
+            142
+          ],
+          [
+            "J5",
+            148,
+            152
+          ]
+        ],
+        "MB6": [
+          [
+            "J1",
+            33,
+            35
+          ],
+          [
+            "J2",
+            44,
+            51
+          ],
+          [
+            "J3",
+            88,
+            96
+          ],
+          [
+            "J4",
+            121,
+            130
+          ],
+          [
+            "J5",
+            139,
+            147
+          ]
+        ]
+      },
+      "makespan": 155
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.3,
+      "expected_gap_reduction": 1.0,
+      "p_improve": 0.08
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.12,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.05
+    },
+    "subtask_body": "The baseline is feasible and internally consistent.",
+    "subtask_id": 1,
+    "updated_plan_state": "Keep the validated baseline schedule as the current best artifact; only replace it if a clearly feasible lower-makespan full schedule is found."
+  },
+  "score": 27.633031191528097,
+  "score_after_cf": 27.633031191528097,
+  "score_at_stop": 27.681059167778837,
+  "seed": 1,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Start from the baseline schedule as a feasible anchor.\nPLAN_STATE: Focus first on Factory B, since the coupled makespan is driven by B completion after A release times.\nPLAN_STATE: Check whether any B-machine idle gaps can be reduced by shifting A completion times earlier/later without breaking A machine feasibility.\nPLAN_STATE: Look for a critical chain involving J5 and the late B tail on MB2/MB3/MB5.\nPLAN_STATE: Also inspect whether Factory A can be reordered to release J4/J5 earlier while preserving downstream B machine order.\nPLAN_STATE: If a better full schedule is hard, aim for a small but valid improvement over 155 rather than risky aggressive changes.\nPLAN_STATE: Preserve exact operation order within each job and one-machine exclusivity in both factories.\nPLAN_STATE: Prefer local edits around the current critical path instead of rebuilding from scratch.\nPLAN_STATE: Verify every operation appears exactly once and all B starts respect A completion.\nNEXT_SUB: {\"id\":1,\"desc\":\"Construct one improved feasible candidate by locally adjusting the baseline critical path, especially late Factory B operations and the A-release times of J4/J5, while preserving feasibility.\",\"p_solve\":0.32,\"time_budget_s\":180}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: The baseline is feasible and internally consistent.\nSUB_1: I did not find a safe local edit that obviously improves the coupled makespan without rebuilding multiple machine orders.\nSUB_1: The late tail is driven by Factory B on J5/J4, but those starts are tightly constrained by A completions and B-machine sequencing.\nSUB_1: Any meaningful improvement likely requires a coordinated reschedule of both factories, not just shifting one critical chain.\nSUB_1: Given the time/value tradeoff, the baseline remains the best validated artifact so far.\n\nBEST_GUESS: {\"factory_a\":{\"MA1\":[[\"J1\",8,15],[\"J2\",26,30],[\"J3\",62,65],[\"J4\",92,101],[\"J5\",101,108]],\"MA2\":[[\"J1\",0,1],[\"J2\",30,38],[\"J3\",65,71],[\"J4\",71,74],[\"J5\",108,114]],\"MA3\":[[\"J1\",24,29],[\"J2\",43,44],[\"J3\",44,48],[\"J4\",88,92],[\"J5\",95,101]],\"MA4\":[[\"J1\",16,24],[\"J2\",38,43],[\"J3\",48,55],[\"J4\",83,87],[\"J5\",87,95]],\"MA5\":[[\"J1\",1,8],[\"J2\",22,26],[\"J3\",55,62],[\"J4\",74,83],[\"J5\",115,124]],\"MA6\":[[\"J1\",15,16],[\"J2\",16,22],[\"J3\",22,30],[\"J4\",87,88],[\"J5\",114,115]]},\"factory_b\":{\"MB1\":[[\"J1\",41,42],[\"J2\",51,60],[\"J3\",105,107],[\"J4\",110,114],[\"J5\",133,139]],\"MB2\":[[\"J1\",43,44],[\"J2\",60,62],[\"J3\",96,105],[\"J4\",130,136],[\"J5\",147,148]],\"MB3\":[[\"J1\",42,43],[\"J2\",65,70],[\"J3\",71,80],[\"J4\",114,121],[\"J5\",152,155]],\"MB4\":[[\"J1\",29,33],[\"J2\",62,65],[\"J3\",86,88],[\"J4\",101,110],[\"J5\",124,133]],\"MB5\":[[\"J1\",35,41],[\"J2\",70,72],[\"J3\",80,86],[\"J4\",136,142],[\"J5\",148,152]],\"MB6\":[[\"J1\",33,35],[\"J2\",44,51],[\"J3\",88,96],[\"J4\",121,130],[\"J5\",139,147]]},\"makespan\":155}\nUPDATED_PLAN_STATE: Keep the validated baseline schedule as the current best artifact; only replace it if a clearly feasible lower-makespan full schedule is found.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.05,\"p_gap_le_10\":0.12}\nCONTINUE_FORECAST: {\"p_improve\":0.08,\"expected_delta_score\":0.3,\"expected_gap_reduction\":1.0}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: Baseline remains the only fully validated schedule.\nSUB_2: I do not have a safe coordinated reschedule that preserves all machine orders and improves the coupled makespan.\nSUB_2: The late B tail is still dominated by J5/J4, but no consistent earlier A-release shift was found.\nSUB_2: Best action is to keep the current feasible artifact rather than risk an invalid schedule.\nBEST_GUESS: {\"factory_a\":{\"MA1\":[[\"J1\",8,15],[\"J2\",26,30],[\"J3\",62,65],[\"J4\",92,101],[\"J5\",101,108]],\"MA2\":[[\"J1\",0,1],[\"J2\",30,38],[\"J3\",65,71],[\"J4\",71,74],[\"J5\",108,114]],\"MA3\":[[\"J1\",24,29],[\"J2\",43,44],[\"J3\",44,48],[\"J4\",88,92],[\"J5\",95,101]],\"MA4\":[[\"J1\",16,24],[\"J2\",38,43],[\"J3\",48,55],[\"J4\",83,87],[\"J5\",87,95]],\"MA5\":[[\"J1\",1,8],[\"J2\",22,26],[\"J3\",55,62],[\"J4\",74,83],[\"J5\",115,124]],\"MA6\":[[\"J1\",15,16],[\"J2\",16,22],[\"J3\",22,30],[\"J4\",87,88],[\"J5\",114,115]]},\"factory_b\":{\"MB1\":[[\"J1\",41,42],[\"J2\",51,60],[\"J3\",105,107],[\"J4\",110,114],[\"J5\",133,139]],\"MB2\":[[\"J1\",43,44],[\"J2\",60,62],[\"J3\",96,105],[\"J4\",130,136],[\"J5\",147,148]],\"MB3\":[[\"J1\",42,43],[\"J2\",65,70],[\"J3\",71,80],[\"J4\",114,121],[\"J5\",152,155]],\"MB4\":[[\"J1\",29,33],[\"J2\",62,65],[\"J3\",86,88],[\"J4\",101,110],[\"J5\",124,133]],\"MB5\":[[\"J1\",35,41],[\"J2\",70,72],[\"J3\",80,86],[\"J4\",136,142],[\"J5\",148,152]],\"MB6\":[[\"J1\",33,35],[\"J2\",44,51],[\"J3\",88,96],[\"J4\",121,130],[\"J5\",139,147]]},\"makespan\":155}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn, then spend one more subtask on the highest-value local improvement.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.05,\"p_gap_le_10\":0.12}\nCONTINUE_FORECAST: {\"p_improve\":0.08,\"expected_delta_score\":0.3,\"expected_gap_reduction\":1.0}\nDECISION: stop",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 14.474663665983826
+}

@@ -1,0 +1,1471 @@
+{
+  "baseline_objective": 0.0,
+  "cf_delta": -0.6837496770429468,
+  "cf_parsed": {
+    "best_guess": {
+      "cjs_medium_seed14": {
+        "factory_a": {
+          "MA1": [
+            [
+              "J1",
+              0,
+              7
+            ],
+            [
+              "J2",
+              52,
+              54
+            ],
+            [
+              "J3",
+              84,
+              86
+            ],
+            [
+              "J4",
+              110,
+              111
+            ],
+            [
+              "J5",
+              120,
+              121
+            ]
+          ],
+          "MA2": [
+            [
+              "J1",
+              9,
+              14
+            ],
+            [
+              "J2",
+              44,
+              52
+            ],
+            [
+              "J3",
+              66,
+              73
+            ],
+            [
+              "J4",
+              97,
+              102
+            ],
+            [
+              "J5",
+              121,
+              122
+            ]
+          ],
+          "MA3": [
+            [
+              "J1",
+              18,
+              24
+            ],
+            [
+              "J2",
+              37,
+              44
+            ],
+            [
+              "J3",
+              75,
+              84
+            ],
+            [
+              "J4",
+              84,
+              86
+            ],
+            [
+              "J5",
+              86,
+              88
+            ]
+          ],
+          "MA4": [
+            [
+              "J1",
+              14,
+              18
+            ],
+            [
+              "J2",
+              56,
+              62
+            ],
+            [
+              "J3",
+              62,
+              63
+            ],
+            [
+              "J4",
+              86,
+              89
+            ],
+            [
+              "J5",
+              115,
+              120
+            ]
+          ],
+          "MA5": [
+            [
+              "J1",
+              7,
+              9
+            ],
+            [
+              "J2",
+              54,
+              56
+            ],
+            [
+              "J3",
+              63,
+              66
+            ],
+            [
+              "J4",
+              89,
+              97
+            ],
+            [
+              "J5",
+              111,
+              115
+            ]
+          ],
+          "MA6": [
+            [
+              "J1",
+              24,
+              30
+            ],
+            [
+              "J2",
+              30,
+              37
+            ],
+            [
+              "J3",
+              73,
+              75
+            ],
+            [
+              "J4",
+              102,
+              110
+            ],
+            [
+              "J5",
+              110,
+              111
+            ]
+          ]
+        },
+        "factory_b": {
+          "MB1": [
+            [
+              "J1",
+              35,
+              41
+            ],
+            [
+              "J2",
+              70,
+              78
+            ],
+            [
+              "J3",
+              86,
+              93
+            ],
+            [
+              "J4",
+              139,
+              145
+            ],
+            [
+              "J5",
+              188,
+              193
+            ]
+          ],
+          "MB2": [
+            [
+              "J1",
+              50,
+              53
+            ],
+            [
+              "J2",
+              87,
+              91
+            ],
+            [
+              "J3",
+              107,
+              116
+            ],
+            [
+              "J4",
+              145,
+              151
+            ],
+            [
+              "J5",
+              182,
+              188
+            ]
+          ],
+          "MB3": [
+            [
+              "J1",
+              53,
+              56
+            ],
+            [
+              "J2",
+              68,
+              70
+            ],
+            [
+              "J3",
+              116,
+              123
+            ],
+            [
+              "J4",
+              123,
+              130
+            ],
+            [
+              "J5",
+              193,
+              195
+            ]
+          ],
+          "MB4": [
+            [
+              "J1",
+              41,
+              50
+            ],
+            [
+              "J2",
+              78,
+              87
+            ],
+            [
+              "J3",
+              123,
+              131
+            ],
+            [
+              "J4",
+              131,
+              138
+            ],
+            [
+              "J5",
+              173,
+              182
+            ]
+          ],
+          "MB5": [
+            [
+              "J1",
+              56,
+              65
+            ],
+            [
+              "J2",
+              65,
+              68
+            ],
+            [
+              "J3",
+              104,
+              107
+            ],
+            [
+              "J4",
+              138,
+              139
+            ],
+            [
+              "J5",
+              168,
+              173
+            ]
+          ],
+          "MB6": [
+            [
+              "J1",
+              30,
+              35
+            ],
+            [
+              "J2",
+              91,
+              96
+            ],
+            [
+              "J3",
+              96,
+              104
+            ],
+            [
+              "J4",
+              151,
+              159
+            ],
+            [
+              "J5",
+              159,
+              168
+            ]
+          ]
+        },
+        "makespan": 195
+      },
+      "mwis_medium_seed14": {
+        "selected_vertices": [
+          "V006",
+          "V010",
+          "V011",
+          "V013",
+          "V016",
+          "V017",
+          "V018",
+          "V019",
+          "V021",
+          "V029",
+          "V033",
+          "V035",
+          "V041",
+          "V045",
+          "V048",
+          "V049",
+          "V050",
+          "V051",
+          "V054",
+          "V057",
+          "V063",
+          "V065",
+          "V068",
+          "V069",
+          "V073",
+          "V074",
+          "V075",
+          "V077",
+          "V095",
+          "V099"
+        ],
+        "total_weight": 375
+      },
+      "steiner_medium_seed14": {
+        "edges": [
+          [
+            "Bay",
+            "Dune"
+          ],
+          [
+            "Bay",
+            "Mill"
+          ],
+          [
+            "Cape",
+            "Mill"
+          ]
+        ],
+        "frequencies": {
+          "Bay": 1,
+          "Cape": 1,
+          "Dune": 1,
+          "Mill": 1
+        }
+      }
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.3,
+      "expected_gap_reduction": 0.5,
+      "p_improve": 0.15
+    },
+    "decision": null,
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.85,
+      "p_gap_le_2": 0.5,
+      "p_gap_le_5": 0.7
+    },
+    "subtask_body": "All three problems solved. Steiner: 46 (edges Bay-Dune+Bay-Mill+Cape-Mill=31, 1 freq=15, no active interference pairs). MWIS: 375 (30 vertices, verified independent). CJS: baseline 195 kept.",
+    "subtask_id": 2,
+    "updated_plan_state": "All three problems addressed. MWIS improved to 375 (from 348). Steiner improved to 46 (from 73). CJS kept at baseline 195. No further work planned."
+  },
+  "class": "portfolio",
+  "difficulty": "medium",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "components": [
+      {
+        "class": "cjs",
+        "details": {
+          "baseline_objective": 195,
+          "failure_reason": null,
+          "gap_pct": 140.74074074074073,
+          "gold_objective": 81,
+          "metric_name": "makespan",
+          "verified_makespan": 195,
+          "verified_objective": 195
+        },
+        "feasible": true,
+        "gap_pct": 140.74074074074073,
+        "problem_id": "cjs_medium_seed14",
+        "value_cap": 33.0
+      },
+      {
+        "class": "mwis",
+        "details": {
+          "baseline_gap_pct": 14.496314496314497,
+          "baseline_objective": 348,
+          "improves_on_baseline": true,
+          "normalized_submission": {
+            "selected_vertices": [
+              "V006",
+              "V010",
+              "V011",
+              "V013",
+              "V016",
+              "V017",
+              "V018",
+              "V019",
+              "V021",
+              "V029",
+              "V033",
+              "V035",
+              "V041",
+              "V045",
+              "V048",
+              "V049",
+              "V050",
+              "V051",
+              "V054",
+              "V057",
+              "V063",
+              "V065",
+              "V068",
+              "V069",
+              "V073",
+              "V074",
+              "V075",
+              "V077",
+              "V095",
+              "V099"
+            ],
+            "total_weight": 375
+          },
+          "optimal_objective": 407,
+          "selected_count": 30,
+          "submitted_objective": 375
+        },
+        "feasible": true,
+        "gap_pct": 7.862407862407863,
+        "problem_id": "mwis_medium_seed14",
+        "value_cap": 33.0
+      },
+      {
+        "class": "steiner",
+        "details": {
+          "baseline_cost": 73,
+          "computed_cost": 46,
+          "edge_cost": 31,
+          "failure_reason": null,
+          "gold_cost": 46,
+          "normalized_submission": {
+            "edges": [
+              [
+                "Bay",
+                "Dune"
+              ],
+              [
+                "Bay",
+                "Mill"
+              ],
+              [
+                "Cape",
+                "Mill"
+              ]
+            ],
+            "frequencies": {
+              "Bay": 1,
+              "Cape": 1,
+              "Dune": 1,
+              "Mill": 1
+            }
+          },
+          "num_frequencies_used": 1,
+          "scored_cost": 46,
+          "used_baseline_fallback": false
+        },
+        "feasible": true,
+        "gap_pct": 0.0,
+        "problem_id": "steiner_medium_seed14",
+        "value_cap": 34.0
+      }
+    ],
+    "details": {
+      "components": [
+        {
+          "class": "cjs",
+          "details": {
+            "baseline_objective": 195,
+            "failure_reason": null,
+            "gap_pct": 140.74074074074073,
+            "gold_objective": 81,
+            "metric_name": "makespan",
+            "verified_makespan": 195,
+            "verified_objective": 195
+          },
+          "feasible": true,
+          "gap_pct": 140.74074074074073,
+          "problem_id": "cjs_medium_seed14",
+          "value_cap": 33.0
+        },
+        {
+          "class": "mwis",
+          "details": {
+            "baseline_gap_pct": 14.496314496314497,
+            "baseline_objective": 348,
+            "improves_on_baseline": true,
+            "normalized_submission": {
+              "selected_vertices": [
+                "V006",
+                "V010",
+                "V011",
+                "V013",
+                "V016",
+                "V017",
+                "V018",
+                "V019",
+                "V021",
+                "V029",
+                "V033",
+                "V035",
+                "V041",
+                "V045",
+                "V048",
+                "V049",
+                "V050",
+                "V051",
+                "V054",
+                "V057",
+                "V063",
+                "V065",
+                "V068",
+                "V069",
+                "V073",
+                "V074",
+                "V075",
+                "V077",
+                "V095",
+                "V099"
+              ],
+              "total_weight": 375
+            },
+            "optimal_objective": 407,
+            "selected_count": 30,
+            "submitted_objective": 375
+          },
+          "feasible": true,
+          "gap_pct": 7.862407862407863,
+          "problem_id": "mwis_medium_seed14",
+          "value_cap": 33.0
+        },
+        {
+          "class": "steiner",
+          "details": {
+            "baseline_cost": 73,
+            "computed_cost": 46,
+            "edge_cost": 31,
+            "failure_reason": null,
+            "gold_cost": 46,
+            "normalized_submission": {
+              "edges": [
+                [
+                  "Bay",
+                  "Dune"
+                ],
+                [
+                  "Bay",
+                  "Mill"
+                ],
+                [
+                  "Cape",
+                  "Mill"
+                ]
+              ],
+              "frequencies": {
+                "Bay": 1,
+                "Cape": 1,
+                "Dune": 1,
+                "Mill": 1
+              }
+            },
+            "num_frequencies_used": 1,
+            "scored_cost": 46,
+            "used_baseline_fallback": false
+          },
+          "feasible": true,
+          "gap_pct": 0.0,
+          "problem_id": "steiner_medium_seed14",
+          "value_cap": 34.0
+        }
+      ]
+    },
+    "mode": "portfolio",
+    "submission": {
+      "cjs_medium_seed14": {
+        "factory_a": {
+          "MA1": [
+            [
+              "J1",
+              0,
+              7
+            ],
+            [
+              "J2",
+              52,
+              54
+            ],
+            [
+              "J3",
+              84,
+              86
+            ],
+            [
+              "J4",
+              110,
+              111
+            ],
+            [
+              "J5",
+              120,
+              121
+            ]
+          ],
+          "MA2": [
+            [
+              "J1",
+              9,
+              14
+            ],
+            [
+              "J2",
+              44,
+              52
+            ],
+            [
+              "J3",
+              66,
+              73
+            ],
+            [
+              "J4",
+              97,
+              102
+            ],
+            [
+              "J5",
+              121,
+              122
+            ]
+          ],
+          "MA3": [
+            [
+              "J1",
+              18,
+              24
+            ],
+            [
+              "J2",
+              37,
+              44
+            ],
+            [
+              "J3",
+              75,
+              84
+            ],
+            [
+              "J4",
+              84,
+              86
+            ],
+            [
+              "J5",
+              86,
+              88
+            ]
+          ],
+          "MA4": [
+            [
+              "J1",
+              14,
+              18
+            ],
+            [
+              "J2",
+              56,
+              62
+            ],
+            [
+              "J3",
+              62,
+              63
+            ],
+            [
+              "J4",
+              86,
+              89
+            ],
+            [
+              "J5",
+              115,
+              120
+            ]
+          ],
+          "MA5": [
+            [
+              "J1",
+              7,
+              9
+            ],
+            [
+              "J2",
+              54,
+              56
+            ],
+            [
+              "J3",
+              63,
+              66
+            ],
+            [
+              "J4",
+              89,
+              97
+            ],
+            [
+              "J5",
+              111,
+              115
+            ]
+          ],
+          "MA6": [
+            [
+              "J1",
+              24,
+              30
+            ],
+            [
+              "J2",
+              30,
+              37
+            ],
+            [
+              "J3",
+              73,
+              75
+            ],
+            [
+              "J4",
+              102,
+              110
+            ],
+            [
+              "J5",
+              110,
+              111
+            ]
+          ]
+        },
+        "factory_b": {
+          "MB1": [
+            [
+              "J1",
+              35,
+              41
+            ],
+            [
+              "J2",
+              70,
+              78
+            ],
+            [
+              "J3",
+              86,
+              93
+            ],
+            [
+              "J4",
+              139,
+              145
+            ],
+            [
+              "J5",
+              188,
+              193
+            ]
+          ],
+          "MB2": [
+            [
+              "J1",
+              50,
+              53
+            ],
+            [
+              "J2",
+              87,
+              91
+            ],
+            [
+              "J3",
+              107,
+              116
+            ],
+            [
+              "J4",
+              145,
+              151
+            ],
+            [
+              "J5",
+              182,
+              188
+            ]
+          ],
+          "MB3": [
+            [
+              "J1",
+              53,
+              56
+            ],
+            [
+              "J2",
+              68,
+              70
+            ],
+            [
+              "J3",
+              116,
+              123
+            ],
+            [
+              "J4",
+              123,
+              130
+            ],
+            [
+              "J5",
+              193,
+              195
+            ]
+          ],
+          "MB4": [
+            [
+              "J1",
+              41,
+              50
+            ],
+            [
+              "J2",
+              78,
+              87
+            ],
+            [
+              "J3",
+              123,
+              131
+            ],
+            [
+              "J4",
+              131,
+              138
+            ],
+            [
+              "J5",
+              173,
+              182
+            ]
+          ],
+          "MB5": [
+            [
+              "J1",
+              56,
+              65
+            ],
+            [
+              "J2",
+              65,
+              68
+            ],
+            [
+              "J3",
+              104,
+              107
+            ],
+            [
+              "J4",
+              138,
+              139
+            ],
+            [
+              "J5",
+              168,
+              173
+            ]
+          ],
+          "MB6": [
+            [
+              "J1",
+              30,
+              35
+            ],
+            [
+              "J2",
+              91,
+              96
+            ],
+            [
+              "J3",
+              96,
+              104
+            ],
+            [
+              "J4",
+              151,
+              159
+            ],
+            [
+              "J5",
+              159,
+              168
+            ]
+          ]
+        },
+        "makespan": 195
+      },
+      "mwis_medium_seed14": {
+        "selected_vertices": [
+          "V006",
+          "V010",
+          "V011",
+          "V013",
+          "V016",
+          "V017",
+          "V018",
+          "V019",
+          "V021",
+          "V029",
+          "V033",
+          "V035",
+          "V041",
+          "V045",
+          "V048",
+          "V049",
+          "V050",
+          "V051",
+          "V054",
+          "V057",
+          "V063",
+          "V065",
+          "V068",
+          "V069",
+          "V073",
+          "V074",
+          "V075",
+          "V077",
+          "V095",
+          "V099"
+        ],
+        "total_weight": 375
+      },
+      "steiner_medium_seed14": {
+        "edges": [
+          [
+            "Bay",
+            "Dune"
+          ],
+          [
+            "Bay",
+            "Mill"
+          ],
+          [
+            "Cape",
+            "Mill"
+          ]
+        ],
+        "frequencies": {
+          "Bay": 1,
+          "Cape": 1,
+          "Dune": 1,
+          "Mill": 1
+        }
+      }
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gold_objective": 100.0,
+  "id": "portfolio_medium_seed14",
+  "model": "claude-sonnet-4.6",
+  "model_slug": "claude-sonnet-4.6",
+  "n_exec_turns": 1,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 3
+    }
+  ],
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "cjs_medium_seed14": {
+        "factory_a": {
+          "MA1": [
+            [
+              "J1",
+              0,
+              7
+            ],
+            [
+              "J2",
+              52,
+              54
+            ],
+            [
+              "J3",
+              84,
+              86
+            ],
+            [
+              "J4",
+              110,
+              111
+            ],
+            [
+              "J5",
+              120,
+              121
+            ]
+          ],
+          "MA2": [
+            [
+              "J1",
+              9,
+              14
+            ],
+            [
+              "J2",
+              44,
+              52
+            ],
+            [
+              "J3",
+              66,
+              73
+            ],
+            [
+              "J4",
+              97,
+              102
+            ],
+            [
+              "J5",
+              121,
+              122
+            ]
+          ],
+          "MA3": [
+            [
+              "J1",
+              18,
+              24
+            ],
+            [
+              "J2",
+              37,
+              44
+            ],
+            [
+              "J3",
+              75,
+              84
+            ],
+            [
+              "J4",
+              84,
+              86
+            ],
+            [
+              "J5",
+              86,
+              88
+            ]
+          ],
+          "MA4": [
+            [
+              "J1",
+              14,
+              18
+            ],
+            [
+              "J2",
+              56,
+              62
+            ],
+            [
+              "J3",
+              62,
+              63
+            ],
+            [
+              "J4",
+              86,
+              89
+            ],
+            [
+              "J5",
+              115,
+              120
+            ]
+          ],
+          "MA5": [
+            [
+              "J1",
+              7,
+              9
+            ],
+            [
+              "J2",
+              54,
+              56
+            ],
+            [
+              "J3",
+              63,
+              66
+            ],
+            [
+              "J4",
+              89,
+              97
+            ],
+            [
+              "J5",
+              111,
+              115
+            ]
+          ],
+          "MA6": [
+            [
+              "J1",
+              24,
+              30
+            ],
+            [
+              "J2",
+              30,
+              37
+            ],
+            [
+              "J3",
+              73,
+              75
+            ],
+            [
+              "J4",
+              102,
+              110
+            ],
+            [
+              "J5",
+              110,
+              111
+            ]
+          ]
+        },
+        "factory_b": {
+          "MB1": [
+            [
+              "J1",
+              35,
+              41
+            ],
+            [
+              "J2",
+              70,
+              78
+            ],
+            [
+              "J3",
+              86,
+              93
+            ],
+            [
+              "J4",
+              139,
+              145
+            ],
+            [
+              "J5",
+              188,
+              193
+            ]
+          ],
+          "MB2": [
+            [
+              "J1",
+              50,
+              53
+            ],
+            [
+              "J2",
+              87,
+              91
+            ],
+            [
+              "J3",
+              107,
+              116
+            ],
+            [
+              "J4",
+              145,
+              151
+            ],
+            [
+              "J5",
+              182,
+              188
+            ]
+          ],
+          "MB3": [
+            [
+              "J1",
+              53,
+              56
+            ],
+            [
+              "J2",
+              68,
+              70
+            ],
+            [
+              "J3",
+              116,
+              123
+            ],
+            [
+              "J4",
+              123,
+              130
+            ],
+            [
+              "J5",
+              193,
+              195
+            ]
+          ],
+          "MB4": [
+            [
+              "J1",
+              41,
+              50
+            ],
+            [
+              "J2",
+              78,
+              87
+            ],
+            [
+              "J3",
+              123,
+              131
+            ],
+            [
+              "J4",
+              131,
+              138
+            ],
+            [
+              "J5",
+              173,
+              182
+            ]
+          ],
+          "MB5": [
+            [
+              "J1",
+              56,
+              65
+            ],
+            [
+              "J2",
+              65,
+              68
+            ],
+            [
+              "J3",
+              104,
+              107
+            ],
+            [
+              "J4",
+              138,
+              139
+            ],
+            [
+              "J5",
+              168,
+              173
+            ]
+          ],
+          "MB6": [
+            [
+              "J1",
+              30,
+              35
+            ],
+            [
+              "J2",
+              91,
+              96
+            ],
+            [
+              "J3",
+              96,
+              104
+            ],
+            [
+              "J4",
+              151,
+              159
+            ],
+            [
+              "J5",
+              159,
+              168
+            ]
+          ]
+        },
+        "makespan": 195
+      },
+      "mwis_medium_seed14": {
+        "selected_vertices": [
+          "V006",
+          "V010",
+          "V011",
+          "V013",
+          "V016",
+          "V017",
+          "V018",
+          "V019",
+          "V021",
+          "V029",
+          "V033",
+          "V035",
+          "V041",
+          "V045",
+          "V048",
+          "V049",
+          "V050",
+          "V051",
+          "V054",
+          "V057",
+          "V063",
+          "V065",
+          "V068",
+          "V069",
+          "V073",
+          "V074",
+          "V075",
+          "V077",
+          "V095",
+          "V099"
+        ],
+        "total_weight": 375
+      },
+      "steiner_medium_seed14": {
+        "edges": [
+          [
+            "Bay",
+            "Dune"
+          ],
+          [
+            "Bay",
+            "Mill"
+          ],
+          [
+            "Cape",
+            "Mill"
+          ]
+        ],
+        "frequencies": {
+          "Bay": 1,
+          "Cape": 1,
+          "Dune": 1,
+          "Mill": 1
+        }
+      }
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.5,
+      "expected_gap_reduction": 1.0,
+      "p_improve": 0.2
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.85,
+      "p_gap_le_2": 0.5,
+      "p_gap_le_5": 0.7
+    },
+    "subtask_body": "",
+    "subtask_id": 1,
+    "updated_plan_state": "All three problems addressed. MWIS improved to 375 (from 348). Steiner improved to 46 (from 73). CJS kept at baseline 195. No further improvements expected to be worth the time cost."
+  },
+  "score": 38.80831930751163,
+  "score_after_cf": 38.80831930751163,
+  "score_at_stop": 39.49206898455458,
+  "seed": 14,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Tackle all three problems. Steiner: baseline is 73 (edges Cliff-Dune+Cliff-Mill+Cape-Cliff, 2 freqs). Try Cape-Mill(4)+Bay-Mill(13)+Cliff-Dune(10) or Cape-Mill+Cliff-Dune+Bay-Dune combos to reduce edge cost. MWIS: baseline 348, try to improve by greedy/swap analysis on high-weight vertices. CJS: baseline 195, try to find a better schedule by reordering jobs. Focus most effort on MWIS and Steiner since CJS is complex.\n\nNEXT_SUB: {\"id\": 1, \"desc\": \"Solve all three: Steiner tree optimization, MWIS improvement, CJS schedule improvement\", \"p_solve\": 0.7, \"time_budget_s\": 580}",
+      "role": "assistant"
+    },
+    {
+      "content": "I'll analyze all three problems carefully.\n\n**STEINER:**\nBaseline: edges Cliff-Dune(10)+Cliff-Mill(16)+Cape-Cliff(17) = 43, 2 freqs = 30, total = 73.\n\nTry Cape-Mill(4) + Cliff-Dune(10) + Bay-Cliff(4): edges = 18, active = Bay,Cliff,Dune,Mill,Cape. Interference pairs active: Bay/Cliff, Cliff/Dune, Cape/Cliff. Need: Bay\u2260Cliff, Cliff\u2260Dune, Cape\u2260Cliff. Bay=1,Cliff=2,Dune=1,Cape=1,Mill=1. Check: Bay/Cliff: 1\u22602 \u2713, Cliff/Dune: 2\u22601 \u2713, Cape/Cliff: 1\u22602 \u2713. 2 freqs. Total = 18 + 30 = 48. \n\nWait, is this a valid tree? Bay-Cliff, Cliff-Dune, Cape-Mill. That's 3 edges, 5 nodes. But Cape-Mill and Bay-Cliff-Dune are disconnected! Need to connect them. Add Cliff-Mill or Bay-Mill or Cape-Cliff.\n\nTry: Bay-Cliff(4) + Cliff-Dune(10) + Cape-Mill(4) + Bay-Mill(13) = 31, but that's a cycle (Bay-Cliff-...-Mill-Bay? No). Bay-Cliff, Cliff-Dune, Bay-Mill, Cape-Mill: 4 edges, 5 nodes, tree. Active: Bay,Cliff,Dune,Mill,Cape. Edge cost=31. Interference: Bay/Cliff(active), Cliff/Dune(active), Cape/Cliff(not connected directly but both active - yes interference pair). Bay=1,Cliff=2,Dune=1,Mill=1,Cape=1. Cape/Cliff: 1\u22602 \u2713. 2 freqs. Total=31+30=61.\n\nTry: Bay-Cliff(4)+Cliff-Dune(10)+Cape-Mill(4)+Cliff-Rock(4)+... No, keep minimal.\n\nTry: Cape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)+Bay-Cape(15)? No, cycle.\n\nBest tree with terminals Dune,Mill,Cape: Cape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)+Bay-Mill(13)=31, 2 freqs=30, total=61. Better than 73!\n\nCan we do better? Cape-Mill(4)+Cliff-Dune(10)+Cape-Cliff(17)=31, active=Cliff,Dune,Mill,Cape. Same as baseline edge cost but... wait that's 31 vs baseline 43. Freqs: Cliff/Dune, Cape/Cliff active. Cliff=1,Dune=2,Cape=2,Mill=1. 2 freqs. Total=31+30=61. Same!\n\nEven simpler: Cape-Mill(4)+Cliff-Dune(10)+Cape-Cliff(17)=31, 4 nodes, 3 edges = tree. Total=61.\n\nCan we get lower? Cape-Mill(4)+Bay-Dune(14)+Bay-Cliff(4)=22, active=Bay,Cliff,Dune,Mill,Cape. Interference: Bay/Cliff, Cliff/Dune(not edge but both active - yes!), Cape/Cliff(active). Bay=1,Cliff=2,Dune=1,Cape=1,Mill=1. 2 freqs. Total=22+30=52. But is Mill connected? Bay-Cliff, Bay-Dune, Cape-Mill - Mill is isolated from Dune/Bay! Need connection. Add Cape-Cliff(17) or Bay-Mill(13). Bay-Mill(13): total edges=35, total=35+30=65. Worse.\n\nCape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)=18 edges but disconnected (Cape-Mill separate from Bay-Cliff-Dune). Need one more edge. Cheapest connector: Bay-Mill(13) or Bay-Cape(15) or Cape-Cliff(17). Bay-Mill: 18+13=31, total=61. Bay-Cape: 18+15=33, total=63.\n\n**MWIS:** Let me try to improve from baseline 348. Baseline includes V048(43) which is high-value. Let me check V048's neighbors: V003,V004,V005,V008,V012,V034,V055,V062,V066,V067,V092,V094. Baseline has V048 and V051(22). V051 neighbors: V002,V003,V012,V047,V053,V055,V091,V092. V048 and V051: not directly connected \u2713.\n\nLet me try adding high-weight vertices not in baseline. V003(36): neighbors V012,V034,V048,V050,V051,V062,V066,V067,V088,V094,V096. Baseline has V048,V050,V051 - all neighbors of V003, so can't add V003.\n\nV041(28): neighbors V009,V015,V028,V031,V064,V080. Baseline has V041. V009(21): neighbors V025,V026,V041,V080,V097. Baseline has V041 - conflict! Can't add V009.\n\nV095(21): neighbors V023,V036,V070,V087,V089,V100. Baseline has V036,V089 - conflicts.\n\nV011(24): in baseline. V034(23): neighbors V003,V013,V048,V050,V062,V073,V078,V091. Baseline has V013,V048,V050,V073 - conflicts.\n\nV089(23): in baseline. V051(22): in baseline.\n\nV078(20): neighbors V013,V014,V034,V042,V050,V067,V088,V089,V091,V096. Baseline has V013,V050,V089 - conflicts.\n\nV047(19): neighbors V010,V012,V051,V062,V066,V076,V092. Baseline has V010,V051 - conflicts.\n\nV055(18): neighbors V007,V027,V031,V048,V051,V084,V096,V098. Baseline has V048,V051 - conflicts.\n\nV045(17): in baseline. V080(16): neighbors V008,V009,V015,V025,V028,V031,V041,V064,V065,V086,V097. Baseline has V041,V081(not V080). Wait V080 not in baseline. Check conflicts: V009(not in baseline),V015(not),V025(not),V028(not),V031(not),V041(in baseline!). Conflict with V041.\n\nV053(16): neighbors V018,V025,V043,V051,V072,V077,V085,V090,V091,V093,V097,V100. Baseline has V051,V077,V090 - conflicts.\n\nV033(15): neighbors V025,V038,V040,V052,V081,V089,V097. Baseline has V052,V081,V089 - conflicts.\n\nV028(15): neighbors V025,V031,V041,V074,V080,V097,V098. Baseline has V041,V074 - conflicts.\n\nV060(15): neighbors V043,V045,V077,V082,V083,V084,V099. Baseline has V045,V077,V099 - conflicts.\n\nV016(14): in baseline. V004(14): neighbors V005,V012,V036,V048,V094. Baseline has V036,V048 - conflicts.\n\nLet me try swaps. Remove V036(11) from baseline (neighbors: V004,V006,V018,V023,V039,V054,V058,V061,V063,V095,V100). What can we add? V004(14): neighbors include V036(removed) - check others: V005,V012,V048,V094. V048 in baseline - conflict. V095(21): neighbors V023,V036(removed),V070,V087,V089,V100. V089 in baseline - conflict. V006(11): neighbors V001,V008,V014,V023,V036(removed),V042,V058,V059,V071,V087,V089. V001,V059,V089 in baseline - conflicts. V063(11): neighbors V023,V036(removed),V044,V061,V070,V091. None in baseline? V001 not neighbor of V063. Check: V061 not in baseline, V070 not in baseline, V044 not in baseline. V063 could be added! +11-11=0, no gain.\n\nRemove V081(6), add something bigger. V081 neighbors: V015,V026,V031,V033,V039,V065,V098. Removing V081, can add: V015(7),V026(3),V031(5),V033(15),V039(7),V065(7),V098(7). V033(15): neighbors V025,V038,V040,V052,V081(removed),V089,V097. V052,V089 in baseline - conflict. V039(7): neighbors V001,V024,V029,V036,V054,V056,V058,V070,V071,V081(removed),V089,V097,V100. V001,V029,V036,V089 in baseline - conflicts. V015(7): neighbors V016,V019,V041,V065,V080,V081(removed),V085,V090. V016,V041,V090 in baseline - conflicts.\n\nRemove V090(12), add something. V090 neighbors: V008,V015,V019,V053,V097. Removing V090, can add: V097(6),V019(8),V015(7). V097(6): neighbors V009,V010,V025,V028,V033,V039,V052,V053,V061,V062,V065,V068,V076,V080,V090(removed). V010,V052,V068 in baseline - conflicts. V019(8): neighbors V008,V015,V038,V052,V090(removed). V052 in baseline - conflict. Net: -12, can't recover.\n\nRemove V099(5), add V060(15). V060 neighbors: V043,V045,V077,V082,V083,V084,V099(removed). V045,V077 in baseline - conflicts.\n\nRemove V099(5)+V077(4)=9, add V060(15). V060 neighbors: V043,V045,V077(removed),V082,V083,V084,V099(removed). V045 in baseline - conflict.\n\nRemove V099(5)+V045(17)=22, add V060(15)+something. Net loss so far.\n\nLet me try: Remove V073(3), add something. V073 neighbors: V027,V034,V067,V096. None in baseline except... V067 not in baseline. Can add V027(8): neighbors V002,V055,V073(removed),V075,V092,V094. V075 in baseline - conflict. V096(11): neighbors V003,V012,V049,V055,V068,V073(removed),V078. V049,V068 in baseline - conflicts. V034(23): neighbors V003,V013,V048,V050,V062,V073(removed),V078,V091. V013,V048,V050 in baseline - conflicts.\n\nRemove V073(3)+V075(13)=16. Add V027(8)+V034(23)? V027 neighbors: V002,V055,V073(removed),V075(removed),V092,V094. OK. V034 neighbors: V003,V013,V048,V050,V062,V073(removed),V078,V091. V013,V048,V050 in baseline - conflicts. Can't add V034.\n\nRemove V073(3)+V075(13)+V013(3)=19. Add V034(23)+V027(8)? V034 neighbors: V013(removed),V048,V050,V062,V073(removed),V078,V091. V048,V050 in baseline - conflicts.\n\nRemove V073(3)+V075(13)+V048(43)+V050(12)=71. Add V034(23)+V003(36)+V027(8)? V003 neighbors: V012,V034,V048(removed),V050(removed),V051,V062,V066,V067,V088,V094,V096. V051 in baseline - conflict.\n\nThis is getting complex. Let me try a different approach - look for vertices with high weight not in baseline and check all their neighbors against baseline.\n\nV003(36): blocked by V048,V050,V051 in baseline.\nV041(28): in baseline.\nV048(43): in baseline.\nV011(24): in baseline.\nV034(23): blocked by V013,V048,V050.\nV089(23): in baseline.\nV051(22): in baseline.\nV095(21): blocked by V036,V089.\nV009(21): blocked by V041.\n\nTo add V003(36): must remove V048(43),V050(12),V051(22) = 77. Net: +36-77 = -41. Bad.\nTo add V034(23): must remove V013(3),V048(43),V050(12) = 58. Net: +23-58 = -35. Bad.\nTo add V095(21): must remove V036(11),V089(23) = 34. Net: +21-34 = -13. Bad.\n\nThe baseline seems hard to improve significantly. Let me check if baseline is valid first.\n\nBaseline vertices: V001,V010,V011,V013,V016,V029,V035,V036,V041,V045,V048,V049,V050,V051,V052,V057,V059,V068,V069,V073,V074,V075,V077,V081,V089,V090,V099.\n\nCheck some edges: V001-V079? V079 not in baseline. V011-V079? V079 not in baseline. V029-V042? V042 not in baseline. V035-V100? V100 not in baseline. V036-V039? V039 not in baseline. V041-V064? V064 not in baseline. V048-V055? V055 not in baseline. V051-V092? V092 not in baseline. V052-V072? V072 not in baseline. V068-V079? V079 not in baseline. V074-V084? V084 not in baseline. V075-V027? V027 not in baseline. V077-V082? V082 not in baseline. V081-V098? V098 not in baseline. V089-V095? V095 not in baseline. V090-V097? V097 not in baseline.\n\nCheck pairs within baseline: V001-V029: edge? V001 edges: V006,V017,V021,V024,V039,V054,V066,V070,V071,V079,V100. No V029. \u2713. V001-V036: V001 edges don't include V036. \u2713. V011-V041: V011 edges: V008,V024,V070,V079. No V041. \u2713. V029-V041: V029 edges: V020,V032,V039,V042,V046,V087,V091. No V041. \u2713. V035-V036: V035 edges: V025,V026,V037,V086,V100. No V036. \u2713. V045-V051: V045 edges: V023,V025,V056,V058,V060,V083,V084,V100. No V051. \u2713. V048-V051: V048 edges include V055,V062,V066,V067,V092,V094... let me check: V048-V055,V048-V062,V048-V066,V048-V067,V048-V092,V048-V094. Also V003-V048,V004-V048,V005-V048,V008-V048,V012-V048,V034-V048. No V051 in V048's edges. \u2713. V050-V051: V050 edges: V003,V034,V078,V091. No V051. \u2713. V051-V052: V051 edges: V002,V003,V012,V047,V053,V055,V091,V092. No V052. \u2713. V068-V096: V068 edges: V002,V012,V072,V079,V088,V096,V097. V096 not in baseline. \u2713. V075-V037: V037 not in baseline. V075 edges: V025,V027,V037. No baseline conflicts. \u2713. V089-V033: V033 not in baseline. V089 edges: V006,V014,V022,V023,V033,V039,V042,V044,V046,V054,V065,V070,V078,V095,V098. None in baseline? V001 not in V089's edges. V036 not in V089's edges. V041 not in V089's edges. V045 not in V089's edges. V048 not in V089's edges. V051 not in V089's edges. V052 not in V089's edges. V068 not in V089's edges. V069 not in V089's edges. V073 not in V089's edges. V074 not in V089's edges. V075 not in V089's edges. V077 not in V089's edges. V081 not in V089's edges. V090 not in V089's edges. V099 not in V089's edges. \u2713.\n\nV090-V052: V090 edges: V008,V015,V019,V053,V097. No V052. \u2713. V052-V091: V052 edges: V019,V031,V033,V038,V072,V082,V091,V097. V091 not in baseline. \u2713.\n\nBaseline seems valid. Let me try to find improvements more carefully.\n\nCan I add any vertex not in baseline without conflict?\n- V002(13): edges V027,V051,V066,V067,V068. V051,V068 in baseline - conflict.\n- V003(36): blocked.\n- V006(11): edges V001,V008,V014,V023,V036,V042,V058,V059,V071,V087,V089. V001,V036,V059,V089 in baseline - conflict.\n- V007(5): edges V014,V021,V023,V024,V029,V055,V079,V091,V093. V029 in baseline - conflict.\n- V008(8): edges V006,V011,V019,V031,V042,V048,V054,V059,V061,V064,V079,V080,V090,V091. V011,V048,V059,V090 in baseline - conflict.\n- V009(21): blocked by V041.\n- V012(23): edges V003,V004,V047,V048,V049,V051,V068,V088,V096. V048,V049,V051,V068 in baseline - conflict.\n- V014(8): edges V006,V007,V054,V070,V078,V079,V089. V089 in baseline - conflict.\n- V015(7): blocked by V016,V041,V090.\n- V017(6): edges V001,V023,V024,V082. V001 in baseline - conflict.\n- V018(6): edges V036,V053,V056,V084,V085,V091. V036 in baseline - conflict.\n- V019(8): edges V008,V015,V038,V052,V090. V052,V090 in baseline - conflict.\n- V020(6): edges V029,V030,V040,V043. V029 in baseline - conflict.\n- V021(7): edges V001,V007,V024,V046,V061,V067. V001 in baseline - conflict.\n- V022(4): edges V057,V074,V082,V089,V093,V100. V057,V074,V089 in baseline - conflict.\n- V023(5): edges V006,V007,V017,V023... many. V036,V045,V059,V089 in baseline - conflict.\n- V024(10): edges V001,V007,V011,V017,V021,V039,V079. V001,V011 in baseline - conflict.\n- V025(9): edges many. V035,V045,V049,V075 in baseline - conflict.\n- V026(3): edges V009,V035,V037,V038,V081. V035,V081 in baseline - conflict.\n- V027(8): edges V002,V055,V073,V075,V092,V094. V073,V075 in baseline - conflict.\n- V028(15): edges V025,V031,V041,V074,V080,V097,V098. V041,V074 in baseline - conflict.\n- V030(4): edges V020,V025,V040,V049,V054,V076. V049 in baseline - conflict.\n- V031(5): edges V008,V028,V041,V052,V055,V064,V080,V081,V091. V041,V052,V081 in baseline - conflict.\n- V032(3): edges V025,V029,V043,V056,V057,V076. V029,V057 in baseline - conflict.\n- V033(15): edges V025,V038,V040,V052,V081,V089,V097. V052,V081,V089 in baseline - conflict.\n- V034(23): blocked.\n- V037(5): edges V026,V035,V061,V075. V035,V075 in baseline - conflict.\n- V038(3): edges V019,V023,V026,V033,V052,V064. V052 in baseline - conflict.\n- V039(7): edges V001,V024,V029,V036,V054,V056,V058,V070,V071,V081,V089,V097,V100. V001,V029,V036,V081,V089 in baseline - conflict.\n- V040(8): edges V020,V025,V030,V033,V043,V057,V072,V083,V085,V093,V099,V100. V057,V099 in baseline - conflict.\n- V042(8): edges V006,V008,V029,V046,V078,V089. V029,V089 in baseline - conflict.\n- V043(10): edges V020,V025,V032,V049,V053,V060,V083,V091,V093. V049 in baseline - conflict.\n- V044(6): edges V013,V023,V044... V013 in baseline - conflict.\n- V046(3): edges V021,V023,V029,V042,V059,V070,V079,V089,V091. V029,V059,V089 in baseline - conflict.\n- V047(19): blocked by V010,V051.\n- V053(16): blocked by V051,V077,V090.\n- V054(7): edges V001,V008,V014,V023,V030,V036,V039,V058,V059,V079,V087,V089. V001,V036,V059,V089 in baseline - conflict.\n- V055(18): blocked by V048,V051.\n- V056(4): edges V018,V032,V039,V045,V057,V082,V091,V100. V045,V057 in baseline - conflict.\n- V058(9): edges V006,V036,V039,V045,V054,V091. V036,V045 in baseline - conflict.\n- V060(15): blocked by V045,V077.\n- V061(3): edges V008,V021,V036,V037,V063,V097,V100. V036 in baseline - conflict.\n- V062(10): edges V003,V005,V034,V047,V048,V097. V048 in baseline - conflict.\n- V063(11): edges V023,V036,V044,V061,V070,V091. V036 in baseline - conflict.\n- V064(5): edges V008,V016,V025,V031,V038,V041,V080,V098. V016,V041 in baseline - conflict.\n- V065(7): edges V015,V025,V080,V081,V089,V091,V097,V098. V081,V089 in baseline - conflict.\n- V066(4): edges V001,V002,V003,V013,V047,V048,V093. V001,V013,V048 in baseline - conflict.\n- V067(3): edges V002,V003,V021,V048,V073,V078. V048,V073 in baseline - conflict.\n- V070(6): edges V001,V011,V014,V039,V046,V063,V089,V095. V001,V011,V089 in baseline - conflict.\n- V071(4): edges V001,V006,V039,V044,V059,V087. V001,V059 in baseline - conflict.\n- V072(7): edges V040,V049,V052,V053,V068,V082,V084,V091,V100. V049,V052,V068 in baseline - conflict.\n- V076(3): edges V025,V030,V032,V047,V057,V097,V099. V057,V099 in baseline - conflict.\n- V078(20): blocked by V013,V050,V089.\n- V079(7): edges V001,V007,V008,V011,V014,V024,V046,V054,V068. V001,V011,V068 in baseline - conflict.\n- V080(16): blocked by V041.\n- V082(3): edges V017,V022,V052,V056,V060,V072,V077,V083. V052,V077 in baseline - conflict.\n- V083(7): edges V025,V040,V043,V045,V060,V077,V082,V093. V045,V077 in baseline - conflict.\n- V084(6): edges V018,V045,V055,V060,V072,V074,V077. V045,V074,V077 in baseline - conflict.\n- V085(4): edges V015,V018,V040,V049,V053,V091,V093. V049 in baseline - conflict.\n- V086(7): edges V013,V035,V080,V087,V100. V013,V035 in baseline - conflict.\n- V087(4): edges V006,V029,V054,V071,V086,V095. V029 in baseline - conflict.\n- V088(7): edges V003,V005,V012,V068,V078. V068 in baseline - conflict.\n- V091(6): edges many. V029,V034,V041,V043,V044,V046,V049,V050,V051,V052,V053,V056,V058,V063,V065,V072,V074,V078,V085. V029,V041,V049,V050,V051,V052,V074 in baseline - conflict.\n- V092(6): edges V027,V047,V048,V051,V094. V048,V051 in baseline - conflict.\n- V093(3): edges V007,V022,V025,V040,V043,V053,V057,V066,V077,V083,V085,V100. V057,V077 in baseline - conflict.\n- V094(5): edges V003,V004,V025,V027,V048,V091,V092. V048 in baseline - conflict.\n- V095(21): blocked by V036,V089.\n- V096(11): edges V003,V012,V049,V055,V068,V073,V078. V049,V068,V073 in baseline - conflict.\n- V097(6): edges V009,V010,V025,V028,V033,V039,V052,V053,V061,V062,V065,V068,V076,V080,V090. V010,V052,V068,V090 in baseline - conflict.\n- V098(7): edges V028,V055,V064,V065,V081,V089. V081,V089 in baseline - conflict.\n- V100(13): edges V001,V016,V022,V035,V036,V039,V040,V045,V049,V053,V056,V061,V069,V072,V086,V093,V095,V099. V001,V016,V035,V036,V045,V049,V069,V099 in baseline - conflict.\n\nNo single vertex can be added to baseline! The baseline is a maximal independent set. Need to do swaps.\n\nLet me try 2-for-1 swaps (remove 1, add 2):\n\nRemove V073(3): freed neighbors V027,V034,V067,V096. \n- Can add V027(8) and V096(11)? V027 edges: V002,V055,V073(removed),V075,V092,V094. V075 in baseline - conflict.\n- Can add V096(11)? V096 edges: V003,V012,V049,V055,V068,V073(removed),V078. V049,V068 in baseline - conflict.\n- Can add V034(23)? V034 edges: V003,V013,V048,V050,V062,V073(removed),V078,V091. V013,V048,V050 in baseline - conflict.\n- Can add V067(3)? V067 edges: V002,V003,V021,V048,V073(removed),V078. V048 in baseline - conflict.\nNet: removing V073 doesn't help much.\n\nRemove V081(6): freed V015,V026,V031,V033,V039,V065,V098.\n- V033(15): V025,V038,V040,V052,V081(removed),V089,V097. V052,V089 in baseline - conflict.\n- V065(7): V015,V025,V080,V081(removed),V089,V091,V097,V098. V089 in baseline - conflict.\n- V098(7): V028,V055,V064,V065,V081(removed),V089. V089 in baseline - conflict.\n- V031(5): V008,V028,V041,V052,V055,V064,V080,V081(removed),V091. V041,V052 in baseline - conflict.\nNet: removing V081 doesn't help.\n\nRemove V059(6): freed V006,V008,V023,V036,V046,V054,V071.\n- V006(11): V001,V008,V014,V023,V036,V042,V058,V059(removed),V071,V087,V089. V001,V036,V089 in baseline - conflict.\n- V054(7): V001,V008,V014,V023,V030,V036,V039,V058,V059(removed),V079,V087,V089. V001,V036,V089 in baseline - conflict.\nNet: removing V059 doesn't help.\n\nRemove V099(5): freed V040,V060,V076,V093,V100.\n- V060(15): V043,V045,V077,V082,V083,V084,V099(removed). V045,V077 in baseline - conflict.\n- V100(13): V001,V016,V022,V035,V036,V039,V040,V045,V049,V053,V056,V061,V069,V072,V086,V093,V095,V099(removed). V001,V016,V035,V036,V045,V049,V069 in baseline - conflict.\nNet: removing V099 doesn't help.\n\nRemove V069(18): freed V100.\n- V100(13): still blocked by V001,V016,V035,V036,V045,V049 in baseline.\nNet: no.\n\nRemove V069(18)+V049(12)=30: freed V100,V030,V043,V072,V085,V091,V096.\n- V100(13): still blocked by V001,V016,V035,V036,V045 in baseline.\n- V043(10): V020,V025,V032,V049(removed),V053,V060,V083,V091,V093. None in baseline? V025 not in baseline. V053 not in baseline. V060 not in baseline. V083 not in baseline. V091 not in baseline. V093 not in baseline. V020 not in baseline. V032 not in baseline. \u2713 Can add V043!\n- V096(11): V003,V012,V049(removed),V055,V068,V073,V078. V068,V073 in baseline - conflict.\n- V072(7): V040,V049(removed),V052,V053,V068,V082,V084,V091,V100. V052,V068 in baseline - conflict.\n- V085(4): V015,V018,V040,V049(removed),V053,V091,V093. None in baseline? V015 not in baseline. V018 not in baseline. V040 not in baseline. V053 not in baseline. V091 not in baseline. V093 not in baseline. \u2713 Can add V085!\n- V030(4): V020,V025,V040,V049(removed),V054,V076. None in baseline? V020 not in baseline. V025 not in baseline. V040 not in baseline. V054 not in baseline. V076 not in baseline. \u2713 Can add V030!\n\nSo removing V069(18)+V049(12)=30, adding V043(10)+V085(4)+V030(4)=18. Net: -12. Bad.\n\nCan we add more? After adding V043,V085,V030, check if any more can be added.\nV043 neighbors: V020,V025,V032,V049(removed),V053,V060,V083,V091,V093. None in current set.\nV085 neighbors: V015,V018,V040,V049(removed),V053,V091,V093. None in current set.\nV030 neighbors: V020,V025,V040,V049(removed),V054,V076. None in current set.\nV043-V085: not an edge. V043-V030: not an edge. V085-V030: not an edge. \u2713\n\nCan add more: V020(6)? V020 edges: V029,V030(added),V040,V043(added). V029 in baseline, V030 and V043 added - conflict. No.\nV025(9)? V025 edges: V028,V030(added),V032,V033,V035,V040,V043(added),V045,V049(removed),V053,V064,V065,V069(removed),V075,V076,V080,V083,V093,V094,V097,V099. V030,V043 added - conflict.\nV053(16)? V053 edges: V018,V025,V043(added),V051,V072,V077,V085(added),V090,V091,V093,V097,V100. V043,V085 added, V051,V077,V090 in baseline - conflict.\nV091(6)? blocked by many in baseline.\nV093(3)? V093 edges: V007,V022,V025,V040,V043(added),V053,V057,V066,V077,V083,V085(added),V100. V043,V085 added, V057,V077 in baseline - conflict.\nV040(8)? V040 edges: V020,V025,V030(added),V033,V043(added),V057,V072,V083,V085(added),V093,V099,V100. V030,V043,V085 added, V057,V099 in baseline - conflict.\nV076(3)? V076 edges: V025,V030(added),V032,V047,V057,V097,V099. V030 added, V057,V099 in baseline - conflict.\nV054(7)? V054 edges: V001,V008,V014,V023,V030(added),V036,V039,V058,V059,V079,V087,V089. V030 added, V001,V036,V059,V089 in baseline - conflict.\n\nNet gain from this swap: -12. Not worth it.\n\nLet me try removing V069(18) alone and see what opens up.\nV069 edges: V100. Only V100 is freed.\nV100(13): V001,V016,V022,V035,V036,V039,V040,V045,V049,V053,V056,V061,V069(removed),V072,V086,V093,V095,V099. V001,V016,V035,V036,V045,V049,V099 in baseline - conflict.\nNet: -18, can't recover.\n\nLet me try 1-for-2 swaps (remove 2, add 1 with higher weight):\n\nRemove V073(3)+V075(13)=16, add V034(23)? V034 edges: V003,V013,V048,V050,V062,V073(removed),V078,V091. V013,V048,V050 in baseline - conflict. No.\n\nRemove V073(3)+V013(3)=6, add V034(23)? V034 edges: V003,V013(removed),V048,V050,V062,V073(removed),V078,V091. V048,V050 in baseline - conflict. No.\n\nRemove V073(3)+V013(3)+V048(43)+V050(12)=61, add V034(23)+V003(36)? V003 edges: V012,V034,V048(removed),V050(removed),V051,V062,V066,V067,V088,V094,V096. V051 in baseline - conflict. No.\n\nRemove V073(3)+V013(3)+V048(43)+V050(12)+V051(22)=93, add V034(23)+V003(36)+V002(13)? V002 edges: V027,V051(removed),V066,V067,V068. V068 in baseline - conflict. No.\n\nThis is very hard. The baseline seems near-optimal for this greedy approach. Let me try a completely different set.\n\nActually, let me try to find a better solution by considering high-weight vertices:\nV048(43), V003(36), V041(28), V011(24), V034(23), V089(23), V051(22), V095(21), V009(21)...\n\nV048 and V003 conflict. V048 and V041: V048 edges don't include V041. V041 edges: V009,V015,V028,V031,V064,V080. No V048. \u2713 Can have both.\nV048 and V011: V048 edges don't include V011. V011 edges: V008,V024,V070,V079. No V048. \u2713\nV048 and V034: conflict (V034-V048 edge).\nV048 and V089: V048 edges don't include V089. V089 edges: V006,V014,V022,V023,V033,V039,V042,V044,V046,V054,V065,V070,V078,V095,V098. No V048. \u2713\nV048 and V051: V048 edges don't include V051. V051 edges: V002,V003,V012,V047,V053,V055,V091,V092. No V048. \u2713\nV048 and V095: V048 edges don't include V095. V095 edges: V023,V036,V070,V087,V089,V100. No V048. \u2713\nV048 and V009: V048 edges don't include V009. V009 edges: V025,V026,V041,V080,V097. No V048. \u2713\n\nSo V048,V041,V011,V089,V051,V095,V009 could potentially coexist. Let me check all pairs:\nV041-V009: V009 edges include V041! Conflict.\nV041-V011: V011 edges: V008,V024,V070,V079. No V041. V041 edges: V009,V015,V028,V031,V064,V080. No V011. \u2713\nV041-V089: V041 edges don't include V089. V089 edges don't include V041. \u2713\nV041-V051: V041 edges don't include V051. V051 edges don't include V041. \u2713\nV041-V095: V041 edges don't include V095. V095 edges don't include V041. \u2713\nV011-V089: V011 edges: V008,V024,V070,V079. V089 edges: V006,V014,V022,V023,V033,V039,V042,V044,V046,V054,V065,V070,V078,V095,V098. V070 in both? V011-V070 is an edge, V089-V070 is an edge, but V011-V089 is not an edge. \u2713\nV011-V051: V011 edges don't include V051. V051 edges don't include V011. \u2713\nV011-V095: V011 edges don't include V095. V095 edges don't include V011. \u2713\nV089-V051: V089 edges don't include V051. V051 edges don't include V089. \u2713\nV089-V095: V089-V095 is an edge! Conflict.\nV051-V095: V051 edges don't include V095. V095 edges don't include V051. \u2713\n\nSo {V048,V041,V011,V089,V051} are mutually compatible (43+28+24+23+22=140). And {V048,V041,V011,V095,V051} (43+28+24+21+22=138).\n\nNow let me build a larger set around these. Start with {V048,V041,V011,V089,V051}=140.\n\nExcluded by V048: V003,V004,V005,V008,V012,V034,V055,V062,V066,V067,V092,V094\nExcluded by V041: V009,V015,V028,V031,V064,V080\nExcluded by V011: V008,V024,V070,V079\nExcluded by V089: V006,V014,V022,V023,V033,V039,V042,V044,V046,V054,V065,V070,V078,V095,V098\nExcluded by V051: V002,V003,V012,V047,V053,V055,V091,V092\n\nAvailable (not excluded, not in set): V001,V007,V010,V013,V016,V017,V018,V019,V020,V021,V025,V026,V027,V029,V030,V032,V035,V036,V037,V038,V040,V043,V045,V049,V050,V056,V057,V058,V059,V060,V061,V063,V068,V069,V071,V072,V073,V074,V075,V076,V077,V081,V082,V083,V084,V085,V086,V087,V088,V090,V093,V094(excluded by V048),V096,V097,V099,V100\n\nWait, V094 excluded by V048. Let me redo:\nExcluded: V003,V004,V005,V008,V009,V012,V015,V022,V023,V024,V028,V031,V033,V034,V039,V042,V044,V046,V047,V053,V054,V055,V062,V064,V065,V066,V067,V070,V078,V079,V080,V091,V092,V094,V095,V098\n\nAvailable: V001,V002,V006,V007,V010,V013,V014,V016,V017,V018,V019,V020,V021,V025,V026,V027,V029,V030,V032,V035,V036,V037,V038,V040,V043,V045,V049,V050,V056,V057,V058,V059,V060,V061,V063,V068,V069,V071,V072,V073,V074,V075,V076,V077,V081,V082,V083,V084,V085,V086,V087,V088,V090,V093,V096,V097,V099,V100\n\nNow greedily add highest weight from available, checking conflicts with current set AND each other:\n\nV050(12): V050 edges: V003,V034,V078,V091. None in {V048,V041,V011,V089,V051} or excluded by them that are in available. \u2713 Add V050. Exclude: V003(already),V034(already),V078,V091(already).\n\nV049(12): V049 edges: V012,V025,V030,V043,V049... V049 edges: V012,V025,V030,V043,V072,V085,V091,V096,V100. None in current set {V048,V041,V011,V089,V051,V050}. \u2713 Add V049. Exclude: V025,V030,V043,V072,V085,V096,V100.\n\nV068(12): V068 edges: V002,V012,V072(excluded),V079(excluded),V088,V096(excluded),V097. None in current set. \u2713 Add V068. Exclude: V002,V088,V097.\n\nV045(17): V045 edges: V023(excluded),V025(excluded),V056,V058,V060,V083,V084,V100(excluded). None in current set. \u2713 Add V045. Exclude: V056,V058,V060,V083,V084.\n\nV035(10): V035 edges: V025(excluded),V026,V037,V086,V100(excluded). None in current set. \u2713 Add V035. Exclude: V026,V037,V086.\n\nV036(11): V036 edges: V004(excluded),V006,V018,V023(excluded),V039(excluded),V054(excluded),V058(excluded),V061,V063,V095(excluded),V100(excluded). None in current set. \u2713 Add V036. Exclude: V006,V018,V061,V063.\n\nV016(14): V016 edges: V015(excluded),V064(excluded),V100(excluded). None in current set. \u2713 Add V016. Exclude: (V015,V064,V100 already excluded).\n\nV013(3): V013 edges: V034(excluded),V044(excluded),V066(excluded),V078(excluded),V086(excluded),V091(excluded). None in current set. \u2713 Add V013.\n\nV029(9): V029 edges: V020,V032,V039(excluded),V042(excluded),V046(excluded),V087,V091(excluded). None in current set. \u2713 Add V029. Exclude: V020,V032,V087.\n\nV001(7): V001 edges: V006(excluded),V017,V021,V024(excluded),V039(excluded),V054(excluded),V066(excluded),V070(excluded),V071,V079(excluded),V100(excluded). None in current set. \u2713 Add V001. Exclude: V017,V021,V071.\n\nV010(5): V010 edges: V047(excluded),V097(excluded). None in current set. \u2713 Add V010.\n\nV057(10): V057 edges: V022(excluded),V032(excluded),V040,V056(excluded),V076,V093. None in current set. \u2713 Add V057. Exclude: V040,V076,V093.\n\nV074(12): V074 edges: V022(excluded),V028(excluded),V074... V074 edges: V022,V028,V074... let me check: V022-V074, V028-V074, V074-V084(excluded),V074-V091(excluded). None in current set. \u2713 Add V074. Exclude: V084(already excluded).\n\nV075(13): V075 edges: V025(excluded),V027,V037(excluded). None in current set. \u2713 Add V075. Exclude: V027.\n\nV077(4): V077 edges: V053(excluded),V060(excluded),V082,V083(excluded),V084(excluded),V093(excluded). None in current set. \u2713 Add V077. Exclude: V082.\n\nV073(3): V073 edges: V027(excluded),V034(excluded),V067(excluded),V096(excluded). None in current set. \u2713 Add V073.\n\nV052(7): V052 edges: V019,V031(excluded),V033(excluded),V038,V072(excluded),V082(excluded),V091(excluded),V097(excluded). None in current set. \u2713 Add V052. Exclude: V019,V038.\n\nV059(6): V059 edges: V006(excluded),V008(excluded),V023(excluded),V036(in set!). Conflict with V036! Skip.\n\nV069(18): V069 edges: V100(excluded). None in current set. \u2713 Add V069.\n\nV090(12): V090 edges: V008(excluded),V015(excluded),V019(excluded),V053(excluded),V097(excluded). None in current set. \u2713 Add V090.\n\nV081(6): V081 edges: V015(excluded),V026(excluded),V031(excluded),V033(excluded),V039(excluded),V065(excluded),V098(excluded). None in current set. \u2713 Add V081.\n\nV099(5): V099 edges: V023(excluded),V025(excluded),V040(excluded),V060(excluded),V076(excluded),V099... V099 edges: V040,V060,V076,V099... let me check: V040-V099,V060-V099,V076-V099,V099-V100(excluded). None in current set. \u2713 Add V099.\n\nV088(7): excluded by V068. Skip.\n\nV014(8): V014 edges: V006(excluded),V007,V054(excluded),V070(excluded),V078(excluded),V079(excluded),V089(in set!). Conflict! Skip.\n\nV007(5): V007 edges: V014,V021(excluded),V023(excluded),V024(excluded),V029(in set!). Conflict! Skip.\n\nV085(4): excluded by V049. Skip.\n\nV096(11): excluded by V049. Skip.\n\nV043(10): excluded by V049. Skip.\n\nV072(7): excluded by V049. Skip.\n\nV025(9): excluded by V049. Skip.\n\nV030(4): excluded by V049. Skip.\n\nV060(15): excluded by V045. Skip.\n\nV083(7): excluded by V045. Skip.\n\nV084(6): excluded by V045. Skip.\n\nV056(4): excluded by V045. Skip.\n\nV058(9): excluded by V045. Skip.\n\nV086(7): excluded by V035. Skip.\n\nV037(5): excluded by V035. Skip.\n\nV026(3): excluded by V035. Skip.\n\nV018(6): excluded by V036. Skip.\n\nV061(3): excluded by V036. Skip.\n\nV063(11): excluded by V036. Skip.\n\nV006(11): excluded by V036. Skip.\n\nV017(6): excluded by V001. Skip.\n\nV021(7): excluded by V001. Skip.\n\nV071(4): excluded by V001. Skip.\n\nV020(6): excluded by V029. Skip.\n\nV032(3): excluded by V029. Skip.\n\nV087(4): excluded by V029. Skip.\n\nV027(8): excluded by V075. Skip.\n\nV082(3): excluded by V077. Skip.\n\nV093(3): excluded by V057. Skip.\n\nV040(8): excluded by V057. Skip.\n\nV076(3): excluded by V057. Skip.\n\nV019(8): excluded by V052. Skip.\n\nV038(3): excluded by V052. Skip.\n\nV097(6): excluded by V068. Skip.\n\nV002(13): excluded by V068. Skip.\n\nV088(7): excluded by V068. Skip.\n\nRemaining available not excluded: Let me check what's left.\nCurrent set: V048,V041,V011,V089,V051,V050,V049,V068,V045,V035,V036,V016,V013,V029,V001,V010,V057,V074,V075,V077,V073,V052,V069,V090,V081,V099\n\nLet me compute total weight:\nV048=43, V041=28, V011=24, V089=23, V051=22, V050=12, V049=12, V068=12, V045=17, V035=10, V036=11, V016=14, V013=3, V029=9, V001=7, V010=5, V057=10, V074=12, V075=13, V077=4, V073=3, V052=7, V069=18, V090=12, V081=6, V099=5\n\nSum: 43+28+24+23+22+12+12+12+17+10+11+14+3+9+7+5+10+12+13+4+3+7+18+12+6+5 = \n\n43+28=71, +24=95, +23=118, +22=140, +12=152, +12=164, +12=176, +17=193, +10=203, +11=214, +14=228, +3=231, +9=240, +7=247, +5=252, +10=262, +12=274, +13=287, +4=291, +3=294, +7=301, +18=319, +12=331, +6=337, +5=342\n\nThat's 342, less than baseline 348. Let me check if I missed anything or made errors.\n\nWait, I need to verify this set is valid. Let me check some pairs:\n- V048-V049: V048 edges include V049? V048 edges: V003,V004,V005,V008,V012,V034,V055,V062,V066,V067,V092,V094. No V049. \u2713\n- V048-V068: V048 edges don't include V068. \u2713\n- V048-V045: V048 edges don't include V045. \u2713\n- V041-V049: V041 edges: V009,V015,V028,V031,V064,V080. No V049. \u2713\n- V041-V068: V041 edges don't include V068. \u2713\n- V041-V045: V041 edges don't include V045. \u2713\n- V011-V049: V011 edges: V008,V024,V070,V079. No V049. \u2713\n- V089-V049: V089 edges don't include V049. \u2713\n- V089-V068: V089 edges don't include V068. \u2713\n- V089-V045: V089 edges don't include V045. \u2713\n- V051-V049: V051 edges: V002,V003,V012,V047,V053,V055,V091,V092. No V049. \u2713\n- V050-V049: V050 edges: V003,V034,V078,V091. No V049. \u2713\n- V050-V068: V050 edges don't include V068. \u2713\n- V049-V068: V049 edges: V012,V025,V030,V043,V072,V085,V091,V096,V100. No V068. \u2713\n- V049-V045: V049 edges don't include V045. \u2713\n- V068-V045: V068 edges: V002,V012,V072,V079,V088,V096,V097. No V045. \u2713\n- V035-V036: V035 edges: V025,V026,V037,V086,V100. No V036. \u2713\n- V035-V016: V035 edges don't include V016. \u2713\n- V036-V016: V036 edges: V004,V006,V018,V023,V039,V054,V058,V061,V063,V095,V100. No V016. \u2713\n- V036-V013: V036 edges don't include V013. \u2713\n- V016-V013: V016 edges: V015,V064,V100. No V013. \u2713\n- V029-V001: V029 edges: V020,V032,V039,V042,V046,V087,V091. No V001. \u2713\n- V001-V010: V001 edges: V006,V017,V021,V024,V039,V054,V066,V070,V071,V079,V100. No V010. \u2713\n- V057-V074: V057 edges: V022,V032,V040,V056,V076,V093. No V074. \u2713\n- V057-V075: V057 edges don't include V075. \u2713\n- V074-V075: V074 edges: V022,V028,V084,V091. No V075. \u2713\n- V075-V077: V075 edges: V025,V027,V037. No V077. \u2713\n- V073-V077: V073 edges: V027,V034,V067,V096. No V077. \u2713\n- V052-V069: V052 edges: V019,V031,V033,V038,V072,V082,V091,V097. No V069. \u2713\n- V069-V090: V069 edges: V100. No V090. \u2713\n- V090-V081: V090 edges: V008,V015,V019,V053,V097. No V081. \u2713\n- V081-V099: V081 edges: V015,V026,V031,V033,V039,V065,V098. No V099. \u2713\n- V099-V069: V099 edges: V040,V060,V076,V100. No V069. \u2713\n\nHmm, my new set gives 342 < 348 baseline. The baseline is better! Let me try to improve the baseline instead.\n\nLet me reconsider. The baseline has 348. My new construction gives 342. Let me try to improve the baseline with targeted swaps.\n\nActually, let me try: in baseline, remove V073(3) and V013(3) = 6 removed. What can we add?\nV073 freed: V027,V034,V067,V096\nV013 freed: V034,V044,V066,V078,V086,V091\n\nV034(23): V034 edges: V003,V013(removed),V048,V050,V062,V073(removed),V078,V091. V048,V050 in baseline - conflict.\nV044(6): V044 edges: V013(removed),V023,V044... V044 edges: V013,V023,V063,V071,V089,V091. V089 in baseline - conflict.\nV066(4): V066 edges: V001,V002,V003,V013(removed),V047,V048,V093. V001,V048 in baseline - conflict.\nV078(20): V078 edges: V013(removed),V014,V034,V042,V050,V067,V088,V089,V091,V096. V050,V089 in baseline - conflict.\nV086(7): V086 edges: V013(removed),V035,V080,V087,V100. V035 in baseline - conflict.\nV091(6): V091 edges: many. V029,V041,V049,V050,V051,V052,V074 in baseline - conflict.\nV027(8): V027 edges: V002,V055,V073(removed),V075,V092,V094. V075 in baseline - conflict.\nV096(11): V096 edges: V003,V012,V049,V055,V068,V073(removed),V078. V049,V068 in baseline - conflict.\nV067(3): V067 edges: V002,V003,V021,V048,V073(removed),V078. V048 in baseline - conflict.\n\nNone work. \n\nLet me try removing V073(3)+V075(13)+V013(3)=19 and adding V034(23)+V027(8)=31. Net: +12.\nV034 edges: V003,V013(removed),V048,V050,V062,V073(removed),V078,V091. V048,V050 in baseline - conflict. Can't add V034.\n\nRemove V073(3)+V075(13)+V013(3)+V048(43)+V050(12)=74. Add V034(23)+V027(8)+V003(36)? V003 edges: V012,V034,V048(removed),V050(removed),V051,V062,V066,V067,V088,V094,V096. V051 in baseline - conflict.\n\nRemove V073(3)+V075(13)+V013(3)+V048(43)+V050(12)+V051(22)=96. Add V034(23)+V027(8)+V003(36)+V002(13)? V002 edges: V027,V051(removed),V066,V067,V068. V068 in baseline - conflict.\n\nRemove V073(3)+V075(13)+V013(3)+V048(43)+V050(12)+V051(22)+V068(12)=108. Add V034(23)+V027(8)+V003(36)+V002(13)+V096(11)? \nV034: V013(removed),V048(removed),V050(removed),V073(removed) - others: V003,V062,V078,V091. V003 to be added - conflict with V034? V003-V034 is an edge! Conflict.\n\nSo can't have both V003 and V034.\n\nRemove V073(3)+V075(13)+V013(3)+V048(43)+V050(12)+V051(22)+V068(12)=108. Add V003(36)+V002(13)+V096(11)+V027(8)+V034(23)?\nV003-V034 conflict. Can't.\n\nAdd V003(36)+V002(13)+V096(11)+V027(8)=68. Net: 68-108=-40. Bad.\n\nAdd V034(23)+V002(13)+V096(11)+V027(8)=54. Net: 54-108=-54. Bad.\n\nThis approach isn't working. The baseline at 348 seems hard to beat with manual analysis.\n\nLet me try one more approach: look at the baseline and try to swap V069(18) for something better.\nV069 edges: V100. Remove V069, freed: V100.\nV100(13): V100 edges: V001,V016,V022,V035,V036,V039,V040,V045,V049,V053,V056,V061,V069(removed),V072,V086,V093,V095,V099. V001,V016,V035,V036,V045,V049,V099 in baseline - conflict.\n\nCan't add V100. So removing V069 gives -18 with nothing to add.\n\nWhat about adding V069 to baseline? V069 edges: V100. V100 not in baseline. \u2713 V069 is already in baseline!\n\nLet me try: remove V090(12) and V052(7)=19. Add V019(8)+V033(15)? \nV019 edges: V008,V015,V038,V052(removed),V090(removed). None in baseline. \u2713\nV033 edges: V025,V038,V040,V052(removed),V081,V089,V097. V081,V089 in baseline - conflict.\n\nRemove V090(12)+V052(7)+V081(6)+V089(23)=48. Add V019(8)+V033(15)+V065(7)+V095(21)=51. Net: +3!\n\nCheck V019: edges V008,V015,V038,V052(removed),V090(removed). None in remaining baseline. \u2713\nCheck V033: edges V025,V038,V040,V052(removed),V081(removed),V089(removed),V097. None in remaining baseline. \u2713\nCheck V065: edges V015,V025,V080,V081(removed),V089(removed),V091,V097,V098. None in remaining baseline. \u2713\nCheck V095: edges V023,V036,V070,V087,V089(removed),V100. V036 in baseline - conflict! Can't add V095.\n\nRemove V090(12)+V052(7)+V081(6)+V089(23)+V036(11)=59. Add V019(8)+V033(15)+V065(7)+V095(21)+V006(11)=62. Net: +3.\n\nCheck V006: edges V001,V008,V014,V023,V036(removed),V042,V058,V059,V071,V087,V089(removed). V001,V059 in baseline - conflict!\n\nRemove V090(12)+V052(7)+V081(6)+V089(23)+V036(11)+V059(6)+V001(7)=72. Add V019(8)+V033(15)+V065(7)+V095(21)+V006(11)+V054(7)+V017(6)=75. Net: +3.\n\nCheck V054: edges V001(removed),V008,V014,V023,V030,V036(removed),V039,V058,V059(removed),V079,V087,V089(removed). None in remaining baseline? V039 not in baseline. V008 not in baseline. V014 not in baseline. \u2713\nCheck V017: edges V001(removed),V023,V024,V082. None in remaining baseline. \u2713\nCheck V006: edges V001(removed),V008,V014,V023,V036(removed),V042,V058,V059(removed),V071,V087,V089(removed). None in remaining baseline. \u2713\nCheck V095: edges V023,V036(removed),V070,V087,V089(removed),V100. None in remaining baseline? V023 not in baseline. V070 not in baseline. V087 not in baseline. V100 not in baseline. \u2713\n\nBut wait, I need to check pairs among the new additions:\nV019-V033: V019 edges: V008,V015,V038,V052(removed),V090(removed). No V033. \u2713\nV019-V065: V019 edges don't include V065. \u2713\nV019-V095: V019 edges don't include V095. \u2713\nV019-V006: V019 edges don't include V006. \u2713\nV019-V054: V019 edges don't include V054. \u2713\nV019-V017: V019 edges don't include V017. \u2713\nV033-V065: V033 edges: V025,V038,V040,V052(removed),V081(removed),V089(removed),V097. No V065. \u2713\nV033-V095: V033 edges don't include V095. \u2713\nV033-V006: V033 edges don't include V006. \u2713\nV033-V054: V033 edges don't include V054. \u2713\nV033-V017: V033 edges don't include V017. \u2713\nV065-V095: V065 edges: V015,V025,V080,V081(removed),V089(removed),V091,V097,V098. No V095. \u2713\nV065-V006: V065 edges don't include V006. \u2713\nV065-V054: V065 edges don't include V054. \u2713\nV065-V017: V065 edges don't include V017. \u2713\nV095-V006: V095 edges: V023,V036(removed),V070,V087,V089(removed),V100. No V006. \u2713\nV095-V054: V095 edges don't include V054. \u2713\nV095-V017: V095 edges don't include V017. \u2713\nV006-V054: V006 edges: V001(removed),V008,V014,V023,V036(removed),V042,V058,V059(removed),V071,V087,V089(removed). No V054. \u2713\nV006-V017: V006 edges don't include V017. \u2713\nV054-V017: V054 edges: V001(removed),V008,V014,V023,V030,V036(removed),V039,V058,V059(removed),V079,V087,V089(removed). No V017. \u2713\n\nAlso check new additions against remaining baseline:\nRemaining baseline after removals: V010,V011,V013,V016,V029,V035,V041,V045,V048,V049,V050,V051,V057,V068,V069,V073,V074,V075,V077,V099\n\nV019 vs remaining: V019 edges: V008,V015,V038,V052(removed),V090(removed). None in remaining baseline. \u2713\nV033 vs remaining: V033 edges: V025,V038,V040,V052(removed),V081(removed),V089(removed),V097. None in remaining baseline. \u2713\nV065 vs remaining: V065 edges: V015,V025,V080,V081(removed),V089(removed),V091,V097,V098. None in remaining baseline. \u2713\nV095 vs remaining: V095 edges: V023,V036(removed),V070,V087,V089(removed),V100. None in remaining baseline. \u2713\nV006 vs remaining: V006 edges: V001(removed),V008,V014,V023,V036(removed),V042,V058,V059(removed),V071,V087,V089(removed). None in remaining baseline. \u2713\nV054 vs remaining: V054 edges: V001(removed),V008,V014,V023,V030,V036(removed),V039,V058,V059(removed),V079,V087,V089(removed). None in remaining baseline. \u2713\nV017 vs remaining: V017 edges: V001(removed),V023,V024,V082. None in remaining baseline. \u2713\n\nSo new set = remaining baseline + {V019,V033,V065,V095,V006,V054,V017}\n= {V010,V011,V013,V016,V029,V035,V041,V045,V048,V049,V050,V051,V057,V068,V069,V073,V074,V075,V077,V099} + {V019,V033,V065,V095,V006,V054,V017}\n\nWeight of remaining baseline: 348 - 12 - 7 - 6 - 23 - 11 - 6 - 7 = 348 - 72 = 276\nWeight of new additions: 8+15+7+21+11+7+6 = 75\nTotal: 276 + 75 = 351!\n\nThat's better than 348! Net gain = +3.\n\nBut wait, let me double-check the removals and additions:\nRemoved: V090(12), V052(7), V081(6), V089(23), V036(11), V059(6), V001(7) = 72\nAdded: V019(8), V033(15), V065(7), V095(21), V006(11), V054(7), V017(6) = 75\nNet: +3, new total = 351.\n\nLet me verify the full set is valid by checking all pairs more carefully.\n\nFull set: V006,V010,V011,V013,V016,V017,V019,V029,V033,V035,V041,V045,V048,V049,V050,V051,V054,V057,V065,V068,V069,V073,V074,V075,V077,V095,V099\n\nLet me check all edges that could be problematic:\n- V006-V011: V006 edges: V001,V008,V014,V023,V036,V042,V058,V059,V071,V087,V089. No V011. \u2713\n- V006-V016: V006 edges don't include V016. \u2713\n- V006-V017: V006 edges don't include V017. \u2713\n- V006-V029: V006 edges don't include V029. \u2713\n- V006-V045: V006 edges don't include V045. \u2713\n- V006-V048: V006 edges don't include V048. \u2713\n- V006-V054: V006 edges don't include V054. \u2713\n- V006-V057: V006 edges don't include V057. \u2713\n- V006-V065: V006 edges don't include V065. \u2713\n- V006-V068: V006 edges don't include V068. \u2713\n- V006-V069: V006 edges don't include V069. \u2713\n- V006-V073: V006 edges don't include V073. \u2713\n- V006-V074: V006 edges don't include V074. \u2713\n- V006-V075: V006 edges don't include V075. \u2713\n- V006-V077: V006 edges don't include V077. \u2713\n- V006-V095: V006 edges don't include V095. \u2713\n- V006-V099: V006 edges don't include V099. \u2713\n- V010-V017: V010 edges: V047,V097. No V017. \u2713\n- V010-V019: V010 edges don't include V019. \u2713\n- V010-V033: V010 edges don't include V033. \u2713\n- V010-V065: V010 edges don't include V065. \u2713\n- V010-V095: V010 edges don't include V095. \u2713\n- V011-V017: V011 edges: V008,V024,V070,V079. No V017. \u2713\n- V011-V019: V011 edges don't include V019. \u2713\n- V011-V033: V011 edges don't include V033. \u2713\n- V011-V041: V011 edges don't include V041. \u2713\n- V011-V045: V011 edges don't include V045. \u2713\n- V011-V048: V011 edges don't include V048. \u2713\n- V011-V049: V011 edges don't include V049. \u2713\n- V011-V050: V011 edges don't include V050. \u2713\n- V011-V051: V011 edges don't include V051. \u2713\n- V011-V054: V011 edges don't include V054. \u2713\n- V011-V057: V011 edges don't include V057. \u2713\n- V011-V065: V011 edges don't include V065. \u2713\n- V011-V068: V011 edges don't include V068. \u2713\n- V011-V069: V011 edges don't include V069. \u2713\n- V011-V073: V011 edges don't include V073. \u2713\n- V011-V074: V011 edges don't include V074. \u2713\n- V011-V075: V011 edges don't include V075. \u2713\n- V011-V077: V011 edges don't include V077. \u2713\n- V011-V095: V011 edges don't include V095. \u2713\n- V011-V099: V011 edges don't include V099. \u2713\n- V013-V017: V013 edges: V034,V044,V066,V078,V086,V091. No V017. \u2713\n- V013-V019: V013 edges don't include V019. \u2713\n- V013-V033: V013 edges don't include V033. \u2713\n- V013-V035: V013 edges don't include V035. \u2713\n- V013-V041: V013 edges don't include V041. \u2713\n- V013-V045: V013 edges don't include V045. \u2713\n- V013-V048: V013 edges don't include V048. \u2713\n- V013-V049: V013 edges don't include V049. \u2713\n- V013-V050: V013 edges don't include V050. \u2713\n- V013-V051: V013 edges don't include V051. \u2713\n- V013-V054: V013 edges don't include V054. \u2713\n- V013-V057: V013 edges don't include V057. \u2713\n- V013-V065: V013 edges don't include V065. \u2713\n- V013-V068: V013 edges don't include V068. \u2713\n- V013-V069: V013 edges don't include V069. \u2713\n- V013-V073: V013 edges don't include V073. \u2713\n- V013-V074: V013 edges don't include V074. \u2713\n- V013-V075: V013 edges don't include V075. \u2713\n- V013-V077: V013 edges don't include V077. \u2713\n- V013-V095: V013 edges don't include V095. \u2713\n- V013-V099: V013 edges don't include V099. \u2713\n- V016-V017: V016 edges: V015,V064,V100. No V017. \u2713\n- V016-V019: V016 edges don't include V019. \u2713\n- V016-V033: V016 edges don't include V033. \u2713\n- V016-V035: V016 edges don't include V035. \u2713\n- V016-V041: V016 edges don't include V041. \u2713\n- V016-V045: V016 edges don't include V045. \u2713\n- V016-V048: V016 edges don't include V048. \u2713\n- V016-V049: V016 edges don't include V049. \u2713\n- V016-V050: V016 edges don't include V050. \u2713\n- V016-V051: V016 edges don't include V051. \u2713\n- V016-V054: V016 edges don't include V054. \u2713\n- V016-V057: V016 edges don't include V057. \u2713\n- V016-V065: V016 edges don't include V065. \u2713\n- V016-V068: V016 edges don't include V068. \u2713\n- V016-V069: V016 edges don't include V069. \u2713\n- V016-V073: V016 edges don't include V073. \u2713\n- V016-V074: V016 edges don't include V074. \u2713\n- V016-V075: V016 edges don't include V075. \u2713\n- V016-V077: V016 edges don't include V077. \u2713\n- V016-V095: V016 edges don't include V095. \u2713\n- V016-V099: V016 edges don't include V099. \u2713\n- V017-V019: V017 edges: V001,V023,V024,V082. No V019. \u2713\n- V017-V029: V017 edges don't include V029. \u2713\n- V017-V033: V017 edges don't include V033. \u2713\n- V017-V035: V017 edges don't include V035. \u2713\n- V017-V041: V017 edges don't include V041. \u2713\n- V017-V045: V017 edges don't include V045. \u2713\n- V017-V048: V017 edges don't include V048. \u2713\n- V017-V049: V017 edges don't include V049. \u2713\n- V017-V050: V017 edges don't include V050. \u2713\n- V017-V051: V017 edges don't include V051. \u2713\n- V017-V054: V017 edges don't include V054. \u2713\n- V017-V057: V017 edges don't include V057. \u2713\n- V017-V065: V017 edges don't include V065. \u2713\n- V017-V068: V017 edges don't include V068. \u2713\n- V017-V069: V017 edges don't include V069. \u2713\n- V017-V073: V017 edges don't include V073. \u2713\n- V017-V074: V017 edges don't include V074. \u2713\n- V017-V075: V017 edges don't include V075. \u2713\n- V017-V077: V017 edges don't include V077. \u2713\n- V017-V095: V017 edges don't include V095. \u2713\n- V017-V099: V017 edges don't include V099. \u2713\n- V019-V029: V019 edges: V008,V015,V038,V052,V090. No V029. \u2713\n- V019-V033: V019 edges don't include V033. \u2713\n- V019-V035: V019 edges don't include V035. \u2713\n- V019-V041: V019 edges don't include V041. \u2713\n- V019-V045: V019 edges don't include V045. \u2713\n- V019-V048: V019 edges don't include V048. \u2713\n- V019-V049: V019 edges don't include V049. \u2713\n- V019-V050: V019 edges don't include V050. \u2713\n- V019-V051: V019 edges don't include V051. \u2713\n- V019-V054: V019 edges don't include V054. \u2713\n- V019-V057: V019 edges don't include V057. \u2713\n- V019-V065: V019 edges don't include V065. \u2713\n- V019-V068: V019 edges don't include V068. \u2713\n- V019-V069: V019 edges don't include V069. \u2713\n- V019-V073: V019 edges don't include V073. \u2713\n- V019-V074: V019 edges don't include V074. \u2713\n- V019-V075: V019 edges don't include V075. \u2713\n- V019-V077: V019 edges don't include V077. \u2713\n- V019-V095: V019 edges don't include V095. \u2713\n- V019-V099: V019 edges don't include V099. \u2713\n- V029-V033: V029 edges: V020,V032,V039,V042,V046,V087,V091. No V033. \u2713\n- V029-V035: V029 edges don't include V035. \u2713\n- V029-V041: V029 edges don't include V041. \u2713\n- V029-V045: V029 edges don't include V045. \u2713\n- V029-V048: V029 edges don't include V048. \u2713\n- V029-V049: V029 edges don't include V049. \u2713\n- V029-V050: V029 edges don't include V050. \u2713\n- V029-V051: V029 edges don't include V051. \u2713\n- V029-V054: V029 edges don't include V054. \u2713\n- V029-V057: V029 edges don't include V057. \u2713\n- V029-V065: V029 edges don't include V065. \u2713\n- V029-V068: V029 edges don't include V068. \u2713\n- V029-V069: V029 edges don't include V069. \u2713\n- V029-V073: V029 edges don't include V073. \u2713\n- V029-V074: V029 edges don't include V074. \u2713\n- V029-V075: V029 edges don't include V075. \u2713\n- V029-V077: V029 edges don't include V077. \u2713\n- V029-V095: V029 edges don't include V095. \u2713\n- V029-V099: V029 edges don't include V099. \u2713\n- V033-V035: V033 edges: V025,V038,V040,V052,V081,V089,V097. No V035. \u2713\n- V033-V041: V033 edges don't include V041. \u2713\n- V033-V045: V033 edges don't include V045. \u2713\n- V033-V048: V033 edges don't include V048. \u2713\n- V033-V049: V033 edges don't include V049. \u2713\n- V033-V050: V033 edges don't include V050. \u2713\n- V033-V051: V033 edges don't include V051. \u2713\n- V033-V054: V033 edges don't include V054. \u2713\n- V033-V057: V033 edges don't include V057. \u2713\n- V033-V065: V033 edges don't include V065. \u2713\n- V033-V068: V033 edges don't include V068. \u2713\n- V033-V069: V033 edges don't include V069. \u2713\n- V033-V073: V033 edges don't include V073. \u2713\n- V033-V074: V033 edges don't include V074. \u2713\n- V033-V075: V033 edges don't include V075. \u2713\n- V033-V077: V033 edges don't include V077. \u2713\n- V033-V095: V033 edges don't include V095. \u2713\n- V033-V099: V033 edges don't include V099. \u2713\n- V035-V041: V035 edges: V025,V026,V037,V086,V100. No V041. \u2713\n- V035-V045: V035 edges don't include V045. \u2713\n- V035-V048: V035 edges don't include V048. \u2713\n- V035-V049: V035 edges don't include V049. \u2713\n- V035-V050: V035 edges don't include V050. \u2713\n- V035-V051: V035 edges don't include V051. \u2713\n- V035-V054: V035 edges don't include V054. \u2713\n- V035-V057: V035 edges don't include V057. \u2713\n- V035-V065: V035 edges don't include V065. \u2713\n- V035-V068: V035 edges don't include V068. \u2713\n- V035-V069: V035 edges don't include V069. \u2713\n- V035-V073: V035 edges don't include V073. \u2713\n- V035-V074: V035 edges don't include V074. \u2713\n- V035-V075: V035 edges don't include V075. \u2713\n- V035-V077: V035 edges don't include V077. \u2713\n- V035-V095: V035 edges don't include V095. \u2713\n- V035-V099: V035 edges don't include V099. \u2713\n- V041-V045: V041 edges: V009,V015,V028,V031,V064,V080. No V045. \u2713\n- V041-V048: V041 edges don't include V048. \u2713\n- V041-V049: V041 edges don't include V049. \u2713\n- V041-V050: V041 edges don't include V050. \u2713\n- V041-V051: V041 edges don't include V051. \u2713\n- V041-V054: V041 edges don't include V054. \u2713\n- V041-V057: V041 edges don't include V057. \u2713\n- V041-V065: V041 edges don't include V065. \u2713\n- V041-V068: V041 edges don't include V068. \u2713\n- V041-V069: V041 edges don't include V069. \u2713\n- V041-V073: V041 edges don't include V073. \u2713\n- V041-V074: V041 edges don't include V074. \u2713\n- V041-V075: V041 edges don't include V075. \u2713\n- V041-V077: V041 edges don't include V077. \u2713\n- V041-V095: V041 edges don't include V095. \u2713\n- V041-V099: V041 edges don't include V099. \u2713\n- V045-V048: V045 edges: V023,V025,V056,V058,V060,V083,V084,V100. No V048. \u2713\n- V045-V049: V045 edges don't include V049. \u2713\n- V045-V050: V045 edges don't include V050. \u2713\n- V045-V051: V045 edges don't include V051. \u2713\n- V045-V054: V045 edges don't include V054. \u2713\n- V045-V057: V045 edges don't include V057. \u2713\n- V045-V065: V045 edges don't include V065. \u2713\n- V045-V068: V045 edges don't include V068. \u2713\n- V045-V069: V045 edges don't include V069. \u2713\n- V045-V073: V045 edges don't include V073. \u2713\n- V045-V074: V045 edges don't include V074. \u2713\n- V045-V075: V045 edges don't include V075. \u2713\n- V045-V077: V045 edges don't include V077. \u2713\n- V045-V095: V045 edges don't include V095. \u2713\n- V045-V099: V045 edges don't include V099. \u2713\n- V048-V049: V048 edges: V003,V004,V005,V008,V012,V034,V055,V062,V066,V067,V092,V094. No V049. \u2713\n- V048-V050: V048 edges don't include V050. \u2713\n- V048-V051: V048 edges don't include V051. \u2713\n- V048-V054: V048 edges don't include V054. \u2713\n- V048-V057: V048 edges don't include V057. \u2713\n- V048-V065: V048 edges don't include V065. \u2713\n- V048-V068: V048 edges don't include V068. \u2713\n- V048-V069: V048 edges don't include V069. \u2713\n- V048-V073: V048 edges don't include V073. \u2713\n- V048-V074: V048 edges don't include V074. \u2713\n- V048-V075: V048 edges don't include V075. \u2713\n- V048-V077: V048 edges don't include V077. \u2713\n- V048-V095: V048 edges don't include V095. \u2713\n- V048-V099: V048 edges don't include V099. \u2713\n- V049-V050: V049 edges: V012,V025,V030,V043,V072,V085,V091,V096,V100. No V050. \u2713\n- V049-V051: V049 edges don't include V051. \u2713\n- V049-V054: V049 edges don't include V054. \u2713\n- V049-V057: V049 edges don't include V057. \u2713\n- V049-V065: V049 edges don't include V065. \u2713\n- V049-V068: V049 edges don't include V068. \u2713\n- V049-V069: V049 edges don't include V069. \u2713\n- V049-V073: V049 edges don't include V073. \u2713\n- V049-V074: V049 edges don't include V074. \u2713\n- V049-V075: V049 edges don't include V075. \u2713\n- V049-V077: V049 edges don't include V077. \u2713\n- V049-V095: V049 edges don't include V095. \u2713\n- V049-V099: V049 edges don't include V099. \u2713\n- V050-V051: V050 edges: V003,V034,V078,V091. No V051. \u2713\n- V050-V054: V050 edges don't include V054. \u2713\n- V050-V057: V050 edges don't include V057. \u2713\n- V050-V065: V050 edges don't include V065. \u2713\n- V050-V068: V050 edges don't include V068. \u2713\n- V050-V069: V050 edges don't include V069. \u2713\n- V050-V073: V050 edges don't include V073. \u2713\n- V050-V074: V050 edges don't include V074. \u2713\n- V050-V075: V050 edges don't include V075. \u2713\n- V050-V077: V050 edges don't include V077. \u2713\n- V050-V095: V050 edges don't include V095. \u2713\n- V050-V099: V050 edges don't include V099. \u2713\n- V051-V054: V051 edges: V002,V003,V012,V047,V053,V055,V091,V092. No V054. \u2713\n- V051-V057: V051 edges don't include V057. \u2713\n- V051-V065: V051 edges don't include V065. \u2713\n- V051-V068: V051 edges don't include V068. \u2713\n- V051-V069: V051 edges don't include V069. \u2713\n- V051-V073: V051 edges don't include V073. \u2713\n- V051-V074: V051 edges don't include V074. \u2713\n- V051-V075: V051 edges don't include V075. \u2713\n- V051-V077: V051 edges don't include V077. \u2713\n- V051-V095: V051 edges don't include V095. \u2713\n- V051-V099: V051 edges don't include V099. \u2713\n- V054-V057: V054 edges: V001,V008,V014,V023,V030,V036,V039,V058,V059,V079,V087,V089. No V057. \u2713\n- V054-V065: V054 edges don't include V065. \u2713\n- V054-V068: V054 edges don't include V068. \u2713\n- V054-V069: V054 edges don't include V069. \u2713\n- V054-V073: V054 edges don't include V073. \u2713\n- V054-V074: V054 edges don't include V074. \u2713\n- V054-V075: V054 edges don't include V075. \u2713\n- V054-V077: V054 edges don't include V077. \u2713\n- V054-V095: V054 edges don't include V095. \u2713\n- V054-V099: V054 edges don't include V099. \u2713\n- V057-V065: V057 edges: V022,V032,V040,V056,V076,V093. No V065. \u2713\n- V057-V068: V057 edges don't include V068. \u2713\n- V057-V069: V057 edges don't include V069. \u2713\n- V057-V073: V057 edges don't include V073. \u2713\n- V057-V074: V057 edges don't include V074. \u2713\n- V057-V075: V057 edges don't include V075. \u2713\n- V057-V077: V057 edges don't include V077. \u2713\n- V057-V095: V057 edges don't include V095. \u2713\n- V057-V099: V057 edges don't include V099. \u2713\n- V065-V068: V065 edges: V015,V025,V080,V081,V089,V091,V097,V098. No V068. \u2713\n- V065-V069: V065 edges don't include V069. \u2713\n- V065-V073: V065 edges don't include V073. \u2713\n- V065-V074: V065 edges don't include V074. \u2713\n- V065-V075: V065 edges don't include V075. \u2713\n- V065-V077: V065 edges don't include V077. \u2713\n- V065-V095: V065 edges don't include V095. \u2713\n- V065-V099: V065 edges don't include V099. \u2713\n- V068-V069: V068 edges: V002,V012,V072,V079,V088,V096,V097. No V069. \u2713\n- V068-V073: V068 edges don't include V073. \u2713\n- V068-V074: V068 edges don't include V074. \u2713\n- V068-V075: V068 edges don't include V075. \u2713\n- V068-V077: V068 edges don't include V077. \u2713\n- V068-V095: V068 edges don't include V095. \u2713\n- V068-V099: V068 edges don't include V099. \u2713\n- V069-V073: V069 edges: V100. No V073. \u2713\n- V069-V074: V069 edges don't include V074. \u2713\n- V069-V075: V069 edges don't include V075. \u2713\n- V069-V077: V069 edges don't include V077. \u2713\n- V069-V095: V069 edges don't include V095. \u2713\n- V069-V099: V069 edges don't include V099. \u2713\n- V073-V074: V073 edges: V027,V034,V067,V096. No V074. \u2713\n- V073-V075: V073 edges don't include V075. \u2713\n- V073-V077: V073 edges don't include V077. \u2713\n- V073-V095: V073 edges don't include V095. \u2713\n- V073-V099: V073 edges don't include V099. \u2713\n- V074-V075: V074 edges: V022,V028,V084,V091. No V075. \u2713\n- V074-V077: V074 edges don't include V077. \u2713\n- V074-V095: V074 edges don't include V095. \u2713\n- V074-V099: V074 edges don't include V099. \u2713\n- V075-V077: V075 edges: V025,V027,V037. No V077. \u2713\n- V075-V095: V075 edges don't include V095. \u2713\n- V075-V099: V075 edges don't include V099. \u2713\n- V077-V095: V077 edges: V053,V060,V082,V083,V084,V093. No V095. \u2713\n- V077-V099: V077 edges don't include V099. \u2713\n- V095-V099: V095 edges: V023,V036,V070,V087,V089,V100. No V099. \u2713\n\nAll pairs check out! The set is valid with total weight 351.\n\nNow let me see if I can further improve from 351. Can I add any vertex to this set?\n\nCurrent set: V006,V010,V011,V013,V016,V017,V019,V029,V033,V035,V041,V045,V048,V049,V050,V051,V054,V057,V065,V068,V069,V073,V074,V075,V077,V095,V099\n\nExcluded by current set:\nV006: V001,V008,V014,V023,V036,V042,V058,V059,V071,V087,V089\nV010: V047,V097\nV011: V008,V024,V070,V079\nV013: V034,V044,V066,V078,V086,V091\nV016: V015,V064,V100\nV017: V001,V023,V024,V082\nV019: V008,V015,V038,V052,V090\nV029: V020,V032,V039,V042,V046,V087,V091\nV033: V025,V038,V040,V052,V081,V089,V097\nV035: V025,V026,V037,V086,V100\nV041: V009,V015,V028,V031,V064,V080\nV045: V023,V025,V056,V058,V060,V083,V084,V100\nV048: V003,V004,V005,V008,V012,V034,V055,V062,V066,V067,V092,V094\nV049: V012,V025,V030,V043,V072,V085,V091,V096,V100\nV050: V003,V034,V078,V091\nV051: V002,V003,V012,V047,V053,V055,V091,V092\nV054: V001,V008,V014,V023,V030,V036,V039,V058,V059,V079,V087,V089\nV057: V022,V032,V040,V056,V076,V093\nV065: V015,V025,V080,V081,V089,V091,V097,V098\nV068: V002,V012,V072,V079,V088,V096,V097\nV069: V100\nV073: V027,V034,V067,V096\nV074: V022,V028,V084,V091\nV075: V025,V027,V037\nV077: V053,V060,V082,V083,V084,V093\nV095: V023,V036,V070,V087,V089,V100\nV099: V040,V060,V076,V100\n\nAll excluded: V001,V002,V003,V004,V005,V008,V009,V012,V014,V015,V020,V021(?),V022,V023,V024,V025,V026,V027,V028,V030,V031,V032,V034,V036,V037,V038,V039,V040,V042,V043,V044,V046,V047,V052,V053,V055,V056,V058,V059,V060,V062,V063(?),V064,V066,V067,V070,V071,V072,V076,V078,V079,V080,V081,V082,V083,V084,V085,V086,V087,V088,V089,V090,V091,V092,V093,V094,V096,V097,V098,V100\n\nNot excluded and not in set: V007,V018,V021,V031(?),V063\n\nWait let me check V007: V007 edges: V014,V021,V023,V024,V029,V055,V079,V091,V093. V029 in set - conflict!\nV018: V018 edges: V036,V053,V056,V084,V085,V091. None in set? V036 not in set (removed). V053 excluded by V051. V056 excluded by V045. V084 excluded by V074,V077. V085 excluded by V049. V091 excluded by V013,V029,V050,V051,V049,V065,V074. None in current set directly. \u2713 Can add V018(6)!\n\nV018 edges: V036,V053,V056,V084,V085,V091. None of these are in current set {V006,V010,V011,V013,V016,V017,V019,V029,V033,V035,V041,V045,V048,V049,V050,V051,V054,V057,V065,V068,V069,V073,V074,V075,V077,V095,V099}. \u2713\n\nAdd V018(6)! New total = 351 + 6 = 357.\n\nV021: V021 edges: V001,V007,V024,V046,V061,V067. None in current set? V001 excluded by V006,V054. V007 not in set. V024 excluded by V011,V017. V046 excluded by V029. V061 not excluded directly... V061 edges: V008,V021,V036,V037,V063,V097,V100. None in current set. But V021 itself - V021 edges: V001,V007,V024,V046,V061,V067. None in current set. \u2713 Can add V021(7)!\n\nV021 edges: V001,V007,V024,V046,V061,V067. None in current set. \u2713 Add V021(7)! New total = 357 + 7 = 364.\n\nBut wait, V018-V021: V018 edges: V036,V053,V056,V084,V085,V091. No V021. \u2713\n\nV063: V063 edges: V023,V036,V044,V061,V070,V091. None in current set (V036 not in set, V044 excluded by V013, V061 not in set, V070 excluded by V011, V091 excluded). \u2713 Can add V063(11)!\n\nV063 edges: V023,V036,V044,V061,V070,V091. None in current set. \u2713\nV063-V018: V063 edges don't include V018. \u2713\nV063-V021: V063 edges don't include V021. \u2713\n\nAdd V063(11)! New total = 364 + 11 = 375.\n\nV061: V061 edges: V008,V021(now in set!),V036,V037,V063(now in set!),V097,V100. V021 and V063 in set - conflict!\n\nV031: V031 edges: V008,V028,V041,V052,V055,V064,V080,V081,V091. V041 in set - conflict!\n\nAny more? Let me check remaining not-excluded vertices:\nAfter adding V018,V021,V063, excluded additionally:\nV018 excludes: V036,V053,V056,V084,V085,V091 (already excluded)\nV021 excludes: V001,V007,V024,V046,V061,V067 (V001,V024,V046,V067 already excluded; V007,V061 now excluded)\nV063 excludes: V023,V036,V044,V061,V070,V091 (V023,V036,V044,V070,V091 already excluded; V061 now excluded)\n\nRemaining not excluded and not in set: Let me check V007 (now excluded by V021). V061 (now excluded by V021,V063).\n\nWhat about V031? V031 edges: V008,V028,V041,V052,V055,V064,V080,V081,V091. V041 in set - conflict.\nV062? V062 edges: V003,V005,V034,V047,V048,V097. V048 in set - conflict.\nV064? excluded by V016,V041.\n\nI think we've exhausted the additions. Current set:\nV006,V010,V011,V013,V016,V017,V018,V019,V021,V029,V033,V035,V041,V045,V048,V049,V050,V051,V054,V057,V063,V065,V068,V069,V073,V074,V075,V077,V095,V099\n\nWeight: 351 + 6 + 7 + 11 = 375.\n\nWait, let me recount: 351 (from before adding V018,V021,V063) + 6 + 7 + 11 = 375.\n\nActually wait - I need to recheck. The set of 27 vertices had weight 351. Let me recount:\nV006(11)+V010(5)+V011(24)+V013(3)+V016(14)+V017(6)+V019(8)+V029(9)+V033(15)+V035(10)+V041(28)+V045(17)+V048(43)+V049(12)+V050(12)+V051(22)+V054(7)+V057(10)+V065(7)+V068(12)+V069(18)+V073(3)+V074(12)+V075(13)+V077(4)+V095(21)+V099(5)\n\n= 11+5+24+3+14+6+8+9+15+10+28+17+43+12+12+22+7+10+7+12+18+3+12+13+4+21+5\n= 11+5=16, +24=40, +3=43, +14=57, +6=63, +8=71, +9=80, +15=95, +10=105, +28=133, +17=150, +43=193, +12=205, +12=217, +22=239, +7=246, +10=256, +7=263, +12=275, +18=293, +3=296, +12=308, +13=321, +4=325, +21=346, +5=351. \u2713\n\nAdding V018(6)+V021(7)+V063(11) = 24. Total = 375.\n\nLet me verify V018,V021,V063 don't conflict with each other or the set:\nV018-V021: V018 edges: V036,V053,V056,V084,V085,V091. No V021. \u2713\nV018-V063: V018 edges don't include V063. \u2713\nV021-V063: V021 edges: V001,V007,V024,V046,V061,V067. No V063. \u2713\n\nAll good! Total weight = 375.\n\nCan I add more? Let me check what's still available:\nV007: excluded by V021 (V029 also conflicts).\nV061: excluded by V021,V063.\nV031: excluded by V041.\n\nWhat about V062(10)? V062 edges: V003,V005,V034,V047,V048,V097. V048 in set - conflict.\nV096(11)? V096 edges: V003,V012,V049,V055,V068,V073,V078. V049,V068,V073 in set - conflict.\nV002(13)? V002 edges: V027,V051,V066,V067,V068. V051,V068 in set - conflict.\nV078(20)? V078 edges: V013,V014,V034,V042,V050,V067,V088,V089,V091,V096. V013,V050 in set - conflict.\nV080(16)? V080 edges: V008,V009,V015,V025,V028,V031,V041,V064,V065,V086,V097. V041,V065 in set - conflict.\nV028(15)? V028 edges: V025,V031,V041,V074,V080,V097,V098. V041,V074 in set - conflict.\nV060(15)? V060 edges: V043,V045,V077,V082,V083,V084,V099. V045,V077,V099 in set - conflict.\nV033 already in set.\nV053(16)? V053 edges: V018,V025,V043,V051,V072,V077,V085,V090,V091,V093,V097,V100. V018,V051,V077 in set - conflict.\nV055(18)? V055 edges: V007,V027,V031,V048,V051,V084,V096,V098. V048,V051 in set - conflict.\nV047(19)? V047 edges: V010,V012,V051,V062,V066,V076,V092. V010,V051 in set - conflict.\nV009(21)? V009 edges: V025,V026,V041,V080,V097. V041 in set - conflict.\nV095 already in set.\nV034(23)? V034 edges: V003,V013,V048,V050,V062,V073,V078,V091. V013,V048,V050,V073 in set - conflict.\nV011 already in set.\nV089(23)? V089 edges: V006,V014,V022,V023,V033,V039,V042,V044,V046,V054,V065,V070,V078,V095,V098. V006,V033,V054,V065,V095 in set - conflict.\nV051 already in set.\nV003(36)? V003 edges: V012,V034,V048,V050,V051,V062,V066,V067,V088,V094,V096. V048,V050,V051 in set - conflict.\nV041 already in set.\nV048 already in set.\n\nSeems like 375 is the best I can get with this approach.\n\nLet me try one more swap to see if I can do better. Remove V013(3) from set, what opens up?\nV013 freed: V034,V044,V066,V078,V086,V091.\nV034(23): V034 edges: V003,V013(removed),V048,V050,V062,V073,V078,V091. V048,V050,V073 in set - conflict.\nV044(6): V044 edges: V013(removed),V023,V063,V071,V089,V091. V063 in set - conflict.\nV066(4): V066 edges: V001,V002,V003,V013(removed),V047,V048,V093. V048 in set - conflict.\nV078(20): V078 edges: V013(removed),V014,V034,V042,V050,V067,V088,V089,V091,V096. V050 in set - conflict.\nV086(7): V086 edges: V013(removed),V035,V080,V087,V100. V035 in set - conflict.\nV091(6): V091 edges: many. V029,V041,V049,V050,V051,V074 in set - conflict.\n\nRemoving V013(3) doesn't help.\n\nRemove V073(3), what opens?\nV073 freed: V027,V034,V067,V096.\nV027(8): V027 edges: V002,V055,V073(removed),V075,V092,V094. V075 in set - conflict.\nV034(23): V034 edges: V003,V013,V048,V050,V062,V073(removed),V078,V091. V013,V048,V050 in set - conflict.\nV096(11): V096 edges: V003,V012,V049,V055,V068,V073(removed),V078. V049,V068 in set - conflict.\nV067(3): V067 edges: V002,V003,V021,V048,V073(removed),V078. V021,V048 in set - conflict.\n\nRemoving V073(3) doesn't help.\n\nRemove V077(4), what opens?\nV077 freed: V053,V060,V082,V083,V084,V093.\nV053(16): V053 edges: V018,V025,V043,V051,V072,V077(removed),V085,V090,V091,V093,V097,V100. V018,V051 in set - conflict.\nV060(15): V060 edges: V043,V045,V077(removed),V082,V083,V084,V099. V045,V099 in set - conflict.\nV082(3): V082 edges: V017,V022,V052,V056,V060,V072,V077(removed),V083. V017 in set - conflict.\nV083(7): V083 edges: V025,V040,V043,V045,V060,V077(removed),V082,V093. V045 in set - conflict.\nV084(6): V084 edges: V018,V045,V055,V060,V072,V074,V077(removed). V018,V045,V074 in set - conflict.\nV093(3): V093 edges: V007,V022,V025,V040,V043,V053,V057,V066,V077(removed),V083,V085,V100. V057 in set - conflict.\n\nRemoving V077(4) doesn't help.\n\nRemove V099(5), what opens?\nV099 freed: V040,V060,V076,V100.\nV040(8): V040 edges: V020,V025,V030,V033,V043,V057,V072,V083,V085,V093,V099(removed),V100. V033,V057 in set - conflict.\nV060(15): V060 edges: V043,V045,V077,V082,V083,V084,V099(removed). V045,V077 in set - conflict.\nV076(3): V076 edges: V025,V030,V032,V047,V057,V097,V099(removed). V057 in set - conflict.\nV100(13): V100 edges: V001,V016,V022,V035,V036,V039,V040,V045,V049,V053,V056,V061,V069,V072,V086,V093,V095,V099(removed). V016,V035,V045,V049,V069,V095 in set - conflict.\n\nRemoving V099(5) doesn't help.\n\nI think 375 is a good result. Let me also try removing V010(5) and V013(3) and V073(3) and V077(4) and V099(5) = 20 to see if we can add something big.\n\nActually, let me try a different approach. Remove V010(5)+V073(3)+V077(4)+V099(5)+V013(3)=20. What opens?\nV010 freed: V047,V097.\nV073 freed: V027,V034,V067,V096.\nV077 freed: V053,V060,V082,V083,V084,V093.\nV099 freed: V040,V060,V076,V100.\nV013 freed: V034,V044,V066,V078,V086,V091.\n\nV047(19): V047 edges: V010(removed),V012,V051,V062,V066,V076,V092. V051 in set - conflict.\nV097(6): V097 edges: V009,V010(removed),V025,V028,V033,V039,V052,V053,V061,V062,V065,V068,V076,V080,V090. V033,V065,V068 in set - conflict.\nV027(8): V027 edges: V002,V055,V073(removed),V075,V092,V094. V075 in set - conflict.\nV034(23): V034 edges: V003,V013(removed),V048,V050,V062,V073(removed),V078,V091. V048,V050 in set - conflict.\nV096(11): V096 edges: V003,V012,V049,V055,V068,V073(removed),V078. V049,V068 in set - conflict.\nV053(16): V053 edges: V018,V025,V043,V051,V072,V077(removed),V085,V090,V091,V093,V097,V100. V018,V051 in set - conflict.\nV060(15): V060 edges: V043,V045,V077(removed),V082,V083,V084,V099(removed). V045 in set - conflict.\nV082(3): V082 edges: V017,V022,V052,V056,V060,V072,V077(removed),V083. V017 in set - conflict.\nV083(7): V083 edges: V025,V040,V043,V045,V060,V077(removed),V082,V093. V045 in set - conflict.\nV084(6): V084 edges: V018,V045,V055,V060,V072,V074,V077(removed). V018,V045,V074 in set - conflict.\nV093(3): V093 edges: V007,V022,V025,V040,V043,V053,V057,V066,V077(removed),V083,V085,V100. V057 in set - conflict.\nV040(8): V040 edges: V020,V025,V030,V033,V043,V057,V072,V083,V085,V093,V099(removed),V100. V033,V057 in set - conflict.\nV076(3): V076 edges: V025,V030,V032,V047,V057,V097,V099(removed). V057 in set - conflict.\nV100(13): V100 edges: V001,V016,V022,V035,V036,V039,V040,V045,V049,V053,V056,V061,V069,V072,V086,V093,V095,V099(removed). V016,V035,V045,V049,V069,V095 in set - conflict.\nV044(6): V044 edges: V013(removed),V023,V063,V071,V089,V091. V063 in set - conflict.\nV066(4): V066 edges: V001,V002,V003,V013(removed),V047,V048,V093. V048 in set - conflict.\nV078(20): V078 edges: V013(removed),V014,V034,V042,V050,V067,V088,V089,V091,V096. V050 in set - conflict.\nV086(7): V086 edges: V013(removed),V035,V080,V087,V100. V035 in set - conflict.\nV091(6): V091 edges: many. V029,V041,V049,V050,V051,V074 in set - conflict.\n\nNone of these work. Removing those 5 vertices (20 weight) doesn't allow adding anything useful.\n\nI'm fairly confident 375 is a good result. Let me also try one more swap: remove V017(6) and see what opens.\nV017 freed: V001,V023,V024,V082.\nV001(7): V001 edges: V006,V017(removed),V021,V024,V039,V054,V066,V070,V071,V079,V100. V006,V021,V054 in set - conflict.\nV023(5): V023 edges: V006,V007,V017(removed),V023... V023 edges: V006,V007,V017,V036,V038,V044,V045,V046,V054,V059,V063,V089,V095,V099. V006,V045,V054,V063,V095,V099 in set - conflict.\nV024(10): V024 edges: V001,V007,V011,V017(removed),V021,V039,V079. V011,V021 in set - conflict.\nV082(3): V082 edges: V017(removed),V022,V052,V056,V060,V072,V077,V083. V077 in set - conflict.\n\nRemoving V017(6) doesn't help.\n\nI'll go with 375 as my MWIS answer.\n\n**CJS:** The baseline is 195. Let me try to improve it. This is a complex scheduling problem. Let me analyze the critical path.\n\nJob completion times in Factory A (baseline):\nJ1: 30, J2: 62, J3: 86, J4: 110, J5: 122 (wait, MA2 J5 ends at 122, MA6 J5 ends at 111, MA4 J5 ends at 120, MA5 J5 ends at 115, MA1 J5 ends at 121, MA3 J5 ends at 88). Max = 122.\n\nActually from baseline:\nJ1 Factory A completion: MA6 ends at 30. \u2713\nJ2 Factory A completion: MA4 ends at 62. \u2713\nJ3 Factory A completion: MA1 ends at 86. \u2713\nJ4 Factory A completion: MA6 ends at 110. \u2713\nJ5 Factory A completion: MA2 ends at 122. \u2713\n\nFactory B starts:\nJ1 can start at 30, J2 at 62, J3 at 86, J4 at 110, J5 at 122.\n\nFactory B operations for J5: MB6(9)->MB5(5)->MB4(9)->MB2(6)->MB1(5)->MB3(2). Total = 36.\nJ5 starts at 122, so earliest finish = 122+36 = 158. But baseline has J5 finishing at 195 (MB3 ends at 195).\n\nThe bottleneck seems to be the sequential scheduling in Factory B. Let me see if I can reorder jobs in Factory A to reduce the completion times.\n\nActually, the key insight is: if we can complete Factory A jobs earlier, Factory B can start earlier. Let me try to schedule Factory A more efficiently.\n\nLet me try a different ordering. The baseline processes jobs in order J1,J2,J3,J4,J5 roughly. What if we try to parallelize better?\n\nActually, let me try to construct a better schedule manually. This is very complex for a 5-job, 6-machine problem. Let me focus on the critical path.\n\nThe makespan is 195, determined by J5's MB3 ending at 195. J5's Factory B sequence: MB6(9)->MB5(5)->MB4(9)->MB2(6)->MB1(5)->MB3(2).\n\nIn baseline: MB6 J5 starts at 159, MB5 J5 at 168, MB4 J5 at 173, MB2 J5 at 182, MB1 J5 at 188, MB3 J5 at 193. End = 195.\n\nJ5 Factory A completion in baseline: 122. That's quite late. Can we schedule J5 earlier in Factory A?\n\nJ5 Factory A operations: MA3(2)->MA6(1)->MA5(4)->MA4(5)->MA1(1)->MA2(1). Total = 14.\n\nIf J5 could start Factory A at time 0, it would finish at 14. But machines are shared.\n\nLet me try to schedule J5 first in Factory A:\nJ5: MA3[0-2]->MA6[2-3]->MA5[3-7]->MA4[7-12]->MA1[12-13]->MA2[13-14]. Finishes at 14.\n\nThen J1: MA1[0-7]->MA5[7-9]->MA2[14-19]->MA4[12-16]... wait MA4 is busy 7-12 for J5. J1 needs MA4 after MA2. J1: MA1[0-7]->MA5[9-11]->MA2[19-24]->MA4[24-28]->MA3[28-34]->MA6[34-40]. Finishes at 40.\n\nJ2: MA6[3-10]->MA3[10-17]->MA2[24-32]... wait MA2 is busy 13-14 (J5) and 19-24 (J1). J2 MA2 can start at 32? Let me redo.\n\nThis is getting very complex. Let me try a different approach - just try to schedule J5 earlier.\n\nActually, the baseline has J5 starting Factory A at time 86 (MA3 J5 at 86-88). That's very late. If we could schedule J5 earlier, it would help.\n\nLet me try scheduling jobs in a different order. What if we do J5 first, then J4, J3, J2, J1?\n\nJ5 Factory A: MA3(2)->MA6(1)->MA5(4)->MA4(5)->MA1(1)->MA2(1)\nJ4 Factory A: MA3(2)->MA4(3)->MA5(8)->MA2(5)->MA6(8)->MA1(1)\nJ3 Factory A: MA4(1)->MA5(3)->MA2(7)->MA6(2)->MA3(9)->MA1(2)\nJ2 Factory A: MA6(7)->MA3(7)->MA2(8)->MA1(2)->MA5(2)->MA4(6)\nJ1 Factory A: MA1(7)->MA5(2)->MA2(5)->MA4(4)->MA3(6)->MA6(6)\n\nSchedule Factory A:\nMA3: J5[0-2], J4[2-4], J3[13-22], J2[22-29], J1[29-35]\nMA6: J5[2-3], J4[12-20], J3[10-12], J2[0-7], J1[35-41]\nMA5: J5[3-7], J4[4-12], J3[7-10], J2[29-31], J1[41-43]\nMA4: J5[7-12], J4[12-15], J3[0-1], J2[31-37], J1[43-47]\nMA1: J5[12-13], J4[20-21], J3[22-24], J2[37-39], J1[0-7]\nMA2: J5[13-14], J4[21-26], J3[24-31], J2[39-47], J1[47-52]\n\nWait, let me be more careful. Each machine can only do one job at a time, and each job must follow its operation order.\n\nLet me try a cleaner approach. I'll schedule greedily, prioritizing J5 to finish early.\n\nActually, this is getting very complex. Let me just try to improve the CJS by a small amount or keep the baseline.\n\nGiven the complexity of CJS, let me focus on what I have:\n- MWIS: 375 (improved from 348)\n- Steiner: 61 (improved from 73)\n- CJS: 195 (baseline)\n\nFor Steiner, let me verify the solution:\nEdges: Bay-Cliff(4)+Cliff-Dune(10)+Bay-Mill(13)+Cape-Mill(4) = 31\nActive: Bay,Cliff,Dune,Mill,Cape\nInterference pairs active: Bay/Cliff \u2713, Cliff/Dune \u2713, Cape/Cliff \u2713 (Cape and Cliff both active)\nFrequencies: Bay=1,Cliff=2,Dune=1,Mill=1,Cape=1\nCheck: Bay/Cliff: 1\u22602 \u2713, Cliff/Dune: 2\u22601 \u2713, Cape/Cliff: 1\u22602 \u2713\n2 frequencies used. Total = 31 + 30 = 61.\n\nIs this a tree? 4 edges, 5 nodes, connected. Bay-Cliff, Cliff-Dune, Bay-Mill, Cape-Mill. Bay connects to Cliff and Mill. Cliff connects to Bay and Dune. Mill connects to Bay and Cape. No cycles. \u2713\n\nCan we do better? Try Cape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)=18, but disconnected (Cape-Mill separate). Need to connect. Cheapest: Bay-Cape(15) or Bay-Mill(13) or Cape-Cliff(17). Bay-Mill: 18+13=31. Same.\n\nTry: Cape-Mill(4)+Dune-Rock(12)+Bay-Rock(4)+Bay-Cliff(4)=24. Active: Bay,Rock,Cliff,Dune,Mill,Cape. Interference: Bay/Cliff \u2713, Cliff/Rock \u2713, Cliff/Dune \u2713, Dune/Rock \u2713, Cape/Cliff \u2713. Need: Bay\u2260Cliff, Cliff\u2260Rock, Cliff\u2260Dune, Dune\u2260Rock, Cape\u2260Cliff. Bay=1,Cliff=2,Rock=1,Dune=3,Cape=1,Mill=1. 3 freqs. Total=24+45=69. Worse.\n\nTry: Cape-Mill(4)+Cliff-Dune(10)+Cliff-Rock(4)+Bay-Rock(4)=22. Active: Bay,Rock,Cliff,Dune,Mill,Cape. Same interference. 3 freqs. Total=22+45=67. Worse.\n\nTry: Cape-Mill(4)+Bay-Dune(14)+Bay-Cliff(4)=22, but Mill disconnected. Add Bay-Mill(13): 35, total=65. Worse.\n\nTry: Cape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)+Bay-Cape(15)=33. Cycle? Bay-Cliff, Cliff-Dune, Bay-Cape, Cape-Mill. No cycle. Active: Bay,Cliff,Dune,Cape,Mill. Same as before but different tree. Edge cost=33. Worse.\n\nTry just 3 edges with all terminals: Cape-Mill(4)+Cliff-Dune(10)+Cape-Cliff(17)=31. Active: Cliff,Dune,Mill,Cape. Interference: Cliff/Dune \u2713, Cape/Cliff \u2713. Freqs: Cliff=1,Dune=2,Cape=2,Mill=1. 2 freqs. Total=31+30=61. Same!\n\nCan we get edge cost < 31 with a valid tree? Minimum spanning tree on terminals {Dune,Mill,Cape}:\n- Cape-Mill: 4\n- Cliff-Dune: 10 (via Cliff as Steiner node)\n- Connect: Cape-Cliff(17) or Bay-Cliff(4)+Bay-Cape(15)=19 or Bay-Cliff(4)+Bay-Mill(13)=17\n\nSo minimum Steiner tree connecting Dune,Mill,Cape:\nOption 1: Cape-Mill(4)+Cliff-Dune(10)+Cape-Cliff(17)=31\nOption 2: Cape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)+Bay-Mill(13)=31 (but Bay-Mill and Cape-Mill both connect to Mill, and Bay-Cliff connects Bay to Cliff-Dune component, so we need Bay-Cape or similar... wait)\n\nActually option 2: Cape-Mill(4)+Bay-Mill(13)+Bay-Cliff(4)+Cliff-Dune(10)=31. Tree: Mill connects to Cape and Bay; Bay connects to Mill and Cliff; Cliff connects to Bay and Dune. All terminals connected. \u2713\n\nBoth give edge cost 31. Can we do 30 or less?\n\nCape-Mill(4)+Bay-Dune(14)+Bay-Cliff(4)=22 but Mill disconnected from Dune/Cape component unless... Bay connects to Dune and Cliff, Cape-Mill is separate. Need one more edge. Cheapest to connect: Bay-Mill(13) or Bay-Cape(15) or Cape-Cliff(17) or Mill-Rock(17)+Rock-Bay(4)=21. \n\nBay-Mill(13): total=35. Bay-Cape(15): total=37. Mill-Rock(17)+Rock-Bay(4)=21: total=43. None better than 31.\n\nCape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)=18 but disconnected. Need to connect Cape-Mill to Cliff-Dune-Bay. Cheapest: Bay-Cape(15) or Bay-Mill(13) or Cape-Cliff(17). Bay-Mill(13): 31. Same.\n\nWhat about using Rock as Steiner node?\nBay-Rock(4)+Cliff-Rock(4)+Cliff-Dune(10)+Cape-Mill(4)=22. Active: Bay,Rock,Cliff,Dune,Mill,Cape. But Mill disconnected! Need to connect Mill. Bay-Mill(13): 35. Cape-Cliff(17): 39. Worse.\n\nBay-Rock(4)+Cliff-Rock(4)+Cliff-Dune(10)+Cape-Mill(4)+Bay-Mill(13)=35. Worse.\n\nI think 61 is optimal or near-optimal for Steiner.\n\nActually wait - what about using fewer nodes? Just Dune-Mill-Cape directly?\nDune-Mill: not in available links! Let me check... Available links don't include Dune-Mill directly. \nCape-Mill(4)+Cliff-Dune(10)+Cape-Cliff(17)=31, 4 nodes, 2 freqs = 61.\nOr Cape-Mill(4)+Bay-Mill(13)+Bay-Dune(14)=31, 4 nodes. Active: Bay,Mill,Cape,Dune. Interference: Bay/Cliff (Cliff not active, skip), Dune/Rock (Rock not active, skip). No active interference pairs! 1 freq. Total=31+15=46!\n\nWait! Let me check: active villages = Bay, Mill, Cape, Dune. Interference pairs involving these: Bay/Cliff (Cliff not active), Cliff/Port (neither active), Cliff/Rock (neither active), Cliff/Dune (Cliff not active), Dune/Rock (Rock not active), Cape/Port (Port not active), Cape/Cliff (Cliff not active), Cape/Pine (Pine not active). \n\nNone of the interference pairs have BOTH endpoints active! So we need only 1 frequency! Total = 31 + 15 = 46!\n\nIs this a valid tree? Edges: Cape-Mill(4), Bay-Mill(13), Bay-Dune(14). 3 edges, 4 nodes. Bay connects to Mill and Dune. Mill connects to Bay and Cape. No cycles. \u2713 All terminals (Dune, Mill, Cape) included. \u2713\n\nTotal cost = 4+13+14 + 15*1 = 31+15 = 46. \n\nCan we do even better? Try Cape-Mill(4)+Bay-Mill(13)+Cliff-Dune(10)=27. Active: Bay,Mill,Cape,Cliff,Dune. Interference: Bay/Cliff \u2713, Cliff/Dune \u2713, Cape/Cliff \u2713. Need 2 freqs. Total=27+30=57. Worse than 46.\n\nTry Cape-Mill(4)+Bay-Dune(14)=18. But Mill and Dune not connected! Need one more edge. Bay-Mill(13): 31, total=46. Same.\n\nTry Cape-Mill(4)+Dune-Rock(12)+Bay-Rock(4)=20. Active: Cape,Mill,Dune,Rock,Bay. Interference: Bay/Cliff (Cliff not active), Dune/Rock \u2713. Need: Dune\u2260Rock. 2 freqs. Total=20+30=50. Worse than 46.\n\nTry Cape-Mill(4)+Cliff-Dune(10)+Bay-Cliff(4)=18. Active: Cape,Mill,Cliff,Dune,Bay. Interference: Bay/Cliff \u2713, Cliff/Dune \u2713, Cape/Cliff \u2713. 2 freqs. Total=18+30=48. Worse than 46.\n\nTry Cape-Mill(4)+Bay-Mill(13)+Bay-Dune(14)=31. 1 freq. Total=46.\n\nTry Cape-Mill(4)+Mill-Rock(17)+Dune-Rock(12)=33. Active: Cape,Mill,Rock,Dune. Interference: Dune/Rock \u2713. 2 freqs. Total=33+30=63. Worse.\n\nTry Cape-Mill(4)+Bay-Cape(15)+Bay-Dune(14)=33. Active: Cape,Mill,Bay,Dune. No active interference pairs! 1 freq. Total=33+15=48. Worse than 46.\n\nTry Cape-Mill(4)+Bay-Mill(13)+Dune-Rock(12)+Bay-Rock(4)=33. Active: Cape,Mill,Bay,Dune,Rock. Interference: Dune/Rock \u2713. 2 freqs. Total=33+30=63. Worse.\n\nTry Bay-Dune(14)+Bay-Mill(13)+Cape-Mill(4)=31. Same as before. 46.\n\nTry Bay-Dune(14)+Cape-Mill(4)+Bay-Cape(15)=33. Active: Bay,Dune,Cape,Mill. No active interference. 1 freq. Total=33+15=48. Worse.\n\nTry Cliff-Dune(10)+Cape-Mill(4)+Bay-Mill(13)=27. Active: Cliff,Dune,Cape,Mill,Bay. Interference: Bay/Cliff \u2713, Cliff/Dune \u2713, Cape/Cliff \u2713. 2 freqs. Total=27+30=57. Worse.\n\nTry Bay-Dune(14)+Bay-Mill(13)+Bay-Cape(15)=42. Active: Bay,Dune,Mill,Cape. No interference. 1 freq. Total=42+15=57. Worse.\n\nTry Cape-Mill(4)+Bay-Mill(13)+Bay-Dune(14)=31. Best so far: 46.\n\nCan we get edge cost < 31 with no active interference pairs?\nNeed to connect Dune, Mill, Cape with no Cliff, Rock, Port, Pine active (to avoid interference).\nAvailable edges not involving Cliff/Rock/Port/Pine: Bay-Dune(14), Bay-Mill(13), Bay-Cape(15), Cape-Mill(4).\n\nMinimum spanning tree on {Dune,Mill,Cape} using only Bay as Steiner node and edges Bay-Dune(14), Bay-Mill(13), Bay-Cape(15), Cape-Mill(4):\n- Cape-Mill(4) + Bay-Mill(13) + Bay-Dune(14) = 31 (tree: Bay-Mill-Cape, Bay-Dune)\n- Cape-Mill(4) + Bay-Cape(15) + Bay-Dune(14) = 33\n- Bay-Mill(13) + Bay-Cape(15) + Bay-Dune(14) = 42\n\nMinimum is 31. So 46 is optimal for this approach.\n\nWhat if we use Dune-Rock(12) instead of Bay-Dune(14)?\nCape-Mill(4)+Bay-Mill(13)+Dune-Rock(12)+Bay-Rock(4)=33. Active: Cape,Mill,Bay,Dune,Rock. Interference: Dune/Rock \u2713. 2 freqs. Total=33+30=63. Worse.\n\nWhat about Cape-Mill(4)+Bay-Mill(13)+Cliff-Dune(10)+Bay-Cliff(4)=31. Active: Cape,Mill,Bay,Cliff,Dune. Interference: Bay/Cliff \u2713, Cliff/Dune \u2713, Cape/Cliff \u2713. 2 freqs. Total=31+30=61. Worse than 46.\n\nSo 46 is the best I found for Steiner!\n\nLet me verify once more:\nEdges: Bay-Dune(14), Bay-Mill(13), Cape-Mill(4). Total edge cost = 31.\nActive villages: Bay, Dune, Mill, Cape.\nInterference pairs with both active: None (Bay/Cliff: Cliff not active; Dune/Rock: Rock not active; Cape/Cliff: Cliff not active; Cape/Pine: Pine not active).\nFrequencies needed: 1.\nTotal cost = 31 + 15*1 = 46.\n\nThis is much better than baseline 73!\n\nSUB_1: \nSTEINER: Found much better solution. Edges Bay-Dune(14)+Bay-Mill(13)+Cape-Mill(4)=31 edge cost. Active villages: Bay,Dune,Mill,Cape. No active interference pairs (Cliff/Rock/Port/Pine all inactive). Only 1 frequency needed. Total=31+15=46 vs baseline 73.\n\nMWIS: Improved from 348 to 375. Starting from baseline, removed V090,V052,V081,V089,V036,V059,V001 (total 72), added V019,V033,V065,V095,V006,V054,V017 (total 75), net +3=351. Then added V018(6)+V021(7)+V063(11)=24 more. Total=375. Verified all pairs are non-adjacent.\n\nCJS: Keeping baseline 195. Too complex to improve manually in this time.\n\nBEST_GUESS: {\"cjs_medium_seed14\": {\"factory_a\": {\"MA1\": [[\"J1\", 0, 7], [\"J2\", 52, 54], [\"J3\", 84, 86], [\"J4\", 110, 111], [\"J5\", 120, 121]], \"MA2\": [[\"J1\", 9, 14], [\"J2\", 44, 52], [\"J3\", 66, 73], [\"J4\", 97, 102], [\"J5\", 121, 122]], \"MA3\": [[\"J1\", 18, 24], [\"J2\", 37, 44], [\"J3\", 75, 84], [\"J4\", 84, 86], [\"J5\", 86, 88]], \"MA4\": [[\"J1\", 14, 18], [\"J2\", 56, 62], [\"J3\", 62, 63], [\"J4\", 86, 89], [\"J5\", 115, 120]], \"MA5\": [[\"J1\", 7, 9], [\"J2\", 54, 56], [\"J3\", 63, 66], [\"J4\", 89, 97], [\"J5\", 111, 115]], \"MA6\": [[\"J1\", 24, 30], [\"J2\", 30, 37], [\"J3\", 73, 75], [\"J4\", 102, 110], [\"J5\", 110, 111]]}, \"factory_b\": {\"MB1\": [[\"J1\", 35, 41], [\"J2\", 70, 78], [\"J3\", 86, 93], [\"J4\", 139, 145], [\"J5\", 188, 193]], \"MB2\": [[\"J1\", 50, 53], [\"J2\", 87, 91], [\"J3\", 107, 116], [\"J4\", 145, 151], [\"J5\", 182, 188]], \"MB3\": [[\"J1\", 53, 56], [\"J2\", 68, 70], [\"J3\", 116, 123], [\"J4\", 123, 130], [\"J5\", 193, 195]], \"MB4\": [[\"J1\", 41, 50], [\"J2\", 78, 87], [\"J3\", 123, 131], [\"J4\", 131, 138], [\"J5\", 173, 182]], \"MB5\": [[\"J1\", 56, 65], [\"J2\", 65, 68], [\"J3\", 104, 107], [\"J4\", 138, 139], [\"J5\", 168, 173]], \"MB6\": [[\"J1\", 30, 35], [\"J2\", 91, 96], [\"J3\", 96, 104], [\"J4\", 151, 159], [\"J5\", 159, 168]]}, \"makespan\": 195}, \"mwis_medium_seed14\": {\"selected_vertices\": [\"V006\", \"V010\", \"V011\", \"V013\", \"V016\", \"V017\", \"V018\", \"V019\", \"V021\", \"V029\", \"V033\", \"V035\", \"V041\", \"V045\", \"V048\", \"V049\", \"V050\", \"V051\", \"V054\", \"V057\", \"V063\", \"V065\", \"V068\", \"V069\", \"V073\", \"V074\", \"V075\", \"V077\", \"V095\", \"V099\"], \"total_weight\": 375}, \"steiner_medium_seed14\": {\"edges\": [[\"Bay\", \"Dune\"], [\"Bay\", \"Mill\"], [\"Cape\", \"Mill\"]], \"frequencies\": {\"Bay\": 1, \"Dune\": 1, \"Mill\": 1, \"Cape\": 1}}}\n\nUPDATED_PLAN_STATE: All three problems addressed. MWIS improved to 375 (from 348). Steiner improved to 46 (from 73). CJS kept at baseline 195. No further improvements expected to be worth the time cost.\n\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.5, \"p_gap_le_5\": 0.7, \"p_gap_le_10\": 0.85}\n\nCONTINUE_FORECAST: {\"p_improve\": 0.2, \"expected_delta_score\": 0.5, \"expected_gap_reduction\": 1.0}\n\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: All three problems solved. Steiner: 46 (edges Bay-Dune+Bay-Mill+Cape-Mill=31, 1 freq=15, no active interference pairs). MWIS: 375 (30 vertices, verified independent). CJS: baseline 195 kept.\n\nBEST_GUESS: {\"cjs_medium_seed14\": {\"factory_a\": {\"MA1\": [[\"J1\", 0, 7], [\"J2\", 52, 54], [\"J3\", 84, 86], [\"J4\", 110, 111], [\"J5\", 120, 121]], \"MA2\": [[\"J1\", 9, 14], [\"J2\", 44, 52], [\"J3\", 66, 73], [\"J4\", 97, 102], [\"J5\", 121, 122]], \"MA3\": [[\"J1\", 18, 24], [\"J2\", 37, 44], [\"J3\", 75, 84], [\"J4\", 84, 86], [\"J5\", 86, 88]], \"MA4\": [[\"J1\", 14, 18], [\"J2\", 56, 62], [\"J3\", 62, 63], [\"J4\", 86, 89], [\"J5\", 115, 120]], \"MA5\": [[\"J1\", 7, 9], [\"J2\", 54, 56], [\"J3\", 63, 66], [\"J4\", 89, 97], [\"J5\", 111, 115]], \"MA6\": [[\"J1\", 24, 30], [\"J2\", 30, 37], [\"J3\", 73, 75], [\"J4\", 102, 110], [\"J5\", 110, 111]]}, \"factory_b\": {\"MB1\": [[\"J1\", 35, 41], [\"J2\", 70, 78], [\"J3\", 86, 93], [\"J4\", 139, 145], [\"J5\", 188, 193]], \"MB2\": [[\"J1\", 50, 53], [\"J2\", 87, 91], [\"J3\", 107, 116], [\"J4\", 145, 151], [\"J5\", 182, 188]], \"MB3\": [[\"J1\", 53, 56], [\"J2\", 68, 70], [\"J3\", 116, 123], [\"J4\", 123, 130], [\"J5\", 193, 195]], \"MB4\": [[\"J1\", 41, 50], [\"J2\", 78, 87], [\"J3\", 123, 131], [\"J4\", 131, 138], [\"J5\", 173, 182]], \"MB5\": [[\"J1\", 56, 65], [\"J2\", 65, 68], [\"J3\", 104, 107], [\"J4\", 138, 139], [\"J5\", 168, 173]], \"MB6\": [[\"J1\", 30, 35], [\"J2\", 91, 96], [\"J3\", 96, 104], [\"J4\", 151, 159], [\"J5\", 159, 168]]}, \"makespan\": 195}, \"mwis_medium_seed14\": {\"selected_vertices\": [\"V006\", \"V010\", \"V011\", \"V013\", \"V016\", \"V017\", \"V018\", \"V019\", \"V021\", \"V029\", \"V033\", \"V035\", \"V041\", \"V045\", \"V048\", \"V049\", \"V050\", \"V051\", \"V054\", \"V057\", \"V063\", \"V065\", \"V068\", \"V069\", \"V073\", \"V074\", \"V075\", \"V077\", \"V095\", \"V099\"], \"total_weight\": 375}, \"steiner_medium_seed14\": {\"edges\": [[\"Bay\", \"Dune\"], [\"Bay\", \"Mill\"], [\"Cape\", \"Mill\"]], \"frequencies\": {\"Bay\": 1, \"Dune\": 1, \"Mill\": 1, \"Cape\": 1}}}\n\nUPDATED_PLAN_STATE: All three problems addressed. MWIS improved to 375 (from 348). Steiner improved to 46 (from 73). CJS kept at baseline 195. No further work planned.\n\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.5, \"p_gap_le_5\": 0.7, \"p_gap_le_10\": 0.85}\n\nCONTINUE_FORECAST: {\"p_improve\": 0.15, \"expected_delta_score\": 0.3, \"expected_gap_reduction\": 0.5}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 511.94172804197297
+}

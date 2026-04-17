@@ -1,0 +1,385 @@
+{
+  "detail_row": {
+    "cf_delta": -1.4091415380099903,
+    "cf_parsed": {
+      "best_guess": {
+        "selected_vertices": [
+          "V009",
+          "V014",
+          "V017",
+          "V022",
+          "V026",
+          "V027",
+          "V034",
+          "V036",
+          "V037",
+          "V043",
+          "V046",
+          "V056",
+          "V057",
+          "V064",
+          "V069",
+          "V071",
+          "V078",
+          "V084",
+          "V085",
+          "V090",
+          "V099",
+          "V105",
+          "V111",
+          "V112",
+          "V113",
+          "V114",
+          "V115",
+          "V116",
+          "V118"
+        ],
+        "total_weight": 505
+      },
+      "continue_forecast": {
+        "expected_delta_score": 0.5,
+        "expected_gap_reduction": 0.01,
+        "p_improve": 0.2
+      },
+      "decision": "stop",
+      "next_sub": null,
+      "quality_forecast": {
+        "p_gap_le_10": 1.0,
+        "p_gap_le_2": 0.8,
+        "p_gap_le_5": 0.95
+      },
+      "subtask_body": "I verified that the improved set with total weight 505, obtained by replacing V076 (weight 29) with {V014 (26), V037 (14), V046 (10), V113 (4)}, is indeed independent. I performed a second comprehensive scan of all 120 vertices and confirmed that no additional vertices can be added to this set without creating an edge between selected vertices. I also evaluated multiple potential local swaps (1-for-1 and 1-for-2) for higher-weight vertices like V056, V057, V110, and V103, but found that the sum of their conflicting neighbors currently in the set always exceeded the weight of the candidate vertex. No further immediate improvements were found through localized search.",
+      "subtask_id": 2,
+      "updated_plan_state": "Improve the weight by performing localized swaps. Verified a new candidate with weight 505. Exploring if removing larger vertices like V056 or V057 can allow for even more weight, although initial checks suggest they are worth keeping."
+    },
+    "class": "mwis",
+    "difficulty": "medium",
+    "error": null,
+    "feasible": true,
+    "final_evaluation": {
+      "details": {
+        "baseline_gap_pct": 11.439114391143912,
+        "baseline_objective": 480,
+        "improves_on_baseline": true,
+        "normalized_submission": {
+          "selected_vertices": [
+            "V009",
+            "V014",
+            "V017",
+            "V022",
+            "V026",
+            "V027",
+            "V034",
+            "V036",
+            "V037",
+            "V043",
+            "V046",
+            "V056",
+            "V057",
+            "V064",
+            "V069",
+            "V071",
+            "V078",
+            "V084",
+            "V085",
+            "V090",
+            "V099",
+            "V105",
+            "V111",
+            "V112",
+            "V113",
+            "V114",
+            "V115",
+            "V116",
+            "V118"
+          ],
+          "total_weight": 505
+        },
+        "optimal_objective": 542,
+        "selected_count": 29,
+        "submitted_objective": 505
+      },
+      "feasible": true,
+      "gap_pct": 6.826568265682657,
+      "mode": "solo",
+      "submission": {
+        "selected_vertices": [
+          "V009",
+          "V014",
+          "V017",
+          "V022",
+          "V026",
+          "V027",
+          "V034",
+          "V036",
+          "V037",
+          "V043",
+          "V046",
+          "V056",
+          "V057",
+          "V064",
+          "V069",
+          "V071",
+          "V078",
+          "V084",
+          "V085",
+          "V090",
+          "V099",
+          "V105",
+          "V111",
+          "V112",
+          "V113",
+          "V114",
+          "V115",
+          "V116",
+          "V118"
+        ],
+        "total_weight": 505
+      }
+    },
+    "final_submission_source": "cf_parsed",
+    "gap_pct": 6.826568265682657,
+    "id": "mwis_medium_seed1",
+    "n_exec_turns": 1,
+    "parse_events": [
+      {
+        "missing_or_invalid": [],
+        "mode": "strict",
+        "turn_index": 2
+      },
+      {
+        "missing_or_invalid": [],
+        "mode": "cf_strict",
+        "turn_index": 3
+      }
+    ],
+    "parse_path": "strict_protocol_cf",
+    "parsed": {
+      "best_guess": {
+        "selected_vertices": [
+          "V009",
+          "V014",
+          "V017",
+          "V022",
+          "V026",
+          "V027",
+          "V034",
+          "V036",
+          "V037",
+          "V043",
+          "V046",
+          "V056",
+          "V057",
+          "V064",
+          "V069",
+          "V071",
+          "V078",
+          "V084",
+          "V085",
+          "V090",
+          "V099",
+          "V105",
+          "V111",
+          "V112",
+          "V113",
+          "V114",
+          "V115",
+          "V116",
+          "V118"
+        ],
+        "total_weight": 505
+      },
+      "continue_forecast": {
+        "expected_delta_score": 0.5,
+        "expected_gap_reduction": 0.01,
+        "p_improve": 0.2
+      },
+      "decision": "stop",
+      "next_sub": null,
+      "quality_forecast": {
+        "p_gap_le_10": 1.0,
+        "p_gap_le_2": 0.8,
+        "p_gap_le_5": 0.95
+      },
+      "subtask_body": "I improved the baseline total weight from 480 to 505 by replacing V076 (weight 29) with a larger independent set of its non-conflicting neighbors: {V014 (26), V037 (14), V046 (10), V113 (4)}. I then performed a comprehensive scan of all vertices and confirmed that the resulting set of 29 vertices is independent and no further single-vertex additions or simple local swaps provide any additional weight.",
+      "subtask_id": 1,
+      "updated_plan_state": "Improve the weight by performing localized swaps. Verified a new candidate with weight 505. Exploring if removing larger vertices like V056 or V057 can allow for even more weight, although initial checks suggest they are worth keeping."
+    },
+    "score": 88.26297247532736,
+    "score_after_cf": 88.26297247532736,
+    "score_at_stop": 89.67211401333735,
+    "seed": 1,
+    "stop_reason": "decision_stop",
+    "transcript": [
+      {
+        "content": "PLAN_STATE: Identify improvements to the greedy baseline by localized swapping. The current plan is to replace V076(29) with a larger independent set of its non-conflicting neighbors {V014, V037, V046, V113}.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Verify and implement the 505 weight independent set\", \"p_solve\": 0.95, \"time_budget_s\": 300}",
+        "role": "assistant"
+      },
+      {
+        "content": "SUB_1: I improved the baseline total weight from 480 to 505 by replacing V076 (weight 29) with a larger independent set of its non-conflicting neighbors: {V014 (26), V037 (14), V046 (10), V113 (4)}. I then performed a comprehensive scan of all vertices and confirmed that the resulting set of 29 vertices is independent and no further single-vertex additions or simple local swaps provide any additional weight.\n\nBEST_GUESS: {\"selected_vertices\": [\"V009\", \"V014\", \"V017\", \"V022\", \"V026\", \"V027\", \"V034\", \"V036\", \"V037\", \"V043\", \"V046\", \"V056\", \"V057\", \"V064\", \"V069\", \"V071\", \"V078\", \"V084\", \"V085\", \"V090\", \"V099\", \"V105\", \"V111\", \"V112\", \"V113\", \"V114\", \"V115\", \"V116\", \"V118\"], \"total_weight\": 505}\nUPDATED_PLAN_STATE: Improve the weight by performing localized swaps. Verified a new candidate with weight 505. Exploring if removing larger vertices like V056 or V057 can allow for even more weight, although initial checks suggest they are worth keeping.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.8, \"p_gap_le_5\": 0.95, \"p_gap_le_10\": 1.0}\nCONTINUE_FORECAST: {\"p_improve\": 0.2, \"expected_delta_score\": 0.5, \"expected_gap_reduction\": 0.01}\nDECISION: stop",
+        "role": "assistant"
+      },
+      {
+        "content": "SUB_2: I verified that the improved set with total weight 505, obtained by replacing V076 (weight 29) with {V014 (26), V037 (14), V046 (10), V113 (4)}, is indeed independent. I performed a second comprehensive scan of all 120 vertices and confirmed that no additional vertices can be added to this set without creating an edge between selected vertices. I also evaluated multiple potential local swaps (1-for-1 and 1-for-2) for higher-weight vertices like V056, V057, V110, and V103, but found that the sum of their conflicting neighbors currently in the set always exceeded the weight of the candidate vertex. No further immediate improvements were found through localized search.\n\nBEST_GUESS: {\"selected_vertices\": [\"V009\", \"V014\", \"V017\", \"V022\", \"V026\", \"V027\", \"V034\", \"V036\", \"V037\", \"V043\", \"V046\", \"V056\", \"V057\", \"V064\", \"V069\", \"V071\", \"V078\", \"V084\", \"V085\", \"V090\", \"V099\", \"V105\", \"V111\", \"V112\", \"V113\", \"V114\", \"V115\", \"V116\", \"V118\"], \"total_weight\": 505}\nUPDATED_PLAN_STATE: Improve the weight by performing localized swaps. Verified a new candidate with weight 505. Exploring if removing larger vertices like V056 or V057 can allow for even more weight, although initial checks suggest they are worth keeping.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.8, \"p_gap_le_5\": 0.95, \"p_gap_le_10\": 1.0}\nCONTINUE_FORECAST: {\"p_improve\": 0.2, \"expected_delta_score\": 0.5, \"expected_gap_reduction\": 0.01}\nDECISION: stop",
+        "role": "assistant"
+      }
+    ],
+    "wall_s": 491.045931226
+  },
+  "effective_model": "google/gemini-3-flash-preview",
+  "requested_model": "google/gemini-3-flash-preview",
+  "run_file": {
+    "filename": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z-run_param_id_4_google_gemini-3-flash-preview.run.json",
+    "param_id": 4
+  },
+  "run_json": {
+    "conversations": [
+      {
+        "id": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z-07353e30",
+        "metrics": {
+          "inputTokens": 8493,
+          "inputTokensCostNanodollars": "4246500",
+          "outputTokens": 531,
+          "outputTokensCostNanodollars": "93441000",
+          "totalBackendLatencyMs": "140727"
+        },
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED",
+        "requests": [
+          {
+            "contents": [
+              {
+                "parts": [
+                  {
+                    "text": "Maximum weighted independent set on an undirected graph with 120 vertices.\n\nObjective:\n- Choose a subset of vertices with no edge between any chosen pair.\n- total_weight = sum(weights[v] for v in selected_vertices)\n- Higher total_weight is better.\n\nVertex weights:\nV001=3, V002=8, V003=6, V004=4, V005=5, V006=15, V007=6, V008=4, V009=8, V010=5\nV011=15, V012=8, V013=16, V014=26, V015=6, V016=27, V017=23, V018=5, V019=20, V020=19\nV021=14, V022=18, V023=5, V024=12, V025=5, V026=29, V027=7, V028=4, V029=6, V030=10\nV031=18, V032=13, V033=15, V034=4, V035=23, V036=32, V037=14, V038=13, V039=19, V040=11\nV041=6, V042=13, V043=17, V044=25, V045=26, V046=10, V047=5, V048=6, V049=7, V050=4\nV051=5, V052=5, V053=8, V054=10, V055=12, V056=41, V057=42, V058=13, V059=7, V060=7\nV061=4, V062=5, V063=4, V064=18, V065=8, V066=8, V067=10, V068=8, V069=18, V070=8\nV071=19, V072=3, V073=24, V074=10, V075=14, V076=29, V077=15, V078=36, V079=4, V080=4\nV081=10, V082=8, V083=9, V084=4, V085=10, V086=12, V087=11, V088=15, V089=10, V090=14\nV091=9, V092=8, V093=4, V094=6, V095=5, V096=16, V097=3, V098=14, V099=8, V100=9\nV101=10, V102=4, V103=25, V104=4, V105=12, V106=5, V107=11, V108=4, V109=13, V110=37\nV111=3, V112=23, V113=4, V114=11, V115=22, V116=28, V117=7, V118=4, V119=6, V120=12\n\nEdges:\nV001-V032, V001-V051, V001-V060, V001-V071, V001-V093, V001-V102, V001-V106, V001-V115, V001-V117, V002-V012\nV002-V030, V002-V034, V002-V048, V002-V055, V002-V063, V002-V069, V002-V075, V002-V079, V002-V103, V002-V108\nV002-V111, V003-V008, V003-V014, V003-V017, V003-V030, V003-V037, V003-V049, V003-V065, V003-V101, V003-V103\nV004-V027, V004-V056, V004-V067, V004-V078, V004-V088, V004-V101, V005-V012, V005-V015, V005-V023, V005-V034\nV005-V051, V005-V063, V005-V064, V005-V096, V005-V103, V005-V114, V005-V119, V006-V009, V006-V014, V006-V015\nV006-V017, V006-V020, V006-V021, V006-V025, V006-V026, V006-V041, V006-V044, V006-V046, V006-V058, V006-V066\nV006-V070, V006-V071, V006-V072, V006-V085, V006-V090, V006-V091, V006-V094, V006-V099, V006-V103, V006-V113\nV007-V018, V007-V036, V007-V044, V007-V045, V008-V017, V008-V026, V008-V031, V008-V047, V008-V048, V008-V091\nV008-V098, V008-V118, V009-V047, V009-V048, V009-V049, V009-V101, V009-V102, V009-V120, V010-V060, V010-V090\nV010-V102, V010-V112, V011-V018, V011-V035, V011-V036, V011-V038, V011-V040, V011-V076, V011-V078, V011-V105\nV011-V110, V012-V015, V012-V019, V012-V022, V012-V023, V012-V027, V012-V029, V012-V036, V012-V040, V012-V044\nV012-V059, V012-V067, V012-V069, V012-V073, V012-V081, V012-V088, V012-V104, V012-V110, V012-V111, V012-V114\nV012-V119, V013-V015, V013-V024, V013-V034, V013-V048, V013-V064, V013-V082, V013-V104, V014-V028, V014-V047\nV014-V049, V014-V051, V014-V076, V014-V107, V014-V109, V014-V120, V015-V032, V015-V058, V015-V062, V015-V064\nV015-V077, V015-V111, V015-V114, V016-V025, V016-V038, V016-V040, V016-V054, V016-V057, V016-V067, V016-V073\nV016-V101, V016-V103, V016-V105, V017-V020, V017-V028, V017-V031, V017-V033, V017-V048, V017-V065, V017-V091\nV018-V019, V018-V045, V018-V057, V018-V076, V018-V078, V018-V100, V019-V044, V019-V045, V019-V066, V019-V078\nV019-V081, V019-V100, V019-V103, V020-V031, V020-V033, V020-V048, V020-V061, V020-V065, V020-V066, V020-V070\nV020-V102, V020-V110, V021-V037, V021-V071, V021-V072, V021-V090, V021-V092, V021-V102, V021-V112, V022-V030\nV022-V051, V022-V061, V022-V082, V022-V089, V022-V103, V022-V108, V023-V043, V023-V048, V023-V069, V023-V075\nV023-V089, V023-V104, V023-V111, V024-V051, V024-V053, V024-V062, V024-V064, V024-V089, V024-V096, V024-V103\nV024-V111, V025-V051, V025-V071, V025-V106, V025-V115, V026-V047, V026-V048, V026-V055, V026-V095, V026-V098\nV026-V102, V026-V107, V026-V109, V027-V035, V027-V040, V027-V045, V027-V054, V027-V067, V027-V107, V028-V051\nV028-V066, V028-V085, V028-V102, V028-V118, V029-V034, V029-V051, V029-V073, V029-V082, V029-V100, V029-V103\nV029-V111, V029-V112, V029-V114, V030-V034, V030-V051, V030-V053, V030-V075, V030-V079, V030-V082, V030-V100\nV030-V104, V031-V037, V031-V046, V031-V047, V031-V098, V031-V108, V032-V039, V032-V042, V032-V065, V032-V080\nV032-V084, V032-V092, V032-V112, V032-V115, V033-V046, V033-V048, V033-V070, V033-V072, V033-V075, V033-V103\nV034-V048, V034-V059, V034-V079, V034-V089, V035-V038, V035-V051, V035-V053, V035-V057, V035-V090, V035-V097\nV035-V103, V035-V106, V036-V044, V036-V045, V036-V054, V036-V068, V036-V074, V036-V083, V036-V088, V036-V101\nV036-V110, V037-V066, V037-V076, V038-V040, V038-V045, V038-V054, V038-V055, V038-V056, V038-V076, V038-V103\nV039-V041, V039-V047, V039-V051, V039-V060, V039-V090, V039-V115, V039-V117, V040-V067, V040-V073, V040-V105\nV041-V045, V041-V061, V041-V071, V041-V086, V041-V089, V041-V115, V041-V116, V042-V051, V042-V061, V042-V084\nV042-V093, V042-V094, V042-V116, V043-V050, V043-V051, V043-V062, V043-V063, V043-V070, V043-V082, V043-V104\nV043-V120, V044-V057, V044-V069, V044-V073, V044-V078, V044-V103, V044-V105, V044-V110, V045-V055, V045-V073\nV045-V078, V045-V100, V045-V119, V046-V047, V046-V048, V046-V076, V046-V098, V046-V102, V046-V120, V047-V065\nV047-V085, V047-V091, V047-V095, V047-V098, V047-V109, V048-V049, V048-V059, V048-V062, V048-V064, V048-V066\nV048-V077, V048-V091, V048-V095, V048-V096, V048-V097, V048-V109, V048-V113, V048-V114, V048-V118, V049-V051\nV049-V076, V049-V091, V049-V093, V049-V095, V049-V097, V049-V102, V051-V063, V051-V070, V051-V074, V051-V076\nV051-V077, V051-V080, V051-V083, V051-V084, V051-V087, V051-V091, V051-V092, V051-V095, V051-V099, V051-V105\nV051-V109, V051-V112, V052-V061, V052-V071, V052-V086, V052-V106, V053-V064, V053-V082, V053-V103, V054-V056\nV054-V086, V054-V088, V054-V103, V054-V109, V055-V056, V055-V057, V055-V081, V055-V088, V055-V110, V056-V073\nV056-V083, V056-V102, V056-V103, V056-V110, V057-V067, V057-V081, V057-V094, V057-V097, V057-V100, V057-V103\nV057-V110, V058-V069, V058-V072, V058-V084, V058-V088, V058-V093, V058-V102, V058-V112, V058-V115, V058-V116\nV059-V064, V059-V079, V059-V089, V059-V103, V060-V061, V060-V066, V060-V072, V060-V093, V060-V102, V060-V115\nV060-V116, V061-V072, V061-V084, V061-V092, V061-V112, V061-V119, V062-V063, V062-V064, V062-V104, V063-V089\nV063-V092, V063-V104, V064-V096, V064-V103, V064-V104, V064-V119, V065-V120, V066-V076, V066-V085, V066-V095\nV066-V107, V066-V118, V066-V120, V067-V088, V067-V101, V067-V103, V068-V074, V069-V075, V069-V077, V069-V103\nV070-V091, V070-V109, V070-V118, V070-V120, V071-V072, V071-V086, V071-V110, V072-V084, V072-V090, V072-V106\nV072-V111, V072-V120, V073-V074, V073-V083, V073-V088, V073-V092, V073-V103, V074-V103, V075-V077, V075-V081\nV075-V111, V076-V097, V076-V109, V076-V113, V077-V081, V077-V089, V077-V104, V078-V100, V078-V103, V079-V088\nV080-V092, V080-V112, V081-V089, V082-V104, V083-V110, V084-V087, V084-V093, V085-V095, V085-V097, V087-V090\nV087-V092, V087-V094, V087-V106, V087-V115, V090-V093, V091-V093, V091-V102, V092-V093, V092-V109, V092-V112\nV093-V106, V093-V112, V094-V102, V094-V112, V094-V115, V094-V116, V095-V098, V096-V103, V098-V102, V098-V113\nV099-V102, V100-V115, V102-V107, V102-V108, V102-V112, V103-V104, V103-V107, V103-V110, V103-V111, V103-V114\nV104-V106, V105-V110, V106-V112, V109-V116, V109-V120, V112-V117, V113-V119, V115-V117\n\nConstraints:\n- `BEST_GUESS` must be valid JSON with keys `selected_vertices` and `total_weight`.\n- Every selected vertex must appear at most once.\n- No selected pair may share an edge.\n- `total_weight` must equal the exact sum of the selected vertex weights.\n\nA deterministic greedy baseline is provided below. If you stop immediately or fail to produce a valid answer, this baseline is what gets scored.\nBaseline total_weight: 480\nBaseline summary:\nSelected count: 26\nTotal weight: 480\nSelected vertices:\nV009, V017, V022, V026, V027, V034, V036, V043, V056, V057, V064, V069\nV071, V076, V078, V084, V085, V090, V099, V105, V111, V112, V114, V115\nV116, V118\n\n\nFULL PRIOR TRANSCRIPT:\nTURN_1_MODEL_RESPONSE:\nPLAN_STATE: Identify improvements to the greedy baseline by localized swapping. The current plan is to replace V076(29) with a larger independent set of its non-conflicting neighbors {V014, V037, V046, V113}.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Verify and implement the 505 weight independent set\", \"p_solve\": 0.95, \"time_budget_s\": 300}\n\nTURN_2_MODEL_RESPONSE:\nSUB_1: I improved the baseline total weight from 480 to 505 by replacing V076 (weight 29) with a larger independent set of its non-conflicting neighbors: {V014 (26), V037 (14), V046 (10), V113 (4)}. I then performed a comprehensive scan of all vertices and confirmed that the resulting set of 29 vertices is independent and no further single-vertex additions or simple local swaps provide any additional weight.\n\nBEST_GUESS: {\"selected_vertices\": [\"V009\", \"V014\", \"V017\", \"V022\", \"V026\", \"V027\", \"V034\", \"V036\", \"V037\", \"V043\", \"V046\", \"V056\", \"V057\", \"V064\", \"V069\", \"V071\", \"V078\", \"V084\", \"V085\", \"V090\", \"V099\", \"V105\", \"V111\", \"V112\", \"V113\", \"V114\", \"V115\", \"V116\", \"V118\"], \"total_weight\": 505}\nUPDATED_PLAN_STATE: Improve the weight by performing localized swaps. Verified a new candidate with weight 505. Exploring if removing larger vertices like V056 or V057 can allow for even more weight, although initial checks suggest they are worth keeping.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.8, \"p_gap_le_5\": 0.95, \"p_gap_le_10\": 1.0}\nCONTINUE_FORECAST: {\"p_improve\": 0.2, \"expected_delta_score\": 0.5, \"expected_gap_reduction\": 0.01}\nDECISION: stop\n\nTIMING: global elapsed 350.1s / 1800s (remaining 1449.9s).\nLAST_SUBTASK: budgeted 300s, actual 142.43167840099977s, desc=Verify and implement the 505 weight independent set\nSUBTASK_HISTORY: [s1 142.43167840099977/300s]\n\nCURRENT_BEST_JSON:\n{\n  \"selected_vertices\": [\n    \"V009\",\n    \"V014\",\n    \"V017\",\n    \"V022\",\n    \"V026\",\n    \"V027\",\n    \"V034\",\n    \"V036\",\n    \"V037\",\n    \"V043\",\n    \"V046\",\n    \"V056\",\n    \"V057\",\n    \"V064\",\n    \"V069\",\n    \"V071\",\n    \"V078\",\n    \"V084\",\n    \"V085\",\n    \"V090\",\n    \"V099\",\n    \"V105\",\n    \"V111\",\n    \"V112\",\n    \"V113\",\n    \"V114\",\n    \"V115\",\n    \"V116\",\n    \"V118\"\n  ],\n  \"total_weight\": 505\n}\n\nExec turn 3. Emit, in order:\n- `SUB_2`: key findings for this subtask \u2014 HARD LIMIT 30 lines. Stop writing SUB_2 after 30 lines even if incomplete. BEST_GUESS and the remaining fields MUST follow.\n- `BEST_GUESS`: class-specific JSON for `mwis`\n- BEST_GUESS schema example for `mwis`:\n```json\n{\"selected_vertices\": [\"V001\", ...], \"total_weight\": 123}.\n```\n- `UPDATED_PLAN_STATE`: revised plan, or keep the prior plan verbatim\n- `QUALITY_FORECAST`: `{p_gap_le_2, p_gap_le_5, p_gap_le_10}` for solo classes, or the VE-specific thresholds if this is `ve`\n- `CONTINUE_FORECAST`: `{p_improve, expected_delta_score}` and optionally `expected_gap_reduction`\n- `DECISION`: `continue` or `stop`\n- `NEXT_SUB`: `{id: 3, desc, p_solve, time_budget_s}` only if you continue\n\nExample shape:\nSUB_2: I checked one concrete local move and kept the best valid candidate found.\nBEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2, \"N03\": 3}}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn, then spend one more subtask on the highest-value local improvement.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.2, \"p_gap_le_10\": 0.55}\nCONTINUE_FORECAST: {\"p_improve\": 0.35, \"expected_delta_score\": 1.8, \"expected_gap_reduction\": 4.0}\nDECISION: continue\nNEXT_SUB: {\"id\": 3, \"desc\": \"Try one more improvement move\", \"p_solve\": 0.3, \"time_budget_s\": 120}\n\nDo NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, `QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets (`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` followed by the value.\nCORRECT: UPDATED_PLAN_STATE: Keep a valid structured answer at every turn.\nWRONG:   ## UPDATED_PLAN_STATE\nKeep a valid structured answer at every turn.  (markdown header \u2014 will not parse)\nWRONG:   - BEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2}}   (bullet prefix \u2014 will not parse)\n\nAll labelled fields must be emitted in the listed order. The `BEST_GUESS:` line must contain valid JSON, with no code fences and no extra text inside that field. Failing to emit any of `BEST_GUESS`, `UPDATED_PLAN_STATE`, `QUALITY_FORECAST`, `CONTINUE_FORECAST`, `DECISION`, or, when you continue, `NEXT_SUB` causes strict-parse failure, and no score is recorded for the turn. Keep each field concise enough that you still emit the full labelled output.\nCounterfactual branch: take exactly one more execution turn from the same transcript state. Do not emit `DECISION` or `NEXT_SUB` on this branch."
+                  }
+                ],
+                "role": "CONTENT_ROLE_USER",
+                "senderName": "User"
+              },
+              {
+                "parts": [
+                  {
+                    "text": "SUB_2: I verified that the improved set with total weight 505, obtained by replacing V076 (weight 29) with {V014 (26), V037 (14), V046 (10), V113 (4)}, is indeed independent. I performed a second comprehensive scan of all 120 vertices and confirmed that no additional vertices can be added to this set without creating an edge between selected vertices. I also evaluated multiple potential local swaps (1-for-1 and 1-for-2) for higher-weight vertices like V056, V057, V110, and V103, but found that the sum of their conflicting neighbors currently in the set always exceeded the weight of the candidate vertex. No further immediate improvements were found through localized search.\n\nBEST_GUESS: {\"selected_vertices\": [\"V009\", \"V014\", \"V017\", \"V022\", \"V026\", \"V027\", \"V034\", \"V036\", \"V037\", \"V043\", \"V046\", \"V056\", \"V057\", \"V064\", \"V069\", \"V071\", \"V078\", \"V084\", \"V085\", \"V090\", \"V099\", \"V105\", \"V111\", \"V112\", \"V113\", \"V114\", \"V115\", \"V116\", \"V118\"], \"total_weight\": 505}\nUPDATED_PLAN_STATE: Improve the weight by performing localized swaps. Verified a new candidate with weight 505. Exploring if removing larger vertices like V056 or V057 can allow for even more weight, although initial checks suggest they are worth keeping.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.8, \"p_gap_le_5\": 0.95, \"p_gap_le_10\": 1.0}\nCONTINUE_FORECAST: {\"p_improve\": 0.2, \"expected_delta_score\": 0.5, \"expected_gap_reduction\": 0.01}\nDECISION: stop"
+                  }
+                ],
+                "role": "CONTENT_ROLE_ASSISTANT",
+                "senderName": "google/gemini-3-flash-preview"
+              }
+            ],
+            "id": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z-07353e30-req-1",
+            "metrics": {
+              "inputTokens": 8493,
+              "inputTokensCostNanodollars": "4246500",
+              "outputTokens": 531,
+              "outputTokensCostNanodollars": "93441000",
+              "totalBackendLatencyMs": "140727"
+            }
+          }
+        ]
+      },
+      {
+        "id": "run-mwis-medium-seed1-581650cc",
+        "metrics": {
+          "inputTokens": 22550,
+          "inputTokensCostNanodollars": "11275000",
+          "outputTokens": 576,
+          "outputTokensCostNanodollars": "228141000",
+          "totalBackendLatencyMs": "349640"
+        },
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED",
+        "requests": [
+          {
+            "contents": [
+              {
+                "parts": [
+                  {
+                    "text": "You are solving an optimization problem.\n\nValue. Each problem is worth up to 100 points of value. Your gap to the optimum reduces value linearly, at 1 point per percentage point of gap, floored at 0.\n\nTime cost. Wall time costs 0.01 points per second.\n\nBudgets. Total wall budget is 1800s. Turn 1 planning budget is 300s. Each execution subtask may budget up to 600s. The harness reserves 300s for a forced one-more-turn counterfactual branch after a clean stop.\n\nProtocol. You may decompose the problem into subtasks, revise your plan each turn, and stop when you judge no more work is worth its time cost. The harness extracts structured fields from your raw text, so when a field expects JSON, emit valid JSON.\n\nOutput budget. Your response is token-limited. Keep SUB_N sections under 30 lines \u2014 key moves and result only. You MUST reach all structured fields (BEST_GUESS, UPDATED_PLAN_STATE, QUALITY_FORECAST, CONTINUE_FORECAST, DECISION) in every exec turn.\n\nDo not call tools. Do not write code, pseudocode, or solver sketches. Work only from the prompt, the running transcript, the current best artifact, and your own reasoning."
+                  }
+                ],
+                "role": "CONTENT_ROLE_SYSTEM",
+                "senderName": "System"
+              },
+              {
+                "parts": [
+                  {
+                    "text": "Maximum weighted independent set on an undirected graph with 120 vertices.\n\nObjective:\n- Choose a subset of vertices with no edge between any chosen pair.\n- total_weight = sum(weights[v] for v in selected_vertices)\n- Higher total_weight is better.\n\nVertex weights:\nV001=3, V002=8, V003=6, V004=4, V005=5, V006=15, V007=6, V008=4, V009=8, V010=5\nV011=15, V012=8, V013=16, V014=26, V015=6, V016=27, V017=23, V018=5, V019=20, V020=19\nV021=14, V022=18, V023=5, V024=12, V025=5, V026=29, V027=7, V028=4, V029=6, V030=10\nV031=18, V032=13, V033=15, V034=4, V035=23, V036=32, V037=14, V038=13, V039=19, V040=11\nV041=6, V042=13, V043=17, V044=25, V045=26, V046=10, V047=5, V048=6, V049=7, V050=4\nV051=5, V052=5, V053=8, V054=10, V055=12, V056=41, V057=42, V058=13, V059=7, V060=7\nV061=4, V062=5, V063=4, V064=18, V065=8, V066=8, V067=10, V068=8, V069=18, V070=8\nV071=19, V072=3, V073=24, V074=10, V075=14, V076=29, V077=15, V078=36, V079=4, V080=4\nV081=10, V082=8, V083=9, V084=4, V085=10, V086=12, V087=11, V088=15, V089=10, V090=14\nV091=9, V092=8, V093=4, V094=6, V095=5, V096=16, V097=3, V098=14, V099=8, V100=9\nV101=10, V102=4, V103=25, V104=4, V105=12, V106=5, V107=11, V108=4, V109=13, V110=37\nV111=3, V112=23, V113=4, V114=11, V115=22, V116=28, V117=7, V118=4, V119=6, V120=12\n\nEdges:\nV001-V032, V001-V051, V001-V060, V001-V071, V001-V093, V001-V102, V001-V106, V001-V115, V001-V117, V002-V012\nV002-V030, V002-V034, V002-V048, V002-V055, V002-V063, V002-V069, V002-V075, V002-V079, V002-V103, V002-V108\nV002-V111, V003-V008, V003-V014, V003-V017, V003-V030, V003-V037, V003-V049, V003-V065, V003-V101, V003-V103\nV004-V027, V004-V056, V004-V067, V004-V078, V004-V088, V004-V101, V005-V012, V005-V015, V005-V023, V005-V034\nV005-V051, V005-V063, V005-V064, V005-V096, V005-V103, V005-V114, V005-V119, V006-V009, V006-V014, V006-V015\nV006-V017, V006-V020, V006-V021, V006-V025, V006-V026, V006-V041, V006-V044, V006-V046, V006-V058, V006-V066\nV006-V070, V006-V071, V006-V072, V006-V085, V006-V090, V006-V091, V006-V094, V006-V099, V006-V103, V006-V113\nV007-V018, V007-V036, V007-V044, V007-V045, V008-V017, V008-V026, V008-V031, V008-V047, V008-V048, V008-V091\nV008-V098, V008-V118, V009-V047, V009-V048, V009-V049, V009-V101, V009-V102, V009-V120, V010-V060, V010-V090\nV010-V102, V010-V112, V011-V018, V011-V035, V011-V036, V011-V038, V011-V040, V011-V076, V011-V078, V011-V105\nV011-V110, V012-V015, V012-V019, V012-V022, V012-V023, V012-V027, V012-V029, V012-V036, V012-V040, V012-V044\nV012-V059, V012-V067, V012-V069, V012-V073, V012-V081, V012-V088, V012-V104, V012-V110, V012-V111, V012-V114\nV012-V119, V013-V015, V013-V024, V013-V034, V013-V048, V013-V064, V013-V082, V013-V104, V014-V028, V014-V047\nV014-V049, V014-V051, V014-V076, V014-V107, V014-V109, V014-V120, V015-V032, V015-V058, V015-V062, V015-V064\nV015-V077, V015-V111, V015-V114, V016-V025, V016-V038, V016-V040, V016-V054, V016-V057, V016-V067, V016-V073\nV016-V101, V016-V103, V016-V105, V017-V020, V017-V028, V017-V031, V017-V033, V017-V048, V017-V065, V017-V091\nV018-V019, V018-V045, V018-V057, V018-V076, V018-V078, V018-V100, V019-V044, V019-V045, V019-V066, V019-V078\nV019-V081, V019-V100, V019-V103, V020-V031, V020-V033, V020-V048, V020-V061, V020-V065, V020-V066, V020-V070\nV020-V102, V020-V110, V021-V037, V021-V071, V021-V072, V021-V090, V021-V092, V021-V102, V021-V112, V022-V030\nV022-V051, V022-V061, V022-V082, V022-V089, V022-V103, V022-V108, V023-V043, V023-V048, V023-V069, V023-V075\nV023-V089, V023-V104, V023-V111, V024-V051, V024-V053, V024-V062, V024-V064, V024-V089, V024-V096, V024-V103\nV024-V111, V025-V051, V025-V071, V025-V106, V025-V115, V026-V047, V026-V048, V026-V055, V026-V095, V026-V098\nV026-V102, V026-V107, V026-V109, V027-V035, V027-V040, V027-V045, V027-V054, V027-V067, V027-V107, V028-V051\nV028-V066, V028-V085, V028-V102, V028-V118, V029-V034, V029-V051, V029-V073, V029-V082, V029-V100, V029-V103\nV029-V111, V029-V112, V029-V114, V030-V034, V030-V051, V030-V053, V030-V075, V030-V079, V030-V082, V030-V100\nV030-V104, V031-V037, V031-V046, V031-V047, V031-V098, V031-V108, V032-V039, V032-V042, V032-V065, V032-V080\nV032-V084, V032-V092, V032-V112, V032-V115, V033-V046, V033-V048, V033-V070, V033-V072, V033-V075, V033-V103\nV034-V048, V034-V059, V034-V079, V034-V089, V035-V038, V035-V051, V035-V053, V035-V057, V035-V090, V035-V097\nV035-V103, V035-V106, V036-V044, V036-V045, V036-V054, V036-V068, V036-V074, V036-V083, V036-V088, V036-V101\nV036-V110, V037-V066, V037-V076, V038-V040, V038-V045, V038-V054, V038-V055, V038-V056, V038-V076, V038-V103\nV039-V041, V039-V047, V039-V051, V039-V060, V039-V090, V039-V115, V039-V117, V040-V067, V040-V073, V040-V105\nV041-V045, V041-V061, V041-V071, V041-V086, V041-V089, V041-V115, V041-V116, V042-V051, V042-V061, V042-V084\nV042-V093, V042-V094, V042-V116, V043-V050, V043-V051, V043-V062, V043-V063, V043-V070, V043-V082, V043-V104\nV043-V120, V044-V057, V044-V069, V044-V073, V044-V078, V044-V103, V044-V105, V044-V110, V045-V055, V045-V073\nV045-V078, V045-V100, V045-V119, V046-V047, V046-V048, V046-V076, V046-V098, V046-V102, V046-V120, V047-V065\nV047-V085, V047-V091, V047-V095, V047-V098, V047-V109, V048-V049, V048-V059, V048-V062, V048-V064, V048-V066\nV048-V077, V048-V091, V048-V095, V048-V096, V048-V097, V048-V109, V048-V113, V048-V114, V048-V118, V049-V051\nV049-V076, V049-V091, V049-V093, V049-V095, V049-V097, V049-V102, V051-V063, V051-V070, V051-V074, V051-V076\nV051-V077, V051-V080, V051-V083, V051-V084, V051-V087, V051-V091, V051-V092, V051-V095, V051-V099, V051-V105\nV051-V109, V051-V112, V052-V061, V052-V071, V052-V086, V052-V106, V053-V064, V053-V082, V053-V103, V054-V056\nV054-V086, V054-V088, V054-V103, V054-V109, V055-V056, V055-V057, V055-V081, V055-V088, V055-V110, V056-V073\nV056-V083, V056-V102, V056-V103, V056-V110, V057-V067, V057-V081, V057-V094, V057-V097, V057-V100, V057-V103\nV057-V110, V058-V069, V058-V072, V058-V084, V058-V088, V058-V093, V058-V102, V058-V112, V058-V115, V058-V116\nV059-V064, V059-V079, V059-V089, V059-V103, V060-V061, V060-V066, V060-V072, V060-V093, V060-V102, V060-V115\nV060-V116, V061-V072, V061-V084, V061-V092, V061-V112, V061-V119, V062-V063, V062-V064, V062-V104, V063-V089\nV063-V092, V063-V104, V064-V096, V064-V103, V064-V104, V064-V119, V065-V120, V066-V076, V066-V085, V066-V095\nV066-V107, V066-V118, V066-V120, V067-V088, V067-V101, V067-V103, V068-V074, V069-V075, V069-V077, V069-V103\nV070-V091, V070-V109, V070-V118, V070-V120, V071-V072, V071-V086, V071-V110, V072-V084, V072-V090, V072-V106\nV072-V111, V072-V120, V073-V074, V073-V083, V073-V088, V073-V092, V073-V103, V074-V103, V075-V077, V075-V081\nV075-V111, V076-V097, V076-V109, V076-V113, V077-V081, V077-V089, V077-V104, V078-V100, V078-V103, V079-V088\nV080-V092, V080-V112, V081-V089, V082-V104, V083-V110, V084-V087, V084-V093, V085-V095, V085-V097, V087-V090\nV087-V092, V087-V094, V087-V106, V087-V115, V090-V093, V091-V093, V091-V102, V092-V093, V092-V109, V092-V112\nV093-V106, V093-V112, V094-V102, V094-V112, V094-V115, V094-V116, V095-V098, V096-V103, V098-V102, V098-V113\nV099-V102, V100-V115, V102-V107, V102-V108, V102-V112, V103-V104, V103-V107, V103-V110, V103-V111, V103-V114\nV104-V106, V105-V110, V106-V112, V109-V116, V109-V120, V112-V117, V113-V119, V115-V117\n\nConstraints:\n- `BEST_GUESS` must be valid JSON with keys `selected_vertices` and `total_weight`.\n- Every selected vertex must appear at most once.\n- No selected pair may share an edge.\n- `total_weight` must equal the exact sum of the selected vertex weights.\n\nA deterministic greedy baseline is provided below. If you stop immediately or fail to produce a valid answer, this baseline is what gets scored.\nBaseline total_weight: 480\nBaseline summary:\nSelected count: 26\nTotal weight: 480\nSelected vertices:\nV009, V017, V022, V026, V027, V034, V036, V043, V056, V057, V064, V069\nV071, V076, V078, V084, V085, V090, V099, V105, V111, V112, V114, V115\nV116, V118\n\n\nTurn 1 for Maximum Weighted Independent Set is planning only. Do not emit BEST_GUESS yet.\n\nEmit, in order:\n- `PLAN_STATE`: plan (\u2264 15 lines). We will quote this back to you verbatim on every later turn.\n- `NEXT_SUB`: `{id: 1, desc, p_solve, time_budget_s}`. `p_solve` is your probability that the final answer lands within the target gap after this subtask. `time_budget_s` must be <= 600.\n\nExample shape:\nPLAN_STATE: Start from the baseline, identify the main bottleneck, then spend one subtask trying to produce a cleaner feasible answer.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct one improved feasible candidate\", \"p_solve\": 0.35, \"time_budget_s\": 180}\n\nDo NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, `QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets (`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` followed by the value.\nCORRECT: PLAN_STATE: Start from the baseline...\nWRONG:   ## PLAN_STATE\nStart from the baseline...  (markdown header \u2014 will not parse)\nWRONG:   - PLAN_STATE: Start from the baseline...   (bullet prefix \u2014 will not parse)\n\nEmit both labelled fields exactly once, in the listed order. Failing to emit either required field causes strict-parse failure, and no score is recorded for the turn. Do not emit BEST_GUESS yet.\n\nPlanning budget: 300s."
+                  }
+                ],
+                "role": "CONTENT_ROLE_USER",
+                "senderName": "User"
+              },
+              {
+                "parts": [
+                  {
+                    "text": "PLAN_STATE: Identify improvements to the greedy baseline by localized swapping. The current plan is to replace V076(29) with a larger independent set of its non-conflicting neighbors {V014, V037, V046, V113}.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Verify and implement the 505 weight independent set\", \"p_solve\": 0.95, \"time_budget_s\": 300}"
+                  }
+                ],
+                "role": "CONTENT_ROLE_ASSISTANT",
+                "senderName": "google/gemini-3-flash-preview"
+              }
+            ],
+            "id": "run-mwis-medium-seed1-581650cc-req-1",
+            "metrics": {
+              "inputTokens": 7387,
+              "inputTokensCostNanodollars": "3693500",
+              "outputTokens": 111,
+              "outputTokensCostNanodollars": "137511000",
+              "totalBackendLatencyMs": "207414"
+            }
+          },
+          {
+            "contents": [
+              {
+                "parts": [
+                  {
+                    "text": "Maximum weighted independent set on an undirected graph with 120 vertices.\n\nObjective:\n- Choose a subset of vertices with no edge between any chosen pair.\n- total_weight = sum(weights[v] for v in selected_vertices)\n- Higher total_weight is better.\n\nVertex weights:\nV001=3, V002=8, V003=6, V004=4, V005=5, V006=15, V007=6, V008=4, V009=8, V010=5\nV011=15, V012=8, V013=16, V014=26, V015=6, V016=27, V017=23, V018=5, V019=20, V020=19\nV021=14, V022=18, V023=5, V024=12, V025=5, V026=29, V027=7, V028=4, V029=6, V030=10\nV031=18, V032=13, V033=15, V034=4, V035=23, V036=32, V037=14, V038=13, V039=19, V040=11\nV041=6, V042=13, V043=17, V044=25, V045=26, V046=10, V047=5, V048=6, V049=7, V050=4\nV051=5, V052=5, V053=8, V054=10, V055=12, V056=41, V057=42, V058=13, V059=7, V060=7\nV061=4, V062=5, V063=4, V064=18, V065=8, V066=8, V067=10, V068=8, V069=18, V070=8\nV071=19, V072=3, V073=24, V074=10, V075=14, V076=29, V077=15, V078=36, V079=4, V080=4\nV081=10, V082=8, V083=9, V084=4, V085=10, V086=12, V087=11, V088=15, V089=10, V090=14\nV091=9, V092=8, V093=4, V094=6, V095=5, V096=16, V097=3, V098=14, V099=8, V100=9\nV101=10, V102=4, V103=25, V104=4, V105=12, V106=5, V107=11, V108=4, V109=13, V110=37\nV111=3, V112=23, V113=4, V114=11, V115=22, V116=28, V117=7, V118=4, V119=6, V120=12\n\nEdges:\nV001-V032, V001-V051, V001-V060, V001-V071, V001-V093, V001-V102, V001-V106, V001-V115, V001-V117, V002-V012\nV002-V030, V002-V034, V002-V048, V002-V055, V002-V063, V002-V069, V002-V075, V002-V079, V002-V103, V002-V108\nV002-V111, V003-V008, V003-V014, V003-V017, V003-V030, V003-V037, V003-V049, V003-V065, V003-V101, V003-V103\nV004-V027, V004-V056, V004-V067, V004-V078, V004-V088, V004-V101, V005-V012, V005-V015, V005-V023, V005-V034\nV005-V051, V005-V063, V005-V064, V005-V096, V005-V103, V005-V114, V005-V119, V006-V009, V006-V014, V006-V015\nV006-V017, V006-V020, V006-V021, V006-V025, V006-V026, V006-V041, V006-V044, V006-V046, V006-V058, V006-V066\nV006-V070, V006-V071, V006-V072, V006-V085, V006-V090, V006-V091, V006-V094, V006-V099, V006-V103, V006-V113\nV007-V018, V007-V036, V007-V044, V007-V045, V008-V017, V008-V026, V008-V031, V008-V047, V008-V048, V008-V091\nV008-V098, V008-V118, V009-V047, V009-V048, V009-V049, V009-V101, V009-V102, V009-V120, V010-V060, V010-V090\nV010-V102, V010-V112, V011-V018, V011-V035, V011-V036, V011-V038, V011-V040, V011-V076, V011-V078, V011-V105\nV011-V110, V012-V015, V012-V019, V012-V022, V012-V023, V012-V027, V012-V029, V012-V036, V012-V040, V012-V044\nV012-V059, V012-V067, V012-V069, V012-V073, V012-V081, V012-V088, V012-V104, V012-V110, V012-V111, V012-V114\nV012-V119, V013-V015, V013-V024, V013-V034, V013-V048, V013-V064, V013-V082, V013-V104, V014-V028, V014-V047\nV014-V049, V014-V051, V014-V076, V014-V107, V014-V109, V014-V120, V015-V032, V015-V058, V015-V062, V015-V064\nV015-V077, V015-V111, V015-V114, V016-V025, V016-V038, V016-V040, V016-V054, V016-V057, V016-V067, V016-V073\nV016-V101, V016-V103, V016-V105, V017-V020, V017-V028, V017-V031, V017-V033, V017-V048, V017-V065, V017-V091\nV018-V019, V018-V045, V018-V057, V018-V076, V018-V078, V018-V100, V019-V044, V019-V045, V019-V066, V019-V078\nV019-V081, V019-V100, V019-V103, V020-V031, V020-V033, V020-V048, V020-V061, V020-V065, V020-V066, V020-V070\nV020-V102, V020-V110, V021-V037, V021-V071, V021-V072, V021-V090, V021-V092, V021-V102, V021-V112, V022-V030\nV022-V051, V022-V061, V022-V082, V022-V089, V022-V103, V022-V108, V023-V043, V023-V048, V023-V069, V023-V075\nV023-V089, V023-V104, V023-V111, V024-V051, V024-V053, V024-V062, V024-V064, V024-V089, V024-V096, V024-V103\nV024-V111, V025-V051, V025-V071, V025-V106, V025-V115, V026-V047, V026-V048, V026-V055, V026-V095, V026-V098\nV026-V102, V026-V107, V026-V109, V027-V035, V027-V040, V027-V045, V027-V054, V027-V067, V027-V107, V028-V051\nV028-V066, V028-V085, V028-V102, V028-V118, V029-V034, V029-V051, V029-V073, V029-V082, V029-V100, V029-V103\nV029-V111, V029-V112, V029-V114, V030-V034, V030-V051, V030-V053, V030-V075, V030-V079, V030-V082, V030-V100\nV030-V104, V031-V037, V031-V046, V031-V047, V031-V098, V031-V108, V032-V039, V032-V042, V032-V065, V032-V080\nV032-V084, V032-V092, V032-V112, V032-V115, V033-V046, V033-V048, V033-V070, V033-V072, V033-V075, V033-V103\nV034-V048, V034-V059, V034-V079, V034-V089, V035-V038, V035-V051, V035-V053, V035-V057, V035-V090, V035-V097\nV035-V103, V035-V106, V036-V044, V036-V045, V036-V054, V036-V068, V036-V074, V036-V083, V036-V088, V036-V101\nV036-V110, V037-V066, V037-V076, V038-V040, V038-V045, V038-V054, V038-V055, V038-V056, V038-V076, V038-V103\nV039-V041, V039-V047, V039-V051, V039-V060, V039-V090, V039-V115, V039-V117, V040-V067, V040-V073, V040-V105\nV041-V045, V041-V061, V041-V071, V041-V086, V041-V089, V041-V115, V041-V116, V042-V051, V042-V061, V042-V084\nV042-V093, V042-V094, V042-V116, V043-V050, V043-V051, V043-V062, V043-V063, V043-V070, V043-V082, V043-V104\nV043-V120, V044-V057, V044-V069, V044-V073, V044-V078, V044-V103, V044-V105, V044-V110, V045-V055, V045-V073\nV045-V078, V045-V100, V045-V119, V046-V047, V046-V048, V046-V076, V046-V098, V046-V102, V046-V120, V047-V065\nV047-V085, V047-V091, V047-V095, V047-V098, V047-V109, V048-V049, V048-V059, V048-V062, V048-V064, V048-V066\nV048-V077, V048-V091, V048-V095, V048-V096, V048-V097, V048-V109, V048-V113, V048-V114, V048-V118, V049-V051\nV049-V076, V049-V091, V049-V093, V049-V095, V049-V097, V049-V102, V051-V063, V051-V070, V051-V074, V051-V076\nV051-V077, V051-V080, V051-V083, V051-V084, V051-V087, V051-V091, V051-V092, V051-V095, V051-V099, V051-V105\nV051-V109, V051-V112, V052-V061, V052-V071, V052-V086, V052-V106, V053-V064, V053-V082, V053-V103, V054-V056\nV054-V086, V054-V088, V054-V103, V054-V109, V055-V056, V055-V057, V055-V081, V055-V088, V055-V110, V056-V073\nV056-V083, V056-V102, V056-V103, V056-V110, V057-V067, V057-V081, V057-V094, V057-V097, V057-V100, V057-V103\nV057-V110, V058-V069, V058-V072, V058-V084, V058-V088, V058-V093, V058-V102, V058-V112, V058-V115, V058-V116\nV059-V064, V059-V079, V059-V089, V059-V103, V060-V061, V060-V066, V060-V072, V060-V093, V060-V102, V060-V115\nV060-V116, V061-V072, V061-V084, V061-V092, V061-V112, V061-V119, V062-V063, V062-V064, V062-V104, V063-V089\nV063-V092, V063-V104, V064-V096, V064-V103, V064-V104, V064-V119, V065-V120, V066-V076, V066-V085, V066-V095\nV066-V107, V066-V118, V066-V120, V067-V088, V067-V101, V067-V103, V068-V074, V069-V075, V069-V077, V069-V103\nV070-V091, V070-V109, V070-V118, V070-V120, V071-V072, V071-V086, V071-V110, V072-V084, V072-V090, V072-V106\nV072-V111, V072-V120, V073-V074, V073-V083, V073-V088, V073-V092, V073-V103, V074-V103, V075-V077, V075-V081\nV075-V111, V076-V097, V076-V109, V076-V113, V077-V081, V077-V089, V077-V104, V078-V100, V078-V103, V079-V088\nV080-V092, V080-V112, V081-V089, V082-V104, V083-V110, V084-V087, V084-V093, V085-V095, V085-V097, V087-V090\nV087-V092, V087-V094, V087-V106, V087-V115, V090-V093, V091-V093, V091-V102, V092-V093, V092-V109, V092-V112\nV093-V106, V093-V112, V094-V102, V094-V112, V094-V115, V094-V116, V095-V098, V096-V103, V098-V102, V098-V113\nV099-V102, V100-V115, V102-V107, V102-V108, V102-V112, V103-V104, V103-V107, V103-V110, V103-V111, V103-V114\nV104-V106, V105-V110, V106-V112, V109-V116, V109-V120, V112-V117, V113-V119, V115-V117\n\nConstraints:\n- `BEST_GUESS` must be valid JSON with keys `selected_vertices` and `total_weight`.\n- Every selected vertex must appear at most once.\n- No selected pair may share an edge.\n- `total_weight` must equal the exact sum of the selected vertex weights.\n\nA deterministic greedy baseline is provided below. If you stop immediately or fail to produce a valid answer, this baseline is what gets scored.\nBaseline total_weight: 480\nBaseline summary:\nSelected count: 26\nTotal weight: 480\nSelected vertices:\nV009, V017, V022, V026, V027, V034, V036, V043, V056, V057, V064, V069\nV071, V076, V078, V084, V085, V090, V099, V105, V111, V112, V114, V115\nV116, V118\n\n\nFULL PRIOR TRANSCRIPT:\nTURN_1_MODEL_RESPONSE:\nPLAN_STATE: Identify improvements to the greedy baseline by localized swapping. The current plan is to replace V076(29) with a larger independent set of its non-conflicting neighbors {V014, V037, V046, V113}.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Verify and implement the 505 weight independent set\", \"p_solve\": 0.95, \"time_budget_s\": 300}\n\nTIMING: global elapsed 207.7s / 1800s (remaining 1592.3s).\nLAST_SUBTASK: none yet\nSUBTASK_HISTORY: [none yet]\n\nCURRENT_BEST_JSON:\nnone yet\n\nExec turn 2. Emit, in order:\n- `SUB_1`: key findings for this subtask \u2014 HARD LIMIT 30 lines. Stop writing SUB_1 after 30 lines even if incomplete. BEST_GUESS and the remaining fields MUST follow.\n- `BEST_GUESS`: class-specific JSON for `mwis`\n- BEST_GUESS schema example for `mwis`:\n```json\n{\"selected_vertices\": [\"V001\", ...], \"total_weight\": 123}.\n```\n- `UPDATED_PLAN_STATE`: revised plan, or keep the prior plan verbatim\n- `QUALITY_FORECAST`: `{p_gap_le_2, p_gap_le_5, p_gap_le_10}` for solo classes, or the VE-specific thresholds if this is `ve`\n- `CONTINUE_FORECAST`: `{p_improve, expected_delta_score}` and optionally `expected_gap_reduction`\n- `DECISION`: `continue` or `stop`\n- `NEXT_SUB`: `{id: 2, desc, p_solve, time_budget_s}` only if you continue\n\nExample shape:\nSUB_1: I checked one concrete local move and kept the best valid candidate found.\nBEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2, \"N03\": 3}}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn, then spend one more subtask on the highest-value local improvement.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.2, \"p_gap_le_10\": 0.55}\nCONTINUE_FORECAST: {\"p_improve\": 0.35, \"expected_delta_score\": 1.8, \"expected_gap_reduction\": 4.0}\nDECISION: continue\nNEXT_SUB: {\"id\": 2, \"desc\": \"Try one more improvement move\", \"p_solve\": 0.3, \"time_budget_s\": 120}\n\nDo NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, `QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets (`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` followed by the value.\nCORRECT: UPDATED_PLAN_STATE: Keep a valid structured answer at every turn.\nWRONG:   ## UPDATED_PLAN_STATE\nKeep a valid structured answer at every turn.  (markdown header \u2014 will not parse)\nWRONG:   - BEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2}}   (bullet prefix \u2014 will not parse)\n\nAll labelled fields must be emitted in the listed order. The `BEST_GUESS:` line must contain valid JSON, with no code fences and no extra text inside that field. Failing to emit any of `BEST_GUESS`, `UPDATED_PLAN_STATE`, `QUALITY_FORECAST`, `CONTINUE_FORECAST`, `DECISION`, or, when you continue, `NEXT_SUB` causes strict-parse failure, and no score is recorded for the turn. Keep each field concise enough that you still emit the full labelled output."
+                  }
+                ],
+                "role": "CONTENT_ROLE_USER",
+                "senderName": "User"
+              },
+              {
+                "parts": [
+                  {
+                    "text": "SUB_1: I improved the baseline total weight from 480 to 505 by replacing V076 (weight 29) with a larger independent set of its non-conflicting neighbors: {V014 (26), V037 (14), V046 (10), V113 (4)}. I then performed a comprehensive scan of all vertices and confirmed that the resulting set of 29 vertices is independent and no further single-vertex additions or simple local swaps provide any additional weight.\n\nBEST_GUESS: {\"selected_vertices\": [\"V009\", \"V014\", \"V017\", \"V022\", \"V026\", \"V027\", \"V034\", \"V036\", \"V037\", \"V043\", \"V046\", \"V056\", \"V057\", \"V064\", \"V069\", \"V071\", \"V078\", \"V084\", \"V085\", \"V090\", \"V099\", \"V105\", \"V111\", \"V112\", \"V113\", \"V114\", \"V115\", \"V116\", \"V118\"], \"total_weight\": 505}\nUPDATED_PLAN_STATE: Improve the weight by performing localized swaps. Verified a new candidate with weight 505. Exploring if removing larger vertices like V056 or V057 can allow for even more weight, although initial checks suggest they are worth keeping.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.8, \"p_gap_le_5\": 0.95, \"p_gap_le_10\": 1.0}\nCONTINUE_FORECAST: {\"p_improve\": 0.2, \"expected_delta_score\": 0.5, \"expected_gap_reduction\": 0.01}\nDECISION: stop"
+                  }
+                ],
+                "role": "CONTENT_ROLE_ASSISTANT",
+                "senderName": "google/gemini-3-flash-preview"
+              }
+            ],
+            "id": "run-mwis-medium-seed1-581650cc-req-2",
+            "metrics": {
+              "inputTokens": 15163,
+              "inputTokensCostNanodollars": "7581500",
+              "outputTokens": 465,
+              "outputTokensCostNanodollars": "90630000",
+              "totalBackendLatencyMs": "142226"
+            }
+          }
+        ]
+      }
+    ],
+    "endTime": "2026-04-16T18:06:45.607157Z",
+    "modelVersion": {
+      "slug": "google/gemini-3-flash-preview"
+    },
+    "pyRunId": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z-Run #5",
+    "results": [
+      {
+        "numericResult": {
+          "value": 88.26297247532736
+        },
+        "type": "AGGREGATED"
+      }
+    ],
+    "startTime": "2026-04-16T17:58:34.558905Z",
+    "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+    "taskVersion": {
+      "definition": "    @kbench.task(name=TASK_NAME)\n    def detailed_run(\n        llm,\n        id,\n        class_,\n        difficulty,\n        seed,\n        instance,\n        gold_objective,\n        baseline_objective,\n        value_cap,\n        wall_budget_s=1800,\n        components=None,\n    ):\n        del wall_budget_s\n        inst = module._coerce_json(instance, default=None)\n        if not isinstance(inst, dict):\n            raise TypeError(\"instance must be a dict or JSON object string\")\n        normalized_components = module._normalize_components(components)\n\n        row = module.run_instance(\n            llm=llm,\n            instance=inst,\n            cls=str(class_),\n            difficulty=str(difficulty),\n            seed=int(seed),\n            gold_objective=float(gold_objective),\n            baseline_objective=float(baseline_objective),\n            value_cap=float(value_cap),\n            components=normalized_components,\n        )\n        final_submission_source, final_evaluation = evaluate_final_submission(\n            row,\n            instance=inst,\n            cls=str(class_),\n            components=normalized_components,\n        )\n        gap_pct = final_evaluation.get(\"gap_pct\")\n        if gap_pct is None:\n            gap_pct = final_evaluation.get(\"details\", {}).get(\"gap_pct\")\n        detail = {\n            \"id\": str(id),\n            \"class\": str(class_),\n            \"difficulty\": str(difficulty),\n            \"seed\": int(seed),\n            \"score\": float(row[\"score\"]),\n            \"score_at_stop\": float(row[\"score_at_stop\"]),\n            \"score_after_cf\": float(row[\"score_after_cf\"]),\n            \"cf_delta\": float(row[\"cf_delta\"]),\n            \"stop_reason\": row[\"stop_reason\"],\n            \"wall_s\": float(row[\"wall_s\"]),\n            \"n_exec_turns\": int(row[\"n_exec_turns\"]),\n            \"error\": row[\"error\"],\n            \"parsed\": row[\"parsed\"],\n            \"cf_parsed\": row[\"cf_parsed\"],\n            \"transcript\": row[\"transcript\"],\n            \"parse_path\": infer_parse_path(row),\n            \"parse_events\": row.get(\"parse_events\"),\n            \"feasible\": infer_feasible(final_evaluation),\n            \"final_submission_source\": final_submission_source,\n            \"final_evaluation\": final_evaluation,\n            \"gap_pct\": gap_pct,\n        }\n        detail_rows.append(detail)\n        return float(row[\"score\"])\n",
+      "description": "",
+      "name": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z",
+      "versionNumber": 1
+    }
+  }
+}

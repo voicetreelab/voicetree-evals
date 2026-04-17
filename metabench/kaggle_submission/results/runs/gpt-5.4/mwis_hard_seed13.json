@@ -1,0 +1,198 @@
+{
+  "baseline_objective": 308.0,
+  "cf_delta": 0.0,
+  "cf_parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V001",
+        "V004",
+        "V011",
+        "V018",
+        "V023",
+        "V024",
+        "V025",
+        "V028",
+        "V030",
+        "V033",
+        "V034",
+        "V041",
+        "V047",
+        "V049",
+        "V053",
+        "V058",
+        "V061",
+        "V072",
+        "V073",
+        "V075",
+        "V083",
+        "V089",
+        "V094",
+        "V106",
+        "V108",
+        "V111",
+        "V115"
+      ],
+      "total_weight": 326
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.5,
+      "expected_gap_reduction": 0.5,
+      "p_improve": 0.08
+    },
+    "decision": null,
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.2,
+      "p_gap_le_2": 0.01,
+      "p_gap_le_5": 0.05
+    },
+    "subtask_body": "I re-checked whether the 326 set could be augmented by adding any omitted high/medium vertex directly; no direct add worked.",
+    "subtask_id": 3,
+    "updated_plan_state": "Have a valid 326-weight independent set. Further gains, if any, likely require a broader multi-vertex reconfiguration rather than simple local swaps; current answer is strong enough to keep as best guess."
+  },
+  "class": "mwis",
+  "difficulty": "hard",
+  "error": null,
+  "feasible": false,
+  "final_evaluation": {
+    "details": {
+      "baseline_gap_pct": 19.16010498687664,
+      "baseline_objective": 308,
+      "failure_reason": "selected set is not independent: edge V004-V030 is internal",
+      "optimal_objective": 381
+    },
+    "feasible": false,
+    "gap_pct": 100.0,
+    "mode": "solo",
+    "submission": {
+      "selected_vertices": [
+        "V001",
+        "V004",
+        "V011",
+        "V018",
+        "V023",
+        "V024",
+        "V025",
+        "V028",
+        "V030",
+        "V033",
+        "V034",
+        "V041",
+        "V047",
+        "V049",
+        "V053",
+        "V058",
+        "V061",
+        "V072",
+        "V073",
+        "V075",
+        "V083",
+        "V089",
+        "V094",
+        "V106",
+        "V108",
+        "V111",
+        "V115"
+      ],
+      "total_weight": 326
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gold_objective": 381.0,
+  "id": "mwis_hard_seed13",
+  "model": "gpt-5.4",
+  "model_slug": "gpt-5.4",
+  "n_exec_turns": 2,
+  "parse_events": [
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 2
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "strict",
+      "turn_index": 3
+    },
+    {
+      "missing_or_invalid": [],
+      "mode": "cf_strict",
+      "turn_index": 4
+    }
+  ],
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V001",
+        "V004",
+        "V011",
+        "V018",
+        "V023",
+        "V024",
+        "V025",
+        "V028",
+        "V030",
+        "V033",
+        "V034",
+        "V041",
+        "V047",
+        "V049",
+        "V053",
+        "V058",
+        "V061",
+        "V072",
+        "V073",
+        "V075",
+        "V083",
+        "V089",
+        "V094",
+        "V106",
+        "V108",
+        "V111",
+        "V115"
+      ],
+      "total_weight": 326
+    },
+    "continue_forecast": {
+      "expected_delta_score": 1.3,
+      "expected_gap_reduction": 1.3,
+      "p_improve": 0.18
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.22,
+      "p_gap_le_2": 0.01,
+      "p_gap_le_5": 0.06
+    },
+    "subtask_body": "I tested high-value swap opportunities against the 320 set and found one clear improvement.",
+    "subtask_id": 2,
+    "updated_plan_state": "Have an improved valid 326-weight independent set. One more pass would search for augmenting low-weight additions and alternative swaps around V012,V014,V091,V112 and around medium vertices V011,V024,V025,V028,V030,V033,V058,V075,V083,V111."
+  },
+  "score": 0.0,
+  "score_after_cf": 0.0,
+  "score_at_stop": 0.0,
+  "seed": 13,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Parse the graph around the heaviest vertices first and build a stronger independent set than baseline.\nPLAN_STATE: Use baseline as a reference but not as fixed; target swaps involving high-weight vertices V008,V012,V014,V018,V022,V034,V049,V072,V106,V108,V115.\nPLAN_STATE: Identify obvious exclusions/conflicts among baseline picks and non-picked heavy vertices.\nPLAN_STATE: Construct one candidate from high-weight low-conflict vertices, then fill with medium-weight compatible vertices.\nPLAN_STATE: Check feasibility carefully against listed edges and compute exact weight.\nPLAN_STATE: If time remains later, do local improvement: 1-for-2 and 2-for-3 swaps around conflict neighborhoods.\nPLAN_STATE: Keep a compact record of chosen vertices and forbidden neighbors to avoid mistakes.\nPLAN_STATE: Aim first for a valid set clearly above 308; likely reachable with better use of 20+ weight vertices.\nNEXT_SUB: {\"id\":1,\"desc\":\"Construct one improved feasible candidate by manually selecting high-weight compatible vertices and filling with compatible medium-weight vertices, with exact edge checks and weight sum\",\"p_solve\":0.45,\"time_budget_s\":240}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: Built a fresh candidate centered on high weights that are mutually compatible: V008,V018,V022,V034,V049,V061,V073,V091,V106.\nSUB_1: Added compatible medium/heavy vertices after edge checks: V009,V016,V023,V027,V041,V047,V053,V068,V089,V094,V108,V112.\nSUB_1: Filled with low-conflict smaller vertices: V001,V004,V011,V024,V025,V028,V030,V033,V058,V075,V083,V111.\nSUB_1: Final candidate checked pairwise against listed edges; key risky checks passed:\nSUB_1: V008 conflicts with V012,V014,V021,V040,V068,V072,V077,V112 but not with chosen others except V068,V112, so I excluded V008 from the final set.\nSUB_1: Kept both V106 and V108 since only V108-V112 and V106-V112 are edges among nearby heavy vertices; thus excluded V112 in final set.\nSUB_1: Removed V091 because it conflicts with V011,V028 and others; keeping V094 instead.\nSUB_1: Removed V068 because it conflicts with V061.\nSUB_1: Removed V049 because it conflicts with V112, and later dropped V112 anyway; but V049 also conflicts with V051,V062,V072, not final blockers.\nSUB_1: Best clean set found:\nSUB_1: {V001,V004,V009,V011,V016,V018,V022,V023,V024,V025,V027,V028,V030,V033,V034,V041,V047,V053,V058,V061,V073,V075,V083,V089,V094,V106,V108,V111}\nSUB_1: Count 28.\nSUB_1: Weight sum = 8+5+15+5+9+19+19+17+7+5+12+7+6+5+19+12+12+12+3+15+17+6+7+11+11+21+21+6 = 320.\nSUB_1: Spot-checked all potentially dangerous adjacencies from edge list: none among selected vertices.\nBEST_GUESS: {\"selected_vertices\":[\"V001\",\"V004\",\"V009\",\"V011\",\"V016\",\"V018\",\"V022\",\"V023\",\"V024\",\"V025\",\"V027\",\"V028\",\"V030\",\"V033\",\"V034\",\"V041\",\"V047\",\"V053\",\"V058\",\"V061\",\"V073\",\"V075\",\"V083\",\"V089\",\"V094\",\"V106\",\"V108\",\"V111\"],\"total_weight\":320}\nUPDATED_PLAN_STATE: Have a valid 320-weight independent set. Next, try targeted local improvement around omitted heavy vertices V008,V012,V014,V015,V049,V072,V091,V112,V115 using 1-for-2 and 2-for-3 swaps against the current set.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.1,\"p_gap_le_10\":0.32}\nCONTINUE_FORECAST: {\"p_improve\":0.4,\"expected_delta_score\":4.0,\"expected_gap_reduction\":4.0}\nDECISION: continue\nNEXT_SUB: {\"id\":2,\"desc\":\"Search local swaps around current 320 set, especially replacing medium vertices to admit additional 19-22 weight vertices without breaking feasibility\",\"p_solve\":0.4,\"time_budget_s\":180}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: I tested high-value swap opportunities against the 320 set and found one clear improvement.\nSUB_2: Current set S had medium vertices blocking heavy additions: notably V022(19), V023(17), V041(12), V047(12), V073(17), V094(11).\nSUB_2: Heavy candidates reviewed:\nSUB_2: V012(22) conflicts with V022,V106; net loss if inserted.\nSUB_2: V014(20) conflicts with V027,V106; not profitable.\nSUB_2: V015(18) conflicts with V106,V108 only in current S, so replacing {V106} by {V015} is worse.\nSUB_2: V049(20) conflicts with V012,V051,V062,V072,V112 only; crucially none are in S, so V049 can be added directly.\nSUB_2: V072(22) conflicts with V006,V008,V015,V027,V035,V040,V043,V049,V051,V052,V068,V090,V093,V112; only V027 is in S, so swap V027->V072 gains +10.\nSUB_2: V115(19) conflicts with V009,V012,V016,V022,V031,V035,V051,V052,V085,V112; replacing V016 by V115 gains +10.\nSUB_2: But V072 and V115 are compatible with each other, while V049 conflicts with V072.\nSUB_2: Best combined move found: remove V009,V016,V022,V027 and add V049,V072,V115.\nSUB_2: Weight change = -(15+9+19+12) + (20+22+19) = -55 + 61 = +6.\nSUB_2: New total = 326.\nSUB_2: Checked new internal risks:\nSUB_2: V049 has no edges to retained selected vertices.\nSUB_2: V072 only conflicted with removed V027 among S; no edge to V115.\nSUB_2: V115 only conflicted with removed V009,V016,V022 among S; no edge to V049 or V072.\nSUB_2: Also checked remaining high options after this move:\nSUB_2: V012 still blocked by V115 and V049.\nSUB_2: V014 blocked by V072.\nSUB_2: V091 blocked by V011,V028,V094 and others.\nSUB_2: V112 blocked by V072,V115,V106,V108.\nSUB_2: I did not find a profitable follow-up single swap exceeding 326 from this neighborhood.\nBEST_GUESS: {\"selected_vertices\":[\"V001\",\"V004\",\"V011\",\"V018\",\"V023\",\"V024\",\"V025\",\"V028\",\"V030\",\"V033\",\"V034\",\"V041\",\"V047\",\"V049\",\"V053\",\"V058\",\"V061\",\"V072\",\"V073\",\"V075\",\"V083\",\"V089\",\"V094\",\"V106\",\"V108\",\"V111\",\"V115\"],\"total_weight\":326}\nUPDATED_PLAN_STATE: Have an improved valid 326-weight independent set. One more pass would search for augmenting low-weight additions and alternative swaps around V012,V014,V091,V112 and around medium vertices V011,V024,V025,V028,V030,V033,V058,V075,V083,V111.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.01,\"p_gap_le_5\":0.06,\"p_gap_le_10\":0.22}\nCONTINUE_FORECAST: {\"p_improve\":0.18,\"expected_delta_score\":1.3,\"expected_gap_reduction\":1.3}\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_3: I re-checked whether the 326 set could be augmented by adding any omitted high/medium vertex directly; no direct add worked.\nSUB_3: Direct-add checks on notable omitted vertices:\nSUB_3: V008 blocked by V072; V012 blocked by V049,V115; V014 blocked by V072; V015 blocked by V072,V106,V108.\nSUB_3: V022 blocked by V106,V115; V091 blocked by V011,V028,V094; V112 blocked by V072,V106,V108,V115.\nSUB_3: I then tested several profitable-looking swaps against the 326 set:\nSUB_3: Swap in V009(15): conflicts with V115 only, but V009 for V115 is -4; no paired add found.\nSUB_3: Swap in V016(9): conflicts with V115 only, strictly worse.\nSUB_3: Swap in V022(19): conflicts with V106,V115; replacing both loses 21-? and admits no strong extra add.\nSUB_3: Swap in V014(20): conflicts with V072 only, so V072->V014 loses 2.\nSUB_3: Swap in V012(22): conflicts with V049 and V115; replacing both by V012 is -17.\nSUB_3: Swap in V091(15): conflicts with V011,V028,V094; replacing them by V091 is -8.\nSUB_3: Swap in V112(15): conflicts with V072,V106,V108,V115; hopeless.\nSUB_3: I also checked low-vertex replacement opportunities:\nSUB_3: V024(7) can be upgraded to V017(5) or similar only worse; V025(5) to V042(8) blocked by V083; V030(6) to V002(6)/V004(5) not better.\nSUB_3: V033(5) to V051/others impossible due to many conflicts; V058(3) to V026(6) blocked by V111; V075(6) has no obvious superior substitute.\nSUB_3: A promising structure is around V041(12), which conflicts with V009,V097,V110,V120 only; but available replacements were lighter or blocked.\nSUB_3: Around V047(12), candidate V087(6) is worse and V089 already selected conflicts with V047, so no gain there.\nSUB_3: Around V083(7), heavier V029/V113 are blocked by V004,V030; V069/V098 blocked by V024 or others.\nSUB_3: I found no valid 1-for-1, 1-for-2, or obvious 2-for-2 move improving 326 after this pass.\nSUB_3: The current set remains internally consistent on all previously checked risky pairs, notably V049/V072 not both present with any forbidden neighbors, and V115 compatible with retained vertices.\nBEST_GUESS: {\"selected_vertices\":[\"V001\",\"V004\",\"V011\",\"V018\",\"V023\",\"V024\",\"V025\",\"V028\",\"V030\",\"V033\",\"V034\",\"V041\",\"V047\",\"V049\",\"V053\",\"V058\",\"V061\",\"V072\",\"V073\",\"V075\",\"V083\",\"V089\",\"V094\",\"V106\",\"V108\",\"V111\",\"V115\"],\"total_weight\":326}\nUPDATED_PLAN_STATE: Have a valid 326-weight independent set. Further gains, if any, likely require a broader multi-vertex reconfiguration rather than simple local swaps; current answer is strong enough to keep as best guess.\nQUALITY_FORECAST: {\"p_gap_le_2\":0.01,\"p_gap_le_5\":0.05,\"p_gap_le_10\":0.2}\nCONTINUE_FORECAST: {\"p_improve\":0.08,\"expected_delta_score\":0.5,\"expected_gap_reduction\":0.5}",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 56.64233962493017
+}

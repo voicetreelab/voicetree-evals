@@ -1,0 +1,800 @@
+{
+  "baseline_objective": 7440.0,
+  "class": "mbj",
+  "components": null,
+  "difficulty": "medium",
+  "gold_objective": 6000.0,
+  "id": "mbj_medium_seed5",
+  "instance": {
+    "answer_contract": "Object with \"machines\", \"makespan\", \"weighted_tardiness\", and \"objective\". \"machines\" maps each machine name (M1..Mk) to a list of [\"J<id>\", start, end] triples.",
+    "baseline_gap_pct": 24.0,
+    "baseline_objective": 7440,
+    "baseline_submission": {
+      "machines": {
+        "M1": [
+          [
+            "J5",
+            0,
+            12
+          ],
+          [
+            "J8",
+            12,
+            45
+          ],
+          [
+            "J4",
+            45,
+            56
+          ],
+          [
+            "J7",
+            56,
+            69
+          ],
+          [
+            "J2",
+            69,
+            82
+          ],
+          [
+            "J6",
+            82,
+            118
+          ],
+          [
+            "J3",
+            129,
+            165
+          ],
+          [
+            "J1",
+            195,
+            243
+          ]
+        ],
+        "M2": [
+          [
+            "J4",
+            0,
+            12
+          ],
+          [
+            "J6",
+            12,
+            45
+          ],
+          [
+            "J5",
+            45,
+            61
+          ],
+          [
+            "J8",
+            61,
+            112
+          ],
+          [
+            "J7",
+            112,
+            126
+          ],
+          [
+            "J2",
+            126,
+            141
+          ],
+          [
+            "J1",
+            141,
+            195
+          ],
+          [
+            "J3",
+            195,
+            246
+          ]
+        ],
+        "M3": [
+          [
+            "J2",
+            0,
+            14
+          ],
+          [
+            "J7",
+            15,
+            29
+          ],
+          [
+            "J4",
+            67,
+            82
+          ],
+          [
+            "J5",
+            82,
+            96
+          ],
+          [
+            "J3",
+            96,
+            129
+          ],
+          [
+            "J6",
+            129,
+            177
+          ],
+          [
+            "J1",
+            243,
+            294
+          ]
+        ],
+        "M4": [
+          [
+            "J4",
+            82,
+            92
+          ],
+          [
+            "J2",
+            92,
+            106
+          ],
+          [
+            "J8",
+            112,
+            124
+          ],
+          [
+            "J6",
+            177,
+            204
+          ],
+          [
+            "J1",
+            336,
+            372
+          ]
+        ],
+        "M5": [
+          [
+            "J3",
+            0,
+            45
+          ],
+          [
+            "J2",
+            45,
+            49
+          ],
+          [
+            "J4",
+            56,
+            67
+          ],
+          [
+            "J1",
+            321,
+            336
+          ]
+        ],
+        "M6": [
+          [
+            "J7",
+            11,
+            15
+          ],
+          [
+            "J5",
+            15,
+            25
+          ],
+          [
+            "J8",
+            160,
+            184
+          ],
+          [
+            "J6",
+            231,
+            270
+          ]
+        ],
+        "M7": [
+          [
+            "J5",
+            25,
+            30
+          ],
+          [
+            "J7",
+            30,
+            42
+          ],
+          [
+            "J3",
+            45,
+            69
+          ],
+          [
+            "J8",
+            124,
+            160
+          ]
+        ],
+        "M8": [
+          [
+            "J7",
+            0,
+            11
+          ],
+          [
+            "J4",
+            12,
+            19
+          ],
+          [
+            "J5",
+            61,
+            72
+          ],
+          [
+            "J2",
+            106,
+            117
+          ],
+          [
+            "J3",
+            165,
+            189
+          ],
+          [
+            "J8",
+            189,
+            204
+          ],
+          [
+            "J6",
+            204,
+            231
+          ],
+          [
+            "J1",
+            294,
+            321
+          ]
+        ]
+      },
+      "makespan": 372,
+      "objective": 7440,
+      "weighted_tardiness": 0
+    },
+    "class": "mbj",
+    "difficulty": "medium",
+    "gold_objective": 6000,
+    "gold_submission": {
+      "machines": {
+        "M1": [
+          [
+            "J8",
+            0,
+            33
+          ],
+          [
+            "J4",
+            33,
+            44
+          ],
+          [
+            "J6",
+            45,
+            81
+          ],
+          [
+            "J5",
+            81,
+            93
+          ],
+          [
+            "J1",
+            99,
+            147
+          ],
+          [
+            "J2",
+            147,
+            160
+          ],
+          [
+            "J3",
+            162,
+            198
+          ],
+          [
+            "J7",
+            198,
+            211
+          ]
+        ],
+        "M2": [
+          [
+            "J4",
+            0,
+            12
+          ],
+          [
+            "J6",
+            12,
+            45
+          ],
+          [
+            "J1",
+            45,
+            99
+          ],
+          [
+            "J5",
+            108,
+            124
+          ],
+          [
+            "J8",
+            124,
+            175
+          ],
+          [
+            "J2",
+            194,
+            209
+          ],
+          [
+            "J7",
+            211,
+            225
+          ],
+          [
+            "J3",
+            225,
+            276
+          ]
+        ],
+        "M3": [
+          [
+            "J2",
+            0,
+            14
+          ],
+          [
+            "J7",
+            15,
+            29
+          ],
+          [
+            "J4",
+            60,
+            75
+          ],
+          [
+            "J6",
+            81,
+            129
+          ],
+          [
+            "J3",
+            129,
+            162
+          ],
+          [
+            "J1",
+            162,
+            213
+          ],
+          [
+            "J5",
+            231,
+            245
+          ]
+        ],
+        "M4": [
+          [
+            "J4",
+            75,
+            85
+          ],
+          [
+            "J6",
+            129,
+            156
+          ],
+          [
+            "J2",
+            160,
+            174
+          ],
+          [
+            "J8",
+            175,
+            187
+          ],
+          [
+            "J1",
+            264,
+            300
+          ]
+        ],
+        "M5": [
+          [
+            "J3",
+            0,
+            45
+          ],
+          [
+            "J2",
+            45,
+            49
+          ],
+          [
+            "J4",
+            49,
+            60
+          ],
+          [
+            "J1",
+            249,
+            264
+          ]
+        ],
+        "M6": [
+          [
+            "J7",
+            11,
+            15
+          ],
+          [
+            "J5",
+            93,
+            103
+          ],
+          [
+            "J6",
+            183,
+            222
+          ],
+          [
+            "J8",
+            223,
+            247
+          ]
+        ],
+        "M7": [
+          [
+            "J7",
+            29,
+            41
+          ],
+          [
+            "J3",
+            45,
+            69
+          ],
+          [
+            "J5",
+            103,
+            108
+          ],
+          [
+            "J8",
+            187,
+            223
+          ]
+        ],
+        "M8": [
+          [
+            "J7",
+            0,
+            11
+          ],
+          [
+            "J4",
+            12,
+            19
+          ],
+          [
+            "J5",
+            124,
+            135
+          ],
+          [
+            "J6",
+            156,
+            183
+          ],
+          [
+            "J2",
+            183,
+            194
+          ],
+          [
+            "J3",
+            198,
+            222
+          ],
+          [
+            "J1",
+            222,
+            249
+          ],
+          [
+            "J8",
+            268,
+            283
+          ]
+        ]
+      },
+      "makespan": 300,
+      "objective": 6000,
+      "weighted_tardiness": 0
+    },
+    "jobs": [
+      {
+        "due_date": 414,
+        "job_id": 1,
+        "operations": [
+          {
+            "duration": 54,
+            "machine_name": "M2"
+          },
+          {
+            "duration": 48,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 51,
+            "machine_name": "M3"
+          },
+          {
+            "duration": 27,
+            "machine_name": "M8"
+          },
+          {
+            "duration": 15,
+            "machine_name": "M5"
+          },
+          {
+            "duration": 36,
+            "machine_name": "M4"
+          }
+        ],
+        "tardiness_weight": 3
+      },
+      {
+        "due_date": 268,
+        "job_id": 2,
+        "operations": [
+          {
+            "duration": 14,
+            "machine_name": "M3"
+          },
+          {
+            "duration": 4,
+            "machine_name": "M5"
+          },
+          {
+            "duration": 13,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 14,
+            "machine_name": "M4"
+          },
+          {
+            "duration": 11,
+            "machine_name": "M8"
+          },
+          {
+            "duration": 15,
+            "machine_name": "M2"
+          }
+        ],
+        "tardiness_weight": 2
+      },
+      {
+        "due_date": 384,
+        "job_id": 3,
+        "operations": [
+          {
+            "duration": 45,
+            "machine_name": "M5"
+          },
+          {
+            "duration": 24,
+            "machine_name": "M7"
+          },
+          {
+            "duration": 33,
+            "machine_name": "M3"
+          },
+          {
+            "duration": 36,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 24,
+            "machine_name": "M8"
+          },
+          {
+            "duration": 51,
+            "machine_name": "M2"
+          }
+        ],
+        "tardiness_weight": 3
+      },
+      {
+        "due_date": 146,
+        "job_id": 4,
+        "operations": [
+          {
+            "duration": 12,
+            "machine_name": "M2"
+          },
+          {
+            "duration": 7,
+            "machine_name": "M8"
+          },
+          {
+            "duration": 11,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 11,
+            "machine_name": "M5"
+          },
+          {
+            "duration": 15,
+            "machine_name": "M3"
+          },
+          {
+            "duration": 10,
+            "machine_name": "M4"
+          }
+        ],
+        "tardiness_weight": 6
+      },
+      {
+        "due_date": 252,
+        "job_id": 5,
+        "operations": [
+          {
+            "duration": 12,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 10,
+            "machine_name": "M6"
+          },
+          {
+            "duration": 5,
+            "machine_name": "M7"
+          },
+          {
+            "duration": 16,
+            "machine_name": "M2"
+          },
+          {
+            "duration": 11,
+            "machine_name": "M8"
+          },
+          {
+            "duration": 14,
+            "machine_name": "M3"
+          }
+        ],
+        "tardiness_weight": 3
+      },
+      {
+        "due_date": 402,
+        "job_id": 6,
+        "operations": [
+          {
+            "duration": 33,
+            "machine_name": "M2"
+          },
+          {
+            "duration": 36,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 48,
+            "machine_name": "M3"
+          },
+          {
+            "duration": 27,
+            "machine_name": "M4"
+          },
+          {
+            "duration": 27,
+            "machine_name": "M8"
+          },
+          {
+            "duration": 39,
+            "machine_name": "M6"
+          }
+        ],
+        "tardiness_weight": 2
+      },
+      {
+        "due_date": 245,
+        "job_id": 7,
+        "operations": [
+          {
+            "duration": 11,
+            "machine_name": "M8"
+          },
+          {
+            "duration": 4,
+            "machine_name": "M6"
+          },
+          {
+            "duration": 14,
+            "machine_name": "M3"
+          },
+          {
+            "duration": 12,
+            "machine_name": "M7"
+          },
+          {
+            "duration": 13,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 14,
+            "machine_name": "M2"
+          }
+        ],
+        "tardiness_weight": 3
+      },
+      {
+        "due_date": 347,
+        "job_id": 8,
+        "operations": [
+          {
+            "duration": 33,
+            "machine_name": "M1"
+          },
+          {
+            "duration": 51,
+            "machine_name": "M2"
+          },
+          {
+            "duration": 12,
+            "machine_name": "M4"
+          },
+          {
+            "duration": 36,
+            "machine_name": "M7"
+          },
+          {
+            "duration": 24,
+            "machine_name": "M6"
+          },
+          {
+            "duration": 15,
+            "machine_name": "M8"
+          }
+        ],
+        "tardiness_weight": 3
+      }
+    ],
+    "metric_name": "objective",
+    "n_jobs": 8,
+    "n_machines": 8,
+    "problem_statement": "You run a job-shop with 8 jobs across 8 machines (M1..M8).\nEach job is an ordered sequence of operations. Machines are exclusive (at most one operation per machine at a time) and operations cannot be preempted. Each job must respect its listed operation order.\n\nObjective:\n- makespan = the completion time of the last job\n- weighted_tardiness = sum over jobs of tardiness_weight * max(0, completion_time - due_date)\n- objective = 20 * makespan + weighted_tardiness\n- lower is better\n\nInstance data:\n- Job J1: M2 (54) -> M1 (48) -> M3 (51) -> M8 (27) -> M5 (15) -> M4 (36); due_date=414; tardiness_weight=3\n- Job J2: M3 (14) -> M5 (4) -> M1 (13) -> M4 (14) -> M8 (11) -> M2 (15); due_date=268; tardiness_weight=2\n- Job J3: M5 (45) -> M7 (24) -> M3 (33) -> M1 (36) -> M8 (24) -> M2 (51); due_date=384; tardiness_weight=3\n- Job J4: M2 (12) -> M8 (7) -> M1 (11) -> M5 (11) -> M3 (15) -> M4 (10); due_date=146; tardiness_weight=6\n- Job J5: M1 (12) -> M6 (10) -> M7 (5) -> M2 (16) -> M8 (11) -> M3 (14); due_date=252; tardiness_weight=3\n- Job J6: M2 (33) -> M1 (36) -> M3 (48) -> M4 (27) -> M8 (27) -> M6 (39); due_date=402; tardiness_weight=2\n- Job J7: M8 (11) -> M6 (4) -> M3 (14) -> M7 (12) -> M1 (13) -> M2 (14); due_date=245; tardiness_weight=3\n- Job J8: M1 (33) -> M2 (51) -> M4 (12) -> M7 (36) -> M6 (24) -> M8 (15); due_date=347; tardiness_weight=3\n\nConstraints:\n- Each machine handles at most one operation at a time.\n- Each listed operation must appear exactly once in your schedule.\n- Start/end times must be non-negative integers and end - start must equal the listed operation duration.\n- Your BEST_GUESS JSON must contain a `machines` object keyed by machine name (M1..M8), plus `makespan`, `weighted_tardiness`, and `objective`.\n\nA deterministic feasible baseline schedule is provided below. If you stop immediately or fail to produce a valid schedule, this baseline is what gets scored.\nBaseline makespan: 372\nBaseline weighted_tardiness: 0\nBaseline objective: 7440\nBaseline schedule summary:\nM1: J5[0-12],J8[12-45],J4[45-56],J7[56-69],J2[69-82],J6[82-118],J3[129-165],J1[195-243]\nM2: J4[0-12],J6[12-45],J5[45-61],J8[61-112],J7[112-126],J2[126-141],J1[141-195],J3[195-246]\nM3: J2[0-14],J7[15-29],J4[67-82],J5[82-96],J3[96-129],J6[129-177],J1[243-294]\nM4: J4[82-92],J2[92-106],J8[112-124],J6[177-204],J1[336-372]\nM5: J3[0-45],J2[45-49],J4[56-67],J1[321-336]\nM6: J7[11-15],J5[15-25],J8[160-184],J6[231-270]\nM7: J5[25-30],J7[30-42],J3[45-69],J8[124-160]\nM8: J7[0-11],J4[12-19],J5[61-72],J2[106-117],J3[165-189],J8[189-204],J6[204-231],J1[294-321]\nMakespan: 372\nWeighted tardiness: 0\nObjective: 7440\n",
+    "seed": 5
+  },
+  "seed": 5,
+  "value_cap": 100.0,
+  "wall_budget_s": 1800
+}

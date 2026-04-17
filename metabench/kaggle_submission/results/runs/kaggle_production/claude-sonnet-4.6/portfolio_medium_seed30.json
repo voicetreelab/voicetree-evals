@@ -1,0 +1,491 @@
+{
+  "detail_row": {
+    "cf_delta": 0.0,
+    "cf_parsed": {},
+    "class": "portfolio",
+    "difficulty": "medium",
+    "error": "InternalServerError: Error code: 503 - {'message': 'The requested model is currently unavailable.', 'type': 'invalid_request_error'}",
+    "feasible": false,
+    "final_evaluation": {
+      "components": [
+        {
+          "class": "mwis",
+          "details": {
+            "baseline_gap_pct": 12.068965517241379,
+            "baseline_objective": 408,
+            "failure_reason": "submission must be an object",
+            "optimal_objective": 464
+          },
+          "feasible": false,
+          "gap_pct": 100.0,
+          "problem_id": "mwis_medium_seed30",
+          "value_cap": 33.0
+        },
+        {
+          "class": "graphcol",
+          "details": {
+            "baseline_scored_cost": 15.0,
+            "error": "submission must be an object with an assignment mapping",
+            "gold_scored_cost": 4.0
+          },
+          "feasible": false,
+          "gap_pct": Infinity,
+          "problem_id": "graphcol_medium_seed30",
+          "value_cap": 33.0
+        },
+        {
+          "class": "cjs",
+          "details": {
+            "baseline_objective": 162,
+            "failure_reason": null,
+            "gap_pct": 90.58823529411765,
+            "gold_objective": 85,
+            "metric_name": "makespan",
+            "verified_makespan": 162,
+            "verified_objective": 162
+          },
+          "feasible": true,
+          "gap_pct": 90.58823529411765,
+          "problem_id": "cjs_medium_seed30",
+          "value_cap": 34.0
+        }
+      ],
+      "details": {
+        "components": [
+          {
+            "class": "mwis",
+            "details": {
+              "baseline_gap_pct": 12.068965517241379,
+              "baseline_objective": 408,
+              "failure_reason": "submission must be an object",
+              "optimal_objective": 464
+            },
+            "feasible": false,
+            "gap_pct": 100.0,
+            "problem_id": "mwis_medium_seed30",
+            "value_cap": 33.0
+          },
+          {
+            "class": "graphcol",
+            "details": {
+              "baseline_scored_cost": 15.0,
+              "error": "submission must be an object with an assignment mapping",
+              "gold_scored_cost": 4.0
+            },
+            "feasible": false,
+            "gap_pct": Infinity,
+            "problem_id": "graphcol_medium_seed30",
+            "value_cap": 33.0
+          },
+          {
+            "class": "cjs",
+            "details": {
+              "baseline_objective": 162,
+              "failure_reason": null,
+              "gap_pct": 90.58823529411765,
+              "gold_objective": 85,
+              "metric_name": "makespan",
+              "verified_makespan": 162,
+              "verified_objective": 162
+            },
+            "feasible": true,
+            "gap_pct": 90.58823529411765,
+            "problem_id": "cjs_medium_seed30",
+            "value_cap": 34.0
+          }
+        ]
+      },
+      "mode": "portfolio",
+      "submission": {
+        "cjs_medium_seed30": {
+          "factory_a": {
+            "MA1": [
+              [
+                "J1",
+                9,
+                18
+              ],
+              [
+                "J2",
+                28,
+                31
+              ],
+              [
+                "J3",
+                58,
+                66
+              ],
+              [
+                "J4",
+                82,
+                87
+              ],
+              [
+                "J5",
+                104,
+                110
+              ]
+            ],
+            "MA2": [
+              [
+                "J1",
+                23,
+                25
+              ],
+              [
+                "J2",
+                31,
+                36
+              ],
+              [
+                "J3",
+                74,
+                79
+              ],
+              [
+                "J4",
+                87,
+                96
+              ],
+              [
+                "J5",
+                96,
+                104
+              ]
+            ],
+            "MA3": [
+              [
+                "J1",
+                8,
+                9
+              ],
+              [
+                "J2",
+                36,
+                41
+              ],
+              [
+                "J3",
+                56,
+                58
+              ],
+              [
+                "J4",
+                63,
+                68
+              ],
+              [
+                "J5",
+                123,
+                132
+              ]
+            ],
+            "MA4": [
+              [
+                "J1",
+                22,
+                23
+              ],
+              [
+                "J2",
+                23,
+                28
+              ],
+              [
+                "J3",
+                28,
+                30
+              ],
+              [
+                "J4",
+                68,
+                76
+              ],
+              [
+                "J5",
+                115,
+                123
+              ]
+            ],
+            "MA5": [
+              [
+                "J1",
+                0,
+                8
+              ],
+              [
+                "J2",
+                46,
+                55
+              ],
+              [
+                "J3",
+                55,
+                56
+              ],
+              [
+                "J4",
+                56,
+                63
+              ],
+              [
+                "J5",
+                110,
+                115
+              ]
+            ],
+            "MA6": [
+              [
+                "J1",
+                18,
+                22
+              ],
+              [
+                "J2",
+                41,
+                46
+              ],
+              [
+                "J3",
+                66,
+                74
+              ],
+              [
+                "J4",
+                76,
+                82
+              ],
+              [
+                "J5",
+                82,
+                85
+              ]
+            ]
+          },
+          "factory_b": {
+            "MB1": [
+              [
+                "J1",
+                25,
+                28
+              ],
+              [
+                "J2",
+                57,
+                60
+              ],
+              [
+                "J3",
+                103,
+                106
+              ],
+              [
+                "J4",
+                123,
+                124
+              ],
+              [
+                "J5",
+                138,
+                145
+              ]
+            ],
+            "MB2": [
+              [
+                "J1",
+                59,
+                61
+              ],
+              [
+                "J2",
+                72,
+                73
+              ],
+              [
+                "J3",
+                100,
+                103
+              ],
+              [
+                "J4",
+                117,
+                123
+              ],
+              [
+                "J5",
+                154,
+                156
+              ]
+            ],
+            "MB3": [
+              [
+                "J1",
+                44,
+                50
+              ],
+              [
+                "J2",
+                60,
+                64
+              ],
+              [
+                "J3",
+                87,
+                92
+              ],
+              [
+                "J4",
+                100,
+                103
+              ],
+              [
+                "J5",
+                145,
+                154
+              ]
+            ],
+            "MB4": [
+              [
+                "J1",
+                28,
+                37
+              ],
+              [
+                "J2",
+                64,
+                70
+              ],
+              [
+                "J3",
+                92,
+                97
+              ],
+              [
+                "J4",
+                97,
+                100
+              ],
+              [
+                "J5",
+                132,
+                135
+              ]
+            ],
+            "MB5": [
+              [
+                "J1",
+                37,
+                44
+              ],
+              [
+                "J2",
+                55,
+                57
+              ],
+              [
+                "J3",
+                97,
+                100
+              ],
+              [
+                "J4",
+                108,
+                117
+              ],
+              [
+                "J5",
+                135,
+                138
+              ]
+            ],
+            "MB6": [
+              [
+                "J1",
+                50,
+                59
+              ],
+              [
+                "J2",
+                70,
+                72
+              ],
+              [
+                "J3",
+                79,
+                87
+              ],
+              [
+                "J4",
+                103,
+                108
+              ],
+              [
+                "J5",
+                156,
+                162
+              ]
+            ]
+          },
+          "makespan": 162
+        },
+        "graphcol_medium_seed30": null,
+        "mwis_medium_seed30": null
+      }
+    },
+    "final_submission_source": "baseline",
+    "gap_pct": null,
+    "id": "portfolio_medium_seed30",
+    "n_exec_turns": 0,
+    "parse_events": [],
+    "parse_path": "baseline_only",
+    "parsed": {},
+    "score": 3.132352828150033,
+    "score_after_cf": 3.132352828150033,
+    "score_at_stop": 3.132352828150033,
+    "seed": 30,
+    "stop_reason": "error",
+    "transcript": [],
+    "wall_s": 1.3529552859999967
+  },
+  "effective_model": "claude-sonnet-4.6",
+  "requested_model": "claude-sonnet-4.6",
+  "run_file": {
+    "filename": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-run_param_id_178_claude-sonnet-4.6.run.json",
+    "param_id": 178
+  },
+  "run_json": {
+    "conversations": [
+      {
+        "id": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-5d25f2df",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      },
+      {
+        "id": "run-portfolio-medium-seed30-42e9bb95",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      }
+    ],
+    "endTime": "2026-04-16T20:33:44.358027Z",
+    "modelVersion": {
+      "slug": "claude-sonnet-4.6"
+    },
+    "pyRunId": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-Run #179",
+    "results": [
+      {
+        "numericResult": {
+          "value": 3.132352828150033
+        },
+        "type": "AGGREGATED"
+      }
+    ],
+    "startTime": "2026-04-16T20:33:43.002633Z",
+    "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+    "taskVersion": {
+      "definition": "    @kbench.task(name=TASK_NAME)\n    def detailed_run(\n        llm,\n        id,\n        class_,\n        difficulty,\n        seed,\n        instance,\n        gold_objective,\n        baseline_objective,\n        value_cap,\n        wall_budget_s=1800,\n        components=None,\n    ):\n        del wall_budget_s\n        inst = module._coerce_json(instance, default=None)\n        if not isinstance(inst, dict):\n            raise TypeError(\"instance must be a dict or JSON object string\")\n        normalized_components = module._normalize_components(components)\n\n        row = module.run_instance(\n            llm=llm,\n            instance=inst,\n            cls=str(class_),\n            difficulty=str(difficulty),\n            seed=int(seed),\n            gold_objective=float(gold_objective),\n            baseline_objective=float(baseline_objective),\n            value_cap=float(value_cap),\n            components=normalized_components,\n        )\n        final_submission_source, final_evaluation = evaluate_final_submission(\n            row,\n            instance=inst,\n            cls=str(class_),\n            components=normalized_components,\n        )\n        gap_pct = final_evaluation.get(\"gap_pct\")\n        if gap_pct is None:\n            gap_pct = final_evaluation.get(\"details\", {}).get(\"gap_pct\")\n        detail = {\n            \"id\": str(id),\n            \"class\": str(class_),\n            \"difficulty\": str(difficulty),\n            \"seed\": int(seed),\n            \"score\": float(row[\"score\"]),\n            \"score_at_stop\": float(row[\"score_at_stop\"]),\n            \"score_after_cf\": float(row[\"score_after_cf\"]),\n            \"cf_delta\": float(row[\"cf_delta\"]),\n            \"stop_reason\": row[\"stop_reason\"],\n            \"wall_s\": float(row[\"wall_s\"]),\n            \"n_exec_turns\": int(row[\"n_exec_turns\"]),\n            \"error\": row[\"error\"],\n            \"parsed\": row[\"parsed\"],\n            \"cf_parsed\": row[\"cf_parsed\"],\n            \"transcript\": row[\"transcript\"],\n            \"parse_path\": infer_parse_path(row),\n            \"parse_events\": row.get(\"parse_events\"),\n            \"feasible\": infer_feasible(final_evaluation),\n            \"final_submission_source\": final_submission_source,\n            \"final_evaluation\": final_evaluation,\n            \"gap_pct\": gap_pct,\n        }\n        detail_rows.append(detail)\n        return float(row[\"score\"])\n",
+      "description": "",
+      "name": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z",
+      "versionNumber": 1
+    }
+  }
+}

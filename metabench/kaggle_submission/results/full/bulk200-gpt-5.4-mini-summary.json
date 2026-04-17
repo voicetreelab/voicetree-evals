@@ -1,0 +1,38 @@
+{
+  "model": "gpt-5.4-mini",
+  "model_slug": "gpt-5.4-mini",
+  "rows": [
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": true,
+      "id": "mbj_medium_seed1",
+      "score": 74.09522942765592
+    },
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": true,
+      "id": "mbj_medium_seed5",
+      "score": 75.84693541500019
+    },
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": true,
+      "id": "mbj_hard_seed1",
+      "score": 79.9085447051198
+    },
+    {
+      "attempts": 1,
+      "billing_error": false,
+      "error": null,
+      "feasible": true,
+      "id": "portfolio_medium_seed50",
+      "score": 42.139445403693
+    }
+  ]
+}

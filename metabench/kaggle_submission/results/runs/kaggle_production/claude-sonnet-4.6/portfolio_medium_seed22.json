@@ -1,0 +1,560 @@
+{
+  "detail_row": {
+    "cf_delta": 0.0,
+    "cf_parsed": {},
+    "class": "portfolio",
+    "difficulty": "medium",
+    "error": "InternalServerError: Error code: 503 - {'message': 'The requested model is currently unavailable.', 'type': 'invalid_request_error'}",
+    "feasible": false,
+    "final_evaluation": {
+      "components": [
+        {
+          "class": "steiner",
+          "details": {
+            "baseline_cost": 76,
+            "computed_cost": 76,
+            "edge_cost": 31,
+            "failure_reason": null,
+            "gold_cost": 63,
+            "normalized_submission": {
+              "edges": [
+                [
+                  "Cliff",
+                  "Mill"
+                ],
+                [
+                  "Mill",
+                  "Port"
+                ],
+                [
+                  "Mill",
+                  "Pine"
+                ]
+              ],
+              "frequencies": {
+                "Cliff": 1,
+                "Mill": 3,
+                "Pine": 2,
+                "Port": 1
+              }
+            },
+            "num_frequencies_used": 3,
+            "scored_cost": 76,
+            "used_baseline_fallback": false
+          },
+          "feasible": true,
+          "gap_pct": 20.634920634920636,
+          "problem_id": "steiner_medium_seed22",
+          "value_cap": 33.0
+        },
+        {
+          "class": "ve",
+          "details": {
+            "failure_reason": "BEST_GUESS must be a JSON object"
+          },
+          "feasible": false,
+          "gap_pct": 100.0,
+          "problem_id": "ve_medium_seed22",
+          "value_cap": 33.0
+        },
+        {
+          "class": "cjs",
+          "details": {
+            "baseline_objective": 158,
+            "failure_reason": null,
+            "gap_pct": 107.89473684210526,
+            "gold_objective": 76,
+            "metric_name": "makespan",
+            "verified_makespan": 158,
+            "verified_objective": 158
+          },
+          "feasible": true,
+          "gap_pct": 107.89473684210526,
+          "problem_id": "cjs_medium_seed22",
+          "value_cap": 34.0
+        }
+      ],
+      "details": {
+        "components": [
+          {
+            "class": "steiner",
+            "details": {
+              "baseline_cost": 76,
+              "computed_cost": 76,
+              "edge_cost": 31,
+              "failure_reason": null,
+              "gold_cost": 63,
+              "normalized_submission": {
+                "edges": [
+                  [
+                    "Cliff",
+                    "Mill"
+                  ],
+                  [
+                    "Mill",
+                    "Port"
+                  ],
+                  [
+                    "Mill",
+                    "Pine"
+                  ]
+                ],
+                "frequencies": {
+                  "Cliff": 1,
+                  "Mill": 3,
+                  "Pine": 2,
+                  "Port": 1
+                }
+              },
+              "num_frequencies_used": 3,
+              "scored_cost": 76,
+              "used_baseline_fallback": false
+            },
+            "feasible": true,
+            "gap_pct": 20.634920634920636,
+            "problem_id": "steiner_medium_seed22",
+            "value_cap": 33.0
+          },
+          {
+            "class": "ve",
+            "details": {
+              "failure_reason": "BEST_GUESS must be a JSON object"
+            },
+            "feasible": false,
+            "gap_pct": 100.0,
+            "problem_id": "ve_medium_seed22",
+            "value_cap": 33.0
+          },
+          {
+            "class": "cjs",
+            "details": {
+              "baseline_objective": 158,
+              "failure_reason": null,
+              "gap_pct": 107.89473684210526,
+              "gold_objective": 76,
+              "metric_name": "makespan",
+              "verified_makespan": 158,
+              "verified_objective": 158
+            },
+            "feasible": true,
+            "gap_pct": 107.89473684210526,
+            "problem_id": "cjs_medium_seed22",
+            "value_cap": 34.0
+          }
+        ]
+      },
+      "mode": "portfolio",
+      "submission": {
+        "cjs_medium_seed22": {
+          "factory_a": {
+            "MA1": [
+              [
+                "J1",
+                7,
+                10
+              ],
+              [
+                "J2",
+                10,
+                15
+              ],
+              [
+                "J3",
+                72,
+                79
+              ],
+              [
+                "J4",
+                79,
+                83
+              ],
+              [
+                "J5",
+                122,
+                124
+              ]
+            ],
+            "MA2": [
+              [
+                "J1",
+                0,
+                1
+              ],
+              [
+                "J2",
+                37,
+                43
+              ],
+              [
+                "J3",
+                56,
+                64
+              ],
+              [
+                "J4",
+                103,
+                106
+              ],
+              [
+                "J5",
+                106,
+                114
+              ]
+            ],
+            "MA3": [
+              [
+                "J1",
+                10,
+                19
+              ],
+              [
+                "J2",
+                36,
+                37
+              ],
+              [
+                "J3",
+                70,
+                72
+              ],
+              [
+                "J4",
+                94,
+                103
+              ],
+              [
+                "J5",
+                124,
+                129
+              ]
+            ],
+            "MA4": [
+              [
+                "J1",
+                26,
+                27
+              ],
+              [
+                "J2",
+                43,
+                52
+              ],
+              [
+                "J3",
+                52,
+                54
+              ],
+              [
+                "J4",
+                91,
+                92
+              ],
+              [
+                "J5",
+                116,
+                122
+              ]
+            ],
+            "MA5": [
+              [
+                "J1",
+                19,
+                26
+              ],
+              [
+                "J2",
+                26,
+                29
+              ],
+              [
+                "J3",
+                64,
+                70
+              ],
+              [
+                "J4",
+                92,
+                94
+              ],
+              [
+                "J5",
+                114,
+                116
+              ]
+            ],
+            "MA6": [
+              [
+                "J1",
+                1,
+                7
+              ],
+              [
+                "J2",
+                29,
+                36
+              ],
+              [
+                "J3",
+                54,
+                56
+              ],
+              [
+                "J4",
+                83,
+                91
+              ],
+              [
+                "J5",
+                129,
+                131
+              ]
+            ]
+          },
+          "factory_b": {
+            "MB1": [
+              [
+                "J1",
+                28,
+                33
+              ],
+              [
+                "J2",
+                74,
+                79
+              ],
+              [
+                "J3",
+                86,
+                87
+              ],
+              [
+                "J4",
+                113,
+                117
+              ],
+              [
+                "J5",
+                152,
+                158
+              ]
+            ],
+            "MB2": [
+              [
+                "J1",
+                49,
+                52
+              ],
+              [
+                "J2",
+                53,
+                60
+              ],
+              [
+                "J3",
+                100,
+                104
+              ],
+              [
+                "J4",
+                117,
+                124
+              ],
+              [
+                "J5",
+                135,
+                144
+              ]
+            ],
+            "MB3": [
+              [
+                "J1",
+                33,
+                38
+              ],
+              [
+                "J2",
+                52,
+                53
+              ],
+              [
+                "J3",
+                87,
+                91
+              ],
+              [
+                "J4",
+                112,
+                113
+              ],
+              [
+                "J5",
+                144,
+                150
+              ]
+            ],
+            "MB4": [
+              [
+                "J1",
+                45,
+                49
+              ],
+              [
+                "J2",
+                60,
+                65
+              ],
+              [
+                "J3",
+                91,
+                100
+              ],
+              [
+                "J4",
+                110,
+                112
+              ],
+              [
+                "J5",
+                150,
+                152
+              ]
+            ],
+            "MB5": [
+              [
+                "J1",
+                38,
+                45
+              ],
+              [
+                "J2",
+                65,
+                74
+              ],
+              [
+                "J3",
+                79,
+                86
+              ],
+              [
+                "J4",
+                106,
+                110
+              ],
+              [
+                "J5",
+                132,
+                135
+              ]
+            ],
+            "MB6": [
+              [
+                "J1",
+                27,
+                28
+              ],
+              [
+                "J2",
+                79,
+                88
+              ],
+              [
+                "J3",
+                104,
+                111
+              ],
+              [
+                "J4",
+                124,
+                126
+              ],
+              [
+                "J5",
+                131,
+                132
+              ]
+            ]
+          },
+          "makespan": 158
+        },
+        "steiner_medium_seed22": {
+          "edges": [
+            [
+              "Cliff",
+              "Mill"
+            ],
+            [
+              "Mill",
+              "Port"
+            ],
+            [
+              "Mill",
+              "Pine"
+            ]
+          ],
+          "frequencies": {
+            "Cliff": 1,
+            "Mill": 3,
+            "Pine": 2,
+            "Port": 1
+          }
+        },
+        "ve_medium_seed22": null
+      }
+    },
+    "final_submission_source": "baseline",
+    "gap_pct": null,
+    "id": "portfolio_medium_seed22",
+    "n_exec_turns": 0,
+    "parse_events": [],
+    "parse_path": "baseline_only",
+    "parsed": {},
+    "score": 26.117031236026147,
+    "score_after_cf": 26.117031236026147,
+    "score_at_stop": 26.117031236026147,
+    "seed": 22,
+    "stop_reason": "error",
+    "transcript": [],
+    "wall_s": 1.4689128890004213
+  },
+  "effective_model": "claude-sonnet-4.6",
+  "requested_model": "claude-sonnet-4.6",
+  "run_file": {
+    "filename": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-run_param_id_112_claude-sonnet-4.6.run.json",
+    "param_id": 112
+  },
+  "run_json": {
+    "conversations": [
+      {
+        "id": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-00145142",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      },
+      {
+        "id": "run-portfolio-medium-seed22-99c3bafb",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      }
+    ],
+    "endTime": "2026-04-16T20:32:10.564392Z",
+    "modelVersion": {
+      "slug": "claude-sonnet-4.6"
+    },
+    "pyRunId": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-Run #113",
+    "results": [
+      {
+        "numericResult": {
+          "value": 26.117031236026147
+        },
+        "type": "AGGREGATED"
+      }
+    ],
+    "startTime": "2026-04-16T20:32:09.092270Z",
+    "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+    "taskVersion": {
+      "definition": "    @kbench.task(name=TASK_NAME)\n    def detailed_run(\n        llm,\n        id,\n        class_,\n        difficulty,\n        seed,\n        instance,\n        gold_objective,\n        baseline_objective,\n        value_cap,\n        wall_budget_s=1800,\n        components=None,\n    ):\n        del wall_budget_s\n        inst = module._coerce_json(instance, default=None)\n        if not isinstance(inst, dict):\n            raise TypeError(\"instance must be a dict or JSON object string\")\n        normalized_components = module._normalize_components(components)\n\n        row = module.run_instance(\n            llm=llm,\n            instance=inst,\n            cls=str(class_),\n            difficulty=str(difficulty),\n            seed=int(seed),\n            gold_objective=float(gold_objective),\n            baseline_objective=float(baseline_objective),\n            value_cap=float(value_cap),\n            components=normalized_components,\n        )\n        final_submission_source, final_evaluation = evaluate_final_submission(\n            row,\n            instance=inst,\n            cls=str(class_),\n            components=normalized_components,\n        )\n        gap_pct = final_evaluation.get(\"gap_pct\")\n        if gap_pct is None:\n            gap_pct = final_evaluation.get(\"details\", {}).get(\"gap_pct\")\n        detail = {\n            \"id\": str(id),\n            \"class\": str(class_),\n            \"difficulty\": str(difficulty),\n            \"seed\": int(seed),\n            \"score\": float(row[\"score\"]),\n            \"score_at_stop\": float(row[\"score_at_stop\"]),\n            \"score_after_cf\": float(row[\"score_after_cf\"]),\n            \"cf_delta\": float(row[\"cf_delta\"]),\n            \"stop_reason\": row[\"stop_reason\"],\n            \"wall_s\": float(row[\"wall_s\"]),\n            \"n_exec_turns\": int(row[\"n_exec_turns\"]),\n            \"error\": row[\"error\"],\n            \"parsed\": row[\"parsed\"],\n            \"cf_parsed\": row[\"cf_parsed\"],\n            \"transcript\": row[\"transcript\"],\n            \"parse_path\": infer_parse_path(row),\n            \"parse_events\": row.get(\"parse_events\"),\n            \"feasible\": infer_feasible(final_evaluation),\n            \"final_submission_source\": final_submission_source,\n            \"final_evaluation\": final_evaluation,\n            \"gap_pct\": gap_pct,\n        }\n        detail_rows.append(detail)\n        return float(row[\"score\"])\n",
+      "description": "",
+      "name": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z",
+      "versionNumber": 1
+    }
+  }
+}

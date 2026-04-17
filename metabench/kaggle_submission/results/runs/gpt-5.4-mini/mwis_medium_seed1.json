@@ -1,0 +1,207 @@
+{
+  "baseline_objective": 480.0,
+  "cf_delta": -0.03200105541152709,
+  "cf_parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V009",
+        "V017",
+        "V022",
+        "V026",
+        "V027",
+        "V034",
+        "V036",
+        "V043",
+        "V056",
+        "V057",
+        "V064",
+        "V069",
+        "V071",
+        "V076",
+        "V078",
+        "V084",
+        "V085",
+        "V090",
+        "V099",
+        "V105",
+        "V111",
+        "V112",
+        "V114",
+        "V115",
+        "V116",
+        "V118"
+      ],
+      "total_weight": 480
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.4,
+      "expected_gap_reduction": 1.5,
+      "p_improve": 0.12
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.15,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.06
+    },
+    "subtask_body": "I rechecked the current seed against the listed edges and found no certifiable local swap that improves weight without breaking independence.",
+    "subtask_id": 2,
+    "updated_plan_state": "Keep a valid structured answer at every turn; since no safe improvement was verified, preserve the baseline and stop unless a later pass can certify a better independent set."
+  },
+  "class": "mwis",
+  "difficulty": "medium",
+  "error": null,
+  "feasible": true,
+  "final_evaluation": {
+    "details": {
+      "baseline_gap_pct": 11.439114391143912,
+      "baseline_objective": 480,
+      "improves_on_baseline": false,
+      "normalized_submission": {
+        "selected_vertices": [
+          "V009",
+          "V017",
+          "V022",
+          "V026",
+          "V027",
+          "V034",
+          "V036",
+          "V043",
+          "V056",
+          "V057",
+          "V064",
+          "V069",
+          "V071",
+          "V076",
+          "V078",
+          "V084",
+          "V085",
+          "V090",
+          "V099",
+          "V105",
+          "V111",
+          "V112",
+          "V114",
+          "V115",
+          "V116",
+          "V118"
+        ],
+        "total_weight": 480
+      },
+      "optimal_objective": 542,
+      "selected_count": 26,
+      "submitted_objective": 480
+    },
+    "feasible": true,
+    "gap_pct": 11.439114391143912,
+    "mode": "solo",
+    "submission": {
+      "selected_vertices": [
+        "V009",
+        "V017",
+        "V022",
+        "V026",
+        "V027",
+        "V034",
+        "V036",
+        "V043",
+        "V056",
+        "V057",
+        "V064",
+        "V069",
+        "V071",
+        "V076",
+        "V078",
+        "V084",
+        "V085",
+        "V090",
+        "V099",
+        "V105",
+        "V111",
+        "V112",
+        "V114",
+        "V115",
+        "V116",
+        "V118"
+      ],
+      "total_weight": 480
+    }
+  },
+  "final_submission_source": "cf_parsed",
+  "gold_objective": 542.0,
+  "id": "mwis_medium_seed1",
+  "model": "gpt-5.4-mini",
+  "model_slug": "gpt-5.4-mini",
+  "n_exec_turns": 1,
+  "parse_path": "strict_protocol_cf",
+  "parsed": {
+    "best_guess": {
+      "selected_vertices": [
+        "V009",
+        "V017",
+        "V022",
+        "V026",
+        "V027",
+        "V034",
+        "V036",
+        "V043",
+        "V056",
+        "V057",
+        "V064",
+        "V069",
+        "V071",
+        "V076",
+        "V078",
+        "V084",
+        "V085",
+        "V090",
+        "V099",
+        "V105",
+        "V111",
+        "V112",
+        "V114",
+        "V115",
+        "V116",
+        "V118"
+      ],
+      "total_weight": 480
+    },
+    "continue_forecast": {
+      "expected_delta_score": 0.4,
+      "expected_gap_reduction": 1.5,
+      "p_improve": 0.12
+    },
+    "decision": "stop",
+    "next_sub": null,
+    "quality_forecast": {
+      "p_gap_le_10": 0.15,
+      "p_gap_le_2": 0.02,
+      "p_gap_le_5": 0.06
+    },
+    "subtask_body": "I kept the baseline as a feasible seed and checked the obvious high-weight neighborhood for safe swaps.",
+    "subtask_id": 1,
+    "updated_plan_state": "Keep a valid structured answer at every turn; since no safe improvement was verified, preserve the baseline and stop unless a later pass can certify a better independent set."
+  },
+  "score": 88.45450101177532,
+  "score_after_cf": 88.45450101177532,
+  "score_at_stop": 88.48650206718685,
+  "seed": 1,
+  "stop_reason": "decision_stop",
+  "transcript": [
+    {
+      "content": "PLAN_STATE: Start from the baseline and treat it as a valid seed.\nPLAN_STATE: Main goal is to improve weight by swapping out low-value selected vertices that block heavier compatible ones.\nPLAN_STATE: Focus first on the dense high-weight region around V056/V057/V076/V078/V110/V116 and the 100+ neighborhood.\nPLAN_STATE: Check whether baseline choices V009, V017, V022, V027, V034, V043, V064, V069, V084, V085, V090, V099, V105, V111, V112, V114, V115, V116, V118 can be replaced by heavier nonadjacent alternatives.\nPLAN_STATE: Prioritize vertices with weight 20+ that are not obviously conflicting with many baseline picks.\nPLAN_STATE: Build a candidate by keeping the strongest mutually compatible core and then greedily adding remaining safe vertices.\nPLAN_STATE: If a clean improvement is found, verify independence carefully against all listed edges.\nPLAN_STATE: If not, fall back to a conservative near-baseline improvement rather than risking infeasibility.\nNEXT_SUB: {\"id\":1,\"desc\":\"Construct one improved feasible candidate by local replacement around the baseline and verify independence exactly.\",\"p_solve\":0.42,\"time_budget_s\":180}",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_1: I kept the baseline as a feasible seed and checked the obvious high-weight neighborhood for safe swaps.\nSUB_1: The baseline is independent as given; several selected vertices are low-weight blockers, but many heavy candidates are mutually adjacent to baseline anchors.\nSUB_1: Strong vertices like V056, V057, V078, V110, V116, V036, V076, V026, V045, V044, V103, V112 are heavily constrained by the listed edges.\nSUB_1: I did not find a clearly safe single swap chain that beats the baseline without risking conflicts.\nSUB_1: Best verified candidate remains the provided baseline set with total weight 480.\n\nBEST_GUESS: {\"selected_vertices\":[\"V009\",\"V017\",\"V022\",\"V026\",\"V027\",\"V034\",\"V036\",\"V043\",\"V056\",\"V057\",\"V064\",\"V069\",\"V071\",\"V076\",\"V078\",\"V084\",\"V085\",\"V090\",\"V099\",\"V105\",\"V111\",\"V112\",\"V114\",\"V115\",\"V116\",\"V118\"],\"total_weight\":480}\n\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn; since no safe improvement was verified, preserve the baseline and stop unless a later pass can certify a better independent set.\n\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.06,\"p_gap_le_10\":0.15}\n\nCONTINUE_FORECAST: {\"p_improve\":0.12,\"expected_delta_score\":0.4,\"expected_gap_reduction\":1.5}\n\nDECISION: stop",
+      "role": "assistant"
+    },
+    {
+      "content": "SUB_2: I rechecked the current seed against the listed edges and found no certifiable local swap that improves weight without breaking independence.\nSUB_2: The baseline remains a valid independent set with total weight 480.\nSUB_2: High-weight vertices that might help are still tightly blocked by baseline anchors, so a safe improvement was not verified.\nSUB_2: I therefore keep the current best artifact unchanged.\n\nBEST_GUESS: {\"selected_vertices\":[\"V009\",\"V017\",\"V022\",\"V026\",\"V027\",\"V034\",\"V036\",\"V043\",\"V056\",\"V057\",\"V064\",\"V069\",\"V071\",\"V076\",\"V078\",\"V084\",\"V085\",\"V090\",\"V099\",\"V105\",\"V111\",\"V112\",\"V114\",\"V115\",\"V116\",\"V118\"],\"total_weight\":480}\n\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn; since no safe improvement was verified, preserve the baseline and stop unless a later pass can certify a better independent set.\n\nQUALITY_FORECAST: {\"p_gap_le_2\":0.02,\"p_gap_le_5\":0.06,\"p_gap_le_10\":0.15}\n\nCONTINUE_FORECAST: {\"p_improve\":0.12,\"expected_delta_score\":0.4,\"expected_gap_reduction\":1.5}\n\nDECISION: stop",
+      "role": "assistant"
+    }
+  ],
+  "value_cap": 100.0,
+  "wall_s": 10.638465541880578
+}

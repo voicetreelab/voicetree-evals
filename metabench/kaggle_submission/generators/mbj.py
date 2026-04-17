@@ -27,7 +27,7 @@ DIFFICULTY_CONFIGS = {
         "min_baseline_gap_pct": 15.0,
         "min_heuristic_spread_pct": 3.0,
         "max_heuristic_spread_pct": 60.0,
-        "cp_time_limit_s": 120.0,
+        "cp_time_limit_s": 300.0,
         "max_generation_attempts": 24,
     },
 }
@@ -165,6 +165,7 @@ def generate(seed: int, difficulty: str) -> dict[str, Any]:
         max_heuristic_spread_pct=float(config["max_heuristic_spread_pct"]),
         max_generation_attempts=int(config["max_generation_attempts"]),
         cp_time_limit_s=float(config["cp_time_limit_s"]),
+        require_optimal=True,
     )
     gold_objective = instance.optimal_objective
     baseline_objective = instance.baseline_objective
@@ -216,6 +217,7 @@ def build_instance(
     max_heuristic_spread_pct: float = 60.0,
     max_generation_attempts: int = 24,
     cp_time_limit_s: float = 60.0,
+    require_optimal: bool = True,
 ) -> MaskedBlockJobShopInstance:
     last_failure = "no candidate evaluated"
     for attempt_index in range(max_generation_attempts):
@@ -242,6 +244,13 @@ def build_instance(
             n_machines=candidate.n_machines,
             time_limit_s=cp_time_limit_s,
         )
+
+        if require_optimal and not solve_result.is_optimal:
+            last_failure = (
+                f"attempt {attempt_index} CP-SAT returned {solve_result.status_name} "
+                f"(not OPTIMAL) within {cp_time_limit_s}s"
+            )
+            continue
 
         baseline = _heuristic_by_name(heuristic_results, "baseline")
         baseline_gap_pct = 100.0 * (baseline.objective - solve_result.objective) / max(1, solve_result.objective)

@@ -1,6 +1,6 @@
 {
-  "id": "manumasson/new-benchmark-task-b3b46",
-  "title": "new-benchmark-task-b3b46",
+  "id": "manumasson/meta-hch-bench",
+  "title": "Meta-HCH-Bench",
   "code_file": "notebook.ipynb",
   "language": "python",
   "kernel_type": "notebook",

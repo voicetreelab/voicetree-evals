@@ -1,0 +1,564 @@
+{
+  "detail_row": {
+    "cf_delta": 0.0,
+    "cf_parsed": {},
+    "class": "portfolio",
+    "difficulty": "medium",
+    "error": "InternalServerError: Error code: 503 - {'message': 'The requested model is currently unavailable.', 'type': 'invalid_request_error'}",
+    "feasible": false,
+    "final_evaluation": {
+      "components": [
+        {
+          "class": "cjs",
+          "details": {
+            "baseline_objective": 148,
+            "failure_reason": null,
+            "gap_pct": 89.74358974358974,
+            "gold_objective": 78,
+            "metric_name": "makespan",
+            "verified_makespan": 148,
+            "verified_objective": 148
+          },
+          "feasible": true,
+          "gap_pct": 89.74358974358974,
+          "problem_id": "cjs_medium_seed4",
+          "value_cap": 33.0
+        },
+        {
+          "class": "steiner",
+          "details": {
+            "baseline_cost": 90,
+            "computed_cost": 90,
+            "edge_cost": 45,
+            "failure_reason": null,
+            "gold_cost": 65,
+            "normalized_submission": {
+              "edges": [
+                [
+                  "Cliff",
+                  "Port"
+                ],
+                [
+                  "Dune",
+                  "Port"
+                ],
+                [
+                  "Dune",
+                  "Mill"
+                ]
+              ],
+              "frequencies": {
+                "Cliff": 2,
+                "Dune": 1,
+                "Mill": 3,
+                "Port": 2
+              }
+            },
+            "num_frequencies_used": 3,
+            "scored_cost": 90,
+            "used_baseline_fallback": false
+          },
+          "feasible": true,
+          "gap_pct": 38.46153846153846,
+          "problem_id": "steiner_medium_seed4",
+          "value_cap": 33.0
+        },
+        {
+          "class": "tsp",
+          "details": {
+            "baseline_length": 469.77854312337354,
+            "failure_reason": "submission must provide tour as a list of city indices",
+            "optimal_length": 381.0261677310229
+          },
+          "feasible": false,
+          "gap_pct": 100.0,
+          "problem_id": "tsp_medium_seed4",
+          "value_cap": 34.0
+        }
+      ],
+      "details": {
+        "components": [
+          {
+            "class": "cjs",
+            "details": {
+              "baseline_objective": 148,
+              "failure_reason": null,
+              "gap_pct": 89.74358974358974,
+              "gold_objective": 78,
+              "metric_name": "makespan",
+              "verified_makespan": 148,
+              "verified_objective": 148
+            },
+            "feasible": true,
+            "gap_pct": 89.74358974358974,
+            "problem_id": "cjs_medium_seed4",
+            "value_cap": 33.0
+          },
+          {
+            "class": "steiner",
+            "details": {
+              "baseline_cost": 90,
+              "computed_cost": 90,
+              "edge_cost": 45,
+              "failure_reason": null,
+              "gold_cost": 65,
+              "normalized_submission": {
+                "edges": [
+                  [
+                    "Cliff",
+                    "Port"
+                  ],
+                  [
+                    "Dune",
+                    "Port"
+                  ],
+                  [
+                    "Dune",
+                    "Mill"
+                  ]
+                ],
+                "frequencies": {
+                  "Cliff": 2,
+                  "Dune": 1,
+                  "Mill": 3,
+                  "Port": 2
+                }
+              },
+              "num_frequencies_used": 3,
+              "scored_cost": 90,
+              "used_baseline_fallback": false
+            },
+            "feasible": true,
+            "gap_pct": 38.46153846153846,
+            "problem_id": "steiner_medium_seed4",
+            "value_cap": 33.0
+          },
+          {
+            "class": "tsp",
+            "details": {
+              "baseline_length": 469.77854312337354,
+              "failure_reason": "submission must provide tour as a list of city indices",
+              "optimal_length": 381.0261677310229
+            },
+            "feasible": false,
+            "gap_pct": 100.0,
+            "problem_id": "tsp_medium_seed4",
+            "value_cap": 34.0
+          }
+        ]
+      },
+      "mode": "portfolio",
+      "submission": {
+        "cjs_medium_seed4": {
+          "factory_a": {
+            "MA1": [
+              [
+                "J1",
+                5,
+                14
+              ],
+              [
+                "J2",
+                41,
+                50
+              ],
+              [
+                "J3",
+                78,
+                84
+              ],
+              [
+                "J4",
+                86,
+                94
+              ],
+              [
+                "J5",
+                94,
+                99
+              ]
+            ],
+            "MA2": [
+              [
+                "J1",
+                0,
+                1
+              ],
+              [
+                "J2",
+                8,
+                12
+              ],
+              [
+                "J3",
+                61,
+                70
+              ],
+              [
+                "J4",
+                70,
+                72
+              ],
+              [
+                "J5",
+                107,
+                114
+              ]
+            ],
+            "MA3": [
+              [
+                "J1",
+                1,
+                5
+              ],
+              [
+                "J2",
+                5,
+                8
+              ],
+              [
+                "J3",
+                52,
+                61
+              ],
+              [
+                "J4",
+                61,
+                65
+              ],
+              [
+                "J5",
+                99,
+                102
+              ]
+            ],
+            "MA4": [
+              [
+                "J1",
+                29,
+                34
+              ],
+              [
+                "J2",
+                34,
+                39
+              ],
+              [
+                "J3",
+                39,
+                47
+              ],
+              [
+                "J4",
+                81,
+                86
+              ],
+              [
+                "J5",
+                117,
+                123
+              ]
+            ],
+            "MA5": [
+              [
+                "J1",
+                14,
+                23
+              ],
+              [
+                "J2",
+                23,
+                31
+              ],
+              [
+                "J3",
+                70,
+                78
+              ],
+              [
+                "J4",
+                78,
+                81
+              ],
+              [
+                "J5",
+                102,
+                107
+              ]
+            ],
+            "MA6": [
+              [
+                "J1",
+                23,
+                29
+              ],
+              [
+                "J2",
+                39,
+                41
+              ],
+              [
+                "J3",
+                47,
+                52
+              ],
+              [
+                "J4",
+                72,
+                78
+              ],
+              [
+                "J5",
+                114,
+                117
+              ]
+            ]
+          },
+          "factory_b": {
+            "MB1": [
+              [
+                "J1",
+                37,
+                39
+              ],
+              [
+                "J2",
+                50,
+                55
+              ],
+              [
+                "J3",
+                93,
+                100
+              ],
+              [
+                "J4",
+                100,
+                101
+              ],
+              [
+                "J5",
+                124,
+                130
+              ]
+            ],
+            "MB2": [
+              [
+                "J1",
+                34,
+                37
+              ],
+              [
+                "J2",
+                66,
+                75
+              ],
+              [
+                "J3",
+                84,
+                87
+              ],
+              [
+                "J4",
+                119,
+                125
+              ],
+              [
+                "J5",
+                142,
+                148
+              ]
+            ],
+            "MB3": [
+              [
+                "J1",
+                49,
+                54
+              ],
+              [
+                "J2",
+                56,
+                61
+              ],
+              [
+                "J3",
+                87,
+                91
+              ],
+              [
+                "J4",
+                94,
+                95
+              ],
+              [
+                "J5",
+                130,
+                131
+              ]
+            ],
+            "MB4": [
+              [
+                "J1",
+                44,
+                48
+              ],
+              [
+                "J2",
+                61,
+                66
+              ],
+              [
+                "J3",
+                100,
+                104
+              ],
+              [
+                "J4",
+                114,
+                119
+              ],
+              [
+                "J5",
+                131,
+                139
+              ]
+            ],
+            "MB5": [
+              [
+                "J1",
+                39,
+                44
+              ],
+              [
+                "J2",
+                55,
+                56
+              ],
+              [
+                "J3",
+                91,
+                93
+              ],
+              [
+                "J4",
+                101,
+                107
+              ],
+              [
+                "J5",
+                123,
+                124
+              ]
+            ],
+            "MB6": [
+              [
+                "J1",
+                48,
+                49
+              ],
+              [
+                "J2",
+                75,
+                79
+              ],
+              [
+                "J3",
+                104,
+                112
+              ],
+              [
+                "J4",
+                112,
+                114
+              ],
+              [
+                "J5",
+                139,
+                142
+              ]
+            ]
+          },
+          "makespan": 148
+        },
+        "steiner_medium_seed4": {
+          "edges": [
+            [
+              "Cliff",
+              "Port"
+            ],
+            [
+              "Dune",
+              "Port"
+            ],
+            [
+              "Dune",
+              "Mill"
+            ]
+          ],
+          "frequencies": {
+            "Cliff": 2,
+            "Dune": 1,
+            "Mill": 3,
+            "Port": 2
+          }
+        },
+        "tsp_medium_seed4": null
+      }
+    },
+    "final_submission_source": "baseline",
+    "gap_pct": null,
+    "id": "portfolio_medium_seed4",
+    "n_exec_turns": 0,
+    "parse_events": [],
+    "parse_path": "baseline_only",
+    "parsed": {},
+    "score": 23.619474921707646,
+    "score_after_cf": 23.619474921707646,
+    "score_at_stop": 23.619474921707646,
+    "seed": 4,
+    "stop_reason": "error",
+    "transcript": [],
+    "wall_s": 1.4566678470000625
+  },
+  "effective_model": "claude-sonnet-4.6",
+  "requested_model": "claude-sonnet-4.6",
+  "run_file": {
+    "filename": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-run_param_id_88_claude-sonnet-4.6.run.json",
+    "param_id": 88
+  },
+  "run_json": {
+    "conversations": [
+      {
+        "id": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-98dd473c",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      },
+      {
+        "id": "run-portfolio-medium-seed4-969a3707",
+        "metrics": {},
+        "modelVersionSlug": "model_version_slug for conversation is DEPRECATED"
+      }
+    ],
+    "endTime": "2026-04-16T20:31:36.484023Z",
+    "modelVersion": {
+      "slug": "claude-sonnet-4.6"
+    },
+    "pyRunId": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z-Run #89",
+    "results": [
+      {
+        "numericResult": {
+          "value": 23.619474921707646
+        },
+        "type": "AGGREGATED"
+      }
+    ],
+    "startTime": "2026-04-16T20:31:35.024295Z",
+    "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+    "taskVersion": {
+      "definition": "    @kbench.task(name=TASK_NAME)\n    def detailed_run(\n        llm,\n        id,\n        class_,\n        difficulty,\n        seed,\n        instance,\n        gold_objective,\n        baseline_objective,\n        value_cap,\n        wall_budget_s=1800,\n        components=None,\n    ):\n        del wall_budget_s\n        inst = module._coerce_json(instance, default=None)\n        if not isinstance(inst, dict):\n            raise TypeError(\"instance must be a dict or JSON object string\")\n        normalized_components = module._normalize_components(components)\n\n        row = module.run_instance(\n            llm=llm,\n            instance=inst,\n            cls=str(class_),\n            difficulty=str(difficulty),\n            seed=int(seed),\n            gold_objective=float(gold_objective),\n            baseline_objective=float(baseline_objective),\n            value_cap=float(value_cap),\n            components=normalized_components,\n        )\n        final_submission_source, final_evaluation = evaluate_final_submission(\n            row,\n            instance=inst,\n            cls=str(class_),\n            components=normalized_components,\n        )\n        gap_pct = final_evaluation.get(\"gap_pct\")\n        if gap_pct is None:\n            gap_pct = final_evaluation.get(\"details\", {}).get(\"gap_pct\")\n        detail = {\n            \"id\": str(id),\n            \"class\": str(class_),\n            \"difficulty\": str(difficulty),\n            \"seed\": int(seed),\n            \"score\": float(row[\"score\"]),\n            \"score_at_stop\": float(row[\"score_at_stop\"]),\n            \"score_after_cf\": float(row[\"score_after_cf\"]),\n            \"cf_delta\": float(row[\"cf_delta\"]),\n            \"stop_reason\": row[\"stop_reason\"],\n            \"wall_s\": float(row[\"wall_s\"]),\n            \"n_exec_turns\": int(row[\"n_exec_turns\"]),\n            \"error\": row[\"error\"],\n            \"parsed\": row[\"parsed\"],\n            \"cf_parsed\": row[\"cf_parsed\"],\n            \"transcript\": row[\"transcript\"],\n            \"parse_path\": infer_parse_path(row),\n            \"parse_events\": row.get(\"parse_events\"),\n            \"feasible\": infer_feasible(final_evaluation),\n            \"final_submission_source\": final_submission_source,\n            \"final_evaluation\": final_evaluation,\n            \"gap_pct\": gap_pct,\n        }\n        detail_rows.append(detail)\n        return float(row[\"score\"])\n",
+      "description": "",
+      "name": "meta_hch_prod_claude-sonnet-4.6_20260416t202925z",
+      "versionNumber": 1
+    }
+  }
+}

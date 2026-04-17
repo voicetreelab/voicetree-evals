@@ -1,0 +1,150 @@
+{
+  "conversations": [
+    {
+      "id": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z-77c3a033",
+      "metrics": {
+        "inputTokens": 2128,
+        "inputTokensCostNanodollars": "1064000",
+        "outputTokens": 443,
+        "outputTokensCostNanodollars": "90006000",
+        "totalBackendLatencyMs": "142679"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (84, 56)\n- 1: (88, 45)\n- 2: (60, 80)\n- 3: (25, 20)\n- 4: (18, 41)\n- 5: (6, 91)\n- 6: (3, 14)\n- 7: (21, 23)\n- 8: (60, 71)\n- 9: (75, 86)\n- 10: (77, 88)\n- 11: (84, 62)\n- 12: (59, 30)\n- 13: (67, 32)\n- 14: (61, 93)\n- 15: (67, 51)\n- 16: (10, 67)\n- 17: (88, 13)\n- 18: (5, 2)\n- 19: (58, 57)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 532.616\nBaseline tour: [0, 11, 1, 15, 19, 8, 2, 14, 9, 10, 13, 12, 17, 3, 7, 4, 16, 5, 6, 18]\n\n\nFULL PRIOR TRANSCRIPT:\nTURN_1_MODEL_RESPONSE:\nPLAN_STATE: 1. Analyze the city coordinates to identify geographic clusters and a potential global tour shape. \n2. Use a combination of nearest-neighbor heuristics and local adjustments (like 2-opt) to construct a high-quality initial tour.\n3. Perform manual 2-opt swaps to refine the tour and reduce the length, focusing on the longest jumps (e.g., city 5, 17, and 12).\n4. Verify the final tour for completeness (all 20 cities included once) and calculate the total Euclidean distance.\n5. Output the best tour found during the refinement process.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct and refine the tour using geographic clusters and 2-opt swaps\", \"p_solve\": 0.95, \"time_budget_s\": 300}\n\nTURN_2_MODEL_RESPONSE:\nSUB_1: I analyzed the 20 city coordinates and identified key clusters. The primary challenge was integrating isolated cities like 17 (SE) and 5 (NW) without excessive jump distances. I tested several paths, focusing on a circular sweep that minimizes the longest jumps. The most efficient route found follows a vertical sweep on the left (18-6-4-16-5), a northern traverse (5-14-10-9), an eastern descent (2-8-19-15-11-0-1-17), and a final southern/central return (17-13-12-3-7) back to the start. The estimated length of this tour is approximately 392.5, which is a significant improvement over the baseline (532.6).\n\nBEST_GUESS: {\"tour\": [18, 6, 4, 16, 5, 14, 10, 9, 2, 8, 19, 15, 11, 0, 1, 17, 13, 12, 3, 7]}\n\nUPDATED_PLAN_STATE: 1. Finalize the 20-city tour by double-checking all city indices are included exactly once.\n2. Verify the total Euclidean distance of the selected tour (approx. 392.5).\n3. Search for any minor 2-opt or 3-opt swaps that could further reduce the distance.\n4. If no better tour is found within the time budget, finalize the current best guess.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.4, \"p_gap_le_5\": 0.7, \"p_gap_le_10\": 0.9}\nCONTINUE_FORECAST: {\"p_improve\": 0.3, \"expected_delta_score\": 1.5, \"expected_gap_reduction\": 2.0}\nDECISION: stop\n\nTIMING: global elapsed 323.0s / 1800s (remaining 1477.0s).\nLAST_SUBTASK: budgeted 300s, actual 151.2616305600004s, desc=Construct and refine the tour using geographic clusters and 2-opt swaps\nSUBTASK_HISTORY: [s1 151.2616305600004/300s]\n\nCURRENT_BEST_JSON:\n{\n  \"tour\": [\n    18,\n    6,\n    4,\n    16,\n    5,\n    14,\n    10,\n    9,\n    2,\n    8,\n    19,\n    15,\n    11,\n    0,\n    1,\n    17,\n    13,\n    12,\n    3,\n    7\n  ]\n}\n\nExec turn 3. Emit, in order:\n- `SUB_2`: key findings for this subtask \u2014 HARD LIMIT 30 lines. Stop writing SUB_2 after 30 lines even if incomplete. BEST_GUESS and the remaining fields MUST follow.\n- `BEST_GUESS`: class-specific JSON for `tsp`\n- BEST_GUESS schema example for `tsp`:\n```json\n{\"tour\": [0, 7, 3, ...]} with every city index exactly once.\n```\n- `UPDATED_PLAN_STATE`: revised plan, or keep the prior plan verbatim\n- `QUALITY_FORECAST`: `{p_gap_le_2, p_gap_le_5, p_gap_le_10}` for solo classes, or the VE-specific thresholds if this is `ve`\n- `CONTINUE_FORECAST`: `{p_improve, expected_delta_score}` and optionally `expected_gap_reduction`\n- `DECISION`: `continue` or `stop`\n- `NEXT_SUB`: `{id: 3, desc, p_solve, time_budget_s}` only if you continue\n\nExample shape:\nSUB_2: I checked one concrete local move and kept the best valid candidate found.\nBEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2, \"N03\": 3}}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn, then spend one more subtask on the highest-value local improvement.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.2, \"p_gap_le_10\": 0.55}\nCONTINUE_FORECAST: {\"p_improve\": 0.35, \"expected_delta_score\": 1.8, \"expected_gap_reduction\": 4.0}\nDECISION: continue\nNEXT_SUB: {\"id\": 3, \"desc\": \"Try one more improvement move\", \"p_solve\": 0.3, \"time_budget_s\": 120}\n\nDo NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, `QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets (`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` followed by the value.\nCORRECT: UPDATED_PLAN_STATE: Keep a valid structured answer at every turn.\nWRONG:   ## UPDATED_PLAN_STATE\nKeep a valid structured answer at every turn.  (markdown header \u2014 will not parse)\nWRONG:   - BEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2}}   (bullet prefix \u2014 will not parse)\n\nAll labelled fields must be emitted in the listed order. The `BEST_GUESS:` line must contain valid JSON, with no code fences and no extra text inside that field. Failing to emit any of `BEST_GUESS`, `UPDATED_PLAN_STATE`, `QUALITY_FORECAST`, `CONTINUE_FORECAST`, `DECISION`, or, when you continue, `NEXT_SUB` causes strict-parse failure, and no score is recorded for the turn. Keep each field concise enough that you still emit the full labelled output.\nCounterfactual branch: take exactly one more execution turn from the same transcript state. Do not emit `DECISION` or `NEXT_SUB` on this branch."
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "SUB_2: I analyzed the 20 city coordinates and identified key clusters. The primary challenge was integrating isolated cities like 17 (SE) and 5 (NW) without excessive jump distances. I tested several paths, focusing on a circular sweep that minimizes the longest jumps. The most efficient route follows a vertical sweep on the left (18-6-4-16-5), a northern traverse (5-14-10-9), an eastern descent (2-8-19-15-11-0-1-17), and a final southern/central return (17-13-12-3-7) back to the start. The estimated length of this tour is approximately 392.7, which is a significant improvement over the baseline (532.6).\n\nBEST_GUESS: {\"tour\": [18, 6, 4, 16, 5, 14, 10, 9, 2, 8, 19, 15, 11, 0, 1, 17, 13, 12, 3, 7]}\n\nUPDATED_PLAN_STATE: 1. Finalize the 20-city tour by double-checking all city indices are included exactly once.\n2. Verify the total Euclidean distance of the selected tour (approx. 392.7).\n3. Search for any minor 2-opt or 3-opt swaps that could further reduce the distance.\n4. If no better tour is found within the time budget, finalize the current best guess.\n\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.4, \"p_gap_le_5\": 0.7, \"p_gap_le_10\": 0.9}\n\nCONTINUE_FORECAST: {\"p_improve\": 0.3, \"expected_delta_score\": 1.5, \"expected_gap_reduction\": 2.0}"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3-flash-preview"
+            }
+          ],
+          "id": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z-77c3a033-req-1",
+          "metrics": {
+            "inputTokens": 2128,
+            "inputTokensCostNanodollars": "1064000",
+            "outputTokens": 443,
+            "outputTokensCostNanodollars": "90006000",
+            "totalBackendLatencyMs": "142679"
+          }
+        }
+      ]
+    },
+    {
+      "id": "run-tsp-hard-seed3-1e74aba5",
+      "metrics": {
+        "inputTokens": 3899,
+        "inputTokensCostNanodollars": "1949500",
+        "outputTokens": 635,
+        "outputTokensCostNanodollars": "207471000",
+        "totalBackendLatencyMs": "322718"
+      },
+      "modelVersionSlug": "model_version_slug for conversation is DEPRECATED",
+      "requests": [
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "You are solving an optimization problem.\n\nValue. Each problem is worth up to 100 points of value. Your gap to the optimum reduces value linearly, at 1 point per percentage point of gap, floored at 0.\n\nTime cost. Wall time costs 0.01 points per second.\n\nBudgets. Total wall budget is 1800s. Turn 1 planning budget is 300s. Each execution subtask may budget up to 600s. The harness reserves 300s for a forced one-more-turn counterfactual branch after a clean stop.\n\nProtocol. You may decompose the problem into subtasks, revise your plan each turn, and stop when you judge no more work is worth its time cost. The harness extracts structured fields from your raw text, so when a field expects JSON, emit valid JSON.\n\nOutput budget. Your response is token-limited. Keep SUB_N sections under 30 lines \u2014 key moves and result only. You MUST reach all structured fields (BEST_GUESS, UPDATED_PLAN_STATE, QUALITY_FORECAST, CONTINUE_FORECAST, DECISION) in every exec turn.\n\nDo not call tools. Do not write code, pseudocode, or solver sketches. Work only from the prompt, the running transcript, the current best artifact, and your own reasoning."
+                }
+              ],
+              "role": "CONTENT_ROLE_SYSTEM",
+              "senderName": "System"
+            },
+            {
+              "parts": [
+                {
+                  "text": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (84, 56)\n- 1: (88, 45)\n- 2: (60, 80)\n- 3: (25, 20)\n- 4: (18, 41)\n- 5: (6, 91)\n- 6: (3, 14)\n- 7: (21, 23)\n- 8: (60, 71)\n- 9: (75, 86)\n- 10: (77, 88)\n- 11: (84, 62)\n- 12: (59, 30)\n- 13: (67, 32)\n- 14: (61, 93)\n- 15: (67, 51)\n- 16: (10, 67)\n- 17: (88, 13)\n- 18: (5, 2)\n- 19: (58, 57)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 532.616\nBaseline tour: [0, 11, 1, 15, 19, 8, 2, 14, 9, 10, 13, 12, 17, 3, 7, 4, 16, 5, 6, 18]\n\n\nTurn 1 for Traveling Salesperson is planning only. Do not emit BEST_GUESS yet.\n\nEmit, in order:\n- `PLAN_STATE`: plan (\u2264 15 lines). We will quote this back to you verbatim on every later turn.\n- `NEXT_SUB`: `{id: 1, desc, p_solve, time_budget_s}`. `p_solve` is your probability that the final answer lands within the target gap after this subtask. `time_budget_s` must be <= 600.\n\nExample shape:\nPLAN_STATE: Start from the baseline, identify the main bottleneck, then spend one subtask trying to produce a cleaner feasible answer.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct one improved feasible candidate\", \"p_solve\": 0.35, \"time_budget_s\": 180}\n\nDo NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, `QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets (`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` followed by the value.\nCORRECT: PLAN_STATE: Start from the baseline...\nWRONG:   ## PLAN_STATE\nStart from the baseline...  (markdown header \u2014 will not parse)\nWRONG:   - PLAN_STATE: Start from the baseline...   (bullet prefix \u2014 will not parse)\n\nEmit both labelled fields exactly once, in the listed order. Failing to emit either required field causes strict-parse failure, and no score is recorded for the turn. Do not emit BEST_GUESS yet.\n\nPlanning budget: 300s."
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "PLAN_STATE: 1. Analyze the city coordinates to identify geographic clusters and a potential global tour shape. \n2. Use a combination of nearest-neighbor heuristics and local adjustments (like 2-opt) to construct a high-quality initial tour.\n3. Perform manual 2-opt swaps to refine the tour and reduce the length, focusing on the longest jumps (e.g., city 5, 17, and 12).\n4. Verify the final tour for completeness (all 20 cities included once) and calculate the total Euclidean distance.\n5. Output the best tour found during the refinement process.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct and refine the tour using geographic clusters and 2-opt swaps\", \"p_solve\": 0.95, \"time_budget_s\": 300}"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3-flash-preview"
+            }
+          ],
+          "id": "run-tsp-hard-seed3-1e74aba5-req-1",
+          "metrics": {
+            "inputTokens": 1121,
+            "inputTokensCostNanodollars": "560500",
+            "outputTokens": 186,
+            "outputTokensCostNanodollars": "110172000",
+            "totalBackendLatencyMs": "171656"
+          }
+        },
+        {
+          "contents": [
+            {
+              "parts": [
+                {
+                  "text": "Euclidean TSP-20:\nYou need a short closed tour through all 20 cities.\n\nCoordinates:\n- 0: (84, 56)\n- 1: (88, 45)\n- 2: (60, 80)\n- 3: (25, 20)\n- 4: (18, 41)\n- 5: (6, 91)\n- 6: (3, 14)\n- 7: (21, 23)\n- 8: (60, 71)\n- 9: (75, 86)\n- 10: (77, 88)\n- 11: (84, 62)\n- 12: (59, 30)\n- 13: (67, 32)\n- 14: (61, 93)\n- 15: (67, 51)\n- 16: (10, 67)\n- 17: (88, 13)\n- 18: (5, 2)\n- 19: (58, 57)\n\nRules:\n- Output one full tour containing every city exactly once.\n- The route is a closed cycle: after the last city, return to the first city.\n- Shorter total Euclidean length is better.\n- If you stop immediately or fail to produce a valid answer, the baseline below is what gets scored.\n\nBaseline length: 532.616\nBaseline tour: [0, 11, 1, 15, 19, 8, 2, 14, 9, 10, 13, 12, 17, 3, 7, 4, 16, 5, 6, 18]\n\n\nFULL PRIOR TRANSCRIPT:\nTURN_1_MODEL_RESPONSE:\nPLAN_STATE: 1. Analyze the city coordinates to identify geographic clusters and a potential global tour shape. \n2. Use a combination of nearest-neighbor heuristics and local adjustments (like 2-opt) to construct a high-quality initial tour.\n3. Perform manual 2-opt swaps to refine the tour and reduce the length, focusing on the longest jumps (e.g., city 5, 17, and 12).\n4. Verify the final tour for completeness (all 20 cities included once) and calculate the total Euclidean distance.\n5. Output the best tour found during the refinement process.\nNEXT_SUB: {\"id\": 1, \"desc\": \"Construct and refine the tour using geographic clusters and 2-opt swaps\", \"p_solve\": 0.95, \"time_budget_s\": 300}\n\nTIMING: global elapsed 171.7s / 1800s (remaining 1628.3s).\nLAST_SUBTASK: none yet\nSUBTASK_HISTORY: [none yet]\n\nCURRENT_BEST_JSON:\nnone yet\n\nExec turn 2. Emit, in order:\n- `SUB_1`: key findings for this subtask \u2014 HARD LIMIT 30 lines. Stop writing SUB_1 after 30 lines even if incomplete. BEST_GUESS and the remaining fields MUST follow.\n- `BEST_GUESS`: class-specific JSON for `tsp`\n- BEST_GUESS schema example for `tsp`:\n```json\n{\"tour\": [0, 7, 3, ...]} with every city index exactly once.\n```\n- `UPDATED_PLAN_STATE`: revised plan, or keep the prior plan verbatim\n- `QUALITY_FORECAST`: `{p_gap_le_2, p_gap_le_5, p_gap_le_10}` for solo classes, or the VE-specific thresholds if this is `ve`\n- `CONTINUE_FORECAST`: `{p_improve, expected_delta_score}` and optionally `expected_gap_reduction`\n- `DECISION`: `continue` or `stop`\n- `NEXT_SUB`: `{id: 2, desc, p_solve, time_budget_s}` only if you continue\n\nExample shape:\nSUB_1: I checked one concrete local move and kept the best valid candidate found.\nBEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2, \"N03\": 3}}\nUPDATED_PLAN_STATE: Keep a valid structured answer at every turn, then spend one more subtask on the highest-value local improvement.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.05, \"p_gap_le_5\": 0.2, \"p_gap_le_10\": 0.55}\nCONTINUE_FORECAST: {\"p_improve\": 0.35, \"expected_delta_score\": 1.8, \"expected_gap_reduction\": 4.0}\nDECISION: continue\nNEXT_SUB: {\"id\": 2, \"desc\": \"Try one more improvement move\", \"p_solve\": 0.3, \"time_budget_s\": 120}\n\nDo NOT wrap `PLAN_STATE`, `NEXT_SUB`, `UPDATED_PLAN_STATE`, `DECISION`, `BEST_GUESS`, `QUALITY_FORECAST`, or `CONTINUE_FORECAST` in markdown headers (`##`, `#`), bullets (`-`, `*`), or code fences (```). Emit each as a literal line starting with `<LABEL>:` followed by the value.\nCORRECT: UPDATED_PLAN_STATE: Keep a valid structured answer at every turn.\nWRONG:   ## UPDATED_PLAN_STATE\nKeep a valid structured answer at every turn.  (markdown header \u2014 will not parse)\nWRONG:   - BEST_GUESS: {\"assignment\": {\"N01\": 1, \"N02\": 2}}   (bullet prefix \u2014 will not parse)\n\nAll labelled fields must be emitted in the listed order. The `BEST_GUESS:` line must contain valid JSON, with no code fences and no extra text inside that field. Failing to emit any of `BEST_GUESS`, `UPDATED_PLAN_STATE`, `QUALITY_FORECAST`, `CONTINUE_FORECAST`, `DECISION`, or, when you continue, `NEXT_SUB` causes strict-parse failure, and no score is recorded for the turn. Keep each field concise enough that you still emit the full labelled output."
+                }
+              ],
+              "role": "CONTENT_ROLE_USER",
+              "senderName": "User"
+            },
+            {
+              "parts": [
+                {
+                  "text": "SUB_1: I analyzed the 20 city coordinates and identified key clusters. The primary challenge was integrating isolated cities like 17 (SE) and 5 (NW) without excessive jump distances. I tested several paths, focusing on a circular sweep that minimizes the longest jumps. The most efficient route found follows a vertical sweep on the left (18-6-4-16-5), a northern traverse (5-14-10-9), an eastern descent (2-8-19-15-11-0-1-17), and a final southern/central return (17-13-12-3-7) back to the start. The estimated length of this tour is approximately 392.5, which is a significant improvement over the baseline (532.6).\n\nBEST_GUESS: {\"tour\": [18, 6, 4, 16, 5, 14, 10, 9, 2, 8, 19, 15, 11, 0, 1, 17, 13, 12, 3, 7]}\n\nUPDATED_PLAN_STATE: 1. Finalize the 20-city tour by double-checking all city indices are included exactly once.\n2. Verify the total Euclidean distance of the selected tour (approx. 392.5).\n3. Search for any minor 2-opt or 3-opt swaps that could further reduce the distance.\n4. If no better tour is found within the time budget, finalize the current best guess.\nQUALITY_FORECAST: {\"p_gap_le_2\": 0.4, \"p_gap_le_5\": 0.7, \"p_gap_le_10\": 0.9}\nCONTINUE_FORECAST: {\"p_improve\": 0.3, \"expected_delta_score\": 1.5, \"expected_gap_reduction\": 2.0}\nDECISION: stop"
+                }
+              ],
+              "role": "CONTENT_ROLE_ASSISTANT",
+              "senderName": "google/gemini-3-flash-preview"
+            }
+          ],
+          "id": "run-tsp-hard-seed3-1e74aba5-req-2",
+          "metrics": {
+            "inputTokens": 2778,
+            "inputTokensCostNanodollars": "1389000",
+            "outputTokens": 449,
+            "outputTokensCostNanodollars": "97299000",
+            "totalBackendLatencyMs": "151062"
+          }
+        }
+      ]
+    }
+  ],
+  "endTime": "2026-04-16T19:37:45.799631Z",
+  "modelVersion": {
+    "slug": "google/gemini-3-flash-preview"
+  },
+  "pyRunId": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z-Run #19",
+  "results": [
+    {
+      "numericResult": {
+        "value": 95.34180068129001
+      },
+      "type": "AGGREGATED"
+    }
+  ],
+  "startTime": "2026-04-16T19:29:59.978596Z",
+  "state": "BENCHMARK_TASK_RUN_STATE_COMPLETED",
+  "taskVersion": {
+    "definition": "    @kbench.task(name=TASK_NAME)\n    def detailed_run(\n        llm,\n        id,\n        class_,\n        difficulty,\n        seed,\n        instance,\n        gold_objective,\n        baseline_objective,\n        value_cap,\n        wall_budget_s=1800,\n        components=None,\n    ):\n        del wall_budget_s\n        inst = module._coerce_json(instance, default=None)\n        if not isinstance(inst, dict):\n            raise TypeError(\"instance must be a dict or JSON object string\")\n        normalized_components = module._normalize_components(components)\n\n        row = module.run_instance(\n            llm=llm,\n            instance=inst,\n            cls=str(class_),\n            difficulty=str(difficulty),\n            seed=int(seed),\n            gold_objective=float(gold_objective),\n            baseline_objective=float(baseline_objective),\n            value_cap=float(value_cap),\n            components=normalized_components,\n        )\n        final_submission_source, final_evaluation = evaluate_final_submission(\n            row,\n            instance=inst,\n            cls=str(class_),\n            components=normalized_components,\n        )\n        gap_pct = final_evaluation.get(\"gap_pct\")\n        if gap_pct is None:\n            gap_pct = final_evaluation.get(\"details\", {}).get(\"gap_pct\")\n        detail = {\n            \"id\": str(id),\n            \"class\": str(class_),\n            \"difficulty\": str(difficulty),\n            \"seed\": int(seed),\n            \"score\": float(row[\"score\"]),\n            \"score_at_stop\": float(row[\"score_at_stop\"]),\n            \"score_after_cf\": float(row[\"score_after_cf\"]),\n            \"cf_delta\": float(row[\"cf_delta\"]),\n            \"stop_reason\": row[\"stop_reason\"],\n            \"wall_s\": float(row[\"wall_s\"]),\n            \"n_exec_turns\": int(row[\"n_exec_turns\"]),\n            \"error\": row[\"error\"],\n            \"parsed\": row[\"parsed\"],\n            \"cf_parsed\": row[\"cf_parsed\"],\n            \"transcript\": row[\"transcript\"],\n            \"parse_path\": infer_parse_path(row),\n            \"parse_events\": row.get(\"parse_events\"),\n            \"feasible\": infer_feasible(final_evaluation),\n            \"final_submission_source\": final_submission_source,\n            \"final_evaluation\": final_evaluation,\n            \"gap_pct\": gap_pct,\n        }\n        detail_rows.append(detail)\n        return float(row[\"score\"])\n",
+    "description": "",
+    "name": "meta_hch_prod_google_gemini-3-flash-preview_20260416t173202z",
+    "versionNumber": 1
+  }
+}
